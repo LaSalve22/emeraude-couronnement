@@ -546,6 +546,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setflag FLAG_EXP_SHARE_ALWAYS @ Couronnement : Multi Exp donné avec le Pokédex
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	return
 
