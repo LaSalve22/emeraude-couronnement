@@ -686,6 +686,27 @@ TEAMS.update({
     },
 })
 
+# Level caps de src/caps.c (retour d'Adrien, v0.23.1) : les combats faits à la main qui dépassaient le cap
+# du badge en jeu sont décalés vers le bas (écarts entre Pokémon conservés) pour que l'as soit pile au cap.
+CAP_COMBAT = {'TATE_AND_LIZA_1': 71, 'ARCHIE': 78, 'JUAN_1': 78}
+
+
+def plafonner(tid, cap):
+    for diff, mons in TEAMS[tid].items():
+        top = max(int(m.split('|')[3]) for m in mons)
+        delta = top - cap
+        if delta > 0:
+            out = []
+            for m in mons:
+                parts = m.split('|')
+                parts[3] = f' {int(parts[3]) - delta} '
+                out.append('|'.join(parts))
+            TEAMS[tid][diff] = out
+
+
+for _tid, _cap in CAP_COMBAT.items():
+    plafonner(_tid, _cap)
+
 # Attaques qui ne font que baisser les stats adverses (ou presque rien) : retirées des équipes Hard / Kaizo
 # pour que l'IA attaque au lieu de spammer Rugissement / Jet de Sable (retour d'Adrien, v0.17).
 WEAK_MOVES = {'Leer', 'Tail Whip', 'Growl', 'Sand Attack', 'Smokescreen', 'String Shot', 'Sweet Scent',
@@ -798,42 +819,42 @@ for tid in ['ASHLEY', 'DARIUS', 'EDWARDO', 'FLINT', 'HUMBERTO', 'JARED']:  # Ar�
     AUTO[tid] = (63, 56, 60, 'oiseau')
 
 # Chapitre 6 : Routes 121 et 123, Mont Mémoria (sbires Aqua au sommet), Repaire Aqua, Routes 124-125 puis Arène
-# de Lévy & Tatia (cap 72, réserve Psy).
+# de Lévy & Tatia (cap 71, réserve Psy).
 for tid in ['CALE', 'CRISTIN_1', 'JESSICA_1', 'KATE_AND_JOY', 'MARCEL', 'MYLES', 'PAT', 'TAMMY', 'VANESSA', 'WALTER_1',
             'ALBERTO', 'BRAXTON', 'CAMERON_1', 'DAVIS', 'ED', 'FERNANDO_1', 'FREDRICK', 'JACKI_1', 'JAZMYN', 'JONAS',
             'KAYLEY', 'KINDRA', 'MIU_AND_YUKI', 'VIOLET', 'WENDY',
             'DEZ_AND_LUKE', 'LEAH', 'MARK', 'ZANDER', 'GABRIELLE_1', 'KAYLA', 'WILLIAM', 'ATSUSHI', 'TASHA', 'CEDRIC',
             'VALERIE_1', 'GRUNT_MT_PYRE_1', 'GRUNT_MT_PYRE_2', 'GRUNT_MT_PYRE_3', 'GRUNT_MT_PYRE_4']:
-    AUTO[tid] = (72, 58, 62)
+    AUTO[tid] = (71, 58, 62)
 for tid in ['GRUNT_AQUA_HIDEOUT_1', 'GRUNT_AQUA_HIDEOUT_2', 'GRUNT_AQUA_HIDEOUT_3', 'GRUNT_AQUA_HIDEOUT_4',
             'GRUNT_AQUA_HIDEOUT_5', 'GRUNT_AQUA_HIDEOUT_6', 'GRUNT_AQUA_HIDEOUT_7', 'GRUNT_AQUA_HIDEOUT_8',
             'CHAD', 'DECLAN', 'GRACE', 'ISABELLA', 'JENNY_1', 'LILA_AND_ROY_1', 'ROLAND', 'SPENCER',
             'AURON', 'ERNEST_1', 'KIM_AND_IRIS', 'NOLEN', 'PRESLEY', 'SHARON', 'STAN', 'TANYA']:
-    AUTO[tid] = (72, 60, 64)
+    AUTO[tid] = (71, 60, 64)
 for tid in ['BLAKE', 'CLIFFORD', 'HANNAH', 'KATHLEEN', 'MACEY', 'MAURA', 'NATE', 'NICHOLAS', 'PRESTON',
             'SAMANTHA', 'SYLVIA', 'VIRGIL']:  # Arène de Lévy & Tatia
-    AUTO[tid] = (72, 64, 68, 'psy')
+    AUTO[tid] = (71, 64, 68, 'psy')
 
-# Chapitre 7 : Centre Spatial (Magma), Routes 126-128 (mer), Grotte Fonds Marins (Aqua), Arène de Juan (cap 81).
+# Chapitre 7 : Centre Spatial (Magma), Routes 126-128 (mer), Grotte Fonds Marins (Aqua), Arène de Juan (cap 78).
 for tid in ['GRUNT_SPACE_CENTER_1', 'GRUNT_SPACE_CENTER_2', 'GRUNT_SPACE_CENTER_3', 'GRUNT_SPACE_CENTER_4',
             'GRUNT_SPACE_CENTER_5', 'GRUNT_SPACE_CENTER_6', 'GRUNT_SPACE_CENTER_7',
             'GRUNT_SEAFLOOR_CAVERN_1', 'GRUNT_SEAFLOOR_CAVERN_2', 'GRUNT_SEAFLOOR_CAVERN_3', 'GRUNT_SEAFLOOR_CAVERN_4',
             'GRUNT_SEAFLOOR_CAVERN_5']:
-    AUTO[tid] = (81, 68, 72)
+    AUTO[tid] = (78, 68, 72)
 for tid in ['BARRY', 'BRENDA', 'DEAN', 'ISOBEL', 'LEONARDO', 'NIKKI', 'PABLO_1', 'SIENNA',
             'AIDAN', 'ATHENA', 'CAMDEN', 'DONNY', 'HENRY', 'JONAH', 'KOJI_1', 'ROGER',
             'ALEXA', 'CARLEE', 'HARRISON', 'ISAIAH_1', 'KATELYN_1', 'RUBEN', 'WAYNE']:
-    AUTO[tid] = (81, 66, 70)
+    AUTO[tid] = (78, 66, 70)
 for tid in ['ANDREA', 'ANNIKA', 'BETHANY', 'BRIANNA', 'BRIDGET', 'CONNIE', 'CRISSY', 'DAPHNE', 'OLIVIA', 'TIFFANY']:
-    AUTO[tid] = (81, 72, 76, 'eau')  # Arène de Juan
+    AUTO[tid] = (78, 72, 76, 'eau')  # Arène de Juan
 
-# Chapitre 8 : mers du sud (Routes 129-134, ouvertes avec Plongée avant Juan), puis Route Victoire (cap 85 de la Ligue).
+# Chapitre 8 : mers du sud (Routes 129-134, ouvertes avec Plongée avant Juan, cap 78), puis Route Victoire (cap 85 de la Ligue).
 for tid in ['ALLISON', 'CHASE', 'CLARENCE', 'REED', 'TISHA', 'KATIE', 'RODNEY', 'SANTIAGO',
             'HERMAN', 'KARA', 'KEVIN', 'RELI_AND_IAN', 'RICHARD', 'SUSIE', 'TALIA',
             'DANA', 'DARCY', 'GILBERT', 'JONATHAN', 'KIYO', 'MAKAYLA', 'PAXTON', 'RONALD',
             'BECK', 'CONOR', 'DEBRA', 'FRANKLIN', 'LINDA', 'MOLLIE', 'WARREN',
             'AARON', 'ALEX', 'HITOSHI', 'HUDSON', 'JACK', 'KELVIN', 'LAUREL', 'MARLEY', 'REYNA']:
-    AUTO[tid] = (81, 68, 72)
+    AUTO[tid] = (78, 68, 72)
 for tid in ['HALLE', 'MICHELLE', 'MITCHELL', 'SAMUEL', 'SHANNON', 'ALBERT', 'EDGAR', 'HOPE', 'KATELYNN', 'QUINCY',
             'CAROLINE', 'DIANNE', 'FELIX', 'JULIE', 'OWEN', 'VITO']:
     AUTO[tid] = (85, 76, 80, 'elite')  # Route Victoire

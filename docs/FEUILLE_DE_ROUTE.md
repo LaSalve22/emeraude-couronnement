@@ -49,6 +49,7 @@ et sur GitHub.
 - v0.21 - équipes Hard / Kaizo du chapitre 6 (rival à Nénucrique, Repaire Aqua, Lévy & Tatia)
 - v0.22 - équipes Hard / Kaizo du chapitre 7 (Centre Spatial, Grotte Fonds Marins, Juan)
 - v0.23 - équipes Hard / Kaizo du chapitre 8 (Route Victoire, Conseil 4, Marc)
+- v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 
 ## Plus tard
 

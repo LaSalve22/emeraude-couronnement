@@ -247,7 +247,12 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Marc (6 / 6, 84-85). En Kaizo, l'as de chacun méga-évolue : Absol, Branette, Oniglali, Drattak, Léviator, Gardevoir.
 - Générés : 39 dresseurs des Routes 129-134 (68 / 72, cap 81 comme les Routes 126-128), 16 de la Route Victoire
   (réserve elite, 76 / 80, cap 85).
-- À trancher avec Adrien : les caps des règles AUTO et de Juan / Lévy & Tatia (72, 81) dépassent ceux de `src/caps.c` (71, 78).
+
+## Fait (v0.23.1) - combats remis au level cap (choix d'Adrien)
+
+- Les caps des règles AUTO suivent `src/caps.c` : 71 avant le 7e badge (chapitre 6), 78 avant le 8e (chapitre 7, Routes 129-134).
+- `CAP_COMBAT` dans `tools/trainers/equipes_couronnement.py` décale vers le bas les équipes faites à la main qui dépassaient
+  (Lévy & Tatia 71, Arthur 78, Juan 78 ; écarts conservés). Règle : l'as d'un combat ne dépasse jamais le cap du badge en jeu.
 
 ## Prochaines étapes, dans l'ordre
 
