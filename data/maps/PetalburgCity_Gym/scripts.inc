@@ -337,6 +337,7 @@ PetalburgCity_Gym_EventScript_NormanPostBattle::
 
 PetalburgCity_Gym_EventScript_GiveFacade2::
 	call PetalburgCity_Gym_EventScript_GiveFacade
+	call PetalburgCity_Gym_EventScript_GiveMegaRing
 	release
 	end
 
@@ -388,6 +389,7 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	call PetalburgCity_Gym_EventScript_UnlockAllDoors
 	special DrawWholeMapView
 	call PetalburgCity_Gym_EventScript_GiveFacade
+	call PetalburgCity_Gym_EventScript_GiveMegaRing
 	delay 30
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
@@ -400,6 +402,51 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	case DIR_WEST, PetalburgCity_Gym_EventScript_WallysDadArrivesWest
 	case DIR_EAST, PetalburgCity_Gym_EventScript_WallysDadArrivesEast
 	end
+
+@ Émeraude Couronnement : Norman remet le Méga-Anneau (Méga-évolution débloquée après le 5e badge).
+PetalburgCity_Gym_EventScript_GiveMegaRing::
+	checkitem ITEM_MEGA_RING
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_AlreadyHasMegaRing
+	msgbox PetalburgCity_Gym_Text_TakeMegaRing, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
+	msgbox PetalburgCity_Gym_Text_ExplainMegaRing, MSGBOX_DEFAULT
+	call_if_eq VAR_STARTER_MON, 0, PetalburgCity_Gym_EventScript_GiveSceptilite
+	call_if_eq VAR_STARTER_MON, 2, PetalburgCity_Gym_EventScript_GiveBlastoisinite
+	return
+
+PetalburgCity_Gym_EventScript_GiveSceptilite::
+	msgbox PetalburgCity_Gym_Text_StarterMegaStone, MSGBOX_DEFAULT
+	giveitem ITEM_SCEPTILITE
+	return
+
+PetalburgCity_Gym_EventScript_GiveBlastoisinite::
+	msgbox PetalburgCity_Gym_Text_StarterMegaStone, MSGBOX_DEFAULT
+	giveitem ITEM_BLASTOISINITE
+	return
+
+PetalburgCity_Gym_Text_StarterMegaStone:
+	.string "Papa : Et ça… Le Prof. Seko me l'a confié\n"
+	.string "pour toi. Il a dit que ton premier\l"
+	.string "Pokémon en aurait besoin un jour.$"
+
+PetalburgCity_Gym_EventScript_AlreadyHasMegaRing::
+	return
+
+PetalburgCity_Gym_Text_TakeMegaRing:
+	.string "Papa : Encore une chose. Tends la main.\p"
+	.string "Ce Méga-Anneau appartenait à mon\n"
+	.string "propre maître. Il me l'a donné le jour où\l"
+	.string "je l'ai battu.\p"
+	.string "Aujourd'hui, c'est ton tour.$"
+
+PetalburgCity_Gym_Text_ExplainMegaRing:
+	.string "Papa : Avec ce Méga-Anneau, un Pokémon\n"
+	.string "qui tient sa Méga-Gemme peut\l"
+	.string "Méga-évoluer en combat. Une fois par\n"
+	.string "combat.\p"
+	.string "C'est une puissance énorme. Elle a brisé\n"
+	.string "des Dresseurs plus solides que toi. Ne\l"
+	.string "la laisse pas te briser.$"
 
 PetalburgCity_Gym_EventScript_GiveFacade::
 	giveitem ITEM_TM_FACADE

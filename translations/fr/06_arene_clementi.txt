@@ -432,3 +432,19 @@ Hm ? Attends.
 Tu n'as qu'un seul Pokémon en état de se battre ?
 
 Reviens avec au moins deux Pokémon. Je ne me bats pas à moitié.
+
+// Couronnement : Norman remet le Méga-Anneau (5e badge)
+@@ PetalburgCity_Gym_Text_TakeMegaRing
+Papa : Encore une chose. Tends la main.
+
+Ce Méga-Anneau appartenait à mon propre maître. Il me l'a donné le jour où je l'ai battu.
+
+Aujourd'hui, c'est ton tour.
+
+@@ PetalburgCity_Gym_Text_ExplainMegaRing
+Papa : Avec ce Méga-Anneau, un Pokémon qui tient sa Méga-Gemme peut Méga-évoluer en combat. Une fois par combat.
+
+C'est une puissance énorme. Elle a brisé des Dresseurs plus solides que toi. Ne la laisse pas te briser.
+
+@@ PetalburgCity_Gym_Text_StarterMegaStone
+Papa : Et ça… Le Prof. Seko me l'a confié pour toi. Il a dit que ton premier Pokémon en aurait besoin un jour.

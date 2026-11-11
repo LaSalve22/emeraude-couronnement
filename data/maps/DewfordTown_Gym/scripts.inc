@@ -154,6 +154,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	setvar VAR_0x8008, 2
 	call Common_EventScript_SetGymTrainers
 	call DewfordTown_Gym_EventScript_GiveBulkUp
+	call DewfordTown_Gym_EventScript_GiveTeraOrb
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -173,6 +174,38 @@ DewfordTown_Gym_EventScript_GiveBulkUp::
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
 	return
+
+@ Émeraude Couronnement : Bastien remet l'Orbe Téracristal (Téracristallisation débloquée après le 2e badge).
+DewfordTown_Gym_EventScript_GiveTeraOrb::
+	checkitem ITEM_TERA_ORB
+	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_AlreadyHasTeraOrb
+	msgbox DewfordTown_Gym_Text_TakeTeraOrb, MSGBOX_DEFAULT
+	giveitem ITEM_TERA_ORB
+	setflag FLAG_TERA_ORB_CHARGED
+	msgbox DewfordTown_Gym_Text_ExplainTeraOrb, MSGBOX_DEFAULT
+	return
+
+DewfordTown_Gym_EventScript_AlreadyHasTeraOrb::
+	return
+
+DewfordTown_Gym_Text_TakeTeraOrb:
+	.string "Bastien : Attends, attends ! J'ai un\n"
+	.string "dernier truc pour toi.\p"
+	.string "Je l'ai trouvé en surfant au large,\n"
+	.string "coincé dans un récif. Il brillait comme\l"
+	.string "un soleil sous l'eau.\p"
+	.string "Moi, je préfère mes poings. Toi, t'en\n"
+	.string "feras meilleur usage.$"
+
+DewfordTown_Gym_Text_ExplainTeraOrb:
+	.string "Bastien : C'est un Orbe Téracristal. En\n"
+	.string "combat, il fait briller ton Pokémon\l"
+	.string "comme un cristal et change son type.\p"
+	.string "Une fois par combat. Après, il faut le\n"
+	.string "recharger dans un Centre Pokémon.\p"
+	.string "Bien utilisé, ça retourne un combat\n"
+	.string "perdu. Mal utilisé… bah, tu t'en mords\l"
+	.string "les doigts. Comme moi.$"
 
 DewfordTown_Gym_EventScript_GiveBulkUp2:
 	giveitem ITEM_TM_BULK_UP

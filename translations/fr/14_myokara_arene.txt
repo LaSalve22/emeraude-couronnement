@@ -1,0 +1,15 @@
+// Chapitre 2 — Arène de Village Myokara : Bastien remet l'Orbe Téracristal (2e badge)
+
+@@ DewfordTown_Gym_Text_TakeTeraOrb
+Bastien : Attends, attends ! J'ai un dernier truc pour toi.
+
+Je l'ai trouvé en surfant au large, coincé dans un récif. Il brillait comme un soleil sous l'eau.
+
+Moi, je préfère mes poings. Toi, t'en feras meilleur usage.
+
+@@ DewfordTown_Gym_Text_ExplainTeraOrb
+Bastien : C'est un Orbe Téracristal. En combat, il fait briller ton Pokémon comme un cristal et change son type.
+
+Une fois par combat. Après, il faut le recharger dans un Centre Pokémon.
+
+Bien utilisé, ça retourne un combat perdu. Mal utilisé… bah, tu t'en mords les doigts. Comme moi.

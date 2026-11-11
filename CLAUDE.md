@@ -130,11 +130,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   plancher à 4 niveaux sous le meilleur, +1 / +2 Pokémon de la réserve de leur classe, capacités par niveau.
 - Feuille de route lisible pour Adrien : `docs/FEUILLE_DE_ROUTE.md`.
 
+## Fait (v0.10)
+
+- Téracristal : Bastien remet l'Orbe Téracristal après le 2e badge (`DewfordTown_Gym_EventScript_GiveTeraOrb`),
+  rechargé au Centre Pokémon (`B_FLAG_TERA_ORB_CHARGED` = `FLAG_TERA_ORB_CHARGED` 0x21).
+- Méga-évolution : Norman remet le Méga-Anneau après le 5e badge, plus Jungkite (Arcko) ou Tortankite (Carapuce).
+  Les autres Méga-Gemmes restent à placer dans le monde (à faire avec les objets de fin de jeu).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
 1. Équipes Hard/Kaizo des chapitres 3 et suivants (même outil).
-2. Téracristal (après badge 2) et Méga-évolution (après badge 5).
+2. Placer les Méga-Gemmes dans le monde.
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
