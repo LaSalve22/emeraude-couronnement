@@ -33,9 +33,9 @@ gText_Birch_AndYouAre::
 	.string "Et toi, t'es qui ?$"
 
 gText_Birch_BoyOrGirl::
-	.string "Garçon ? Fille ? Les Pokémon s'en\n"
-	.string "fichent. Mais moi, j'ai un formulaire à\l"
-	.string "remplir.$"
+	.string "Attends, laisse-moi deviner à qui j'ai\n"
+	.string "affaire… Non, en fait, dis-le-moi. J'ai\l"
+	.string "un formulaire à remplir.$"
 
 gText_Birch_WhatsYourName::
 	.string "Bon. Ton petit nom ?$"

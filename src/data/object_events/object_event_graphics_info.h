@@ -4467,7 +4467,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree = {
     .images = sPicTable_ApricornTree,
 };
 
-#if IS_FRLG
+// Émeraude Couronnement : sprites du joueur Red / Green aussi compilés hors Rouge Feu (personnages jouables).
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal = {
     .tileTag = TAG_NONE,
@@ -4734,6 +4734,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreenFieldMove = {
     .images = sPicTable_GreenItem,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+#if IS_FRLG
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman = {
     .tileTag = TAG_NONE,

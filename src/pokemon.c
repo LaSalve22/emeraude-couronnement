@@ -1,4 +1,5 @@
 #include "global.h"
+#include "player_character.h"
 #include "constants/battle_music.h"
 #include "malloc.h"
 #include "apprentice.h"
@@ -5716,6 +5717,8 @@ enum TrainerPicID FacilityClassToPicIndex(u16 facilityClass)
 
 enum TrainerPicID PlayerGenderToFrontTrainerPicId(enum Gender playerGender)
 {
+    if (!IS_FRLG && IsKantoPlayerCharacter(playerGender))
+        return playerGender == MALE ? TRAINER_PIC_RED : TRAINER_PIC_LEAF;
     if (playerGender != MALE)
         return FacilityClassToPicIndex(IS_FRLG ? FACILITY_CLASS_LEAF : FACILITY_CLASS_MAY);
     else

@@ -32,7 +32,7 @@ Moi, je cherche les réponses. Sur le terrain. À quatre pattes dans la boue, de
 Et toi, t'es qui ?
 
 @@ gText_Birch_BoyOrGirl
-Garçon ? Fille ? Les Pokémon s'en fichent. Mais moi, j'ai un formulaire à remplir.
+Attends, laisse-moi deviner à qui j'ai affaire… Non, en fait, dis-le-moi. J'ai un formulaire à remplir.
 
 @@ gText_Birch_WhatsYourName
 Bon. Ton petit nom ?

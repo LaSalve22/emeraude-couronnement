@@ -1,4 +1,5 @@
 #include "global.h"
+#include "player_character.h"
 #include "clock.h"
 #include "new_game.h"
 #include "random.h"
@@ -184,6 +185,7 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    VarSet(VAR_PLAYER_CHARACTER, gPendingPlayerCharacter); // Couronnement : personnage choisi dans l'intro
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();

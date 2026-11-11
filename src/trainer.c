@@ -1,4 +1,5 @@
 #include "global.h"
+#include "player_character.h"
 #include "constants/trainers.h"
 
 static enum TrainerPicID GetEmeraldTrainerPic(enum Gender gender)
@@ -27,6 +28,8 @@ enum TrainerPicID GetPlayerTrainerPic(enum Gender gender, enum GameVersion versi
             return GetKantoTrainerPic(gender);
         case VERSION_EMERALD:
         default:
+            if (IsKantoPlayerCharacter(gender))
+                return GetKantoTrainerPic(gender);
             return GetEmeraldTrainerPic(gender);
     }
 }

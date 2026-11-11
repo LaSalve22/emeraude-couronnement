@@ -92,13 +92,24 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (réassigne les instruments, branche la batterie, ajoute la boucle), puis ligne dans `midi.cfg`, `song_table.inc`, `songs.h`.
   L'option affiche le choix courant seul (4 choix ne tiennent pas sur la ligne).
 
+## Fait (v0.6)
+
+- Personnages jouables choisis dans l'intro du Prof. Seko : Brice (Brendan), Flora (May), Red, Green (Leaf).
+  `VAR_PLAYER_CHARACTER` = 0x4091, `include/constants/player_character.h`, `src/player_character.c`.
+  Le sexe découle du personnage (maison et rival inchangés : rival Flora si garçon, Brice si fille).
+  Sprites de Red/Green (terrain, vélo, surf, pêche, face, dos) branchés dans `GetPlayerAvatarGraphicsIdByStateIdAndGender`,
+  `PlayerGenderToFrontTrainerPicId` et `GetPlayerTrainerPic` ; leurs données de terrain, réservées à Rouge Feu, sont désormais
+  compilées aussi pour Émeraude (garde `#if IS_FRLG` déplacée). Nom par défaut = nom du personnage. Tests : `test/player_character.c`.
+- Manquants : Blue (seulement un sprite de PNJ, pas de course/vélo/surf/dos), Ash, Lucas, Dawn (aucun sprite).
+  Écrans encore aux sprites de Brendan/May pour Red/Green : carte Dresseur, icône de la carte de la région, PokéNav, Panthéon.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
 1. Descente de difficulté en cours de partie (menu ou PNJ), jamais de remontée.
 2. Blocage des objets de soin en combat et mode Set forcé en Hard et Kaizo.
 3. Téracristal (après badge 2) et Méga-évolution (après badge 5).
-4. Puis : équipes Hard/Kaizo du chapitre 1, Couronnement Mondial, liens avec les Pokémon, personnages jouables.
+4. Puis : équipes Hard/Kaizo du chapitre 1, Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 
