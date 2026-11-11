@@ -1,0 +1,684 @@
+// Chapitre 2 — Dresseurs des Routes 109, 110, 116 et 117 (data/text/trainers.inc)
+
+// ===== Route 109 (plage de Poivressel) =====
+
+@@ Route109_Text_DavidIntro
+Hiyah ! Regarde mes abdos ! Taillés au burin ! Ça, c'est du “sec” !
+
+@@ Route109_Text_DavidDefeated
+Aïyah ! Dégonflé !
+
+@@ Route109_Text_DavidPostBattle
+Hiyah !
+
+Mes abdos sculptés ne servent strictement à rien en combat Pokémon ! Six ans de crunchs pour rien !
+
+@@ Route109_Text_AliceIntro
+T'as mis de la crème solaire, au moins ? Le soleil, ça pardonne pas.
+
+@@ Route109_Text_AliceDefeated
+Aïe, aïe, aïe !
+
+@@ Route109_Text_AlicePostBattle
+Ce sont les joues qui brûlent en premier ! Et le nez. Et l'ego, apparemment.
+
+@@ Route109_Text_HueyIntro
+J'ai jeté l'ancre dans tous les ports du monde. Poivressel reste le meilleur.
+
+@@ Route109_Text_HueyDefeated
+C'est toi la meilleure escale !
+
+@@ Route109_Text_HueyPostBattle
+Dans le meilleur port, le meilleur Dresseur… La mer a un sens de l'humour.
+
+@@ Route109_Text_EdmondIntro
+Bluuuurp… Un combat ? Avec moi ? Maintenant ?
+
+@@ Route109_Text_EdmondDefeated
+Burp… Ooooooohhhh… Bluuurrrp…
+
+@@ Route109_Text_EdmondPostBattle
+D'habitude je suis plus fort ! Mais là j'ai le mal de mer comme un chien !
+
+Je suis Marin, pourtant… Ne le dis à personne.
+
+@@ Route109_Text_RickyIntro
+J'ai soif… Je tuerais pour un Soda Cool de la Maison de la Plage…
+
+@@ Route109_Text_RickyDefeated
+Grmbl…
+
+@@ Route109_Text_RickyPostBattle
+J'ai la dalle… Ma bouée commence à ressembler à un donut géant…
+
+@@ Route109_Text_RickyRegister
+Tu reviens m'affronter quand j'aurai plus soif ?
+
+@@ Route109_Text_RickyRematchIntro
+J'ai faim, mais il me reste assez de pêche pour un combat !
+
+@@ Route109_Text_RickyRematchDefeated
+Perdu… C'est parce que j'ai faim…
+
+@@ Route109_Text_RickyRematchPostBattle
+Quand on mange sur la plage, tout a meilleur goût. Même le sable.
+
+@@ Route109_Text_LolaIntro
+Un parasol, ça ressemble à une fleur géante, non ?
+
+@@ Route109_Text_LolaDefeated
+Mamaaan !
+
+@@ Route109_Text_LolaPostBattle
+Vue du ciel, la plage, c'est un grand jardin de fleurs !
+
+@@ Route109_Text_LolaRegister
+Moi ? Je suis là tous les jours !
+
+@@ Route109_Text_LolaRematchIntro
+Je vais pas reperdre ! C'est pour ça que j'ai ma bouée !
+
+@@ Route109_Text_LolaRematchDefeated
+Mamaaan !
+
+@@ Route109_Text_LolaRematchPostBattle
+Avec une bouée, mes Pokémon et moi, on est deux fois plus mignons !
+
+@@ Route109_Text_AustinaIntro
+Je sais pas nager sans ma bouée, mais en combat Pokémon, je coule pas !
+
+@@ Route109_Text_AustinaDefeated
+J'ai perdu à cause de la bouée ?
+
+@@ Route109_Text_AustinaPostBattle
+Ma bouée, c'est un accessoire de mode. Je ne sors jamais sans.
+
+@@ Route109_Text_GwenIntro
+Salut, grand Dresseur. Tu veux te battre avec moi ?
+
+@@ Route109_Text_GwenDefeated
+Oh… T'es balèze.
+
+@@ Route109_Text_GwenPostBattle
+Comment on fait pour devenir aussi balèze ? Faut perdre beaucoup avant ?
+
+@@ Route109_Text_CarterIntro
+Wahaha ! Le gars ici présent va ferrer un gros poisson !
+
+@@ Route109_Text_CarterDefeated
+Le gars ici présent vient de se faire ferrer…
+
+@@ Route109_Text_CarterPostBattle
+Le gars pense que t'es un gros poisson. Non, un futur gros poisson ! Un requin, même.
+
+@@ Route109_Text_PaulIntro
+Paul : Bon. Tu viens de tuer l'ambiance.
+
+On était en plein moment précieux, là.
+
+@@ Route109_Text_PaulDefeated
+Paul : Bon. J'abandonne.
+
+@@ Route109_Text_PaulPostBattle
+Paul : Dis à personne qu'on est là. C'est notre petit monde à deux !
+
+@@ Route109_Text_PaulNotEnoughPokemon
+Paul : On s'aime à la folie. C'est pour ça que nos Pokémon combattent ensemble.
+
+Reviens avec deux Pokémon.
+
+@@ Route109_Text_MelIntro
+Mel : On est, genre, trop amoureux. Notre romance fait fondre tout Hoenn !
+
+@@ Route109_Text_MelDefeated
+Mel : On a perdu, et c'est ma faute ! Paul va me détester !
+
+@@ Route109_Text_MelPostBattle
+Mel : Euh, Paul… Tu m'en veux ? Me fais pas la tête, s'il te plaît…
+
+@@ Route109_Text_MelNotEnoughPokemon
+Mel : On s'aime, genre, profondément. Alors nos Pokémon combattent ensemble.
+
+Il en faut deux, mon chou.
+
+@@ Route109_Text_ChandlerIntro
+Tadaaa ! T'as vu ? Ma bouée est ronde !
+
+@@ Route109_Text_ChandlerDefeated
+Oh, oh ! Dommage !
+
+@@ Route109_Text_ChandlerPostBattle
+Et dire que je t'ai montré ma bouée ronde…
+
+@@ Route109_Text_HaileyIntro
+Je sais pas nager, alors je fais semblant.
+
+@@ Route109_Text_HaileyDefeated
+Je le savais. Je savais qu'on pouvait pas gagner.
+
+@@ Route109_Text_HaileyPostBattle
+Quand j'aurai appris à nager, mes Pokémon deviendront plus forts. Je crois.
+
+@@ Route109_Text_ElijahIntro
+Pour un mec aussi viril que moi, ce genre de Pokémon, c'est le match parfait !
+
+@@ Route109_Text_ElijahDefeated
+Même dans la défaite, je reste classe, hein ?
+
+@@ Route109_Text_ElijahPostBattle
+Pour un mec aussi viril, un port, c'est le décor idéal !
+
+Bon, je file à Poivressel. Les mouettes m'attendent.
+
+// ===== Route 110 (Piste Cyclable) =====
+
+@@ Route110_Text_JacobIntro
+Wow ! Attention ! T'as pas l'habitude des courses de Vélo, toi.
+
+@@ Route110_Text_JacobDefeated
+Wow ! J'ai plus de freins !
+
+@@ Route110_Text_JacobPostBattle
+Pneus crevés et freins usés, ça peut te coûter une jambe ! Vérifie ton Vélo ! Moi, j'ai appris trop tard.
+
+@@ Route110_Text_AnthonyIntro
+Hé, toi ! Tu tiens mon rythme ?
+
+@@ Route110_Text_AnthonyDefeated
+Crash et carbonisé !
+
+@@ Route110_Text_AnthonyPostBattle
+La vitesse seule suffit pas pour gagner. Faut que je réfléchisse… Ça va être long.
+
+@@ Route110_Text_BenjaminIntro
+Panique pas si ton Vélo va trop vite !
+
+@@ Route110_Text_BenjaminDefeated
+Faut pas paniquer en combat non plus…
+
+@@ Route110_Text_BenjaminPostBattle
+Pas besoin de stresser. Respire. T'as tout le temps. La vie est courte, mais pas à ce point.
+
+@@ Route110_Text_BenjaminRegister
+Je continue de pédaler zen. Fais-moi signe si t'es chaud.
+
+@@ Route110_Text_BenjaminRematchIntro
+Tu vas pas un peu vite, là ? Calme-toi et battons-nous.
+
+@@ Route110_Text_BenjaminRematchDefeated
+J'ai pas paniqué, et j'ai quand même perdu…
+
+@@ Route110_Text_BenjaminRematchPostBattle
+Pas besoin de stresser. Respire. T'as tout le temps.
+
+@@ Route110_Text_AbigailIntro
+Le triathlon, c'est l'enfer.
+
+Natation, vélo, course à pied. Trois façons de souffrir.
+
+@@ Route110_Text_AbigailDefeated
+Les combats Pokémon aussi, c'est l'enfer !
+
+@@ Route110_Text_AbigailPostBattle
+Je suis morte, faut que je me repose. Le repos, c'est sacré.
+
+@@ Route110_Text_AbigailRegister
+Tu sais quoi ? Je t'aime bien ! Revanche sur la Piste Cyclable ?
+
+@@ Route110_Text_AbigailRematchIntro
+C'est cool de se battre à vélo, non ?
+
+@@ Route110_Text_AbigailRematchDefeated
+Wow… Comment tu fais pour être aussi balèze ?
+
+@@ Route110_Text_AbigailRematchPostBattle
+Tu visais un record ?
+
+Désolée si je t'ai fait perdre du temps !
+
+@@ Route110_Text_JasmineIntro
+Je roule sans m'arrêter depuis l'aube. Mes cuisses sont en béton !
+
+@@ Route110_Text_JasmineDefeated
+J'ai peur d'avoir une crampe…
+
+@@ Route110_Text_JasminePostBattle
+Oh, t'as des Badges d'Arène ? Pas étonnant que tu sois aussi balèze !
+
+@@ Route110_Text_EdwardIntro
+J'ai lu tes intentions ! Je ne peux pas perdre !
+
+@@ Route110_Text_EdwardDefeated
+Je n'ai pas prédit ma propre chute !
+
+@@ Route110_Text_EdwardPostBattle
+Je vois ton avenir…
+
+Hmm… Une lumière éclatante… Et derrière, une ombre immense. Fais attention.
+
+@@ Route110_Text_JaclynIntro
+Ahahahaha ! Je vais t'éblouir de mes merveilles !
+
+@@ Route110_Text_JaclynDefeated
+J'ai perdu merveilleusement !
+
+@@ Route110_Text_JaclynPostBattle
+T'as gagné par miracle ! Oui, un miracle ! Crois pas que ça arrivera tout le temps !
+
+@@ Route110_Text_EdwinIntro
+Je peux voir tes Pokémon ? Juste un coup d'œil, s'il te plaît ?
+
+@@ Route110_Text_EdwinDefeated
+Je voulais compléter ma collection…
+
+@@ Route110_Text_EdwinPostBattle
+Quand je vois un Pokémon que je connais pas, ma passion de collectionneur s'embrase !
+
+@@ Route110_Text_EdwinRegister
+Je collectionne aussi les numéros du Match Call…
+
+@@ Route110_Text_EdwinRematchIntro
+Salut ! T'as capturé de nouveaux Pokémon ?
+
+Je peux les voir ? Juste un coup d'œil ?
+
+@@ Route110_Text_EdwinRematchDefeated
+Tes Pokémon… Je t'envie.
+
+@@ Route110_Text_EdwinRematchPostBattle
+Oh, je rêve de posséder tous les Pokémon rares ! Tous ! C'est malsain ?
+
+@@ Route110_Text_DaleIntro
+Hé ! Me surprends pas par-derrière comme ça !
+
+@@ Route110_Text_DaleDefeated
+Perdu ! Fichtre !
+
+@@ Route110_Text_DalePostBattle
+La pêche, c'est que de la concentration. Faut fixer le flotteur. Comme un sniper.
+
+@@ Route110_Text_IsabelIntro
+Ahahaha ! J'irais au bout du monde pour exhiber mes délicieux Pokémon.
+
+@@ Route110_Text_IsabelDefeated
+Oh, mon Dieu, ça ne va pas du tout.
+
+@@ Route110_Text_IsabelPostBattle
+Plutôt que de combattre, je devrais montrer mes Pokémon au Fan Club.
+
+@@ Route110_Text_IsabelRegister
+Ce n'était rien comparé à ce que je peux vraiment montrer.
+
+Tu seras mon public captif aussi souvent que possible !
+
+@@ Route110_Text_IsabelRematchIntro
+Ahahahaha ! Je te montre mes Pokémon autant que tu veux !
+
+@@ Route110_Text_IsabelRematchDefeated
+Oh, mon Dieu, ça ne va pas du tout.
+
+@@ Route110_Text_IsabelRematchPostBattle
+Je ne pourrai jamais m'arrêter d'exhiber mes Pokémon.
+
+Mais j'aime me battre aussi !
+
+@@ Route110_Text_TimmyIntro
+J'ai trouvé des Pokémon trop stylés dans les herbes ici !
+
+@@ Route110_Text_TimmyDefeated
+Être stylé, ça suffit pas pour gagner…
+
+@@ Route110_Text_TimmyPostBattle
+C'est dur de combattre avec des Pokémon qu'on vient d'attraper. Ils me connaissent pas encore.
+
+@@ Route110_Text_AlyssaIntro
+Je suis tombée de la Piste Cyclable…
+
+Je vais faire passer la honte en te battant !
+
+@@ Route110_Text_AlyssaDefeated
+Oups ! J'ai perdu !
+
+@@ Route110_Text_AlyssaPostBattle
+Tomber… Perdre… Je veux disparaître sous terre.
+
+@@ Route110_Text_JosephIntro
+OK ! Plein gaz ! Si tu suis pas le rythme, tu restes sur le carreau !
+
+@@ Route110_Text_JosephDefeated
+T'as bien suivi le rythme, toi…
+
+@@ Route110_Text_JosephPostBattle
+Ça va pas m'abattre ! Perdre a fait de moi un homme meilleur !
+
+@@ Route110_Text_KalebIntro
+Quand des Pokémon mignons s'entraident… Y a rien de plus adorable !
+
+@@ Route110_Text_KalebDefeated
+T'as pas de cœur ? Aucune pitié ?
+
+@@ Route110_Text_KalebPostBattle
+Là, là… Vous avez fait de votre mieux, mes trésors.
+
+// ===== Route 116 =====
+
+@@ Route116_Text_ClarkIntro
+Si le tunnel passe pas, je passerai par-dessus la montagne.
+
+@@ Route116_Text_ClarkDefeat
+Pff… Pff… Perdre, ça m'a crevé…
+
+@@ Route116_Text_ClarkPostBattle
+Pas de tunnel ? Pas grave. Pour un Montagnard, les montagnes sont des routes !
+
+@@ Route116_Text_JoeyIntro
+Mes Pokémon déchirent ! Regarde-les !
+
+@@ Route116_Text_JoeyDefeat
+Aïe ! Une égratignure ! Vite, un pansement !
+
+@@ Route116_Text_JoeyPostBattle
+Les pansements, c'est la preuve qu'on est un dur ! J'en ai un autre, là !
+
+@@ Route116_Text_JoseIntro
+Mes Pokémon Insecte sont costauds ! En garde !
+
+@@ Route116_Text_JoseDefeat
+Perdu ! Je croyais t'avoir !
+
+@@ Route116_Text_JosePostBattle
+Les Pokémon Insecte évoluent vite. Ils deviennent forts vite. Et ils meurent vite, dans la nature.
+
+@@ Route116_Text_JaniceIntro
+Laisse-moi te montrer la force de mon adorable Pokémon !
+
+@@ Route116_Text_JaniceDefeat
+T'as un cran d'avance…
+
+@@ Route116_Text_JanicePostBattle
+Un Pokémon mignon ET puissant. Pour moi, c'est l'idéal.
+
+@@ Route116_Text_JerryIntro
+On apprend plein de trucs à l'École des Dresseurs.
+
+Je veux tester pour de vrai !
+
+@@ Route116_Text_JerryDefeat
+J'ai séché les cours… Voilà pourquoi j'ai perdu.
+
+@@ Route116_Text_JerryPostBattle
+Je vais devoir redoubler à l'École. Sinon, Roxanne va me tuer.
+
+@@ Route116_Text_JerryRegister1
+On m'a dit à l'École que le PokéNav peut enregistrer des Dresseurs.
+
+J'ai pas trop compris, mais on peut essayer ?
+
+@@ Route116_Text_JerryRegister2
+On m'a dit à l'École que le PokéNav peut enregistrer des Dresseurs.
+
+J'ai pas trop compris, mais on peut essayer ?
+
+@@ Route116_Text_JerryRematchIntro
+J'ai bossé sérieusement à l'École. Je vais pas perdre comme la dernière fois.
+
+@@ Route116_Text_JerryRematchDefeat
+Hein ? J'ai pourtant révisé…
+
+@@ Route116_Text_JerryPostRematch
+Je vais devoir redoubler à l'École. Sinon, Roxanne va me tuer.
+
+@@ Route116_Text_KarenIntro
+J'étudie à l'école, et aussi sur le chemin du retour !
+
+@@ Route116_Text_KarenDefeat
+Je suis sous le choc… J'ai perdu ?
+
+@@ Route116_Text_KarenPostBattle
+Rhâââ, je deviendrai jamais une Dresseuse élégante comme Roxanne à ce rythme !
+
+@@ Route116_Text_KarenRegister1
+Oh, wow ! C'est un PokéNav ? J'en ai un aussi ! Enregistre-moi !
+
+@@ Route116_Text_KarenRegister2
+Oh, wow ! C'est un PokéNav ? J'en ai un aussi ! Enregistre-moi !
+
+@@ Route116_Text_KarenRematchIntro
+J'ai énormément étudié depuis. Admire mes progrès !
+
+@@ Route116_Text_KarenRematchDefeat
+Sous le choc. J'ai encore perdu ?
+
+@@ Route116_Text_KarenPostRematch
+T'as battu Roxanne ? Alors je peux pas te battre. Pas encore.
+
+@@ Route116_Text_SarahIntro
+Pour ta gouverne, personne ne m'a jamais battue. À rien.
+
+@@ Route116_Text_SarahDefeat
+Oh, mon Dieu. C'est une expérience nouvelle.
+
+@@ Route116_Text_SarahPostBattle
+Ma vie de luxe m'offre tout ce que je peux désirer.
+
+Mais en combat Pokémon, ma fortune ne vaut rien. C'est presque rafraîchissant.
+
+@@ Route116_Text_DawsonIntro
+Quand tu verras la fourrure somptueuse de mes Pokémon, tu seras désarmé par tant de beauté !
+
+@@ Route116_Text_DawsonDefeat
+Oh, bébé, dis-moi que c'est faux !
+
+@@ Route116_Text_DawsonPostBattle
+Non, non, non ! T'as ébouriffé la fourrure de mes Pokémon ! Et ma coiffure ! J'appelle mon styliste. C'est une urgence.
+
+@@ Route116_Text_DevanIntro
+On va te secouer comme un cocotier !
+
+@@ Route116_Text_DevanDefeat
+Aïe aïe aïe ! Même pas un match !
+
+@@ Route116_Text_DevanPostBattle
+Je devrais essayer d'autres types de Pokémon. Voilà ce que je devrais faire.
+
+@@ Route116_Text_JohnsonIntro
+C'est un cul-de-sac, ici. Je m'ennuie à mourir. On se bat ?
+
+@@ Route116_Text_JohnsonDefeat
+C'était marrant, même si j'ai perdu.
+
+@@ Route116_Text_JohnsonPostBattle
+Tu restes me tenir compagnie ? …Non ? Personne reste jamais.
+
+// ===== Route 117 =====
+
+@@ Route117_Text_IsaacIntro
+Dis, tu veux bien affronter les Pokémon que j'élève ?
+
+@@ Route117_Text_IsaacDefeat
+Tu as élevé les tiens à merveille…
+
+@@ Route117_Text_IsaacPostBattle
+Les Pokémon, c'est pas qu'une question de puissance.
+
+Polir ce qui rend chacun unique, c'est une autre façon de les aimer.
+
+@@ Route117_Text_IsaacRegister
+Je vais redoubler d'efforts. Tu reviendras voir où on en est ?
+
+@@ Route117_Text_IsaacRematchIntro
+Les Pokémon que j'élève ont toujours aussi fière allure.
+
+@@ Route117_Text_IsaacRematchDefeat
+Tu sais les élever. T'as l'étoffe d'un pro de la Pension…
+
+@@ Route117_Text_IsaacPostRematch
+Tes Pokémon grandissent bien ! Tu devrais les inscrire aux Concours.
+
+@@ Route117_Text_LydiaIntro
+Permets-moi de juger si tu as bien élevé tes Pokémon.
+
+@@ Route117_Text_LydiaDefeat
+Oui. Ils grandissent comme il faut.
+
+@@ Route117_Text_LydiaPostBattle
+Élève tes Pokémon en faisant plus attention à leur caractère.
+
+@@ Route117_Text_LydiaRegister
+Je suis ravie d'avoir croisé quelqu'un d'aussi doué. J'espère te revoir.
+
+@@ Route117_Text_LydiaRematchIntro
+Permets-moi de réévaluer l'éducation de tes Pokémon.
+
+@@ Route117_Text_LydiaRematchDefeat
+Ils grandissent admirablement.
+
+@@ Route117_Text_LydiaPostRematch
+Selon leur nature, les Pokémon n'aiment pas les mêmes {POKEBLOCK}s.
+
+@@ Route117_Text_DylanIntro
+Je suis en plein triathlon, mais bon, osef, battons-nous !
+
+@@ Route117_Text_DylanDefeat
+Plus de jus !
+
+@@ Route117_Text_DylanPostBattle
+J'ai peut-être tout gâché…
+
+Je suis sûrement passé dernier pendant ce combat…
+
+@@ Route117_Text_DylanRegister
+Les Pokémon aussi doivent être forts ? Entraîne-moi !
+
+@@ Route117_Text_DylanRematchIntro
+Je suis en plein triathlon, mais j'ai une sacrée avance. Faisons ça vite !
+
+@@ Route117_Text_DylanRematchDefeat
+Encore plus de jus !
+
+@@ Route117_Text_DylanPostRematch
+Premier en natation et en vélo… Mais en Pokémon, j'ai encore du boulot.
+
+@@ Route117_Text_MariaIntro
+Je m'entraîne au triathlon avec mes Pokémon. Niveau vitesse, je crains rien.
+
+@@ Route117_Text_MariaDefeat
+Faut que je m'entraîne plus, je suppose.
+
+@@ Route117_Text_MariaPostBattle
+L'entraînement n'a de sens que s'il est régulier.
+
+OK ! Je reprends l'entraînement ! Demain ! …Promis.
+
+@@ Route117_Text_MariaRegister
+T'as l'air de t'entraîner sérieusement… Si tu veux, on se refait ça plus tard !
+
+@@ Route117_Text_MariaRematchIntro
+Tu tiens ton entraînement ? Moi, oui ! Je vais te le prouver !
+
+@@ Route117_Text_MariaRematchDefeat
+Faut que je m'entraîne plus, je suppose.
+
+@@ Route117_Text_MariaPostRematch
+Je reprends l'entraînement demain. On se refait un combat un de ces jours !
+
+@@ Route117_Text_DerekIntro
+Jadis Scout ! Désormais Fou d'Insectes !
+
+Mais mon amour des Pokémon reste intact !
+
+@@ Route117_Text_DerekDefeat
+Mon incompétence aussi reste intacte…
+
+@@ Route117_Text_DerekPostBattle
+J'ai juste suivi mon cœur, et maintenant on m'appelle le Fou d'Insectes…
+
+Remarque, je suis expert en Pokémon Insecte. Le surnom est mérité.
+
+@@ Route117_Text_AnnaIntro
+Anna : Je fais équipe avec ma jolie petite élève. Je dois assurer !
+
+@@ Route117_Text_AnnaDefeat
+Anna : Je suis avec ma petite élève ! Laisse-moi gagner !
+
+@@ Route117_Text_AnnaPostBattle
+Anna : Tes Pokémon se complètent bien.
+
+Je dirais que t'es juste derrière nous !
+
+@@ Route117_Text_AnnaAndMegRegister
+Anna : On va pas en rester là ! Tu reviendras, hein ?
+
+@@ Route117_Text_AnnaNotEnoughMons
+Anna : Si tu veux nous affronter, viens avec deux Pokémon.
+
+@@ Route117_Text_MegIntro
+Meg : Avec ma super grande sœur d'école, on va t'écraser !
+
+@@ Route117_Text_MegDefeat
+Meg : Oh non ! Pardon, Anna ! Je t'ai lâchée…
+
+@@ Route117_Text_MegPostBattle
+Meg : J'ai plombé Anna… Sans moi, elle aurait gagné !
+
+@@ Route117_Text_MegNotEnoughMons
+Meg : T'as qu'un seul Pokémon ? Alors on peut pas.
+
+On veut un combat à deux contre deux.
+
+@@ Route117_Text_AnnaRematchIntro
+Anna : Je peux pas perdre encore devant ma petite élève !
+
+@@ Route117_Text_AnnaRematchDefeat
+Anna : J'ai pas trouvé le rythme.
+
+@@ Route117_Text_AnnaPostRematch
+Anna : Tes Pokémon se complètent bien.
+
+Je dirais que t'es juste derrière nous !
+
+@@ Route117_Text_AnnaRematchNotEnoughMons
+Anna : Si tu veux nous affronter, viens avec deux Pokémon.
+
+@@ Route117_Text_MegRematchIntro
+Meg : Cette fois, avec ma grande sœur d'école, on gagne !
+
+@@ Route117_Text_MegRematchDefeat
+Meg : Trop fort !
+
+@@ Route117_Text_MegPostRematch
+Meg : On a combattu ensemble, et on a perdu quand même…
+
+C'est trop démoralisant…
+
+@@ Route117_Text_MegRematchNotEnoughMons
+Meg : T'as qu'un seul Pokémon ? Alors on peut pas.
+
+On veut un combat à deux contre deux.
+
+@@ Route117_Text_MelinaIntro
+C'est agréable, non ? Se battre au milieu des fleurs ?
+
+@@ Route117_Text_MelinaDefeat
+Oh, c'est très impressionnant !
+
+@@ Route117_Text_MelinaPostBattle
+Courir au milieu des fleurs, c'est merveilleux. On oublie tout.
+
+@@ Route117_Text_BrandiIntro
+Laisse-moi te montrer le pouvoir caché d'un Pokémon Psy !
+
+@@ Route117_Text_BrandiDefeat
+Stupéfiant !
+
+@@ Route117_Text_BrandiPostBattle
+Les Pokémon Psy sont complexes. Tu devrais en capturer.
+
+@@ Route117_Text_AishaIntro
+Se concentrer sur la victoire. C'est ma façon de me battre !
+
+@@ Route117_Text_AishaDefeat
+Je perds pas mon temps à rager. Je préfère m'entraîner.
+
+@@ Route117_Text_AishaPostBattle
+Si tu as peur de perdre, tu perdras. La peur, c'est déjà la moitié de la défaite.

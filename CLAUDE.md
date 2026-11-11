@@ -145,9 +145,16 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   +1 par K.O. reçu en équipe), +1 % XP tous les 6, max +10 %. Tests : `test/pokemon_bond.c`.
 - À faire plus tard : afficher le niveau de lien dans l'écran de résumé.
 
+## Fait (v0.12 à v0.14)
+
+- Chapitre 2 entièrement en français (`translations/fr/14` à `21`) : Myokara, Grotte Granite, Poivressel, Musée, chantier de Stern,
+  Route 110, Lavandia, Arène de Voltère, Rydel Cycles, Routes 109 et 117, Maison de la Plage, Fan Club, Casino,
+  et les répliques des dresseurs des Routes 109, 110, 116 et 117 (`data/text/trainers.inc`, fichier `20_dresseurs_chapitre2.txt`).
+- Routes 105 à 108 (accessibles avec Surf) laissées pour le chapitre 3.
+
 ## Prochaines étapes, dans l'ordre
 
-0. Traduction : chapitre 2 presque fini (`translations/fr/14` à `19`) ; reste Rydel Cycles, Route 109, Route 117, Casino, Fan Club, répliques des dresseurs (data/text/trainers.inc), puis les descriptions.
+0. Traduction : chapitre 3 (Vergazon, Route 111-113, Lavandia → Cheminée, Arène d'Adriane) puis les descriptions (objets, attaques, talents, Pokédex).
 1. Équipes Hard/Kaizo des chapitres 3 et suivants (même outil).
 2. Placer les Méga-Gemmes dans le monde.
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).

@@ -10,8 +10,8 @@ et sur GitHub.
 | 1 | Équipes Hard / Kaizo du chapitre 2 (Bastien, Voltère, rival Route 110, Timmy, Routes 106-117) - v0.9 | ✅ livré |
 | 2 | Téracristal débloqué après le 2e badge (Bastien), Méga-évolution après le 5e (Norman + Méga-Gemme du starter) - v0.10 | ✅ livré |
 | 3 | Liens avec les Pokémon : lien (amitié ≥ 150) et lien fort (≥ 220) donnent plus d'XP et d'EV, EV jusqu'à 302 avec un lien fort, bonus d'ancienneté - v0.11 | ✅ livré |
-| 4 | Traduction française du chapitre 2 : Myokara, Bastien, Grotte Granite (v0.12), puis Poivressel, Musée (Arthur), chantier de Stern, Route 110, Lavandia (Timmy), Arène de Voltère (v0.13) | 🟡 presque fini |
-| 5 | Reste du chapitre 2 : Rydel Cycles, Route 109, Route 117, Casino, Fan Club, répliques des dresseurs des routes | à faire |
+| 4 | Traduction française du chapitre 2 : Myokara, Bastien, Grotte Granite (v0.12), puis Poivressel, Musée (Arthur), chantier de Stern, Route 110, Lavandia (Timmy), Arène de Voltère (v0.13) | ✅ livré |
+| 5 | Reste du chapitre 2 : Rydel Cycles, Route 109, Route 117, Casino, Fan Club, répliques des dresseurs des routes - v0.14 | ✅ livré |
 
 ## Déjà fait
 
@@ -28,6 +28,7 @@ et sur GitHub.
 - v0.11 - liens avec les Pokémon
 - v0.12 - Village Myokara en français
 - v0.13 - Poivressel, Route 110, Lavandia et Arène de Voltère en français
+- v0.14 - fin du chapitre 2 en français (Rydel, Routes 109 / 117, Casino, Fan Club, dresseurs)
 
 ## Plus tard
 

@@ -1,0 +1,581 @@
+// Chapitre 2 — Rydel Cycles, Route 109, Maison de la Plage, Route 117, Fan Club, Casino de Lavandia
+
+// ===== Rydel Cycles (Lavandia) =====
+
+@@ MauvilleCity_BikeShop_Text_RydelGreeting
+Eh bien, eh bien, qu'avons-nous là ? Un client plein d'énergie !
+
+Moi ? Appelle-moi Rydel. Je suis le patron de cette boutique de vélos.
+
+@@ MauvilleCity_BikeShop_Text_DidYouComeFromFarAway
+Rydel : Tes Chaussures de sport… Elles sont dans un état lamentable.
+
+Tu viens de loin ?
+
+@@ MauvilleCity_BikeShop_Text_GuessYouDontNeedBike
+Rydel : Ah bon ?
+
+Alors tu n'as pas besoin de mes Vélos. Tant pis pour tes mollets.
+
+@@ MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne
+Rydel : Hm, hm… … … … …
+
+T'as fait tout le chemin à pied depuis Bourg-en-Vol ?
+
+Mais c'est de la folie ! T'as des pieds en acier ?
+
+Avec un de mes Vélos, tu irais partout sans effort, la brise sur le visage !
+
+Tu sais quoi ? Je t'en offre un !
+
+Ah, attends une seconde !
+
+J'ai oublié de te dire qu'il existe deux sortes de Vélos !
+
+Le Vélo de Course et le Vélo Cross !
+
+Le Vélo de Course, c'est pour ceux qui veulent sentir le vent leur gifler le visage !
+
+Le Vélo Cross, c'est pour ceux qui préfèrent la technique et les figures !
+
+Je suis un vrai cœur d'artichaut, alors prends celui que tu veux !
+
+Lequel choisis-tu ?
+
+@@ MauvilleCity_BikeShop_Text_ChoseMachBike
+{PLAYER} choisit le Vélo de Course.
+
+@@ MauvilleCity_BikeShop_Text_ChoseAcroBike
+{PLAYER} choisit le Vélo Cross.
+
+@@ MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes
+Rydel : Si tu as envie de changer de Vélo, reviens me voir !
+
+@@ MauvilleCity_BikeShop_Text_WantToSwitchBikes
+Rydel : Oh ? Tu veux changer de Vélo ?
+
+@@ MauvilleCity_BikeShop_Text_IllSwitchBikes
+Rydel : Pas de souci ! Je te l'échange !
+
+@@ MauvilleCity_BikeShop_Text_ExchangedMachForAcro
+{PLAYER} échange le Vélo de Course contre un Vélo Cross.
+
+@@ MauvilleCity_BikeShop_Text_ExchangedAcroForMach
+{PLAYER} échange le Vélo Cross contre un Vélo de Course.
+
+@@ MauvilleCity_BikeShop_Text_HappyYouLikeIt
+Rydel : Parfait, parfait ! Ravi qu'il te plaise !
+
+@@ MauvilleCity_BikeShop_Text_OhYourBikeIsInPC
+Oh ? Qu'est-ce que t'as fait du Vélo que je t'ai donné ?
+
+Ah, je vois, tu l'as rangé dans ton PC.
+
+Sors-le du PC, et je te l'échange avec plaisir !
+
+Que le vent souffle toujours dans ton dos !
+
+@@ MauvilleCity_BikeShop_Text_HandbooksAreInBack
+J'apprends le métier ici, en bossant.
+
+Si t'as besoin de conseils pour rouler, il y a des manuels au fond.
+
+@@ MauvilleCity_BikeShop_Text_MachHandbookWhichPage
+C'est un manuel du Vélo de Course.
+
+Quelle page veux-tu lire ?
+
+@@ MauvilleCity_BikeShop_Text_HowToRideMachBike
+Le Vélo avance dans la direction indiquée par la croix directionnelle.
+
+Il accélère une fois lancé.
+
+Pour t'arrêter, relâche la croix. Le Vélo ralentit jusqu'à l'arrêt.
+
+Lire une autre page ?
+
+@@ MauvilleCity_BikeShop_Text_HowToTurnMachBike
+Le Vélo de Course est rapide, mais il freine mal.
+
+Prendre un virage devient vite acrobatique.
+
+Relâche la croix un peu avant le virage pour ralentir. Ou embrasse le mur.
+
+Lire une autre page ?
+
+@@ MauvilleCity_BikeShop_Text_SandySlopes
+Il y a de petites pentes de sable un peu partout à Hoenn.
+
+Le sable meuble empêche de les gravir à pied.
+
+Mais avec un Vélo de Course, tu les grimpes à toute allure.
+
+Lire une autre page ?
+
+@@ MauvilleCity_BikeShop_Text_AcroHandbookWhichPage
+C'est un manuel du Vélo Cross.
+
+Quelle page veux-tu lire ?
+
+@@ MauvilleCity_BikeShop_Text_Wheelies
+Appuie sur B en roulant : la roue avant se soulève.
+
+Tu peux te déplacer roue levée avec la croix directionnelle.
+
+Cette technique s'appelle le wheeling.
+
+Lire une autre page ?
+
+@@ MauvilleCity_BikeShop_Text_BunnyHops
+En maintenant B, ton Vélo saute sur place.
+
+Cette technique s'appelle le bunny hop.
+
+Tu peux aussi avancer en sautant.
+
+Lire une autre page ?
+
+@@ MauvilleCity_BikeShop_Text_Jumps
+Appuie sur B et la croix en même temps pour sauter.
+
+Croix sur le côté : saut de côté.
+
+Croix vers l'arrière : le Vélo fait demi-tour en plein saut.
+
+Lire une autre page ?
+
+// ===== Route 109 =====
+
+@@ DewfordTown_Text_BrineyLandedInSlateportDeliverGoods
+M. Marco : Ohé ! Terre en vue, on est à Poivressel !
+
+Tu vas voir le Capitaine Stern pour livrer les Pièces Devon, c'est ça ?
+
+@@ Route109_Text_BrineySailToDewfordQuestion
+M. Marco : Tu devais pas livrer les Pièces Devon ?
+
+Tu veux retourner à Myokara, alors ?
+
+@@ Route109_Text_BrineyDewfordItIs
+M. Marco : Cap sur Myokara !
+
+Levez l'ancre ! Peeko, on met les voiles, ma chérie !
+
+@@ Route109_Text_BrineyDeliverDevonGoods
+M. Marco : Alors va livrer les Pièces Devon. Je t'attends ici.
+
+@@ DewfordTown_Text_BrineyLandedInSlateport
+M. Marco : Ohé ! Terre en vue, on est à Poivressel !
+
+Dis-moi quand tu veux reprendre la mer !
+
+@@ Route109_Text_BrineyWhereAreWeBound
+M. Marco : Ohé ! Pour toi, je reprends la mer quand tu veux !
+
+Alors, moussaillon, on va où ?
+
+@@ Route109_Text_BrineyTellMeWhenYouNeedToSail
+M. Marco : Dis-moi quand tu veux reprendre la mer !
+
+@@ Route109_Text_ChillAtMyPapasSpot
+Yo, les Dresseurs ! Que vous soyez chauds bouillants ou cools glaçons, venez vous poser chez mon papa !
+
+@@ Route109_Text_LittleKidsDartAround
+Les gamins, ça file à toute vitesse…
+
+Faut pas les quitter des yeux une seule seconde. C'est épuisant.
+
+Les miens sont avec mes Pokémon, donc ça devrait aller, mais… J'ai déjà perdu quelqu'un sur une plage. Une fois suffit.
+
+@@ Route109_Text_SandCastleTakingLongTime
+Notre château de sable prend vachement de temps.
+
+@@ Route109_Text_YouCanHaveThis
+Tiens, c'est pour toi !
+
+@@ Route109_Text_WereGoingToMakeBigCastle
+On va prendre tout le sable de la plage pour faire un château géant !
+
+Et après, on sera le roi et la reine.
+
+Toi, tu pourras être notre esclave. Euh, serviteur.
+
+@@ Route109_Text_ZigzagoonPicksUpLitter
+L'eau est propre, par ici.
+
+Mais de temps en temps, mon Zigzaton ramasse les déchets sur la plage.
+
+L'eau sale devient de la pluie, puis des rivières, et on la boit…
+
+Si on pollue la mer, ça finit toujours par nous revenir dans la gueule.
+
+@@ Route109_Text_ZigzagoonCry
+Zigzaton : Guguu ?
+
+@@ Route109_Text_SeashoreHouseSign
+Maison de la Plage
+
+“Des combats brûlants sur le sable brûlant ! Le repaire des Dresseurs bouillants !”
+
+@@ Route109_Text_TrainerTipsSign
+Conseils aux Dresseurs
+
+Deux Pokémon de même niveau n'ont pas forcément les mêmes stats.
+
+On dit que les Pokémon élevés par des Dresseurs deviennent plus forts que les sauvages.
+
+// ===== Maison de la Plage =====
+
+@@ Route109_SeashoreHouse_Text_SeashoreHouseIntro
+Je suis le patron de la Maison de la Plage. Mais appelle-moi M. Mer !
+
+Ce que j'aime par-dessus tout, ce sont les combats Pokémon brûlants.
+
+Montre-moi que ton cœur est en feu !
+
+Si tu bats tous les Dresseurs ici, je récompenserai tes efforts.
+
+@@ Route109_SeashoreHouse_Text_ShowMeSomeHotMatches
+Montre-moi des combats brûlants !
+
+Je tiens cette Maison de la Plage uniquement pour ça !
+
+@@ Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles
+T'es en fusion ! Ces combats étaient incandescents ! Je suis plus que satisfait !
+
+Pour te remercier de ce spectacle, prends ça.
+
+Une demi-douzaine de bouteilles de Soda Cool !
+
+@@ Route109_SeashoreHouse_Text_BagFull
+Oh, mais ton Sac est plein à craquer. Je te les garde de côté.
+
+@@ Route109_SeashoreHouse_Text_WantToBuySodaPop
+Tu veux du Soda Cool ? Les Pokémon adorent ça !
+
+Seulement 300 ¥ la bouteille ! Achète !
+
+@@ Route109_SeashoreHouse_Text_HereYouGo
+Et voilà !
+
+@@ Route109_SeashoreHouse_Text_NotEnoughMoney
+T'as pas assez d'argent.
+
+@@ Route109_SeashoreHouse_Text_ThatsTooBad
+Non ? Dommage.
+
+@@ Route109_SeashoreHouse_Text_DwayneIntro
+Si tu cherches un combat dans cette Maison, tu trouveras pas plus bouillant que moi, moussaillon !
+
+@@ Route109_SeashoreHouse_Text_DwayneDefeated
+Ça, c'était un combat brûlant ! J'accepte la défaite, moussaillon !
+
+@@ Route109_SeashoreHouse_Text_DwaynePostBattle
+Quand je suis à Poivressel, je savoure des combats brûlants et du Soda Cool glacé !
+
+@@ Route109_SeashoreHouse_Text_JohannaIntro
+Les combats mous, ça vaut pas la peine.
+
+Ce sont les combats de feu qui forgent les Dresseurs et les Pokémon !
+
+@@ Route109_SeashoreHouse_Text_JohannaDefeated
+Ça, c'est chaud !
+
+@@ Route109_SeashoreHouse_Text_JohannaPostBattle
+Pfiou, j'ai soif. Je vais peut-être prendre un Soda Cool.
+
+@@ Route109_SeashoreHouse_Text_SimonIntro
+Je vais te montrer à quel point mes Pokémon sont géniaux, mais pleure pas !
+
+@@ Route109_SeashoreHouse_Text_SimonDefeated
+…J'ai perdu, mais je pleure pas… Je pleure pas…
+
+@@ Route109_SeashoreHouse_Text_SimonPostBattle
+Si un de mes Pokémon savait porter les gens sur l'eau, je pourrais jeter cette bouée.
+
+// ===== Route 117 =====
+
+@@ Route117_Text_DayCarePokemonHadNewMove
+J'ai laissé mon Pokémon à la Pension.
+
+Quand je l'ai récupéré, il connaissait une attaque que je lui avais jamais apprise. J'étais vraiment, vraiment surpris.
+
+@@ Route117_Text_ArentTheseFlowersPretty
+Alors ? Elles sont pas jolies, ces fleurs ?
+
+C'est moi qui les ai toutes plantées ! Une par une. Ça m'a pris deux ans.
+
+@@ Route117_Text_AirIsTastyHere
+L'air est délicieux, ici !
+
+@@ Route117_Text_RouteSignVerdanturf
+>Route 117
+>{LEFT_ARROW} Vergazon
+
+@@ Route117_Text_RouteSignMauville
+>Route 117
+>{RIGHT_ARROW} Lavandia
+
+@@ Route117_Text_DayCareSign
+Pension Pokémon
+
+“Confiez-nous vos Pokémon.”
+
+// ===== Fan Club Pokémon (Poivressel) =====
+
+@@ SlateportCity_PokemonFanClub_Text_MeetChairman
+Hum hum ! Je suis le Président du Fan Club Pokémon !
+
+En tant que Président, je suis naturellement le plus important !
+
+Personne ne me surpasse dans l'élevage de Pokémon. Personne !
+
+Parlons donc des Concours Pokémon.
+
+Ce sont des événements où l'on montre ses Pokémon au monde entier !
+
+Hélas, ils ont lieu dans des villes lointaines, et je ne peux pas y aller assez souvent.
+
+Voilà pourquoi nous nous réunissons ici pour montrer nos Pokémon et admirer ceux des autres.
+
+@@ SlateportCity_PokemonFanClub_Text_LikeToSeeEnteredContestPokemon
+Les Pokémon d'un Dresseur qui a participé à un Concours… Voilà ce que j'aimerais voir.
+
+@@ SlateportCity_PokemonFanClub_Text_AllowMeToExamineYourPokemon
+Hum hum ! Je vois que tu as participé à un Concours Pokémon !
+
+Je t'en prie ! Laisse-moi examiner comment tu as élevé tes Pokémon.
+
+Rien ne me ravit plus que les Pokémon élevés par d'autres Dresseurs.
+
+Le visage heureux d'un Pokémon élevé avec soin…
+
+Le regard tendre du Dresseur qui l'a nourri et fait grandir…
+
+Rien que d'y penser, mon cœur déborde de joie.
+
+Oh ! Pardon ! Pardonne-moi ce bavardage !
+
+Je t'en prie ! Laisse-moi voir combien ton Pokémon a grandi !
+
+@@ SlateportCity_PokemonFanClub_Text_HowIsYourPokemonGrowing
+Comment grandit ton Pokémon ? Laisse-moi l'examiner.
+
+@@ SlateportCity_PokemonFanClub_Text_HmHmISee
+Hm, hm… Je vois…
+
+@@ SlateportCity_PokemonFanClub_Text_GiveMonMorePokeblocks
+Hmmm… Pas mauvais, mais pas bon non plus…
+
+Toi, son Dresseur, tu dois faire plus d'efforts pour ce Pokémon !
+
+Par exemple, je te suggère de lui donner plus de {POKEBLOCK}s.
+
+@@ SlateportCity_PokemonFanClub_Text_NoSpaceForReward
+Oh, mon Dieu…
+
+Ton Pokémon grandit fort bien, tu mérites une récompense.
+
+Malheureusement, ton Sac n'a plus de place.
+
+@@ SlateportCity_PokemonFanClub_Text_MonMostImpressiveGiveItThis
+Ton {STR_VAR_1} grandit de façon impressionnante ! Un spécimen superbe !
+
+Mais ! Si tu lui donnais ceci, il grandirait encore mieux ! Absolument !
+
+@@ SlateportCity_PokemonFanClub_Text_ExplainRedScarf
+Fais tenir ce Foulard Rouge à un Pokémon.
+
+Tout le monde reconnaîtra son sang-froid !
+
+@@ SlateportCity_PokemonFanClub_Text_ExplainBlueScarf
+Fais tenir ce Foulard Bleu à un Pokémon.
+
+Sa beauté sera bien plus éclatante !
+
+@@ SlateportCity_PokemonFanClub_Text_ExplainPinkScarf
+Fais tenir ce Foulard Rose à un Pokémon.
+
+Il fera ressortir sa mignonnerie !
+
+@@ SlateportCity_PokemonFanClub_Text_ExplainGreenScarf
+Fais tenir ce Foulard Vert à un Pokémon.
+
+Il rehaussera son intelligence !
+
+@@ SlateportCity_PokemonFanClub_Text_ExplainYellowScarf
+Fais tenir ce Foulard Jaune à un Pokémon.
+
+Il renforcera encore sa robustesse !
+
+@@ SlateportCity_PokemonFanClub_Text_NothingElseToGiveYou
+Désolé, je n'ai plus rien à te donner ! Plus rien du tout !
+
+De toute façon, tu as le don d'élever des Pokémon sans aucun objet !
+
+@@ SlateportCity_PokemonFanClub_Text_ShowMePokemonThatLoveYou
+J'adore voir des Pokémon qui aiment leur Dresseur.
+
+Les Pokémon sont très sensibles aux sentiments de leur Dresseur.
+
+Si tu les traites avec amour, ils t'aimeront en retour.
+
+Quand tes Pokémon t'aimeront, viens me les montrer.
+
+@@ SlateportCity_PokemonFanClub_Text_PokemonAdoresYou
+Ton Pokémon t'adore vraiment.
+
+Pour toi, Dresseur au grand cœur, un cadeau du Fan Club !
+
+@@ SlateportCity_PokemonFanClub_Text_TreatPokemonWithLove
+Les Pokémon sont très sensibles aux sentiments de leur Dresseur.
+
+Si tu les traites avec amour, ils t'aimeront en retour.
+
+@@ SlateportCity_PokemonFanClub_Text_PokemonDontLikeFainting
+Si tu laisses un Pokémon tomber K.O. encore et encore, il finira par t'en vouloir.
+
+Il perdra confiance en son Dresseur.
+
+Bref, il va te détester. Et il aura raison.
+
+@@ SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein
+Les Pokémon aiment qu'on leur donne des objets ?
+
+Le mien avait l'air super content quand je lui ai donné une Protéine.
+
+@@ SlateportCity_PokemonFanClub_Text_Skitty
+Skitty : Fffnyaaaah…
+
+@@ SlateportCity_PokemonFanClub_Text_Zigzagoon
+Zigzaton : Kyuuu…
+
+@@ SlateportCity_PokemonFanClub_Text_Azumarill
+Azumarill : Marimari ?
+
+// ===== Casino de Lavandia =====
+
+@@ MauvilleCity_GameCorner_Text_ThisIsMauvilleGameCorner
+Bienvenue au Casino de Lavandia.
+
+@@ MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins
+Tu veux des Jetons pour jouer ?
+
+Mais t'as pas de Boîte Jetons pour les ranger.
+
+@@ MauvilleCity_GameCorner_Text_WereYouLookingForCoins
+Tu cherches des Jetons ?
+
+1000 ¥ les 50 Jetons. Ça te tente ?
+
+@@ MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins
+Merci beaucoup ! Voici tes Jetons !
+
+@@ MauvilleCity_GameCorner_Text_DontHaveEnoughMoney
+Euh… T'as pas l'air d'avoir assez d'argent…
+
+@@ MauvilleCity_GameCorner_Text_CoinCaseIsFull
+Oh ? Ta Boîte Jetons est pleine.
+
+@@ MauvilleCity_GameCorner_Text_DontNeedCoinsThen
+Oh… Pas de Jetons, alors ? Bonne chance pour ton aventure ! Et bravo, t'es plus sage que nos clients.
+
+@@ MauvilleCity_GameCorner_Text_ExchangeCoinsForPrizes
+Bienvenue.
+
+Ici, tu peux échanger tes Jetons contre des lots.
+
+@@ MauvilleCity_GameCorner_Text_WhichPrize
+Quel lot veux-tu ?
+
+@@ MauvilleCity_GameCorner_Text_SoYourChoiceIsTheTMX
+Tu choisis donc {STR_VAR_1} {STR_VAR_2} ?
+
+@@ MauvilleCity_GameCorner_Text_SendToYourHomePC
+Merci ! On l'envoie sur le PC de ta maison.
+
+@@ MauvilleCity_GameCorner_Text_NotEnoughCoins
+T'as pas assez de Jetons.
+
+@@ MauvilleCity_GameCorner_Text_NoRoomForPlacingDecor
+Plus de place pour ranger {STR_VAR_1}.
+
+@@ MauvilleCity_GameCorner_Text_OhIsThatSo
+Ah bon ? Reviens quand t'auras mis des Jetons de côté.
+
+@@ MauvilleCity_GameCorner_Text_SoYourChoiceIsX
+Tu choisis donc {STR_VAR_1} ?
+
+@@ MauvilleCity_GameCorner_Text_HereYouGo
+Et voilà !
+
+@@ MauvilleCity_GameCorner_Text_CantCarryAnyMore
+Oh, tu peux pas en porter plus.
+
+@@ MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne
+Je me suis trompée et j'ai gagné deux fois la même Poupée.
+
+T'en veux une ?
+
+@@ MauvilleCity_GameCorner_Text_HereYouGo2
+Et voilà !
+
+@@ MauvilleCity_GameCorner_Text_YouWantItButNotNow
+Hein ? Tu la veux, mais pas maintenant ?
+
+@@ MauvilleCity_GameCorner_Text_DontBeNegative
+Allez, dis pas non comme ça ! Tiens, prends-la !
+
+@@ MauvilleCity_GameCorner_Text_CantWinJackpot
+Il y a un lot que je veux, mais j'arrive pas à décrocher le jackpot. Ça fait trois jours que je suis là.
+
+@@ MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor
+Hé, gamin, pour jouer ici, il te faut une Boîte Jetons.
+
+Je crois que la demoiselle d'à côté en avait une. Va la voir !
+
+@@ MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins
+Ma chance va pas durer éternellement. C'est trop pour moi. Tiens, prends des Jetons ! Avant que je replonge.
+
+@@ MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone
+À Lavandia, y en a pour tous les goûts.
+
+Moi, c'est le Casino. Ma femme est partie à cause de ça, mais bon.
+
+@@ MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates
+Les tables de Roulette n'ont pas toutes la même mise.
+
+Vérifie tes Jetons avant de choisir une table.
+
+@@ MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime
+On perd vite la notion du temps, ici. Faut que je retourne bosser. Ça fait six heures que je dis ça.
+
+@@ MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay
+Il faut des Jetons pour jouer au Casino.
+
+@@ MauvilleCity_GameCorner_Text_RouletteOnlyLuck
+Cette Roulette… C'est exigeant.
+
+Qu'on gagne ou qu'on perde, c'est que de la chance.
+
+@@ MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed
+On peut miser jusqu'à trois Jetons aux Machines à sous.
+
+@@ MauvilleCity_GameCorner_Text_DifficultToStopOn7
+C'est super dur de s'arrêter pile sur le “7”.
+
+Si ça tombe sur “7” pendant le bonus REEL TIME, tu gagnes des Jetons en plus.
+
+@@ MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo
+Petite info sur les Machines à sous.
+
+Plus tu stockes d'éclairs, plus tu as de chances de REEL TIME.
+
+Dans une partie avec le maximum de cinq REEL TIME…
+
+On peut toucher quatre bonus normaux, puis un gros bonus.
+
+Ça fait 660 Jetons au total, mais c'est quasi impossible.
+
+@@ MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase
+Tu peux pas jouer sans Boîte Jetons.
