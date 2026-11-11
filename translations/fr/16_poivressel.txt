@@ -1,0 +1,389 @@
+// Chapitre 2 — Poivressel (extérieur)
+
+@@ SlateportCity_Text_EnergyGuruSellWhatYouNeed
+Je suis le GOUROU DE L'ÉNERGIE ! Je vais tout donner pour te vendre ce qu'il te faut !
+
+@@ SlateportCity_Text_OhYourPokemon
+Oh ? Ton {STR_VAR_1}…
+
+@@ SlateportCity_Text_PleaseGiveItThisEffortRibbon
+Il s'est entraîné comme une bête !
+
+En récompense, donne-lui ce Ruban Effort.
+
+@@ SlateportCity_Text_ReceivedEffortRibbon
+{PLAYER} reçoit le Ruban Effort.
+
+@@ SlateportCity_Text_PutEffortRibbonOnMon
+{PLAYER} accroche le Ruban Effort à {STR_VAR_1}.
+
+@@ SlateportCity_Text_GoForItLittleHarder
+Il doit encore se donner un peu plus.
+
+Après, je lui offrirai un joli cadeau.
+
+@@ SlateportCity_Text_EffortRibbonLooksGoodOnIt
+Oh ! Ton {STR_VAR_1}, ce Ruban Effort lui va trop bien !
+
+@@ SlateportCity_Text_WonderIfLighthouseStartlesPokemon
+La lumière du phare porte à des dizaines de kilomètres.
+
+Je me demande si elle ne fait pas peur aux Pokémon de la mer. Ou si elle les attire.
+
+@@ SlateportCity_Text_SeaweedFullOfLife
+Oh, regarde ça !
+
+Les algues d'ici sont fraîches et pleines de vie.
+
+On dirait qu'elles pourraient se dresser et t'attaquer !
+
+@@ SlateportCity_Text_HowTownIsBornAndGrows
+Là où l'eau est pure, on récolte des fruits en abondance.
+
+Là où les gens se rassemblent, un marché naît.
+
+C'est comme ça qu'une ville naît et grandit. Et qu'elle finit par oublier d'où elle vient.
+
+@@ SlateportCity_Text_SlateportWonderfulPlace
+Faire ses courses en respirant l'air marin…
+
+Poivressel, c'est un endroit merveilleux !
+
+@@ SlateportCity_Text_BuyBricksSoDecorWontGetDirty
+Si tu poses tes Poupées ou tes Coussins par terre, ils se salissent.
+
+Je vais acheter des Briques pour que mes Poupées restent propres. On a ses priorités.
+
+@@ SlateportCity_Text_GoingToCompeteInBattleTent
+Wroooar ! Moi aussi, je vais participer à la Tente de Combat !
+
+Mais d'abord, faut que je capture des Pokémon !
+
+@@ SlateportCity_Text_BushedHikingFromMauville
+Pfiou… Je suis lessivé…
+
+Je suis venu à pied de Lavandia. Mais cette ville est immense.
+
+Si j'avais su, j'aurais pris mon Vélo.
+
+@@ SlateportCity_Text_EveryoneCallsHimCaptStern
+Stern, le type qui a construit le Musée, dirige aussi une équipe d'exploration sous-marine.
+
+Alors tout le monde l'appelle Capitaine Stern.
+
+@@ SlateportCity_Text_WhatsLongLineOverThere
+C'est quoi, là-bas ? Cette longue file…
+
+@@ SlateportCity_Text_VisitedMuseumOften
+Petit, j'allais souvent au Musée.
+
+Je rêvais des mystères de la mer en regardant les expositions.
+
+@@ SlateportCity_Text_QuitPushing
+Hé ! Arrête de pousser ! C'est la file, t'es aveugle ?
+
+@@ SlateportCity_Text_AquaHasPolicy
+La Team Aqua a une règle : on se rassemble et on se disperse sur le lieu de l'opération.
+
+@@ SlateportCity_Text_BossIsBrilliant
+Notre Boss est un génie.
+
+Mais qu'est-ce qu'il veut faire d'un Musée ? Brûler les tableaux ?
+
+@@ SlateportCity_Text_WhatsNewSchemeIWonder
+C'est quoi, le nouveau plan ?
+
+Le Boss fait peur quand il est en colère. Le dernier qui l'a déçu, on l'a plus revu…
+
+@@ SlateportCity_Text_ShouldTakeItAll
+S'il y a un truc qui nous intéresse au Musée, on prend tout !
+
+@@ SlateportCity_Text_DontButtIn
+Hé, toi ! Me double pas !
+
+@@ SlateportCity_Text_RemindsMeOfLongLineForGames
+Une longue file, hein ?
+
+Ça me rappelle les nuits à camper devant les magasins pour les sorties de jeux…
+
+@@ SlateportCity_Text_WhyAreWeLiningUp
+Pourquoi on fait la queue et on paie ? On devrait juste défoncer la porte !
+
+@@ SlateportCity_Text_WhatDoYouWant
+Quoi ? Tu veux quoi ?
+
+@@ SlateportCity_Text_IllReadSignForYou
+Tu veux lire ce panneau ? Je vais te le lire !
+
+@@ SlateportCity_Text_SaysSomethingLikeSeaIsEndless
+Voyons…
+
+Euh… Je crois que c'est écrit “la vie de la mer est infinie”.
+
+Ouais, j'en suis presque sûr. J'ai pas mes lunettes.
+
+@@ SlateportCity_Text_ShouldveBroughtMyGameBoy
+Grmbl…
+
+J'aurais dû prendre ma Game Boy Advance pour m'occuper dans la queue…
+
+Grmbl…
+
+@@ SlateportCity_Text_HotSpringsAfterOperation
+Après l'opération, je t'emmène aux sources chaudes !
+
+C'est ce que notre chef a promis. J'ai trop hâte ! On le mérite, après tout ce sang.
+
+@@ SlateportCity_Text_SeaIsSoWet
+La mer est tellement immense…
+
+Et si la mer était faite des larmes des Pokémon ?
+
+@@ SlateportCity_Text_SinkOldBoats
+Tu sais ce qu'on fait des vieux bateaux qui ne naviguent plus ?
+
+On les coule, pour qu'ils deviennent des refuges pour les Pokémon. Une seconde vie, au fond.
+
+@@ SlateportCity_Text_BuyTooMuch
+Chaque fois que je viens ici, je craque et j'achète n'importe quoi.
+
+@@ SlateportCity_Text_GetNameRaterToHelpYou
+Pour changer le surnom d'un Pokémon, il faut aller voir l'Expert Surnom.
+
+@@ SlateportCity_Text_CantChangeTradeMonName
+Un Pokémon obtenu par échange, tu ne peux pas changer son surnom.
+
+L'amour de son premier Dresseur est dans ce nom.
+
+@@ SlateportCity_Text_BattleTentBuiltRecently
+Une Tente de Combat vient d'ouvrir à Poivressel.
+
+Les Arènes, c'est sympa, mais la Tente de Combat, c'est autre chose.
+
+Va trouver des Pokémon costauds pour la Tente !
+
+@@ SlateportCity_Text_CaptSternBeingInterviewed
+J'espérais une star pour avoir un autographe.
+
+Mais c'est qui, qu'on interviewe ? C'est pas le Capitaine Stern ?
+
+@@ SlateportCity_Text_InterviewerSoCool
+La journaliste est trop classe.
+
+Quand je serai grande, je serai reporter internationale !
+
+@@ SlateportCity_Text_SternSaysDiscoveredSomething
+Le Capitaine Stern dit qu'ils ont découvert un truc au fond de la mer.
+
+C'est quoi ? C'est quoi ?
+
+@@ SlateportCity_Text_CaptainComeBackWithBigFish
+Qu'est-ce qui se passe ?
+
+Le Capitaine est revenu avec un monstre des abysses ?
+
+@@ SlateportCity_Text_AmIOnTV
+Hé ! Vous regardez ? Je passe à la télé ?
+
+@@ SlateportCity_Text_CaptainsACelebrity
+Une interview télé ! Ici ! Le Capitaine est une star !
+
+@@ SlateportCity_Text_BigSmileForCamera
+Ty : Bon, Capitaine Stern, un grand sourire pour la caméra !
+
+@@ SlateportCity_Text_MostInvaluableExperience
+Gabby : Je vois, je vois. Une expérience inestimable…
+
+@@ SlateportCity_Text_SternMoveAheadWithExploration
+Capitaine Stern : Oui. Nous comptons poursuivre l'exploration.
+
+@@ SlateportCity_Text_GabbyWonderfulThanksForInterview
+Gabby : Formidable, Capitaine Stern ! Merci d'avoir pris le temps de nous parler.
+
+Nous espérons vous revoir bientôt avec de nouvelles découvertes !
+
+@@ SlateportCity_Text_SternWhewFirstInterview
+Capitaine Stern : Pfiou…
+
+C'était ma première fois à la télé. J'ai transpiré comme dans un sous-marin en panne.
+
+@@ SlateportCity_Text_OhPlayerWeMadeDiscovery
+Oh ! {PLAYER} ! Tu as l'air en forme !
+
+On a fait une découverte énorme lors de notre dernière plongée.
+
+Une caverne sous-marine, sur la Route 128.
+
+On pense que c'est l'habitat d'un Pokémon qu'on croyait disparu depuis des millénaires.
+
+@@ SlateportCity_Text_AquaWillAssumeControlOfSubmarine
+Hu hu hu… Le Capitaine Stern, je présume.
+
+La Team Aqua réquisitionne votre sous-marin !
+
+Vos objections ne valent rien. Coopérez, ou on vous coule avec.
+
+Hu hu hu… Regardez bien ce que la Team Aqua a prévu !
+
+@@ SlateportCity_Text_SternWhatWasAllThat
+Capitaine Stern : C'était quoi, ça ?
+
+On aurait dit quelqu'un avec un mégaphone…
+
+Ça venait d'où ?
+
+@@ SlateportCity_Text_FromHarborTryingToTakeSub
+Du port !
+
+Le sous-marin ! Ils essaient de le voler !
+
+@@ SlateportCity_Text_PleaseComeWithMe
+{PLAYER} ! Viens avec moi, vite !
+
+@@ SlateportCity_Text_BattleTentSign
+>Tente de Combat de Poivressel
+>“Trouve-le ! L'ultime Pokémon !”
+
+@@ SlateportCity_Text_SternsShipyardWantedSign
+Chantier naval de Stern
+
+“Recherche : marin capable de naviguer dans tous les courants.”
+
+@@ SlateportCity_Text_SternsShipyardNearsCompletion
+Chantier naval de Stern
+
+“Le ferry M.S. Marée, qui reliera Poivressel et Nénucrique, est presque terminé.”
+
+@@ SlateportCity_Text_SternsShipyardFerryComplete
+Chantier naval de Stern
+
+“L'embarquement du ferry M.S. Marée (Poivressel - Nénucrique) se fait au port.”
+
+@@ SlateportCity_Text_PokemonFanClubSign
+>Fan Club Pokémon
+>“Appel à tous les fans de Pokémon !”
+
+@@ SlateportCity_Text_OceanicMuseumSign
+“La mer infinie nourrit toute vie.”
+
+Musée Océanographique
+
+@@ SlateportCity_Text_CitySign
+Poivressel
+
+“Le port où se croisent les gens et les Pokémon.”
+
+@@ SlateportCity_Text_MarketSign
+>Marché de Poivressel
+>“Des objets introuvables ailleurs !”
+
+@@ SlateportCity_Text_HarborFerryUnderConstruction
+Port de Poivressel
+
+“Le ferry M.S. Marée est en construction au chantier naval.
+
+“Mise en service prochainement.”
+
+@@ SlateportCity_Text_HarborSign
+Port de Poivressel
+
+“Profitez d'une croisière à bord du ferry M.S. Marée.”
+
+@@ SlateportCity_Text_NameRatersHouseSign
+>Maison de l'Expert Surnom
+>“Vos surnoms de Pokémon évalués.”
+
+@@ SlateportCity_Text_ExplainBerries
+Quand un Pokémon sauvage est blessé, il mâchonne des Baies pour se soigner.
+
+Tu le savais ?
+
+Quelqu'un l'a vu faire et a eu l'idée d'en tirer des médicaments.
+
+Tu le savais ?
+
+Pour transformer des Baies en médicament, il faut les réduire en poudre.
+
+Tu le savais ?
+
+Les Baies ont l'air de t'intéresser !
+
+J'ai un petit truc pour quelqu'un comme toi.
+
+@@ SlateportCity_Text_ExplainBerryPowder
+J'ai fait installer des machines pour écraser les Baies dans les Centres Pokémon.
+
+Les machines Écrase-Baies sont au Coin Direct, à l'étage.
+
+Tu le savais ?
+
+Tu pourrais me faire de la Poudre de Baie avec ?
+
+Si tu m'en apportes beaucoup, je te fabrique toutes sortes de médicaments.
+
+@@ SlateportCity_Text_BroughtMeSomeBerryPowder
+Tu m'as apporté de la Poudre de Baie ?
+
+@@ SlateportCity_Text_ExchangeWhatWithIt
+Contre quoi veux-tu l'échanger ?
+
+@@ SlateportCity_Text_ExchangeBerryPowderForItem
+D'accord, ta Poudre de Baie contre {STR_VAR_1} ?
+
+@@ SlateportCity_Text_DontHaveEnoughBerryPowder
+Oh là là. Tu n'as pas assez de Poudre de Baie.
+
+@@ SlateportCity_Text_FineBerryPowderTradeSomethingElse
+Belle Poudre de Baie. Ça fera d'excellents médicaments.
+
+Tu veux échanger encore un peu de Poudre ?
+
+@@ SlateportCity_Text_WhenYouGetMoreBringItToMe
+D'accord ! Quand tu en auras plus, rapporte-la-moi !
+
+@@ SlateportCity_Text_ComeBackToTradeBerryPowder
+Reviens échanger ta Poudre de Baie contre des médicaments.
+
+Mon bazar est toujours ouvert.
+
+Tu le savais ?
+
+@@ SlateportCity_Text_YouDroveTeamAquaAway
+Scott : Hein ? Je suis sûr qu'on s'est déjà croisés.
+
+Je me suis présenté ? Sinon, moi, c'est Scott.
+
+Je viens de voir la Team Aqua détaler d'ici comme si elle avait le feu aux fesses.
+
+Laisse-moi deviner… c'est toi qui les as fait fuir ?
+
+@@ SlateportCity_Text_MaybeThisTrainer
+Scott : Hmm… Peut-être que ce Dresseur…
+
+@@ SlateportCity_Text_LetsRegisterEachOther
+Scott : Parfait ! Je sens qu'on va bien s'entendre.
+
+Enregistrons-nous dans nos PokéNav.
+
+… … … … … …
+
+@@ SlateportCity_Text_RegisteredScott
+Ce Scott a été enregistré dans le PokéNav.
+
+@@ SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou
+Scott : J'aimerais bien te suivre, mais je dois aussi garder un œil sur les autres talents.
+
+Je vais faire le tour des autres villes.
+
+À plus, {PLAYER} !
+
+@@ SlateportCity_Text_TakingBattleTentChallenge
+Scott : Tiens ! Mais c'est {PLAYER} !
+
+Laisse-moi deviner, tu vas tenter la Tente de Combat ?
+
+Ouais ! Excellente idée ! Vraiment excellente !
+
+Un Dresseur coriace, c'est exactement ce qu'il faut pour la Tente de Combat !
+
+Donne tout !

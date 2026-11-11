@@ -1,0 +1,366 @@
+// Chapitre 2 — Poivressel : Musée Océanographique (Team Aqua, Arthur) et chantier naval de Stern
+
+// ===== Musée, rez-de-chaussée =====
+
+@@ SlateportCity_OceanicMuseum_1F_Text_WouldYouLikeToEnter
+Bienvenue au Musée Océanographique.
+
+L'entrée coûte 50 ¥. Vous souhaitez entrer ?
+
+@@ SlateportCity_OceanicMuseum_1F_Text_PleaseEnjoyYourself
+Bonne visite.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_NotEnoughMoney
+Oh ? Désolée, vous n'avez pas assez d'argent.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_CatchUpWithYourGroup
+Oh ? Vous êtes avec le groupe en bandanas qui vient d'entrer ?
+
+Il ne manque plus que vous. Dépêchez-vous de les rejoindre !
+
+@@ SlateportCity_OceanicMuseum_1F_Text_AquaExistForGoodOfAll
+Nous, la Team Aqua, existons pour le bien de tous ! Même si ça doit faire quelques morts.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_OurBossIsntHere
+On nous a dit de nous rassembler ici, alors on est là, mais…
+
+Le Boss, la pièce maîtresse, il est pas là. On fait quoi, on attend ?
+
+@@ SlateportCity_OceanicMuseum_1F_Text_WouldStuffHereMakeMeRich
+Si je pique les trucs exposés ici, je deviens riche ?
+
+@@ SlateportCity_OceanicMuseum_1F_Text_CanLearnForNefariousDeeds
+Tout ce que j'apprends ici, je pourrai le mettre au service du crime…
+
+@@ SlateportCity_OceanicMuseum_1F_Text_RustboroBungled
+Si nos crétins avaient pas foiré à Mérouville, on serait pas là !
+
+@@ SlateportCity_OceanicMuseum_1F_Text_DidntHaveMoney
+J'avais pas 50 ¥, alors j'ai mis une plombe à passer l'accueil. J'ai dû pleurer.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_LearnAboutSeaForBattling
+Je veux apprendre la mer pour mieux me battre.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_SternIsRoleModel
+Quand je vois la mer, je fonds !
+
+Pour moi, le Capitaine Stern, c'est le modèle absolu !
+
+@@ SlateportCity_OceanicMuseum_1F_Text_MustBePokemonWeDontKnow
+La mer est sans fin et infiniment profonde…
+
+Il doit y avoir plein de Pokémon qu'on ne connaît pas. Et qui nous regardent d'en bas.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_WantSeaPokemon
+Je veux un Pokémon de la mer.
+
+Ça doit être tout frais et tout doux à câliner.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis
+Aïeeeuh ! Qu'est-ce que tu fiches ici ?
+
+Moi ? Le type de la Team Aqua que t'as démonté au Tunnel Mérazon, tu te souviens ?
+
+Tiens, prends ça ! Pardonne-moi, par pitié ! Le Boss m'a déjà assez puni !
+
+@@ SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain
+Cette CT te va mieux qu'à moi.
+
+J'espère ne jamais te revoir ! Wahahaha ! …Sérieusement.
+
+@@ SlateportCity_OceanicMuseum_1F_Text_YouHaveToTakeThis
+Allez ! Prends-la et laisse-moi partir !
+
+@@ SlateportCity_OceanicMuseum_1F_Text_WhirlpoolExperiment
+Un liquide bleu tourbillonne dans un récipient en verre.
+
+“Expérience : créer un SIPHON artificiel avec du vent.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_WaterfallExperiment
+Une balle rouge monte et descend dans un récipient en verre.
+
+“Expérience : simuler une CASCADE grâce à la flottabilité.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_OceanSoilDisplay
+Un échantillon de sol des fonds marins.
+
+“Au fil des ans, les restes des êtres vivants se déposent au fond de la mer en couches.
+
+“En analysant ces couches, on lit le passé. Et ses cimetières.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_BeachSandDisplay
+Un échantillon de sable de plage.
+
+“Les pierres des montagnes sont emportées par les rivières, brisées, broyées.
+
+“Elles finissent en grains de sable sur nos plages.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_OceanicMinifact1
+“Infos Océan no 1 : pourquoi la mer est-elle bleue ?
+
+“La lumière est faite de nombreuses couleurs.
+
+“En traversant l'eau, la plupart perdent leur éclat.
+
+“Le bleu, lui, résiste. Voilà pourquoi la mer paraît bleue.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_OceanicMinifact2
+“Infos Océan no 2 : pourquoi la mer est-elle salée ?
+
+“L'eau de mer contient du sel dissous, sous forme d'ions sodium et chlore.
+
+“La pluie les arrache aux roches et les emporte jusqu'à la mer.
+
+“C'est ce sel dissous qui rend la mer salée.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_OceanicMinifact3
+“Infos Océan no 3 : qui est le plus grand, la mer ou la terre ?
+
+“La mer couvre environ 70 % de la planète.
+
+“Elle est donc plus de deux fois plus grande que les terres.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_FossilDisplay
+Un fossile couvert de petites crêtes ondulées.
+
+“Le sol des fonds marins est raclé par la marée.
+
+“L'eau y dessine de petites crêtes et vallées.
+
+“Fossilisé, ce motif s'appelle une ride de courant.”
+
+@@ SlateportCity_OceanicMuseum_1F_Text_DepthMeasuringMachine
+Une étrange machine tourne sous un dôme de verre.
+
+Elle mesure peut-être la profondeur de quelque chose…
+
+// ===== Musée, 1er étage =====
+
+@@ SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts
+Oui ? Si vous cherchez Stern, c'est moi.
+
+Ah ! Ce sont les pièces que j'ai commandées à M. Rochard, de Devon ?
+
+Merci ! Parfait ! On va pouvoir préparer l'expédition.
+
+@@ SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts
+Hé hé hé, pas si vite ! Ces pièces, on les prend !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou
+Capitaine Stern : Qu… quoi ? Qui êtes-vous ?
+
+@@ SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua
+On est la Team Aqua !
+
+Le Boss veut ces pièces ! Ferme ton clapet et file-les !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat
+Awaaah ! Battu par un gamin !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious
+Oh, la catastrophe… Le Boss va nous jeter aux requins…
+
+@@ SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis
+Pff, espèce de mauviette ! Laisse-moi faire !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat
+Quoi ?! Moi aussi ?!
+
+@@ SlateportCity_OceanicMuseum_2F_Text_MeddlingKid
+On fait quoi, maintenant ? Sans les pièces, on est morts !
+
+Argh, j'avais pas prévu qu'un gosse vienne fourrer son nez partout !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong
+Je viens voir pourquoi vous mettez trois heures à voler des pièces, et je vous trouve tenus en échec par… un enfant ?
+
+@@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning
+Nous sommes la Team Aqua, et nous aimons la mer !
+
+Et moi, je suis Arthur, le chef de la Team Aqua !
+
+Pourquoi tu te mets en travers de notre chemin ?
+
+…Non ! Ne me dis pas que tu fais partie de la Team Magma ?
+
+Non, impossible. Tu n'as pas la dégaine.
+
+… … … … … … … … … … … …
+
+Les Pokémon, les humains… Toute vie vient de la mer.
+
+La terre a tout pris. Les forêts, les villes, le béton. Elle étouffe la mer, et la vie avec.
+
+La Team Aqua va rendre au monde ce qui lui appartient. Plus de mer. Moins de terre.
+
+Tu ne trouves pas ça magnifique ?
+
+Bah… Tu es encore trop jeune pour comprendre notre noble cause.
+
+Mais je te préviens : ne te mêle plus jamais de nos plans.
+
+Sinon, la mer te reprendra. Et personne ne retrouvera ton corps.
+
+Ne l'oublie pas.
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs
+Capitaine Stern : Tu es… Ah, d'accord, tu es {PLAYER}…
+
+En tout cas, c'était tendu ! Merci de nous avoir sauvés !
+
+Ah oui, et tu as même apporté les pièces de Devon !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo
+Capitaine Stern : Oups ! Pas de temps à perdre !
+
+Notre expédition sous-marine part très bientôt.
+
+Merci encore, mais je dois filer !
+
+Fais donc le tour du Musée, si tu veux.
+
+@@ SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip
+J'ai vu une maquette de bateau ici.
+
+Ça m'a rappelé le Bateau Abandonné, près du Village Myokara… Il paraît qu'on y entend des pleurs, la nuit.
+
+@@ SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum
+Ne cours pas dans le Musée !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine
+Waouh, le sous-marin est trop beau ! Je veux monter dedans !
+
+@@ SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1
+“Échantillon d'eau no 1”, indique l'étiquette.
+
+Toutes les mers sont reliées, mais l'eau semble différente d'une région à l'autre.
+
+@@ SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2
+“Échantillon d'eau no 2”, indique l'étiquette.
+
+La mer est-elle plus ou moins salée selon la région ?
+
+@@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment
+Une balle en caoutchouc gonfle et rétrécit.
+
+“Dans la mer, le poids de l'eau exerce une pression.
+
+“Près de la surface, elle est faible.
+
+“Mais dans les abysses, elle peut atteindre des dizaines de milliers de tonnes sur une petite surface. De quoi écraser un sous-marin comme une canette.”
+
+@@ SlateportCity_OceanicMuseum_2F_Text_HoennModel
+“Maquette de la région de Hoenn”
+
+Une maquette miniature de Hoenn.
+
+Où est Bourg-en-Vol, là-dessus ? Ah. C'est le point minuscule.
+
+@@ SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay
+Un panneau sur les courants marins.
+
+“Au fond de la mer, l'eau circule à cause des différences de température et de salinité.”
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay
+Un panneau sur les courants marins.
+
+“En surface, l'eau circule en courants poussés par les vents.”
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica
+“Le ferry M.S. Marée
+
+“Maquette du navire en construction au chantier naval de Stern.”
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica
+“Explorateur Sous-Marin 1
+
+“Maquette du sous-marin d'exploration des fonds marins.”
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica
+“Capsule submersible
+
+“Maquette d'une petite capsule sans équipage pour explorer les fonds.”
+
+@@ SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica
+“M.S. Anne
+
+“Maquette du paquebot de luxe qui fait le tour du monde.”
+
+// ===== Chantier naval de Stern =====
+
+@@ SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails
+Euh… Si ça va là, et que ça va là-bas…
+
+Alors ce truc-là, il va où ? Et ce bidule ?
+
+Aaargh ! J'y comprends rien !
+
+@@ SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern
+Hm ? Salut, moi c'est Dock.
+
+Le Capitaine Stern m'a commandé un ferry.
+
+Oh ! Ce sont les Pièces Devon ?
+
+Mais, hmm… Ça ne va pas…
+
+Le Capitaine est parti quelque part. Il avait du travail, il a dit.
+
+Tu pourrais le retrouver et lui remettre ce colis ?
+
+@@ SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern
+Dock : Où est passé le Capitaine Stern ?
+
+Tu pourrais le retrouver et lui remettre ce colis ?
+
+@@ SlateportCity_SternsShipyard_1F_Text_CouldUseAdviceFromVeteran
+Dock : Construire un navire, c'est un art.
+
+Beaucoup de choses ne se calculent pas.
+
+J'aurais bien besoin des conseils d'un vieux marin qui connaît la mer…
+
+@@ SlateportCity_SternsShipyard_1F_Text_BrineyJoinedUs
+Dock : Salut ! M. Marco nous a rejoints pour nous aider.
+
+Grâce à ce vieux loup de mer, le ferry prend forme.
+
+@@ SlateportCity_SternsShipyard_1F_Text_FerryIsReady
+Dock : Le ferry est enfin prêt !
+
+Le nouveau M.S. Marée est une merveille de technologie !
+
+Mais j'ai l'impression qu'on peut faire encore mieux.
+
+La technologie n'arrête jamais d'avancer. Moi non plus.
+
+@@ SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock
+M. Marco : Ah, {PLAYER} ! Ça faisait longtemps !
+
+Depuis notre rencontre, ce vieux loup de mer a retrouvé la forme !
+
+Alors j'aide Dock à construire un ferry.
+
+Un ferry, ça transporte plein de gens. En sécurité. Pas comme mon vieux rafiot.
+
+Ce Dock, c'est un sacré gamin.
+
+Avec son génie et mon expérience, on va construire un navire que la mer ne pourra pas avaler !
+
+@@ SlateportCity_SternsShipyard_1F_Text_SeaIsLikeLivingThing
+Les saisons, la météo, la place de la lune dans le ciel…
+
+Tout ça change l'humeur de la mer.
+
+Oui ! La mer est vivante. Et elle a de la rancune.
+
+@@ SlateportCity_SternsShipyard_1F_Text_GetSeasickEasily
+J'ai le mal de mer au moindre clapotis. Alors j'aide ici, sur la terre ferme.
+
+@@ SlateportCity_SternsShipyard_2F_Text_ShipDesignMoreLikeBuilding
+Concevoir un grand navire, c'est plus proche de construire un immeuble que de fabriquer un véhicule.
+
+@@ SlateportCity_SternsShipyard_2F_Text_FloatsBecauseBuoyancy
+Tu trouves pas ça bizarre qu'un navire en fer flotte ?
+
+C'est grâce à la poussée d'Archimède.

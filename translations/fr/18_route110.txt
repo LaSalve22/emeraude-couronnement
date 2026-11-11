@@ -1,0 +1,221 @@
+// Chapitre 2 — Route 110 (piste cyclable, rival, Prof. Seko)
+
+@@ Route110_Text_WeCantTalkAboutAquaActivities
+Les activités de la Team Aqua… On peut pas en parler. Pas encore. Après, ce sera trop tard.
+
+@@ Route110_Text_KickUpARuckus
+J'ai trop hâte d'aller à Poivressel foutre le bordel !
+
+@@ Route110_Text_MyFirstJobInAqua
+C'est ma première mission depuis que je suis entré dans la Team Aqua. J'ai un peu peur. Ils ont un drôle de regard, les anciens.
+
+@@ Route110_Text_AquaActionsBringSmiles
+Les actions de la Team Aqua doivent faire sourire les gens ! …Enfin, ceux qui restent.
+
+@@ Route110_Text_MayLetsBattle
+Flora : Salut, {PLAYER} ! Ça fait un bail !
+
+Pendant que je cherchais des Pokémon, les miens sont devenus super forts.
+
+Alors… un petit combat ?
+
+@@ Route110_Text_MayDefeated
+Aïe ! Encore ?! T'es un monstre !
+
+@@ Route110_Text_MayTakeThis
+Flora : {PLAYER}, toi aussi tu t'es entraîné comme un fou, hein ?
+
+Tu mérites une récompense ! Cadeau !
+
+@@ Route110_Text_MayExplainItemfinder
+Flora : C'est un Cherch'Objet.
+
+Si un objet est caché quelque part, il sonne.
+
+Bon, {PLAYER}, à la prochaine !
+
+Je sais que c'est bizarre venant de moi, mais entraîne-toi encore plus. La prochaine fois, je ne perdrai pas.
+
+…Et fais attention à la Team Aqua. J'ai vu ce qu'ils ont fait à un Goélise blessé sur la plage. Je veux plus jamais voir ça.
+
+@@ Route110_Text_BrendanLetsBattle
+Brice : Tiens, {PLAYER}. Te voilà. Ça roule ?
+
+T'as entraîné tes Pokémon ? Je vais vérifier.
+
+@@ Route110_Text_BrendanDefeated
+Hmm… T'es douée. Trop douée.
+
+@@ Route110_Text_BrendanTakeThis
+Brice : {PLAYER}, t'as progressé dans mon dos…
+
+Bon. Tiens, prends ça.
+
+@@ Route110_Text_BrendanExplainItemfinder
+Brice : C'est un Cherch'Objet.
+
+Il sert à trouver les objets cachés.
+
+S'il sent quelque chose, il sonne.
+
+Bon, je vais chercher de nouveaux Pokémon. La prochaine fois, je t'écrase. C'est une promesse.
+
+@@ Route110_Text_RideBikeAtFullSpeed
+Ce serait génial de foncer à fond à Vélo sur la Piste Cyclable, non ?
+
+@@ Route110_Text_HairStreamsBehindMe
+T'as vu comme mes cheveux noirs flottent derrière moi ?
+
+Je les ai laissés pousser rien que pour ça. Trois ans. Ça valait le coup.
+
+@@ Route110_Text_YouGotBikeFromRydel
+Oh, t'as eu ce Vélo chez Rydel !
+
+Ça se voit, c'est écrit dessus…
+
+RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL…
+
+RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL, RYDEL…
+
+…Ouais. C'est écrit partout. C'est pas du vélo, c'est un panneau publicitaire.
+
+@@ Route110_Text_TwoRoads
+Deux routes, l'une en haut, l'autre en bas…
+
+Une pour les humains, une pour les Pokémon. C'est peut-être juste comme ça.
+
+@@ Route110_Text_WalkOnTheLowRoad
+J'ai pas de Vélo, alors je me balade tranquille sur la route du bas.
+
+@@ Route110_Text_BikeTechniques
+Avec des techniques, faire du Vélo devient encore plus fun.
+
+Certains endroits ne sont accessibles qu'avec une technique de Vélo.
+
+@@ Route110_Text_WhichShouldIChoose
+Je choisis quoi ?
+
+Foncer à Lavandia par la Piste Cyclable, ou prendre la route du bas et chercher des Pokémon ?
+
+@@ Route110_Text_CyclingChallengeResultSummary
+Nombre de collisions : … … {STR_VAR_1} !
+
+Temps total : … … {STR_VAR_2} !
+
+@@ Route110_Text_ChallengeReactionBest
+Bravo ! Prestation splendide !
+
+Ton amour du vélo vient du fond du cœur. Tu m'as ému jusqu'à l'âme !
+
+@@ Route110_Text_ChallengeReactionGood
+Ta technique est remarquable.
+
+Essaie d'aller un peu plus vite, sans rien percuter.
+
+@@ Route110_Text_ChallengeReactionOk
+Tu es en progrès.
+
+Mais n'oublie jamais le pur plaisir de pédaler.
+
+@@ Route110_Text_ChallengeReactionBad
+Ma parole… Ta conduite frise le terrifiant.
+
+Il te faut beaucoup plus d'entraînement. Et une assurance.
+
+@@ Route110_Text_ChallengeReactionWorst
+…Je suis consterné…
+
+Le vélo n'est peut-être pas fait pour toi.
+
+Tu devrais sérieusement penser à rendre ce Vélo à Rydel.
+
+@@ Route110_Text_RatedForNumberOfCollisions
+C'est la Piste Cyclable.
+
+Si tu vas de Lavandia à Poivressel en Vélo de Course, on note tes collisions et ton temps total.
+
+@@ Route110_Text_AlwaysAimHigher
+Quel que soit le résultat, j'attends d'autres défis. Vise toujours plus haut !
+
+@@ Route110_Text_AcroBikesDoNotQualify
+Sur cette Piste Cyclable, seuls les Vélos de Course sont notés (collisions et temps).
+
+Les Vélos Cross ne comptent pas. Ils tournent trop facilement, ce n'est pas juste.
+
+@@ Route110_Text_SlateportCitySign
+>Route 110
+>{DOWN_ARROW} Poivressel
+
+@@ Route110_Text_CyclingRoadSign
+Piste Cyclable du Bord de Mer
+
+@@ Route110_Text_AquaWasHere
+“La Team Aqua est passée par là !”
+
+Quelqu'un l'a peint sur ce panneau, puis quelqu'un d'autre a repeint par-dessus.
+
+Maintenant, c'est écrit : “La Team Magma vous emmerde !”
+
+@@ Route110_Text_Route103Sign
+>Route 110
+>{LEFT_ARROW} Route 103
+
+@@ Route110_Text_SeasideParkingSign
+Parking du Bord de Mer
+
+@@ Route110_Text_MauvilleCitySign
+>Route 110
+>{UP_ARROW} Lavandia
+
+@@ Route110_Text_TrainerTipsPrlzSleep
+Conseils aux Dresseurs
+
+Paralyser ou endormir l'adversaire le rend impuissant.
+
+C'est une technique de combat essentielle. Et sournoise.
+
+@@ Route110_Text_TrainerTipsRegisterItems
+Conseils aux Dresseurs
+
+Les objets du Sac peuvent être réorganisés avec SELECT.
+
+@@ Route110_Text_TrickHouseSign
+“Trois pas {RIGHT_ARROW} et deux pas {UP_ARROW} pour atteindre la fabuleuse Maison Piège.”
+
+@@ Route110_Text_BestRecord
+Meilleur record actuel…
+
+Collisions : {STR_VAR_1}
+
+Temps : {STR_VAR_2}
+
+@@ Route110_Text_ThereIsNoRecord
+Meilleur record actuel…
+
+Personne n'a encore relevé le défi. Aucun record…
+
+@@ Route110_Text_ImagineSeeingYouHere
+Prof. Seko : Oh, {PLAYER} ! Quelle surprise !
+
+Et où est passé mon {RIVAL} ?
+
+@@ Route110_Text_HeardYouInstallMatchCall
+Ah, je vois ! Vous voyagez chacun de votre côté. Très bien.
+
+Il paraît que ton PokéNav a le Match Call.
+
+Je vais t'enregistrer aussi.
+
+Comme ça, même loin, je pourrai évaluer ton Pokédex. Et vérifier que tu es en vie.
+
+… … … … … …
+
+@@ Route110_Text_RegisteredBirchInPokenav
+Le Prof. Seko a été enregistré dans le PokéNav.
+
+@@ Route110_Text_KeepAnEyeOutForRival
+Prof. Seko : {PLAYER}…
+
+Garde un œil sur {RIVAL}, s'il te plaît. Ça fonce partout sans réfléchir. C'est de famille. … … … … … …
+
+Bon, je file. À bientôt, {PLAYER} !

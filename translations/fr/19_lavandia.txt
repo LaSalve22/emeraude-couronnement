@@ -1,0 +1,339 @@
+// Chapitre 2 — Lavandia (Timmy et son oncle, Voltère) et Arène de Voltère
+
+// ===== Lavandia =====
+
+@@ MauvilleCity_Text_UncleHesTooPeppy
+Oncle : C'est grâce aux Pokémon que ce gamin a retrouvé de l'énergie, je suppose… Mais là, il en a un peu trop.
+
+@@ MauvilleCity_Text_WallyWantToChallengeGym
+Timmy : Allez, tonton, s'il te plaît !
+
+Je veux défier cette Arène pour voir à quel point j'ai progressé.
+
+S'il te plaît ? Je peux ?
+
+@@ MauvilleCity_Text_UncleYourePushingIt
+Oncle : Doucement, Timmy.
+
+Depuis que tu vis avec des Pokémon, tu as beaucoup changé. Tu manges, tu dors, tu ris.
+
+Mais défier une Arène du jour au lendemain… Tu ne crois pas que tu vas trop vite ? Ton cœur…
+
+@@ MauvilleCity_Text_WallyWeCanBeatAnyone
+Timmy : Je ne vais pas trop vite.
+
+J'ai déjà perdu assez de temps dans un lit d'hôpital. Avec Tarsal, on peut battre n'importe qui !
+
+@@ MauvilleCity_Text_WallyWillYouBattleMe
+Timmy : Oh ! Salut, {PLAYER} !
+
+Je suis devenu beaucoup plus fort depuis notre rencontre.
+
+{PLAYER}, je veux que toi et mon oncle, vous le voyiez.
+
+{PLAYER}, s'il te plaît, bats-toi contre moi.
+
+@@ MauvilleCity_Text_WallyMyUncleWontKnowImStrong
+Timmy : Oh… Si tu refuses, mon oncle ne saura jamais que je suis vraiment devenu fort. Il continuera à me regarder comme si j'allais casser.
+
+@@ MauvilleCity_Text_UncleCanYouBattleWally
+Oncle : {PLAYER}, c'est ça ? Pour Timmy, tu veux bien l'affronter, juste une fois ?
+
+Dans cet état, il n'écoutera personne.
+
+@@ MauvilleCity_Text_WallyPleaseBattleMe
+Timmy : {PLAYER}, s'il te plaît ! Bats-toi contre moi.
+
+@@ MauvilleCity_Text_WallyHereICome
+Timmy : {PLAYER}, merci.
+
+OK… J'arrive ! Ne me ménage pas !
+
+@@ MauvilleCity_Text_WallyDefeat
+Timmy : … … … … … … …
+
+… … … … … … … …
+
+J'ai perdu…
+
+@@ MauvilleCity_Text_WallyIllGoBackToVerdanturf
+Timmy : Tonton… Je rentre à Vergazon…
+
+@@ MauvilleCity_Text_ThankYouNotEnoughToBattle
+{PLAYER}, merci. C'est dur, d'être Dresseur, hein ?
+
+Avoir des Pokémon et les faire se battre, ça ne suffit pas. Ce n'est pas ça, être un vrai Dresseur.
+
+Mais je vais devenir plus fort. J'ai un corps fragile, pas un cœur fragile.
+
+@@ MauvilleCity_Text_UncleNoNeedToBeDown
+Oncle : Timmy, inutile de te rabaisser.
+
+Rien ne t'empêche de devenir de plus en plus fort.
+
+Allez, on rentre. Tout le monde t'attend.
+
+@@ MauvilleCity_Text_UncleVisitUsSometime
+Oncle : {PLAYER}, je viens de comprendre : c'est toi qui as accompagné Timmy quand il a capturé son Pokémon.
+
+Viens nous voir à Vergazon un jour. Timmy serait ravi. Il parle de toi tous les soirs.
+
+@@ MauvilleCity_Text_WallyPokenavCall
+… … … … … … … … … … … Bip !
+
+Timmy : Oh, salut, {PLAYER} !
+
+Je voulais te dire : mon oncle m'a acheté un PokéNav !
+
+Maintenant, je peux t'appeler quand je veux !
+
+… … … … … … … … … … … Clic !
+
+@@ MauvilleCity_Text_RegisteredWally
+Timmy a été enregistré dans le PokéNav.
+
+@@ MauvilleCity_Text_ScottYouDidntHoldBack
+Scott : Hé hé… J'ai vu ce combat !
+
+Ce petit Timmy, c'est ton ami, non ?
+
+Et pourtant, tu ne l'as pas ménagé. Tu l'as battu sans pitié.
+
+Ouais ! C'est ça, un vrai combat Pokémon ! Le respect, c'est de tout donner.
+
+J'admire les Dresseurs comme toi !
+
+… … … … … … Je suis à fond derrière toi !
+
+@@ MauvilleCity_Text_WattsonNeedFavorTakeKey
+Voltère : Oh, {PLAYER} ! T'as l'air plein d'énergie ! C'est bien, ça, wahahahaha !
+
+C'est décidé ! J'ai un service à te demander !
+
+Sous Lavandia, il y a un quartier souterrain : Nouvelle Lavandia.
+
+J'aimerais que tu y ailles couper le Générateur.
+
+Il déraille depuis un moment. Ça devient dangereux. Un technicien y a laissé deux doigts la semaine dernière.
+
+Tiens, la Clé de Nouvelle Lavandia.
+
+@@ MauvilleCity_Text_WattsonWontBeChallenge
+Voltère : T'inquiète pas. Pour toi, ce sera une promenade.
+
+L'entrée de Nouvelle Lavandia est à deux brasses de la Route 110.
+
+Voilà, je te fais confiance ! Wahahahaha !
+
+@@ MauvilleCity_Text_WattsonThanksTakeTM
+Voltère : Wahahahaha !
+
+Je le savais, {PLAYER} ! J'ai eu raison de te le demander !
+
+Voilà mon merci : une CT qui contient Tonnerre !
+
+Allez, tu l'as mérité !
+
+@@ MauvilleCity_Text_WattsonYoungTakeCharge
+Voltère : Wahahahaha !
+
+Ça me fait chaud au cœur de voir les jeunes prendre les choses en main ! Moi, je commence à rouiller.
+
+@@ MauvilleCity_Text_NurseHurtMonBackToHealth
+Les combats Pokémon, c'est cool…
+
+Mais si ton Pokémon est blessé, faut le soigner. Sinon, t'es juste un bourreau.
+
+@@ MauvilleCity_Text_AllSortsOfPeopleComeThrough
+Les routes de cette ville vont au nord, au sud, à l'est et à l'ouest.
+
+Du coup, on voit passer toutes sortes de gens. Des bons et des moins bons.
+
+@@ MauvilleCity_Text_RydelVeryGenerous
+Tu connais Rydel Cycles ?
+
+Rydel, le patron, est très généreux. Un peu trop, même. Je me demande comment il paie son loyer.
+
+@@ MauvilleCity_Text_PokemonCanJumpYouOnBike
+Même à Vélo, les Pokémon sauvages peuvent te sauter dessus.
+
+@@ MauvilleCity_Text_CitySign
+>Lavandia
+>“La ville brillante et pleine de joie !”
+
+@@ MauvilleCity_Text_GymSign
+>Arène Pokémon de Lavandia
+>Champion : Voltère
+>“L'homme joyeusement électrisant !”
+
+@@ MauvilleCity_Text_BikeShopSign
+“Roulez dans la caillasse et secouez-vous l'âme !”
+
+Rydel Cycles
+
+@@ MauvilleCity_Text_GameCornerSign
+“Le lieu de jeu pour tous !”
+
+Casino de Lavandia
+
+@@ MauvilleCity_Text_ExplainTV
+Salut, tu regardes la télé ?
+
+Ils ont ajouté plein de nouvelles émissions.
+
+La télé, c'est génial. J'ai déjà vu mes potes passer dedans, sans prévenir.
+
+Et parfois, ils te mettent à la télé sans te demander ton avis.
+
+J'aimerais bien passer à la télé un jour.
+
+Alors regarde la télé dès que tu peux.
+
+@@ MauvilleCity_Text_BeenCheckingOutTV
+Salut, tu as regardé la télé ?
+
+// ===== Arène de Lavandia =====
+
+@@ MauvilleCity_Gym_Text_GymGuideAdvice
+Yo, futur Maître {PLAYER} !
+
+Voltère, le Champion de Lavandia, utilise des Pokémon Électrik.
+
+Si tu viens avec des Pokémon Eau, il va les griller ! Bzzt !
+
+Et il a mis des portes à interrupteurs partout dans son Arène ! Un vrai maniaque !
+
+Allez, fonce !
+
+@@ MauvilleCity_Gym_Text_GymGuidePostVictory
+Waouh, c'est électrisant ! T'as ouvert la porte à la force des volts !
+
+@@ MauvilleCity_Gym_Text_KirkIntro
+Mon âme électrique va pulvériser tes rêves, ouais-ouais !
+
+@@ MauvilleCity_Gym_Text_KirkDefeat
+C'était branché, amplifié, saturé, mec !
+
+@@ MauvilleCity_Gym_Text_KirkPostBattle
+Les Pokémon et le rock, c'est une histoire de cœur, ouais !
+
+@@ MauvilleCity_Gym_Text_ShawnIntro
+Je suis un élève de Voltère ! Je vais pas perdre si facilement !
+
+@@ MauvilleCity_Gym_Text_ShawnDefeat
+Débranché et éteint…
+
+@@ MauvilleCity_Gym_Text_ShawnPostBattle
+Voltère, notre Champion, est là depuis toujours.
+
+Il combattait déjà avant la naissance de ton père. Ce vieux briscard est increvable.
+
+@@ MauvilleCity_Gym_Text_BenIntro
+Cette Arène, c'est plein d'énigmes ! C'est trop marrant, non ?
+
+@@ MauvilleCity_Gym_Text_BenDefeat
+C'est pas marrant de perdre…
+
+@@ MauvilleCity_Gym_Text_BenPostBattle
+Voltère dit qu'il adore poser des petits pièges à interrupteurs.
+
+@@ MauvilleCity_Gym_Text_VivianIntro
+Avec mon charme et les attaques de mes Pokémon, tu vas prendre la châtaigne de ta vie !
+
+@@ MauvilleCity_Gym_Text_VivianDefeat
+C'est ta puissance qui m'a électrocutée !
+
+@@ MauvilleCity_Gym_Text_VivianPostBattle
+Il paraît que Lavandia a été fondée par Voltère.
+
+Il était Dresseur bien avant nous. Il doit en savoir, des choses. Et en cacher, aussi.
+
+@@ MauvilleCity_Gym_Text_AngeloIntro
+J'adore ce qui brille !
+
+@@ MauvilleCity_Gym_Text_AngeloDefeat
+Oh… Mes yeux sont grillés…
+
+@@ MauvilleCity_Gym_Text_AngeloPostBattle
+Voltère a un front qui brille. Ça me rend heureux ! Je pourrais le regarder pendant des heures.
+
+@@ MauvilleCity_Gym_Text_WattsonIntro
+J'ai abandonné mon projet de reconstruire la ville, oui.
+
+Le conseil municipal m'a dit que j'avais déjà assez électrocuté de monde.
+
+Alors je passe mon temps à piéger les portes de mon Arène.
+
+Oh ? Mais qu'est-ce que tu fais là ?
+
+Quoi ? Tu as passé toutes mes portes piégées ?
+
+Wahahahah ! Voilà qui est amusant !
+
+Alors moi, Voltère, Champion de Lavandia, je vais t'électriser !
+
+@@ MauvilleCity_Gym_Text_WattsonDefeat
+Wahahahah ! Bon, j'ai perdu !
+
+Tu m'as filé un sacré frisson ! Prends ce Badge !
+
+@@ MauvilleCity_Gym_Text_ReceivedDynamoBadge
+{PLAYER} reçoit le Badge Dynamo de la part de Voltère.
+
+@@ MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis
+Avec le Badge Dynamo, tes Pokémon peuvent utiliser Éclate-Roc hors combat.
+
+Et ils seront un peu plus rapides.
+
+Hmm… Prends aussi ça !
+
+@@ MauvilleCity_Gym_Text_ExplainShockWave
+La CT34 contient Onde de Choc.
+
+Une capacité fiable qui ne rate jamais ! Tu peux compter dessus !
+
+… … … … … …
+
+@@ MauvilleCity_Gym_Text_RegisteredWattson
+Le Champion Voltère a été enregistré dans le PokéNav.
+
+@@ MauvilleCity_Gym_Text_WattsonPostBattle
+Je déborde d'optimisme en voyant un jeune Dresseur aussi prometteur !
+
+@@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor
+Wahahahah ! Va de l'avant, jeunesse !
+
+@@ MauvilleCity_Gym_Text_GymStatue
+Arène Pokémon de Lavandia
+
+@@ MauvilleCity_Gym_Text_GymStatueCertified
+Arène Pokémon de Lavandia
+
+>Dresseurs reconnus par Voltère :
+>{PLAYER}
+
+@@ MauvilleCity_Gym_Text_WattsonPreRematch
+Voltère : Ah-ha ! Enfin ! Je sais ce que tu veux. Tu veux affronter mes Pokémon !
+
+Wahahahaha !
+
+Je vais te faire jaillir des étincelles ! On ne pourra pas dire que je n'ai rien dit !
+
+@@ MauvilleCity_Gym_Text_WattsonRematchDefeat
+Ouf… Nos batteries sont à plat…
+
+@@ MauvilleCity_Gym_Text_WattsonPostRematch
+Voltère : Il va falloir recharger nos batteries.
+
+Quand on sera à bloc, on acceptera ton défi avec plaisir.
+
+Alors reviens un de ces jours, d'accord ?
+
+@@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
+Voltère : Ah-ha ! Enfin ! Je sais ce que tu veux. Tu veux affronter mes Pokémon !
+
+Wahahahaha !
+
+Oups ! Attends ! Tu n'as qu'un seul Pokémon !
+
+Reviens avec au moins deux Pokémon, d'accord ?
