@@ -1,0 +1,43 @@
+// Choix de la difficulté au tout début de la partie (camion de déménagement)
+
+@@ InsideOfTruck_Text_ChooseDifficultyIntro
+Le camion roule. Les cartons tremblent.
+
+Avant que l'aventure commence, une question. Et elle compte.
+
+@@ InsideOfTruck_Text_WhichDifficulty
+Quelle difficulté veux-tu ?
+
+@@ InsideOfTruck_Text_ExplainNormal
+Normal
+
+Le défi d'Émeraude Couronnement, avec des règles souples.
+
+Objets de soin autorisés en combat. Tu peux changer de Pokémon après un K.O. adverse.
+
+Choisir Normal ?
+
+@@ InsideOfTruck_Text_ExplainHard
+Hard
+
+Les dresseurs ont d'autres Pokémon, bien mieux construits : EV, IV, attaques et objets pensés pour te faire mal.
+
+Aucun objet de soin en combat. Mode Set obligatoire.
+
+Choisir Hard ?
+
+@@ InsideOfTruck_Text_ExplainKaizo
+Kaizo
+
+Comme Hard, en pire. Les équipes adverses sont taillées pour te broyer. Chaque erreur se paie.
+
+Aucun objet de soin en combat. Mode Set obligatoire.
+
+On t'aura prévenu. Choisir Kaizo ?
+
+@@ InsideOfTruck_Text_DifficultyChosen
+C'est noté.
+
+Tu pourras baisser la difficulté plus tard. Jamais la remonter.
+
+Bonne route. Et bonne chance.
