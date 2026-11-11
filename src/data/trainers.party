@@ -24673,6 +24673,1014 @@ EVs: 252 HP / 252 Def
 - Recover
 - Haze
 
+=== TRAINER_WALLY_VR_1 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Altaria
+Adamant Nature
+Level: 80
+Ability: Natural Cure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Delcatty
+Jolly Nature
+Level: 80
+Ability: Wonder Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- Wild Charge
+
+Roserade
+Timid Nature
+Level: 81
+Ability: Natural Cure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Giga Drain
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
+
+Magnezone
+Modest Nature
+Level: 81
+Ability: Magnet Pull
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 HP
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Protect
+
+Gardevoir @ Sitrus Berry
+Modest Nature
+Level: 82
+Ability: Trace
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 SpA / 252 Spe
+- Moonblast
+- Psychic
+- Mystical Fire
+- Calm Mind
+
+=== TRAINER_WALLY_VR_1 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Altaria @ Lum Berry
+Adamant Nature
+Level: 83
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Gallade @ Focus Sash
+Jolly Nature
+Level: 83
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Swords Dance
+
+Roserade @ Life Orb
+Timid Nature
+Level: 83
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Giga Drain
+- Sludge Bomb
+- Shadow Ball
+- Spikes
+
+Magnezone @ Choice Specs
+Modest Nature
+Level: 83
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Delcatty @ Silk Scarf
+Jolly Nature
+Level: 83
+Ability: Normalize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- Wild Charge
+
+Gardevoir @ Gardevoirite
+Timid Nature
+Level: 84
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Hyper Voice
+- Psyshock
+- Mystical Fire
+- Calm Mind
+
+=== TRAINER_WALLY_VR_2 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Altaria
+Adamant Nature
+Level: 86
+Ability: Natural Cure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Delcatty
+Jolly Nature
+Level: 86
+Ability: Wonder Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- Wild Charge
+
+Roserade
+Timid Nature
+Level: 87
+Ability: Natural Cure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Giga Drain
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
+
+Magnezone
+Modest Nature
+Level: 87
+Ability: Magnet Pull
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 HP
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Protect
+
+Gardevoir @ Sitrus Berry
+Modest Nature
+Level: 88
+Ability: Trace
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 SpA / 252 Spe
+- Moonblast
+- Psychic
+- Mystical Fire
+- Calm Mind
+
+=== TRAINER_WALLY_VR_2 ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Altaria @ Lum Berry
+Adamant Nature
+Level: 89
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Gallade @ Focus Sash
+Jolly Nature
+Level: 89
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Swords Dance
+
+Roserade @ Life Orb
+Timid Nature
+Level: 89
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Giga Drain
+- Sludge Bomb
+- Shadow Ball
+- Spikes
+
+Magnezone @ Choice Specs
+Modest Nature
+Level: 89
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Delcatty @ Silk Scarf
+Jolly Nature
+Level: 89
+Ability: Normalize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- Wild Charge
+
+Gardevoir @ Gardevoirite
+Timid Nature
+Level: 90
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Hyper Voice
+- Psyshock
+- Mystical Fire
+- Calm Mind
+
+=== TRAINER_SIDNEY ===
+Name: SIDNEY
+Class: Elite Four
+Pic: Elite Four Sidney
+Gender: Male
+Music: Elite Four
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+Difficulty: Hard
+
+Mightyena
+Jolly Nature
+Level: 81
+Ability: Intimidate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Crunch
+- Play Rough
+- Sucker Punch
+- Ice Fang
+
+Shiftry
+Adamant Nature
+Level: 81
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Leaf Blade
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Cacturne
+Adamant Nature
+Level: 82
+Ability: Water Absorb
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+- Seed Bomb
+- Knock Off
+- Drain Punch
+- Spikes
+
+Crawdaunt
+Adamant Nature
+Level: 82
+Ability: Adaptability
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Crabhammer
+- Knock Off
+- Aqua Jet
+- Swords Dance
+
+Absol @ Sitrus Berry
+Jolly Nature
+Level: 83
+Ability: Super Luck
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 Atk / 252 Spe
+- Night Slash
+- Psycho Cut
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_SIDNEY ===
+Name: SIDNEY
+Class: Elite Four
+Pic: Elite Four Sidney
+Gender: Male
+Music: Elite Four
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Difficulty: Kaizo
+
+Mightyena @ Sitrus Berry
+Jolly Nature
+Level: 83
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Crunch
+- Play Rough
+- Sucker Punch
+- Ice Fang
+
+Shiftry @ Focus Sash
+Adamant Nature
+Level: 83
+Ability: Wind Rider
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Leaf Blade
+- Knock Off
+- Sucker Punch
+- Tailwind
+
+Hydreigon @ Choice Specs
+Timid Nature
+Level: 83
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Dark Pulse
+- Draco Meteor
+- Flash Cannon
+- Fire Blast
+
+Crawdaunt @ Life Orb
+Adamant Nature
+Level: 83
+Ability: Adaptability
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Crabhammer
+- Knock Off
+- Aqua Jet
+- Swords Dance
+
+Tyranitar @ Leftovers
+Adamant Nature
+Level: 83
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk
+- Stone Edge
+- Crunch
+- Earthquake
+- Stealth Rock
+
+Absol @ Absolite
+Jolly Nature
+Level: 84
+Ability: Justified
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Knock Off
+- Psycho Cut
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_PHOEBE ===
+Name: PHOEBE
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+Difficulty: Hard
+
+Dusclops
+Relaxed Nature
+Level: 82
+Ability: Pressure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Def
+- Shadow Sneak
+- Will-O-Wisp
+- Pain Split
+- Trick Room
+
+Banette
+Adamant Nature
+Level: 82
+Ability: Frisk
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+- Poltergeist
+- Shadow Sneak
+- Knock Off
+- Gunk Shot
+
+Sableye
+Bold Nature
+Level: 83
+Ability: Prankster
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Def
+- Foul Play
+- Will-O-Wisp
+- Recover
+- Knock Off
+
+Mismagius
+Timid Nature
+Level: 83
+Ability: Levitate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+- Nasty Plot
+
+Dusknoir @ Sitrus Berry
+Adamant Nature
+Level: 84
+Ability: Pressure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 252 Atk
+- Poltergeist
+- Earthquake
+- Ice Punch
+- Shadow Sneak
+
+=== TRAINER_PHOEBE ===
+Name: PHOEBE
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Difficulty: Kaizo
+
+Sableye @ Light Clay
+Bold Nature
+Level: 84
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Foul Play
+- Will-O-Wisp
+- Reflect
+- Light Screen
+
+Gengar @ Focus Sash
+Timid Nature
+Level: 84
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Shadow Ball
+- Sludge Wave
+- Focus Blast
+- Destiny Bond
+
+Chandelure @ Choice Scarf
+Timid Nature
+Level: 84
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Shadow Ball
+- Fire Blast
+- Energy Ball
+- Trick
+
+Dusknoir @ Leftovers
+Adamant Nature
+Level: 84
+Ability: Frisk
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk
+- Poltergeist
+- Earthquake
+- Ice Punch
+- Trick Room
+
+Mismagius @ Life Orb
+Timid Nature
+Level: 84
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+- Nasty Plot
+
+Banette @ Banettite
+Adamant Nature
+Level: 85
+Ability: Frisk
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Poltergeist
+- Shadow Sneak
+- Knock Off
+- Gunk Shot
+
+=== TRAINER_GLACIA ===
+Name: GLACIA
+Class: Elite Four
+Pic: Elite Four Glacia
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Hard
+
+Glalie
+Jolly Nature
+Level: 83
+Ability: Inner Focus
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Icicle Crash
+- Earthquake
+- Ice Shard
+- Crunch
+
+Froslass
+Timid Nature
+Level: 83
+Ability: Snow Cloak
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Ice Beam
+- Shadow Ball
+- Thunderbolt
+- Spikes
+
+Abomasnow
+Quiet Nature
+Level: 83
+Ability: Snow Warning
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 HP
+- Blizzard
+- Giga Drain
+- Earth Power
+- Ice Shard
+
+Cloyster
+Adamant Nature
+Level: 84
+Ability: Skill Link
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Icicle Spear
+- Rock Blast
+- Ice Shard
+- Shell Smash
+
+Walrein @ Sitrus Berry
+Modest Nature
+Level: 84
+Ability: Thick Fat
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 252 SpA
+- Blizzard
+- Surf
+- Earth Power
+- Protect
+
+=== TRAINER_GLACIA ===
+Name: GLACIA
+Class: Elite Four
+Pic: Elite Four Glacia
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Pink
+Difficulty: Kaizo
+
+Ninetales-Alola @ Light Clay
+Timid Nature
+Level: 84
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
+
+Cloyster @ Focus Sash
+Adamant Nature
+Level: 84
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Icicle Spear
+- Rock Blast
+- Ice Shard
+- Shell Smash
+
+Mamoswine @ Life Orb
+Adamant Nature
+Level: 85
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Icicle Crash
+- Earthquake
+- Ice Shard
+- Knock Off
+
+Weavile @ Choice Band
+Jolly Nature
+Level: 85
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Triple Axel
+- Knock Off
+- Ice Shard
+- Low Kick
+
+Walrein @ Leftovers
+Modest Nature
+Level: 85
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Blizzard
+- Surf
+- Earth Power
+- Protect
+
+Glalie @ Glalitite
+Jolly Nature
+Level: 85
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Double-Edge
+- Earthquake
+- Ice Shard
+- Explosion
+
+=== TRAINER_DRAKE ===
+Name: DRAKE
+Class: Elite Four
+Pic: Elite Four Drake
+Gender: Male
+Music: Elite Four
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Hard
+
+Altaria
+Adamant Nature
+Level: 84
+Ability: Natural Cure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Kingdra
+Modest Nature
+Level: 84
+Ability: Swift Swim
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Flash Cannon
+
+Flygon
+Jolly Nature
+Level: 84
+Ability: Levitate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Haxorus
+Jolly Nature
+Level: 84
+Ability: Mold Breaker
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Dragon Claw
+- Earthquake
+- Poison Jab
+- Dragon Dance
+
+Salamence @ Sitrus Berry
+Adamant Nature
+Level: 85
+Ability: Intimidate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 Atk / 252 Spe
+- Dragon Claw
+- Earthquake
+- Fire Fang
+- Dragon Dance
+
+=== TRAINER_DRAKE ===
+Name: DRAKE
+Class: Elite Four
+Pic: Elite Four Drake
+Gender: Male
+Music: Elite Four
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Difficulty: Kaizo
+
+Dragonite @ Heavy-Duty Boots
+Adamant Nature
+Level: 85
+Ability: Multiscale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Extreme Speed
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+Garchomp @ Rocky Helmet
+Jolly Nature
+Level: 85
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Earthquake
+- Scale Shot
+- Stone Edge
+- Stealth Rock
+
+Kingdra @ Choice Specs
+Modest Nature
+Level: 85
+Ability: Sniper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Flash Cannon
+
+Flygon @ Choice Scarf
+Jolly Nature
+Level: 85
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Earthquake
+- Outrage
+- U-turn
+- Fire Punch
+
+Haxorus @ Focus Sash
+Jolly Nature
+Level: 85
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Outrage
+- Earthquake
+- Poison Jab
+- Dragon Dance
+
+Salamence @ Salamencite
+Adamant Nature
+Level: 85
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Double-Edge
+- Earthquake
+- Dual Wingbeat
+- Dragon Dance
+
+=== TRAINER_WALLACE ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+Difficulty: Hard
+
+Wailord
+Modest Nature
+Level: 84
+Ability: Pressure
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 SpA
+- Water Spout
+- Ice Beam
+- Hydro Pump
+- Rain Dance
+
+Tentacruel
+Timid Nature
+Level: 84
+Ability: Clear Body
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Sludge Bomb
+- Scald
+- Knock Off
+- Toxic Spikes
+
+Ludicolo
+Modest Nature
+Level: 84
+Ability: Swift Swim
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Fake Out
+
+Whiscash
+Adamant Nature
+Level: 85
+Ability: Oblivious
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+- Earthquake
+- Waterfall
+- Stone Edge
+- Dragon Dance
+
+Gyarados
+Adamant Nature
+Level: 85
+Ability: Intimidate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+- Waterfall
+- Earthquake
+- Crunch
+- Dragon Dance
+
+Milotic @ Sitrus Berry
+Modest Nature
+Level: 85
+Ability: Competitive
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 252 SpA
+- Scald
+- Ice Beam
+- Dragon Pulse
+- Recover
+
+=== TRAINER_WALLACE ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Difficulty: Kaizo
+
+Pelipper @ Damp Rock
+Modest Nature
+Level: 85
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Scald
+- Hurricane
+- U-turn
+- Roost
+
+Ludicolo @ Life Orb
+Modest Nature
+Level: 85
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Fake Out
+
+Tentacruel @ Black Sludge
+Timid Nature
+Level: 85
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Sludge Bomb
+- Hydro Pump
+- Knock Off
+- Toxic Spikes
+
+Swampert @ Leftovers
+Adamant Nature
+Level: 85
+Ability: Damp
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk
+- Waterfall
+- Earthquake
+- Ice Punch
+- Stealth Rock
+
+Gyarados @ Gyaradosite
+Adamant Nature
+Level: 85
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Waterfall
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Milotic @ Leftovers
+Bold Nature
+Level: 85
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Scald
+- Ice Beam
+- Recover
+- Haze
+
 === TRAINER_TAKAO ===
 Name: TAKAO
 Class: Black Belt
@@ -42256,6 +43264,2968 @@ EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
 Kingdra @ Oran Berry
 Serious Nature
 Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_ALLISON ===
+Name: ALLISON
+Class: Triathlete
+Pic: Swimming Triathlete F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Starmie
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Electrode
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_ALLISON ===
+Name: ALLISON
+Class: Triathlete
+Pic: Swimming Triathlete F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Starmie
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Raichu
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Zebstrika @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_CHASE ===
+Name: CHASE
+Class: Triathlete
+Pic: Swimming Triathlete M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Starmie
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Electrode
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_CHASE ===
+Name: CHASE
+Class: Triathlete
+Pic: Swimming Triathlete M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Starmie
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Manectric
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Plusle @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_CLARENCE ===
+Name: CLARENCE
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Sharpedo
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Poliwrath
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_CLARENCE ===
+Name: CLARENCE
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Sharpedo
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingler
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingdra @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_REED ===
+Name: REED
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Walrein
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Sharpedo
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Azumarill
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_REED ===
+Name: REED
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Walrein
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Sharpedo
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Cloyster
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingdra @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_TISHA ===
+Name: TISHA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Lanturn
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_TISHA ===
+Name: TISHA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Lanturn
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Seaking
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Floatzel @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_KATIE ===
+Name: KATIE
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Walrein
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_KATIE ===
+Name: KATIE
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Seaking
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Walrein
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lanturn
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingler @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_RODNEY ===
+Name: RODNEY
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_RODNEY ===
+Name: RODNEY
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingler
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Tentacruel @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_SANTIAGO ===
+Name: SANTIAGO
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Tentacruel
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Wailord
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Kingler
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_SANTIAGO ===
+Name: SANTIAGO
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Tentacruel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Wailord
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Tentacruel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingdra @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_HERMAN ===
+Name: HERMAN
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Tentacruel
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Cloyster
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_HERMAN ===
+Name: HERMAN
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Tentacruel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Azumarill
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Octillery @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_KARA ===
+Name: KARA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Kingler
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_KARA ===
+Name: KARA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Seaking
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Azumarill
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingler @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_KEVIN ===
+Name: KEVIN
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Walrein
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Golduck
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_KEVIN ===
+Name: KEVIN
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Walrein
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingler
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Tentacruel @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_RELI_AND_IAN ===
+Name: RELI & IAN
+Class: Sis And Bro
+Pic: Sis And Bro
+Gender: Male
+Music: Swimmer
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Hard
+
+Azumarill
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Golduck
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_RELI_AND_IAN ===
+Name: RELI & IAN
+Class: Sis And Bro
+Pic: Sis And Bro
+Gender: Male
+Music: Swimmer
+Double Battle: Yes
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Azumarill
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lanturn
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Seaking @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_RICHARD ===
+Name: RICHARD
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Kingler
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_RICHARD ===
+Name: RICHARD
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Seaking
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Floatzel @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_SUSIE ===
+Name: SUSIE
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Luvdisc
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Octillery
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_SUSIE ===
+Name: SUSIE
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Luvdisc
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Floatzel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Octillery @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_TALIA ===
+Name: TALIA
+Class: Triathlete
+Pic: Swimming Triathlete F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Starmie
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Zebstrika
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_TALIA ===
+Name: TALIA
+Class: Triathlete
+Pic: Swimming Triathlete F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Starmie
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Luxio
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Zebstrika @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_DANA ===
+Name: DANA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Azumarill
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Lanturn
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_DANA ===
+Name: DANA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Azumarill
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Tentacruel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Pelipper @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_DARCY ===
+Name: DARCY
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Pelipper
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Camerupt
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Espeon
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_DARCY ===
+Name: DARCY
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Camerupt
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Absol
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gardevoir @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_GILBERT ===
+Name: GILBERT
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Sharpedo
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Octillery
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_GILBERT ===
+Name: GILBERT
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Sharpedo
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Poliwrath @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_JONATHAN ===
+Name: JONATHAN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Kecleon
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Exploud
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Absol
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_JONATHAN ===
+Name: JONATHAN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Kecleon
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Exploud
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Espeon
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gardevoir @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_KIYO ===
+Name: KIYO
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Hariyama
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Hitmontop
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_KIYO ===
+Name: KIYO
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Hariyama
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Toxicroak
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Machamp @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_MAKAYLA ===
+Name: MAKAYLA
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Roserade
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Medicham
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Primeape
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_MAKAYLA ===
+Name: MAKAYLA
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Roserade
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Medicham
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gurdurr
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Medicham @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_PAXTON ===
+Name: PAXTON
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Swellow
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Breloom
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gurdurr
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_PAXTON ===
+Name: PAXTON
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Swellow
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Breloom
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gurdurr
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lucario @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_RONALD ===
+Name: RONALD
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_RONALD ===
+Name: RONALD
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gyarados @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_BECK ===
+Name: BECK
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Tropius
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Swellow
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_BECK ===
+Name: BECK
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Tropius
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Swellow
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Altaria @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_CONOR ===
+Name: CONOR
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Lanturn
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Hariyama
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Toxicroak
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_CONOR ===
+Name: CONOR
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Lanturn
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Hariyama
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Machamp
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Medicham @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_DEBRA ===
+Name: DEBRA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_DEBRA ===
+Name: DEBRA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Seaking
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Floatzel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Octillery @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_FRANKLIN ===
+Name: FRANKLIN
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Walrein
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Seaking
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_FRANKLIN ===
+Name: FRANKLIN
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Walrein
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Octillery
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Cloyster @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_LINDA ===
+Name: LINDA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Kingdra
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Kingdra
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Cloyster
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_LINDA ===
+Name: LINDA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Kingdra
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Kingdra
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Floatzel
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Pelipper @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_MOLLIE ===
+Name: MOLLIE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Whiscash
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Medicham
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Hariyama
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_MOLLIE ===
+Name: MOLLIE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Whiscash
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Medicham
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Primeape
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lucario @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_WARREN ===
+Name: WARREN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Golem
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Ludicolo
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Espeon
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_WARREN ===
+Name: WARREN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Golem
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Ludicolo
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gardevoir
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Honchkrow @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_AARON ===
+Name: AARON
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Bagon
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Linoone
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_AARON ===
+Name: AARON
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Bagon
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Espeon
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Azumarill @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_ALEX ===
+Name: ALEX
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Xatu
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Swellow
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Honchkrow
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_ALEX ===
+Name: ALEX
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Xatu
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Swellow
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Dodrio
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Staraptor @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_HITOSHI ===
+Name: HITOSHI
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Machamp
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Machamp
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Hariyama
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_HITOSHI ===
+Name: HITOSHI
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Machamp
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Machamp
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Hariyama
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lucario @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_HUDSON ===
+Name: HUDSON
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Wailord
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Machamp
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_HUDSON ===
+Name: HUDSON
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Wailord
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gurdurr
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lucario @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_JACK ===
+Name: JACK
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Gyarados
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Tentacruel
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_JACK ===
+Name: JACK
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Gyarados
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Seaking
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Octillery @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_KELVIN ===
+Name: KELVIN
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Machamp
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Walrein
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Lucario
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_KELVIN ===
+Name: KELVIN
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Machamp
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Walrein
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Toxicroak
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gurdurr @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_LAUREL ===
+Name: LAUREL
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Luvdisc
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Luvdisc
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Azumarill
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_LAUREL ===
+Name: LAUREL
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Luvdisc
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Luvdisc
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Pelipper
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Golduck @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_MARLEY ===
+Name: MARLEY
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Manectric
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Aggron
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_MARLEY ===
+Name: MARLEY
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Manectric
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Weavile @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_REYNA ===
+Name: REYNA
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Medicham
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Hariyama
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Hariyama
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_REYNA ===
+Name: REYNA
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Medicham
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Hariyama
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Primeape
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gurdurr @ Oran Berry
+Serious Nature
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_HALLE ===
+Name: HALLE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Sableye
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Absol
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Weavile
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_HALLE ===
+Name: HALLE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Sableye
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Absol
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Flygon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_MICHELLE ===
+Name: MICHELLE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Torkoal
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Medicham
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Ludicolo
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Aggron
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_MICHELLE ===
+Name: MICHELLE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Torkoal
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Medicham
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Ludicolo
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gardevoir
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Honchkrow @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_MITCHELL ===
+Name: MITCHELL
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Lunatone
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Solrock
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Honchkrow
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_MITCHELL ===
+Name: MITCHELL
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Lunatone
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Solrock
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gardevoir
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Honchkrow @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_SAMUEL ===
+Name: SAMUEL
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Swellow
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Mawile
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Alakazam
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Aggron
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_SAMUEL ===
+Name: SAMUEL
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Swellow
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Mawile
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Alakazam
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Weavile
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Aggron @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_SHANNON ===
+Name: SHANNON
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Claydol
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Arcanine
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_SHANNON ===
+Name: SHANNON
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Claydol
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Weavile
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Honchkrow @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_ALBERT ===
+Name: ALBERT
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Magneton
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Muk
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gardevoir
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_ALBERT ===
+Name: ALBERT
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Magneton
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Muk
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Honchkrow
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Espeon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_EDGAR ===
+Name: EDGAR
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Cacturne
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Pelipper
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Flygon
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_EDGAR ===
+Name: EDGAR
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Cacturne
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Pelipper
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Aggron
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Weavile @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_HOPE ===
+Name: HOPE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Roserade
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gardevoir
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_HOPE ===
+Name: HOPE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Roserade
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Espeon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_KATELYNN ===
+Name: KATELYNN
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Gardevoir
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Slaking
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Gardevoir
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_KATELYNN ===
+Name: KATELYNN
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Gardevoir
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Slaking
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Gardevoir
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Absol @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_QUINCY ===
+Name: QUINCY
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Slaking
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Dusknoir
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Flygon
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_QUINCY ===
+Name: QUINCY
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Slaking
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Dusknoir
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Weavile
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Espeon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_CAROLINE ===
+Name: CAROLINE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Skarmory
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Sableye
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Aggron
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_CAROLINE ===
+Name: CAROLINE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Skarmory
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Sableye
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Flygon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_DIANNE ===
+Name: DIANNE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+Difficulty: Hard
+
+Claydol
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Lanturn
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Flygon
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_DIANNE ===
+Name: DIANNE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+Difficulty: Kaizo
+
+Claydol
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Lanturn
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Flygon
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Aggron @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_FELIX ===
+Name: FELIX
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Medicham
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Claydol
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Espeon
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_FELIX ===
+Name: FELIX
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Medicham
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Claydol
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Absol @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_JULIE ===
+Name: JULIE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Sandslash
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Ninetales
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Tropius
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Honchkrow
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_JULIE ===
+Name: JULIE
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Sandslash
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Ninetales
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Tropius
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Aggron
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Flygon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_OWEN ===
+Name: OWEN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Kecleon
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Golem
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Wailord
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Aggron
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_OWEN ===
+Name: OWEN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Kecleon
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Golem
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Wailord
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Espeon @ Oran Berry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+=== TRAINER_VITO ===
+Name: VITO
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Dodrio
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Alakazam
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Electrode
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Shiftry
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Honchkrow
+Level: 76
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_VITO ===
+Name: VITO
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Dodrio
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Alakazam
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Electrode
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Shiftry
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Honchkrow
+Serious Nature
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+
+Arcanine @ Oran Berry
+Serious Nature
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
 

@@ -20,6 +20,7 @@ et sur GitHub.
 | 9b | Aromates pour changer la nature, vendus au Centre Pokémon de Clémenti après le badge de Norman - v0.20 | ✅ livré |
 | 9c | Équipes Hard / Kaizo du chapitre 6 : rival à Nénucrique, Max (Repaire Aqua), Lévy & Tatia, 76 dresseurs (Routes 121-125, Mont Mémoria, Repaire, Arène) - v0.21 | ✅ livré |
 | 9d | Équipes Hard / Kaizo du chapitre 7 : Max & Tabitha (Centre Spatial, Pierre renforcé), Arlette, Arthur, Juan, 45 dresseurs - v0.22 | ✅ livré |
+| 9e | Équipes Hard / Kaizo du chapitre 8 : Timmy (Route Victoire), Conseil 4 et Marc (cap 85, Méga-évolution en Kaizo), 55 dresseurs (Routes 129-134, Route Victoire) - v0.23 | ✅ livré |
 | 9 | Couronnement Mondial, 2e partie : aperçu des 6 Pokémon adverses et choix à chaque manche, 4 tournois des salles de Concours, finale à 32 à la Tour de Combat (Blue en demi, Red en finale) - v0.19 | ✅ livré |
 
 ## Déjà fait
@@ -47,10 +48,11 @@ et sur GitHub.
 - v0.20 - Aromates (changement de nature) vendus à Clémenti après le badge de Norman
 - v0.21 - équipes Hard / Kaizo du chapitre 6 (rival à Nénucrique, Repaire Aqua, Lévy & Tatia)
 - v0.22 - équipes Hard / Kaizo du chapitre 7 (Centre Spatial, Grotte Fonds Marins, Juan)
+- v0.23 - équipes Hard / Kaizo du chapitre 8 (Route Victoire, Conseil 4, Marc)
 
 ## Plus tard
 
-- Équipes Hard / Kaizo du chapitre 8 (Route Victoire, Conseil 4)
+- Placer les autres Méga-Gemmes dans le monde
 - Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales
 - Demandé par Adrien : objet pour changer la nature d'un Pokémon après Norman, puis changer les EV après la Ligue

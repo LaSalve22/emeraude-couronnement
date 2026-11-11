@@ -590,6 +590,102 @@ TEAMS.update({
     },
 })
 
+# Chapitre 8 : Route Victoire (Timmy), Conseil 4 et Marc (cap 85 de la Ligue). Méga-évolution des as en Kaizo.
+TEAMS.update({
+    'WALLY_VR_1': {
+        'Hard': ["Altaria | Adamant | Natural Cure | 80 | 128 Atk / 128 Spe | Dragon Dance, Dragon Claw, Earthquake, Roost",
+                 "Delcatty | Jolly | Wonder Skin | 80 | 128 Atk / 128 Spe | Fake Out, Double-Edge, Sucker Punch, Wild Charge",
+                 "Roserade | Timid | Natural Cure | 81 | 128 SpA / 128 Spe | Giga Drain, Sludge Bomb, Shadow Ball, Sleep Powder",
+                 "Magnezone | Modest | Magnet Pull | 81 | 128 SpA / 128 HP | Thunderbolt, Flash Cannon, Volt Switch, Protect",
+                 "Gardevoir @ Sitrus Berry | Modest | Trace | 82 | 252 SpA / 252 Spe | Moonblast, Psychic, Mystical Fire, Calm Mind"],
+        'Kaizo': ["Altaria @ Lum Berry | Adamant | Natural Cure | 83 | 252 Atk / 252 Spe | Dragon Dance, Dragon Claw, Earthquake, Roost",
+                  "Gallade @ Focus Sash | Jolly | Sharpness | 83 | 252 Atk / 252 Spe | Sacred Sword, Psycho Cut, Leaf Blade, Swords Dance",
+                  "Roserade @ Life Orb | Timid | Technician | 83 | 252 SpA / 252 Spe | Giga Drain, Sludge Bomb, Shadow Ball, Spikes",
+                  "Magnezone @ Choice Specs | Modest | Magnet Pull | 83 | 252 SpA / 252 HP | Thunderbolt, Flash Cannon, Volt Switch, Body Press",
+                  "Delcatty @ Silk Scarf | Jolly | Normalize | 83 | 252 Atk / 252 Spe | Fake Out, Double-Edge, Sucker Punch, Wild Charge",
+                  "Gardevoir @ Gardevoirite | Timid | Trace | 84 | 252 SpA / 252 Spe | Hyper Voice, Psyshock, Mystical Fire, Calm Mind"],
+    },
+    'WALLY_VR_2': {
+        'Hard': ["Altaria | Adamant | Natural Cure | 86 | 128 Atk / 128 Spe | Dragon Dance, Dragon Claw, Earthquake, Roost",
+                 "Delcatty | Jolly | Wonder Skin | 86 | 128 Atk / 128 Spe | Fake Out, Double-Edge, Sucker Punch, Wild Charge",
+                 "Roserade | Timid | Natural Cure | 87 | 128 SpA / 128 Spe | Giga Drain, Sludge Bomb, Shadow Ball, Sleep Powder",
+                 "Magnezone | Modest | Magnet Pull | 87 | 128 SpA / 128 HP | Thunderbolt, Flash Cannon, Volt Switch, Protect",
+                 "Gardevoir @ Sitrus Berry | Modest | Trace | 88 | 252 SpA / 252 Spe | Moonblast, Psychic, Mystical Fire, Calm Mind"],
+        'Kaizo': ["Altaria @ Lum Berry | Adamant | Natural Cure | 89 | 252 Atk / 252 Spe | Dragon Dance, Dragon Claw, Earthquake, Roost",
+                  "Gallade @ Focus Sash | Jolly | Sharpness | 89 | 252 Atk / 252 Spe | Sacred Sword, Psycho Cut, Leaf Blade, Swords Dance",
+                  "Roserade @ Life Orb | Timid | Technician | 89 | 252 SpA / 252 Spe | Giga Drain, Sludge Bomb, Shadow Ball, Spikes",
+                  "Magnezone @ Choice Specs | Modest | Magnet Pull | 89 | 252 SpA / 252 HP | Thunderbolt, Flash Cannon, Volt Switch, Body Press",
+                  "Delcatty @ Silk Scarf | Jolly | Normalize | 89 | 252 Atk / 252 Spe | Fake Out, Double-Edge, Sucker Punch, Wild Charge",
+                  "Gardevoir @ Gardevoirite | Timid | Trace | 90 | 252 SpA / 252 Spe | Hyper Voice, Psyshock, Mystical Fire, Calm Mind"],
+    },
+    'SIDNEY': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 81 | 128 Atk / 128 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                 "Shiftry | Adamant | Chlorophyll | 81 | 128 Atk / 128 Spe | Leaf Blade, Knock Off, Sucker Punch, Swords Dance",
+                 "Cacturne | Adamant | Water Absorb | 82 | 128 Atk / 128 HP | Seed Bomb, Knock Off, Drain Punch, Spikes",
+                 "Crawdaunt | Adamant | Adaptability | 82 | 128 Atk / 128 Spe | Crabhammer, Knock Off, Aqua Jet, Swords Dance",
+                 "Absol @ Sitrus Berry | Jolly | Super Luck | 83 | 252 Atk / 252 Spe | Night Slash, Psycho Cut, Sucker Punch, Swords Dance"],
+        'Kaizo': ["Mightyena @ Sitrus Berry | Jolly | Intimidate | 83 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                  "Shiftry @ Focus Sash | Adamant | Wind Rider | 83 | 252 Atk / 252 Spe | Leaf Blade, Knock Off, Sucker Punch, Tailwind",
+                  "Hydreigon @ Choice Specs | Timid | Levitate | 83 | 252 SpA / 252 Spe | Dark Pulse, Draco Meteor, Flash Cannon, Fire Blast",
+                  "Crawdaunt @ Life Orb | Adamant | Adaptability | 83 | 252 Atk / 252 Spe | Crabhammer, Knock Off, Aqua Jet, Swords Dance",
+                  "Tyranitar @ Leftovers | Adamant | Sand Stream | 83 | 252 HP / 252 Atk | Stone Edge, Crunch, Earthquake, Stealth Rock",
+                  "Absol @ Absolite | Jolly | Justified | 84 | 252 Atk / 252 Spe | Knock Off, Psycho Cut, Sucker Punch, Swords Dance"],
+    },
+    'PHOEBE': {
+        'Hard': ["Dusclops | Relaxed | Pressure | 82 | 128 HP / 128 Def | Shadow Sneak, Will-O-Wisp, Pain Split, Trick Room",
+                 "Banette | Adamant | Frisk | 82 | 128 Atk / 128 HP | Poltergeist, Shadow Sneak, Knock Off, Gunk Shot",
+                 "Sableye | Bold | Prankster | 83 | 128 HP / 128 Def | Foul Play, Will-O-Wisp, Recover, Knock Off",
+                 "Mismagius | Timid | Levitate | 83 | 128 SpA / 128 Spe | Shadow Ball, Dazzling Gleam, Thunderbolt, Nasty Plot",
+                 "Dusknoir @ Sitrus Berry | Adamant | Pressure | 84 | 252 HP / 252 Atk | Poltergeist, Earthquake, Ice Punch, Shadow Sneak"],
+        'Kaizo': ["Sableye @ Light Clay | Bold | Prankster | 84 | 252 HP / 252 Def | Foul Play, Will-O-Wisp, Reflect, Light Screen",
+                  "Gengar @ Focus Sash | Timid | Cursed Body | 84 | 252 SpA / 252 Spe | Shadow Ball, Sludge Wave, Focus Blast, Destiny Bond",
+                  "Chandelure @ Choice Scarf | Timid | Flash Fire | 84 | 252 SpA / 252 Spe | Shadow Ball, Fire Blast, Energy Ball, Trick",
+                  "Dusknoir @ Leftovers | Adamant | Frisk | 84 | 252 HP / 252 Atk | Poltergeist, Earthquake, Ice Punch, Trick Room",
+                  "Mismagius @ Life Orb | Timid | Levitate | 84 | 252 SpA / 252 Spe | Shadow Ball, Dazzling Gleam, Thunderbolt, Nasty Plot",
+                  "Banette @ Banettite | Adamant | Frisk | 85 | 252 Atk / 252 HP | Poltergeist, Shadow Sneak, Knock Off, Gunk Shot"],
+    },
+    'GLACIA': {
+        'Hard': ["Glalie | Jolly | Inner Focus | 83 | 128 Atk / 128 Spe | Icicle Crash, Earthquake, Ice Shard, Crunch",
+                 "Froslass | Timid | Snow Cloak | 83 | 128 SpA / 128 Spe | Ice Beam, Shadow Ball, Thunderbolt, Spikes",
+                 "Abomasnow | Quiet | Snow Warning | 83 | 128 SpA / 128 HP | Blizzard, Giga Drain, Earth Power, Ice Shard",
+                 "Cloyster | Adamant | Skill Link | 84 | 128 Atk / 128 Spe | Icicle Spear, Rock Blast, Ice Shard, Shell Smash",
+                 "Walrein @ Sitrus Berry | Modest | Thick Fat | 84 | 252 HP / 252 SpA | Blizzard, Surf, Earth Power, Protect"],
+        'Kaizo': ["Ninetales-Alola @ Light Clay | Timid | Snow Warning | 84 | 252 SpA / 252 Spe | Blizzard, Moonblast, Aurora Veil, Freeze-Dry",
+                  "Cloyster @ Focus Sash | Adamant | Skill Link | 84 | 252 Atk / 252 Spe | Icicle Spear, Rock Blast, Ice Shard, Shell Smash",
+                  "Mamoswine @ Life Orb | Adamant | Thick Fat | 85 | 252 Atk / 252 Spe | Icicle Crash, Earthquake, Ice Shard, Knock Off",
+                  "Weavile @ Choice Band | Jolly | Pressure | 85 | 252 Atk / 252 Spe | Triple Axel, Knock Off, Ice Shard, Low Kick",
+                  "Walrein @ Leftovers | Modest | Thick Fat | 85 | 252 HP / 252 SpA | Blizzard, Surf, Earth Power, Protect",
+                  "Glalie @ Glalitite | Jolly | Inner Focus | 85 | 252 Atk / 252 Spe | Double-Edge, Earthquake, Ice Shard, Explosion"],
+    },
+    'DRAKE': {
+        'Hard': ["Altaria | Adamant | Natural Cure | 84 | 128 Atk / 128 Spe | Dragon Dance, Dragon Claw, Earthquake, Roost",
+                 "Kingdra | Modest | Swift Swim | 84 | 128 SpA / 128 Spe | Hydro Pump, Draco Meteor, Ice Beam, Flash Cannon",
+                 "Flygon | Jolly | Levitate | 84 | 128 Atk / 128 Spe | Earthquake, Dragon Claw, U-turn, Fire Punch",
+                 "Haxorus | Jolly | Mold Breaker | 84 | 128 Atk / 128 Spe | Dragon Claw, Earthquake, Poison Jab, Dragon Dance",
+                 "Salamence @ Sitrus Berry | Adamant | Intimidate | 85 | 252 Atk / 252 Spe | Dragon Claw, Earthquake, Fire Fang, Dragon Dance"],
+        'Kaizo': ["Dragonite @ Heavy-Duty Boots | Adamant | Multiscale | 85 | 252 Atk / 252 Spe | Extreme Speed, Dragon Claw, Earthquake, Dragon Dance",
+                  "Garchomp @ Rocky Helmet | Jolly | Rough Skin | 85 | 252 Atk / 252 Spe | Earthquake, Scale Shot, Stone Edge, Stealth Rock",
+                  "Kingdra @ Choice Specs | Modest | Sniper | 85 | 252 SpA / 252 Spe | Hydro Pump, Draco Meteor, Ice Beam, Flash Cannon",
+                  "Flygon @ Choice Scarf | Jolly | Levitate | 85 | 252 Atk / 252 Spe | Earthquake, Outrage, U-turn, Fire Punch",
+                  "Haxorus @ Focus Sash | Jolly | Mold Breaker | 85 | 252 Atk / 252 Spe | Outrage, Earthquake, Poison Jab, Dragon Dance",
+                  "Salamence @ Salamencite | Adamant | Intimidate | 85 | 252 Atk / 252 Spe | Double-Edge, Earthquake, Dual Wingbeat, Dragon Dance"],
+    },
+    'WALLACE': {
+        'Hard': ["Wailord | Modest | Pressure | 84 | 128 HP / 128 SpA | Water Spout, Ice Beam, Hydro Pump, Rain Dance",
+                 "Tentacruel | Timid | Clear Body | 84 | 128 SpA / 128 Spe | Sludge Bomb, Scald, Knock Off, Toxic Spikes",
+                 "Ludicolo | Modest | Swift Swim | 84 | 128 SpA / 128 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out",
+                 "Whiscash | Adamant | Oblivious | 85 | 128 Atk / 128 HP | Earthquake, Waterfall, Stone Edge, Dragon Dance",
+                 "Gyarados | Adamant | Intimidate | 85 | 128 Atk / 128 Spe | Waterfall, Earthquake, Crunch, Dragon Dance",
+                 "Milotic @ Sitrus Berry | Modest | Competitive | 85 | 252 HP / 252 SpA | Scald, Ice Beam, Dragon Pulse, Recover"],
+        'Kaizo': ["Pelipper @ Damp Rock | Modest | Drizzle | 85 | 252 HP / 252 SpA | Scald, Hurricane, U-turn, Roost",
+                  "Ludicolo @ Life Orb | Modest | Swift Swim | 85 | 252 SpA / 252 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out",
+                  "Tentacruel @ Black Sludge | Timid | Clear Body | 85 | 252 SpA / 252 Spe | Sludge Bomb, Hydro Pump, Knock Off, Toxic Spikes",
+                  "Swampert @ Leftovers | Adamant | Damp | 85 | 252 HP / 252 Atk | Waterfall, Earthquake, Ice Punch, Stealth Rock",
+                  "Gyarados @ Gyaradosite | Adamant | Intimidate | 85 | 252 Atk / 252 Spe | Waterfall, Crunch, Earthquake, Dragon Dance",
+                  "Milotic @ Leftovers | Bold | Competitive | 85 | 252 HP / 252 Def | Scald, Ice Beam, Recover, Haze"],
+    },
+})
+
 # Attaques qui ne font que baisser les stats adverses (ou presque rien) : retirées des équipes Hard / Kaizo
 # pour que l'IA attaque au lieu de spammer Rugissement / Jet de Sable (retour d'Adrien, v0.17).
 WEAK_MOVES = {'Leer', 'Tail Whip', 'Growl', 'Sand Attack', 'Smokescreen', 'String Shot', 'Sweet Scent',
@@ -730,6 +826,17 @@ for tid in ['BARRY', 'BRENDA', 'DEAN', 'ISOBEL', 'LEONARDO', 'NIKKI', 'PABLO_1',
     AUTO[tid] = (81, 66, 70)
 for tid in ['ANDREA', 'ANNIKA', 'BETHANY', 'BRIANNA', 'BRIDGET', 'CONNIE', 'CRISSY', 'DAPHNE', 'OLIVIA', 'TIFFANY']:
     AUTO[tid] = (81, 72, 76, 'eau')  # Arène de Juan
+
+# Chapitre 8 : mers du sud (Routes 129-134, ouvertes avec Plongée avant Juan), puis Route Victoire (cap 85 de la Ligue).
+for tid in ['ALLISON', 'CHASE', 'CLARENCE', 'REED', 'TISHA', 'KATIE', 'RODNEY', 'SANTIAGO',
+            'HERMAN', 'KARA', 'KEVIN', 'RELI_AND_IAN', 'RICHARD', 'SUSIE', 'TALIA',
+            'DANA', 'DARCY', 'GILBERT', 'JONATHAN', 'KIYO', 'MAKAYLA', 'PAXTON', 'RONALD',
+            'BECK', 'CONOR', 'DEBRA', 'FRANKLIN', 'LINDA', 'MOLLIE', 'WARREN',
+            'AARON', 'ALEX', 'HITOSHI', 'HUDSON', 'JACK', 'KELVIN', 'LAUREL', 'MARLEY', 'REYNA']:
+    AUTO[tid] = (81, 68, 72)
+for tid in ['HALLE', 'MICHELLE', 'MITCHELL', 'SAMUEL', 'SHANNON', 'ALBERT', 'EDGAR', 'HOPE', 'KATELYNN', 'QUINCY',
+            'CAROLINE', 'DIANNE', 'FELIX', 'JULIE', 'OWEN', 'VITO']:
+    AUTO[tid] = (85, 76, 80, 'elite')  # Route Victoire
 
 # Évolutions par niveau (espèce -> (niveau, évolution)), utilisées quand un plancher fait monter le niveau.
 EVOLVE = {

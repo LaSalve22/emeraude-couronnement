@@ -240,13 +240,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Générés : 12 sbires Magma / Aqua (68 / 72), 23 dresseurs des Routes 126-128 (66 / 70), 10 de l'Arène de Juan (réserve Eau,
   72 / 76) ; cap 81. Réserve ajoutée : magma (Team Magma).
 
+## Fait (v0.23) - équipes Hard / Kaizo du chapitre 8
+
+- Faits à la main (cap 85 de la Ligue) : Timmy à la Route Victoire (5 en Hard 80-82, 6 en Kaizo 83-84 avec Gallade et Méga-Gardevoir ;
+  `WALLY_VR_2`, revanche d'après-Ligue, +6 niveaux), Damien, Spectra, Glacia, Aragon (Hard 5 Pokémon 81-85, Kaizo 6 au 83-85),
+  Marc (6 / 6, 84-85). En Kaizo, l'as de chacun méga-évolue : Absol, Branette, Oniglali, Drattak, Léviator, Gardevoir.
+- Générés : 39 dresseurs des Routes 129-134 (68 / 72, cap 81 comme les Routes 126-128), 16 de la Route Victoire
+  (réserve elite, 76 / 80, cap 85).
+- À trancher avec Adrien : les caps des règles AUTO et de Juan / Lévy & Tatia (72, 81) dépassent ceux de `src/caps.c` (71, 78).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Placer les Méga-Gemmes dans le monde.
 2. Demandé par Adrien : changement d'EV après la Ligue.
-3. Équipes Hard/Kaizo du chapitre 8 (Routes 129-134, Route Victoire, rival / Wally, Conseil 4, Champion ; cap 90 puis 100).
-4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
+3. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 
