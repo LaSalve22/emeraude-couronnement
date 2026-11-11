@@ -112,10 +112,20 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Tests : `test/difficulty_rules.c`.
 - Mis de côté (Adrien) : Blue / Lucas / Aurore, en attente de sprites.
 
+## Fait (v0.8)
+
+- Équipes Hard et Kaizo des 40 dresseurs du chapitre 1 (Routes 102, 104, 116, Bois Clémenti, Arène de Mérouville,
+  rivaux Route 103 et Mérouville, voyous Aqua) : `tools/trainers/equipes_couronnement.py` (données lisibles, relançable),
+  blocs ajoutés à la fin de `src/data/trainers.party` entre deux commentaires. Hard : IV 20, équipes variées, ~+3 niveaux.
+  Kaizo : IV 31, EVs, natures, objets, ~+5 niveaux, jamais au-dessus du cap (Roxanne N.18 en Kaizo, 6 Pokémon).
+  En Hard/Kaizo, les dresseurs n'ont plus d'objets de soin (bloc Items retiré), comme le joueur.
+- Les tests ne peuvent pas vérifier ces équipes (les builds de test utilisent leurs propres dresseurs) :
+  contrôle dans `src/data/trainers.h` généré.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
-1. Équipes Hard/Kaizo des dresseurs du chapitre 1 (avec `Difficulty: Hard` / `Difficulty: Kaizo` dans trainers.party).
+1. Équipes Hard/Kaizo des chapitres suivants (même outil), en commençant par Bastien et Village Myokara.
 2. Téracristal (après badge 2) et Méga-évolution (après badge 5).
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 

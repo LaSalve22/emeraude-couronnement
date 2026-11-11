@@ -16877,3 +16877,2877 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+/* --- Émeraude Couronnement : équipes Hard / Kaizo (généré par tools/trainers/equipes_couronnement.py) --- */
+
+=== TRAINER_CALVIN_1 ===
+Name: CALVIN
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Poochyena
+Jolly Nature
+Level: 7
+Ability: Quick Feet
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Tackle
+- Howl
+- Sand Attack
+- Bite
+
+=== TRAINER_CALVIN_1 ===
+Name: CALVIN
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Poochyena @ Oran Berry
+Jolly Nature
+Level: 8
+Ability: Quick Feet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Howl
+- Sand Attack
+- Tackle
+
+Zigzagoon
+Jolly Nature
+Level: 7
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+- Baby-Doll Eyes
+
+=== TRAINER_RICK ===
+Name: RICK
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Wurmple
+Adamant Nature
+Level: 6
+Ability: Shield Dust
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Tackle
+- String Shot
+- Poison Sting
+- Bug Bite
+
+Weedle
+Jolly Nature
+Level: 6
+Ability: Shield Dust
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Poison Sting
+- String Shot
+- Bug Bite
+
+=== TRAINER_RICK ===
+Name: RICK
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Weedle @ Oran Berry
+Jolly Nature
+Level: 8
+Ability: Shield Dust
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Poison Sting
+- Bug Bite
+- String Shot
+
+Wurmple
+Adamant Nature
+Level: 8
+Ability: Shield Dust
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bug Bite
+- Poison Sting
+- String Shot
+- Tackle
+
+Kricketot
+Adamant Nature
+Level: 8
+Ability: Shed Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk
+- Bug Bite
+- Bide
+- Growl
+
+=== TRAINER_TIANA ===
+Name: TIANA
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+
+Shroomish
+Bold Nature
+Level: 6
+Ability: Effect Spore
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Stun Spore
+- Tackle
+
+=== TRAINER_TIANA ===
+Name: TIANA
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Shroomish @ Oran Berry
+Bold Nature
+Level: 8
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Stun Spore
+- Absorb
+- Leech Seed
+- Tackle
+
+Hoppip
+Timid Nature
+Level: 8
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe
+- Fairy Wind
+- Synthesis
+- Tail Whip
+- Absorb
+
+Zigzagoon
+Jolly Nature
+Level: 8
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+- Baby-Doll Eyes
+
+=== TRAINER_ALLEN ===
+Name: ALLEN
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 6
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Peck
+- Growl
+- Quick Attack
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+
+=== TRAINER_ALLEN ===
+Name: ALLEN
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Starly @ Oran Berry
+Jolly Nature
+Level: 8
+Ability: Keen Eye
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Quick Attack
+- Wing Attack
+- Growl
+
+Taillow
+Jolly Nature
+Level: 8
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Peck
+- Quick Attack
+- Growl
+- Focus Energy
+
+Bidoof
+Adamant Nature
+Level: 8
+Ability: Simple
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Headbutt
+- Defense Curl
+- Rollout
+
+=== TRAINER_LYLE ===
+Name: LYLE
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Wurmple
+Adamant Nature
+Level: 6
+Ability: Shield Dust
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bug Bite
+- Poison Sting
+- String Shot
+
+Silcoon
+Bold Nature
+Level: 7
+Ability: Shed Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Harden
+- Tackle
+
+Cascoon
+Bold Nature
+Level: 7
+Ability: Shed Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Harden
+- Tackle
+
+Kakuna
+Bold Nature
+Level: 7
+Ability: Shed Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Harden
+- Poison Sting
+
+=== TRAINER_LYLE ===
+Name: LYLE
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Beautifly @ Oran Berry
+Modest Nature
+Level: 10
+Ability: Swarm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Gust
+- Absorb
+- Stun Spore
+
+Dustox
+Bold Nature
+Level: 10
+Ability: Shield Dust
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Confusion
+- Poison Sting
+- Gust
+
+Kakuna
+Bold Nature
+Level: 9
+Ability: Shed Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP
+- Harden
+- Poison Sting
+
+Paras
+Adamant Nature
+Level: 9
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk
+- Stun Spore
+- Scratch
+- Absorb
+
+=== TRAINER_JAMES_1 ===
+Name: JAMES
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Nincada
+Adamant Nature
+Level: 8
+Ability: Compound Eyes
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Scratch
+- Sand Attack
+- Leech Life
+- Harden
+
+Paras
+Adamant Nature
+Level: 8
+Ability: Effect Spore
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Stun Spore
+- Scratch
+- Absorb
+
+=== TRAINER_JAMES_1 ===
+Name: JAMES
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Nincada @ Oran Berry
+Adamant Nature
+Level: 10
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Leech Life
+- Sand Attack
+- Harden
+- Scratch
+
+Paras
+Adamant Nature
+Level: 10
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Stun Spore
+- Absorb
+- Scratch
+- Fury Cutter
+
+Venonat
+Calm Nature
+Level: 10
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Disable
+- Supersonic
+- Confusion
+- Tackle
+
+=== TRAINER_GRUNT_PETALBURG_WOODS ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Poochyena
+Jolly Nature
+Level: 10
+Ability: Quick Feet
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bite
+- Howl
+- Sand Attack
+- Tackle
+
+Carvanha
+Adamant Nature
+Level: 9
+Ability: Rough Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bite
+- Leer
+- Focus Energy
+
+=== TRAINER_GRUNT_PETALBURG_WOODS ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Poochyena @ Oran Berry
+Jolly Nature
+Level: 12
+Ability: Quick Feet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Howl
+- Sand Attack
+- Tackle
+
+Carvanha
+Adamant Nature
+Level: 12
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Aqua Jet
+- Leer
+- Focus Energy
+
+Stunky
+Jolly Nature
+Level: 11
+Ability: Stench
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fury Swipes
+- Poison Gas
+- Feint
+
+=== TRAINER_BILLY ===
+Name: BILLY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Zigzagoon
+Jolly Nature
+Level: 8
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+
+Seedot
+Adamant Nature
+Level: 9
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bullet Seed
+- Harden
+- Bide
+
+=== TRAINER_BILLY ===
+Name: BILLY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Seedot @ Oran Berry
+Adamant Nature
+Level: 11
+Ability: Early Bird
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bullet Seed
+- Harden
+- Astonish
+- Growth
+
+Sandshrew
+Adamant Nature
+Level: 11
+Ability: Sand Veil
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def
+- Rollout
+- Defense Curl
+- Sand Attack
+- Poison Sting
+
+Zigzagoon
+Jolly Nature
+Level: 10
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+- Baby-Doll Eyes
+
+=== TRAINER_HALEY_1 ===
+Name: HALEY
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Lotad
+Calm Nature
+Level: 8
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Water Gun
+- Growl
+
+Shroomish
+Bold Nature
+Level: 8
+Ability: Effect Spore
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Stun Spore
+- Leech Seed
+
+=== TRAINER_HALEY_1 ===
+Name: HALEY
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Lotad @ Oran Berry
+Calm Nature
+Level: 11
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Mega Drain
+- Water Gun
+- Growl
+- Mist
+
+Shroomish
+Bold Nature
+Level: 11
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Leech Seed
+- Stun Spore
+- Mega Drain
+- Headbutt
+
+Budew
+Timid Nature
+Level: 10
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Stun Spore
+- Growth
+
+=== TRAINER_WINSTON_1 ===
+Name: WINSTON
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Zigzagoon @ Oran Berry
+Jolly Nature
+Level: 9
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+- Odor Sleuth
+
+Skitty
+Jolly Nature
+Level: 9
+Ability: Normalize
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fake Out
+- Tackle
+- Tail Whip
+
+=== TRAINER_WINSTON_1 ===
+Name: WINSTON
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Meowth @ Silk Scarf
+Jolly Nature
+Level: 12
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Fury Swipes
+- Bite
+- Pay Day
+
+Skitty
+Jolly Nature
+Level: 11
+Ability: Normalize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Double Kick
+- Tail Whip
+- Sing
+
+Zigzagoon @ Oran Berry
+Jolly Nature
+Level: 11
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Baby-Doll Eyes
+- Odor Sleuth
+
+=== TRAINER_CINDY_1 ===
+Name: CINDY
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Zigzagoon
+Jolly Nature
+Level: 9
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+
+Azurill
+Bold Nature
+Level: 9
+Ability: Thick Fat
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bubble
+- Charm
+- Tail Whip
+
+=== TRAINER_CINDY_1 ===
+Name: CINDY
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Marill @ Oran Berry
+Adamant Nature
+Level: 11
+Ability: Huge Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bubble
+- Defense Curl
+- Rollout
+- Tail Whip
+
+Clefairy
+Bold Nature
+Level: 11
+Ability: Cute Charm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Disarming Voice
+- Defense Curl
+- Sing
+- Pound
+
+Zigzagoon
+Jolly Nature
+Level: 11
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+- Baby-Doll Eyes
+
+=== TRAINER_GINA_AND_MIA_1 ===
+Name: GINA & MIA
+Class: Twins
+Pic: Twins
+Gender: Male
+Music: Twins
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Hard
+
+Seedot
+Adamant Nature
+Level: 8
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bullet Seed
+- Harden
+- Bide
+
+Lotad
+Modest Nature
+Level: 8
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Gun
+- Absorb
+- Growl
+
+=== TRAINER_GINA_AND_MIA_1 ===
+Name: GINA & MIA
+Class: Twins
+Pic: Twins
+Gender: Male
+Music: Twins
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Lotad @ Oran Berry
+Modest Nature
+Level: 11
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Water Gun
+- Mega Drain
+- Growl
+- Mist
+
+Seedot @ Oran Berry
+Adamant Nature
+Level: 11
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bullet Seed
+- Astonish
+- Harden
+- Growth
+
+=== TRAINER_IVAN ===
+Name: IVAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Magikarp
+Jolly Nature
+Level: 8
+Ability: Swift Swim
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Splash
+- Tackle
+
+Goldeen
+Adamant Nature
+Level: 8
+Ability: Swift Swim
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Peck
+- Tail Whip
+- Water Sport
+
+Tentacool
+Calm Nature
+Level: 8
+Ability: Clear Body
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Poison Sting
+- Supersonic
+- Constrict
+
+=== TRAINER_IVAN ===
+Name: IVAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Tentacool @ Oran Berry
+Calm Nature
+Level: 11
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Acid
+- Water Gun
+- Supersonic
+- Wrap
+
+Goldeen
+Adamant Nature
+Level: 11
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Peck
+- Horn Attack
+- Water Pulse
+- Supersonic
+
+Barboach
+Adamant Nature
+Level: 11
+Ability: Oblivious
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Mud-Slap
+- Water Gun
+- Mud Sport
+
+=== TRAINER_DARIAN ===
+Name: DARIAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Magikarp
+Jolly Nature
+Level: 10
+Ability: Swift Swim
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Splash
+- Tackle
+
+Horsea
+Modest Nature
+Level: 10
+Ability: Swift Swim
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bubble
+- Smokescreen
+- Leer
+
+=== TRAINER_DARIAN ===
+Name: DARIAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Horsea @ Oran Berry
+Modest Nature
+Level: 12
+Ability: Sniper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Water Gun
+- Smokescreen
+- Leer
+- Twister
+
+Psyduck
+Modest Nature
+Level: 12
+Ability: Damp
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Water Gun
+- Confusion
+- Tail Whip
+- Disable
+
+Magikarp
+Jolly Nature
+Level: 12
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Splash
+- Tackle
+- Flail
+
+=== TRAINER_JOSH ===
+Name: JOSH
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Geodude
+Impish Nature
+Level: 12
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Throw
+- Defense Curl
+- Magnitude
+
+Nosepass
+Impish Nature
+Level: 12
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Throw
+- Harden
+- Block
+
+=== TRAINER_JOSH ===
+Name: JOSH
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Geodude @ Oran Berry
+Adamant Nature
+Level: 14
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Tomb
+- Magnitude
+- Defense Curl
+- Rollout
+
+Onix
+Impish Nature
+Level: 14
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Rock Tomb
+- Bind
+- Harden
+- Smack Down
+
+Larvitar
+Adamant Nature
+Level: 13
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Rock Slide
+- Bite
+- Leer
+- Sandstorm
+
+=== TRAINER_TOMMY ===
+Name: TOMMY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Geodude
+Impish Nature
+Level: 11
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Throw
+- Defense Curl
+- Tackle
+
+Onix
+Impish Nature
+Level: 11
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Throw
+- Bind
+- Harden
+
+=== TRAINER_TOMMY ===
+Name: TOMMY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Onix @ Oran Berry
+Impish Nature
+Level: 14
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Rock Tomb
+- Bind
+- Harden
+- Smack Down
+
+Roggenrola
+Adamant Nature
+Level: 14
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Blast
+- Headbutt
+- Sand Attack
+- Iron Defense
+
+Geodude
+Adamant Nature
+Level: 13
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Tomb
+- Magnitude
+- Defense Curl
+- Rollout
+
+=== TRAINER_MARC ===
+Name: MARC
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Geodude
+Impish Nature
+Level: 11
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Throw
+- Magnitude
+- Defense Curl
+
+Sandshrew
+Adamant Nature
+Level: 11
+Ability: Sand Veil
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rollout
+- Defense Curl
+- Sand Attack
+
+=== TRAINER_MARC ===
+Name: MARC
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Rhyhorn @ Oran Berry
+Adamant Nature
+Level: 15
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Blast
+- Horn Attack
+- Stomp
+- Bulldoze
+
+Sandshrew
+Adamant Nature
+Level: 14
+Ability: Sand Veil
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def
+- Rollout
+- Defense Curl
+- Rapid Spin
+- Bulldoze
+
+Geodude
+Adamant Nature
+Level: 14
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Tomb
+- Magnitude
+- Defense Curl
+- Rollout
+
+=== TRAINER_ROXANNE_1 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Geodude @ Oran Berry
+Adamant Nature
+Level: 14
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+- Rock Tomb
+- Magnitude
+- Defense Curl
+- Rollout
+
+Onix
+Impish Nature
+Level: 14
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Def
+- Rock Tomb
+- Bind
+- Harden
+- Smack Down
+
+Rhyhorn
+Adamant Nature
+Level: 15
+Ability: Rock Head
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+- Rock Blast
+- Horn Attack
+- Bulldoze
+- Scary Face
+
+Nosepass @ Sitrus Berry
+Relaxed Nature
+Level: 16
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 252 Def
+- Rock Tomb
+- Thunder Wave
+- Block
+- Shock Wave
+
+=== TRAINER_ROXANNE_1 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Larvitar @ Oran Berry
+Adamant Nature
+Level: 16
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Rock Slide
+- Bite
+- Screech
+- Sandstorm
+
+Aron @ Oran Berry
+Adamant Nature
+Level: 16
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Headbutt
+- Rock Tomb
+- Metal Claw
+- Iron Defense
+
+Kabuto @ Eviolite
+Adamant Nature
+Level: 16
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def
+- Aqua Jet
+- Rock Tomb
+- Mud Shot
+- Harden
+
+Rhyhorn @ Eviolite
+Adamant Nature
+Level: 17
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Blast
+- Bulldoze
+- Horn Attack
+- Scary Face
+
+Onix
+Jolly Nature
+Level: 16
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Stealth Rock
+- Rock Tomb
+- Dragon Breath
+- Bind
+
+Nosepass @ Sitrus Berry
+Relaxed Nature
+Level: 18
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Rock Tomb
+- Thunder Wave
+- Shock Wave
+- Block
+
+=== TRAINER_JOEY ===
+Name: JOEY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Machop
+Adamant Nature
+Level: 11
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Karate Chop
+- Low Kick
+- Leer
+
+=== TRAINER_JOEY ===
+Name: JOEY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Machop @ Oran Berry
+Adamant Nature
+Level: 13
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Karate Chop
+- Low Kick
+- Focus Energy
+- Leer
+
+Makuhita
+Adamant Nature
+Level: 13
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Arm Thrust
+- Fake Out
+- Sand Attack
+- Focus Energy
+
+=== TRAINER_JOSE ===
+Name: JOSE
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Nincada
+Adamant Nature
+Level: 10
+Ability: Compound Eyes
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Leech Life
+- Sand Attack
+- Harden
+
+Wurmple
+Adamant Nature
+Level: 10
+Ability: Shield Dust
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bug Bite
+- Poison Sting
+- String Shot
+
+=== TRAINER_JOSE ===
+Name: JOSE
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Venonat @ Oran Berry
+Calm Nature
+Level: 13
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Confusion
+- Poison Powder
+- Supersonic
+- Disable
+
+Nincada
+Adamant Nature
+Level: 12
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Leech Life
+- Sand Attack
+- Fury Swipes
+- Harden
+
+Skorupi
+Adamant Nature
+Level: 12
+Ability: Battle Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bug Bite
+- Poison Fang
+- Leer
+- Knock Off
+
+=== TRAINER_CLARK ===
+Name: CLARK
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Geodude
+Impish Nature
+Level: 10
+Ability: Sturdy
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Throw
+- Magnitude
+- Defense Curl
+
+Machop
+Adamant Nature
+Level: 10
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Karate Chop
+- Low Kick
+
+=== TRAINER_CLARK ===
+Name: CLARK
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Geodude @ Oran Berry
+Adamant Nature
+Level: 13
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Throw
+- Magnitude
+- Defense Curl
+- Rollout
+
+Phanpy
+Adamant Nature
+Level: 13
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rollout
+- Defense Curl
+- Flail
+- Bulldoze
+
+=== TRAINER_JANICE ===
+Name: JANICE
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Marill
+Adamant Nature
+Level: 10
+Ability: Huge Power
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bubble
+- Tail Whip
+- Defense Curl
+
+=== TRAINER_JANICE ===
+Name: JANICE
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Marill @ Oran Berry
+Adamant Nature
+Level: 13
+Ability: Huge Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bubble
+- Rollout
+- Defense Curl
+- Water Gun
+
+Clefairy
+Bold Nature
+Level: 13
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Disarming Voice
+- Sing
+- Defense Curl
+- Pound
+
+=== TRAINER_KAREN_1 ===
+Name: KAREN
+Class: School Kid
+Pic: School Kid F
+Gender: Female
+Music: Girl
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Shroomish
+Bold Nature
+Level: 10
+Ability: Effect Spore
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Stun Spore
+- Leech Seed
+
+Oddish
+Modest Nature
+Level: 10
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Acid
+- Sweet Scent
+
+=== TRAINER_KAREN_1 ===
+Name: KAREN
+Class: School Kid
+Pic: School Kid F
+Gender: Female
+Music: Girl
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Oddish @ Oran Berry
+Modest Nature
+Level: 13
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Mega Drain
+- Acid
+- Stun Spore
+- Sweet Scent
+
+Shroomish
+Bold Nature
+Level: 13
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Leech Seed
+- Stun Spore
+- Mega Drain
+- Headbutt
+
+Bellsprout
+Adamant Nature
+Level: 12
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Vine Whip
+- Wrap
+- Poison Powder
+- Growth
+
+=== TRAINER_JOHNSON ===
+Name: JOHNSON
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Shroomish
+Bold Nature
+Level: 10
+Ability: Effect Spore
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Stun Spore
+
+Lotad
+Calm Nature
+Level: 10
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Gun
+- Absorb
+
+=== TRAINER_JOHNSON ===
+Name: JOHNSON
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Lotad @ Oran Berry
+Calm Nature
+Level: 13
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Shroomish
+Bold Nature
+Level: 13
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Leech Seed
+- Stun Spore
+- Mega Drain
+- Headbutt
+
+Wooper
+Impish Nature
+Level: 12
+Ability: Damp
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Mud Shot
+- Water Gun
+- Tail Whip
+- Slam
+
+=== TRAINER_DAWSON ===
+Name: DAWSON
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Zigzagoon
+Jolly Nature
+Level: 10
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+- Sand Attack
+
+Poochyena
+Jolly Nature
+Level: 10
+Ability: Quick Feet
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bite
+- Howl
+- Sand Attack
+
+=== TRAINER_DAWSON ===
+Name: DAWSON
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Growlithe @ Oran Berry
+Adamant Nature
+Level: 13
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Ember
+- Bite
+- Leer
+- Howl
+
+Poochyena
+Jolly Nature
+Level: 13
+Ability: Quick Feet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Howl
+- Sand Attack
+- Tackle
+
+Meowth
+Jolly Nature
+Level: 12
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Fury Swipes
+- Bite
+
+=== TRAINER_SARAH ===
+Name: SARAH
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Lotad
+Calm Nature
+Level: 10
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Gun
+- Absorb
+
+Zigzagoon
+Jolly Nature
+Level: 10
+Ability: Pickup
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Headbutt
+- Tail Whip
+
+=== TRAINER_SARAH ===
+Name: SARAH
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Lotad @ Oran Berry
+Modest Nature
+Level: 13
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Water Gun
+- Mega Drain
+- Growl
+- Mist
+
+Skitty
+Jolly Nature
+Level: 13
+Ability: Normalize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Double Kick
+- Sing
+- Tail Whip
+
+Azurill
+Adamant Nature
+Level: 12
+Ability: Huge Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Bubble
+- Slam
+- Tail Whip
+- Charm
+
+=== TRAINER_JERRY_1 ===
+Name: JERRY
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Ralts
+Modest Nature
+Level: 11
+Ability: Synchronize
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Confusion
+- Growl
+- Disarming Voice
+
+=== TRAINER_JERRY_1 ===
+Name: JERRY
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Ralts @ Oran Berry
+Modest Nature
+Level: 13
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Confusion
+- Disarming Voice
+- Double Team
+- Teleport
+
+Abra
+Timid Nature
+Level: 13
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Teleport
+- Confusion
+
+Spoink
+Modest Nature
+Level: 13
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Psybeam
+- Splash
+- Odor Sleuth
+
+=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Poochyena
+Jolly Nature
+Level: 15
+Ability: Quick Feet
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bite
+- Howl
+- Sand Attack
+- Roar
+
+Carvanha
+Adamant Nature
+Level: 15
+Ability: Rough Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bite
+- Aqua Jet
+- Leer
+- Focus Energy
+
+Zubat
+Jolly Nature
+Level: 14
+Ability: Inner Focus
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Bite
+- Supersonic
+- Astonish
+- Wing Attack
+
+=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Mightyena @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Roar
+- Swagger
+- Sand Attack
+
+Carvanha @ Oran Berry
+Adamant Nature
+Level: 19
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Aqua Jet
+- Ice Fang
+- Focus Energy
+
+Golbat
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Bite
+- Wing Attack
+- Confuse Ray
+- Mean Look
+
+Stunky
+Jolly Nature
+Level: 18
+Ability: Aftermath
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Feint
+- Fury Swipes
+- Poison Gas
+- Screech
+
+=== TRAINER_MAY_ROUTE_103_TREECKO ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Cyndaquil
+Hardy Nature
+Level: 6
+Ability: Blaze
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Ember
+- Quick Attack
+- Smokescreen
+- Leer
+
+=== TRAINER_MAY_ROUTE_103_TREECKO ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Cyndaquil @ Oran Berry
+Timid Nature
+Level: 7
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Ember
+- Quick Attack
+- Smokescreen
+- Leer
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+
+=== TRAINER_MAY_RUSTBORO_TREECKO ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 16
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Focus Energy
+
+Lotad
+Calm Nature
+Level: 16
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Quilava @ Oran Berry
+Hardy Nature
+Level: 18
+Ability: Blaze
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Spe
+- Flame Wheel
+- Quick Attack
+- Smokescreen
+- Swift
+
+=== TRAINER_MAY_RUSTBORO_TREECKO ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Swellow @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Endeavor
+
+Lombre
+Modest Nature
+Level: 19
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Water Pulse
+- Fake Out
+- Rain Dance
+
+Riolu
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Quick Attack
+- Counter
+- Feint
+
+Quilava @ Sitrus Berry
+Timid Nature
+Level: 21
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Flame Wheel
+- Quick Attack
+- Smokescreen
+- Swift
+
+=== TRAINER_MAY_ROUTE_103_TORCHIC ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Squirtle
+Hardy Nature
+Level: 6
+Ability: Torrent
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Gun
+- Tackle
+- Withdraw
+- Tail Whip
+
+=== TRAINER_MAY_ROUTE_103_TORCHIC ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Squirtle @ Oran Berry
+Timid Nature
+Level: 7
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Water Gun
+- Tackle
+- Withdraw
+- Tail Whip
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+
+=== TRAINER_MAY_RUSTBORO_TORCHIC ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 16
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Focus Energy
+
+Lotad
+Calm Nature
+Level: 16
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Wartortle @ Oran Berry
+Hardy Nature
+Level: 18
+Ability: Torrent
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Spe
+- Water Pulse
+- Bite
+- Rapid Spin
+- Protect
+
+=== TRAINER_MAY_RUSTBORO_TORCHIC ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Swellow @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Endeavor
+
+Lombre
+Modest Nature
+Level: 19
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Water Pulse
+- Fake Out
+- Rain Dance
+
+Riolu
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Quick Attack
+- Counter
+- Feint
+
+Wartortle @ Sitrus Berry
+Timid Nature
+Level: 21
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Water Pulse
+- Bite
+- Rapid Spin
+- Protect
+
+=== TRAINER_MAY_ROUTE_103_MUDKIP ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Treecko
+Hardy Nature
+Level: 6
+Ability: Overgrow
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Quick Attack
+- Leer
+- Pound
+
+=== TRAINER_MAY_ROUTE_103_MUDKIP ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Treecko @ Oran Berry
+Timid Nature
+Level: 7
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Absorb
+- Quick Attack
+- Leer
+- Pound
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+
+=== TRAINER_MAY_RUSTBORO_MUDKIP ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 16
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Focus Energy
+
+Lotad
+Calm Nature
+Level: 16
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Grovyle @ Oran Berry
+Hardy Nature
+Level: 18
+Ability: Overgrow
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Spe
+- Mega Drain
+- Quick Attack
+- Pursuit
+- Fury Cutter
+
+=== TRAINER_MAY_RUSTBORO_MUDKIP ===
+Name: Flora
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Difficulty: Kaizo
+
+Swellow @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Endeavor
+
+Lombre
+Modest Nature
+Level: 19
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Water Pulse
+- Fake Out
+- Rain Dance
+
+Riolu
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Quick Attack
+- Counter
+- Feint
+
+Grovyle @ Sitrus Berry
+Timid Nature
+Level: 21
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Mega Drain
+- Quick Attack
+- Pursuit
+- Fury Cutter
+
+=== TRAINER_BRENDAN_ROUTE_103_TREECKO ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Difficulty: Hard
+
+Cyndaquil
+Hardy Nature
+Level: 6
+Ability: Blaze
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Ember
+- Quick Attack
+- Smokescreen
+- Leer
+
+=== TRAINER_BRENDAN_ROUTE_103_TREECKO ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Difficulty: Kaizo
+
+Cyndaquil @ Oran Berry
+Timid Nature
+Level: 7
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Ember
+- Quick Attack
+- Smokescreen
+- Leer
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+
+=== TRAINER_BRENDAN_RUSTBORO_TREECKO ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 16
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Focus Energy
+
+Lotad
+Calm Nature
+Level: 16
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Quilava @ Oran Berry
+Hardy Nature
+Level: 18
+Ability: Blaze
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Spe
+- Flame Wheel
+- Quick Attack
+- Smokescreen
+- Swift
+
+=== TRAINER_BRENDAN_RUSTBORO_TREECKO ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Swellow @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Endeavor
+
+Lombre
+Modest Nature
+Level: 19
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Water Pulse
+- Fake Out
+- Rain Dance
+
+Riolu
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Quick Attack
+- Counter
+- Feint
+
+Quilava @ Sitrus Berry
+Timid Nature
+Level: 21
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Flame Wheel
+- Quick Attack
+- Smokescreen
+- Swift
+
+=== TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Squirtle
+Hardy Nature
+Level: 6
+Ability: Torrent
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Gun
+- Tackle
+- Withdraw
+- Tail Whip
+
+=== TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Squirtle @ Oran Berry
+Timid Nature
+Level: 7
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Water Gun
+- Tackle
+- Withdraw
+- Tail Whip
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+
+=== TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 16
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Focus Energy
+
+Lotad
+Calm Nature
+Level: 16
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Wartortle @ Oran Berry
+Hardy Nature
+Level: 18
+Ability: Torrent
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Spe
+- Water Pulse
+- Bite
+- Rapid Spin
+- Protect
+
+=== TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Swellow @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Endeavor
+
+Lombre
+Modest Nature
+Level: 19
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Water Pulse
+- Fake Out
+- Rain Dance
+
+Riolu
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Quick Attack
+- Counter
+- Feint
+
+Wartortle @ Sitrus Berry
+Timid Nature
+Level: 21
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Water Pulse
+- Bite
+- Rapid Spin
+- Protect
+
+=== TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Hard
+
+Treecko
+Hardy Nature
+Level: 6
+Ability: Overgrow
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Quick Attack
+- Leer
+- Pound
+
+=== TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Difficulty: Kaizo
+
+Treecko @ Oran Berry
+Timid Nature
+Level: 7
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Absorb
+- Quick Attack
+- Leer
+- Pound
+
+Zigzagoon
+Jolly Nature
+Level: 6
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Sand Attack
+- Tail Whip
+
+=== TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Hard
+
+Taillow
+Jolly Nature
+Level: 16
+Ability: Guts
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Focus Energy
+
+Lotad
+Calm Nature
+Level: 16
+Ability: Rain Dish
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mega Drain
+- Water Gun
+- Mist
+- Growl
+
+Grovyle @ Oran Berry
+Hardy Nature
+Level: 18
+Ability: Overgrow
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Spe
+- Mega Drain
+- Quick Attack
+- Pursuit
+- Fury Cutter
+
+=== TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
+Name: Brice
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+Difficulty: Kaizo
+
+Swellow @ Oran Berry
+Jolly Nature
+Level: 19
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Double Team
+- Endeavor
+
+Lombre
+Modest Nature
+Level: 19
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Mega Drain
+- Water Pulse
+- Fake Out
+- Rain Dance
+
+Riolu
+Jolly Nature
+Level: 19
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Quick Attack
+- Counter
+- Feint
+
+Grovyle @ Sitrus Berry
+Timid Nature
+Level: 21
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Spe / 252 HP
+- Mega Drain
+- Quick Attack
+- Pursuit
+- Fury Cutter
+
+/* --- fin des équipes Couronnement --- */

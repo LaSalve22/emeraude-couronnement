@@ -35,3 +35,4 @@ TEST("Difficulty rules: Poke Balls and X items stay usable in Hard")
     EXPECT(!IsHealingItemBannedInBattle(ITEM_X_ATTACK));
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 }
+
