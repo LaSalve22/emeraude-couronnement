@@ -218,11 +218,17 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Elo adverse par tournoi (`sEloBase`, +50 par manche) : un parcours parfait mène vers ~1920 ; les tournois gagnés sont rejouables
   pour l'Elo (sans récompense) pour atteindre le Top 32 (~2000). Abandon en cours de tournoi : Elo inchangé.
 
+## Fait (v0.20) - Aromates (changement de nature)
+
+- Herboriste au Centre Pokémon de Clémenti-Ville (3,6), `data/scripts/aromates.inc` : vend les 21 Aromates (menthes du moteur,
+  changent la nature effective) une fois le badge de Norman (FLAG_BADGE05_GET) obtenu. Prix : `COURONNEMENT_PRIX_AROMATE`
+  (5000) dans `include/config/item.h`.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Placer les Méga-Gemmes dans le monde.
-2. Demandé par Adrien : objet pour changer la nature (après Norman), changement d'EV (après la Ligue).
+2. Demandé par Adrien : changement d'EV après la Ligue.
 3. Équipes Hard/Kaizo du chapitre 6 (Route 123, Mont Mémoria, Repaire Magma/Aqua, Lévéquemont ; cap 72).
 4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 

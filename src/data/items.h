@@ -1573,7 +1573,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_LONELY_MINT] =
     {
         .name = ITEM_NAME("Aromate Solo"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Attack and\n"
@@ -1591,7 +1591,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_ADAMANT_MINT] =
     {
         .name = ITEM_NAME("Aromate Rigide"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Attack and\n"
@@ -1609,7 +1609,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_NAUGHTY_MINT] =
     {
         .name = ITEM_NAME("Aromate Mauvais"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Attack and\n"
@@ -1627,7 +1627,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_BRAVE_MINT] =
     {
         .name = ITEM_NAME("Aromate Brave"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Attack and\n"
@@ -1645,7 +1645,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_BOLD_MINT] =
     {
         .name = ITEM_NAME("Aromate Assuré"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Defense and\n"
@@ -1663,7 +1663,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_IMPISH_MINT] =
     {
         .name = ITEM_NAME("Aromate Malin"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Defense and\n"
@@ -1681,7 +1681,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_LAX_MINT] =
     {
         .name = ITEM_NAME("Aromate Lâche"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Defense and\n"
@@ -1699,7 +1699,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_RELAXED_MINT] =
     {
         .name = ITEM_NAME("Aromate Relax"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Defense and\n"
@@ -1717,7 +1717,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_MODEST_MINT] =
     {
         .name = ITEM_NAME("Aromate Modeste"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Atk and\n"
@@ -1735,7 +1735,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_MILD_MINT] =
     {
         .name = ITEM_NAME("Aromate Doux"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Atk and\n"
@@ -1753,7 +1753,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_RASH_MINT] =
     {
         .name = ITEM_NAME("Aromate Foufou"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Atk and\n"
@@ -1771,7 +1771,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_QUIET_MINT] =
     {
         .name = ITEM_NAME("Aromate Discret"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Atk and\n"
@@ -1789,7 +1789,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_CALM_MINT] =
     {
         .name = ITEM_NAME("Aromate Calme"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Def and\n"
@@ -1807,7 +1807,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_GENTLE_MINT] =
     {
         .name = ITEM_NAME("Aromate Gentil"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Def and\n"
@@ -1825,7 +1825,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_CAREFUL_MINT] =
     {
         .name = ITEM_NAME("Aromate Prudent"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Def and\n"
@@ -1843,7 +1843,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_SASSY_MINT] =
     {
         .name = ITEM_NAME("Aromate Malpoli"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Sp. Def and\n"
@@ -1861,7 +1861,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TIMID_MINT] =
     {
         .name = ITEM_NAME("Aromate Timide"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Speed and\n"
@@ -1879,7 +1879,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_HASTY_MINT] =
     {
         .name = ITEM_NAME("Aromate Pressé"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Speed and\n"
@@ -1897,7 +1897,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_JOLLY_MINT] =
     {
         .name = ITEM_NAME("Aromate Jovial"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Speed and\n"
@@ -1915,7 +1915,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_NAIVE_MINT] =
     {
         .name = ITEM_NAME("Aromate Naïf"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "raises Speed and\n"
@@ -1933,7 +1933,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_SERIOUS_MINT] =
     {
         .name = ITEM_NAME("Aromate Sérieux"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 20,
+        .price = COURONNEMENT_PRIX_AROMATE,
         .description = COMPOUND_STRING(
             "When smelled, it\n"
             "makes a Pokémon's\n"

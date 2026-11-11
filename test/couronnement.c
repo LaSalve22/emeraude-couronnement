@@ -4,6 +4,7 @@
 #include "test/test.h"
 #include "data.h"
 #include "pokemon.h"
+#include "item.h"
 #include "constants/moves.h"
 
 extern const struct Trainer gCouronnementTrainers[DIFFICULTY_COUNT][COURONNEMENT_ADV_COUNT];
@@ -83,4 +84,10 @@ TEST("Couronnement: opponent scores type matchups against the chosen team")
     CreateMon(&joueur[0], SPECIES_CHARMANDER, 50, 0, OTID_STRUCT_PRESET(0));
     SetMonMoveSlot(&joueur[0], MOVE_EMBER, 0);
     EXPECT_GT(Couronnement_ScoreAdverse(&eau, joueur, 1), Couronnement_ScoreAdverse(&plante, joueur, 1));
+}
+
+TEST("Couronnement: nature mints cost the configured price")
+{
+    EXPECT_EQ(GetItemPrice(ITEM_ADAMANT_MINT), COURONNEMENT_PRIX_AROMATE);
+    EXPECT_EQ(GetItemPrice(ITEM_SERIOUS_MINT), COURONNEMENT_PRIX_AROMATE);
 }
