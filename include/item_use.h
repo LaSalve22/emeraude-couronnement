@@ -60,6 +60,7 @@ enum {
 };
 
 bool32 CanThrowBall(void);
+bool32 IsHealingItemBannedInBattle(enum Item itemId);
 bool32 CannotUseItemsInBattle(enum Item itemId, struct Pokemon *mon);
 
 enum ItemTMHMOrEvolutionStone

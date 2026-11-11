@@ -1,4 +1,5 @@
 #include "global.h"
+#include "difficulty.h"
 #include "item_use.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -1192,6 +1193,25 @@ static bool32 SelectedMonHasVolatile(enum Item itemId)
 }
 
 // Returns whether an item can be used in battle and sets the fail text.
+static const u8 sText_HealingItemsBanned[] = _("Objets de soin interdits en\ncombat en mode Hard et Kaizo !{PAUSE_UNTIL_PRESS}");
+
+bool32 IsHealingItemBannedInBattle(enum Item itemId)
+{
+    if (GetCurrentDifficultyLevel() < DIFFICULTY_HARD)
+        return FALSE;
+    switch (GetItemBattleUsage(itemId))
+    {
+    case EFFECT_ITEM_RESTORE_HP:
+    case EFFECT_ITEM_CURE_STATUS:
+    case EFFECT_ITEM_HEAL_AND_CURE_STATUS:
+    case EFFECT_ITEM_REVIVE:
+    case EFFECT_ITEM_RESTORE_PP:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 bool32 CannotUseItemsInBattle(enum Item itemId, struct Pokemon *mon)
 {
     enum EffectItem battleUsage = GetItemBattleUsage(itemId);
@@ -1212,6 +1232,13 @@ bool32 CannotUseItemsInBattle(enum Item itemId, struct Pokemon *mon)
     {
         if (gBattleMons[battlerTarget].volatiles.embargoTimer)
             return TRUE;
+    }
+
+    // Émeraude Couronnement : objets de soin interdits en combat en Hard et Kaizo.
+    if (IsHealingItemBannedInBattle(itemId))
+    {
+        StringExpandPlaceholders(gStringVar4, sText_HealingItemsBanned);
+        return TRUE;
     }
 
     // battleUsage checks

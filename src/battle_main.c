@@ -1,4 +1,5 @@
 #include "global.h"
+#include "difficulty.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
@@ -2745,6 +2746,9 @@ static void ClearSetBScriptingStruct(void)
 
     gBattleScripting.windowsType = temp;
     gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    // Émeraude Couronnement : mode Set forcé en Hard et Kaizo.
+    if (GetCurrentDifficultyLevel() >= DIFFICULTY_HARD)
+        gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     #if TESTING
     gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     #endif

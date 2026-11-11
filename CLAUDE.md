@@ -103,13 +103,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Manquants : Blue (seulement un sprite de PNJ, pas de course/vélo/surf/dos), Ash, Lucas, Dawn (aucun sprite).
   Écrans encore aux sprites de Brendan/May pour Red/Green : carte Dresseur, icône de la carte de la région, PokéNav, Panthéon.
 
+## Fait (v0.7)
+
+- Règles Hard / Kaizo : mode Set forcé (`src/battle_main.c`), objets de soin (PV, statut, rappel, PP) interdits en combat
+  pour le joueur (`IsHealingItemBannedInBattle`, `src/item_use.c`). Poké Balls et objets X restent autorisés.
+- OPTIONS : nouvelle ligne « DIFFICULTÉ » ; gauche pour baisser, impossible de remonter au-dessus de la valeur à l'ouverture.
+  Le bandeau « OPTIONS » est retiré pour loger 9 lignes de 16 px ; tuiles du cadre déplacées en 0x220.
+- Tests : `test/difficulty_rules.c`.
+- Mis de côté (Adrien) : Blue / Lucas / Aurore, en attente de sprites.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
-1. Descente de difficulté en cours de partie (menu ou PNJ), jamais de remontée.
-2. Blocage des objets de soin en combat et mode Set forcé en Hard et Kaizo.
-3. Téracristal (après badge 2) et Méga-évolution (après badge 5).
-4. Puis : équipes Hard/Kaizo du chapitre 1, Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
+1. Équipes Hard/Kaizo des dresseurs du chapitre 1 (avec `Difficulty: Hard` / `Difficulty: Kaizo` dans trainers.party).
+2. Téracristal (après badge 2) et Méga-évolution (après badge 5).
+3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 
