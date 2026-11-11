@@ -48,17 +48,35 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Fait (v0.3 et v0.4)
 
-- Traduction française du chapitre 1 (intro → Mérouville, Tunnel Mérazon compris). v0.4 : ton réécrit après le test d Adrien, humour manga + textes adultes avec du fond + trash si besoin :
+- Traduction française du chapitre 1 (intro → Mérouville, Tunnel Mérazon compris). v0.4 : ton réécrit après le test d'Adrien, humour manga + textes adultes avec du fond + trash si besoin :
   jurons, thèmes durs (mort, maladie, deuil), scénario inchangé. Guide de ton et lexique : `translations/fr/GUIDE.md`.
 - Textes sources dans `translations/fr/*.txt`, appliqués par `python3 tools/fr/textfr.py apply translations/fr/*.txt`
   (mise en forme automatique au pixel près ; `check` signale les lignes trop larges).
 - Rival renommé Flora / Brice (dialogues et combats), noms de lieux du chapitre 1 traduits dans `region_map_sections.json`.
 - Limite connue : noms de Pokémon, attaques, objets, menus et messages de combat encore en anglais.
 
+## Fait (v0.5)
+
+- Choix de la difficulté au tout début (camion) : Normal / Hard / Kaizo (`DIFFICULTY_KAIZO` ajouté,
+  `VAR_DIFFICULTY_CHOSEN` = 0x4083). Les règles propres à Hard/Kaizo ne sont pas encore codées (étape 2).
+- Noms français officiels de tous les Pokémon, attaques, objets, talents, natures et types (source PokéAPI,
+  `tools/fr/names_fr.py <csv>`, rapport `translations/fr/noms_rapport.txt`). Attaques Z/Gigamax et quelques objets récents restent en anglais.
+- Messages de combat (821 chaînes) et menus / messages système (~500 chaînes de `src/strings.c`, Centre Pokémon, objets reçus,
+  sauvegarde, PC) en français. Le qualificatif suit le nom : « Zigzaton sauvage », « Medhyèna ennemi ».
+  Outil : `tools/fr/cstrings_fr.py translations/fr/c/*.txt`.
+- Zones sauvages de Hoenn repeuplées (`tools/wild/repeupler.py <csv>`, rapport `docs/rencontres_sauvages.md`) :
+  toutes générations, surtout Gen 1-4 avant le 5e badge, équilibré ensuite ; biome par zone ; forme selon le niveau ;
+  les 27 starters de toutes les régions capturables (slots à 4 %) ; pseudo-légendaires rares en fin de jeu.
+  Exclus : légendaires, fabuleux, Ultra-Chimères, Paradoxes, bébés, fossiles. Niveaux d'origine conservés.
+- Attention : les tests de combat du moteur (`make check` complet) vérifient des messages en anglais et vont échouer ;
+  seuls nos tests (`TESTS="Player starter"`) font foi.
+- Reste en anglais : descriptions (objets, attaques, talents, Pokédex), écrans secondaires (concours, Zone de Combat, Easy Chat),
+  dialogues des chapitres 2 et suivants.
+
 ## Prochaines étapes, dans l'ordre
 
-0. Traduction : valider le ton du chapitre 1 avec Adrien, puis traduire le reste du jeu et les noms globaux (Pokémon, attaques, objets, menus).
-1. Choix du mode au lancement (Normal / Hard / Kaizo) : ajouter `DIFFICULTY_KAIZO`, écran ou dialogue de choix, descente possible plus tard.
+0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
+1. Descente de difficulté en cours de partie (menu ou PNJ), jamais de remontée.
 2. Blocage des objets de soin en combat et mode Set forcé en Hard et Kaizo.
 3. Téracristal (après badge 2) et Méga-évolution (après badge 5).
 4. Puis : équipes Hard/Kaizo du chapitre 1, Couronnement Mondial, liens avec les Pokémon, personnages jouables.
