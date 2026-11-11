@@ -120,6 +120,7 @@
 .include "sound/voicegroups/b_factory.inc"
 .include "sound/voicegroups/vs_rayquaza.inc"
 .include "sound/voicegroups/vs_frontier_brain.inc"
+.include "sound/voicegroups/anime_battle.inc"
 .include "sound/voicegroups/vs_mew.inc"
 .include "sound/voicegroups/vs_wild.inc"
 .include "sound/voicegroups/vs_aqua_magma.inc"

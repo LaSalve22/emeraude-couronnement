@@ -5226,6 +5226,8 @@ u16 GetBattleBGM(void)
     }
     if (choice == BATTLE_MUSIC_KANTO)
         return GetKantoBattleBGM(song);
+    if (choice == BATTLE_MUSIC_ANIME && GetKantoBattleBGM(song) != song)
+        return MUS_ANIME_BATTLE; // tous les combats sauf légendaires et thèmes spéciaux
     return song;
 }
 

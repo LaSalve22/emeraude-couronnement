@@ -99,6 +99,7 @@ static const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_BattleMusicHoenn[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}HOENN");
 static const u8 gText_BattleMusicKanto[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}KANTO");
 static const u8 gText_BattleMusicRandom[]  = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ALÉA.");
+static const u8 gText_BattleMusicAnime[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ANIMÉ");
 
 static const u16 sOptionMenuText_Pal[] = INCGFX_U16("graphics/interface/option_menu_text.pal", ".gbapal");
 // note: this is only used in the Japanese release
@@ -672,20 +673,19 @@ static u8 BattleMusic_ProcessInput(u8 selection)
 
 static void BattleMusic_DrawChoices(u8 selection)
 {
-    s32 widthHoenn, widthKanto, widthRandom, xKanto;
-    u8 styles[BATTLE_MUSIC_COUNT] = {0};
+    static const u8 *const sBattleMusicNames[BATTLE_MUSIC_COUNT] =
+    {
+        [BATTLE_MUSIC_HOENN]  = gText_BattleMusicHoenn,
+        [BATTLE_MUSIC_KANTO]  = gText_BattleMusicKanto,
+        [BATTLE_MUSIC_RANDOM] = gText_BattleMusicRandom,
+        [BATTLE_MUSIC_ANIME]  = gText_BattleMusicAnime,
+    };
 
     if (selection >= BATTLE_MUSIC_COUNT)
         selection = BATTLE_MUSIC_HOENN;
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(gText_BattleMusicHoenn, 104, YPOS_BATTLEMUSIC, styles[BATTLE_MUSIC_HOENN]);
-    widthHoenn = GetStringWidth(FONT_NORMAL, gText_BattleMusicHoenn, 0);
-    widthKanto = GetStringWidth(FONT_NORMAL, gText_BattleMusicKanto, 0);
-    widthRandom = GetStringWidth(FONT_NORMAL, gText_BattleMusicRandom, 0);
-    xKanto = 104 + widthHoenn + (198 - 104 - widthHoenn - widthKanto - widthRandom) / 2;
-    DrawOptionMenuChoice(gText_BattleMusicKanto, xKanto, YPOS_BATTLEMUSIC, styles[BATTLE_MUSIC_KANTO]);
-    DrawOptionMenuChoice(gText_BattleMusicRandom, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleMusicRandom, 198), YPOS_BATTLEMUSIC, styles[BATTLE_MUSIC_RANDOM]);
+    // Quatre choix ne tiennent pas sur une ligne : on affiche seulement le choix courant (gauche/droite pour changer).
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 104, YPOS_BATTLEMUSIC, 96, OPTION_ROW_HEIGHT);
+    DrawOptionMenuChoice(sBattleMusicNames[selection], 104, YPOS_BATTLEMUSIC, 1);
 }
 
 static void DrawHeaderText(void)

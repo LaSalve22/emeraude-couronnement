@@ -32,3 +32,11 @@ TEST("Battle music option: random picks a Hoenn or Kanto theme")
     EXPECT(song == MUS_VS_WILD || song == MUS_RG_VS_WILD);
     VarSet(VAR_BATTLE_MUSIC, BATTLE_MUSIC_HOENN);
 }
+
+TEST("Battle music option: anime uses the anime theme for regular battles")
+{
+    VarSet(VAR_BATTLE_MUSIC, BATTLE_MUSIC_ANIME);
+    gBattleTypeFlags = 0;
+    EXPECT_EQ(GetBattleBGM(), MUS_ANIME_BATTLE);
+    VarSet(VAR_BATTLE_MUSIC, BATTLE_MUSIC_HOENN);
+}

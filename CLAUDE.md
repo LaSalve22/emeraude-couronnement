@@ -84,6 +84,14 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   et constante `MUS_…` dans `include/constants/songs.h`, puis nouvelle valeur `BATTLE_MUSIC_…`, libellé dans `src/option_menu.c`
   et correspondance dans `GetBattleBGM`. Ne pas télécharger de rips : uniquement des fichiers fournis par Adrien.
 
+## Fait (v0.5.2)
+
+- Choix ANIMÉ dans « MUSIQUE COMBAT » : thème de l'animé (MIDI fourni par Adrien, séquencé par Ash_Ketchum_Of_Pallet,
+  non commercial), `MUS_ANIME_BATTLE` = 610, voicegroup `sound/voicegroups/anime_battle.inc`.
+  Conversion : `python3 tools/music/prepare_midi.py <src.mid> sound/songs/midi/mus_xxx.mid --map 0:1,34:33,... --drums 0`
+  (réassigne les instruments, branche la batterie, ajoute la boucle), puis ligne dans `midi.cfg`, `song_table.inc`, `songs.h`.
+  L'option affiche le choix courant seul (4 choix ne tiennent pas sur la ligne).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.

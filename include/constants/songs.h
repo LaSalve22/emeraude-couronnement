@@ -547,6 +547,9 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 
+// Émeraude Couronnement : morceaux ajoutés (fournis par Adrien)
+#define MUS_ANIME_BATTLE            610 // Thème de l'animé, séquencé par Ash_Ketchum_Of_Pallet (option Musique combat : ANIMÉ)
+
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF
