@@ -18,6 +18,7 @@ et sur GitHub.
 | 8b | Retours d'Adrien (v0.17.1) : IA Kaizo qui ne faisait que baisser les stats, première rencontre du rival et Route 116 en anglais, Red qui tournait sur lui-même en courant | ✅ livré |
 | 8c | Équipes Hard / Kaizo du chapitre 5 : Institut Météo (Arlette), rival Route 119, Alizée, 43 dresseurs des Routes 118-120 et de l'Arène - v0.18 | ✅ livré |
 | 9b | Aromates pour changer la nature, vendus au Centre Pokémon de Clémenti après le badge de Norman - v0.20 | ✅ livré |
+| 9c | Équipes Hard / Kaizo du chapitre 6 : rival à Nénucrique, Max (Repaire Aqua), Lévy & Tatia, 76 dresseurs (Routes 121-125, Mont Mémoria, Repaire, Arène) - v0.21 | ✅ livré |
 | 9 | Couronnement Mondial, 2e partie : aperçu des 6 Pokémon adverses et choix à chaque manche, 4 tournois des salles de Concours, finale à 32 à la Tour de Combat (Blue en demi, Red en finale) - v0.19 | ✅ livré |
 
 ## Déjà fait
@@ -43,10 +44,11 @@ et sur GitHub.
 - v0.18 - équipes Hard / Kaizo du chapitre 5 (Institut Météo, rival Route 119, Alizée)
 - v0.19 - Couronnement Mondial : salles de Concours, finale à 32, aperçu des 6 Pokémon
 - v0.20 - Aromates (changement de nature) vendus à Clémenti après le badge de Norman
+- v0.21 - équipes Hard / Kaizo du chapitre 6 (rival à Nénucrique, Repaire Aqua, Lévy & Tatia)
 
 ## Plus tard
 
-- Équipes Hard / Kaizo des chapitres 6 et suivants
+- Équipes Hard / Kaizo des chapitres 7 et suivants
 - Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales
 - Demandé par Adrien : objet pour changer la nature d'un Pokémon après Norman, puis changer les EV après la Ligue

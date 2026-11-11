@@ -224,12 +224,19 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   changent la nature effective) une fois le badge de Norman (FLAG_BADGE05_GET) obtenu. Prix : `COURONNEMENT_PRIX_AROMATE`
   (5000) dans `include/config/item.h`.
 
+## Fait (v0.21) - équipes Hard / Kaizo du chapitre 6
+
+- Faits à la main : rival à Nénucrique (5 en Hard jusqu'au 64, 6 en Kaizo jusqu'au 66), Max au Repaire Aqua (4 / 6, jusqu'au 65 / 67),
+  Lévy & Tatia en double (4 en Hard 68-70, 6 en Kaizo 71-72 avec Métalosse et Gardevoir).
+- Générés : 40 dresseurs des Routes 121 / 123 et du Mont Mémoria (plancher 58 / 62), 24 du Repaire Aqua et des Routes 124-125
+  (60 / 64), 12 de l'Arène de Lévy & Tatia (réserve Psy, 64 / 68) ; cap 72. Réserves ajoutées : spectre (Hex Maniac), aqua (Team Aqua).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Placer les Méga-Gemmes dans le monde.
 2. Demandé par Adrien : changement d'EV après la Ligue.
-3. Équipes Hard/Kaizo du chapitre 6 (Route 123, Mont Mémoria, Repaire Magma/Aqua, Lévéquemont ; cap 72).
+3. Équipes Hard/Kaizo du chapitre 7 (Centre Spatial, Routes 126-128, Algatia, Grotte Fonds Marins, Juan ; cap 81).
 4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail

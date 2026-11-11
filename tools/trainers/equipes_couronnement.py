@@ -491,6 +491,49 @@ for rival in ('MAY', 'BRENDAN'):
                       f"{fin} @ Sitrus Berry | {nat} | {ha} | 61 | 252 Spe / 252 HP | {mk}"],
         }
 
+# ------------------------------------------------------------------ chapitre 6 : rival à Nénucrique, Repaire Aqua (Max), Lévy & Tatia (cap 72)
+TEAMS.update({
+    'MATT': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 63 | 128 Atk / 128 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                 "Crobat | Jolly | Inner Focus | 63 | 128 Atk / 128 Spe | Cross Poison, Brave Bird, Super Fang, Confuse Ray",
+                 "Sharpedo | Adamant | Rough Skin | 64 | 128 Atk / 128 Spe | Crunch, Waterfall, Ice Fang, Poison Fang",
+                 "Wailord @ Sitrus Berry | Modest | Water Veil | 65 | 252 HP / 252 SpA | Water Spout, Ice Beam, Hydro Pump, Rest"],
+        'Kaizo': ["Pelipper @ Damp Rock | Modest | Drizzle | 66 | 252 SpA / 252 HP | Scald, Hurricane, U-turn, Roost",
+                  "Sharpedo @ Life Orb | Adamant | Speed Boost | 66 | 252 Atk / 252 Spe | Crunch, Waterfall, Close Combat, Protect",
+                  "Crawdaunt @ Focus Sash | Adamant | Adaptability | 66 | 252 Atk / 252 Spe | Crabhammer, Knock Off, Aqua Jet, Swords Dance",
+                  "Crobat @ Sitrus Berry | Jolly | Inner Focus | 66 | 252 Atk / 252 Spe | Cross Poison, Brave Bird, Super Fang, U-turn",
+                  "Mightyena @ Sitrus Berry | Jolly | Intimidate | 66 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                  "Wailord @ Choice Specs | Modest | Water Veil | 67 | 252 HP / 252 SpA | Water Spout, Hydro Pump, Ice Beam, Hyper Voice"],
+    },
+    'TATE_AND_LIZA_1': {
+        'Hard': ["Claydol | Bold | Levitate | 68 | 128 HP / 128 Def | Earthquake, Psychic, Ancient Power, Light Screen",
+                 "Xatu | Timid | Magic Bounce | 68 | 128 SpA / 128 Spe | Psychic, Air Slash, Heat Wave, Tailwind",
+                 "Lunatone @ Sitrus Berry | Modest | Levitate | 69 | 252 SpA / 252 HP | Psychic, Moonblast, Ice Beam, Calm Mind",
+                 "Solrock @ Sitrus Berry | Adamant | Levitate | 70 | 252 Atk / 252 HP | Rock Slide, Zen Headbutt, Flare Blitz, Trick Room"],
+        'Kaizo': ["Solrock @ Sitrus Berry | Brave | Levitate | 71 | 252 HP / 252 Atk | Rock Slide, Zen Headbutt, Flare Blitz, Trick Room",
+                  "Lunatone @ Life Orb | Quiet | Levitate | 71 | 252 HP / 252 SpA | Moonblast, Psychic, Ice Beam, Earth Power",
+                  "Claydol @ Light Clay | Bold | Levitate | 71 | 252 HP / 252 Def | Earth Power, Psychic, Reflect, Light Screen",
+                  "Xatu @ Focus Sash | Timid | Magic Bounce | 71 | 252 SpA / 252 Spe | Psychic, Heat Wave, Tailwind, Protect",
+                  "Metagross @ Weakness Policy | Adamant | Clear Body | 72 | 252 Atk / 252 HP | Meteor Mash, Zen Headbutt, Earthquake, Bullet Punch",
+                  "Gardevoir @ Choice Specs | Modest | Trace | 72 | 252 SpA / 252 Spe | Moonblast, Psychic, Shadow Ball, Mystical Fire"],
+    },
+})
+for rival in ('MAY', 'BRENDAN'):
+    for starter, (fin, ab, ha, mh, mk, nat) in RIVAL_FINAL.items():
+        TEAMS[f'{rival}_LILYCOVE_{starter}'] = {
+            'Hard': ["Tropius | Modest | Harvest | 62 | 128 SpA / 128 HP | Air Slash, Giga Drain, Synthesis, Sunny Day",
+                     "Magcargo | Modest | Flame Body | 62 | 128 SpA / 128 HP | Lava Plume, Earth Power, Ancient Power, Shell Smash",
+                     "Pelipper | Modest | Drizzle | 62 | 128 SpA / 128 HP | Scald, Hurricane, Roost, Protect",
+                     "Lucario | Jolly | Inner Focus | 63 | 128 Atk / 128 Spe | Close Combat, Extreme Speed, Crunch, Bullet Punch",
+                     f"{fin} @ Sitrus Berry | {nat} | {ab} | 64 | 252 Spe / 252 HP | {mh}"],
+            'Kaizo': ["Swellow @ Flame Orb | Jolly | Guts | 65 | 252 Atk / 252 Spe | Facade, Brave Bird, Quick Attack, U-turn",
+                      "Ludicolo @ Life Orb | Modest | Swift Swim | 65 | 252 SpA / 252 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out",
+                      "Lucario @ Focus Sash | Jolly | Inner Focus | 65 | 252 Atk / 252 Spe | Close Combat, Extreme Speed, Meteor Mash, Swords Dance",
+                      "Magcargo @ White Herb | Modest | Flame Body | 65 | 252 SpA / 252 HP | Shell Smash, Lava Plume, Earth Power, Ancient Power",
+                      "Gardevoir @ Choice Scarf | Timid | Trace | 65 | 252 SpA / 252 Spe | Moonblast, Psychic, Shadow Ball, Thunderbolt",
+                      f"{fin} @ Sitrus Berry | {nat} | {ha} | 66 | 252 Spe / 252 HP | {mk}"],
+        }
+
 # Attaques qui ne font que baisser les stats adverses (ou presque rien) : retirées des équipes Hard / Kaizo
 # pour que l'IA attaque au lieu de spammer Rugissement / Jet de Sable (retour d'Adrien, v0.17).
 WEAK_MOVES = {'Leer', 'Tail Whip', 'Growl', 'Sand Attack', 'Smokescreen', 'String Shot', 'Sweet Scent',
@@ -539,6 +582,8 @@ POOLS = {
     'elite':    ['Absol', 'Kirlia', 'Lairon', 'Vibrava', 'Growlithe', 'Eevee', 'Sneasel', 'Murkrow'],
     'beaute':   ['Marill', 'Roselia', 'Skitty', 'Vulpix', 'Swablu', 'Chinchou', 'Snubbull', 'Milotic'],
     'normal':   ['Ursaring', 'Zangoose', 'Kecleon', 'Spinda', 'Bibarel', 'Lopunny', 'Furret', 'Tauros', 'Miltank', 'Porygon', 'Linoone', 'Girafarig'],
+    'spectre':  ['Shuppet', 'Duskull', 'Misdreavus', 'Gastly', 'Sableye', 'Litwick', 'Drifloon', 'Phantump'],
+    'aqua':     ['Carvanha', 'Zubat', 'Poochyena', 'Wailmer', 'Corphish', 'Tentacool', 'Spheal', 'Barboach'],
     'mixte':    ['Zigzagoon', 'Skitty', 'Whismur', 'Aron', 'Poochyena', 'Azurill', 'Eevee', 'Teddiursa', 'Snubbull', 'Buneary'],
 }
 CLASS_POOL = {
@@ -546,7 +591,7 @@ CLASS_POOL = {
     'Fisherman': 'eau', 'Swimmer M': 'eau', 'Swimmer F': 'eau', 'Psychic': 'psy', 'Triathlete': 'electrik',
     'Guitarist': 'electrik', 'Pokefan': 'electrik', 'Bug Maniac': 'insecte', 'Aroma Lady': 'plante',
     'Collector': 'plante', 'Pkmn Breeder': 'mixte', 'Youngster': 'mixte', 'Twins': 'electrik', 'Sr And Jr': 'mixte',
-    'Camper': 'sol', 'Pkmn Ranger': 'plante', 'Bug Catcher': 'insecte', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
+    'Camper': 'sol', 'Hex Maniac': 'spectre', 'Team Aqua': 'aqua', 'Cooltrainer 2': 'elite', 'Pkmn Ranger': 'plante', 'Bug Catcher': 'insecte', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
     'Bird Keeper': 'oiseau', 'Ninja Boy': 'poison', 'Cooltrainer': 'elite', 'Expert': 'combat',
     'Parasol Lady': 'beaute', 'Sis And Bro': 'eau', 'Young Couple': 'insecte', 'Gentleman': 'mixte', 'Lass': 'mixte', 'Beauty': 'beaute', 'Pokemaniac': 'roche', 'Winstrate': 'mixte',
 }
@@ -599,6 +644,23 @@ for tid in ['BARNY', 'CHESTER', 'DALTON_1', 'DEANDRE', 'PERRY', 'ROSE_1', 'WADE'
 for tid in ['ASHLEY', 'DARIUS', 'EDWARDO', 'FLINT', 'HUMBERTO', 'JARED']:  # Arène d'Alizée
     AUTO[tid] = (63, 56, 60, 'oiseau')
 
+# Chapitre 6 : Routes 121 et 123, Mont Mémoria (sbires Aqua au sommet), Repaire Aqua, Routes 124-125 puis Arène
+# de Lévy & Tatia (cap 72, réserve Psy).
+for tid in ['CALE', 'CRISTIN_1', 'JESSICA_1', 'KATE_AND_JOY', 'MARCEL', 'MYLES', 'PAT', 'TAMMY', 'VANESSA', 'WALTER_1',
+            'ALBERTO', 'BRAXTON', 'CAMERON_1', 'DAVIS', 'ED', 'FERNANDO_1', 'FREDRICK', 'JACKI_1', 'JAZMYN', 'JONAS',
+            'KAYLEY', 'KINDRA', 'MIU_AND_YUKI', 'VIOLET', 'WENDY',
+            'DEZ_AND_LUKE', 'LEAH', 'MARK', 'ZANDER', 'GABRIELLE_1', 'KAYLA', 'WILLIAM', 'ATSUSHI', 'TASHA', 'CEDRIC',
+            'VALERIE_1', 'GRUNT_MT_PYRE_1', 'GRUNT_MT_PYRE_2', 'GRUNT_MT_PYRE_3', 'GRUNT_MT_PYRE_4']:
+    AUTO[tid] = (72, 58, 62)
+for tid in ['GRUNT_AQUA_HIDEOUT_1', 'GRUNT_AQUA_HIDEOUT_2', 'GRUNT_AQUA_HIDEOUT_3', 'GRUNT_AQUA_HIDEOUT_4',
+            'GRUNT_AQUA_HIDEOUT_5', 'GRUNT_AQUA_HIDEOUT_6', 'GRUNT_AQUA_HIDEOUT_7', 'GRUNT_AQUA_HIDEOUT_8',
+            'CHAD', 'DECLAN', 'GRACE', 'ISABELLA', 'JENNY_1', 'LILA_AND_ROY_1', 'ROLAND', 'SPENCER',
+            'AURON', 'ERNEST_1', 'KIM_AND_IRIS', 'NOLEN', 'PRESLEY', 'SHARON', 'STAN', 'TANYA']:
+    AUTO[tid] = (72, 60, 64)
+for tid in ['BLAKE', 'CLIFFORD', 'HANNAH', 'KATHLEEN', 'MACEY', 'MAURA', 'NATE', 'NICHOLAS', 'PRESTON',
+            'SAMANTHA', 'SYLVIA', 'VIRGIL']:  # Arène de Lévy & Tatia
+    AUTO[tid] = (72, 64, 68, 'psy')
+
 # Évolutions par niveau (espèce -> (niveau, évolution)), utilisées quand un plancher fait monter le niveau.
 EVOLVE = {
     'Numel': (33, 'Camerupt'), 'Geodude': (25, 'Graveler'), 'Sandshrew': (22, 'Sandslash'), 'Baltoy': (36, 'Claydol'),
@@ -634,6 +696,10 @@ EVOLVE = {
     'Roselia': (40, 'Roserade'), 'Onix': (40, 'Steelix'), 'Rhydon': (55, 'Rhyperior'), 'Pikachu': (40, 'Raichu'),
     'Vulpix': (40, 'Ninetales'), 'Growlithe': (40, 'Arcanine'), 'Snorunt': (42, 'Glalie'), 'Combee': (21, 'Vespiquen'),
     'Wurmple': (7, 'Silcoon'), 'Silcoon': (10, 'Beautifly'), 'Surskit': (22, 'Masquerain'),
+    'Shuppet': (37, 'Banette'), 'Duskull': (37, 'Dusclops'), 'Dusclops': (55, 'Dusknoir'), 'Misdreavus': (40, 'Mismagius'),
+    'Gastly': (25, 'Haunter'), 'Haunter': (40, 'Gengar'), 'Litwick': (41, 'Lampent'), 'Lampent': (45, 'Chandelure'),
+    'Drifloon': (28, 'Drifblim'), 'Phantump': (40, 'Trevenant'), 'Corphish': (30, 'Crawdaunt'), 'Spheal': (32, 'Sealeo'),
+    'Sealeo': (44, 'Walrein'), 'Munna': (40, 'Musharna'),
     'Hoppip': (18, 'Skiploom'), 'Skiploom': (27, 'Jumpluff'),
 }
 
