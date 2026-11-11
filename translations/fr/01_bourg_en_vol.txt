@@ -495,3 +495,53 @@ Mon père a rempli le sien à mon âge. Je le sais, il me l'a dit. Quarante fois
 Brice : J'hésite sur ma prochaine zone de chasse.
 
 Hé, {PLAYER}. Si je te croise en route, je te défonce. Rien de personnel. Enfin, un peu.
+
+// Première rencontre avec le rival (oubliée en v0.3, retour d'Adrien v0.17)
+
+@@ RivalsHouse_2F_Text_MayWhoAreYou
+Hein ? Qui… Qui es-tu ?
+
+… … … … … … … … … … … …
+
+Ah, tu es {PLAYER}. C'est aujourd'hui que vous emménagiez.
+
+Euh… Moi, c'est Flora. Enchantée !
+
+J'ai… J'ai un rêve : devenir amie avec les Pokémon du monde entier. Tous. Même les moches.
+
+Mon père, le Prof. Seko, m'a parlé de toi.
+
+J'espérais que tu serais gentil, et qu'on pourrait devenir amis.
+
+Oh, c'est bête, hein ? On vient à peine de se rencontrer.
+
+Héhéhé… Oublie ce que j'ai dit. Ou pas.
+
+Oh non ! J'avais oublié !
+
+Je devais aider Papa à capturer des Pokémon sauvages ! Il va encore se faire courser par un Medhyèna.
+
+{PLAYER}, à plus tard !
+
+@@ RivalsHouse_2F_Text_BrendanWhoAreYou
+Hé ! Toi…
+
+T'es qui ?
+
+Ah, t'es {PLAYER}, c'est ça ? La nouvelle voisine ?
+
+Je savais pas que t'étais une fille.
+
+Mon père, le Prof. Seko, m'a dit que l'enfant d'un Champion d'Arène emménageait à côté. J'ai cru que ce serait un mec. Mon erreur.
+
+Moi, c'est Brice. Salut, voisine !
+
+Hein ? Attends, t'as pas de Pokémon ?
+
+Tu veux que j'aille t'en attraper un ? Un petit, pas trop méchant ?
+
+Ah, zut, j'avais oublié…
+
+Je dois aider mon père à capturer des Pokémon sauvages. Il est nul pour ça. Le génie de la famille, c'est pas lui.
+
+Une autre fois, OK ?

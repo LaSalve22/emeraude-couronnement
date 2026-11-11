@@ -190,13 +190,22 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   drapeaux `FLAG_COURONNEMENT_PASS` 0x22, `FLAG_COURONNEMENT_EN_COURS` 0x23.
 - Pas encore : aperçu des 6 Pokémon adverses (ils en ont 4), tournois des 4 salles de Concours, finale à 32 (Tour de Combat, Red et Blue).
 
+## Fait (v0.17.1) - retours d'Adrien
+
+- IA : les blocs Hard ont au moins `AI: Basic Trainer`, Kaizo `AI: Smart Trainer`. Les attaques qui ne font que baisser les stats
+  (Rugissement, Mimi-Queue, Jet de Sable, Brouillard, Groz'Yeux…, liste `WEAK_MOVES`) sont retirées des équipes faites à la main
+  (le rival Kaizo ne faisait que ça). Rival Route 103 : 4 attaques offensives.
+- Textes oubliés du chapitre 1 traduits : première rencontre du rival (`RivalsHouse_2F_Text_*WhoAreYou`), Route 116 et Maison des Foreurs.
+- Red / Green : table d'animation `sAnimTable_RedGreenNormal` (course façon Rouge Feu) ; avec celle d'Émeraude, Red tournait sur lui-même.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Équipes Hard/Kaizo du chapitre 5 (Routes 118-120, Institut Météo, rival Route 119, Arène d'Alizée ; cap 63), même outil.
 2. Placer les Méga-Gemmes dans le monde.
 3. Couronnement Mondial, 2e partie : tournois des 4 salles de Concours, finale à 32 après la Ligue (Tour de Combat, 5 tours, soin avant la demi-finale, Red et Blue en finale).
-4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
+4. Demandé par Adrien : objet pour changer la nature (après Norman), changement d'EV (après la Ligue).
+5. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 

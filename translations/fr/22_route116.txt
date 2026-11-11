@@ -1,0 +1,116 @@
+// Chapitre 1 — Route 116 et Maison des Foreurs (oubliés en v0.3, retour d'Adrien v0.17)
+
+@@ Route116_Text_ScoundrelMadeOffWithPeeko
+Ohhh, qu'est-ce que je vais faire ?
+
+On se promenait, Peeko et moi, quand un voyou bizarre nous a sauté dessus…
+
+Ce salopard a emporté ma Peeko chérie !
+
+Wrrrooooooaaaar ! PEEKOOOO !
+
+@@ Route116_Text_WantToDigTunnel
+Nnn… Raaah !
+
+Je veux creuser ce tunnel !
+
+@@ Route116_Text_GoonHightailedItOutOfTunnel
+Nnn… Raaah !
+
+Ce crétin de voyou a détalé du tunnel ! Je peux reprendre ma pioche !
+
+@@ Route116_Text_DiggingTunnelWhenGoonOrderedMeOut
+Nnn… Raaah ! Qu'est-ce qui se passe ?
+
+Je creusais le tunnel à mains nues quand un voyou m'a ordonné de dégager !
+
+Ce tunnel est plein de Pokémon qui détestent le bruit. Ils pourraient paniquer.
+
+C'est pour ça qu'on a arrêté les machines…
+
+J'ai peur que ce crétin fasse une connerie et provoque une panique générale. Des Pokémon terrifiés dans un tunnel, ça finit mal. Pour tout le monde.
+
+@@ Route116_Text_ThankYouTokenOfAppreciation
+Oh ! C'est toi !
+
+Tu m'as aidé dans le Bois Clémenti, tu as récupéré mon colis volé, et en plus tu l'as livré à Poivressel !
+
+Le Capitaine Stern nous a confirmé qu'il était bien arrivé !
+
+Merci, merci infiniment !
+
+Si j'étais un nuage, je te ferais pleuvoir de la gratitude jusqu'à la noyade !
+
+Pour toi, Dresseur formidable, j'ai une bonne nouvelle !
+
+Notre entreprise vient de mettre au point une nouvelle Poké Ball.
+
+En signe de reconnaissance, voici notre cadeau !
+
+@@ Route116_Text_NewBallAvailableAtMart
+Notre nouvelle Poké Ball sera vendue à la Boutique Pokémon de Mérouville.
+
+Essaie-la ! Merci et à bientôt !
+
+@@ Route116_Text_TokenOfAppreciation
+Pour te remercier d'avoir livré notre colis, voici une nouvelle Poké Ball, pour notre Dresseur préféré !
+
+@@ Route116_Text_BagIsJamPacked
+Ton Sac est plein à craquer. Je ne peux pas te donner cette Bis Ball.
+
+@@ Route116_Text_CanYouHelpMeFindGlasses
+J'ai fait tomber mes lunettes… Tu peux m'aider à les retrouver ? Je vois que dalle.
+
+@@ Route116_Text_MayISeeThoseGlasses
+Ces lunettes ! Je peux les voir une seconde ?
+
+@@ Route116_Text_NotWhatImLookingForMaybeTheyArentHere
+Hmm… Ce sont des Lunettes Noires. Ce ne sont pas les miennes…
+
+Mes lunettes ne sont peut-être pas par ici…
+
+@@ Route116_Text_CantFindGlassesNotHere
+Hmm… Impossible de trouver mes lunettes… Elles ne sont peut-être pas par ici…
+
+@@ Route116_Text_NotWhatImLookingFor
+Hmm… Ce sont des Lunettes Noires. Ce ne sont pas les miennes…
+
+@@ Route116_Text_TrainerTipsBagHasPockets
+Conseils aux Dresseurs
+
+Ton Sac a plusieurs Poches.
+
+Les objets obtenus sont rangés automatiquement dans la bonne Poche.
+
+Aucun Dresseur ne peut se passer de son propre Sac.
+
+@@ Route116_Text_TrainerTipsBToStopEvolution
+Conseils aux Dresseurs
+
+Pour empêcher un Pokémon d'évoluer, appuie sur B pendant l'évolution. Surpris, il s'arrête.
+
+On appelle ça une annulation d'évolution. Il t'en voudra peut-être un peu.
+
+@@ Route116_TunnelersRestHouse_Text_WeHadToStopBoring
+Le Tunnel Mérazon, là…
+
+Au début, on avait une grosse équipe et des machines dernier cri pour percer la roche. Mais on a dû arrêter.
+
+Les travaux faisaient du mal aux Pokémon sauvages du coin.
+
+Alors maintenant, on glande ici à ne rien faire. Payés quand même.
+
+@@ Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf
+Il y a un homme qui creuse jusqu'à Vergazon, tout seul. Il est prêt à tout pour passer.
+
+Il dit qu'en creusant petit à petit, sans machine, il ne dérangera pas les Pokémon ni la nature.
+
+Je me demande s'il est arrivé au bout. Ou s'il est mort là-dessous.
+
+@@ Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel
+Pour aller à Vergazon sans ce Tunnel, faut traverser la mer jusqu'à Myokara, naviguer jusqu'à Poivressel, puis passer par Lavandia.
+
+@@ Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough
+T'as entendu ? Le Tunnel jusqu'à Vergazon est percé !
+
+Parfois, quand on y croit assez fort, les rêves se réalisent.

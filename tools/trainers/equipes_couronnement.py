@@ -234,16 +234,16 @@ TEAMS = {
 
 # Rivaux : la lignée dépend du starter du joueur (suffixe de l'ID = starter du joueur).
 RIVAL_LINES = {  # starter du joueur -> (base, milieu) de la lignée du rival
-    'TREECKO': ('Cyndaquil', 'Quilava', 'Blaze', 'Flash Fire', 'Ember, Quick Attack, Smokescreen, Leer', 'Flame Wheel, Quick Attack, Smokescreen, Swift'),
-    'TORCHIC': ('Squirtle', 'Wartortle', 'Torrent', 'Rain Dish', 'Water Gun, Tackle, Withdraw, Tail Whip', 'Water Pulse, Bite, Rapid Spin, Protect'),
-    'MUDKIP':  ('Treecko', 'Grovyle', 'Overgrow', 'Unburden', 'Absorb, Quick Attack, Leer, Pound', 'Mega Drain, Quick Attack, Pursuit, Fury Cutter'),
+    'TREECKO': ('Cyndaquil', 'Quilava', 'Blaze', 'Flash Fire', 'Ember, Quick Attack, Tackle, Flame Charge', 'Flame Wheel, Quick Attack, Smokescreen, Swift'),
+    'TORCHIC': ('Squirtle', 'Wartortle', 'Torrent', 'Rain Dish', 'Water Gun, Tackle, Bubble, Rapid Spin', 'Water Pulse, Bite, Rapid Spin, Protect'),
+    'MUDKIP':  ('Treecko', 'Grovyle', 'Overgrow', 'Unburden', 'Absorb, Quick Attack, Pound, Bullet Seed', 'Mega Drain, Quick Attack, Pursuit, Fury Cutter'),
 }
 for rival in ('MAY', 'BRENDAN'):
     for starter, (base, mid, ab, ha, m1, m2) in RIVAL_LINES.items():
         TEAMS[f'{rival}_ROUTE_103_{starter}'] = {
             'Hard': [f"{base} | Hardy | {ab} | 6 | | {m1}"],
             'Kaizo': [f"{base} @ Oran Berry | Timid | {ha} | 7 | 252 Spe / 252 HP | {m1}",
-                      "Zigzagoon | Jolly | Pickup | 6 | 252 Atk / 252 Spe | Headbutt, Sand Attack, Tail Whip"],
+                      "Zigzagoon | Jolly | Pickup | 6 | 252 Atk / 252 Spe | Headbutt, Tackle, Covet"],
         }
         TEAMS[f'{rival}_RUSTBORO_{starter}'] = {
             'Hard': ["Taillow | Jolly | Guts | 16 | | Wing Attack, Quick Attack, Double Team, Focus Energy",
@@ -407,6 +407,19 @@ TEAMS.update({
 })
 
 
+# Attaques qui ne font que baisser les stats adverses (ou presque rien) : retirées des équipes Hard / Kaizo
+# pour que l'IA attaque au lieu de spammer Rugissement / Jet de Sable (retour d'Adrien, v0.17).
+WEAK_MOVES = {'Leer', 'Tail Whip', 'Growl', 'Sand Attack', 'Smokescreen', 'String Shot', 'Sweet Scent',
+              'Scary Face', 'Charm', 'Screech', 'Mist', 'Harden', 'Withdraw', 'Defense Curl', 'Poison Gas', 'Kinesis'}
+
+
+def filter_moves(moves):
+    kept = [m.strip() for m in moves.split(',') if m.strip() not in WEAK_MOVES]
+    if 'Rollout' in moves and 'Defense Curl' in moves:
+        kept.insert(0, 'Defense Curl')
+    return ', '.join(kept) if len(kept) >= 2 else moves
+
+
 def mon_block(spec, iv):
     parts = [p.strip() for p in spec.split('|')] + [''] * 6
     species, nature, ability, level, evs, moves = parts[:6]
@@ -420,7 +433,7 @@ def mon_block(spec, iv):
     if evs:
         lines.append(f'EVs: {evs}')
     if moves:  # sans capacités : le jeu prend les capacités apprises par niveau
-        lines += [f'- {m.strip()}' for m in moves.split(',')]
+        lines += [f'- {m.strip()}' for m in filter_moves(moves).split(',')]
     return '\n'.join(lines)
 
 
@@ -590,7 +603,9 @@ def main():
         header = [l for l in m.group(1).split('\n') if not l.startswith(('Difficulty:', 'Items:'))]
         for diff, mons in diffs.items():
             out.append(f'=== TRAINER_{tid} ===')
-            out += header + [f'Difficulty: {diff}', '']
+            ai = {'Hard': 'AI: Basic Trainer', 'Kaizo': 'AI: Smart Trainer'}[diff]  # IA : au moins « Basic » en Hard, « Smart » en Kaizo
+            hdr = [(ai if l.startswith('AI:') else l) for l in header]
+            out += hdr + [f'Difficulty: {diff}', '']
             out += [mon_block(s, IV[diff]) + '\n' for s in mons]
     out.append(END)
     PARTY.write_text(text.rstrip('\n') + '\n\n' + '\n'.join(out) + '\n', encoding='utf-8')
