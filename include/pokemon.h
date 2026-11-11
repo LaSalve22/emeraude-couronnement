@@ -112,6 +112,7 @@ enum MonData {
     MON_DATA_WORLD_RIBBON,
     MON_DATA_MODERN_FATEFUL_ENCOUNTER,
     MON_DATA_PLAYER_STARTER,
+    MON_DATA_BOND_BATTLES,
     MON_DATA_KNOWN_MOVES,
     MON_DATA_RIBBON_COUNT,
     MON_DATA_RIBBONS,
@@ -135,7 +136,7 @@ struct PokemonSubstruct0
     enum Species species:11; // 2047 species.
     enum Type teraType:5; // 30 types.
     enum Item heldItem:10; // 1023 items.
-    u16 unused_02:6;
+    u16 bondBattles:6; // Couronnement : ancienneté (K.O. obtenus en équipe, 0-63)
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
     u32 unused_04:3;

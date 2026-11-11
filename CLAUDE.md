@@ -137,6 +137,14 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Méga-évolution : Norman remet le Méga-Anneau après le 5e badge, plus Jungkite (Arcko) ou Tortankite (Carapuce).
   Les autres Méga-Gemmes restent à placer dans le monde (à faire avec les objets de fin de jeu).
 
+## Fait (v0.11)
+
+- Liens avec les Pokémon (`src/pokemon_bond.c`, `include/pokemon_bond.h`) : lien (amitié >= 150) +5 % XP / +25 % EV gagnés ;
+  lien fort (>= 220) +10 % XP / +50 % EV et EV effectifs jusqu'à 302 (252 compte comme 302, calcul dans CalculateMonStatsCont,
+  le stockage reste sur un octet) ; ancienneté = `MON_DATA_BOND_BATTLES` (ex-`unused_02` de PokemonSubstruct0, 0-63,
+  +1 par K.O. reçu en équipe), +1 % XP tous les 6, max +10 %. Tests : `test/pokemon_bond.c`.
+- À faire plus tard : afficher le niveau de lien dans l'écran de résumé.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.

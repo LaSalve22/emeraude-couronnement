@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_bond.h"
 #include "player_character.h"
 #include "constants/battle_music.h"
 #include "malloc.h"
@@ -1400,7 +1401,7 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
     {
         hyperTrained[i] = GetMonData(mon, MON_DATA_HYPER_TRAINED_HP + i);
         iv[i] = GetMonData(mon, MON_DATA_HP_IV + i);
-        ev[i] = GetMonData(mon, MON_DATA_HP_EV + i);
+        ev[i] = GetBondEffectiveEV(mon, GetMonData(mon, MON_DATA_HP_EV + i));
 
         if (hyperTrained[i])
         {
@@ -2301,6 +2302,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_PLAYER_STARTER:
             retVal = GetSubstruct3(boxMon)->isPlayerStarter;
             break;
+        case MON_DATA_BOND_BATTLES:
+            retVal = GetSubstruct0(boxMon)->bondBattles;
+            break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = GetSubstruct0(boxMon)->species;
             if (retVal && IsEggOrBadEgg(boxMon))
@@ -2819,6 +2823,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_PLAYER_STARTER:
             SET8(GetSubstruct3(boxMon)->isPlayerStarter);
+            break;
+        case MON_DATA_BOND_BATTLES:
+            SET8(GetSubstruct0(boxMon)->bondBattles);
             break;
         case MON_DATA_IVS:
         {
@@ -5000,6 +5007,7 @@ void MonGainEVs(struct Pokemon *mon, enum Species defeatedSpecies)
 
         if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
             evIncrease *= 2;
+        evIncrease = evIncrease * GetMonBondEVMultiplierPercent(mon) / 100; // Couronnement : lien avec le Pokémon
 
         if (totalEVs + (s16)evIncrease > currentEVCap)
             evIncrease = ((s16)evIncrease + currentEVCap) - (totalEVs + evIncrease);
