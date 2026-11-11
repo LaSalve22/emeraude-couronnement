@@ -85,7 +85,19 @@ Couronnement_EventScript_Annule::
 	end
 
 Couronnement_EventScript_PasDePass::
+	goto_if_set FLAG_RECEIVED_POKEDEX_FROM_BIRCH, Couronnement_EventScript_PassDeRattrapage
 	msgbox Couronnement_Text_PasDePass, MSGBOX_DEFAULT
+	release
+	end
+
+@ Partie commencée avant la v0.17 : le labo est passé, l'hôtesse remet le pass.
+Couronnement_EventScript_PassDeRattrapage::
+	msgbox Couronnement_Text_PassOublie, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message Couronnement_Text_PassRecu
+	waitfanfare
+	special Couronnement_DonnerPass
+	msgbox Couronnement_Text_PassMenu, MSGBOX_DEFAULT
 	release
 	end
 
@@ -216,6 +228,16 @@ Couronnement_Text_BadgeManquant:
 Couronnement_Text_DejaGagne:
 	.string "Tu as déjà remporté ce tournoi.\n"
 	.string "Ton nom est gravé au tableau !$"
+
+Couronnement_Text_PassOublie:
+	.string "Ton rival t'a inscrit au Couronnement\n"
+	.string "Mondial, mais ton pass est resté ici.\l"
+	.string "Tiens, le voilà.$"
+
+Couronnement_Text_PassMenu:
+	.string "Ton classement est dans le menu,\n"
+	.string "ligne MONDIAL. Reviens me parler\l"
+	.string "pour t'inscrire au tournoi.$"
 
 Couronnement_Text_PasAssez:
 	.string "Il te faut au moins 4 Pokémon\n"
