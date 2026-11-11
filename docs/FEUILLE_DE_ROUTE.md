@@ -12,6 +12,7 @@ et sur GitHub.
 | 3 | Liens avec les Pokémon : lien (amitié ≥ 150) et lien fort (≥ 220) donnent plus d'XP et d'EV, EV jusqu'à 302 avec un lien fort, bonus d'ancienneté - v0.11 | ✅ livré |
 | 4 | Traduction française du chapitre 2 : Myokara, Bastien, Grotte Granite (v0.12), puis Poivressel, Musée (Arthur), chantier de Stern, Route 110, Lavandia (Timmy), Arène de Voltère (v0.13) | ✅ livré |
 | 5 | Reste du chapitre 2 : Rydel Cycles, Route 109, Route 117, Casino, Fan Club, répliques des dresseurs des routes - v0.14 | ✅ livré |
+| 6 | Équipes Hard / Kaizo du chapitre 3 : Adriane, Max et Tabitha au Mont Chimnée, voyous Magma, 67 dresseurs des Routes 111-114, Chemin Escarpé, Arène de Vermilava - v0.15 | ✅ livré |
 
 ## Déjà fait
 
@@ -29,11 +30,12 @@ et sur GitHub.
 - v0.12 - Village Myokara en français
 - v0.13 - Poivressel, Route 110, Lavandia et Arène de Voltère en français
 - v0.14 - fin du chapitre 2 en français (Rydel, Routes 109 / 117, Casino, Fan Club, dresseurs)
+- v0.15 - équipes Hard / Kaizo du chapitre 3
 
 ## Plus tard
 
 - Couronnement Mondial (pass, rang, Elo, tournois, finale à 32)
-- Équipes Hard / Kaizo des chapitres 3 et suivants
+- Équipes Hard / Kaizo des chapitres 4 et suivants
 - Traduction des chapitres suivants et des descriptions
 - Objets tenus récupérés après chaque combat, formes régionales
 - Mis de côté : Blue, Lucas, Aurore (en attente de sprites)

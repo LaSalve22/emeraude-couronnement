@@ -152,10 +152,19 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   et les répliques des dresseurs des Routes 109, 110, 116 et 117 (`data/text/trainers.inc`, fichier `20_dresseurs_chapitre2.txt`).
 - Routes 105 à 108 (accessibles avec Surf) laissées pour le chapitre 3.
 
+## Fait (v0.15)
+
+- Équipes Hard / Kaizo du chapitre 3 (73 dresseurs de plus, 174 au total). Faits à la main : Adriane (cap 45, 6 Pokémon en Kaizo,
+  Sécheresse), Max et Tabitha au Mont Chimnée, voyous Magma (Mont Chimnée, Chemin Escarpé).
+- Dresseurs ordinaires : `AUTO[id] = (cap, plancher Hard, plancher Kaizo)` ; les niveaux d'origine étant bas, un plancher
+  (30/34 sur les routes, 35/39 dans l'Arène, 40/44 dans le désert de la Route 111, cap 54) relève les équipes, et `EVOLVE`
+  fait évoluer les espèces au bon niveau. Nouvelles réserves : sol, feu, roche, oiseau, poison, elite, beaute.
+  Les chapitres 1-2 (entrées sans plancher) sont inchangés.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : chapitre 3 (Vergazon, Route 111-113, Lavandia → Cheminée, Arène d'Adriane) puis les descriptions (objets, attaques, talents, Pokédex).
-1. Équipes Hard/Kaizo des chapitres 3 et suivants (même outil).
+1. Équipes Hard/Kaizo du chapitre 4 (Routes 118-119, Clémenti/Norman, Rivière, Institut Météo, Mont Mémoria, Arène de Norman ; cap 54).
 2. Placer les Méga-Gemmes dans le monde.
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 

@@ -326,6 +326,69 @@ for rival in ('MAY', 'BRENDAN'):
                       f"{mid} @ Sitrus Berry | Timid | {ha} | 28 | 252 Spe / 252 HP | {mk}"],
         }
 
+# ------------------------------------------------------------------ chapitre 3 : chefs (faits à la main)
+# Cap 45 avant Adriane (4e badge). Mont Chimnée et Chemin Escarpé juste avant l'Arène.
+TEAMS.update({
+    'GRUNT_MT_CHIMNEY_1': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 32 | 128 Atk / 128 Spe | Crunch, Fire Fang, Swagger, Sand Attack",
+                 "Camerupt | Modest | Solid Rock | 33 | 128 SpA / 128 HP | Lava Plume, Earth Power, Rock Slide, Growth"],
+        'Kaizo': ["Golbat @ Oran Berry | Jolly | Inner Focus | 36 | 252 Atk / 252 Spe | Poison Fang, Wing Attack, Confuse Ray, Mean Look",
+                  "Mightyena @ Oran Berry | Jolly | Intimidate | 36 | 252 Atk / 252 Spe | Crunch, Fire Fang, Sucker Punch, Swagger",
+                  "Camerupt @ Sitrus Berry | Modest | Solid Rock | 37 | 252 SpA / 252 HP | Lava Plume, Earth Power, Rock Slide, Yawn"],
+    },
+    'GRUNT_MT_CHIMNEY_2': {
+        'Hard': ["Golbat | Jolly | Inner Focus | 33 | 128 Atk / 128 Spe | Poison Fang, Wing Attack, Bite, Confuse Ray",
+                 "Weezing | Bold | Levitate | 33 | 128 HP / 128 Def | Sludge, Will-O-Wisp, Smokescreen, Self-Destruct"],
+        'Kaizo': ["Golbat @ Oran Berry | Jolly | Inner Focus | 37 | 252 Atk / 252 Spe | Poison Fang, Wing Attack, Confuse Ray, Mean Look",
+                  "Weezing @ Black Sludge | Bold | Levitate | 36 | 252 HP / 252 Def | Sludge Bomb, Will-O-Wisp, Fire Blast, Pain Split",
+                  "Houndoom @ Oran Berry | Timid | Flash Fire | 36 | 252 SpA / 252 Spe | Flamethrower, Dark Pulse, Roar, Nasty Plot"],
+    },
+    'TABITHA_MT_CHIMNEY': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 34 | 128 Atk / 128 Spe | Crunch, Fire Fang, Swagger, Roar",
+                 "Golbat | Jolly | Inner Focus | 34 | 128 Atk / 128 Spe | Poison Fang, Wing Attack, Confuse Ray, Mean Look",
+                 "Camerupt | Modest | Solid Rock | 35 | 128 SpA / 128 HP | Lava Plume, Earth Power, Rock Slide, Yawn",
+                 "Houndoom @ Oran Berry | Timid | Flash Fire | 36 | 252 SpA / 252 Spe | Flamethrower, Crunch, Roar, Nasty Plot"],
+        'Kaizo': ["Mightyena @ Sitrus Berry | Jolly | Intimidate | 38 | 252 Atk / 252 Spe | Crunch, Fire Fang, Sucker Punch, Swagger",
+                  "Crobat @ Oran Berry | Jolly | Inner Focus | 38 | 252 Atk / 252 Spe | Cross Poison, Acrobatics, Super Fang, Taunt",
+                  "Weezing @ Black Sludge | Bold | Levitate | 38 | 252 HP / 252 Def | Sludge Bomb, Will-O-Wisp, Fire Blast, Pain Split",
+                  "Camerupt @ Sitrus Berry | Modest | Solid Rock | 39 | 252 SpA / 252 HP | Lava Plume, Earth Power, Rock Slide, Yawn",
+                  "Houndoom @ Focus Sash | Timid | Flash Fire | 40 | 252 SpA / 252 Spe | Flamethrower, Dark Pulse, Sludge Bomb, Nasty Plot"],
+    },
+    'MAXIE_MT_CHIMNEY': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 36 | 128 Atk / 128 Spe | Crunch, Fire Fang, Sucker Punch, Swagger",
+                 "Golbat | Jolly | Inner Focus | 36 | 128 Atk / 128 Spe | Poison Fang, Wing Attack, Confuse Ray, Mean Look",
+                 "Weezing | Bold | Levitate | 36 | 128 HP / 128 Def | Sludge Bomb, Will-O-Wisp, Smokescreen, Pain Split",
+                 "Camerupt @ Sitrus Berry | Modest | Solid Rock | 38 | 252 SpA / 252 HP | Lava Plume, Earth Power, Rock Slide, Yawn"],
+        'Kaizo': ["Mightyena @ Sitrus Berry | Jolly | Moxie | 40 | 252 Atk / 252 Spe | Crunch, Fire Fang, Sucker Punch, Play Rough",
+                  "Crobat @ Oran Berry | Jolly | Inner Focus | 40 | 252 Atk / 252 Spe | Cross Poison, Acrobatics, Super Fang, Taunt",
+                  "Weezing @ Black Sludge | Bold | Levitate | 40 | 252 HP / 252 Def | Sludge Bomb, Will-O-Wisp, Fire Blast, Pain Split",
+                  "Torkoal @ Heat Rock | Relaxed | Drought | 40 | 252 HP / 252 Def | Lava Plume, Stealth Rock, Yawn, Body Press",
+                  "Houndoom @ Focus Sash | Timid | Flash Fire | 41 | 252 SpA / 252 Spe | Fire Blast, Dark Pulse, Solar Beam, Nasty Plot",
+                  "Camerupt @ Sitrus Berry | Modest | Solid Rock | 42 | 252 SpA / 252 HP | Flamethrower, Earth Power, Rock Slide, Yawn"],
+    },
+    'GRUNT_JAGGED_PASS': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 34 | 128 Atk / 128 Spe | Crunch, Fire Fang, Swagger, Sand Attack",
+                 "Camerupt | Modest | Solid Rock | 34 | 128 SpA / 128 HP | Lava Plume, Earth Power, Rock Slide, Growth"],
+        'Kaizo': ["Mightyena @ Oran Berry | Jolly | Intimidate | 38 | 252 Atk / 252 Spe | Crunch, Fire Fang, Sucker Punch, Swagger",
+                  "Torkoal @ Sitrus Berry | Relaxed | Drought | 37 | 252 HP / 252 Def | Lava Plume, Yawn, Rock Slide, Protect",
+                  "Camerupt @ Oran Berry | Modest | Solid Rock | 38 | 252 SpA / 252 HP | Lava Plume, Earth Power, Rock Slide, Yawn"],
+    },
+    'FLANNERY_1': {
+        'Hard': ["Magcargo | Bold | Flame Body | 40 | 128 HP / 128 Def | Lava Plume, Rock Slide, Yawn, Amnesia",
+                 "Ninetales | Timid | Flash Fire | 40 | 128 SpA / 128 Spe | Flamethrower, Will-O-Wisp, Confuse Ray, Extrasensory",
+                 "Houndoom | Timid | Flash Fire | 40 | 128 SpA / 128 Spe | Flamethrower, Crunch, Nasty Plot, Sludge Bomb",
+                 "Camerupt | Modest | Solid Rock | 41 | 128 SpA / 128 HP | Lava Plume, Earth Power, Rock Slide, Yawn",
+                 "Torkoal @ Sitrus Berry | Quiet | Drought | 42 | 252 HP / 252 SpA | Overheat, Rock Slide, Yawn, Protect"],
+        'Kaizo': ["Torkoal @ Heat Rock | Relaxed | Drought | 44 | 252 HP / 252 Def | Lava Plume, Stealth Rock, Yawn, Rapid Spin",
+                  "Ninetales @ Life Orb | Timid | Flash Fire | 44 | 252 SpA / 252 Spe | Fire Blast, Solar Beam, Nasty Plot, Extrasensory",
+                  "Houndoom @ Focus Sash | Timid | Flash Fire | 44 | 252 SpA / 252 Spe | Flamethrower, Dark Pulse, Sludge Bomb, Nasty Plot",
+                  "Arcanine @ Sitrus Berry | Adamant | Intimidate | 44 | 252 Atk / 252 Spe | Flare Blitz, Extreme Speed, Wild Charge, Crunch",
+                  "Magcargo @ White Herb | Modest | Flame Body | 44 | 252 SpA / 252 HP | Shell Smash, Lava Plume, Earth Power, Ancient Power",
+                  "Camerupt @ Sitrus Berry | Quiet | Solid Rock | 45 | 252 SpA / 252 HP | Eruption, Earth Power, Rock Slide, Yawn"],
+    },
+})
+
+
 def mon_block(spec, iv):
     parts = [p.strip() for p in spec.split('|')] + [''] * 6
     species, nature, ability, level, evs, moves = parts[:6]
@@ -353,6 +416,13 @@ POOLS = {
     'course':   ['Doduo', 'Ponyta', 'Taillow', 'Starly', 'Pidgey', 'Electrike'],
     'insecte':  ['Dustox', 'Beautifly', 'Volbeat', 'Illumise', 'Nincada', 'Paras', 'Venonat', 'Combee', 'Kricketune'],
     'plante':   ['Shroomish', 'Roselia', 'Oddish', 'Bellsprout', 'Seedot', 'Budew', 'Hoppip'],
+    'sol':      ['Sandshrew', 'Baltoy', 'Trapinch', 'Cacnea', 'Hippopotas', 'Gligar', 'Diglett', 'Phanpy'],
+    'feu':      ['Numel', 'Slugma', 'Growlithe', 'Vulpix', 'Houndour', 'Ponyta', 'Magby', 'Litleo'],
+    'roche':    ['Geodude', 'Onix', 'Nosepass', 'Aron', 'Rhyhorn', 'Roggenrola', 'Larvitar'],
+    'oiseau':   ['Swablu', 'Taillow', 'Natu', 'Hoothoot', 'Starly', 'Murkrow', 'Skarmory', 'Doduo'],
+    'poison':   ['Koffing', 'Grimer', 'Ekans', 'Gulpin', 'Seviper', 'Skorupi', 'Stunky', 'Ninjask'],
+    'elite':    ['Absol', 'Kirlia', 'Lairon', 'Vibrava', 'Growlithe', 'Eevee', 'Sneasel', 'Murkrow'],
+    'beaute':   ['Marill', 'Roselia', 'Skitty', 'Vulpix', 'Swablu', 'Chinchou', 'Snubbull', 'Milotic'],
     'mixte':    ['Zigzagoon', 'Skitty', 'Whismur', 'Aron', 'Poochyena', 'Azurill', 'Eevee', 'Teddiursa', 'Snubbull', 'Buneary'],
 }
 CLASS_POOL = {
@@ -360,6 +430,9 @@ CLASS_POOL = {
     'Fisherman': 'eau', 'Swimmer M': 'eau', 'Swimmer F': 'eau', 'Psychic': 'psy', 'Triathlete': 'electrik',
     'Guitarist': 'electrik', 'Pokefan': 'electrik', 'Bug Maniac': 'insecte', 'Aroma Lady': 'plante',
     'Collector': 'plante', 'Pkmn Breeder': 'mixte', 'Youngster': 'mixte', 'Twins': 'electrik', 'Sr And Jr': 'mixte',
+    'Camper': 'sol', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
+    'Bird Keeper': 'oiseau', 'Ninja Boy': 'poison', 'Cooltrainer': 'elite', 'Expert': 'combat',
+    'Parasol Lady': 'beaute', 'Beauty': 'beaute', 'Pokemaniac': 'roche', 'Winstrate': 'mixte',
 }
 EVS_KAIZO = '84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe'
 
@@ -375,7 +448,61 @@ for tid in ['EDWARD', 'JACLYN', 'EDWIN_1', 'DALE', 'JACOB', 'ANTHONY', 'BENJAMIN
     AUTO[tid] = 36
 
 
-def auto_teams(tid, block, cap):
+# Chapitre 3 (cap 45 avant Adriane ; 54 pour le désert de la Route 111, ouvert après le 4e badge).
+# Les niveaux d'origine sont bas : plancher par difficulté pour garder la pression.
+for tid in ['VICTOR', 'VICTORIA', 'VIVI', 'VICKY', 'IRENE', 'TRAVIS', 'TYRON', 'DAISUKE', 'WILTON_1', 'BROOKE_1',
+            'CELINA', 'BIANCA', 'HAYDEN', 'BRICE', 'BRYANT', 'CAROL', 'LARRY', 'SHAYLA', 'TRENT_1',
+            'COBY', 'DILLON', 'JAYLEN', 'LAO_1', 'LAWRENCE', 'LUNG', 'MADELINE_1', 'SOPHIE', 'TORI_AND_TIA', 'WYATT',
+            'ANGELINA', 'BERNIE_1', 'CHARLOTTE', 'CLAUDE', 'KAI', 'LENNY', 'LUCAS_1', 'NANCY', 'NOLAN', 'SHANE',
+            'STEVE_1', 'TYRA_AND_IVY', 'MELISSA', 'SAWYER_1', 'SHEILA', 'SHELBY_1', 'SHIRLEY',
+            'AUTUMN', 'DIANA_1', 'ERIC', 'ETHAN_1', 'JULIO']:
+    AUTO[tid] = (45, 30, 34)
+for tid in ['AXLE', 'COLE', 'DANIELLE', 'ELI', 'GERALD', 'JACE', 'JEFF', 'KEEGAN']:  # Arène d'Adriane
+    AUTO[tid] = (45, 35, 39)
+for tid in ['BEAU', 'BECKY', 'BRANDEN', 'BRYAN', 'CELIA', 'DREW', 'DUSTY_1', 'HEIDI']:  # désert
+    AUTO[tid] = (54, 40, 44)
+
+# Évolutions par niveau (espèce -> (niveau, évolution)), utilisées quand un plancher fait monter le niveau.
+EVOLVE = {
+    'Numel': (33, 'Camerupt'), 'Geodude': (25, 'Graveler'), 'Sandshrew': (22, 'Sandslash'), 'Baltoy': (36, 'Claydol'),
+    'Shroomish': (23, 'Breloom'), 'Marill': (18, 'Azumarill'), 'Taillow': (22, 'Swellow'), 'Slugma': (38, 'Magcargo'),
+    'Aron': (32, 'Lairon'), 'Lairon': (42, 'Aggron'), 'Trapinch': (35, 'Vibrava'), 'Vibrava': (45, 'Flygon'),
+    'Koffing': (35, 'Weezing'), 'Wingull': (25, 'Pelipper'), 'Barboach': (30, 'Whiscash'), 'Magikarp': (20, 'Gyarados'),
+    'Goldeen': (33, 'Seaking'), 'Electrike': (26, 'Manectric'), 'Makuhita': (24, 'Hariyama'), 'Meditite': (37, 'Medicham'),
+    'Zubat': (22, 'Golbat'), 'Poochyena': (18, 'Mightyena'), 'Swablu': (35, 'Altaria'), 'Oddish': (21, 'Gloom'),
+    'Magnemite': (30, 'Magneton'), 'Zigzagoon': (20, 'Linoone'), 'Machop': (28, 'Machoke'), 'Cacnea': (32, 'Cacturne'),
+    'Hippopotas': (34, 'Hippowdon'), 'Diglett': (26, 'Dugtrio'), 'Phanpy': (25, 'Donphan'), 'Houndour': (24, 'Houndoom'),
+    'Ponyta': (40, 'Rapidash'), 'Magby': (30, 'Magmar'), 'Litleo': (35, 'Pyroar'), 'Nosepass': (99, 'Nosepass'),
+    'Rhyhorn': (42, 'Rhydon'), 'Roggenrola': (25, 'Boldore'), 'Larvitar': (30, 'Pupitar'), 'Natu': (25, 'Xatu'),
+    'Hoothoot': (20, 'Noctowl'), 'Starly': (14, 'Staravia'), 'Staravia': (34, 'Staraptor'), 'Doduo': (31, 'Dodrio'),
+    'Grimer': (38, 'Muk'), 'Ekans': (22, 'Arbok'), 'Gulpin': (26, 'Swalot'), 'Skorupi': (40, 'Drapion'),
+    'Stunky': (34, 'Skuntank'), 'Kirlia': (30, 'Gardevoir'), 'Chinchou': (27, 'Lanturn'), 'Snubbull': (23, 'Granbull'),
+    'Nincada': (20, 'Ninjask'), 'Spoink': (32, 'Grumpig'), 'Wailmer': (40, 'Wailord'), 'Lotad': (14, 'Lombre'),
+    'Seedot': (14, 'Nuzleaf'), 'Ralts': (20, 'Kirlia'), 'Skitty': (99, 'Skitty'),
+    'Azurill': (18, 'Marill'), 'Whismur': (20, 'Loudred'), 'Loudred': (40, 'Exploud'), 'Teddiursa': (30, 'Ursaring'),
+    'Budew': (18, 'Roselia'), 'Bellsprout': (21, 'Weepinbell'), 'Paras': (24, 'Parasect'), 'Venonat': (31, 'Venomoth'),
+    'Abra': (16, 'Kadabra'), 'Drowzee': (26, 'Hypno'), 'Slowpoke': (37, 'Slowbro'), 'Voltorb': (30, 'Electrode'),
+    'Shinx': (15, 'Luxio'), 'Mareep': (15, 'Flaaffy'), 'Flaaffy': (30, 'Ampharos'), 'Blitzle': (27, 'Zebstrika'),
+    'Pidgey': (18, 'Pidgeotto'), 'Tentacool': (30, 'Tentacruel'), 'Horsea': (32, 'Seadra'), 'Psyduck': (33, 'Golduck'),
+    'Krabby': (28, 'Kingler'), 'Poliwag': (25, 'Poliwhirl'), 'Buizel': (26, 'Floatzel'), 'Remoraid': (25, 'Octillery'),
+    'Mankey': (28, 'Primeape'), 'Croagunk': (37, 'Toxicroak'), 'Timburr': (25, 'Gurdurr'), 'Riolu': (20, 'Lucario'),
+    'Tyrogue': (20, 'Hitmontop'), 'Ninjask': (99, 'Ninjask'), 'Machoke': (99, 'Machoke'),
+}
+
+
+def evolve(species, level):
+    while species in EVOLVE and level >= EVOLVE[species][0] and EVOLVE[species][1] != species:
+        species = EVOLVE[species][1]
+    return species
+
+
+def auto_teams(tid, block, rule):
+    cap, floor_h, floor_k = rule if isinstance(rule, tuple) else (rule, 0, 0)
+    floors = {'Hard': floor_h, 'Kaizo': floor_k}
+    return _auto_teams(tid, block, cap, floors)
+
+
+def _auto_teams(tid, block, cap, floors):
     """Équipe Hard / Kaizo d'un dresseur ordinaire à partir de son équipe Normal."""
     import random
     cls = re.search(r'(?m)^Class: (.*)$', block).group(1)
@@ -385,13 +512,16 @@ def auto_teams(tid, block, cap):
     top = max(int(l) for _, l in mons)
     teams = {}
     for diff, bonus, extra in (('Hard', 3, 1), ('Kaizo', 5, 2)):
-        team = [(sp, min(max(int(l) + bonus, top + bonus - 4), cap)) for sp, l in mons]  # plancher : 4 niveaux sous le meilleur
+        floor = floors[diff]
+        team = [(sp, min(max(int(l) + bonus, top + bonus - 4, floor), cap)) for sp, l in mons]  # plancher : 4 niveaux sous le meilleur
         names = {sp for sp, _ in team}
         choices = [p for p in pool if p not in names]
         rng.shuffle(choices)
         for sp in choices[:extra]:
-            team.append((sp, min(top + bonus - 1, cap)))
+            team.append((sp, min(max(top + bonus - 1, floor), cap)))
         team = team[:6]
+        if floor:  # chapitre 3 et suivants : faire évoluer ce qui a pris des niveaux
+            team = [(evolve(sp, lvl), lvl) for sp, lvl in team]
         specs = []
         for i, (sp, lvl) in enumerate(team):
             item = ' @ Oran Berry' if diff == 'Kaizo' and i == len(team) - 1 else ''
