@@ -1,0 +1,396 @@
+// Chapitre 1 — Mérouville : École des Dresseurs et Devon SA
+
+// ===== École des Dresseurs =====
+
+@@ RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges
+Le tableau liste les altérations d'état qui peuvent toucher les Pokémon en combat.
+
+@@ RustboroCity_PokemonSchool_Text_ReadWhichTopic
+Quel sujet veux-tu lire ?
+
+@@ RustboroCity_PokemonSchool_Text_ExplainPoison
+Un Pokémon empoisonné perd des PV en continu.
+
+Le poison persiste après le combat.
+
+Il continue de faire effet pendant les déplacements. Lentement. Douloureusement.
+
+Soignez-le avec un Antidote.
+
+@@ RustboroCity_PokemonSchool_Text_ExplainParalysis
+Un Pokémon paralysé voit sa Vitesse chuter.
+
+Il peut aussi rester figé pendant le combat, incapable de bouger.
+
+La paralysie persiste après le combat. Soignez-la avec un Anti-Para.
+
+@@ RustboroCity_PokemonSchool_Text_ExplainSleep
+Un Pokémon endormi ne peut pas attaquer.
+
+Il peut se réveiller seul, mais s'il dort à la fin du combat, il restera endormi.
+
+Réveillez-le avec un Réveil.
+
+@@ RustboroCity_PokemonSchool_Text_ExplainBurn
+Une brûlure réduit l'Attaque et ronge les PV de la victime.
+
+Elle persiste après le combat. Soignez-la avec un Anti-Brûle.
+
+@@ RustboroCity_PokemonSchool_Text_ExplainFreeze
+Un Pokémon gelé est totalement sans défense.
+
+Il reste gelé après le combat. Dégelez-le avec un Antigel.
+
+@@ RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw
+Les élèves qui ne travaillent pas goûtent à ma Vive Griffe.
+
+Ta façon d'utiliser cet objet dira si tu es un bon élève. Ou un cas désespéré.
+
+@@ RustboroCity_PokemonSchool_Text_ExplainQuickClaw
+Un Pokémon qui tient une Vive Griffe peut parfois accélérer et agir avant son adversaire.
+
+Il existe beaucoup d'autres objets à faire tenir aux Pokémon.
+
+Rien qu'avec ça, tu as de quoi réviser jusqu'à la fin de tes jours !
+
+@@ RustboroCity_PokemonSchool_Text_TradingRightNow
+Je suis en train d'échanger des Pokémon avec mon pote.
+
+@@ RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot
+J'ai toujours voulu un Grainipiot, et je vais enfin en avoir un !
+
+@@ RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems
+Les Pokémon peuvent tenir des objets, mais ils ne savent pas se servir des objets humains comme les Potions ou les Antidotes.
+
+@@ RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself
+Tu sais que certaines attaques rendent les Pokémon confus ?
+
+Un Pokémon confus peut se blesser lui-même sans le vouloir.
+
+Mais une fois sorti du combat, il redevient normal.
+
+@@ RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry
+Un Pokémon qui tient une Baie se soigne tout seul…
+
+Il y a plein d'objets à faire tenir…
+
+Pfff, c'est dur de tout noter…
+
+@@ RustboroCity_PokemonSchool_Text_StudentsNotes
+Le cahier d'un élève…
+
+On capture les Pokémon avec des Poké Balls.
+
+Un Dresseur peut avoir jusqu'à six Pokémon avec lui.
+
+Un Dresseur capture des Pokémon, les entraîne et les fait combattre.
+
+La mission d'un Dresseur : vaincre les Dresseurs redoutables qui l'attendent dans les Arènes.
+
+Dans la marge, quelqu'un a écrit : “Et revenir vivant.”
+
+@@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut
+Tiens ? On ne s'est pas déjà vus ? À Clémenti-Ville, je crois.
+
+Je me présente. Je m'appelle Scott.
+
+Je parcours le pays à la recherche de Dresseurs exceptionnels.
+
+Plus précisément, des experts du combat Pokémon. Des vrais. Ceux qui n'ont plus peur de rien.
+
+Qu'est-ce qui t'amène dans cette école ? Toi aussi, tu es Dresseur ?
+
+D'abord, apprends Coupe à un de tes Pokémon.
+
+Si je me souviens bien, quelqu'un en ville possède cette CS.
+
+@@ RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown
+Scott : Hmm…
+
+Le niveau des élèves ici est encore un mystère. Le potentiel est là. Reste à voir qui tiendra.
+
+@@ RustboroCity_PokemonSchool_Text_ScottStoneBadge
+Scott : Oh, qu'est-ce que c'est ?
+
+C'est un Badge Roche, non ? Plutôt impressionnant.
+
+Mais tu sais, j'aurais adoré te voir combattre.
+
+Un Badge ne dit pas grand-chose du Dresseur qui le porte.
+
+@@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge
+Tiens ? On ne s'est pas déjà vus ? À Clémenti-Ville, je crois.
+
+Je me présente. Je m'appelle Scott.
+
+Je parcours le pays à la recherche de Dresseurs exceptionnels.
+
+Plus précisément, des experts du combat Pokémon.
+
+Oh, qu'est-ce que c'est ? Un Badge Roche ?
+
+Plutôt impressionnant, pour quelqu'un qui débute.
+
+Mais tu sais, j'aurais adoré te voir combattre.
+
+Un Badge ne dit pas grand-chose du Dresseur qui le porte.
+
+// ===== Devon SA, rez-de-chaussée =====
+
+@@ RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp
+Bonjour et bienvenue chez Devon SA.
+
+Nous sommes fiers de produire des objets et des médicaments qui améliorent votre vie.
+
+@@ RustboroCity_DevonCorp_1F_Text_StaffGotRobbed
+Un de nos chercheurs s'est fait voler un colis important. Comme un idiot.
+
+@@ RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct
+Hé, ces Chaussures de sport ! C'est un de nos produits !
+
+Ça fait plaisir de voir quelqu'un utiliser ce qu'on fabrique.
+
+@@ RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright
+Ce colis volé…
+
+Il est important, oui, mais personne ne peut s'en servir. Pas sans nos laboratoires.
+
+À mon avis, ce voleur n'était pas une lumière. Ou alors, il savait exactement ce qu'il faisait.
+
+@@ RustboroCity_DevonCorp_1F_Text_SoundsLikeStolenGoodsRecovered
+Il paraît qu'on a récupéré les Pièces Devon volées.
+
+@@ RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter
+Désolé, l'accès est réservé au personnel autorisé.
+
+@@ RustboroCity_DevonCorp_1F_Text_HowCouldWeGetRobbed
+C'est d'une connerie sans nom. Comment on a pu se faire voler ?
+
+@@ RustboroCity_DevonCorp_1F_Text_YoureAlwaysWelcomeHere
+Bonjour ! Ici, tu es toujours chez toi !
+
+@@ RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay
+Des échantillons de roches et de métaux sont exposés dans la vitrine.
+
+Un panneau explique…
+
+“Devon a débuté comme exploitant de carrières.
+
+“L'entreprise a ensuite extrait le fer du sable.
+
+“De ces humbles débuts dans les matières premières, Devon s'est développée.
+
+“Aujourd'hui, Devon fabrique une vaste gamme de produits industriels.”
+
+@@ RustboroCity_DevonCorp_1F_Text_ProductDisplay
+Des prototypes et des produits en test remplissent la vitrine.
+
+Un panneau explique…
+
+“En plus de ses produits industriels, Devon commercialise des articles du quotidien et des médicaments.
+
+“Depuis peu, Devon propose aussi des outils pour Dresseurs, dont les Poké Balls et le PokéNav.”
+
+// ===== Devon SA, 1er étage =====
+
+@@ RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon
+On développe un appareil pour parler avec les Pokémon.
+
+Mais pour l'instant, ils n'ont rien de gentil à nous dire…
+
+@@ RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls
+Je développe de nouvelles Poké Balls…
+
+Mais je n'avance pas beaucoup…
+
+@@ RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls
+On a enfin créé de nouvelles Poké Balls !
+
+La Bis Ball capture plus facilement les Pokémon déjà capturés.
+
+La Chrono Ball devient plus efficace à mesure que le combat dure.
+
+Toutes deux fièrement développées par Devon SA.
+
+Essayez-les !
+
+@@ RustboroCity_DevonCorp_2F_Text_IMadePokenav
+C'est moi qui ai créé le PokéNav !
+
+En tant qu'ingénieur, je suis fier d'avoir conçu une telle merveille !
+
+@@ RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav
+Oh, waouh ! Un PokéNav !
+
+Il est né du désir de notre Président de comprendre ce que ressentent les Pokémon.
+
+Tu veux que je t'explique toutes ses fonctions ?
+
+Non, non. Tu comprendras mieux en l'utilisant.
+
+@@ RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams
+J'essaie de créer un appareil qui affiche les rêves des Pokémon…
+
+Mais les premiers résultats… ce sont plutôt des cauchemars.
+
+@@ RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils
+J'essaie de créer un appareil qui ramène les Pokémon fossiles à la vie…
+
+Et ça marche ! Ramener les morts… quelle sensation.
+
+@@ RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife
+Attends ! Ce que tu tiens là… C'est un fossile de Pokémon ?
+
+Tu veux ramener ce Pokémon à la vie ?
+
+Je peux le faire avec mon nouveau Régénérateur de Fossiles.
+
+@@ RustboroCity_DevonCorp_2F_Text_OhIsThatSo
+Ah bon ?
+
+La technologie de Devon est exceptionnelle, je te dis.
+
+@@ RustboroCity_DevonCorp_2F_Text_TwoFossilsPickOne
+Ça alors ! Tu n'as pas un, mais deux fossiles ?
+
+Malheureusement, ma machine ne peut ressusciter qu'un Pokémon à la fois.
+
+Lequel veux-tu ramener à la vie ?
+
+@@ RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher
+Parfait ! On commence tout de suite.
+
+{PLAYER} confie {STR_VAR_1} au chercheur de Devon.
+
+@@ RustboroCity_DevonCorp_2F_Text_FossilRegeneratorTakesTime
+Mon Régénérateur de Fossiles est incroyable.
+
+Mais il a un défaut : il est lent.
+
+Alors, euh… Va faire un tour, d'accord ?
+
+@@ RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife
+Merci d'avoir attendu !
+
+Ton Pokémon fossile est revenu à la vie !
+
+C'était un Pokémon préhistorique. {STR_VAR_2} ! Il a dormi des millions d'années. Il doit être furieux.
+
+@@ RustboroCity_DevonCorp_2F_Text_ReceivedMonFromResearcher
+{PLAYER} reçoit {STR_VAR_2} de la part du chercheur de Devon.
+
+@@ RustboroCity_DevonCorp_2F_Text_TooManyPokemon
+Oh, oh. Tu as trop de Pokémon. Il n'y a pas de place pour celui-ci.
+
+@@ RustboroCity_DevonCorp_2F_Text_DevelopNewPokenavFeature
+J'essaie de développer une nouvelle fonction pour le PokéNav…
+
+Mais ça n'avance pas.
+
+@@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext
+Bon, sur quoi je vais travailler, maintenant ?
+
+Ici, on nous laisse transformer nos idées en réalité. Toutes nos idées. Même celles qui devraient rester sur le papier.
+
+Un ingénieur ne pourrait pas rêver mieux.
+
+// ===== Devon SA, 2e étage =====
+
+@@ RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor
+Je suis M. Rochard, Président de Devon SA.
+
+On vient de me parler de toi !
+
+Tu as sauvé mon employé, pas une fois, mais deux !
+
+J'ai un service à demander à quelqu'un d'aussi remarquable.
+
+Tu livres un colis au chantier naval de Poivressel, c'est bien ça ?
+
+En chemin, pourrais-tu faire escale au Village Myokara ?
+
+J'aimerais que tu remettes une Lettre à Pierre, à Myokara. Mon fils. Il ne répond plus à mes appels.
+
+@@ RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis
+M. Rochard : Sache que je suis un grand Président.
+
+Je ne serais jamais assez pingre pour demander un service sans rien offrir en retour.
+
+Voilà pourquoi je veux que tu aies ceci !
+
+@@ RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
+{PLAYER} reçoit un PokéNav.
+
+@@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp
+M. Rochard : Cet appareil…
+
+C'est un Navigateur Pokémon, ou PokéNav.
+
+Un outil indispensable pour tout Dresseur en voyage.
+
+Il contient une carte de Hoenn.
+
+Tu y trouveras facilement Myokara et Poivressel !
+
+Au fait, il paraît que des criminels, Magma et Aqua je crois, sèment le chaos un peu partout. Il y a déjà eu des disparitions.
+
+Repose-toi avant de partir. C'est un conseil.
+
+@@ RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare
+M. Rochard : Bien, {PLAYER}. Sois prudent. Vraiment.
+
+@@ RustboroCity_DevonCorp_3F_Text_CountingOnYou
+M. Rochard : Je compte sur toi !
+
+@@ RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter
+M. Rochard : Tu as remis ma Lettre ? Merci infiniment !
+
+Voici pour te remercier. Ça devrait servir à un Dresseur comme toi.
+
+@@ RustboroCity_DevonCorp_3F_Text_ExplainExpShare
+M. Rochard : Un Pokémon qui tient ce Multi Exp reçoit une partie des points d'expérience du combat.
+
+Même s'il n'a pas combattu.
+
+C'est très utile pour entraîner les Pokémon faibles.
+
+@@ RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends
+M. Rochard : Depuis ma jeunesse, je ne vis que pour le travail.
+
+Du coup, je ne connais rien aux modes. Ni à mon propre fils, d'ailleurs.
+
+Mais dis-moi, tous les jeunes veulent devenir Dresseurs à la Ligue Pokémon ?
+
+@@ RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere
+Nous sommes au deuxième étage de Devon SA.
+
+Le bureau du Président se trouve ici.
+
+Je ne te remercierai jamais assez pour ce que tu as fait.
+
+Euh… Au fait, le colis que tu nous as rapporté…
+
+Tu pourrais le livrer au chantier naval de Poivressel ?
+
+Ce serait terrible si ces voleurs remettaient la main dessus. Des gens pourraient mourir.
+
+Euh… Hé hé… Je peux compter sur toi ?
+
+Ah, c'est vrai. Attends ici une seconde, tu veux ?
+
+@@ RustboroCity_DevonCorp_3F_Text_WordWithPresidentComeWithMe
+Notre Président souhaite te parler.
+
+Suis-moi, s'il te plaît.
+
+@@ RustboroCity_DevonCorp_3F_Text_PleaseGoAhead
+Je t'en prie, entre.
+
+@@ RustboroCity_DevonCorp_3F_Text_VisitCaptSternShipyard
+Au chantier naval de Poivressel, va voir le Capitaine Stern.
+
+@@ RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular
+Nos nouveaux produits, la Bis Ball et la Chrono Ball, font un tabac chez les Dresseurs.
+
+@@ RustboroCity_DevonCorp_3F_Text_RareRocksDisplay
+Une collection de pierres rares réunie par le Président. Certaines ont été payées plus cher que des vies.

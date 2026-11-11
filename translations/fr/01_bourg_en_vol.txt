@@ -1,0 +1,478 @@
+// Chapitre 1 - Intro, camion, Bourg-en-Vol et maisons
+// Voir translations/fr/GUIDE.md pour le ton et le lexique.
+
+// ===== Discours d'introduction du Prof. Seko =====
+
+@@ gText_Birch_Welcome
+Ah, te voilà. Désolé pour l'attente, j'avais les mains pleines de terre.
+
+Bienvenue dans le monde des Pokémon.
+
+Je m'appelle Seko.
+
+Les gens m'appellent “le Professeur Pokémon”. Moi, je préfère “celui qui est encore en vie”.
+
+@@ gText_Birch_Pokemon
+Voici ce qu'on appelle un “Pokémon”.
+
+@@ gText_Birch_MainSpeech
+Ce monde grouille de créatures qu'on appelle des Pokémon.
+
+Nous vivons à leurs côtés. Parfois comme amis, parfois comme collègues… parfois comme proies.
+
+Et parfois, on les fait se battre les uns contre les autres. Pour la gloire, pour l'argent, ou juste pour voir.
+
+On les côtoie depuis des siècles, et pourtant on ne sait presque rien d'eux.
+
+Hoenn est plein de secrets. Certains méritent d'être découverts. D'autres auraient dû rester enterrés.
+
+Mon métier, c'est de les déterrer quand même. Quitte à y laisser des plumes.
+
+@@ gText_Birch_AndYouAre
+Et toi, tu es… ?
+
+@@ gText_Birch_BoyOrGirl
+Tu es un garçon ? Ou une fille ?
+
+@@ gText_Birch_WhatsYourName
+Bien. Et ton nom ?
+
+@@ gText_Birch_SoItsPlayer
+Donc, c'est {PLAYER} ?
+
+@@ gText_Birch_YourePlayer
+Ah, d'accord !
+
+Tu es {PLAYER}, la nouvelle tête qui emménage dans mon trou perdu de Bourg-en-Vol. Tout s'explique !
+
+@@ gText_Birch_AreYouReady
+Bon. On y va ?
+
+Ton aventure commence maintenant. Et crois-moi, elle ne t'attendra pas.
+
+Il y a des rêves, des combats et des amitiés là-dehors. Il y a aussi des tombes. Garde les yeux ouverts.
+
+Passe me voir au labo quand tu seras installé. Si je suis encore là.
+
+// ===== Camion =====
+
+@@ InsideOfTruck_Text_BoxPrintedWithMonLogo
+Un carton marqué d'un logo Pokémon.
+
+“Déménagements Pokémon - Vos souvenirs, nos muscles.”
+
+// ===== Bourg-en-Vol (extérieur) =====
+
+@@ LittlerootTown_Text_OurNewHomeLetsGoInside
+Maman : {PLAYER}, on est arrivés, mon cœur !
+
+Le voyage à l'arrière du camion, entre les cartons… pas trop dur ?
+
+Voilà. Bourg-en-Vol.
+
+Alors ? C'est ici qu'on recommence tout.
+
+C'est minuscule, c'est calme… Ici, au moins, personne ne viendra nous chercher d'histoires.
+
+Et tu as enfin ta propre chambre, {PLAYER} ! Allez, on rentre.
+
+@@ LittlerootTown_Text_WaitPlayer
+Maman : Attends, {PLAYER} !
+
+@@ LittlerootTown_Text_WearTheseRunningShoes
+Maman : {PLAYER} ! {PLAYER} ! Tu es allé saluer le Prof. Seko ?
+
+Oh ! Mais c'est un Pokémon, ça ! C'est le Professeur qui te l'a donné ?
+
+Tu es bien l'enfant de ton père… Tu as la même lueur dans les yeux. Ça me fait peur, et ça me rend fière.
+
+Tiens. Si tu pars à l'aventure, mets ces Chaussures de sport.
+
+Pour avancer vite. Et pour fuir encore plus vite s'il le faut.
+
+@@ LittlerootTown_Text_SwitchShoesWithRunningShoes
+{PLAYER} enfile les Chaussures de sport.
+
+@@ LittlerootTown_Text_ExplainRunningShoes
+Maman : {PLAYER}, il y avait une notice avec.
+
+“Maintenez le Bouton B pour courir.”
+
+“Courir ne sauve pas toujours. Mais ça aide.”
+
+@@ LittlerootTown_Text_ComeHomeIfAnythingHappens
+… … … … … … … … … … … …
+
+Mon bébé a son propre Pokémon… Ton père va être tellement fier.
+
+…Promets-moi de faire attention. Si ça tourne mal, tu rentres. Sans discuter.
+
+Allez, file. Avant que je change d'avis.
+
+@@ LittlerootTown_Text_CanUsePCToStoreItems
+Avec un PC, tu peux stocker des objets et même des Pokémon.
+
+On transforme des êtres vivants en données. La science, c'est beau et ça fout un peu les jetons.
+
+@@ LittlerootTown_Text_BirchSpendsDaysInLab
+Le Prof. Seko passe ses journées enfermé dans son labo, puis il disparaît des jours entiers dans la nature…
+
+Un jour, il ne reviendra pas. Sa femme fait semblant de ne pas y penser.
+
+@@ LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut
+Euh, euh, euh !
+
+Si tu vas dans les hautes herbes, des Pokémon sauvages vont te sauter dessus !
+
+@@ LittlerootTown_Text_DangerousIfYouDontHavePokemon
+Sans Pokémon, c'est super dangereux. Mon grand frère dit qu'un garçon s'est fait mordre l'été dernier.
+
+@@ LittlerootTown_Text_CanYouGoSeeWhatsHappening
+Euh, salut !
+
+Il y a des Pokémon qui crient dehors ! Et quelqu'un crie aussi, je crois !
+
+J'ai peur… et j'ai pas de Pokémon…
+
+Tu peux aller voir ce qui se passe ? S'il te plaît ?
+
+@@ LittlerootTown_Text_YouSavedBirch
+Tu as sauvé le Prof. Seko ! Sans toi, il serait… Je préfère pas y penser !
+
+@@ LittlerootTown_Text_GoodLuckCatchingPokemon
+Tu vas capturer des Pokémon ? Bonne chance ! Reviens entier, hein !
+
+@@ LittlerootTown_Text_TownSign
+>Bourg-en-Vol
+>“Un bourg sans couleur, mais pas sans histoire.”
+
+@@ LittlerootTown_Text_ProfBirchsLab
+Laboratoire Pokémon du Prof. Seko
+
+@@ LittlerootTown_Text_PlayersHouse
+Maison de {PLAYER}
+
+@@ LittlerootTown_Text_ProfBirchsHouse
+Maison du Prof. Seko
+
+@@ LittlerootTown_Text_BirchSomethingToShowYouAtLab
+Prof. Seko : Eh bien, {PLAYER} ! Beau boulot, là-dehors !
+
+J'ai su que tu avais quelque chose de spécial dès que je t'ai vu. Mais à ce point-là…
+
+Au fait, tu as toujours le Pokédex que je t'ai confié ?
+
+J'ai un truc à te montrer. Viens au labo.
+
+// ===== Maison du joueur =====
+
+@@ PlayersHouse_1F_Text_IsntItNiceInHere
+Maman : Regarde, {PLAYER}. C'est joli, non ? Ça sent le neuf.
+
+@@ PlayersHouse_1F_Text_MoversPokemonGoSetClock
+Les Pokémon des déménageurs ont tout porté et tout nettoyé. Moi, je n'ai eu qu'à pointer du doigt.
+
+{PLAYER}, ta chambre est en haut. Va jeter un œil.
+
+Ton père t'a offert une horloge pour le déménagement. C'est sa façon de dire “je pense à toi” sans être là. Règle-la.
+
+@@ PlayersHouse_1F_Text_ArentYouInterestedInRoom
+Maman : Alors, {PLAYER} ?
+
+Ta chambre ne t'intéresse pas ? Tu as attendu ça pendant des années.
+
+@@ PlayersHouse_1F_Text_GoSetTheClock
+Maman : {PLAYER}.
+
+Va régler l'horloge dans ta chambre, mon cœur.
+
+@@ PlayersHouse_1F_Text_OhComeQuickly
+Maman : Oh ! {PLAYER}, {PLAYER} ! Vite ! Viens vite !
+
+@@ PlayersHouse_1F_Text_MaybeDadWillBeOn
+Maman : Regarde ! L'Arène de Clémenti-Ville ! On va peut-être voir ton père !
+
+@@ PlayersHouse_1F_Text_ItsOverWeMissedHim
+Maman : Oh… C'est fini.
+
+Il est passé, je crois. Et on l'a raté. Comme d'habitude.
+
+@@ PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor
+Ah, oui. Un ami de ton père vit ici.
+
+Le Prof. Seko.
+
+C'est juste à côté. Va te présenter. Il sait des choses sur ton père que même moi j'ignore.
+
+@@ PlayersHouse_1F_Text_SeeYouHoney
+Maman : À tout à l'heure, mon cœur !
+
+@@ PlayersHouse_1F_Text_DidYouMeetProfBirch
+Maman : Tu es allé te présenter au Prof. Seko ?
+
+@@ PlayersHouse_1F_Text_YouShouldRestABit
+Maman : Ça va, {PLAYER} ? Tu as une mine affreuse.
+
+Repose-toi un peu. Le monde ne va pas s'écrouler en une nuit.
+
+@@ PlayersHouse_1F_Text_TakeCareHoney
+Maman : Fais attention à toi !
+
+@@ PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom
+Maman : Oh ? C'est ton père qui t'a donné ce Badge ?
+
+Il t'a enfin regardé en face, alors. Tiens, voilà quelque chose de la part de ta mère.
+
+@@ PlayersHouse_1F_Text_DontPushYourselfTooHard
+Ne te tue pas à la tâche. Je ne le supporterais pas.
+
+Tu peux toujours rentrer. Allez, fonce.
+
+@@ PlayersHouse_1F_Text_IsThatAPokenav
+Maman : C'est quoi, ce truc ? Un PokéNav ? Quelqu'un de Devon te l'a donné ?
+
+Alors enregistre ta mère dedans. Comme ça, je saurai que tu es en vie.
+
+… … …
+
+@@ PlayersHouse_1F_Text_RegisteredMom
+Maman a été enregistrée dans le PokéNav.
+
+@@ PlayersHouse_1F_Text_Vigoroth1
+Fugiiiiih !
+
+@@ PlayersHouse_1F_Text_Vigoroth2
+Huggoh, uggo uggo…
+
+@@ PlayersHouse_1F_Text_ReportFromPetalburgGym
+Journaliste : …Nous sommes en direct devant l'Arène de Clémenti-Ville.
+
+@@ PlayersHouse_1F_Text_TheresAMovieOnTV
+Un film passe à la télé.
+
+Deux types se battent à mains nues sur un pont qui s'effondre.
+
+Pas le temps de regarder la fin.
+
+@@ PlayersHouse_1F_Text_RunningShoesManual
+La notice des Chaussures de sport.
+
+“Maintenez le Bouton B pour courir.”
+
+“Lacez-les bien. Ce qui vous poursuit ne s'arrêtera pas pour un lacet défait.”
+
+@@ PlayersHouse_1F_Text_TicketFromBrineyCameForYou
+Papa : Hm ?
+
+Tiens, {PLAYER}.
+
+Ça fait un bail. Tu as… changé. Tu as l'air plus solide.
+
+C'est l'impression que tu me donnes. Mais ton vieux n'a pas encore dit son dernier mot.
+
+Ah, oui. Ceci est arrivé pour toi. De la part d'un certain M. Marco.
+
+@@ PlayersHouse_1F_Text_PortsInSlateportLilycove
+Papa : Hm, un billet de ferry ?
+
+Si je me souviens bien, il y a des ports à Poivressel et à Nénucrique.
+
+@@ PlayersHouse_1F_Text_BetterGetBackToGym
+Je dois retourner à l'Arène de Clémenti-Ville.
+
+Merci de tenir la maison pendant que je ne suis pas là. Encore une fois.
+
+@@ PlayersHouse_1F_Text_DadShouldStayLonger
+Maman : Ton père…
+
+Il rentre pour la première fois depuis des mois et il ne parle que de Pokémon.
+
+Un jour, il rentrera et il n'y aura plus personne pour l'écouter.
+
+@@ PlayersHouse_1F_Text_IsThatABreakingStory
+Maman : C'est un flash spécial ?
+
+@@ PlayersHouse_1F_Text_LatiEmergencyNewsFlash
+Flash d'information urgent !
+
+Partout dans Hoenn, des témoins signalent un Pokémon BZZT… en plein vol.
+
+Son identité reste inconnue. Les autorités demandent de ne pas l'approcher.
+
+Nous reprenons le cours normal de nos programmes.
+
+@@ PlayersHouse_1F_Text_WhatColorDidTheySay
+Maman : {PLAYER}, tu as entendu ?
+
+Il a dit quelle couleur, ce Pokémon ?
+
+@@ PlayersHouse_1F_Text_StillUnknownPokemon
+Maman : Eh ben… Il reste encore des Pokémon que personne ne connaît. Ça me rassure et ça m'inquiète à la fois.
+
+@@ PlayersHouse_2F_Text_ClockIsStopped
+L'horloge est arrêtée…
+
+Il faut la régler.
+
+@@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom
+Maman : {PLAYER}, elle te plaît, ta nouvelle chambre ?
+
+Parfait ! Tout est déjà rangé !
+
+En bas aussi, tout est installé.
+
+Les Pokémon déménageurs, c'est quand même autre chose que ton père et son dos en compote.
+
+Vérifie que tout est bien sur ton bureau.
+
+@@ PlayersHouse_2F_Text_Notebook
+{PLAYER} ouvre le carnet.
+
+>Règle d'aventure no 1 :
+>Ouvrir le MENU avec START.
+
+>Règle d'aventure no 2 :
+>Enregistrer avec SAUVER. Toujours.
+
+Les autres pages sont blanches. Pour l'instant.
+
+@@ Common_Text_LookCloserAtMap
+{PLAYER} observe la carte de la région de {REGION}.
+
+@@ PlayersHouse_2F_Text_ItsAGameCube
+C'est une Nintendo GameCube.
+
+Une Game Boy Advance sert de manette.
+
+// ===== Maison du rival =====
+
+@@ RivalsHouse_1F_Text_OhYoureTheNewNeighbor
+Oh, bonjour. Et vous êtes… ?
+
+… … … … … … … … … … … …
+
+Ah, {PLAYER}, qui vient d'emménager à côté ! Bienvenue !
+
+Notre {STR_VAR_1} a à peu près ton âge.
+
+Notre {STR_VAR_1} avait hâte de te rencontrer. Ça manque de jeunes, ici.
+
+Notre {STR_VAR_1} est en haut, je crois.
+
+@@ RivalsHouse_1F_Text_LikeChildLikeFather
+Tel père, tel enfant.
+
+Mon mari est aussi fou de Pokémon que notre enfant.
+
+S'il n'est pas au labo, il est quelque part dans les herbes à risquer sa peau. Je me suis habituée. Presque.
+
+@@ RivalsHouse_1F_Text_TooBusyToNoticeVisit
+Ah, {RIVAL} !
+
+Ses Pokémon passent avant tout le reste. Même avant ta visite, {PLAYER}. Désolée.
+
+@@ RivalsHouse_1F_Text_WentOutToRoute103
+Oh, {RIVAL} a filé sur la Route 103 il y a un moment.
+
+Tel père, tel enfant. Personne ne tient en place dans cette famille.
+
+@@ RivalsHouse_1F_Text_ShouldGoHomeEverySoOften
+C'est beau, de voyager avec des Pokémon.
+
+Mais repasse chez toi de temps en temps, pour dire à ta mère que tu es encore en vie.
+
+Elle ne te le dira pas. Mais chaque nuit, elle attend un coup de téléphone qu'elle redoute.
+
+@@ RivalsHouse_1F_Text_MayWhoAreYou
+Hein ? Qui… Qui es-tu ?
+
+… … … … … … … … … … … …
+
+Ah, c'est toi, {PLAYER}. Le déménagement, c'était aujourd'hui.
+
+Moi, c'est Flora. Enchantée.
+
+J'ai un rêve : devenir amie avec les Pokémon du monde entier. Même ceux qui ont essayé de me bouffer.
+
+Mon père, le Prof. Seko, m'a parlé de toi.
+
+J'espérais que tu serais sympa. Et pas un de ces abrutis qui frappent leurs Pokémon.
+
+Bon, je dis n'importe quoi. On vient à peine de se rencontrer.
+
+Hé hé…
+
+Oh, merde ! J'avais oublié !
+
+Je devais aider Papa à capturer des Pokémon sauvages ! S'il est encore parti seul…
+
+{PLAYER}, on se voit plus tard !
+
+@@ RivalsHouse_1F_Text_BrendanWhoAreYou
+Hé ! Toi…
+
+T'es qui, toi ?
+
+Ah, t'es {PLAYER}, c'est ça ? La nouvelle voisine ?
+
+Je pensais que t'étais un mec.
+
+Mon père, le Prof. Seko, m'a dit que l'enfant d'un Champion d'Arène emménageait. J'imaginais une brute.
+
+Moi, c'est Brice. Salut, voisine.
+
+Hein ? T'as même pas de Pokémon ?
+
+Tu veux que j'aille t'en attraper un ?
+
+Ah, fait chier, j'avais oublié…
+
+Je dois aider mon père à capturer des Pokémon. S'il est reparti seul, il va encore se faire massacrer.
+
+Une autre fois, OK ?
+
+@@ RivalsHouse_1F_Text_DoYouHavePokemon
+Salut, toi !
+
+Tu as déjà ton propre Pokémon ?
+
+@@ RivalsHouse_2F_Text_MayGettingReady
+Pokémon soignés ! Objets prêts, et…
+
+@@ RivalsHouse_2F_Text_BrendanGettingReady
+Pokémon soignés… Sac bouclé, et…
+
+@@ RivalsHouse_2F_Text_ItsRivalsPokeBall
+C'est la Poké Ball de {RIVAL} !
+
+Mieux vaut ne pas y toucher.
+
+@@ RivalsHouse_2F_Text_MayJustCheckingMyPokedex
+Flora : {PLAYER} !
+
+Je regardais mon Pokédex.
+
+Il y a plein de Pokémon que j'ai vus sans arriver à les attraper.
+
+Et d'autres qui vont sûrement évoluer. Si je les garde en vie assez longtemps.
+
+Je me demande où aller chasser, maintenant.
+
+@@ RivalsHouse_2F_Text_MayWhereShouldIGoNext
+Flora : Je me demande où aller capturer des Pokémon…
+
+Ce serait drôle qu'on tombe l'un sur l'autre, {PLAYER}. Drôle pour moi, en tout cas.
+
+@@ RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex
+Brice : Tiens, {PLAYER}.
+
+Je regardais mon Pokédex.
+
+Il m'en manque encore un paquet, mais ça commence à avoir de la gueule.
+
+Rien que de le regarder, ça me donne envie de reprendre la route.
+
+@@ RivalsHouse_2F_Text_BrendanWhereShouldIGoNext
+Brice : J'arrive pas à décider où chasser ensuite.
+
+Hé, {PLAYER}, si je te croise sur la route, je te défonce en combat. Avec plaisir.

@@ -95,64 +95,62 @@ Route104_MrBrineysHouse_EventScript_Peeko::
 	end
 
 Route104_MrBrineysHouse_Text_WaitUpPeeko:
-	.string "MR. BRINEY: Hold on, lass!\n"
-	.string "Wait up, PEEKO!$"
+	.string "M. Marco : Attends, ma belle !\n"
+	.string "Attends-moi, Peeko !$"
 
 Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford:
-	.string "Hm? You're {PLAYER}{KUN}!\n"
-	.string "You saved my darling PEEKO!\l"
-	.string "We owe so much to you!\p"
-	.string "What's that?\n"
-	.string "You want to sail with me?\p"
+	.string "Hm ? Mais c'est {PLAYER} ! Tu as sauvé ma\n"
+	.string "Peeko adorée ! Je te dois tout !\p"
+	.string "Comment ? Tu veux prendre la mer avec\n"
+	.string "moi ?\p"
 	.string "Hmhm…\p"
-	.string "You have a LETTER bound for DEWFORD\n"
-	.string "and a package for SLATEPORT, then?\p"
-	.string "Quite the busy life you must lead!\p"
-	.string "But, certainly, what you're asking is\n"
-	.string "no problem at all.\p"
-	.string "You've come to the right man!\n"
-	.string "We'll set sail for DEWFORD.$"
+	.string "Une Lettre pour Myokara et un colis\n"
+	.string "pour Poivressel, c'est ça ?\p"
+	.string "Quelle vie trépidante !\p"
+	.string "Mais bien sûr, ce que tu demandes ne\n"
+	.string "pose aucun problème.\p"
+	.string "Tu t'adresses au bon marin ! Cap sur\n"
+	.string "Myokara. La mer ne me reprendra pas ce\l"
+	.string "que j'aime une deuxième fois.$"
 
 Route104_MrBrineysHouse_Text_SetSailForDewford:
-	.string "MR. BRINEY: DEWFORD it is, then!\p"
-	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
+	.string "M. Marco : Myokara, donc !\p"
+	.string "Levez l'ancre ! Peeko, ma chérie, on\n"
+	.string "prend le large !$"
 
 Route104_MrBrineysHouse_Text_DeclineDeliverySail:
-	.string "MR. BRINEY: Is that so?\n"
-	.string "Your deliveries can wait?\p"
-	.string "You just go on and tell me whenever\n"
-	.string "you want to set sail!$"
+	.string "M. Marco : Ah bon ? Tes livraisons\n"
+	.string "peuvent attendre ?\p"
+	.string "Dis-moi quand tu veux partir !$"
 
 Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford:
-	.string "MR. BRINEY: Ahoy!\n"
-	.string "I know exactly what you want to say!\p"
-	.string "You're to deliver a LETTER to DEWFORD\n"
-	.string "and a package to SLATEPORT.\p"
-	.string "What you need me to do is no problem\n"
-	.string "at all--I'm the man for the job!\p"
-	.string "First, we'll set sail for DEWFORD.$"
+	.string "M. Marco : Ohé ! Je sais exactement ce\n"
+	.string "que tu vas dire !\p"
+	.string "Tu dois livrer une Lettre à Myokara et\n"
+	.string "un colis à Poivressel.\p"
+	.string "Aucun problème, je suis l'homme de la\n"
+	.string "situation !\p"
+	.string "D'abord, cap sur Myokara.$"
 
 Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford:
-	.string "MR. BRINEY: Ahoy!\n"
-	.string "I know exactly what you want to say!\p"
-	.string "You're to deliver a package to\n"
-	.string "CAPT. STERN in SLATEPORT.\p"
-	.string "What you need me to do is no problem\n"
-	.string "at all--I'm the man for the job!\p"
-	.string "First, we'll set sail for DEWFORD.$"
+	.string "M. Marco : Ohé ! Je sais exactement ce\n"
+	.string "que tu vas dire !\p"
+	.string "Tu dois livrer un colis au Capitaine\n"
+	.string "Stern, à Poivressel.\p"
+	.string "Aucun problème, je suis l'homme de la\n"
+	.string "situation !\p"
+	.string "D'abord, cap sur Myokara.$"
 
 Route104_MrBrineysHouse_Text_WhereAreWeBound:
-	.string "MR. BRINEY: Ahoy!\n"
-	.string "For you, I'll go out to sea anytime!\p"
-	.string "Now, my friend, where are we bound?$"
+	.string "M. Marco : Ohé ! Pour toi, je prends la mer\n"
+	.string "quand tu veux !\p"
+	.string "Alors, on met le cap où ?$"
 
 Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail:
-	.string "MR. BRINEY: Is that so?\n"
-	.string "Well, PEEKO owes her life to you.\p"
-	.string "You just go on and tell me whenever\n"
-	.string "you want to set sail!$"
+	.string "M. Marco : Ah bon ? Peeko te doit la vie,\n"
+	.string "tu sais.\p"
+	.string "Dis-moi quand tu veux partir !$"
 
 Route104_MrBrineysHouse_Text_Peeko:
-	.string "PEEKO: Pii piihyoro!$"
+	.string "Peeko : Pii piihyoro !$"
 

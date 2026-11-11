@@ -1,0 +1,97 @@
+// Chapitre 1 — Tunnel Mérazon (le voyou de la Team Aqua, Peeko otage, les Pièces Devon)
+
+@@ RusturfTunnel_Text_ComeAndGetSome
+Quoi, tu t'approches ? Viens, si t'as des couilles !
+
+@@ RusturfTunnel_Text_Peeko
+Peeko : Pii pihyoh !
+
+@@ RusturfTunnel_Text_GruntIntro
+Bordel de merde !
+
+Ce Pokémon otage ne vaut rien ! J'aurais dû lui tordre le cou tout de suite !
+
+Et moi qui me suis enfui… dans un tunnel qui ne mène nulle part !
+
+Hé ! Toi ! Tu veux te battre ? Tu vas le regretter !
+
+@@ RusturfTunnel_Text_GruntDefeat
+Arrrgh ! Ma carrière de truand finit dans un cul-de-sac !
+
+@@ RusturfTunnel_Text_GruntTakePackage
+C'est pas juste…
+
+Le Boss m'avait dit que ce serait un boulot facile.
+
+J'avais juste à piquer un colis chez Devon.
+
+Tch ! Tu le veux tant que ça ? Prends-le ! Mais le Boss n'oublie jamais un visage.
+
+@@ RusturfTunnel_Text_PeekoGladToSeeYouSafe
+Peeko ! Dieu merci, tu es saine et sauve !
+
+@@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko
+Peeko te doit la vie ! Et moi aussi. Je n'aurais pas survécu à une autre perte.
+
+On m'appelle M. Marco. Et toi, tu es… ?
+
+… … … … … … … … … … … …
+
+Ah, tu es {PLAYER} ! Merci, du fond du cœur !
+
+Si un jour tu as besoin de quoi que ce soit, n'hésite pas !
+
+Je vis dans une cabane au bord de la mer, près du Bois Clémenti.
+
+Viens, Peeko, on rentre à la maison.
+
+Peeko : Pihyoh !
+
+@@ RusturfTunnel_Text_WhyCantTheyKeepDigging
+… …
+
+Pourquoi ils ne continuent pas de creuser ? La roche est trop dure ?
+
+Ma bien-aimée m'attend à Vergazon, juste de l'autre côté…
+
+Si ce tunnel reliait Mérouville et Vergazon, je pourrais la voir tous les jours…
+
+Mais là… Qu'est-ce que je suis censé faire ? Creuser à mains nues jusqu'à en crever ?
+
+@@ RusturfTunnel_Text_ToGetToVerdanturf
+Pour aller de Mérouville à Vergazon, il faut passer par Myokara, puis par Poivressel et Lavandia…
+
+@@ RusturfTunnel_Text_YouShatteredBoulderTakeHM
+Waouh ! Tu as pulvérisé le rocher qui bloquait le passage.
+
+Pour te remercier, je veux que tu aies cette CS.
+
+@@ RusturfTunnel_Text_ExplainStrength
+Cette CS contient Force.
+
+Un Pokémon musclé qui l'apprend peut déplacer même les plus gros rochers.
+
+@@ RusturfTunnel_Text_WandaReunion
+Wanda ! Maintenant, je pourrai te voir quand je veux !
+
+Wanda : C'est… merveilleux.
+
+Viens te reposer chez moi.
+
+@@ RusturfTunnel_Text_BoyfriendOnOtherSideOfRock
+De l'autre côté de ce rocher… il y a mon fiancé.
+
+Il… il ne creuse pas ce tunnel seulement pour me voir.
+
+Il s'arrache les mains pour le bien de tous. Un jour, la montagne va s'effondrer sur lui. Je le sais.
+
+@@ RusturfTunnel_Text_MikeIntro
+Un homme sauvage dans les montagnes, c'est un montagnard, non ?
+
+Alors pourquoi on dit pas “Pokémon montagnard” pour un Pokémon des montagnes ?
+
+@@ RusturfTunnel_Text_MikeDefeat
+Mes Pokémon… sont à bout…
+
+@@ RusturfTunnel_Text_MikePostBattle
+Ils ont arrêté les travaux ici pour protéger les Pokémon, hein ? Une belle histoire, pour une fois.

@@ -1,0 +1,345 @@
+// Chapitre 1 — Dresseurs des Routes 102, 103 et 104 (data/text/trainers.inc)
+
+// ===== Route 102 =====
+
+@@ Route102_Text_CalvinIntro
+T'as un Pokémon ? Alors t'es Dresseur. Et un Dresseur ne refuse pas un défi. C'est la loi de la route !
+
+@@ Route102_Text_CalvinDefeated
+Argh, perdu… J'aurais dû l'entraîner plus…
+
+@@ Route102_Text_CalvinPostBattle
+Hé, toi. Si t'es si balèze, faut prévenir avant ! J'ai l'air d'un con, maintenant.
+
+@@ Route102_Text_CalvinRegister
+Je me suis tué à l'entraînement depuis la dernière fois.
+
+Je veux ma revanche. Tu m'enregistres dans ton PokéNav ?
+
+@@ Route102_Text_CalvinRegisterShort
+Je veux ma revanche. Tu m'enregistres dans ton PokéNav ?
+
+@@ Route102_Text_CalvinRematchIntro
+Depuis ma défaite, j'ai entraîné mes Pokémon jusqu'à l'épuisement. Tu ne peux pas refuser !
+
+@@ Route102_Text_CalvinRematchDefeated
+Argh, encore perdu… C'est ma méthode qui cloche ?
+
+@@ Route102_Text_CalvinRematchPostBattle
+Si tu progresses, je progresserai aussi. Quitte à y laisser ma peau.
+
+@@ Route102_Text_AllenIntro
+Toi aussi, tu viens de commencer ? On est deux débutants !
+
+@@ Route102_Text_AllenDefeated
+Je t'ai défié parce que je pensais pouvoir gagner…
+
+@@ Route102_Text_AllenPostBattle
+J'ai jamais gagné une seule fois… Mon père dit que je devrais abandonner.
+
+@@ Route102_Text_RickIntro
+Ha ha ! Nos regards se sont croisés ! Mes Pokémon Insecte vont te dévorer !
+
+@@ Route102_Text_RickDefeated
+Aïe ! Écrasé comme un cafard !
+
+@@ Route102_Text_RickPostBattle
+Quand deux Dresseurs se regardent dans les yeux, ils se battent. C'est la règle. Point.
+
+@@ Route102_Text_TianaIntro
+Je vais tout gagner et devenir la meilleure.
+
+Tu vas me servir de marchepied !
+
+@@ Route102_Text_TianaDefeated
+C'est moi qui t'ai servi de marchepied…
+
+@@ Route102_Text_TianaPostBattle
+Pour monter plus haut, il me faut plus de Pokémon. Et moins de scrupules.
+
+// ===== Route 103 =====
+
+@@ Route103_Text_DaisyIntro
+Tu as senti l'appel de notre parfum apaisant ?
+
+@@ Route103_Text_DaisyDefeated
+Notre parfum n'a eu aucun effet sur toi…
+
+@@ Route103_Text_DaisyPostBattle
+L'aromathérapie soigne l'esprit avec des odeurs. Certaines endorment. D'autres ne réveillent jamais.
+
+@@ Route103_Text_AmyIntro
+Amy : Moi, c'est Amy. Et voici ma petite sœur, Liv. On se bat ensemble !
+
+@@ Route103_Text_AmyDefeated
+Amy : Oh non, on a perdu.
+
+@@ Route103_Text_AmyPostBattle
+Amy : Contre deux Dresseurs, il faut penser à tout. Une seconde d'inattention et c'est fini.
+
+@@ Route103_Text_AmyNotEnoughPokemon
+Amy : Oh, tu n'as qu'un seul Pokémon. Tu ne peux pas nous affronter comme ça.
+
+@@ Route103_Text_LivIntro
+Liv : On se bat comme une seule équipe.
+
+@@ Route103_Text_LivDefeated
+Liv : Oh, on a perdu, grande sœur…
+
+@@ Route103_Text_LivPostBattle
+Liv : Ma grande sœur et moi, on est parfaitement synchro…
+
+Et pourtant, on a perdu…
+
+@@ Route103_Text_AmyLivRegister
+Liv : On est bien meilleures que ça… Vraiment ! On te le prouvera la prochaine fois !
+
+@@ Route103_Text_LivNotEnoughPokemon
+Liv : Pour nous affronter, il te faut deux Pokémon ! Sinon c'est pas juste !
+
+@@ Route103_Text_AmyRematchIntro
+Amy : Moi, c'est Amy. Et voici ma petite sœur, Liv. On se bat ensemble !
+
+@@ Route103_Text_AmyRematchDefeated
+Amy : Oh, zut ! Encore perdu…
+
+@@ Route103_Text_AmyRematchPostBattle
+Amy : Contre deux Dresseurs, il faut penser à tout. Une seconde d'inattention et c'est fini.
+
+@@ Route103_Text_AmyRematchNotEnoughPokemon
+Amy : Oh, tu n'as qu'un seul Pokémon. Tu ne peux pas nous affronter comme ça.
+
+@@ Route103_Text_LivRematchIntro
+Liv : On se bat comme une seule équipe.
+
+@@ Route103_Text_LivRematchDefeated
+Liv : Oooh, encore perdu… Grande sœur…
+
+@@ Route103_Text_LivRematchPostBattle
+Liv : Ma grande sœur et moi, on est parfaitement synchro…
+
+Alors pourquoi on perd encore ?
+
+@@ Route103_Text_LivRematchNotEnoughPokemon
+Liv : Pour nous affronter, il te faut deux Pokémon ! Sinon c'est pas juste !
+
+@@ Route103_Text_AndrewIntro
+Bordel ! Ma ligne est encore emmêlée ! Je suis à bout de nerfs ! Tant pis pour toi, on se bat !
+
+@@ Route103_Text_AndrewDefeated
+Putain ! Perdu ! Je suis encore plus énervé !
+
+@@ Route103_Text_AndrewPostBattle
+Je bous de rage… Grrrrr… Va-t'en avant que je jette ma canne sur quelqu'un.
+
+@@ Route103_Text_MiguelIntro
+Mon Pokémon est adorable à en mourir ! N'aie pas peur, je vais te le montrer !
+
+@@ Route103_Text_MiguelDefeated
+Oh, mon Dieu ! Mon trésor !
+
+@@ Route103_Text_MiguelPostBattle
+Même K.O., mon Pokémon reste adorable. C'est presque triste.
+
+@@ Route103_Text_MiguelRegister
+Je te rappellerai pour que tu viennes admirer mon adorable Pokémon !
+
+@@ Route103_Text_MiguelRematchIntro
+Salut ! Mon adorable Pokémon est encore plus craquant qu'avant !
+
+@@ Route103_Text_MiguelRematchDefeated
+Oh ! Mon trésor !
+
+@@ Route103_Text_MiguelRematchPostBattle
+Plus je passe de temps avec lui, plus il est adorable. Je ne survivrais pas s'il lui arrivait malheur.
+
+@@ Route103_Text_PeteIntro
+Une distance pareille ? Tu devrais la faire à la nage !
+
+@@ Route103_Text_PeteDefeated
+Oh, bien joué !
+
+@@ Route103_Text_PetePostBattle
+Ah, je comprends mieux.
+
+Avec un Pokémon aussi fiable, moi aussi j'utiliserais Surf. La mer a déjà avalé assez de nageurs.
+
+@@ Route103_Text_IsabelleIntro
+Regarde où tu vas ! On va se rentrer dedans !
+
+@@ Route103_Text_IsabelleDefeated
+Pfff…
+
+@@ Route103_Text_IsabellePostBattle
+Je nage mal, alors je m'entraîne… Pardon d'avoir failli te percuter. J'ai bu la tasse.
+
+@@ Route103_Text_RhettIntro
+Waouh ! Comment t'as fait pour te glisser dans un coin aussi étroit ?
+
+@@ Route103_Text_RhettDefeated
+Waouh ! Ça envoie du lourd !
+
+@@ Route103_Text_RhettPostBattle
+T'aimes les endroits étroits, toi ? Moi, j'y viens pour respirer.
+
+@@ Route103_Text_MarcosIntro
+Les hurlements de ma guitare t'ont fait venir ?
+
+@@ Route103_Text_MarcosDefeated
+Mon one-man-show est fichu…
+
+@@ Route103_Text_MarcosPostBattle
+Je jouais là où il n'y avait personne, mais des fans se sont ramenés.
+
+Hé hé, je devrais peut-être passer pro.
+
+// ===== Route 104 =====
+
+@@ Route104_Text_GinaIntro
+Gina : Allez, combat de Pokémon !
+
+@@ Route104_Text_GinaDefeat
+Gina : Perdre, ça m'énerve !
+
+@@ Route104_Text_GinaPostBattle
+Gina : T'es redoutable ! On doit s'entraîner beaucoup plus !
+
+@@ Route104_Text_GinaNotEnoughMons
+Gina : Oh ? Un seul Pokémon ? Alors on ne se bat pas.
+
+Un Pokémon tout seul, ça se sent abandonné. C'est triste.
+
+@@ Route104_Text_MiaIntro
+Mia : On est jumelles, alors on se bat ensemble.
+
+@@ Route104_Text_MiaDefeat
+Mia : On s'est battues ensemble, et on a perdu ensemble…
+
+@@ Route104_Text_MiaPostBattle
+Mia : On va entraîner nos Pokémon pour devenir aussi fortes que toi.
+
+@@ Route104_Text_MiaNotEnoughMons
+Mia : Tu veux nous affronter ?
+
+Pas sans deux Pokémon. On est trop fortes pour toi !
+
+@@ Route104_Text_IvanIntro
+Pourquoi le cacher ? Je suis l'expert des Pokémon Eau !
+
+Hein ? Tu ne me connais pas ?
+
+@@ Route104_Text_IvanDefeat
+Je pensais être plutôt doué, si je puis dire… Visiblement non… Beurk…
+
+@@ Route104_Text_IvanPostBattle
+Je me suis trop pris à la pêche. J'ai oublié d'entraîner mes Pokémon…
+
+@@ Route104_Text_BillyIntro
+Laisser des traces de pas dans le sable, c'est trop bien !
+
+@@ Route104_Text_BillyDefeat
+Ouin ! J'ai du sable dans mes baskets ! Ça gratte !
+
+@@ Route104_Text_BillyPostBattle
+Je veux laisser des traces partout, mais la mer les efface toujours…
+
+@@ Route104_Text_HaleyIntro
+Je devrais… ou pas ?
+
+D'accord. Je me bats !
+
+@@ Route104_Text_HaleyDefeat
+J'aurais pas dû…
+
+@@ Route104_Text_HaleyPostBattle
+Si tu laisses quelqu'un décider à ta place, tu le regretteras. Quoi qu'il arrive.
+
+@@ Route104_Text_HaleyRegister1
+Tu es redoutable… Je t'enregistre dans mon PokéNav ? Peut-être pas…
+
+Bon, d'accord. Je t'enregistre !
+
+@@ Route104_Text_HaleyRegister2
+Tu es redoutable… Je t'enregistre dans mon PokéNav ? Peut-être pas…
+
+Bon, d'accord. Je t'enregistre !
+
+@@ Route104_Text_HaleyRematchIntro
+Allez, bats-toi contre moi !
+
+@@ Route104_Text_HaleyRematchDefeat
+Ohh… Je pensais pouvoir gagner…
+
+@@ Route104_Text_HaleyPostRematch
+C'est moi qui ai choisi de me battre, alors j'assume.
+
+Mais ça me reste en travers de la gorge !
+
+@@ Route104_Text_WinstonIntro
+Oh, j'accepte volontiers ton défi. J'ai beaucoup d'argent.
+
+@@ Route104_Text_WinstonDefeat
+Comment ai-je pu perdre ?
+
+@@ Route104_Text_WinstonPostBattle
+Il y a des choses que l'argent n'achète pas. Les Pokémon, l'amitié… et une victoire contre toi, visiblement.
+
+@@ Route104_Text_WinstonRegister1
+Hm ? Ah, tu as un PokéNav.
+
+Je t'enregistre avec plaisir. Après tout, j'ai de l'argent à ne plus savoir qu'en faire.
+
+@@ Route104_Text_WinstonRegister2
+Hm ? Ah, tu as un PokéNav.
+
+Je t'enregistre avec plaisir. Après tout, j'ai de l'argent à ne plus savoir qu'en faire.
+
+@@ Route104_Text_WinstonRematchIntro
+Après ma défaite, j'ai beaucoup appris sur les Pokémon.
+
+@@ Route104_Text_WinstonRematchDefeat
+Encore perdu ? Mais pourquoi ?
+
+@@ Route104_Text_WinstonPostRematch
+Je suis immensément riche, mais je n'arrive pas à gagner…
+
+Le monde des Pokémon est d'une profondeur…
+
+@@ Route104_Text_CindyIntro
+Le destin nous a réunis. Puis-je vous demander un combat ?
+
+@@ Route104_Text_CindyDefeat
+Oh, mon Dieu !
+
+@@ Route104_Text_CindyPostBattle
+Chaque “bonjour” est le début d'un “adieu”. J'espère qu'on se reverra. Avant le dernier.
+
+@@ Route104_Text_CindyRegister1
+Bonjour, nous nous revoyons.
+
+Quelque chose nous attire l'un vers l'autre. Enregistrons-nous dans nos PokéNav.
+
+@@ Route104_Text_CindyRegister2
+Célébrons ce lien étrange qui nous unit.
+
+Enregistrons-nous dans nos PokéNav.
+
+@@ Route104_Text_CindyRematchIntro
+Bonjour, nous nous revoyons. Puis-je vous demander un combat ?
+
+@@ Route104_Text_CindyRematchDefeat
+Oh, mon Dieu… J'ai fait de mon mieux…
+
+@@ Route104_Text_CindyPostRematch
+Chaque “bonjour” est le début d'un “adieu”. J'espère qu'on se reverra. Avant le dernier.
+
+@@ Route104_Text_DarianIntro
+J'ai pêché un Pokémon qui a l'air redoutable !
+
+Il a un truc magique ! Il est terrifiant, je te dis !
+
+@@ Route104_Text_DarianDefeat
+C'est quoi ce…
+
+@@ Route104_Text_DarianPostBattle
+Hé, Magicarpe, t'as rien de magique, hein ? T'es juste un poisson qui gigote.

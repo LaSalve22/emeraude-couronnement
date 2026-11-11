@@ -1,0 +1,347 @@
+// Chapitre 1 — Bois Clémenti, Route 104, maison de M. Marco
+
+// ===== Bois Clémenti =====
+
+@@ PetalburgWoods_Text_NotAOneToBeFound
+Hmmm… Pas un seul… Ils étaient là, pourtant. Quelque chose les a fait fuir.
+
+@@ PetalburgWoods_Text_HaveYouSeenShroomish
+Bonjour. Tu n'aurais pas vu des Balignon, par ici ?
+
+J'adore ce Pokémon. Et ses spores, quand on sait les doser…
+
+@@ PetalburgWoods_Text_IWasGoingToAmbushYou
+Je comptais te tendre une embuscade, mais tu traînes dans ce putain de bois depuis des heures !
+
+J'en ai eu marre d'attendre, alors me voilà !
+
+@@ PetalburgWoods_Text_HandOverThosePapers
+Toi ! Le chercheur de Devon !
+
+Donne-moi ces documents. Tout de suite. Ou je te fais bouffer la mousse.
+
+@@ PetalburgWoods_Text_YouHaveToHelpMe
+Aïeeeuh !
+
+Tu es Dresseur, hein ? Aide-moi, je t'en supplie ! Il va me tuer !
+
+@@ PetalburgWoods_Text_NoOneCrossesTeamAqua
+Hein ? Tu fais quoi, là ? Tu comptes le protéger ?
+
+Personne ne se met en travers de la Team Aqua. On n'a aucune pitié. Même pour les gosses !
+
+Viens te battre, qu'on en finisse !
+
+@@ PetalburgWoods_Text_YoureKiddingMe
+C'est pas vrai ! T'es une teigne !
+
+@@ PetalburgWoods_Text_YouveGotSomeNerve
+Grrr… T'as du culot de te mêler des affaires de la Team Aqua ! Reviens te battre !
+
+J'aimerais bien, mais j'ai plus de Pokémon en état…
+
+Et puis, la Team Aqua a aussi des affaires à régler à Mérouville.
+
+Je te laisse filer pour aujourd'hui. Mais la prochaine fois, on te retrouvera dans un fossé.
+
+@@ PetalburgWoods_Text_ThatWasAwfullyClose
+Pfiou… C'était moins une !
+
+Grâce à toi, il ne m'a pas volé ces documents. Ni la vie.
+
+Tiens, prends cette Super Ball. C'est le moins que je puisse faire !
+
+@@ PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro
+Ce voyou de la Team Aqua n'a pas dit qu'ils avaient des affaires à Mérouville, eux aussi ?
+
+@@ PetalburgWoods_Text_ICantBeWastingTime
+Oh non ! C'est une urgence ! Je n'ai pas de temps à perdre !
+
+@@ PetalburgWoods_Text_YoureLoadedWithItems
+Ton Sac déborde. Je ne peux pas te donner cette Super Ball.
+
+@@ PetalburgWoods_Text_GoBugPokemonTeam
+J'ai attrapé une tonne de Pokémon !
+
+Allez, allez, allez ! Mon équipe d'Insectes, à l'attaque !
+
+@@ PetalburgWoods_Text_ICouldntWin
+J'ai tous ces Pokémon, et j'ai quand même perdu…
+
+@@ PetalburgWoods_Text_ImOutOfPokeBalls
+J'ai attrapé plein de Pokémon. Maintenant, j'ai plus de Poké Balls.
+
+@@ PetalburgWoods_Text_InstantlyPopularWithBugPokemon
+Si tu ramènes des Pokémon Insecte à l'école, tout le monde t'adore !
+
+@@ PetalburgWoods_Text_CantBePopularIfILose
+Si je perds, plus personne va m'aimer.
+
+@@ PetalburgWoods_Text_PeopleRespectYou
+Avec un gros Pokémon Insecte, les autres te respectent. Ou ils ont peur. C'est pareil.
+
+@@ PetalburgWoods_Text_IWantRematch1
+Je veux une revanche quand mes Insectes auront grandi !
+
+Je t'enregistre dans mon PokéNav !
+
+@@ PetalburgWoods_Text_IWantRematch2
+Je veux une revanche quand mes Insectes auront grandi !
+
+Je t'enregistre dans mon PokéNav !
+
+@@ PetalburgWoods_Text_MyPokemonHaveGrown
+Mes Insectes ont grandi. Je vais redevenir populaire.
+
+@@ PetalburgWoods_Text_CantBePopularIfLose
+Si je perds, plus personne va m'aimer.
+
+@@ PetalburgWoods_Text_IveBeenTrainingHard
+Avec des Pokémon forts, on devient populaire, non ? Alors je me suis entraîné comme un malade.
+
+@@ PetalburgWoods_Text_StayOutOfTallGrass
+Hé, toi ! Tes Pokémon tiennent le coup ?
+
+S'ils sont faibles, évite les hautes herbes. Le mois dernier, on a retrouvé un randonneur ici. Enfin, ce qu'il en restait.
+
+@@ PetalburgWoods_Text_HiddenItemsExplanation
+Parfois, il y a des choses par terre, même si on ne les voit pas.
+
+C'est pour ça que je regarde toujours où je marche. On trouve des objets… et parfois pire.
+
+@@ PetalburgWoods_Text_TryUsingThisItem
+Oh, cool ! C'est le Badge de l'Arène de Mérouville !
+
+Tu dois être Dresseur. Essaie donc cet objet.
+
+@@ PetalburgWoods_Text_MiracleSeedExplanation
+C'est une Graine Miracle. Si un Pokémon la tient, ses attaques Plante deviennent plus puissantes.
+
+Il existe d'autres objets utiles à faire tenir aux Pokémon, je crois.
+
+@@ PetalburgWoods_Text_TrainerTipsExperience
+Conseils aux Dresseurs
+
+Tout Pokémon qui participe à un combat, même un instant, reçoit des points d'expérience.
+
+Pour entraîner un Pokémon faible, place-le en tête d'équipe.
+
+Puis remplace-le dès le début du combat. Il gagnera de l'expérience sans risquer sa vie.
+
+@@ PetalburgWoods_Text_TrainerTipsPP
+Conseils aux Dresseurs
+
+En plus des PV, les Pokémon ont des PP, qui servent à lancer leurs attaques.
+
+Un Pokémon à court de PP doit être emmené dans un Centre Pokémon. Ou il se battra à mains nues.
+
+// ===== Route 104 =====
+
+@@ Route104_Text_BrineyLivesInSeasideCottage
+C'est là que vit M. Marco.
+
+Autrefois, c'était un marin redoutable. Il ne craignait aucune tempête. Puis la mer lui a pris tout son équipage. Depuis, il ne sort plus.
+
+@@ Route104_Text_WhatsItLikeAtBottomOfSea
+La mer, hein ?
+
+Je me demande ce qu'il y a tout au fond. Combien de bateaux. Combien de corps.
+
+@@ Route104_Text_ThrowBallAtWeakenedPokemon
+Avant de lancer une Poké Ball, affaiblis le Pokémon sauvage.
+
+C'est plus facile s'il est empoisonné, brûlé ou endormi. Pas très glorieux, mais efficace.
+
+@@ Route104_Text_OnlyThrowBallAtWildPokemon
+Voler le Pokémon de quelqu'un, c'est être un voleur. Et les voleurs, ici, on les retrouve dans la rivière.
+
+Ne lance tes Poké Balls que sur des Pokémon sauvages.
+
+@@ Route104_Text_ImNotATrainer
+Oh non, je ne suis pas Dresseur.
+
+Mais c'est vrai : quand deux Dresseurs se regardent dans les yeux, le combat est inévitable.
+
+Si tu ne veux pas te battre, reste hors de leur vue.
+
+@@ Route104_Text_LikeFillingMouthWithSeedsTakeThis
+J'adore me remplir la bouche de graines et les recracher à toute vitesse ! Comme une mitraillette !
+
+Tiens, prends ça et essaie !
+
+Un Pokémon qui l'utilise apprendra une attaque qui tire des graines en rafale.
+
+@@ Route104_Text_TMsAreOneTimeUse
+Un conseil !
+
+Les CT, les Capsules Techniques, se réutilisent à volonté.
+
+Alors n'aie pas peur de t'en servir !
+
+@@ Route104_Text_DontNeedThisTakeIt
+La Boutique de fleurs vend des jeunes pousses depuis peu.
+
+J'étais tellement contente que j'ai acheté n'importe quoi.
+
+Je n'ai plus besoin de cette Herbe Blanche. Tu la veux ?
+
+@@ Route104_Text_FlowerShopSellingSaplings
+La Boutique de fleurs vend des jeunes pousses depuis peu.
+
+J'étais tellement contente que j'ai acheté n'importe quoi. Où est-ce que je vais mettre tout ça ?
+
+@@ Route104_Text_MrBrineysCottage
+Maison de M. Marco
+
+@@ Route104_Text_RouteSignPetalburg
+>Route 104
+>{RIGHT_ARROW} Clémenti-Ville
+
+@@ Route104_Text_RouteSignRustboro
+>Route 104
+>{UP_ARROW} Mérouville
+
+@@ Route104_Text_PrettyPetalFlowShop
+Boutique de fleurs Jolipétale
+
+@@ Route104_Text_TrainerTipsDoubleBattles
+Conseils aux Dresseurs
+
+À Hoenn, certains Dresseurs se battent en duo : ce sont les combats en Duo.
+
+Dans un combat en Duo, tu envoies tes deux premiers Pokémon. Pense à l'ordre de ton équipe.
+
+@@ Route104_Text_MayWeShouldRegister
+Flora : Oh, salut, {PLAYER} !
+
+Devon a ajouté le système Match Call à ton PokéNav, hein ?
+
+On devrait s'enregistrer, comme ça on pourra s'appeler quand on veut.
+
+@@ Route104_Text_RegisteredMay
+{PLAYER} enregistre Flora dans le PokéNav.
+
+@@ Route104_Text_MayHowsYourPokedex
+Flora : Au fait, {PLAYER}, il avance, ton Pokédex ?
+
+@@ Route104_Text_MayMinesDecentLetsBattle
+Le mien commence à avoir de l'allure. Alors… un petit combat ?
+
+@@ Route104_Text_MayHaventRaisedPokemon
+Flora : Qu'est-ce qui t'arrive ?
+
+Tu n'as pas beaucoup entraîné tes Pokémon ?
+
+C'est pas brillant, pour un Dresseur. Dehors, ce genre d'erreur, ça se paie cher.
+
+@@ Route104_Text_MayLetsBattle
+Flora : Alors, t'en dis quoi ? Un petit combat, ici ?
+
+@@ Route104_Text_MayIntro
+Flora : Tu viens à peine de commencer, {PLAYER}. Je ne perdrai pas deux fois !
+
+@@ Route104_Text_MayDefeat
+Aïe ! Tu es meilleur que je pensais !
+
+@@ Route104_Text_MayPostBattle
+Flora : Tu commences à savoir t'y prendre avec tes Pokémon.
+
+Mais au lieu de juste les faire se battre, tu devrais faire comme M. Marco.
+
+Il faut aussi devenir leur ami. Sinon, le jour où ils tomberont, tu ne sauras même pas ce que tu as perdu.
+
+@@ Route104_Text_BrendanWeShouldRegister
+Brice : Oh, salut, {PLAYER} !
+
+Pas mal, t'as fait installer le Match Call sur ton PokéNav !
+
+On s'enregistre ? Comme ça, on reste en contact.
+
+@@ Route104_Text_RegisteredBrendan
+{PLAYER} enregistre Brice dans le PokéNav.
+
+@@ Route104_Text_BrendanHowsYourPokedex
+Brice : {PLAYER}, il en est où, ton Pokédex ? T'as rempli des pages ?
+
+@@ Route104_Text_BrendanDoingGreatLetsBattle
+Moi, ça roule !
+
+Tu veux voir à quel point je suis bon ? Un combat, et je te montre.
+
+@@ Route104_Text_BrendanNoConfidence
+Brice : Qu'est-ce qu'il y a ? T'as pas confiance en tes Pokémon ?
+
+@@ Route104_Text_BrendanLetsBattle
+Brice : Alors ? On se fait un combat ?
+
+@@ Route104_Text_BrendanIntro
+Brice : Je sais que tu débutes, mais je vais pas te faire de cadeau !
+
+@@ Route104_Text_BrendanDefeat
+Hmm… T'es pas mauvaise. Ça m'énerve.
+
+@@ Route104_Text_BrendanPostBattle
+Brice : Tu commences à bien gérer tes Pokémon.
+
+Mais tu sais, faut pas juste les faire se battre.
+
+Comme M. Marco, faut aussi devenir leur ami. Sinon t'es juste un chef de meute qui envoie les autres crever.
+
+@@ Route104_MrBrineysHouse_Text_WaitUpPeeko
+M. Marco : Attends, ma belle ! Attends-moi, Peeko !
+
+@@ Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford
+Hm ? Mais c'est {PLAYER} ! Tu as sauvé ma Peeko adorée ! Je te dois tout !
+
+Comment ? Tu veux prendre la mer avec moi ?
+
+Hmhm…
+
+Une Lettre pour Myokara et un colis pour Poivressel, c'est ça ?
+
+Quelle vie trépidante !
+
+Mais bien sûr, ce que tu demandes ne pose aucun problème.
+
+Tu t'adresses au bon marin ! Cap sur Myokara. La mer ne me reprendra pas ce que j'aime une deuxième fois.
+
+@@ Route104_MrBrineysHouse_Text_SetSailForDewford
+M. Marco : Myokara, donc !
+
+Levez l'ancre ! Peeko, ma chérie, on prend le large !
+
+@@ Route104_MrBrineysHouse_Text_DeclineDeliverySail
+M. Marco : Ah bon ? Tes livraisons peuvent attendre ?
+
+Dis-moi quand tu veux partir !
+
+@@ Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford
+M. Marco : Ohé ! Je sais exactement ce que tu vas dire !
+
+Tu dois livrer une Lettre à Myokara et un colis à Poivressel.
+
+Aucun problème, je suis l'homme de la situation !
+
+D'abord, cap sur Myokara.
+
+@@ Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford
+M. Marco : Ohé ! Je sais exactement ce que tu vas dire !
+
+Tu dois livrer un colis au Capitaine Stern, à Poivressel.
+
+Aucun problème, je suis l'homme de la situation !
+
+D'abord, cap sur Myokara.
+
+@@ Route104_MrBrineysHouse_Text_WhereAreWeBound
+M. Marco : Ohé ! Pour toi, je prends la mer quand tu veux !
+
+Alors, on met le cap où ?
+
+@@ Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail
+M. Marco : Ah bon ? Peeko te doit la vie, tu sais.
+
+Dis-moi quand tu veux partir !
+
+@@ Route104_MrBrineysHouse_Text_Peeko
+Peeko : Pii piihyoro !

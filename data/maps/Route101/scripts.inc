@@ -257,42 +257,45 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "H-help me!$"
+	.string "À… à l'aide !$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
-	.string "In my BAG!\n"
-	.string "There's a POKé BALL!$"
+	.string "Hé ! Toi, là-bas ! Je t'en supplie !\n"
+	.string "Aide-moi !\p"
+	.string "Dans mon Sac ! Il y a des Poké Balls !\n"
+	.string "Vite, avant qu'il m'arrache la jambe !$"
 
 Route101_Text_DontLeaveMe:
-	.string "Wh-Where are you going?!\n"
-	.string "Don't leave me like this!$"
+	.string "Où tu vas ?! Ne me laisse pas crever ici !$"
 
 Route101_Text_YouSavedMe:
-	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
-	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "Prof. Seko : Pfiou…\p"
+	.string "J'étudiais les Pokémon sauvages dans\n"
+	.string "les hautes herbes quand il m'a sauté\l"
+	.string "dessus.\p"
+	.string "Sans toi, on aurait retrouvé mes\n"
+	.string "lunettes et pas grand-chose d'autre.\l"
+	.string "Merci.\p"
+	.string "Oh ?\p"
+	.string "Mais tu es {PLAYER} !\p"
+	.string "Pas le meilleur endroit pour discuter.\n"
+	.string "Passe à mon labo tout à l'heure,\l"
+	.string "d'accord ?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
+	.string "Si tes Pokémon sont épuisés,\n"
+	.string "emmène-les dans un Centre Pokémon.\p"
+	.string "Il y en a un à Rosyères, juste à côté.\n"
+	.string "N'attends pas qu'il soit trop tard.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+	.string "Les Pokémon sauvages surgissent des\n"
+	.string "hautes herbes.\p"
+	.string "Pour en capturer, il faut y aller et\n"
+	.string "chercher. Et accepter de prendre des\l"
+	.string "coups.$"
 
 Route101_Text_RouteSign:
-	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+	.string "Route 101\n"
+	.string "{UP_ARROW} Rosyères$"
 

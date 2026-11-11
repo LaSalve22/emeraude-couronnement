@@ -1,0 +1,165 @@
+// Chapitre 1 — Arène de Mérouville (Roxanne)
+
+@@ RustboroCity_Gym_Text_GymGuideAdvice
+Yo, ça roule ?
+
+Écoute bien ! Tu veux devenir Maître de la Ligue ?
+
+Je ne suis pas Dresseur, mais des conseils pour gagner, j'en ai à revendre.
+
+C'est réglé, alors ! On vise le titre ensemble !
+
+Ton boulot de Dresseur, c'est de rafler les Badges, pas vrai ?
+
+Mais les Champions d'Arène ne sont pas des tendres. Certains challengers repartent sur une civière.
+
+Et c'est là que j'interviens ! Conseils d'expert garantis !
+
+Roxanne, la Championne, utilise des Pokémon de type Roche.
+
+La Roche est très résistante, mais elle ne supporte pas les attaques Eau et Plante.
+
+Reviens me voir si tu bats la Championne.
+
+Allez, fonce !
+
+@@ RustboroCity_Gym_Text_GymGuidePostVictory
+Waouh ! Quelle victoire ! Mes encouragements ont dû aider !
+
+Parfait ! Regarde ta Carte Dresseur.
+
+Le Badge Roche que tu as gagné doit y être inscrit.
+
+Autrement dit…
+
+Tu viens de gravir la première marche vers le titre de Maître !
+
+Ça doit faire un bien fou !
+
+@@ RustboroCity_Gym_Text_JoshIntro
+Ne prends pas les Dresseurs d'Arène à la légère ! Je vais te montrer pourquoi on est meilleurs !
+
+@@ RustboroCity_Gym_Text_JoshDefeat
+T'étais trop balèze pour moi…
+
+@@ RustboroCity_Gym_Text_JoshPostBattle
+Tu n'as encore rien vu de la puissance terrifiante du type Roche !
+
+@@ RustboroCity_Gym_Text_TommyIntro
+Si tu ne me bats pas, Roxanne va te broyer !
+
+@@ RustboroCity_Gym_Text_TommyDefeat
+Waouh ! T'as du potentiel !
+
+@@ RustboroCity_Gym_Text_TommyPostBattle
+Roxanne est plusieurs fois plus forte que moi.
+
+Méfie-toi. Elle ne sourit jamais pendant un combat.
+
+@@ RustboroCity_Gym_Text_MarcIntro
+On est en pleine ville, et alors ?
+
+Mes Pokémon Roche ont besoin de place pour tout casser !
+
+@@ RustboroCity_Gym_Text_MarcDefeat
+Oh là là ! Ce challenger a du mordant !
+
+@@ RustboroCity_Gym_Text_MarcPostBattle
+Faut reconnaître une chose à notre Championne.
+
+Choisir la Roche si jeune, c'est malin. La Roche ne pleure pas, ne doute pas, ne meurt pas.
+
+@@ RustboroCity_Gym_Text_RoxanneIntro
+Bonjour. Je suis Roxanne, Championne de l'Arène de Mérouville.
+
+Je suis devenue Championne pour appliquer au combat ce que j'ai appris à l'École des Dresseurs. Major de ma promotion, bien sûr.
+
+Montre-moi comment tu te bats, et avec quels Pokémon. Essaie de ne pas me faire perdre mon temps.
+
+@@ RustboroCity_Gym_Text_RoxanneDefeat
+Donc… j'ai perdu…
+
+Il semble que j'aie encore beaucoup à apprendre… C'est… humiliant.
+
+Je comprends.
+
+Le règlement de la Ligue Pokémon stipule qu'un Dresseur qui bat un Champion reçoit ceci.
+
+Accepte le Badge Roche officiel de la Ligue Pokémon.
+
+@@ RustboroCity_Gym_Text_ReceivedStoneBadge
+{PLAYER} reçoit le Badge Roche de la part de Roxanne.
+
+@@ RustboroCity_Gym_Text_StoneBadgeInfoTakeThis
+Le Badge Roche augmente l'Attaque de tes Pokémon.
+
+Il leur permet aussi d'utiliser la CS Coupe hors combat.
+
+Prends également ceci.
+
+@@ RustboroCity_Gym_Text_ExplainRockTomb
+Cette Capsule Technique, la CT39, contient Tomberoche.
+
+Elle écrase l'adversaire sous les pierres et réduit sa Vitesse. Ensevelir avant d'achever.
+
+Une CT apprend instantanément l'attaque à un Pokémon.
+
+Et elle se réutilise à volonté. Profites-en.
+
+@@ RustboroCity_Gym_Text_RoxannePostBattle
+Puisque tu as tant de talent, va défier les autres Champions.
+
+En affrontant beaucoup de Dresseurs, tu apprendras beaucoup. Moi aussi, visiblement.
+
+@@ RustboroCity_Gym_Text_GymStatue
+Arène Pokémon de Mérouville
+
+@@ RustboroCity_Gym_Text_GymStatueCertified
+Arène Pokémon de Mérouville
+
+>Dresseurs reconnus par Roxanne :
+>{PLAYER}
+
+@@ RustboroCity_Gym_Text_RoxanneRegisterCall
+… … … … … … … … … … … Bip !
+
+Roxanne : Allô, {PLAYER} ? Ici Roxanne, de Mérouville.
+
+Bastien m'a dit que tu grimpais les échelons des Dresseurs à une vitesse folle.
+
+Je refuse de croire que je ne peux plus te battre.
+
+Je te promets de remettre mon Arène à niveau pour que tu puisses nous défier à nouveau.
+
+J'espère que tu attends ce moment autant que moi. Cette fois, je ne perdrai pas.
+
+… … … … … … … … … … … Clic !
+
+@@ RustboroCity_Gym_Text_RegisteredRoxanne
+La Championne Roxanne a été enregistrée dans le PokéNav.
+
+@@ RustboroCity_Gym_Text_RoxannePreRematch
+Roxanne : Ravie de te revoir. Je suis Roxanne, la Championne de cette Arène.
+
+Nous avons beaucoup combattu, toi et moi, depuis notre dernière rencontre.
+
+Voyons qui a le plus progressé. En garde !
+
+@@ RustboroCity_Gym_Text_RoxanneRematchDefeat
+Grr… J'ai encore perdu…
+
+@@ RustboroCity_Gym_Text_RoxannePostRematch
+Roxanne : J'ai encore tant à apprendre sur les combats Pokémon.
+
+Et c'est justement ce qui me les fait aimer davantage. Même quand ils me brisent.
+
+@@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+Roxanne : Ravie de te revoir. Je suis Roxanne, la Championne de cette Arène.
+
+Nous avons beaucoup combattu, toi et moi, depuis notre dernière rencontre.
+
+Voyons qui a le plus progressé…
+
+Oh, non… Tu n'as qu'un seul Pokémon ?
+
+Reviens avec au moins un Pokémon de plus.

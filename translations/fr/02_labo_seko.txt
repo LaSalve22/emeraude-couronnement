@@ -1,0 +1,291 @@
+// Chapitre 1 — Laboratoire du Prof. Seko (Bourg-en-Vol), y compris l'après-Ligue
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork
+Hein ? Le Prof. Seko ?
+
+Le Prof est sur le terrain. Ergo, il n'est pas là.
+
+Le terrain, c'est quand on étudie les Pokémon dans leur milieu naturel. Les herbes, les grottes, les montagnes…
+
+Le Prof déteste les bureaux. Il préfère se faire courser par des bêtes sauvages plutôt que de lire des rapports. Un jour, ça va mal finir.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork
+Le Prof déteste les bureaux. Il préfère se faire courser par des bêtes sauvages plutôt que de lire des rapports. Un jour, ça va mal finir.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo
+Le Prof. Seko étudie l'habitat et la répartition des Pokémon.
+
+{RIVAL} l'aide souvent. Ils se disputent comme des chiffonniers, mais ils s'adorent.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
+Prof. Seko : Bon, {PLAYER}.
+
+Ton père m'a beaucoup parlé de toi.
+
+Il paraît que tu n'avais pas encore de Pokémon.
+
+Et pourtant, tout à l'heure, tu as combattu comme un vétéran. Sans trembler.
+
+Pas de doute : tu as le sang de ton père dans les veines. Pour le meilleur et pour le pire.
+
+Pour te remercier de m'avoir sauvé la peau, garde le Pokémon que tu as utilisé. Vous vous êtes choisis, tous les deux.
+
+{PLAYER} reçoit {STR_VAR_1} !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon
+Prof. Seko : Tant qu'on y est, pourquoi ne pas donner un surnom à {STR_VAR_1} ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival
+Prof. Seko : Si tu t'accroches et que tu survis assez longtemps, tu feras un Dresseur redoutable.
+
+Mon enfant, {RIVAL}, étudie les Pokémon en m'aidant sur le terrain.
+
+{PLAYER}, tu devrais aller voir {RIVAL}. Ça te fera du bien. Et ça lui rabattra peut-être le caquet.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou
+Prof. Seko : Parfait ! {RIVAL} sera content… enfin, à sa manière.
+
+Demande-lui de t'apprendre ce que ça veut dire, être Dresseur. Le vrai prix.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay
+Prof. Seko : Allons, ne fais pas cette tête. Va voir mon gamin.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome
+Prof. Seko : {RIVAL} ? Rentré à la maison, je crois.
+
+Ou en train de ramper dans les hautes herbes, comme son vieux père…
+
+Si tes Pokémon sont épuisés, rentre chez toi te reposer. Les cimetières sont pleins de Dresseurs qui voulaient faire « juste un combat de plus ».
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex
+Prof. Seko : Ah, {PLAYER} !
+
+Il paraît que tu as battu {RIVAL} du premier coup. Pas mal du tout !
+
+{RIVAL} m'aide dans mes recherches depuis des années.
+
+C'est un Dresseur aguerri. Et tu l'as mis à terre.
+
+Tiens, {PLAYER}. J'avais commandé ça pour mes recherches, mais il sera mieux entre tes mains. Ce Pokédex est à toi.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex
+{PLAYER} reçoit le Pokédex !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex
+Prof. Seko : Le Pokédex est un appareil de pointe qui enregistre automatiquement chaque Pokémon que tu croises ou captures.
+
+{RIVAL} ne s'en sépare jamais.
+
+Dès que mon gamin attrape un Pokémon rare, il me traque jusque sur le terrain pour me le montrer. Même au milieu d'une meute.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait
+Prof. Seko : D'innombrables Pokémon t'attendent ! Certains voudront ta peau.
+
+Argh, ça me démange ! Il faut que je retourne sur le terrain !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese
+Flora : Oh, {PLAYER} ! Toi aussi, tu as un Pokédex !
+
+Génial ! Comme moi ! Tiens, j'ai un truc pour toi.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls
+Flora : Plus on a de Pokémon, plus c'est drôle !
+
+Je vais fouiller partout pour en trouver de nouveaux.
+
+Et si j'en vois un mignon, hop, Poké Ball ! Même s'il essaie de me mordre.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull
+Oh ? Ton Sac est plein.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext
+Flora : Je me demande où chercher des Pokémon, maintenant…
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese
+Brice : Hm… T'as eu un Pokédex, toi aussi.
+
+Bon. Tiens, prends ça. Que tu crèves pas bêtement au premier buisson.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls
+Brice : Plus t'as de Pokémon, plus c'est marrant.
+
+Je vais explorer tout Hoenn pour en trouver d'autres.
+
+Et si j'en vois un qui a de la gueule, crois-moi, il finit dans une Poké Ball.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull
+Hé, ton Sac est plein.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext
+Brice : Où est-ce que je vais chasser, maintenant…
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine
+Une machine à l'air très sérieux. Il y a une tache brune sur le côté. Mieux vaut ne pas savoir.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch
+Le PC de recherche du Prof. Mieux vaut ne pas y toucher.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon
+L'étagère déborde de livres sur les Pokémon.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead
+Un livre bien trop compliqué. “Morsures et traumatismes : cas cliniques”.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational
+Prof. Seko : Bien…
+
+{PLAYER}, {RIVAL}, vous m'avez beaucoup aidé tous les deux.
+
+Grâce à vous, on découvre des choses nouvelles.
+
+Il semble qu'on trouve à Hoenn des Pokémon venus d'autres régions.
+
+Ça prouve à quel point la nature de Hoenn est riche. Et imprévisible.
+
+Je vais donc passer vos Pokédex en mode National.
+
+Donnez-moi vos appareils.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool
+Flora : Hé hé !
+
+Trop bien, même mon Pokédex est mis à jour !
+
+C'est parce que tu as capturé des tonnes de Pokémon, {PLAYER} !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe
+Brice : J'ai retourné tout Hoenn pour recenser les Pokémon.
+
+Le mode National, c'est grâce à moi. Tu peux me remercier.
+
+Ouais, t'as de la chance, {PLAYER}.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_OkayAllDone
+Prof. Seko : Voilà, c'est fait !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational
+Le Pokédex de {PLAYER} passe en mode National !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2
+Prof. Seko : Écoute. Te voilà Maître, mais ton voyage n'est pas fini.
+
+La route des Pokémon n'a pas de fin. Seulement des gens qui s'arrêtent en chemin.
+
+Quelque part, des hautes herbes t'attendent.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork
+Flora : Je vais faire une pause avec le terrain.
+
+Je reste aider le Prof ici quelque temps. Quelqu'un doit l'empêcher de faire n'importe quoi.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork
+Brice : Pour l'instant, je lève le pied avec le terrain.
+
+Je reste filer un coup de main au Prof. Avant qu'il se fasse bouffer.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon
+Prof. Seko : Oh, {PLAYER} ! Montre-moi ton Pokédex.
+
+… … … … … … … … … … … …
+
+Oui. Aucun doute.
+
+Tu as vraiment complété le Pokédex de Hoenn.
+
+C'est plus qu'impressionnant. Des chercheurs y ont laissé leur vie.
+
+J'ai un cadeau pour toi.
+
+Considère ça comme ma reconnaissance pour ton travail.
+
+Un Pokémon rare, qu'on ne trouve que dans une autre région !
+
+Choisis-en un parmi ces trois-là.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon
+Prof. Seko : Ce sont des Pokémon rares, venus d'une autre région !
+
+Choisis-en un parmi ces trois-là.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil
+Prof. Seko : Héricendre, le Pokémon Feu, a attiré ton attention !
+
+Toujours aussi vif !
+
+Alors, tu prends Héricendre ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile
+Prof. Seko : Kaiminus, le Pokémon Eau !
+
+Tu sais choisir.
+
+Alors, tu prends Kaiminus ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita
+Prof. Seko : Germignon, le Pokémon Plante !
+
+Tu sais ce que tu fais.
+
+Alors, tu prends Germignon ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable
+Prof. Seko : Prends ton temps.
+
+Ils sont tous précieux.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_PickedFinePokemon
+Prof. Seko : Je vois ! Excellent choix !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_ReceivedJohtoStarter
+{PLAYER} reçoit {STR_VAR_1} de la part du Prof. Seko !
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_NicknameJohtoStarter
+Donner un surnom à {STR_VAR_1} ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting
+Prof. Seko : Écoute, {PLAYER}. Tu as complété le Pokédex de Hoenn, mais ton voyage n'est pas fini.
+
+La route des Pokémon n'a pas de fin. Seulement des gens qui s'arrêtent en chemin.
+
+Quelque part, des hautes herbes t'attendent.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BetterLeaveOthersAlone
+Tu as reçu le Pokémon promis. Mieux vaut laisser les autres.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_DontHaveAnyRoomForPokemon
+Oh, tu n'as plus de place pour ce Pokémon.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere
+Flora : {PLAYER}, et après… tu vas faire quoi ?
+
+Continuer à te battre et à t'endurcir ?
+
+Ou essayer de remplir le Pokédex National ?
+
+Moi, je reste ici pour aider le Prof.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly
+Brice : Collectionner, très peu pour moi. Je préfère élever un seul Pokémon, lentement, jusqu'à ce qu'il soit une arme.
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier
+Flora : Oh, {PLAYER} ! Tu connais la Zone de Combat ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier
+Brice : Hé, {PLAYER} ! T'as fait un tour à la Zone de Combat ?
+
+@@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall
+… … … … … … … … … … … Bip !
+
+Scott : Salut, salut, {PLAYER} ! C'est Scott.
+
+Je suis à bord du M.S. Marée. La mer, rien de tel !
+
+Au fait…
+
+Il y a un endroit où j'aimerais t'inviter.
+
+Si ça t'intéresse, prends le ferry à Poivressel ou à Nénucrique.
+
+Je t'expliquerai tout sur place. Je t'attends !
+
+… … … … … … … … … … … Clic !

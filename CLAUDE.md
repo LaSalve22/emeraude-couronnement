@@ -1,7 +1,7 @@
 # Émeraude — Couronnement Mondial
 
 Romhack de Pokémon Émeraude d'Adrien, basé sur pokeemerald-expansion 1.17.2.
-Réponds toujours en français. Le jeu lui-même reste en anglais.
+Réponds toujours en français. Le jeu est traduit en français au fur et à mesure (version plus adulte, voir `translations/fr/GUIDE.md`).
 
 ## Sources de vérité
 
@@ -46,8 +46,18 @@ Réponds toujours en français. Le jeu lui-même reste en anglais.
 - À revoir plus tard : le Prof. Seko propose encore Héricendre parmi les starters de Johto après la Ligue ; pas de poupée Carapuce
   (la poupée Gobou reste pour le choix eau).
 
+## Fait (v0.3)
+
+- Traduction française du chapitre 1 (intro → Mérouville, Tunnel Mérazon compris), ton plus adulte façon manga :
+  jurons, thèmes durs (mort, maladie, deuil), scénario inchangé. Guide de ton et lexique : `translations/fr/GUIDE.md`.
+- Textes sources dans `translations/fr/*.txt`, appliqués par `python3 tools/fr/textfr.py apply translations/fr/*.txt`
+  (mise en forme automatique au pixel près ; `check` signale les lignes trop larges).
+- Rival renommé Flora / Brice (dialogues et combats), noms de lieux du chapitre 1 traduits dans `region_map_sections.json`.
+- Limite connue : noms de Pokémon, attaques, objets, menus et messages de combat encore en anglais.
+
 ## Prochaines étapes, dans l'ordre
 
+0. Traduction : valider le ton du chapitre 1 avec Adrien, puis traduire le reste du jeu et les noms globaux (Pokémon, attaques, objets, menus).
 1. Choix du mode au lancement (Normal / Hard / Kaizo) : ajouter `DIFFICULTY_KAIZO`, écran ou dialogue de choix, descente possible plus tard.
 2. Blocage des objets de soin en combat et mode Set forcé en Hard et Kaizo.
 3. Téracristal (après badge 2) et Méga-évolution (après badge 5).

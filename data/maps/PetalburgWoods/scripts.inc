@@ -316,158 +316,165 @@ PetalburgWoods_EventScript_JamesRematch::
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
-	.string "Hmmm…\n"
-	.string "Not a one to be found…$"
+	.string "Hmmm… Pas un seul… Ils étaient là,\n"
+	.string "pourtant. Quelque chose les a fait fuir.$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
-	.string "Hello, have you seen any POKéMON\n"
-	.string "called SHROOMISH around here?\p"
-	.string "I really love that POKéMON.$"
+	.string "Bonjour. Tu n'aurais pas vu des\n"
+	.string "Balignon, par ici ?\p"
+	.string "J'adore ce Pokémon. Et ses spores,\n"
+	.string "quand on sait les doser…$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
-	.string "I was going to ambush you, but you\n"
-	.string "had to dawdle in PETALBURG WOODS\l"
-	.string "forever, didn't you?\p"
-	.string "I got sick of waiting, so here I am!$"
+	.string "Je comptais te tendre une embuscade,\n"
+	.string "mais tu traînes dans ce putain de bois\l"
+	.string "depuis des heures !\p"
+	.string "J'en ai eu marre d'attendre, alors me\n"
+	.string "voilà !$"
 
 PetalburgWoods_Text_HandOverThosePapers:
-	.string "You! DEVON RESEARCHER!\p"
-	.string "Hand over those papers!$"
+	.string "Toi ! Le chercheur de Devon !\p"
+	.string "Donne-moi ces documents. Tout de\n"
+	.string "suite. Ou je te fais bouffer la mousse.$"
 
 PetalburgWoods_Text_YouHaveToHelpMe:
-	.string "Aiyeeeh!\p"
-	.string "You're a POKéMON TRAINER, aren't you?\n"
-	.string "You've got to help me, please!$"
+	.string "Aïeeeuh !\p"
+	.string "Tu es Dresseur, hein ? Aide-moi, je t'en\n"
+	.string "supplie ! Il va me tuer !$"
 
 PetalburgWoods_Text_NoOneCrossesTeamAqua:
-	.string "Hunh? What do you think you're doing?\n"
-	.string "What, you're going to protect him?\p"
-	.string "No one who crosses TEAM AQUA\n"
-	.string "gets any mercy, not even a kid!\p"
-	.string "Come on and battle me!$"
+	.string "Hein ? Tu fais quoi, là ? Tu comptes le\n"
+	.string "protéger ?\p"
+	.string "Personne ne se met en travers de la\n"
+	.string "Team Aqua. On n'a aucune pitié. Même\l"
+	.string "pour les gosses !\p"
+	.string "Viens te battre, qu'on en finisse !$"
 
 PetalburgWoods_Text_YoureKiddingMe:
-	.string "You're kidding me! You're tough!$"
+	.string "C'est pas vrai ! T'es une teigne !$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
-	.string "Grrr… You've got some nerve\n"
-	.string "meddling with TEAM AQUA!\l"
-	.string "Come on and battle me again!\p"
-	.string "I wish I could say that, but I'm out of\n"
-	.string "POKéMON…\p"
-	.string "And, hey, we of TEAM AQUA are also\n"
-	.string "after something in RUSTBORO.\p"
-	.string "I'll let you go today!$"
+	.string "Grrr… T'as du culot de te mêler des\n"
+	.string "affaires de la Team Aqua ! Reviens te\l"
+	.string "battre !\p"
+	.string "J'aimerais bien, mais j'ai plus de\n"
+	.string "Pokémon en état…\p"
+	.string "Et puis, la Team Aqua a aussi des\n"
+	.string "affaires à régler à Mérouville.\p"
+	.string "Je te laisse filer pour aujourd'hui. Mais\n"
+	.string "la prochaine fois, on te retrouvera\l"
+	.string "dans un fossé.$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
-	.string "Whew…\n"
-	.string "That was awfully close!\p"
-	.string "Thanks to you, he didn't rob me of\n"
-	.string "these important papers.\p"
-	.string "I know, I'll give you a GREAT BALL as\n"
-	.string "my thanks!$"
+	.string "Pfiou… C'était moins une !\p"
+	.string "Grâce à toi, il ne m'a pas volé ces\n"
+	.string "documents. Ni la vie.\p"
+	.string "Tiens, prends cette Super Ball. C'est le\n"
+	.string "moins que je puisse faire !$"
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
-	.string "Didn't that TEAM AQUA thug say\n"
-	.string "they were after something in\l"
-	.string "RUSTBORO, too?$"
+	.string "Ce voyou de la Team Aqua n'a pas dit\n"
+	.string "qu'ils avaient des affaires à\l"
+	.string "Mérouville, eux aussi ?$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
-	.string "Uh-oh! It's a crisis!\n"
-	.string "I can't be wasting time!$"
+	.string "Oh non ! C'est une urgence ! Je n'ai pas\n"
+	.string "de temps à perdre !$"
 
 PetalburgWoods_Text_YoureLoadedWithItems:
-	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "Ton Sac déborde. Je ne peux pas te\n"
+	.string "donner cette Super Ball.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
-	.string "I caught a whole bunch of POKéMON!\p"
-	.string "Go, go, go!\n"
-	.string "My BUG POKéMON team!$"
+	.string "J'ai attrapé une tonne de Pokémon !\p"
+	.string "Allez, allez, allez ! Mon équipe\n"
+	.string "d'Insectes, à l'attaque !$"
 
 PetalburgWoods_Text_ICouldntWin:
-	.string "I have all these POKéMON,\n"
-	.string "but I couldn't win…$"
+	.string "J'ai tous ces Pokémon, et j'ai quand\n"
+	.string "même perdu…$"
 
 PetalburgWoods_Text_ImOutOfPokeBalls:
-	.string "I caught a bunch of POKéMON.\n"
-	.string "Now I'm out of POKé BALLS.$"
+	.string "J'ai attrapé plein de Pokémon.\n"
+	.string "Maintenant, j'ai plus de Poké Balls.$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
-	.string "If you take BUG POKéMON to school,\n"
-	.string "you get to be instantly popular!$"
+	.string "Si tu ramènes des Pokémon Insecte à\n"
+	.string "l'école, tout le monde t'adore !$"
 
 PetalburgWoods_Text_CantBePopularIfILose:
-	.string "I can't be popular if I lose.$"
+	.string "Si je perds, plus personne va m'aimer.$"
 
 PetalburgWoods_Text_PeopleRespectYou:
-	.string "If you have a big BUG POKéMON,\n"
-	.string "people respect you for it.$"
+	.string "Avec un gros Pokémon Insecte, les\n"
+	.string "autres te respectent. Ou ils ont peur.\l"
+	.string "C'est pareil.$"
 
 PetalburgWoods_Text_IWantRematch1:
-	.string "I want a rematch when my BUG\n"
-	.string "POKéMON grow up!\p"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "Je veux une revanche quand mes\n"
+	.string "Insectes auront grandi !\p"
+	.string "Je t'enregistre dans mon PokéNav !$"
 
 PetalburgWoods_Text_IWantRematch2:
-	.string "I want a rematch when my BUG \n"
-	.string "POKéMON grow up!\p"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "Je veux une revanche quand mes\n"
+	.string "Insectes auront grandi !\p"
+	.string "Je t'enregistre dans mon PokéNav !$"
 
 PetalburgWoods_Text_MyPokemonHaveGrown:
-	.string "My BUG POKéMON have grown.\n"
-	.string "I'll be popular again.$"
+	.string "Mes Insectes ont grandi. Je vais\n"
+	.string "redevenir populaire.$"
 
 PetalburgWoods_Text_CantBePopularIfLose:
-	.string "I can't be popular if I lose.$"
+	.string "Si je perds, plus personne va m'aimer.$"
 
 PetalburgWoods_Text_IveBeenTrainingHard:
-	.string "You get to be popular if you have\n"
-	.string "strong POKéMON, right?\l"
-	.string "So, I've been training hard.$"
+	.string "Avec des Pokémon forts, on devient\n"
+	.string "populaire, non ? Alors je me suis\l"
+	.string "entraîné comme un malade.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
-	.string "Yo, there!\n"
-	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
-	.string "of tall grass.$"
+	.string "Hé, toi ! Tes Pokémon tiennent le coup ?\p"
+	.string "S'ils sont faibles, évite les hautes\n"
+	.string "herbes. Le mois dernier, on a retrouvé\l"
+	.string "un randonneur ici. Enfin, ce qu'il en\n"
+	.string "restait.$"
 
 PetalburgWoods_Text_HiddenItemsExplanation:
-	.string "Sometimes, there are things on the\n"
-	.string "ground even if you can't see them.\p"
-	.string "That's why I always check where I'm\n"
-	.string "walking.$"
+	.string "Parfois, il y a des choses par terre,\n"
+	.string "même si on ne les voit pas.\p"
+	.string "C'est pour ça que je regarde toujours\n"
+	.string "où je marche. On trouve des objets… et\l"
+	.string "parfois pire.$"
 
 PetalburgWoods_Text_TryUsingThisItem:
-	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
-	.string "You must be a TRAINER.\n"
-	.string "You should try using this item.$"
+	.string "Oh, cool ! C'est le Badge de l'Arène de\n"
+	.string "Mérouville !\p"
+	.string "Tu dois être Dresseur. Essaie donc cet\n"
+	.string "objet.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
-	.string "It's a MIRACLE SEED.\n"
-	.string "If a POKéMON holds that item, its\l"
-	.string "GRASS-type moves become stronger.\p"
-	.string "Besides MIRACLE SEED, I think there are\n"
-	.string "other convenient items for POKéMON\l"
-	.string "to hold.$"
+	.string "C'est une Graine Miracle. Si un Pokémon\n"
+	.string "la tient, ses attaques Plante\l"
+	.string "deviennent plus puissantes.\p"
+	.string "Il existe d'autres objets utiles à faire\n"
+	.string "tenir aux Pokémon, je crois.$"
 
 PetalburgWoods_Text_TrainerTipsExperience:
-	.string "TRAINER TIPS\p"
-	.string "Any POKéMON that appears even once\n"
-	.string "in a battle is awarded EXP Points.\p"
-	.string "To raise a weak POKéMON, put it at the\n"
-	.string "left of the team list.\p"
-	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn EXP Points without\l"
-	.string "being exposed to any harm.$"
+	.string "Conseils aux Dresseurs\p"
+	.string "Tout Pokémon qui participe à un combat,\n"
+	.string "même un instant, reçoit des points\l"
+	.string "d'expérience.\p"
+	.string "Pour entraîner un Pokémon faible,\n"
+	.string "place-le en tête d'équipe.\p"
+	.string "Puis remplace-le dès le début du\n"
+	.string "combat. Il gagnera de l'expérience sans\l"
+	.string "risquer sa vie.$"
 
 PetalburgWoods_Text_TrainerTipsPP:
-	.string "TRAINER TIPS\p"
-	.string "In addition to Hit Points (HP), POKéMON\n"
-	.string "have Power Points (PP) that are used to\l"
-	.string "make moves during battle.\p"
-	.string "If a POKéMON runs out of PP, it must be\n"
-	.string "taken to a POKéMON CENTER.$"
+	.string "Conseils aux Dresseurs\p"
+	.string "En plus des PV, les Pokémon ont des PP,\n"
+	.string "qui servent à lancer leurs attaques.\p"
+	.string "Un Pokémon à court de PP doit être\n"
+	.string "emmené dans un Centre Pokémon. Ou il se\l"
+	.string "battra à mains nues.$"
 

@@ -1,0 +1,203 @@
+// Chapitre 1 — Clémenti-Ville (hors Arène)
+
+@@ PetalburgCity_Text_WhereIsWally
+Où est passé notre Timmy ?
+
+On doit partir pour Vergazon très bientôt… Il ne devrait pas courir comme ça, avec ses poumons…
+
+@@ PetalburgCity_Text_AreYouRookieTrainer
+Salut ! Tu serais pas… un Dresseur débutant ?
+
+Tu sais ce que font les Dresseurs en arrivant dans une ville ?
+
+D'abord, ils repèrent l'Arène. Pour savoir qui il faudra abattre.
+
+@@ PetalburgCity_Text_ThisIsPetalburgGym
+Tu vois ? C'est l'Arène de Clémenti-Ville.
+
+@@ PetalburgCity_Text_ThisIsGymSign
+Le panneau de l'Arène. Cherche-le dès que tu arrives quelque part.
+
+@@ PetalburgCity_Text_WaterReflection
+Mon visage se reflète dans l'eau.
+
+Un sourire plein d'espoir…
+
+Ou un silence crispé, qui lutte contre la peur…
+
+Et toi, qu'est-ce que tu vois dans ton reflet ?
+
+@@ PetalburgCity_Text_FullPartyExplanation
+Admettons que tu aies six Pokémon. Si tu en captures un autre…
+
+Il est envoyé automatiquement dans une Boîte du PC. Rangé dans le noir, en attendant que tu penses à lui.
+
+@@ PetalburgCity_Text_GymSign
+>Arène Pokémon de Clémenti-Ville
+>Champion : Norman
+>“Un homme en quête de puissance.”
+
+@@ PetalburgCity_Text_CitySign
+>Clémenti-Ville
+>“Là où l'homme côtoie la nature.”
+
+@@ PetalburgCity_Text_WallyHouseSign
+Maison de Timmy
+
+@@ PetalburgCity_Text_AreYouATrainer
+Excuse-moi !
+
+Laisse-moi deviner… À ta tenue, je dirais que tu es Dresseur ?
+
+@@ PetalburgCity_Text_WellMaybeNot
+… … … … … …
+
+Hm, peut-être pas. Tes vêtements ne sont pas assez sales. Pas une goutte de sang.
+
+Soit tu débutes, soit tu n'es qu'un gamin comme les autres.
+
+@@ PetalburgCity_Text_ImLookingForTalentedTrainers
+Je parcours le pays à la recherche de Dresseurs talentueux.
+
+Désolé de t'avoir fait perdre ton temps.
+
+@@ PetalburgCity_House1_Text_TravelingIsWonderful
+Voyager, c'est merveilleux !
+
+Dans ma jeunesse, j'ai parcouru les mers et les montagnes ! J'ai enterré deux compagnons de route en chemin. Je ne regrette rien.
+
+@@ PetalburgCity_House1_Text_GoOnAdventure
+Soupir…
+
+J'aimerais tellement partir à l'aventure avec des Pokémon…
+
+Ramper dans l'herbe humide… Escalader des montagnes escarpées…
+
+Traverser des mers déchaînées… Errer dans des grottes obscures…
+
+Et parfois, avoir un peu le mal du pays…
+
+Ça doit être fabuleux, de voyager ! Même si on ne revient pas.
+
+@@ PetalburgCity_House2_Text_NormanBecameGymLeader
+Norman est devenu le nouveau Champion de notre ville.
+
+Il a fait venir sa famille de loin, paraît-il. Mais on ne le voit jamais avec eux.
+
+@@ PetalburgCity_House2_Text_BattledNormanOnce
+J'ai affronté Norman, une fois. Il m'a écrasé.
+
+Comment dire ?
+
+Ce type ne vit que pour les Pokémon. Il n'y a rien d'autre en lui. C'est ça qui fait peur.
+
+@@ PetalburgCity_Mart_Text_WeakWillGrowStronger
+Même un Pokémon faible peut devenir fort.
+
+Le plus important, c'est l'amour ! L'amour pour tes Pokémon ! Les claques, ça ne marche pas.
+
+@@ PetalburgCity_Mart_Text_RepelIsUseful
+Tu utilises du Repousse ? Ça éloigne les Pokémon sauvages. Pratique quand on est pressé… ou blessé.
+
+@@ PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou
+Tu as des Antidotes sur toi ?
+
+Un Pokémon empoisonné perd des PV à chaque pas, jusqu'à s'effondrer. J'ai vu des Dresseurs porter le leur sur des kilomètres. Prends des Antidotes.
+
+@@ PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem
+Le système de stockage de Pokémon sur PC…
+
+Celui qui l'a inventé est un génie. Ou un monstre. Je n'ai pas encore décidé.
+
+@@ PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP
+Mon Pokémon a mangé une Baie Oran et il a récupéré des PV !
+
+@@ PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon
+Il existe beaucoup de types de Pokémon.
+
+Chaque type a ses forces et ses faiblesses face aux autres.
+
+Selon les types, un combat peut être une formalité… ou un massacre.
+
+@@ PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType
+Par exemple, ton Arcko est de type Plante.
+
+Il est fort contre les types Eau et Sol.
+
+Mais le Feu le réduit en cendres.
+
+@@ PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType
+Par exemple, ton Héricendre est de type Feu.
+
+Il est fort contre les types Plante et Insecte.
+
+Mais l'Eau l'éteint en un rien de temps.
+
+@@ PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType
+Par exemple, ton Carapuce est de type Eau.
+
+Il est fort contre le type Feu.
+
+Mais il craint les types Plante et Électrik.
+
+@@ PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally
+Tu es… Ah, tu dois être {PLAYER}, c'est ça ?
+
+Merci d'avoir passé un moment avec Timmy, tout à l'heure.
+
+Il est malade depuis sa naissance. Les médecins ne nous ont jamais promis grand-chose.
+
+On l'envoie chez des parents à Vergazon pour quelque temps.
+
+L'air y est bien plus pur qu'ici. C'est notre dernier espoir.
+
+Comment ? Où est Timmy ? Il est déjà parti.
+
+Je me demande où il est, maintenant…
+
+@@ PetalburgCity_WallysHouse_Text_WonderHowWallyIsDoing
+Je me demande comment va notre Timmy… Chaque fois que le téléphone sonne, j'ai peur.
+
+@@ PetalburgCity_WallysHouse_Text_PleaseExcuseUs
+{PLAYER} ! Pardon de t'avoir fait venir comme ça.
+
+Mais notre Timmy va beaucoup mieux depuis qu'il est à Vergazon.
+
+Et c'est grâce à toi !
+
+Avant de partir, tu l'as aidé à capturer un Pokémon, n'est-ce pas ?
+
+Ça l'a rendu tellement heureux.
+
+Et pas seulement lui. Moi, son père, aussi.
+
+On a passé des années à attendre le pire. Et toi, tu lui as donné une raison de se battre.
+
+Ce n'est pas un pot-de-vin, mais j'aimerais vraiment que tu acceptes ceci.
+
+@@ PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces
+Si ton Pokémon sait utiliser Surf, tu pourras aller presque partout.
+
+@@ PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon
+Timmy rentre bientôt. J'ai hâte. On a failli ne jamais le revoir.
+
+@@ PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity
+Oh ? Tu as vu Timmy à Éternara ?
+
+Voyons, {PLAYER}, ne dis pas de bêtises.
+
+Il va mieux, mais il ne pourrait jamais aller si loin tout seul. Il… il ne ferait pas ça.
+
+@@ PetalburgCity_WallysHouse_Text_WallyWasReallyHappy
+Timmy était tellement heureux quand il nous a dit qu'il avait capturé un Pokémon.
+
+Ça faisait des années que je ne l'avais pas vu sourire comme ça.
+
+@@ PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling
+Ne dis rien à mon mari…
+
+Notre Timmy a quitté Vergazon sans prévenir personne.
+
+Il est fragile, mais il a une volonté de fer. Plus que nous tous.
+
+Je suis sûre qu'il reviendra sain et sauf. Il le faut.

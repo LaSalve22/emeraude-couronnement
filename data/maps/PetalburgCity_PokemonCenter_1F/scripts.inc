@@ -53,42 +53,40 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 	return
 
 PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
-	.string "That PC-based POKéMON Storage\n"
-	.string "System…\p"
-	.string "Whoever made it must be some kind\n"
-	.string "of a scientific wizard!$"
+	.string "Le système de stockage de Pokémon sur\n"
+	.string "PC…\p"
+	.string "Celui qui l'a inventé est un génie. Ou un\n"
+	.string "monstre. Je n'ai pas encore décidé.$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
-	.string "When my POKéMON ate an\n"
-	.string "ORAN BERRY, it regained HP!$"
+	.string "Mon Pokémon a mangé une Baie Oran et il\n"
+	.string "a récupéré des PV !$"
 
 PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
-	.string "There are many types of POKéMON.\p"
-	.string "All types have their strengths and\n"
-	.string "weaknesses against other types.\p"
-	.string "Depending on the types of POKéMON,\n"
-	.string "a battle could be easy or hard.$"
+	.string "Il existe beaucoup de types de\n"
+	.string "Pokémon.\p"
+	.string "Chaque type a ses forces et ses\n"
+	.string "faiblesses face aux autres.\p"
+	.string "Selon les types, un combat peut être\n"
+	.string "une formalité… ou un massacre.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
-	.string "For example, your TREECKO\n"
-	.string "is a GRASS type.\p"
-	.string "It's strong against the WATER and\n"
-	.string "GROUND types.\p"
-	.string "But, it's weak against FIRE-type\n"
-	.string "POKéMON.$"
+	.string "Par exemple, ton Arcko est de type\n"
+	.string "Plante.\p"
+	.string "Il est fort contre les types Eau et Sol.\p"
+	.string "Mais le Feu le réduit en cendres.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
-	.string "For example, your CYNDAQUIL\n"
-	.string "is a FIRE type.\p"
-	.string "It's strong against the GRASS and\n"
-	.string "BUG types.\p"
-	.string "But, it's weak against WATER-type\n"
-	.string "POKéMON.$"
+	.string "Par exemple, ton Héricendre est de type\n"
+	.string "Feu.\p"
+	.string "Il est fort contre les types Plante et\n"
+	.string "Insecte.\p"
+	.string "Mais l'Eau l'éteint en un rien de temps.$"
 
 PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
-	.string "For example, your SQUIRTLE\n"
-	.string "is a WATER type.\p"
-	.string "It's strong against the FIRE type.\p"
-	.string "But, it's weak against GRASS-type\n"
-	.string "and ELECTRIC-type POKéMON.$"
+	.string "Par exemple, ton Carapuce est de type\n"
+	.string "Eau.\p"
+	.string "Il est fort contre le type Feu.\p"
+	.string "Mais il craint les types Plante et\n"
+	.string "Électrik.$"
 

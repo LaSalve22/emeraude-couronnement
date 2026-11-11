@@ -1,0 +1,218 @@
+// Chapitre 1 — Mérouville : immeubles, maisons, Boutique, Centre Pokémon
+
+@@ RustboroCity_Flat1_1F_Text_EveryPokemonHasAbility
+Chaque Pokémon possède un talent spécial.
+
+@@ RustboroCity_Flat1_1F_Text_PokemonStrange
+Les Pokémon sont vraiment des créatures étranges. Des fois, la nuit, je les entends parler entre eux.
+
+@@ RustboroCity_Flat1_2F_Text_ComingUpWithMealsIsHard
+Oh, c'est tellement dur, tous les jours…
+
+Quoi donc ? Tu as besoin de demander ?
+
+Trouver quoi faire à manger. Tous les jours.
+
+Franchement, c'est pire que n'importe quel combat de Pokémon.
+
+@@ RustboroCity_Flat1_2F_Text_HelloDoYouKnowFunnyPhrase
+Oh, bonjour ! Bienvenue chez les Pepper.
+
+J'ai une question. Tu as déjà gardé des enfants ?
+
+Je suis jeune papa, alors tout ça est nouveau pour moi.
+
+Et j'ai un problème. Ma fille, Walda, ne rit pas assez. Les médecins disent que tout va bien, mais…
+
+Je pense qu'elle rirait si je lui disais un truc drôle.
+
+Tu connais un mot ou une phrase rigolote ?
+
+@@ RustboroCity_Flat1_2F_Text_BeenSayingXDoYouKnowBetterPhrase
+Ces temps-ci, je lui dis “{STR_VAR_1}” pour l'amuser.
+
+Tu connais un mot ou une phrase qui marcherait mieux ?
+
+@@ RustboroCity_Flat1_2F_Text_WonderfulLetsHearSuggestion
+Oh, formidable. Alors, vas-y, je t'écoute.
+
+@@ RustboroCity_Flat1_2F_Text_OhIsThatRight
+Ah bon ?
+
+Si une bonne idée te vient, je suis tout ouïe.
+
+@@ RustboroCity_Flat1_2F_Text_LetsGiveItATry2
+Ah, je vois. Bon, essayons, d'accord ?
+
+@@ RustboroCity_Flat1_2F_Text_OhShesLaughing
+{STR_VAR_1}. {STR_VAR_1}.
+
+Oh, oui ! Elle rit ! Oh, je suis aussi heureux qu'elle !
+
+@@ RustboroCity_Flat1_2F_Text_LetsGiveItATry
+Ah, je vois. Bon, essayons, d'accord ?
+
+@@ RustboroCity_Flat1_2F_Text_ShesNotSmilingAtAll
+{STR_VAR_1}. {STR_VAR_1}.
+
+Hmmm… Pas l'ombre d'un sourire. Walda est peut-être une enfant très sérieuse…
+
+@@ RustboroCity_Flat1_2F_Text_ThinkOfMyOwnPhrase
+Oh, tu n'as pas d'idée. Je vais devoir trouver tout seul, alors.
+
+Hmm… Et pourquoi pas “{STR_VAR_1}” ? Voyons si ça marche.
+
+@@ RustboroCity_Flat1_2F_Text_ShesNotSmilingAtAll2
+{STR_VAR_1}. {STR_VAR_1}.
+
+Hmmm… Pas l'ombre d'un sourire. Walda est peut-être une enfant très sérieuse…
+
+@@ RustboroCity_Flat1_2F_Text_OhYouDontKnowAny
+Oh, tu n'as pas d'idée. Je vais continuer avec ma vieille formule, alors.
+
+En tout cas, si une bonne idée te vient, n'hésite pas, d'accord ?
+
+@@ RustboroCity_Flat1_2F_Text_ThankYouIllGiveYouWallpaper
+Merci !
+
+Grâce à toi, ma petite Walda a ri ! C'est la première fois depuis des semaines.
+
+Je n'en ai pas l'air, mais je suis un des meilleurs chercheurs de Devon SA.
+
+Laisse-moi te rendre la pareille.
+
+Je vais ajouter de nouveaux fonds d'écran pour les Boîtes du système de stockage Pokémon.
+
+Dans le menu des fonds d'écran, choisis “AMIS”.
+
+Tu y trouveras les nouveaux motifs.
+
+@@ RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll
+Une peluche Pokémon ! Un œil est décousu.
+
+@@ RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere
+Les employés de Devon SA vivent dans cet immeuble. Ils n'en sortent presque jamais.
+
+@@ RustboroCity_Flat2_1F_Text_Skitty
+Skitty : Gyaaaah !
+
+@@ RustboroCity_Flat2_2F_Text_DevonWasTinyInOldDays
+Il y a longtemps, Devon n'était qu'une toute petite entreprise. Puis ils ont racheté tout le monde.
+
+@@ RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt
+Mon papa travaille à la Corporation.
+
+C'est lui qui a fabriqué ça ! Moi, je peux pas m'en servir, alors je te le donne.
+
+@@ RustboroCity_Flat2_2F_Text_GoingToWorkAtDevonToo
+Mon papa travaille à la Corporation.
+
+Quand je serai grand, je travaillerai chez Devon, moi aussi. Comme ça, je le verrai plus souvent.
+
+@@ RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones
+Le Président de Devon collectionne les pierres rares.
+
+@@ RustboroCity_Flat2_3F_Text_PresidentsSonAlsoCollectsRareStones
+Il paraît que son fils collectionne aussi les pierres rares. Ils ne se parlent plus, mais ils ont au moins ça en commun.
+
+@@ RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse
+Ce regard déterminé… Cette souplesse… Et ces Pokémon bien entraînés…
+
+Aucun doute, tu sais te battre !
+
+Non, attends, ne dis rien. Je le vois rien qu'à te regarder.
+
+Tu sauras faire bon usage de cette Capsule Secrète.
+
+Pas de fausse modestie. Allez, prends-la !
+
+@@ RustboroCity_CuttersHouse_Text_ExplainCut
+Cette Capsule Secrète, ou CS, contient Coupe.
+
+Une attaque de CS peut être utilisée par les Pokémon hors combat.
+
+Un Pokémon qui connaît Coupe peut abattre les petits arbres si son Dresseur a le Badge Roche.
+
+Et comme les CT, une CS s'utilise autant de fois que tu veux.
+
+@@ RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees
+Quand Mérouville s'est agrandie, mon père a donné un coup de main.
+
+Ses Pokémon ont rasé la forêt à coups de Coupe. Il disait que les arbres criaient. Je ne l'ai jamais cru.
+
+@@ RustboroCity_House1_Text_IllTradeIfYouWant
+Hein ? Mon Pokémon est mignon ? Je sais, oui.
+
+Mais si tu y tiens vraiment, je veux bien l'échanger.
+
+Mon {STR_VAR_2} contre un {STR_VAR_1}, si tu veux.
+
+@@ RustboroCity_House1_Text_PleaseBeGoodToMyPokemon
+Hé hé… Prends soin de mon Pokémon. Promis ?
+
+@@ RustboroCity_House1_Text_DoesntLookLikeMonToMe
+Hein ? Ça ne ressemble pas du tout à un {STR_VAR_1}, ça.
+
+@@ RustboroCity_House1_Text_YouDontWantToThatsOkay
+Bon, si tu ne veux pas, tant pis. Mais il est mignon, mon Pokémon…
+
+@@ RustboroCity_House1_Text_AnyPokemonCanBeCute
+N'importe quel Pokémon devient mignon si on l'élève avec soin et douceur.
+
+@@ RustboroCity_House1_Text_AllSortsOfPlaces
+Partout, il y a toutes sortes de Pokémon et toutes sortes de gens.
+
+Ça me fascine, alors je voyage partout.
+
+@@ RustboroCity_House2_Text_TrainerSchoolExcellent
+L'École des Dresseurs est excellente.
+
+En y étudiant, tu pourrais même devenir Champion d'Arène. Si tu survis aux examens.
+
+@@ RustboroCity_House2_Text_RoxanneKnowsALot
+Roxanne, la Championne, sait tout sur les Pokémon.
+
+Et elle est redoutable ! Elle n'a jamais souri en public.
+
+@@ RustboroCity_House3_Text_IGivePerfectlySuitedNicknames
+Je donne à mes Pokémon des surnoms parfaitement adaptés !
+
+C'est ma façon d'exprimer mon, euh… originalité, voilà !
+
+@@ RustboroCity_House3_Text_NamingPikachuPekachu
+Mais appeler un Pikachu “Pekachu” ? Ça n'a aucun sens.
+
+Un nom facile à comprendre, c'est bien, mais…
+
+@@ RustboroCity_House3_Text_Pekachu
+Pekachu : Peka !
+
+@@ RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish
+J'achète des Anti-Para et des Antidotes.
+
+Au cas où je croiserais des Balignon dans le Bois Clémenti. Leurs spores m'ont déjà envoyé à l'hôpital.
+
+@@ RustboroCity_Mart_Text_ShouldBuySuperPotionsInstead
+Mon Pokémon a évolué. Il a plein de PV, maintenant.
+
+Je devrais lui acheter des Super Potions plutôt que des Potions.
+
+@@ RustboroCity_Mart_Text_GettingEscapeRopeJustInCase
+J'achète une Corde Sortie, au cas où je me perdrais dans une grotte.
+
+Il suffit de l'utiliser pour revenir à l'entrée. Ceux qui l'oublient, on les retrouve rarement.
+
+@@ RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities
+Mon Pokémon est de nature Naïf, celui de mon ami est Jovial.
+
+C'est fascinant, les Pokémon ont une personnalité !
+
+@@ RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon
+Comme les humains, il y a des Pokémon mâles et femelles.
+
+Mais personne ne sait vraiment ce qui les différencie.
+
+@@ RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor
+Le monsieur d'à côté m'a donné une CS !
+
+Mon Pokémon a appris Coupe et peut abattre les petits arbres.
