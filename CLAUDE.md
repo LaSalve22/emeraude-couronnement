@@ -122,10 +122,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Les tests ne peuvent pas vérifier ces équipes (les builds de test utilisent leurs propres dresseurs) :
   contrôle dans `src/data/trainers.h` généré.
 
+## Fait (v0.9)
+
+- Équipes Hard / Kaizo du chapitre 2 (61 dresseurs de plus, 101 au total). Chefs faits à la main : Bastien (cap 27),
+  Voltère (cap 36), rival Route 110, Timmy à Lavandia, voyous Aqua du Musée. Dresseurs ordinaires générés par règles
+  (`AUTO` + `POOLS` par classe dans `tools/trainers/equipes_couronnement.py`) : équipe d'origine +3 / +5 niveaux,
+  plancher à 4 niveaux sous le meilleur, +1 / +2 Pokémon de la réserve de leur classe, capacités par niveau.
+- Feuille de route lisible pour Adrien : `docs/FEUILLE_DE_ROUTE.md`.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
-1. Équipes Hard/Kaizo des chapitres suivants (même outil), en commençant par Bastien et Village Myokara.
+1. Équipes Hard/Kaizo des chapitres 3 et suivants (même outil).
 2. Téracristal (après badge 2) et Méga-évolution (après badge 5).
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 

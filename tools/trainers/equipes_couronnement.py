@@ -256,15 +256,149 @@ for rival in ('MAY', 'BRENDAN'):
         }
 
 
+# ------------------------------------------------------------------ chapitre 2 : chefs (faits à la main)
+# Caps : 27 avant Bastien (2e badge), 36 avant Voltère (3e badge).
+TEAMS.update({
+    'BRAWLY_1': {
+        'Hard': ["Machop @ Oran Berry | Adamant | Guts | 21 | 128 Atk / 128 HP | Karate Chop, Bulk Up, Rock Tomb, Knock Off",
+                 "Meditite | Jolly | Pure Power | 21 | 128 Atk / 128 Spe | Force Palm, Confusion, Detect, Bulk Up",
+                 "Mankey | Jolly | Vital Spirit | 21 | 128 Atk / 128 Spe | Low Kick, Fury Swipes, Focus Energy, Seismic Toss",
+                 "Croagunk | Adamant | Dry Skin | 22 | 128 Atk / 128 HP | Revenge, Poison Jab, Sucker Punch, Swagger",
+                 "Makuhita @ Sitrus Berry | Adamant | Thick Fat | 24 | 252 Atk / 252 HP | Arm Thrust, Fake Out, Bulk Up, Reversal"],
+        'Kaizo': ["Riolu @ Oran Berry | Jolly | Inner Focus | 24 | 252 Atk / 252 Spe | Force Palm, Quick Attack, Copycat, Feint",
+                  "Meditite @ Oran Berry | Jolly | Pure Power | 24 | 252 Atk / 252 Spe | Hi Jump Kick, Zen Headbutt, Detect, Bulk Up",
+                  "Timburr @ Eviolite | Adamant | Guts | 24 | 252 Atk / 252 HP | Low Kick, Rock Throw, Bulk Up, Wake-Up Slap",
+                  "Croagunk @ Black Sludge | Adamant | Dry Skin | 25 | 252 Atk / 252 Spe | Revenge, Poison Jab, Sucker Punch, Nasty Plot",
+                  "Machoke @ Eviolite | Adamant | Guts | 26 | 252 Atk / 252 HP | Dual Chop, Bulk Up, Rock Tomb, Knock Off",
+                  "Makuhita @ Sitrus Berry | Adamant | Thick Fat | 27 | 252 Atk / 252 HP | Arm Thrust, Fake Out, Bulk Up, Reversal"],
+    },
+    'WATTSON_1': {
+        'Hard': ["Voltorb | Timid | Static | 28 | 128 SpA / 128 Spe | Spark, Rollout, Light Screen, Self-Destruct",
+                 "Electrike | Timid | Lightning Rod | 28 | 128 SpA / 128 Spe | Shock Wave, Bite, Howl, Quick Attack",
+                 "Magneton | Modest | Sturdy | 30 | 128 SpA / 128 HP | Spark, Mirror Shot, Thunder Wave, Sonic Boom",
+                 "Shinx | Adamant | Intimidate | 29 | 128 Atk / 128 Spe | Spark, Bite, Charge, Roar",
+                 "Manectric @ Sitrus Berry | Timid | Static | 32 | 252 SpA / 252 Spe | Shock Wave, Bite, Thunder Wave, Quick Attack"],
+        'Kaizo': ["Jolteon @ Magnet | Timid | Volt Absorb | 32 | 252 SpA / 252 Spe | Thunderbolt, Double Kick, Thunder Wave, Pin Missile",
+                  "Magneton @ Eviolite | Modest | Sturdy | 33 | 252 SpA / 252 HP | Thunderbolt, Flash Cannon, Thunder Wave, Tri Attack",
+                  "Ampharos @ Sitrus Berry | Modest | Static | 33 | 252 SpA / 252 HP | Thunderbolt, Power Gem, Thunder Wave, Light Screen",
+                  "Luxio @ Eviolite | Adamant | Intimidate | 33 | 252 Atk / 252 Spe | Spark, Crunch, Ice Fang, Swagger",
+                  "Electrode @ Light Clay | Timid | Soundproof | 33 | 252 SpA / 252 Spe | Light Screen, Reflect, Thunderbolt, Explosion",
+                  "Manectric @ Sitrus Berry | Timid | Lightning Rod | 35 | 252 SpA / 252 Spe | Thunderbolt, Flamethrower, Thunder Wave, Quick Attack"],
+    },
+    'WALLY_MAUVILLE': {
+        'Hard': ["Ralts | Modest | Synchronize | 19 | | Confusion, Disarming Voice, Double Team, Teleport"],
+        'Kaizo': ["Kirlia @ Oran Berry | Timid | Trace | 22 | 252 SpA / 252 Spe | Confusion, Draining Kiss, Double Team, Calm Mind"],
+    },
+    'GRUNT_MUSEUM_1': {
+        'Hard': ["Carvanha | Adamant | Rough Skin | 18 | | Bite, Aqua Jet, Leer, Focus Energy",
+                 "Poochyena | Jolly | Quick Feet | 18 | | Bite, Howl, Sand Attack, Roar"],
+        'Kaizo': ["Sharpedo @ Oran Berry | Adamant | Rough Skin | 22 | 252 Atk / 252 Spe | Bite, Aqua Jet, Ice Fang, Focus Energy",
+                  "Mightyena | Jolly | Intimidate | 22 | 252 Atk / 252 Spe | Bite, Swagger, Sand Attack, Roar",
+                  "Golbat | Jolly | Inner Focus | 21 | 252 Atk / 252 Spe | Bite, Wing Attack, Confuse Ray, Mean Look"],
+    },
+    'GRUNT_MUSEUM_2': {
+        'Hard': ["Zubat | Jolly | Inner Focus | 17 | | Bite, Supersonic, Astonish, Wing Attack",
+                 "Carvanha | Adamant | Rough Skin | 18 | | Bite, Aqua Jet, Leer, Focus Energy",
+                 "Stunky | Jolly | Stench | 17 | | Fury Swipes, Poison Gas, Feint, Screech"],
+        'Kaizo': ["Golbat @ Oran Berry | Jolly | Inner Focus | 22 | 252 Atk / 252 Spe | Bite, Wing Attack, Confuse Ray, Mean Look",
+                  "Carvanha @ Oran Berry | Adamant | Speed Boost | 22 | 252 Atk / 252 Spe | Bite, Aqua Jet, Ice Fang, Focus Energy",
+                  "Skuntank | Jolly | Aftermath | 22 | 252 Atk / 252 Spe | Night Slash, Poison Fang, Screech, Feint"],
+    },
+})
+
+# Rival sur la Route 110 (cap 36) : la lignée suit le starter du joueur.
+RIVAL_110 = {  # starter du joueur -> (milieu de lignée, capacités Hard, capacités Kaizo)
+    'TREECKO': ('Quilava', 'Blaze', 'Flash Fire', 'Flame Wheel, Quick Attack, Smokescreen, Swift', 'Flamethrower, Extrasensory, Quick Attack, Smokescreen'),
+    'TORCHIC': ('Wartortle', 'Torrent', 'Rain Dish', 'Water Pulse, Bite, Rapid Spin, Protect', 'Aqua Tail, Bite, Rapid Spin, Ice Beam'),
+    'MUDKIP':  ('Grovyle', 'Overgrow', 'Unburden', 'Leaf Blade, Quick Attack, Pursuit, Fury Cutter', 'Leaf Blade, X-Scissor, Quick Attack, Agility'),
+}
+for rival in ('MAY', 'BRENDAN'):
+    for starter, (mid, ab, ha, mh, mk) in RIVAL_110.items():
+        TEAMS[f'{rival}_ROUTE_110_{starter}'] = {
+            'Hard': ["Swellow | Jolly | Guts | 22 | 128 Atk / 128 Spe | Wing Attack, Quick Attack, Double Team, Endeavor",
+                     "Lombre | Modest | Swift Swim | 22 | 128 SpA / 128 Spe | Mega Drain, Water Pulse, Fake Out, Nature Power",
+                     "Numel | Modest | Oblivious | 22 | 128 SpA / 128 HP | Ember, Magnitude, Focus Energy, Take Down",
+                     f"{mid} @ Oran Berry | Hardy | {ab} | 24 | 128 HP / 128 Spe | {mh}"],
+            'Kaizo': ["Swellow @ Oran Berry | Jolly | Guts | 26 | 252 Atk / 252 Spe | Aerial Ace, Quick Attack, Double Team, Endeavor",
+                      "Lombre @ Oran Berry | Modest | Swift Swim | 26 | 252 SpA / 252 Spe | Giga Drain, Water Pulse, Fake Out, Rain Dance",
+                      "Lucario @ Oran Berry | Jolly | Inner Focus | 26 | 252 Atk / 252 Spe | Force Palm, Metal Claw, Quick Attack, Swords Dance",
+                      "Camerupt | Modest | Solid Rock | 27 | 252 SpA / 252 HP | Flamethrower, Earth Power, Rock Slide, Amnesia",
+                      f"{mid} @ Sitrus Berry | Timid | {ha} | 28 | 252 Spe / 252 HP | {mk}"],
+        }
+
 def mon_block(spec, iv):
-    parts = [p.strip() for p in spec.split('|')]
-    species, nature, ability, level, evs, moves = parts
-    lines = [species, f'{nature} Nature', f'Level: {level}', f'Ability: {ability}',
-             f'IVs: {iv} HP / {iv} Atk / {iv} Def / {iv} SpA / {iv} SpD / {iv} Spe']
+    parts = [p.strip() for p in spec.split('|')] + [''] * 6
+    species, nature, ability, level, evs, moves = parts[:6]
+    lines = [species]
+    if nature:
+        lines.append(f'{nature} Nature')
+    lines.append(f'Level: {level}')
+    if ability:
+        lines.append(f'Ability: {ability}')
+    lines.append(f'IVs: {iv} HP / {iv} Atk / {iv} Def / {iv} SpA / {iv} SpD / {iv} Spe')
     if evs:
         lines.append(f'EVs: {evs}')
-    lines += [f'- {m.strip()}' for m in moves.split(',')]
+    if moves:  # sans capacités : le jeu prend les capacités apprises par niveau
+        lines += [f'- {m.strip()}' for m in moves.split(',')]
     return '\n'.join(lines)
+
+
+# ------------------------------------------------------------------ dresseurs ordinaires (règles)
+# Réserves par classe de dresseur (Gen 1-4 majoritaires en début de jeu).
+POOLS = {
+    'combat':   ['Machop', 'Meditite', 'Makuhita', 'Mankey', 'Riolu', 'Croagunk', 'Timburr', 'Tyrogue'],
+    'eau':      ['Tentacool', 'Wingull', 'Marill', 'Goldeen', 'Horsea', 'Psyduck', 'Krabby', 'Shellder', 'Poliwag', 'Buizel', 'Chinchou', 'Remoraid'],
+    'psy':      ['Abra', 'Ralts', 'Natu', 'Spoink', 'Drowzee', 'Slowpoke', 'Meditite', 'Munna'],
+    'electrik': ['Magnemite', 'Voltorb', 'Electrike', 'Plusle', 'Minun', 'Shinx', 'Pikachu', 'Mareep', 'Blitzle'],
+    'course':   ['Doduo', 'Ponyta', 'Taillow', 'Starly', 'Pidgey', 'Electrike'],
+    'insecte':  ['Dustox', 'Beautifly', 'Volbeat', 'Illumise', 'Nincada', 'Paras', 'Venonat', 'Combee', 'Kricketune'],
+    'plante':   ['Shroomish', 'Roselia', 'Oddish', 'Bellsprout', 'Seedot', 'Budew', 'Hoppip'],
+    'mixte':    ['Zigzagoon', 'Skitty', 'Whismur', 'Aron', 'Poochyena', 'Azurill', 'Eevee', 'Teddiursa', 'Snubbull', 'Buneary'],
+}
+CLASS_POOL = {
+    'Black Belt': 'combat', 'Battle Girl': 'combat', 'Sailor': 'combat', 'Tuber M': 'eau', 'Tuber F': 'eau',
+    'Fisherman': 'eau', 'Swimmer M': 'eau', 'Swimmer F': 'eau', 'Psychic': 'psy', 'Triathlete': 'electrik',
+    'Guitarist': 'electrik', 'Pokefan': 'electrik', 'Bug Maniac': 'insecte', 'Aroma Lady': 'plante',
+    'Collector': 'plante', 'Pkmn Breeder': 'mixte', 'Youngster': 'mixte', 'Twins': 'electrik', 'Sr And Jr': 'mixte',
+}
+EVS_KAIZO = '84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe'
+
+# Dresseurs ordinaires générés : ID -> level cap de la zone.
+AUTO = {}
+for tid in ['TAKAO', 'JOCELYN', 'LAURA', 'BRENDEN', 'CRISTIAN', 'LILITH', 'ELLIOT_1', 'NED',
+            'HUEY', 'EDMOND', 'RICKY_1', 'LOLA_1', 'CHANDLER', 'HAILEY']:
+    AUTO[tid] = 27
+for tid in ['EDWARD', 'JACLYN', 'EDWIN_1', 'DALE', 'JACOB', 'ANTHONY', 'BENJAMIN_1', 'JASMINE', 'ABIGAIL_1',
+            'ISABEL_1', 'TIMMY', 'KALEB', 'JOSEPH', 'ALYSSA', 'DAISY', 'AMY_AND_LIV_1', 'ANDREW', 'MIGUEL_1',
+            'MARCOS', 'RHETT', 'PETE', 'ISABELLE', 'ISAAC_1', 'LYDIA_1', 'DYLAN_1', 'MARIA_1', 'DEREK',
+            'ANNA_AND_MEG_1', 'MELINA', 'BRANDI', 'AISHA', 'KIRK', 'SHAWN', 'BEN', 'VIVIAN', 'ANGELO']:
+    AUTO[tid] = 36
+
+
+def auto_teams(tid, block, cap):
+    """Équipe Hard / Kaizo d'un dresseur ordinaire à partir de son équipe Normal."""
+    import random
+    cls = re.search(r'(?m)^Class: (.*)$', block).group(1)
+    pool = POOLS[CLASS_POOL.get(cls, 'mixte')]
+    mons = re.findall(r'(?m)^([A-Z][A-Za-z\.\' -]+?)(?: @ .*)?\nLevel: (\d+)', block)
+    rng = random.Random('couronnement:' + tid)
+    top = max(int(l) for _, l in mons)
+    teams = {}
+    for diff, bonus, extra in (('Hard', 3, 1), ('Kaizo', 5, 2)):
+        team = [(sp, min(max(int(l) + bonus, top + bonus - 4), cap)) for sp, l in mons]  # plancher : 4 niveaux sous le meilleur
+        names = {sp for sp, _ in team}
+        choices = [p for p in pool if p not in names]
+        rng.shuffle(choices)
+        for sp in choices[:extra]:
+            team.append((sp, min(top + bonus - 1, cap)))
+        team = team[:6]
+        specs = []
+        for i, (sp, lvl) in enumerate(team):
+            item = ' @ Oran Berry' if diff == 'Kaizo' and i == len(team) - 1 else ''
+            evs = EVS_KAIZO if diff == 'Kaizo' else ''
+            specs.append(f'{sp}{item} | {"Serious" if diff == "Kaizo" else ""} | | {lvl} | {evs} |')
+        teams[diff] = specs
+    return teams
 
 
 def main():
@@ -272,7 +406,13 @@ def main():
     if BEGIN in text:
         text = text[:text.index(BEGIN)].rstrip('\n') + '\n'
     out = [BEGIN, '']
-    for tid, diffs in TEAMS.items():
+    all_teams = dict(TEAMS)
+    for tid, cap in AUTO.items():
+        m = re.search(r'(?ms)^=== TRAINER_' + tid + r' ===\n(.*?)(?=^=== |\Z)', text)
+        if not m:
+            raise SystemExit(f'Dresseur introuvable : TRAINER_{tid}')
+        all_teams[tid] = auto_teams(tid, m.group(1), cap)
+    for tid, diffs in all_teams.items():
         m = re.search(r'(?ms)^=== TRAINER_' + tid + r' ===\n(.*?)\n\n', text)
         if not m:
             raise SystemExit(f'Dresseur introuvable : TRAINER_{tid}')
@@ -283,7 +423,7 @@ def main():
             out += [mon_block(s, IV[diff]) + '\n' for s in mons]
     out.append(END)
     PARTY.write_text(text.rstrip('\n') + '\n\n' + '\n'.join(out) + '\n', encoding='utf-8')
-    print(f'{len(TEAMS)} dresseurs : blocs Hard et Kaizo écrits.')
+    print(f'{len(all_teams)} dresseurs : blocs Hard et Kaizo écrits.')
 
 
 if __name__ == '__main__':
