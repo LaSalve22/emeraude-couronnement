@@ -407,6 +407,90 @@ TEAMS.update({
 })
 
 
+# ------------------------------------------------------------------ chapitre 5 : Institut Météo, rival Route 119, Alizée (cap 63)
+TEAMS.update({
+    'GRUNT_WEATHER_INST_1': {
+        'Hard': ["Golbat | Jolly | Inner Focus | 52 | 128 Atk / 128 Spe | Poison Fang, Wing Attack, Bite, Confuse Ray",
+                 "Sharpedo | Adamant | Rough Skin | 52 | 128 Atk / 128 Spe | Crunch, Aqua Jet, Poison Fang, Ice Fang"],
+        'Kaizo': ["Crobat @ Oran Berry | Jolly | Inner Focus | 56 | 252 Atk / 252 Spe | Cross Poison, Acrobatics, Super Fang, Taunt",
+                  "Sharpedo @ Focus Sash | Adamant | Speed Boost | 56 | 252 Atk / 252 Spe | Crunch, Waterfall, Ice Fang, Protect",
+                  "Mightyena @ Sitrus Berry | Jolly | Intimidate | 56 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Fire Fang"],
+    },
+    'GRUNT_WEATHER_INST_2': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 52 | 128 Atk / 128 Spe | Crunch, Fire Fang, Sucker Punch, Swagger",
+                 "Pelipper | Modest | Drizzle | 52 | 128 SpA / 128 HP | Scald, Hurricane, Roost, Protect"],
+        'Kaizo': ["Pelipper @ Damp Rock | Modest | Drizzle | 56 | 252 SpA / 252 HP | Scald, Hurricane, U-turn, Roost",
+                  "Mightyena @ Sitrus Berry | Jolly | Intimidate | 56 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Fire Fang",
+                  "Ludicolo @ Life Orb | Modest | Swift Swim | 57 | 252 SpA / 252 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out"],
+    },
+    'GRUNT_WEATHER_INST_3': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 51 | 128 Atk / 128 Spe | Crunch, Ice Fang, Sucker Punch, Swagger",
+                 "Golbat | Jolly | Inner Focus | 52 | 128 Atk / 128 Spe | Poison Fang, Wing Attack, Bite, Confuse Ray"],
+        'Kaizo': ["Mightyena @ Oran Berry | Jolly | Moxie | 56 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                  "Crobat @ Sitrus Berry | Jolly | Inner Focus | 56 | 252 Atk / 252 Spe | Cross Poison, Acrobatics, Super Fang, U-turn",
+                  "Whiscash @ Sitrus Berry | Adamant | Oblivious | 56 | 252 Atk / 252 HP | Earthquake, Waterfall, Stone Edge, Dragon Dance"],
+    },
+    'GRUNT_WEATHER_INST_4': {
+        'Hard': ["Sharpedo | Adamant | Rough Skin | 53 | 128 Atk / 128 Spe | Crunch, Aqua Jet, Poison Fang, Ice Fang",
+                 "Mightyena | Jolly | Intimidate | 52 | 128 Atk / 128 Spe | Crunch, Fire Fang, Sucker Punch, Swagger"],
+        'Kaizo': ["Sharpedo @ Life Orb | Adamant | Speed Boost | 57 | 252 Atk / 252 Spe | Crunch, Waterfall, Close Combat, Protect",
+                  "Tentacruel @ Black Sludge | Calm | Clear Body | 56 | 252 HP / 252 SpD | Scald, Sludge Bomb, Toxic Spikes, Rapid Spin",
+                  "Crobat @ Oran Berry | Jolly | Inner Focus | 56 | 252 Atk / 252 Spe | Cross Poison, Acrobatics, Super Fang, Taunt"],
+    },
+    'GRUNT_WEATHER_INST_5': {
+        'Hard': ["Golbat | Jolly | Inner Focus | 52 | 128 Atk / 128 Spe | Poison Fang, Wing Attack, Bite, Confuse Ray",
+                 "Tentacruel | Calm | Clear Body | 52 | 128 HP / 128 SpD | Surf, Sludge Bomb, Toxic Spikes, Hex"],
+        'Kaizo': ["Crobat @ Oran Berry | Jolly | Inner Focus | 56 | 252 Atk / 252 Spe | Cross Poison, Acrobatics, Super Fang, Taunt",
+                  "Tentacruel @ Black Sludge | Timid | Clear Body | 56 | 252 SpA / 252 Spe | Surf, Sludge Bomb, Ice Beam, Toxic Spikes",
+                  "Sharpedo @ Focus Sash | Adamant | Speed Boost | 56 | 252 Atk / 252 Spe | Crunch, Waterfall, Ice Fang, Protect"],
+    },
+    'SHELLY_WEATHER_INSTITUTE': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 54 | 128 Atk / 128 Spe | Crunch, Ice Fang, Sucker Punch, Play Rough",
+                 "Pelipper @ Damp Rock | Modest | Drizzle | 54 | 128 SpA / 128 HP | Scald, Hurricane, Roost, Protect",
+                 "Crobat | Jolly | Inner Focus | 55 | 128 Atk / 128 Spe | Cross Poison, Acrobatics, Super Fang, Confuse Ray",
+                 "Sharpedo @ Sitrus Berry | Adamant | Rough Skin | 56 | 252 Atk / 252 Spe | Crunch, Waterfall, Ice Fang, Poison Fang"],
+        'Kaizo': ["Pelipper @ Damp Rock | Modest | Drizzle | 59 | 252 SpA / 252 HP | Scald, Hurricane, U-turn, Roost",
+                  "Kingdra @ Life Orb | Modest | Swift Swim | 59 | 252 SpA / 252 Spe | Hydro Pump, Draco Meteor, Ice Beam, Flash Cannon",
+                  "Ludicolo @ Sitrus Berry | Modest | Swift Swim | 59 | 252 SpA / 252 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out",
+                  "Crobat @ Sitrus Berry | Jolly | Inner Focus | 59 | 252 Atk / 252 Spe | Cross Poison, Brave Bird, Super Fang, U-turn",
+                  "Mightyena @ Oran Berry | Jolly | Intimidate | 59 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                  "Sharpedo @ Focus Sash | Adamant | Speed Boost | 60 | 252 Atk / 252 Spe | Crunch, Waterfall, Close Combat, Protect"],
+    },
+    'WINONA_1': {
+        'Hard': ["Swellow | Jolly | Guts | 59 | 128 Atk / 128 Spe | Brave Bird, Facade, Quick Attack, U-turn",
+                 "Tropius | Modest | Chlorophyll | 59 | 128 SpA / 128 HP | Air Slash, Giga Drain, Synthesis, Sunny Day",
+                 "Pelipper | Modest | Drizzle | 60 | 128 SpA / 128 HP | Scald, Hurricane, Roost, Protect",
+                 "Skarmory | Impish | Sturdy | 60 | 128 HP / 128 Def | Steel Wing, Drill Peck, Spikes, Roost",
+                 "Altaria @ Sitrus Berry | Adamant | Natural Cure | 62 | 252 Atk / 252 Spe | Dragon Dance, Dragon Claw, Earthquake, Aerial Ace"],
+        'Kaizo': ["Skarmory @ Rocky Helmet | Impish | Sturdy | 62 | 252 HP / 252 Def | Brave Bird, Body Press, Spikes, Roost",
+                  "Pelipper @ Damp Rock | Modest | Drizzle | 62 | 252 SpA / 252 HP | Scald, Hurricane, U-turn, Roost",
+                  "Swellow @ Flame Orb | Jolly | Guts | 62 | 252 Atk / 252 Spe | Facade, Brave Bird, Quick Attack, U-turn",
+                  "Noivern @ Choice Specs | Timid | Infiltrator | 62 | 252 SpA / 252 Spe | Hurricane, Draco Meteor, Flamethrower, Boomburst",
+                  "Gyarados @ Sitrus Berry | Jolly | Intimidate | 62 | 252 Atk / 252 Spe | Dragon Dance, Waterfall, Earthquake, Bounce",
+                  "Altaria @ Lum Berry | Adamant | Natural Cure | 63 | 252 Atk / 252 Spe | Dragon Dance, Dragon Claw, Earthquake, Fire Blast"],
+    },
+})
+
+RIVAL_FINAL = {  # starter du joueur -> évolution finale du rival
+    'TREECKO': ('Typhlosion', 'Blaze', 'Flash Fire', 'Flamethrower, Focus Blast, Shadow Ball, Extrasensory', 'Eruption, Focus Blast, Shadow Ball, Fire Blast', 'Timid'),
+    'TORCHIC': ('Blastoise', 'Torrent', 'Rain Dish', 'Surf, Ice Beam, Dark Pulse, Rapid Spin', 'Hydro Pump, Ice Beam, Dark Pulse, Shell Smash', 'Modest'),
+    'MUDKIP':  ('Sceptile', 'Overgrow', 'Unburden', 'Leaf Blade, Dragon Claw, Earthquake, Quick Attack', 'Leaf Blade, Earthquake, Rock Slide, Swords Dance', 'Jolly'),
+}
+for rival in ('MAY', 'BRENDAN'):
+    for starter, (fin, ab, ha, mh, mk, nat) in RIVAL_FINAL.items():
+        TEAMS[f'{rival}_ROUTE_119_{starter}'] = {
+            'Hard': ["Swellow | Jolly | Guts | 56 | 128 Atk / 128 Spe | Brave Bird, Facade, Quick Attack, Steel Wing",
+                     "Ludicolo | Modest | Swift Swim | 56 | 128 SpA / 128 Spe | Surf, Giga Drain, Ice Beam, Fake Out",
+                     "Lucario | Jolly | Inner Focus | 57 | 128 Atk / 128 Spe | Close Combat, Extreme Speed, Crunch, Bullet Punch",
+                     f"{fin} @ Sitrus Berry | {nat} | {ab} | 58 | 252 Spe / 252 HP | {mh}"],
+            'Kaizo': ["Swellow @ Flame Orb | Jolly | Guts | 60 | 252 Atk / 252 Spe | Facade, Brave Bird, Quick Attack, U-turn",
+                      "Ludicolo @ Life Orb | Modest | Swift Swim | 60 | 252 SpA / 252 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out",
+                      "Lucario @ Focus Sash | Jolly | Inner Focus | 60 | 252 Atk / 252 Spe | Close Combat, Extreme Speed, Meteor Mash, Swords Dance",
+                      "Magcargo @ White Herb | Modest | Flame Body | 60 | 252 SpA / 252 HP | Shell Smash, Lava Plume, Earth Power, Ancient Power",
+                      "Gardevoir @ Choice Scarf | Timid | Trace | 60 | 252 SpA / 252 Spe | Moonblast, Psychic, Shadow Ball, Thunderbolt",
+                      f"{fin} @ Sitrus Berry | {nat} | {ha} | 61 | 252 Spe / 252 HP | {mk}"],
+        }
+
 # Attaques qui ne font que baisser les stats adverses (ou presque rien) : retirées des équipes Hard / Kaizo
 # pour que l'IA attaque au lieu de spammer Rugissement / Jet de Sable (retour d'Adrien, v0.17).
 WEAK_MOVES = {'Leer', 'Tail Whip', 'Growl', 'Sand Attack', 'Smokescreen', 'String Shot', 'Sweet Scent',
@@ -462,7 +546,7 @@ CLASS_POOL = {
     'Fisherman': 'eau', 'Swimmer M': 'eau', 'Swimmer F': 'eau', 'Psychic': 'psy', 'Triathlete': 'electrik',
     'Guitarist': 'electrik', 'Pokefan': 'electrik', 'Bug Maniac': 'insecte', 'Aroma Lady': 'plante',
     'Collector': 'plante', 'Pkmn Breeder': 'mixte', 'Youngster': 'mixte', 'Twins': 'electrik', 'Sr And Jr': 'mixte',
-    'Camper': 'sol', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
+    'Camper': 'sol', 'Pkmn Ranger': 'plante', 'Bug Catcher': 'insecte', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
     'Bird Keeper': 'oiseau', 'Ninja Boy': 'poison', 'Cooltrainer': 'elite', 'Expert': 'combat',
     'Parasol Lady': 'beaute', 'Sis And Bro': 'eau', 'Young Couple': 'insecte', 'Gentleman': 'mixte', 'Lass': 'mixte', 'Beauty': 'beaute', 'Pokemaniac': 'roche', 'Winstrate': 'mixte',
 }
@@ -505,6 +589,16 @@ for tid in ['ANDRES_1', 'BEVERLY', 'DOMINIK', 'FOSTER', 'IMANI', 'JOSUE', 'LUIS'
             'CHARLIE', 'DEMETRIUS', 'DUNCAN', 'GARRISON', 'JANI', 'KIRA_AND_DAN_1', 'THALIA_1']:
     AUTO[tid] = (63, 47, 51)
 
+# Chapitre 5 : Routes 118-120 (cap 63 avant Alizée), puis l'Arène d'Alizée (réserve Vol).
+for tid in ['BARNY', 'CHESTER', 'DALTON_1', 'DEANDRE', 'PERRY', 'ROSE_1', 'WADE',
+            'BRENT', 'CATHERINE_1', 'CHRIS', 'DAYTON', 'DONALD', 'DOUG', 'FABIAN', 'GREG', 'HIDEO', 'HUGH',
+            'JACKSON_1', 'KENT', 'PHIL', 'RACHEL', 'TAKASHI', 'TAYLOR', 'YASU',
+            'ANGELICA', 'CALLIE', 'CHIP', 'CLARISSA', 'COLIN', 'JEFFREY_1', 'JENNA', 'JENNIFER', 'KEIGO',
+            'LEONEL', 'LORENZO', 'RILEY', 'ROBERT_1']:
+    AUTO[tid] = (63, 52, 56)
+for tid in ['ASHLEY', 'DARIUS', 'EDWARDO', 'FLINT', 'HUMBERTO', 'JARED']:  # Arène d'Alizée
+    AUTO[tid] = (63, 56, 60, 'oiseau')
+
 # Évolutions par niveau (espèce -> (niveau, évolution)), utilisées quand un plancher fait monter le niveau.
 EVOLVE = {
     'Numel': (33, 'Camerupt'), 'Geodude': (25, 'Graveler'), 'Sandshrew': (22, 'Sandslash'), 'Baltoy': (36, 'Claydol'),
@@ -539,6 +633,8 @@ EVOLVE = {
     'Murkrow': (40, 'Honchkrow'), 'Sneasel': (40, 'Weavile'), 'Eevee': (40, 'Espeon'), 'Gligar': (40, 'Gliscor'),
     'Roselia': (40, 'Roserade'), 'Onix': (40, 'Steelix'), 'Rhydon': (55, 'Rhyperior'), 'Pikachu': (40, 'Raichu'),
     'Vulpix': (40, 'Ninetales'), 'Growlithe': (40, 'Arcanine'), 'Snorunt': (42, 'Glalie'), 'Combee': (21, 'Vespiquen'),
+    'Wurmple': (7, 'Silcoon'), 'Silcoon': (10, 'Beautifly'), 'Surskit': (22, 'Masquerain'),
+    'Hoppip': (18, 'Skiploom'), 'Skiploom': (27, 'Jumpluff'),
 }
 
 

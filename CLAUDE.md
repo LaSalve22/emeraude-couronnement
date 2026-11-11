@@ -198,13 +198,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Textes oubliés du chapitre 1 traduits : première rencontre du rival (`RivalsHouse_2F_Text_*WhoAreYou`), Route 116 et Maison des Foreurs.
 - Red / Green : table d'animation `sAnimTable_RedGreenNormal` (course façon Rouge Feu) ; avec celle d'Émeraude, Red tournait sur lui-même.
 
+## Fait (v0.18) - équipes Hard / Kaizo du chapitre 5
+
+- Faits à la main : 5 sbires Aqua et Arlette à l'Institut Météo (52-56 Hard, 56-60 Kaizo), rival Route 119 (lignée finale :
+  Typhlosion / Tortank / Jungko selon le starter ; 4 Pokémon en Hard jusqu'au 58, 6 en Kaizo jusqu'au 61), Alizée (5 en Hard
+  jusqu'au 62, 6 en Kaizo au 62-63, dont Noctunoir et Léviator).
+- Générés : 37 dresseurs des Routes 118-120 (plancher 52 Hard / 56 Kaizo, cap 63), 6 dresseurs de l'Arène d'Alizée (réserve Vol,
+  plancher 56 / 60). Classes ajoutées : Pkmn Ranger (plante), Bug Catcher (insecte).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
-1. Équipes Hard/Kaizo du chapitre 5 (Routes 118-120, Institut Météo, rival Route 119, Arène d'Alizée ; cap 63), même outil.
-2. Placer les Méga-Gemmes dans le monde.
-3. Couronnement Mondial, 2e partie : tournois des 4 salles de Concours, finale à 32 après la Ligue (Tour de Combat, 5 tours, soin avant la demi-finale, Red et Blue en finale).
-4. Demandé par Adrien : objet pour changer la nature (après Norman), changement d'EV (après la Ligue).
+1. Placer les Méga-Gemmes dans le monde.
+2. Couronnement Mondial, 2e partie : tournois des 4 salles de Concours, finale à 32 après la Ligue (Tour de Combat, 5 tours, soin avant la demi-finale, Red et Blue en finale).
+3. Demandé par Adrien : objet pour changer la nature (après Norman), changement d'EV (après la Ligue).
+4. Équipes Hard/Kaizo du chapitre 6 (Route 123, Mont Mémoria, Repaire Magma/Aqua, Lévéquemont ; cap 72).
 5. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail

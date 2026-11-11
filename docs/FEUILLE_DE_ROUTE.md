@@ -16,6 +16,7 @@ et sur GitHub.
 | 7 | Équipes Hard / Kaizo du chapitre 4 : Norman (6 Pokémon en Kaizo), son Arène, 45 dresseurs des eaux (Routes 105-109, 115, Épave Abandonnée) - v0.16 | ✅ livré |
 | 8 | Couronnement Mondial, 1re partie : pass remis par le rival, Elo / rang / palier (menu MONDIAL), tournois des 8 villes d'Arène (Centres Pokémon) - v0.17 | ✅ livré |
 | 8b | Retours d'Adrien (v0.17.1) : IA Kaizo qui ne faisait que baisser les stats, première rencontre du rival et Route 116 en anglais, Red qui tournait sur lui-même en courant | ✅ livré |
+| 8c | Équipes Hard / Kaizo du chapitre 5 : Institut Météo (Arlette), rival Route 119, Alizée, 43 dresseurs des Routes 118-120 et de l'Arène - v0.18 | ✅ livré |
 | 9 | Couronnement Mondial, 2e partie : 4 tournois des salles de Concours, finale à 32 à la Tour de Combat (Red et Blue) | à faire |
 
 ## Déjà fait
@@ -38,11 +39,12 @@ et sur GitHub.
 - v0.16 - équipes Hard / Kaizo du chapitre 4 (Norman, eaux de Surf)
 - v0.17 - Couronnement Mondial : pass, classement Elo, 8 tournois de villes
 - v0.17.1 - corrections : IA Hard / Kaizo, textes oubliés du chapitre 1, course de Red / Green
+- v0.18 - équipes Hard / Kaizo du chapitre 5 (Institut Météo, rival Route 119, Alizée)
 
 ## Plus tard
 
 - Couronnement Mondial : tournois des Concours, finale à 32
-- Équipes Hard / Kaizo des chapitres 5 et suivants
+- Équipes Hard / Kaizo des chapitres 6 et suivants
 - Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales
 - Demandé par Adrien : objet pour changer la nature d'un Pokémon après Norman, puis changer les EV après la Ligue
