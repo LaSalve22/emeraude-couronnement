@@ -164,7 +164,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : chapitre 3 (Vergazon, Route 111-113, Lavandia → Cheminée, Arène d'Adriane) puis les descriptions (objets, attaques, talents, Pokédex).
-1. Équipes Hard/Kaizo du chapitre 4 (Routes 118-119, Clémenti/Norman, Rivière, Institut Météo, Mont Mémoria, Arène de Norman ; cap 54).
+1. Équipes Hard/Kaizo du chapitre 4 (désert, Routes 105-108 et Arène de Norman ; cap 54), même outil.
 2. Placer les Méga-Gemmes dans le monde.
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
