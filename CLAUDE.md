@@ -73,6 +73,17 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Reste en anglais : descriptions (objets, attaques, talents, Pokédex), écrans secondaires (concours, Zone de Combat, Easy Chat),
   dialogues des chapitres 2 et suivants.
 
+## Fait (v0.5.1)
+
+- Menu OPTIONS traduit + nouvelle ligne « MUSIQUE COMBAT » : Hoenn / Kanto / Aléa. (`VAR_BATTLE_MUSIC` = 0x408B,
+  `include/constants/battle_music.h`, correspondances dans `GetBattleBGM` de `src/pokemon.c`). Kanto = thèmes Rouge/Bleu
+  en version Rouge Feu / Vert Feuille, déjà présents. Aléa. = tirage stable par adversaire. Légendaires inchangés.
+  Tests : `test/battle_music.c`.
+- Johto (Or/Argent), Sinnoh (Diamant/Perle) et animé : pas de fichiers. Pour ajouter une région quand Adrien fournit des MIDI :
+  .mid dans `sound/songs/midi/`, ligne dans `sound/songs/midi/midi.cfg` (voicegroup), entrée dans `sound/song_table.inc`
+  et constante `MUS_…` dans `include/constants/songs.h`, puis nouvelle valeur `BATTLE_MUSIC_…`, libellé dans `src/option_menu.c`
+  et correspondance dans `GetBattleBGM`. Ne pas télécharger de rips : uniquement des fichiers fournis par Adrien.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "constants/battle_music.h"
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
@@ -5098,7 +5099,7 @@ bool32 IsSpeciesInHoennDex(enum Species species)
         return TRUE;
 }
 
-u16 GetBattleBGM(void)
+static u16 GetBattleBGM_Hoenn(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
@@ -5184,6 +5185,48 @@ u16 GetBattleBGM(void)
         else
             return MUS_VS_WILD;
     }
+}
+
+// Émeraude Couronnement : choix de la musique de combat (menu OPTIONS -> VAR_BATTLE_MUSIC).
+// Les thèmes de Kanto sont les versions GBA (Rouge Feu / Vert Feuille) des musiques de Rouge / Bleu.
+static u16 GetKantoBattleBGM(u16 hoennSong)
+{
+    switch (hoennSong)
+    {
+    case MUS_VS_WILD:
+        return MUS_RG_VS_WILD;
+    case MUS_VS_TRAINER:
+    case MUS_VS_RIVAL:
+    case MUS_VS_AQUA_MAGMA:
+        return MUS_RG_VS_TRAINER;
+    case MUS_VS_GYM_LEADER:
+    case MUS_VS_ELITE_FOUR:
+    case MUS_VS_AQUA_MAGMA_LEADER:
+    case MUS_VS_FRONTIER_BRAIN:
+        return MUS_RG_VS_GYM_LEADER;
+    case MUS_VS_CHAMPION:
+        return MUS_RG_VS_CHAMPION;
+    default: // Légendaires et thèmes spéciaux de l'histoire : inchangés.
+        return hoennSong;
+    }
+}
+
+u16 GetBattleBGM(void)
+{
+    u16 song = GetBattleBGM_Hoenn();
+    u32 choice = VarGet(VAR_BATTLE_MUSIC);
+
+    if (choice == BATTLE_MUSIC_RANDOM)
+    {
+        // Tirage stable pendant tout le combat : dépend de l'adversaire et de l'ID du joueur.
+        u32 seed = (gBattleTypeFlags & BATTLE_TYPE_TRAINER) ? TRAINER_BATTLE_PARAM.opponentA
+                                                             : GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES);
+        seed ^= READ_OTID_FROM_SAVE;
+        choice = ((seed * 2654435761u) >> 16) & 1 ? BATTLE_MUSIC_KANTO : BATTLE_MUSIC_HOENN;
+    }
+    if (choice == BATTLE_MUSIC_KANTO)
+        return GetKantoBattleBGM(song);
+    return song;
 }
 
 void PlayBattleBGM(void)

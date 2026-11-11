@@ -1,4 +1,6 @@
 #include "global.h"
+#include "constants/battle_music.h"
+#include "event_data.h"
 #include "option_menu.h"
 #include "bg.h"
 #include "gpu_regs.h"
@@ -23,6 +25,7 @@
 #define tSound data[4]
 #define tButtonMode data[5]
 #define tWindowFrameType data[6]
+#define tBattleMusic data[7]
 
 enum
 {
@@ -32,6 +35,7 @@ enum
     MENUITEM_SOUND,
     MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
+    MENUITEM_BATTLEMUSIC,
     MENUITEM_CANCEL,
     MENUITEM_COUNT,
 };
@@ -42,12 +46,15 @@ enum
     WIN_OPTIONS
 };
 
-#define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * 16)
-#define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * 16)
-#define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 16)
-#define YPOS_SOUND        (MENUITEM_SOUND * 16)
-#define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
-#define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
+// Émeraude Couronnement : lignes de 14 px pour loger l'option « Musique combat ».
+#define OPTION_ROW_HEIGHT 14
+#define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * OPTION_ROW_HEIGHT)
+#define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * OPTION_ROW_HEIGHT)
+#define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * OPTION_ROW_HEIGHT)
+#define YPOS_SOUND        (MENUITEM_SOUND * OPTION_ROW_HEIGHT)
+#define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * OPTION_ROW_HEIGHT)
+#define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * OPTION_ROW_HEIGHT)
+#define YPOS_BATTLEMUSIC  (MENUITEM_BATTLEMUSIC * OPTION_ROW_HEIGHT)
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -66,27 +73,32 @@ static u8 FrameType_ProcessInput(u8 selection);
 static void FrameType_DrawChoices(u8 selection);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
+static u8 BattleMusic_ProcessInput(u8 selection);
+static void BattleMusic_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
 
-static const u8 gText_Option[]             = _("OPTION");
-static const u8 gText_TextSpeedSlow[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
-static const u8 gText_TextSpeedMid[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MID");
-static const u8 gText_TextSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}FAST");
-static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
-static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
-static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SHIFT");
-static const u8 gText_BattleStyleSet[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SET");
+static const u8 gText_Option[]             = _("OPTIONS");
+static const u8 gText_TextSpeedSlow[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LENT");
+static const u8 gText_TextSpeedMid[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MOYEN");
+static const u8 gText_TextSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}RAPIDE");
+static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OUI");
+static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NON");
+static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}CHOIX");
+static const u8 gText_BattleStyleSet[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}DÉFINI");
 static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MONO");
-static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}STEREO");
+static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}STÉRÉO");
 static const u8 gText_FrameType[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}TYPE");
 static const u8 gText_FrameTypeNumber[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
 static const u8 gText_ButtonTypeNormal[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NORMAL");
 static const u8 gText_ButtonTypeLR[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 static const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
+static const u8 gText_BattleMusicHoenn[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}HOENN");
+static const u8 gText_BattleMusicKanto[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}KANTO");
+static const u8 gText_BattleMusicRandom[]  = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ALÉA.");
 
 static const u16 sOptionMenuText_Pal[] = INCGFX_U16("graphics/interface/option_menu_text.pal", ".gbapal");
 // note: this is only used in the Japanese release
@@ -94,13 +106,14 @@ static const u8 sEqualSignGfx[] = INCGFX_U8("graphics/interface/option_menu_equa
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
-    [MENUITEM_TEXTSPEED]   = COMPOUND_STRING("TEXT SPEED"),
-    [MENUITEM_BATTLESCENE] = COMPOUND_STRING("BATTLE SCENE"),
-    [MENUITEM_BATTLESTYLE] = COMPOUND_STRING("BATTLE STYLE"),
-    [MENUITEM_SOUND]       = COMPOUND_STRING("SOUND"),
-    [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BUTTON MODE"),
-    [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("FRAME"),
-    [MENUITEM_CANCEL]      = COMPOUND_STRING("CANCEL"),
+    [MENUITEM_TEXTSPEED]   = COMPOUND_STRING("VITESSE TEXTE"),
+    [MENUITEM_BATTLESCENE] = COMPOUND_STRING("ANIMATIONS"),
+    [MENUITEM_BATTLESTYLE] = COMPOUND_STRING("STYLE COMBAT"),
+    [MENUITEM_SOUND]       = COMPOUND_STRING("SON"),
+    [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BOUTONS"),
+    [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("CADRE"),
+    [MENUITEM_BATTLEMUSIC] = COMPOUND_STRING("MUSIQUE COMBAT"),
+    [MENUITEM_CANCEL]      = COMPOUND_STRING("RETOUR"),
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -250,6 +263,7 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+        gTasks[taskId].tBattleMusic = VarGet(VAR_BATTLE_MUSIC);
 
         TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
         BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
@@ -257,6 +271,7 @@ void CB2_InitOptionMenu(void)
         Sound_DrawChoices(gTasks[taskId].tSound);
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+        BattleMusic_DrawChoices(gTasks[taskId].tBattleMusic);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
 
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
@@ -352,6 +367,13 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             if (previousOption != gTasks[taskId].tWindowFrameType)
                 FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
             break;
+        case MENUITEM_BATTLEMUSIC:
+            previousOption = gTasks[taskId].tBattleMusic;
+            gTasks[taskId].tBattleMusic = BattleMusic_ProcessInput(gTasks[taskId].tBattleMusic);
+
+            if (previousOption != gTasks[taskId].tBattleMusic)
+                BattleMusic_DrawChoices(gTasks[taskId].tBattleMusic);
+            break;
         default:
             return;
         }
@@ -372,6 +394,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
+    VarSet(VAR_BATTLE_MUSIC, gTasks[taskId].tBattleMusic);
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -390,7 +413,7 @@ static void Task_OptionMenuFadeOut(u8 taskId)
 static void HighlightOptionMenuItem(u8 index)
 {
     SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(16, DISPLAY_WIDTH - 16));
-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(index * 16 + 40, index * 16 + 56));
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(index * OPTION_ROW_HEIGHT + 40, index * OPTION_ROW_HEIGHT + 40 + OPTION_ROW_HEIGHT));
 }
 
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
@@ -631,6 +654,40 @@ static void ButtonMode_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
 }
 
+// Émeraude Couronnement : musique de combat (0 = Hoenn, 1 = Kanto, 2 = aléatoire).
+static u8 BattleMusic_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        selection = (selection + 1) % BATTLE_MUSIC_COUNT;
+        sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        selection = (selection + BATTLE_MUSIC_COUNT - 1) % BATTLE_MUSIC_COUNT;
+        sArrowPressed = TRUE;
+    }
+    return selection;
+}
+
+static void BattleMusic_DrawChoices(u8 selection)
+{
+    s32 widthHoenn, widthKanto, widthRandom, xKanto;
+    u8 styles[BATTLE_MUSIC_COUNT] = {0};
+
+    if (selection >= BATTLE_MUSIC_COUNT)
+        selection = BATTLE_MUSIC_HOENN;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_BattleMusicHoenn, 104, YPOS_BATTLEMUSIC, styles[BATTLE_MUSIC_HOENN]);
+    widthHoenn = GetStringWidth(FONT_NORMAL, gText_BattleMusicHoenn, 0);
+    widthKanto = GetStringWidth(FONT_NORMAL, gText_BattleMusicKanto, 0);
+    widthRandom = GetStringWidth(FONT_NORMAL, gText_BattleMusicRandom, 0);
+    xKanto = 104 + widthHoenn + (198 - 104 - widthHoenn - widthKanto - widthRandom) / 2;
+    DrawOptionMenuChoice(gText_BattleMusicKanto, xKanto, YPOS_BATTLEMUSIC, styles[BATTLE_MUSIC_KANTO]);
+    DrawOptionMenuChoice(gText_BattleMusicRandom, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleMusicRandom, 198), YPOS_BATTLEMUSIC, styles[BATTLE_MUSIC_RANDOM]);
+}
+
 static void DrawHeaderText(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
@@ -644,7 +701,7 @@ static void DrawOptionMenuTexts(void)
 
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
     for (i = 0; i < MENUITEM_COUNT; i++)
-        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (i * OPTION_ROW_HEIGHT) + 1, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
