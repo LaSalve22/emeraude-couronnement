@@ -51,10 +51,10 @@ et sur GitHub.
 - v0.23 - équipes Hard / Kaizo du chapitre 8 (Route Victoire, Conseil 4, Marc)
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 - v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
+- v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
 
 ## Plus tard
 
-- Placer les autres Méga-Gemmes dans le monde
 - Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales
 - Mis de côté : Blue, Lucas, Aurore (en attente de sprites)

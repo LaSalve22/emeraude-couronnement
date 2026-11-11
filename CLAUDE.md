@@ -261,11 +261,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (valeur réduite au maximum possible s'il manque de la place). Stats recalculées aussitôt.
 - Code : `src/coach_ev.c`, `include/coach_ev.h`, script `data/scripts/coach_ev.inc` ; tests `test/coach_ev.c` (`TESTS="Coach EV"`).
 
+## Fait (v0.25) - Méga-Gemmes dans le monde
+
+- 40 Méga-Gemmes classiques remplacent des objets ordinaires dans des Poké Balls existantes (aucun objet ajouté, pas de passage
+  bloqué), à partir de la Route 118 : liste et emplacements dans `tools/megas/placer.py` (relançable).
+- Les 52 autres (Jungkite / Tortankite, légendaires, Pokémon d'autres régions, Légendes Z-A) : Méga-Collectionneur au Centre
+  Pokémon de Clémenti-Ville (1,4) après la Ligue, `data/scripts/mega_gemmes.inc`. Prix : `COURONNEMENT_PRIX_MEGA_GEMME` (10000)
+  dans `include/config/item.h`, appliqué à toutes les Méga-Gemmes de `src/data/items.h`.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
-1. Placer les Méga-Gemmes dans le monde.
-2. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
+1. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 

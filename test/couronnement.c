@@ -91,3 +91,9 @@ TEST("Couronnement: nature mints cost the configured price")
     EXPECT_EQ(GetItemPrice(ITEM_ADAMANT_MINT), COURONNEMENT_PRIX_AROMATE);
     EXPECT_EQ(GetItemPrice(ITEM_SERIOUS_MINT), COURONNEMENT_PRIX_AROMATE);
 }
+
+TEST("Couronnement: mega stones cost the configured price")
+{
+    EXPECT_EQ(GetItemPrice(ITEM_RAICHUNITE_X), COURONNEMENT_PRIX_MEGA_GEMME);
+    EXPECT_EQ(GetItemPrice(ITEM_ABSOLITE), COURONNEMENT_PRIX_MEGA_GEMME);
+}
