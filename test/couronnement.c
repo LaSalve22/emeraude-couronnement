@@ -2,6 +2,11 @@
 #include "couronnement.h"
 #include "event_data.h"
 #include "test/test.h"
+#include "data.h"
+#include "pokemon.h"
+#include "constants/moves.h"
+
+extern const struct Trainer gCouronnementTrainers[DIFFICULTY_COUNT][COURONNEMENT_ADV_COUNT];
 
 // Émeraude Couronnement : Couronnement Mondial (Elo, rang, paliers).
 
@@ -47,4 +52,35 @@ TEST("Couronnement: only one legendary per team")
     u16 bad[4] = {SPECIES_GROUDON, SPECIES_KYOGRE, SPECIES_ZIGZAGOON, SPECIES_SQUIRTLE};
     EXPECT(Couronnement_EquipeValide(ok, 4));
     EXPECT(!Couronnement_EquipeValide(bad, 4));
+}
+
+TEST("Couronnement: 12 tournaments of 3 rounds then a 5-round final")
+{
+    EXPECT_EQ(COURONNEMENT_ADV_COUNT, 41);
+    EXPECT_EQ(Couronnement_PremierAdversaire(COURONNEMENT_TOURNOI_NENUCRIQUE), 33);
+    EXPECT_EQ(Couronnement_PremierAdversaire(COURONNEMENT_TOURNOI_FINALE), 36);
+    EXPECT_EQ(Couronnement_NbManches(COURONNEMENT_TOURNOI_FINALE), 5);
+    EXPECT_EQ(Couronnement_NbManches(COURONNEMENT_TOURNOI_MEROUVILLE), 3);
+    EXPECT_EQ(Couronnement_TournoiDepuisAdversaire(40), COURONNEMENT_TOURNOI_FINALE);
+    EXPECT_EQ(Couronnement_TournoiDepuisAdversaire(35), COURONNEMENT_TOURNOI_NENUCRIQUE);
+    EXPECT_EQ(Couronnement_EloAdversaire(0), 1350);
+    EXPECT_EQ(Couronnement_EloAdversaire(40), 2150);
+}
+
+TEST("Couronnement: every opponent shows 6 Pokemon")
+{
+    u32 i;
+    VarSet(VAR_COURONNEMENT_ADVERSAIRE, 0);
+    for (i = 0; i < COURONNEMENT_ADV_COUNT; i++)
+        EXPECT_EQ((u32)gCouronnementTrainers[DIFFICULTY_NORMAL][i].partySize, 6);
+}
+
+TEST("Couronnement: opponent scores type matchups against the chosen team")
+{
+    struct Pokemon joueur[1];
+    struct TrainerMon eau = {.species = SPECIES_SQUIRTLE, .moves = {MOVE_WATER_GUN}};
+    struct TrainerMon plante = {.species = SPECIES_TREECKO, .moves = {MOVE_ABSORB}};
+    CreateMon(&joueur[0], SPECIES_CHARMANDER, 50, 0, OTID_STRUCT_PRESET(0));
+    SetMonMoveSlot(&joueur[0], MOVE_EMBER, 0);
+    EXPECT_GT(Couronnement_ScoreAdverse(&eau, joueur, 1), Couronnement_ScoreAdverse(&plante, joueur, 1));
 }

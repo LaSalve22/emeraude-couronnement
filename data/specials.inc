@@ -27,6 +27,9 @@ gSpecials::
 	def_special Couronnement_EnregistrerResultat
 	def_special Couronnement_MancheSuivante
 	def_special Couronnement_TournoiGagne
+	def_special Couronnement_ChoixAdverse
+	def_special Couronnement_FinTournoi
+	def_special Couronnement_EstChampionDuMonde
 	def_special ChooseCouronnementParty, waitstate=1
 	def_special SetCableClubWarp
 	def_special DoCableClubWarp, waitstate=1

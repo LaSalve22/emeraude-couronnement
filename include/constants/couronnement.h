@@ -33,15 +33,27 @@
 #define COURONNEMENT_TOURNOI_ALGATIA       6
 #define COURONNEMENT_TOURNOI_ATALANOPOLIS  7
 #define COURONNEMENT_NB_TOURNOIS_VILLES    8
-#define COURONNEMENT_NB_TOURNOIS           12  // + 4 salles de Concours (à venir)
+// Salles de Concours d'Émeraude : Tentes de Combat de Poivressel, Vergazon, Autéquia et salle de Nénucrique.
+#define COURONNEMENT_TOURNOI_POIVRESSEL    8
+#define COURONNEMENT_TOURNOI_VERGAZON      9
+#define COURONNEMENT_TOURNOI_AUTEQUIA      10
+#define COURONNEMENT_TOURNOI_NENUCRIQUE    11
+#define COURONNEMENT_NB_TOURNOIS           12  // villes + salles
+#define COURONNEMENT_TOURNOI_FINALE        12  // Tour de Combat, après la Ligue, Top 32
+#define COURONNEMENT_NB_TOURNOIS_TOTAL     13
 #define COURONNEMENT_MANCHES               3
+#define COURONNEMENT_MANCHES_FINALE        5   // 32 joueurs -> 5 tours
+#define COURONNEMENT_DEMI_FINALE           3   // manche (0..4) précédée d'un soin
 #define COURONNEMENT_TAILLE_EQUIPE         4   // 6 montrés, 4 choisis
+#define COURONNEMENT_TAILLE_ADVERSE        6
 
 // Résultat de Couronnement_EtatTournoi
 #define TOURNOI_PAS_DE_PASS   0
 #define TOURNOI_BADGE_MANQUANT 1
 #define TOURNOI_OUVERT        2
-#define TOURNOI_DEJA_GAGNE    3
+#define TOURNOI_DEJA_GAGNE    3   // rejouable pour l'Elo, sans récompense
+#define TOURNOI_LIGUE_MANQUANTE 4 // finale : Ligue pas encore battue
+#define TOURNOI_PAS_TOP32     5   // finale : rang > 32
 
 // Valeur de VAR_FRONTIER_FACILITY pendant le choix des 4 Pokémon.
 #define FACILITY_COURONNEMENT 10

@@ -1,11 +1,15 @@
 #include "global.h"
 #include "couronnement.h"
 #include "battle.h"
+#include "battle_util.h"
 #include "data.h"
 #include "event_data.h"
 #include "item.h"
 #include "pokemon.h"
 #include "string_util.h"
+#include "move.h"
+#include "random.h"
+#include "constants/player_character.h"
 #include "constants/items.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"
@@ -22,13 +26,21 @@
 // - Paliers : Poké < 1300 <= Super < 1600 <= Hyper < 1800 <= Master ; Champions = Top 32.
 // - Tournois : 3 combats en double (4 Pokémon choisis), soin entre chaque, une défaite élimine.
 //   Un seul emplacement de dresseur (TRAINER_COURONNEMENT) ; l'équipe vient de gCouronnementTrainers.
+// - Chaque adversaire montre 6 Pokémon ; le joueur en choisit 4 à chaque manche, puis l'adversaire garde
+//   les 4 qui s'en sortent le mieux face à eux (Couronnement_ChoixAdverse).
+// - Tournois 0-7 : villes d'Arène ; 8-11 : salles de Concours ; 12 : finale à 32 (Tour de Combat, 5 tours,
+//   soin seulement avant la demi-finale, Blue puis Red).
 
 const struct Trainer gCouronnementTrainers[DIFFICULTY_COUNT][COURONNEMENT_ADV_COUNT] =
 {
 #include "data/couronnement.h"
 };
 
-EWRAM_DATA u8 gCouronnementTexteEquipe[128] = {0};
+EWRAM_DATA u8 gCouronnementTexteEquipe[192] = {0};
+// Adversaire de la manche en cours (copie modifiable : nom, et 4 Pokémon gardés sur 6).
+static EWRAM_DATA struct Trainer sAdversaire = {0};
+static EWRAM_DATA struct TrainerMon sAdversaireEquipe[COURONNEMENT_TAILLE_ADVERSE] = {0};
+static EWRAM_DATA bool8 sAdversairePret = FALSE;
 
 // 1000 * E pour un écart (Elo adverse - Elo joueur) de -800 à +800, pas de 50.
 static const u16 sAttente[] =
@@ -38,17 +50,29 @@ static const u16 sAttente[] =
     429, 360, 297, 240, 192, 151, 118, 91, 70, 53, 40, 31, 23, 17, 13, 10,
 };
 
-// Badge requis pour chaque tournoi de ville.
-static const u16 sBadgeRequis[COURONNEMENT_NB_TOURNOIS_VILLES] =
+// Condition d'accès de chaque tournoi (badge, ou Ligue battue pour la finale).
+static const u16 sBadgeRequis[COURONNEMENT_NB_TOURNOIS_TOTAL] =
 {
     FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
     FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
+    FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET, FLAG_BADGE06_GET,
+    FLAG_SYS_GAME_CLEAR,
 };
 
-static const u16 sRecompense[COURONNEMENT_NB_TOURNOIS_VILLES] =
+static const u16 sRecompense[COURONNEMENT_NB_TOURNOIS_TOTAL] =
 {
     ITEM_MUSCLE_BAND, ITEM_WISE_GLASSES, ITEM_EXPERT_BELT, ITEM_FOCUS_SASH,
     ITEM_LIFE_ORB, ITEM_CHOICE_SCARF, ITEM_CHOICE_BAND, ITEM_CHOICE_SPECS,
+    ITEM_ROCKY_HELMET, ITEM_ASSAULT_VEST, ITEM_WEAKNESS_POLICY, ITEM_LEFTOVERS,
+    ITEM_ABILITY_PATCH,
+};
+
+// Elo du premier adversaire de chaque tournoi (+50 par manche).
+static const u16 sEloBase[COURONNEMENT_NB_TOURNOIS_TOTAL] =
+{
+    1350, 1410, 1470, 1530, 1590, 1650, 1710, 1770,
+    1420, 1480, 1540, 1720,
+    1950,
 };
 
 static const u8 sText_Poke[] = _("Poké");
@@ -67,6 +91,7 @@ static const u8 sText_Et[] = _(" et ");
 static const u8 sText_Point[] = _(".");
 static const u8 sText_Plus[] = _("+");
 static const u8 sText_Moins[] = _("-");
+static const u8 sText_Green[] = _("Green");
 
 u16 Couronnement_GetElo(void)
 {
@@ -135,16 +160,32 @@ s32 Couronnement_VariationElo(u16 eloJoueur, u16 eloAdversaire, bool32 victoire)
     return -((COURONNEMENT_K * (attente - score) + 500) / 1000);
 }
 
+u32 Couronnement_PremierAdversaire(u32 tournoi)
+{
+    return tournoi * COURONNEMENT_MANCHES;  // la finale (12) commence à 36
+}
+
+u32 Couronnement_NbManches(u32 tournoi)
+{
+    return tournoi == COURONNEMENT_TOURNOI_FINALE ? COURONNEMENT_MANCHES_FINALE : COURONNEMENT_MANCHES;
+}
+
+u32 Couronnement_TournoiDepuisAdversaire(u32 indexAdversaire)
+{
+    u32 t = indexAdversaire / COURONNEMENT_MANCHES;
+    return t > COURONNEMENT_TOURNOI_FINALE ? COURONNEMENT_TOURNOI_FINALE : t;
+}
+
 u16 Couronnement_EloAdversaire(u32 indexAdversaire)
 {
-    u32 tournoi = indexAdversaire / COURONNEMENT_MANCHES;
-    u32 manche = indexAdversaire % COURONNEMENT_MANCHES;
-    return 1350 + 50 * tournoi + 40 * manche;
+    u32 tournoi = Couronnement_TournoiDepuisAdversaire(indexAdversaire);
+    u32 manche = indexAdversaire - Couronnement_PremierAdversaire(tournoi);
+    return sEloBase[tournoi] + 50 * manche;
 }
 
 u32 Couronnement_NbTournoisGagnes(void)
 {
-    u32 bits = VarGet(VAR_COURONNEMENT_TOURNOIS), n = 0;
+    u32 bits = VarGet(VAR_COURONNEMENT_TOURNOIS) & ((1 << COURONNEMENT_NB_TOURNOIS) - 1), n = 0;
     while (bits)
     {
         n += bits & 1;
@@ -153,12 +194,79 @@ u32 Couronnement_NbTournoisGagnes(void)
     return n;
 }
 
-const struct Trainer *GetCouronnementTrainer(void)
+static const struct Trainer *AdversaireDeBase(void)
 {
     u32 index = VarGet(VAR_COURONNEMENT_ADVERSAIRE);
     if (index >= COURONNEMENT_ADV_COUNT)
         index = 0;
     return &gCouronnementTrainers[DIFFICULTY_NORMAL][index];
+}
+
+const struct Trainer *GetCouronnementTrainer(void)
+{
+    return sAdversairePret ? &sAdversaire : AdversaireDeBase();
+}
+
+// Copie l'adversaire de la manche dans sAdversaire (6 Pokémon). Si le joueur joue Red, Red devient Green.
+static void PreparerAdversaire(void)
+{
+    const struct Trainer *base = AdversaireDeBase();
+    u32 i;
+
+    sAdversaire = *base;
+    for (i = 0; i < base->partySize && i < COURONNEMENT_TAILLE_ADVERSE; i++)
+        sAdversaireEquipe[i] = base->party[i];
+    sAdversaire.party = sAdversaireEquipe;
+    if (base->trainerPic == TRAINER_PIC_RED && VarGet(VAR_PLAYER_CHARACTER) == PLAYER_CHAR_RED)
+    {
+        sAdversaire.trainerPic = TRAINER_PIC_LEAF;
+        sAdversaire.gender = TRUE;
+        StringCopy(sAdversaire.trainerName, sText_Green);
+    }
+    sAdversairePret = TRUE;
+}
+
+// Efficacité (x4 = 1.0) d'une attaque de type atkType sur une espèce.
+static u32 Efficacite(enum Type atkType, u16 species)
+{
+    uq4_12_t mod = GetTypeModifier(atkType, GetSpeciesType(species, 0));
+    if (GetSpeciesType(species, 1) != GetSpeciesType(species, 0))
+        mod = uq4_12_multiply(mod, GetTypeModifier(atkType, GetSpeciesType(species, 1)));
+    return mod * 4 / UQ_4_12(1.0);  // 0, 1 (x0,25), 2 (x0,5), 4, 8, 16
+}
+
+static u32 MeilleureEfficacite(const enum Move *moves, u16 cible)
+{
+    u32 i, best = 0, e;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves[i] == MOVE_NONE || GetMoveCategory(moves[i]) == DAMAGE_CATEGORY_STATUS || GetMovePower(moves[i]) == 0)
+            continue;
+        e = Efficacite(GetMoveType(moves[i]), cible);
+        if (e > best)
+            best = e;
+    }
+    return best;
+}
+
+// Score d'un Pokémon adverse face aux 4 Pokémon choisis par le joueur.
+s32 Couronnement_ScoreAdverse(const struct TrainerMon *mon, struct Pokemon *joueur, u32 nbJoueur)
+{
+    s32 score = 0;
+    u32 j, k;
+    enum Move moves[MAX_MON_MOVES];
+
+    for (j = 0; j < nbJoueur; j++)
+    {
+        u16 sp = GetMonData(&joueur[j], MON_DATA_SPECIES);
+        if (sp == SPECIES_NONE)
+            continue;
+        score += MeilleureEfficacite(mon->moves, sp);
+        for (k = 0; k < MAX_MON_MOVES; k++)
+            moves[k] = GetMonData(&joueur[j], MON_DATA_MOVE1 + k);
+        score -= MeilleureEfficacite(moves, mon->species);
+    }
+    return score;
 }
 
 static bool32 IsLegendaire(u16 species)
@@ -209,8 +317,15 @@ void Couronnement_EtatTournoi(void)
 
     if (!FlagGet(FLAG_COURONNEMENT_PASS))
         gSpecialVar_Result = TOURNOI_PAS_DE_PASS;
-    else if (t >= COURONNEMENT_NB_TOURNOIS_VILLES || !FlagGet(sBadgeRequis[t]))
+    else if (t >= COURONNEMENT_NB_TOURNOIS_TOTAL)
         gSpecialVar_Result = TOURNOI_BADGE_MANQUANT;
+    else if (!FlagGet(sBadgeRequis[t]))
+        gSpecialVar_Result = t == COURONNEMENT_TOURNOI_FINALE ? TOURNOI_LIGUE_MANQUANTE : TOURNOI_BADGE_MANQUANT;
+    else if (t == COURONNEMENT_TOURNOI_FINALE && Couronnement_PalierDepuisElo(Couronnement_GetElo()) != PALIER_CHAMPIONS)
+    {
+        gSpecialVar_Result = TOURNOI_PAS_TOP32;
+        ConvertIntToDecimalStringN(gStringVar1, Couronnement_RangDepuisElo(Couronnement_GetElo()), STR_CONV_MODE_LEFT_ALIGN, 6);
+    }
     else if (VarGet(VAR_COURONNEMENT_TOURNOIS) & (1 << t))
         gSpecialVar_Result = TOURNOI_DEJA_GAGNE;
     else
@@ -232,19 +347,26 @@ void Couronnement_CompterPokemonAptes(void)
 // VAR_0x8004 = tournoi
 void Couronnement_DebutTournoi(void)
 {
-    VarSet(VAR_COURONNEMENT_ADVERSAIRE, gSpecialVar_0x8004 * COURONNEMENT_MANCHES);
+    VarSet(VAR_COURONNEMENT_ADVERSAIRE, Couronnement_PremierAdversaire(gSpecialVar_0x8004));
 }
 
-// STR_VAR_1 = nom, STR_VAR_2 = manche, STR_VAR_3 = Elo adverse ; gCouronnementTexteEquipe = équipe montrée.
+// STR_VAR_1 = nom, STR_VAR_2 = manche, STR_VAR_3 = Elo adverse ; gCouronnementTexteEquipe = les 6 Pokémon montrés.
+// VAR_RESULT = numéro de manche (0..), VAR_0x8005 = nombre de manches.
 void Couronnement_PreparerManche(void)
 {
     u32 index = VarGet(VAR_COURONNEMENT_ADVERSAIRE);
-    const struct Trainer *trainer = GetCouronnementTrainer();
+    u32 tournoi = Couronnement_TournoiDepuisAdversaire(index);
+    u32 manche = index - Couronnement_PremierAdversaire(tournoi);
+    const struct Trainer *trainer;
     u8 *s;
     u32 i;
 
+    PreparerAdversaire();
+    trainer = &sAdversaire;
+    gSpecialVar_Result = manche;
+    gSpecialVar_0x8005 = Couronnement_NbManches(tournoi);
     StringCopy(gStringVar1, trainer->trainerName);
-    ConvertIntToDecimalStringN(gStringVar2, index % COURONNEMENT_MANCHES + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+    ConvertIntToDecimalStringN(gStringVar2, manche + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
     ConvertIntToDecimalStringN(gStringVar3, Couronnement_EloAdversaire(index), STR_CONV_MODE_LEFT_ALIGN, 4);
 
     s = StringCopy(gCouronnementTexteEquipe, sText_EquipeDe);
@@ -253,10 +375,45 @@ void Couronnement_PreparerManche(void)
     for (i = 0; i < trainer->partySize; i++)
     {
         if (i > 0)
-            s = StringAppend(s, i + 1 == trainer->partySize ? sText_Et : (i == 2 ? sText_VirguleLigne : sText_Virgule));
+            s = StringAppend(s, i + 1 == trainer->partySize ? sText_Et : ((i == 2 || i == 4) ? sText_VirguleLigne : sText_Virgule));
         s = StringAppend(s, GetSpeciesName(trainer->party[i].species));
     }
     StringAppend(s, sText_Point);
+}
+
+// Après le choix du joueur : l'adversaire garde ses 4 meilleurs Pokémon face à l'équipe choisie.
+void Couronnement_ChoixAdverse(void)
+{
+    s32 scores[COURONNEMENT_TAILLE_ADVERSE];
+    u8 ordre[COURONNEMENT_TAILLE_ADVERSE];
+    struct TrainerMon gardes[COURONNEMENT_TAILLE_EQUIPE];
+    u32 i, j, n;
+
+    if (!sAdversairePret)
+        PreparerAdversaire();
+    n = sAdversaire.partySize;
+    if (n <= COURONNEMENT_TAILLE_EQUIPE)
+        return;
+    for (i = 0; i < n; i++)
+    {
+        // petit aléa pour varier les équipes d'une tentative à l'autre
+        scores[i] = Couronnement_ScoreAdverse(&sAdversaireEquipe[i], gParties[B_TRAINER_PLAYER], COURONNEMENT_TAILLE_EQUIPE) * 4
+                  + (Random() % 5);
+        ordre[i] = i;
+    }
+    for (i = 0; i < n; i++)
+        for (j = i + 1; j < n; j++)
+            if (scores[ordre[j]] > scores[ordre[i]])
+            {
+                u8 tmp = ordre[i];
+                ordre[i] = ordre[j];
+                ordre[j] = tmp;
+            }
+    for (i = 0; i < COURONNEMENT_TAILLE_EQUIPE; i++)
+        gardes[i] = sAdversaireEquipe[ordre[i]];
+    for (i = 0; i < COURONNEMENT_TAILLE_EQUIPE; i++)
+        sAdversaireEquipe[i] = gardes[i];
+    sAdversaire.partySize = COURONNEMENT_TAILLE_EQUIPE;
 }
 
 // Après le combat : VAR_RESULT = victoire ; STR_VAR_1 = variation (+12 / -8), STR_VAR_2 = nouvel Elo.
@@ -277,17 +434,33 @@ void Couronnement_EnregistrerResultat(void)
 // VAR_RESULT = TRUE s'il reste une manche.
 void Couronnement_MancheSuivante(void)
 {
-    u32 index = VarGet(VAR_COURONNEMENT_ADVERSAIRE) + 1;
-    VarSet(VAR_COURONNEMENT_ADVERSAIRE, index);
-    gSpecialVar_Result = (index % COURONNEMENT_MANCHES) != 0;
+    u32 index = VarGet(VAR_COURONNEMENT_ADVERSAIRE);
+    u32 tournoi = Couronnement_TournoiDepuisAdversaire(index);
+    sAdversairePret = FALSE;
+    VarSet(VAR_COURONNEMENT_ADVERSAIRE, index + 1);
+    gSpecialVar_Result = (index + 1 - Couronnement_PremierAdversaire(tournoi)) < Couronnement_NbManches(tournoi);
 }
 
-// Marque le tournoi courant comme gagné ; VAR_0x8006 = objet de récompense.
+// Fin de tournoi (victoire ou non) : l'adversaire redevient celui des données.
+void Couronnement_FinTournoi(void)
+{
+    sAdversairePret = FALSE;
+}
+
+// Marque le tournoi courant comme gagné ; VAR_0x8006 = récompense (ITEM_NONE si déjà gagné),
+// VAR_RESULT = TRUE si c'est la finale.
 void Couronnement_TournoiGagne(void)
 {
-    u32 t = (VarGet(VAR_COURONNEMENT_ADVERSAIRE) - 1) / COURONNEMENT_MANCHES;
-    if (t >= COURONNEMENT_NB_TOURNOIS_VILLES)
-        t = 0;
-    VarSet(VAR_COURONNEMENT_TOURNOIS, VarGet(VAR_COURONNEMENT_TOURNOIS) | (1 << t));
-    gSpecialVar_0x8006 = sRecompense[t];
+    u32 t = Couronnement_TournoiDepuisAdversaire(VarGet(VAR_COURONNEMENT_ADVERSAIRE));
+    u16 bits = VarGet(VAR_COURONNEMENT_TOURNOIS);
+
+    gSpecialVar_0x8006 = (bits & (1 << t)) ? ITEM_NONE : sRecompense[t];
+    VarSet(VAR_COURONNEMENT_TOURNOIS, bits | (1 << t));
+    gSpecialVar_Result = (t == COURONNEMENT_TOURNOI_FINALE);
+}
+
+// VAR_RESULT = TRUE si la finale a été gagnée.
+void Couronnement_EstChampionDuMonde(void)
+{
+    gSpecialVar_Result = (VarGet(VAR_COURONNEMENT_TOURNOIS) & (1 << COURONNEMENT_TOURNOI_FINALE)) != 0;
 }

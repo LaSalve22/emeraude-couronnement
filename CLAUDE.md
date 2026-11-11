@@ -188,7 +188,6 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Il ne reste que 8 drapeaux de dresseurs libres : toujours passer par cet emplacement pour les nouveaux adversaires.
 - Variables : `VAR_COURONNEMENT_ELO` 0x409B, `VAR_COURONNEMENT_TOURNOIS` 0x409D, `VAR_COURONNEMENT_ADVERSAIRE` 0x40A1 ;
   drapeaux `FLAG_COURONNEMENT_PASS` 0x22, `FLAG_COURONNEMENT_EN_COURS` 0x23.
-- Pas encore : aperçu des 6 Pokémon adverses (ils en ont 4), tournois des 4 salles de Concours, finale à 32 (Tour de Combat, Red et Blue).
 
 ## Fait (v0.17.1) - retours d'Adrien
 
@@ -206,14 +205,26 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Générés : 37 dresseurs des Routes 118-120 (plancher 52 Hard / 56 Kaizo, cap 63), 6 dresseurs de l'Arène d'Alizée (réserve Vol,
   plancher 56 / 60). Classes ajoutées : Pkmn Ranger (plante), Bug Catcher (insecte).
 
+## Fait (v0.19) - Couronnement Mondial, 2e partie
+
+- Chaque adversaire montre 6 Pokémon (`tools/couronnement/tournois.py` : 4 historiques + `EXTRA`). À chaque manche : LoadPlayerParty,
+  aperçu, choix de 4 (`ChooseCouronnementParty`), puis `Couronnement_ChoixAdverse` garde les 4 adversaires qui s'en sortent le mieux
+  (efficacité des attaques dans les deux sens + petit aléa). Copie modifiable `sAdversaire` en EWRAM, renvoyée par GetCouronnementTrainer.
+- Salles de Concours d'Émeraude = Tentes de Combat de Poivressel (badge 2), Vergazon (3), Autéquia (4) et salle de Nénucrique (6) :
+  tournois 8-11, hôtesse à (11,5) dans les tentes, (20,4) à Nénucrique. Récompenses : Casque Brut, Veste de Combat, Vulné-Assurance, Restes.
+- Finale (tournoi 12) : hôtesse à la Tour de Combat (21,5), après la Ligue (FLAG_SYS_GAME_CLEAR) et au rang <= 32. 5 tours, 4 Pokémon
+  choisis une fois, soin seulement avant la demi-finale (Blue, sprite Champion Rival Rouge Feu), Red en finale (Green si le joueur joue Red).
+  Récompense : Patch Talent + Master Ball, titre « Champion du Monde » dans le menu MONDIAL.
+- Elo adverse par tournoi (`sEloBase`, +50 par manche) : un parcours parfait mène vers ~1920 ; les tournois gagnés sont rejouables
+  pour l'Elo (sans récompense) pour atteindre le Top 32 (~2000). Abandon en cours de tournoi : Elo inchangé.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Placer les Méga-Gemmes dans le monde.
-2. Couronnement Mondial, 2e partie : tournois des 4 salles de Concours, finale à 32 après la Ligue (Tour de Combat, 5 tours, soin avant la demi-finale, Red et Blue en finale).
-3. Demandé par Adrien : objet pour changer la nature (après Norman), changement d'EV (après la Ligue).
-4. Équipes Hard/Kaizo du chapitre 6 (Route 123, Mont Mémoria, Repaire Magma/Aqua, Lévéquemont ; cap 72).
-5. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
+2. Demandé par Adrien : objet pour changer la nature (après Norman), changement d'EV (après la Ligue).
+3. Équipes Hard/Kaizo du chapitre 6 (Route 123, Mont Mémoria, Repaire Magma/Aqua, Lévéquemont ; cap 72).
+4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 
