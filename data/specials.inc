@@ -18,6 +18,16 @@
 gSpecials::
 .endif
 	def_special HealPlayerParty
+	def_special Couronnement_DonnerPass
+	def_special Couronnement_BufferStatut
+	def_special Couronnement_EtatTournoi
+	def_special Couronnement_CompterPokemonAptes
+	def_special Couronnement_DebutTournoi
+	def_special Couronnement_PreparerManche
+	def_special Couronnement_EnregistrerResultat
+	def_special Couronnement_MancheSuivante
+	def_special Couronnement_TournoiGagne
+	def_special ChooseCouronnementParty, waitstate=1
 	def_special SetCableClubWarp
 	def_special DoCableClubWarp, waitstate=1
 	def_special ReturnFromLinkRoom, waitstate=1

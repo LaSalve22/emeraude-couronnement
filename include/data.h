@@ -278,9 +278,12 @@ static inline u16 GetPartnerIdFromTrainerId(u16 trainerId)
     return (trainerId - TRAINER_PARTNER(PARTNER_NONE));
 }
 
+const struct Trainer *GetCouronnementTrainer(void);
+
 static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 {
     if (gIsDebugBattle) return GetDebugAiTrainer();
+    if (trainerId == TRAINER_COURONNEMENT) return GetCouronnementTrainer(); // Couronnement Mondial
     enum DifficultyLevel difficulty;
 
     if (IsPartnerTrainerId(trainerId))

@@ -1,0 +1,1273 @@
+/* Généré par tools/couronnement/tournois.py — ne pas modifier à la main. */
+
+=== COURONNEMENT_ADV_0 ===
+Name: Hugo
+Class: Camper
+Pic: Camper
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Graveler @ Sitrus Berry
+Adamant Nature
+Level: 24
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Slide
+- Bulldoze
+- Protect
+- Rock Polish
+
+Nuzleaf
+Jolly Nature
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Razor Leaf
+- Feint Attack
+- Protect
+
+Pelipper
+Modest Nature
+Level: 24
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Water Pulse
+- Wing Attack
+- Protect
+- Mist
+
+Linoone
+Jolly Nature
+Level: 24
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Headbutt
+- Covet
+- Sand Attack
+- Protect
+
+=== COURONNEMENT_ADV_1 ===
+Name: Inès
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Kirlia @ Oran Berry
+Modest Nature
+Level: 25
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Draining Kiss
+- Confusion
+- Helping Hand
+- Protect
+
+Breloom
+Adamant Nature
+Level: 25
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Mach Punch
+- Bullet Seed
+- Headbutt
+- Protect
+
+Swellow
+Jolly Nature
+Level: 25
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wing Attack
+- Quick Attack
+- Endeavor
+- Protect
+
+Aron
+Adamant Nature
+Level: 25
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Metal Claw
+- Headbutt
+- Rock Tomb
+- Protect
+
+=== COURONNEMENT_ADV_2 ===
+Name: Malik
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Lucario @ Oran Berry
+Jolly Nature
+Level: 26
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Force Palm
+- Metal Claw
+- Quick Attack
+- Protect
+
+Lombre
+Modest Nature
+Level: 26
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Fake Out
+- Water Pulse
+- Mega Drain
+- Protect
+
+Vigoroth
+Jolly Nature
+Level: 26
+Ability: Vital Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Slash
+- Encore
+- Bulk Up
+- Protect
+
+Graveler @ Sitrus Berry
+Adamant Nature
+Level: 26
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Slide
+- Bulldoze
+- Rock Polish
+- Protect
+
+=== COURONNEMENT_ADV_3 ===
+Name: Noa
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Machoke @ Sitrus Berry
+Adamant Nature
+Level: 33
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Brick Break
+- Rock Slide
+- Bulk Up
+- Protect
+
+Meditite
+Jolly Nature
+Level: 33
+Ability: Pure Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Hi Jump Kick
+- Zen Headbutt
+- Detect
+
+Hariyama
+Adamant Nature
+Level: 33
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Fake Out
+- Force Palm
+- Knock Off
+- Protect
+
+Pelipper
+Modest Nature
+Level: 33
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Water Pulse
+- Wing Attack
+- Tailwind
+- Protect
+
+=== COURONNEMENT_ADV_4 ===
+Name: Sacha
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Hitmontop @ Sitrus Berry
+Adamant Nature
+Level: 34
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Fake Out
+- Brick Break
+- Rock Slide
+- Protect
+
+Breloom
+Jolly Nature
+Level: 34
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Mach Punch
+- Bullet Seed
+- Rock Tomb
+- Protect
+
+Primeape
+Jolly Nature
+Level: 34
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Karate Chop
+- Rock Slide
+- Taunt
+- Protect
+
+Golbat
+Jolly Nature
+Level: 34
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Air Cutter
+- Bite
+- Confuse Ray
+- Protect
+
+=== COURONNEMENT_ADV_5 ===
+Name: Kenji
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Lucario @ Life Orb
+Timid Nature
+Level: 35
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Aura Sphere
+- Flash Cannon
+- Quick Attack
+- Protect
+
+Medicham
+Jolly Nature
+Level: 35
+Ability: Pure Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Hi Jump Kick
+- Zen Headbutt
+- Detect
+
+Machoke
+Adamant Nature
+Level: 35
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Brick Break
+- Rock Slide
+- Bulk Up
+- Protect
+
+Croagunk @ Sitrus Berry
+Adamant Nature
+Level: 35
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Poison Jab
+- Revenge
+- Sucker Punch
+- Protect
+
+=== COURONNEMENT_ADV_6 ===
+Name: Bastian
+Class: Guitarist
+Pic: Guitarist
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Manectric @ Sitrus Berry
+Timid Nature
+Level: 42
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Discharge
+- Bite
+- Thunder Wave
+- Protect
+
+Magneton
+Modest Nature
+Level: 42
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Discharge
+- Flash Cannon
+- Thunder Wave
+- Protect
+
+Gyarados
+Adamant Nature
+Level: 42
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Waterfall
+- Bite
+- Dragon Dance
+- Protect
+
+Lanturn
+Modest Nature
+Level: 42
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Discharge
+- Surf
+- Thunder Wave
+- Protect
+
+=== COURONNEMENT_ADV_7 ===
+Name: Clara
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Raichu @ Focus Sash
+Timid Nature
+Level: 43
+Ability: Static
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Fake Out
+- Thunderbolt
+- Volt Switch
+- Protect
+
+Ampharos
+Modest Nature
+Level: 43
+Ability: Static
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Discharge
+- Power Gem
+- Thunder Wave
+- Protect
+
+Breloom
+Jolly Nature
+Level: 43
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Mach Punch
+- Bullet Seed
+- Rock Tomb
+- Protect
+
+Golduck @ Sitrus Berry
+Modest Nature
+Level: 43
+Ability: Cloud Nine
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Surf
+- Ice Beam
+- Psych Up
+- Protect
+
+=== COURONNEMENT_ADV_8 ===
+Name: Damien
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Electrode @ Focus Sash
+Timid Nature
+Level: 44
+Ability: Soundproof
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Thunderbolt
+- Taunt
+- Explosion
+- Protect
+
+Luxray
+Adamant Nature
+Level: 44
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Wild Charge
+- Crunch
+- Fire Fang
+- Protect
+
+Jolteon @ Life Orb
+Timid Nature
+Level: 44
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Thunderbolt
+- Shadow Ball
+- Helping Hand
+- Protect
+
+Gardevoir @ Sitrus Berry
+Modest Nature
+Level: 44
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Psychic
+- Dazzling Gleam
+- Helping Hand
+- Protect
+
+=== COURONNEMENT_ADV_9 ===
+Name: Pyra
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Torkoal @ Charcoal
+Quiet Nature
+Level: 51
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Heat Wave
+- Earth Power
+- Yawn
+- Protect
+
+Vileplume
+Modest Nature
+Level: 51
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Sleep Powder
+- Giga Drain
+- Sludge Bomb
+- Protect
+
+Camerupt @ Sitrus Berry
+Modest Nature
+Level: 51
+Ability: Solid Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Heat Wave
+- Earth Power
+- Rock Slide
+- Protect
+
+Ninetales
+Timid Nature
+Level: 51
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Heat Wave
+- Solar Beam
+- Will-O-Wisp
+- Protect
+
+=== COURONNEMENT_ADV_10 ===
+Name: Soline
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Shiftry @ Focus Sash
+Jolly Nature
+Level: 52
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Leaf Blade
+- Sucker Punch
+- Protect
+
+Arcanine @ Sitrus Berry
+Adamant Nature
+Level: 52
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Flare Blitz
+- Extreme Speed
+- Snarl
+- Protect
+
+Houndoom @ Life Orb
+Timid Nature
+Level: 52
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Heat Wave
+- Dark Pulse
+- Nasty Plot
+- Protect
+
+Claydol
+Bold Nature
+Level: 52
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Earth Power
+- Psychic
+- Trick Room
+- Protect
+
+=== COURONNEMENT_ADV_11 ===
+Name: Magnus
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Magmar @ Life Orb
+Modest Nature
+Level: 53
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Heat Wave
+- Thunder Punch
+- Clear Smog
+- Protect
+
+Torkoal @ Sitrus Berry
+Quiet Nature
+Level: 53
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Heat Wave
+- Earth Power
+- Yawn
+- Protect
+
+Rhydon
+Adamant Nature
+Level: 53
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Rock Slide
+- Drill Run
+- Hammer Arm
+- Protect
+
+Altaria
+Modest Nature
+Level: 53
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Dragon Pulse
+- Dazzling Gleam
+- Roost
+- Protect
+
+=== COURONNEMENT_ADV_12 ===
+Name: Cyril
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Kangaskhan @ Silk Scarf
+Adamant Nature
+Level: 60
+Ability: Scrappy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- Protect
+
+Ursaring @ Flame Orb
+Adamant Nature
+Level: 60
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Facade
+- Close Combat
+- Crunch
+- Protect
+
+Porygon2 @ Eviolite
+Quiet Nature
+Level: 60
+Ability: Download
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Trick Room
+- Tri Attack
+- Ice Beam
+- Recover
+
+Exploud
+Modest Nature
+Level: 60
+Ability: Scrappy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Hyper Voice
+- Fire Blast
+- Surf
+- Protect
+
+=== COURONNEMENT_ADV_13 ===
+Name: Lily
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Lopunny @ Sitrus Berry
+Jolly Nature
+Level: 61
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Return
+- Ice Punch
+- Protect
+
+Persian
+Jolly Nature
+Level: 61
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- U-turn
+- Feint
+- Hypnosis
+
+Zangoose @ Life Orb
+Jolly Nature
+Level: 61
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Close Combat
+- Quick Attack
+- Crush Claw
+- Protect
+
+Snorlax @ Leftovers
+Adamant Nature
+Level: 61
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk
+- Body Slam
+- Curse
+- Rest
+- Protect
+
+=== COURONNEMENT_ADV_14 ===
+Name: Orson
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Slaking @ Choice Band
+Adamant Nature
+Level: 62
+Ability: Truant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Double-Edge
+- Earthquake
+- Shadow Claw
+- Protect
+
+Staraptor @ Focus Sash
+Jolly Nature
+Level: 62
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Brave Bird
+- Close Combat
+- Quick Attack
+- Protect
+
+Tauros
+Jolly Nature
+Level: 62
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Double-Edge
+- Rock Slide
+- Zen Headbutt
+- Protect
+
+Chansey @ Eviolite
+Bold Nature
+Level: 62
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Soft-Boiled
+- Seismic Toss
+- Helping Hand
+- Protect
+
+=== COURONNEMENT_ADV_15 ===
+Name: Faustin
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Pelipper @ Damp Rock
+Modest Nature
+Level: 68
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Hurricane
+- Surf
+- Tailwind
+- Protect
+
+Swellow @ Flame Orb
+Jolly Nature
+Level: 68
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Brave Bird
+- Facade
+- Quick Attack
+- Protect
+
+Skarmory
+Impish Nature
+Level: 68
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Iron Head
+- Tailwind
+- Roost
+- Protect
+
+Ludicolo @ Life Orb
+Modest Nature
+Level: 68
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Fake Out
+- Hydro Pump
+- Giga Drain
+- Protect
+
+=== COURONNEMENT_ADV_16 ===
+Name: Aria
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Togekiss @ Sitrus Berry
+Timid Nature
+Level: 69
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Follow Me
+- Air Slash
+- Dazzling Gleam
+- Protect
+
+Gyarados
+Adamant Nature
+Level: 69
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Waterfall
+- Ice Fang
+- Dragon Dance
+- Protect
+
+Staraptor @ Choice Band
+Jolly Nature
+Level: 69
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Brave Bird
+- Close Combat
+- Quick Attack
+- U-turn
+
+Gardevoir @ Life Orb
+Modest Nature
+Level: 69
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Psychic
+- Dazzling Gleam
+- Trick Room
+- Protect
+
+=== COURONNEMENT_ADV_17 ===
+Name: Céleste
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Noivern @ Life Orb
+Timid Nature
+Level: 70
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Boomburst
+- Hurricane
+- Tailwind
+- Protect
+
+Talonflame @ Sitrus Berry
+Adamant Nature
+Level: 70
+Ability: Gale Wings
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Brave Bird
+- Flare Blitz
+- Tailwind
+- Protect
+
+Crobat
+Jolly Nature
+Level: 70
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Cross Poison
+- Super Fang
+- Taunt
+- Protect
+
+Corviknight @ Leftovers
+Impish Nature
+Level: 70
+Ability: Mirror Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Brave Bird
+- Body Press
+- Tailwind
+- Roost
+
+=== COURONNEMENT_ADV_18 ===
+Name: Iris
+Class: Psychic
+Pic: Psychic F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Gardevoir @ Sitrus Berry
+Quiet Nature
+Level: 75
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Psychic
+- Dazzling Gleam
+- Trick Room
+- Protect
+
+Bronzong @ Leftovers
+Relaxed Nature
+Level: 75
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Gyro Ball
+- Trick Room
+- Body Press
+- Protect
+
+Hariyama @ Assault Vest
+Brave Nature
+Level: 75
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk
+- Fake Out
+- Close Combat
+- Knock Off
+- Heavy Slam
+
+Camerupt @ Choice Specs
+Quiet Nature
+Level: 75
+Ability: Solid Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Eruption
+- Earth Power
+- Heat Wave
+- Ancient Power
+
+=== COURONNEMENT_ADV_19 ===
+Name: Orion
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Alakazam @ Focus Sash
+Timid Nature
+Level: 76
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Protect
+
+Xatu
+Timid Nature
+Level: 76
+Ability: Magic Bounce
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Tailwind
+- Psychic
+- Heat Wave
+- Protect
+
+Solrock @ Sitrus Berry
+Brave Nature
+Level: 76
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk
+- Rock Slide
+- Flare Blitz
+- Trick Room
+- Protect
+
+Lunatone @ Life Orb
+Quiet Nature
+Level: 76
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Moonblast
+- Psychic
+- Ice Beam
+- Protect
+
+=== COURONNEMENT_ADV_20 ===
+Name: Shiro
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Medicham @ Focus Sash
+Jolly Nature
+Level: 77
+Ability: Pure Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Fake Out
+- Hi Jump Kick
+- Zen Headbutt
+- Detect
+
+Reuniclus @ Life Orb
+Quiet Nature
+Level: 77
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Trick Room
+- Psychic
+- Focus Blast
+- Protect
+
+Grumpig
+Modest Nature
+Level: 77
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Psychic
+- Shadow Ball
+- Power Gem
+- Protect
+
+Gallade @ Sitrus Berry
+Adamant Nature
+Level: 77
+Ability: Justified
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Close Combat
+- Psycho Cut
+- Leaf Blade
+- Protect
+
+=== COURONNEMENT_ADV_21 ===
+Name: Narcisse
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Pelipper @ Damp Rock
+Modest Nature
+Level: 82
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP
+- Hurricane
+- Scald
+- Tailwind
+- Protect
+
+Kingdra @ Life Orb
+Modest Nature
+Level: 82
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Muddy Water
+- Draco Meteor
+- Ice Beam
+- Protect
+
+Milotic @ Leftovers
+Bold Nature
+Level: 82
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Scald
+- Ice Beam
+- Recover
+- Protect
+
+Ludicolo @ Sitrus Berry
+Modest Nature
+Level: 82
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Fake Out
+- Hydro Pump
+- Giga Drain
+- Protect
+
+=== COURONNEMENT_ADV_22 ===
+Name: Maëlle
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Gyarados @ Sitrus Berry
+Jolly Nature
+Level: 83
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Waterfall
+- Ice Fang
+- Dragon Dance
+- Protect
+
+Lapras @ Leftovers
+Modest Nature
+Level: 83
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Freeze-Dry
+- Hydro Pump
+- Ice Shard
+- Protect
+
+Whiscash
+Adamant Nature
+Level: 83
+Ability: Oblivious
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Earthquake
+- Waterfall
+- Rock Slide
+- Protect
+
+Lanturn @ Assault Vest
+Modest Nature
+Level: 83
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Discharge
+- Scald
+- Ice Beam
+- Thunder Wave
+
+=== COURONNEMENT_ADV_23 ===
+Name: Néréis
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching
+
+Politoed @ Damp Rock
+Modest Nature
+Level: 84
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Hydro Pump
+- Ice Beam
+- Helping Hand
+- Protect
+
+Kingdra @ Life Orb
+Modest Nature
+Level: 84
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Muddy Water
+- Draco Meteor
+- Ice Beam
+- Protect
+
+Swampert @ Sitrus Berry
+Adamant Nature
+Level: 84
+Ability: Damp
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Earthquake
+- Waterfall
+- Ice Punch
+- Protect
+
+Sharpedo @ Focus Sash
+Adamant Nature
+Level: 84
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Liquidation
+- Crunch
+- Ice Fang
+- Protect
+

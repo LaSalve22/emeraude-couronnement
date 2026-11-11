@@ -53,8 +53,8 @@
 
 #define FLAG_EXP_SHARE_ALWAYS 0x20 // Couronnement : Multi Exp permanent (donné avec le Pokédex)
 #define FLAG_TERA_ORB_CHARGED 0x21 // Couronnement : Orbe Téracristal chargé (rechargé au Centre Pokémon)
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_COURONNEMENT_PASS    0x22 // Couronnement Mondial : pass remis par le rival
+#define FLAG_COURONNEMENT_EN_COURS    0x23 // Couronnement Mondial : tournoi en cours (pas de blackout)
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag

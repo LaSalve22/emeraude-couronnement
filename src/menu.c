@@ -393,7 +393,12 @@ void DisplayYesNoMenuWithDefault(u8 initialCursorPos)
 u8 AddStartMenuWindow(u8 numActions)
 {
     if (sStartMenuWindowId == WINDOW_NONE)
-        sStartMenuWindowId = AddWindowParameterized(0, 22, 1, 7, (numActions * 2) + 2, 15, 0x139);
+    {
+        // Couronnement : 9 entrées possibles (MONDIAL) -> fenêtre remontée pour tenir à l'écran.
+        u8 top = numActions > 8 ? 0 : 1;
+        u8 height = numActions > 8 ? 19 : (numActions * 2) + 2;
+        sStartMenuWindowId = AddWindowParameterized(0, 22, top, 7, height, 15, 0x139);
+    }
     return sStartMenuWindowId;
 }
 

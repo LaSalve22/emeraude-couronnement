@@ -14,6 +14,8 @@ et sur GitHub.
 | 5 | Reste du chapitre 2 : Rydel Cycles, Route 109, Route 117, Casino, Fan Club, répliques des dresseurs des routes - v0.14 | ✅ livré |
 | 6 | Équipes Hard / Kaizo du chapitre 3 : Adriane, Max et Tabitha au Mont Chimnée, voyous Magma, 67 dresseurs des Routes 111-114, Chemin Escarpé, Arène de Vermilava - v0.15 | ✅ livré |
 | 7 | Équipes Hard / Kaizo du chapitre 4 : Norman (6 Pokémon en Kaizo), son Arène, 45 dresseurs des eaux (Routes 105-109, 115, Épave Abandonnée) - v0.16 | ✅ livré |
+| 8 | Couronnement Mondial, 1re partie : pass remis par le rival, Elo / rang / palier (menu MONDIAL), tournois des 8 villes d'Arène (Centres Pokémon) - v0.17 | ✅ livré |
+| 9 | Couronnement Mondial, 2e partie : 4 tournois des salles de Concours, finale à 32 à la Tour de Combat (Red et Blue) | à faire |
 
 ## Déjà fait
 
@@ -33,10 +35,11 @@ et sur GitHub.
 - v0.14 - fin du chapitre 2 en français (Rydel, Routes 109 / 117, Casino, Fan Club, dresseurs)
 - v0.15 - équipes Hard / Kaizo du chapitre 3
 - v0.16 - équipes Hard / Kaizo du chapitre 4 (Norman, eaux de Surf)
+- v0.17 - Couronnement Mondial : pass, classement Elo, 8 tournois de villes
 
 ## Plus tard
 
-- Couronnement Mondial (pass, rang, Elo, tournois, finale à 32)
+- Couronnement Mondial : tournois des Concours, finale à 32
 - Équipes Hard / Kaizo des chapitres 5 et suivants
 - Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales

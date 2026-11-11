@@ -1,4 +1,5 @@
 #include "global.h"
+#include "constants/couronnement.h"
 #include "battle.h"
 #include "battle_gfx_sfx_util.h"
 #include "berry.h"
@@ -206,6 +207,14 @@ static void CB2_ReturnFromChooseHalfParty(void)
     }
 
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+// Couronnement Mondial : choisir 4 Pokémon parmi l'équipe (règles dans party_menu.c).
+void ChooseCouronnementParty(void)
+{
+    gMain.savedCallback = CB2_ReturnFromChooseHalfParty;
+    VarSet(VAR_FRONTIER_FACILITY, FACILITY_COURONNEMENT);
+    InitChooseHalfPartyForBattle(0);
 }
 
 void ChoosePartyForBattleFrontier(void)

@@ -71,6 +71,7 @@
 #include "window.h"
 #include "constants/battle.h"
 #include "constants/battle_frontier.h"
+#include "couronnement.h"
 #include "constants/field_effects.h"
 #include "constants/field_move.h"
 #include "constants/form_change_types.h"
@@ -7325,6 +7326,7 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
             return TRUE;
         return FALSE;
     case FACILITY_UNION_ROOM:
+    case FACILITY_COURONNEMENT:
         return TRUE;
     default: // Battle Frontier
         species = GetMonData(mon, MON_DATA_SPECIES);
@@ -7354,6 +7356,14 @@ static u8 CheckBattleEntriesAndGetMessage(void)
     facility = VarGet(VAR_FRONTIER_FACILITY);
     if (facility == FACILITY_UNION_ROOM || facility == FACILITY_MULTI_OR_EREADER)
         return 0xFF;
+    if (facility == FACILITY_COURONNEMENT)
+    {
+        u16 chosen[COURONNEMENT_TAILLE_EQUIPE];
+        for (i = 0; i < COURONNEMENT_TAILLE_EQUIPE; i++)
+            chosen[i] = GetMonData(&party[order[i] - 1], MON_DATA_SPECIES);
+        if (!Couronnement_EquipeValide(chosen, COURONNEMENT_TAILLE_EQUIPE))
+            return PARTY_MSG_UNUSED; // « Un seul légendaire par équipe. »
+    }
 
     maxBattlers = GetMaxBattleEntries();
     for (i = 0; i < maxBattlers - 1; i++)
@@ -7419,6 +7429,8 @@ static u8 GetMaxBattleEntries(void)
         return MULTI_PARTY_SIZE;
     case FACILITY_UNION_ROOM:
         return UNION_ROOM_PARTY_SIZE;
+    case FACILITY_COURONNEMENT:
+        return COURONNEMENT_TAILLE_EQUIPE;
     default: // Battle Frontier
         return gSpecialVar_0x8005;
     }
@@ -7432,6 +7444,8 @@ static u8 GetMinBattleEntries(void)
         return 1;
     case FACILITY_UNION_ROOM:
         return UNION_ROOM_PARTY_SIZE;
+    case FACILITY_COURONNEMENT:
+        return COURONNEMENT_TAILLE_EQUIPE;
     default: // Battle Frontier
         return gSpecialVar_0x8005;
     }
@@ -7442,6 +7456,7 @@ static u8 GetBattleEntryLevelCap(void)
     switch (VarGet(VAR_FRONTIER_FACILITY))
     {
     case FACILITY_MULTI_OR_EREADER:
+    case FACILITY_COURONNEMENT:
         return MAX_LEVEL;
     case FACILITY_UNION_ROOM:
         return UNION_ROOM_MAX_LEVEL;

@@ -169,12 +169,34 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (Routes 105-109, 115, Épave Abandonnée ; cap 63, plancher 47/51).
 - `EVOLVE` couvre aussi les évolutions par pierre / échange / amitié (niveau arbitraire 40).
 
+## Fait (v0.17) - Couronnement Mondial, 1re partie
+
+- Pass : le rival le donne au labo de Seko juste après le Pokédex (`Couronnement_EventScript_RivalDonnePass`), Elo 1500.
+- Menu Start « MONDIAL » (si `FLAG_COURONNEMENT_PASS`) : palier, rang, Elo, tournois gagnés. Fenêtre du menu remontée
+  quand il y a 9 entrées (`AddStartMenuWindow`, `src/menu.c`).
+- Calculs (`src/couronnement.c`) : K = 32, attente Elo par table ; rang 10 000 à 1500, /1,12 tous les 10 points (2000 -> ~32),
+  +20 places par point sous 1500 ; paliers Poké < 1300 <= Super < 1600 <= Hyper < 1800 <= Master, Champions = rang <= 32.
+  Tests : `test/couronnement.c` (`make check TESTS="Couronnement"`).
+- Tournois des 8 villes d'Arène : hôtesse dans chaque Centre Pokémon (case 12,3), ouverts après le badge de la ville.
+  4 Pokémon choisis (`ChooseCouronnementParty`, `FACILITY_COURONNEMENT` dans `party_menu.c`, un seul légendaire),
+  3 combats en double, soin entre chaque, défaite = éliminé sans blackout (`B_FLAG_NO_WHITEOUT` = `FLAG_COURONNEMENT_EN_COURS`),
+  équipe d'origine rendue à la fin (Save/LoadPlayerParty). Équipe adverse affichée avant chaque combat.
+  Récompenses : Bandeau Muscle, Lunettes Sages, Ceinture Pro, Ceinture Force, Orbe Vie, Mouchoir / Bandeau / Lunettes Choix.
+- Adversaires : un seul emplacement `TRAINER_COURONNEMENT` (855) dont l'équipe vient de `gCouronnementTrainers[VAR_COURONNEMENT_ADVERSAIRE]`
+  (hook dans `GetTrainerStructFromId`, `include/data.h`) ; 24 équipes dans `tools/couronnement/tournois.py`
+  -> `src/data/couronnement.party` (trainerproc) + `include/constants/couronnement_adversaires.h`. Elo adverse 1350 + 50/tournoi + 40/manche.
+  Il ne reste que 8 drapeaux de dresseurs libres : toujours passer par cet emplacement pour les nouveaux adversaires.
+- Variables : `VAR_COURONNEMENT_ELO` 0x409B, `VAR_COURONNEMENT_TOURNOIS` 0x409D, `VAR_COURONNEMENT_ADVERSAIRE` 0x40A1 ;
+  drapeaux `FLAG_COURONNEMENT_PASS` 0x22, `FLAG_COURONNEMENT_EN_COURS` 0x23.
+- Pas encore : aperçu des 6 Pokémon adverses (ils en ont 4), tournois des 4 salles de Concours, finale à 32 (Tour de Combat, Red et Blue).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Équipes Hard/Kaizo du chapitre 5 (Routes 118-120, Institut Météo, rival Route 119, Arène d'Alizée ; cap 63), même outil.
 2. Placer les Méga-Gemmes dans le monde.
-3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
+3. Couronnement Mondial, 2e partie : tournois des 4 salles de Concours, finale à 32 après la Ligue (Tour de Combat, 5 tours, soin avant la demi-finale, Red et Blue en finale).
+4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 
