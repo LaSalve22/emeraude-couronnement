@@ -1387,6 +1387,7 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
     s32 newMaxHP;
 
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
+    bool32 isPlayerStarter = GetMonData(mon, MON_DATA_PLAYER_STARTER);
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -1411,7 +1412,9 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
         if (i == STAT_HP)
             continue;
 
-        u8 baseStat = GetSpeciesBaseStat(species, i);
+        s32 baseStat = GetSpeciesBaseStat(species, i);
+        if (isPlayerStarter)
+            baseStat = baseStat * (100 + P_PLAYER_STARTER_STAT_BONUS) / 100;
         s32 n = (((2 * baseStat + iv[i] + ev[i] / 4) * level) / 100) + 5;
         n = ModifyStatByNature(nature, n, i);
         if (B_FRIENDSHIP_BOOST == TRUE)
@@ -1430,7 +1433,10 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
     }
     else
     {
-        s32 n = 2 * GetSpeciesBaseHP(species) + iv[STAT_HP];
+        s32 baseHP = GetSpeciesBaseHP(species);
+        if (isPlayerStarter)
+            baseHP = baseHP * (100 + P_PLAYER_STARTER_STAT_BONUS) / 100;
+        s32 n = 2 * baseHP + iv[STAT_HP];
         newMaxHP = (((n + ev[STAT_HP] / 4) * level) / 100) + level + 10;
     }
 
@@ -2290,6 +2296,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
             retVal = GetSubstruct3(boxMon)->modernFatefulEncounter;
             break;
+        case MON_DATA_PLAYER_STARTER:
+            retVal = GetSubstruct3(boxMon)->isPlayerStarter;
+            break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = GetSubstruct0(boxMon)->species;
             if (retVal && IsEggOrBadEgg(boxMon))
@@ -2805,6 +2814,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
             SET8(GetSubstruct3(boxMon)->modernFatefulEncounter);
+            break;
+        case MON_DATA_PLAYER_STARTER:
+            SET8(GetSubstruct3(boxMon)->isPlayerStarter);
             break;
         case MON_DATA_IVS:
         {

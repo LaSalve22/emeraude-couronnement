@@ -34,17 +34,30 @@ Réponds toujours en français. Le jeu lui-même reste en anglais.
 - Shiny 1/256 (`SHINY_ODDS` = 256), CT réutilisables, IV/EV en valeurs dans l'écran de statut, tous les réapprentissages.
 - `VAR_DIFFICULTY` (0x404E) branchée sur `B_VAR_DIFFICULTY`, initialisée à Normal.
 
+## Fait (v0.2)
+
+- Starters Arcko / Héricendre / Carapuce (`src/starter_choose.c`, ordre plante / feu / eau conservé pour `VAR_STARTER_MON`).
+- Starter du joueur marqué par le bit `isPlayerStarter` (ex-`unused_0B` de `PokemonSubstruct3`, accès `MON_DATA_PLAYER_STARTER`),
+  posé par `MarkPlayerStarter()` à la remise du starter : talent caché + stats de base +20 % pour toute la lignée
+  (réglages `P_PLAYER_STARTER_STAT_BONUS` et `P_PLAYER_STARTER_HIDDEN_ABILITY` dans `include/config/pokemon.h`).
+  Les bébés obtenus par reproduction n'ont pas le bonus.
+- Équipes du rival adaptées (Poussifeu → Héricendre, Gobou → Carapuce et leurs évolutions), texte de l'infirmière de Clémenti-Ville,
+  poupée Héricendre au Casino de Lavandia. Tests : `test/player_starter.c` (`make check TESTS="Player starter"`).
+- À revoir plus tard : le Prof. Seko propose encore Héricendre parmi les starters de Johto après la Ligue ; pas de poupée Carapuce
+  (la poupée Gobou reste pour le choix eau).
+
 ## Prochaines étapes, dans l'ordre
 
-1. Starters Carapuce / Arcko / Héricendre à la place du trio de Hoenn, talent caché, +20 % de stats (version spéciale réservée au joueur).
-2. Choix du mode au lancement (Normal / Hard / Kaizo) : ajouter `DIFFICULTY_KAIZO`, écran ou dialogue de choix, descente possible plus tard.
-3. Blocage des objets de soin en combat et mode Set forcé en Hard et Kaizo.
-4. Téracristal (après badge 2) et Méga-évolution (après badge 5).
-5. Puis : équipes Hard/Kaizo du chapitre 1, Couronnement Mondial, liens avec les Pokémon, personnages jouables.
+1. Choix du mode au lancement (Normal / Hard / Kaizo) : ajouter `DIFFICULTY_KAIZO`, écran ou dialogue de choix, descente possible plus tard.
+2. Blocage des objets de soin en combat et mode Set forcé en Hard et Kaizo.
+3. Téracristal (après badge 2) et Méga-évolution (après badge 5).
+4. Puis : équipes Hard/Kaizo du chapitre 1, Couronnement Mondial, liens avec les Pokémon, personnages jouables.
 
 ## Méthode de travail
 
 - Compiler : `make -j$(sysctl -n hw.ncpu)` sur Mac. La ROM sort en `pokeemerald.gba`.
+  Toolchain sur le Mac d'Adrien : ARM GNU Toolchain 14.3 dans `~/opt/arm-gnu-toolchain` (pas de devkitPro) ;
+  si `arm-none-eabi-gcc` est introuvable : `export PATH="$HOME/opt/arm-gnu-toolchain/bin:$PATH"`.
 - Après chaque étape qui compile : commit en français, push sur `main`, puis livrer une copie nommée `emeraude-couronnement-vX.Y.gba`.
 - Adrien teste sur Eclipse (iPhone) et mGBA (Mac).
 - Garder les réglages dans `include/config/` quand c'est possible plutôt que de modifier le moteur.

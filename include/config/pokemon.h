@@ -71,6 +71,10 @@
 #define P_FLAG_FORCE_SHINY               0  // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
 #define P_FLAG_FORCE_NO_SHINY            0  // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 
+// Émeraude Couronnement : starters du joueur
+#define P_PLAYER_STARTER_STAT_BONUS      20    // Bonus en % sur toutes les stats de base des Pokémon marqués MON_DATA_PLAYER_STARTER (toute la lignée).
+#define P_PLAYER_STARTER_HIDDEN_ABILITY  TRUE  // Si TRUE, le starter reçu du Prof. Seko a son talent caché.
+
 // Go here if you want to disable specific families of Pokémon.
 #include "config/species_enabled.h"
 

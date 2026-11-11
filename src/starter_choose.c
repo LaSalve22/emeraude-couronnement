@@ -110,9 +110,11 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
+// Émeraude Couronnement : Arcko, Héricendre, Carapuce (l'ordre plante / feu / eau est conservé
+// car VAR_STARTER_MON pilote les équipes du rival et plusieurs scripts).
 #define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TREECKO)
-#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_TORCHIC)
-#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )
+#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_CYNDAQUIL)
+#define WATER_STARTER SPECIES_SQUIRTLE
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
@@ -347,6 +349,21 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 };
 
 // .text
+// Marque le starter du joueur : talent caché et bonus de stats de base (voir CalculateMonStatsCont).
+// Le marqueur est stocké dans la BoxPokemon, il suit donc le Pokémon dans toutes ses évolutions.
+void MarkPlayerStarter(struct Pokemon *mon)
+{
+    bool8 isStarter = TRUE;
+
+    SetMonData(mon, MON_DATA_PLAYER_STARTER, &isStarter);
+    if (P_PLAYER_STARTER_HIDDEN_ABILITY)
+    {
+        u8 abilityNum = 2;
+        SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
+    }
+    CalculateMonStats(mon);
+}
+
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
