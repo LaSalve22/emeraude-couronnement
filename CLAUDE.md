@@ -161,10 +161,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   fait évoluer les espèces au bon niveau. Nouvelles réserves : sol, feu, roche, oiseau, poison, elite, beaute.
   Les chapitres 1-2 (entrées sans plancher) sont inchangés.
 
+## Fait (v0.16)
+
+- Équipes Hard / Kaizo du chapitre 4 (53 dresseurs de plus, 227 au total) : Norman fait à la main (cap 54 ; Kaizo : Kangourex,
+  Linéon Cognobidon + Vitesse Extrême, Ursaring Orbe Flamme, Spinda Contestation, Vigoroth Évoluroc, Monaflèmit Orbe Vie),
+  ses 7 Topdresseurs (plancher 46/50, réserve Normal via le 4e champ de `AUTO`), puis les dresseurs ouverts par Surf
+  (Routes 105-109, 115, Épave Abandonnée ; cap 63, plancher 47/51).
+- `EVOLVE` couvre aussi les évolutions par pierre / échange / amitié (niveau arbitraire 40).
+
 ## Prochaines étapes, dans l'ordre
 
-0. Traduction : chapitre 3 (Vergazon, Route 111-113, Lavandia → Cheminée, Arène d'Adriane) puis les descriptions (objets, attaques, talents, Pokédex).
-1. Équipes Hard/Kaizo du chapitre 4 (désert, Routes 105-108 et Arène de Norman ; cap 54), même outil.
+0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
+1. Équipes Hard/Kaizo du chapitre 5 (Routes 118-120, Institut Météo, rival Route 119, Arène d'Alizée ; cap 63), même outil.
 2. Placer les Méga-Gemmes dans le monde.
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).
 

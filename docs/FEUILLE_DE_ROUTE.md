@@ -13,6 +13,7 @@ et sur GitHub.
 | 4 | Traduction française du chapitre 2 : Myokara, Bastien, Grotte Granite (v0.12), puis Poivressel, Musée (Arthur), chantier de Stern, Route 110, Lavandia (Timmy), Arène de Voltère (v0.13) | ✅ livré |
 | 5 | Reste du chapitre 2 : Rydel Cycles, Route 109, Route 117, Casino, Fan Club, répliques des dresseurs des routes - v0.14 | ✅ livré |
 | 6 | Équipes Hard / Kaizo du chapitre 3 : Adriane, Max et Tabitha au Mont Chimnée, voyous Magma, 67 dresseurs des Routes 111-114, Chemin Escarpé, Arène de Vermilava - v0.15 | ✅ livré |
+| 7 | Équipes Hard / Kaizo du chapitre 4 : Norman (6 Pokémon en Kaizo), son Arène, 45 dresseurs des eaux (Routes 105-109, 115, Épave Abandonnée) - v0.16 | ✅ livré |
 
 ## Déjà fait
 
@@ -31,11 +32,12 @@ et sur GitHub.
 - v0.13 - Poivressel, Route 110, Lavandia et Arène de Voltère en français
 - v0.14 - fin du chapitre 2 en français (Rydel, Routes 109 / 117, Casino, Fan Club, dresseurs)
 - v0.15 - équipes Hard / Kaizo du chapitre 3
+- v0.16 - équipes Hard / Kaizo du chapitre 4 (Norman, eaux de Surf)
 
 ## Plus tard
 
 - Couronnement Mondial (pass, rang, Elo, tournois, finale à 32)
-- Équipes Hard / Kaizo des chapitres 4 et suivants
-- Traduction des chapitres suivants et des descriptions
+- Équipes Hard / Kaizo des chapitres 5 et suivants
+- Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales
 - Mis de côté : Blue, Lucas, Aurore (en attente de sprites)

@@ -389,6 +389,24 @@ TEAMS.update({
 })
 
 
+# ------------------------------------------------------------------ chapitre 4 : Norman (cap 54)
+TEAMS.update({
+    'NORMAN_1': {
+        'Hard': ["Spinda | Jolly | Own Tempo | 48 | 128 Atk / 128 Spe | Teeter Dance, Sucker Punch, Zen Headbutt, Double-Edge",
+                 "Vigoroth | Jolly | Vital Spirit | 48 | 128 Atk / 128 Spe | Slash, Bulk Up, Shadow Claw, Encore",
+                 "Linoone | Jolly | Gluttony | 48 | 128 Atk / 128 Spe | Body Slam, Shadow Claw, Seed Bomb, Rest",
+                 "Ursaring | Adamant | Guts | 49 | 128 Atk / 128 HP | Hammer Arm, Crunch, Slash, Scary Face",
+                 "Slaking @ Sitrus Berry | Adamant | Truant | 50 | 252 Atk / 252 HP | Giga Impact, Shadow Claw, Earthquake, Yawn"],
+        'Kaizo': ["Kangaskhan @ Silk Scarf | Adamant | Scrappy | 52 | 252 Atk / 252 Spe | Fake Out, Double-Edge, Sucker Punch, Earthquake",
+                  "Linoone @ Sitrus Berry | Jolly | Gluttony | 52 | 252 Atk / 252 Spe | Belly Drum, Extreme Speed, Shadow Claw, Seed Bomb",
+                  "Ursaring @ Flame Orb | Jolly | Guts | 52 | 252 Atk / 252 Spe | Facade, Close Combat, Crunch, Swords Dance",
+                  "Spinda @ Focus Sash | Jolly | Contrary | 52 | 252 Atk / 252 Spe | Superpower, Sucker Punch, Teeter Dance, Fake Out",
+                  "Vigoroth @ Eviolite | Jolly | Vital Spirit | 53 | 252 HP / 252 Def | Bulk Up, Slack Off, Knock Off, Body Slam",
+                  "Slaking @ Life Orb | Adamant | Truant | 54 | 252 Atk / 252 Spe | Double-Edge, Earthquake, Knock Off, Hammer Arm"],
+    },
+})
+
+
 def mon_block(spec, iv):
     parts = [p.strip() for p in spec.split('|')] + [''] * 6
     species, nature, ability, level, evs, moves = parts[:6]
@@ -423,6 +441,7 @@ POOLS = {
     'poison':   ['Koffing', 'Grimer', 'Ekans', 'Gulpin', 'Seviper', 'Skorupi', 'Stunky', 'Ninjask'],
     'elite':    ['Absol', 'Kirlia', 'Lairon', 'Vibrava', 'Growlithe', 'Eevee', 'Sneasel', 'Murkrow'],
     'beaute':   ['Marill', 'Roselia', 'Skitty', 'Vulpix', 'Swablu', 'Chinchou', 'Snubbull', 'Milotic'],
+    'normal':   ['Ursaring', 'Zangoose', 'Kecleon', 'Spinda', 'Bibarel', 'Lopunny', 'Furret', 'Tauros', 'Miltank', 'Porygon', 'Linoone', 'Girafarig'],
     'mixte':    ['Zigzagoon', 'Skitty', 'Whismur', 'Aron', 'Poochyena', 'Azurill', 'Eevee', 'Teddiursa', 'Snubbull', 'Buneary'],
 }
 CLASS_POOL = {
@@ -432,7 +451,7 @@ CLASS_POOL = {
     'Collector': 'plante', 'Pkmn Breeder': 'mixte', 'Youngster': 'mixte', 'Twins': 'electrik', 'Sr And Jr': 'mixte',
     'Camper': 'sol', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
     'Bird Keeper': 'oiseau', 'Ninja Boy': 'poison', 'Cooltrainer': 'elite', 'Expert': 'combat',
-    'Parasol Lady': 'beaute', 'Beauty': 'beaute', 'Pokemaniac': 'roche', 'Winstrate': 'mixte',
+    'Parasol Lady': 'beaute', 'Sis And Bro': 'eau', 'Young Couple': 'insecte', 'Gentleman': 'mixte', 'Lass': 'mixte', 'Beauty': 'beaute', 'Pokemaniac': 'roche', 'Winstrate': 'mixte',
 }
 EVS_KAIZO = '84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe'
 
@@ -462,6 +481,17 @@ for tid in ['AXLE', 'COLE', 'DANIELLE', 'ELI', 'GERALD', 'JACE', 'JEFF', 'KEEGAN
 for tid in ['BEAU', 'BECKY', 'BRANDEN', 'BRYAN', 'CELIA', 'DREW', 'DUSTY_1', 'HEIDI']:  # désert
     AUTO[tid] = (54, 40, 44)
 
+# Chapitre 4 : Arène de Norman (cap 54, réserve Normal), puis eaux ouvertes par Surf (Routes 105-109, 115,
+# Épave Abandonnée), parcourues avant Alizée (cap 63).
+for tid in ['ALEXIA', 'BERKE', 'GEORGE', 'JODY', 'MARY', 'PARKER', 'RANDALL']:
+    AUTO[tid] = (54, 46, 50, 'normal')
+for tid in ['ANDRES_1', 'BEVERLY', 'DOMINIK', 'FOSTER', 'IMANI', 'JOSUE', 'LUIS', 'DOUGLAS', 'KYLA',
+            'BETH', 'CAMRON', 'DARRIN', 'DENISE', 'LISA_AND_RAY', 'TONY_1', 'CAROLINA', 'CORY_1', 'JEROME',
+            'MATTHEW', 'MISSY', 'TARA', 'ALICE', 'AUSTINA', 'CARTER', 'DAVID', 'ELIJAH', 'GWEN', 'MEL_AND_PAUL',
+            'ALIX', 'CYNDY_1', 'HECTOR', 'HELENE', 'JAIDEN', 'KOICHI', 'KYRA', 'MARLENE', 'NOB_1', 'TIMOTHY_1',
+            'CHARLIE', 'DEMETRIUS', 'DUNCAN', 'GARRISON', 'JANI', 'KIRA_AND_DAN_1', 'THALIA_1']:
+    AUTO[tid] = (63, 47, 51)
+
 # Évolutions par niveau (espèce -> (niveau, évolution)), utilisées quand un plancher fait monter le niveau.
 EVOLVE = {
     'Numel': (33, 'Camerupt'), 'Geodude': (25, 'Graveler'), 'Sandshrew': (22, 'Sandslash'), 'Baltoy': (36, 'Claydol'),
@@ -472,13 +502,13 @@ EVOLVE = {
     'Zubat': (22, 'Golbat'), 'Poochyena': (18, 'Mightyena'), 'Swablu': (35, 'Altaria'), 'Oddish': (21, 'Gloom'),
     'Magnemite': (30, 'Magneton'), 'Zigzagoon': (20, 'Linoone'), 'Machop': (28, 'Machoke'), 'Cacnea': (32, 'Cacturne'),
     'Hippopotas': (34, 'Hippowdon'), 'Diglett': (26, 'Dugtrio'), 'Phanpy': (25, 'Donphan'), 'Houndour': (24, 'Houndoom'),
-    'Ponyta': (40, 'Rapidash'), 'Magby': (30, 'Magmar'), 'Litleo': (35, 'Pyroar'), 'Nosepass': (99, 'Nosepass'),
+    'Ponyta': (40, 'Rapidash'), 'Magby': (30, 'Magmar'), 'Litleo': (35, 'Pyroar'), 'Nosepass': (40, 'Probopass'),
     'Rhyhorn': (42, 'Rhydon'), 'Roggenrola': (25, 'Boldore'), 'Larvitar': (30, 'Pupitar'), 'Natu': (25, 'Xatu'),
     'Hoothoot': (20, 'Noctowl'), 'Starly': (14, 'Staravia'), 'Staravia': (34, 'Staraptor'), 'Doduo': (31, 'Dodrio'),
     'Grimer': (38, 'Muk'), 'Ekans': (22, 'Arbok'), 'Gulpin': (26, 'Swalot'), 'Skorupi': (40, 'Drapion'),
     'Stunky': (34, 'Skuntank'), 'Kirlia': (30, 'Gardevoir'), 'Chinchou': (27, 'Lanturn'), 'Snubbull': (23, 'Granbull'),
     'Nincada': (20, 'Ninjask'), 'Spoink': (32, 'Grumpig'), 'Wailmer': (40, 'Wailord'), 'Lotad': (14, 'Lombre'),
-    'Seedot': (14, 'Nuzleaf'), 'Ralts': (20, 'Kirlia'), 'Skitty': (99, 'Skitty'),
+    'Seedot': (14, 'Nuzleaf'), 'Ralts': (20, 'Kirlia'), 'Skitty': (40, 'Delcatty'),
     'Azurill': (18, 'Marill'), 'Whismur': (20, 'Loudred'), 'Loudred': (40, 'Exploud'), 'Teddiursa': (30, 'Ursaring'),
     'Budew': (18, 'Roselia'), 'Bellsprout': (21, 'Weepinbell'), 'Paras': (24, 'Parasect'), 'Venonat': (31, 'Venomoth'),
     'Abra': (16, 'Kadabra'), 'Drowzee': (26, 'Hypno'), 'Slowpoke': (37, 'Slowbro'), 'Voltorb': (30, 'Electrode'),
@@ -486,7 +516,16 @@ EVOLVE = {
     'Pidgey': (18, 'Pidgeotto'), 'Tentacool': (30, 'Tentacruel'), 'Horsea': (32, 'Seadra'), 'Psyduck': (33, 'Golduck'),
     'Krabby': (28, 'Kingler'), 'Poliwag': (25, 'Poliwhirl'), 'Buizel': (26, 'Floatzel'), 'Remoraid': (25, 'Octillery'),
     'Mankey': (28, 'Primeape'), 'Croagunk': (37, 'Toxicroak'), 'Timburr': (25, 'Gurdurr'), 'Riolu': (20, 'Lucario'),
-    'Tyrogue': (20, 'Hitmontop'), 'Ninjask': (99, 'Ninjask'), 'Machoke': (99, 'Machoke'),
+    'Tyrogue': (20, 'Hitmontop'), 'Ninjask': (99, 'Ninjask'), 'Machoke': (40, 'Machamp'),
+    # évolutions par pierre / échange / amitié : niveau arbitraire (40) pour les dresseurs
+    'Carvanha': (30, 'Sharpedo'), 'Staryu': (35, 'Starmie'), 'Kadabra': (40, 'Alakazam'), 'Graveler': (40, 'Golem'),
+    'Slakoth': (18, 'Vigoroth'), 'Vigoroth': (36, 'Slaking'), 'Sentret': (15, 'Furret'), 'Bidoof': (15, 'Bibarel'),
+    'Buneary': (30, 'Lopunny'), 'Porygon': (40, 'Porygon2'), 'Gloom': (40, 'Vileplume'), 'Weepinbell': (40, 'Victreebel'),
+    'Lombre': (40, 'Ludicolo'), 'Nuzleaf': (40, 'Shiftry'), 'Poliwhirl': (40, 'Poliwrath'), 'Pupitar': (55, 'Tyranitar'),
+    'Golbat': (40, 'Crobat'), 'Shellder': (35, 'Cloyster'), 'Seadra': (45, 'Kingdra'), 'Boldore': (40, 'Gigalith'),
+    'Murkrow': (40, 'Honchkrow'), 'Sneasel': (40, 'Weavile'), 'Eevee': (40, 'Espeon'), 'Gligar': (40, 'Gliscor'),
+    'Roselia': (40, 'Roserade'), 'Onix': (40, 'Steelix'), 'Rhydon': (55, 'Rhyperior'), 'Pikachu': (40, 'Raichu'),
+    'Vulpix': (40, 'Ninetales'), 'Growlithe': (40, 'Arcanine'), 'Snorunt': (42, 'Glalie'), 'Combee': (21, 'Vespiquen'),
 }
 
 
@@ -497,16 +536,18 @@ def evolve(species, level):
 
 
 def auto_teams(tid, block, rule):
-    cap, floor_h, floor_k = rule if isinstance(rule, tuple) else (rule, 0, 0)
+    rule = rule if isinstance(rule, tuple) else (rule, 0, 0)
+    cap, floor_h, floor_k = rule[:3]
+    pool_name = rule[3] if len(rule) > 3 else None
     floors = {'Hard': floor_h, 'Kaizo': floor_k}
-    return _auto_teams(tid, block, cap, floors)
+    return _auto_teams(tid, block, cap, floors, pool_name)
 
 
-def _auto_teams(tid, block, cap, floors):
+def _auto_teams(tid, block, cap, floors, pool_name=None):
     """Équipe Hard / Kaizo d'un dresseur ordinaire à partir de son équipe Normal."""
     import random
     cls = re.search(r'(?m)^Class: (.*)$', block).group(1)
-    pool = POOLS[CLASS_POOL.get(cls, 'mixte')]
+    pool = POOLS[pool_name or CLASS_POOL.get(cls, 'mixte')]
     mons = re.findall(r'(?m)^([A-Z][A-Za-z\.\' -]+?)(?: @ .*)?\nLevel: (\d+)', block)
     rng = random.Random('couronnement:' + tid)
     top = max(int(l) for _, l in mons)
