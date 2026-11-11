@@ -1,0 +1,398 @@
+// Chapitre 2 — Village Myokara, Arène de Bastien, Grotte Granite (Pierre)
+
+// ===== Village Myokara =====
+
+@@ DewfordTown_Text_TinyIslandCommunity
+Myokara, c'est un tout petit village. Si un truc devient à la mode ici, tout le monde l'adopte en une heure. Et l'oublie en deux.
+
+@@ DewfordTown_Text_TownSign
+>Village Myokara
+>“Une petite île dans la mer bleue.”
+
+@@ DewfordTown_Text_GymSign
+>Arène Pokémon de Myokara
+>Champion : Bastien
+>“Une déferlante de combat !”
+
+@@ DewfordTown_Text_HallSign
+>Salle de Myokara
+>“L'échange d'infos de tout le monde !”
+
+@@ Route104_Text_LandedInDewfordDeliverLetter
+M. Marco : Ohé ! Terre en vue, on est à Myokara !
+
+Tu vas livrer ta Lettre à… comment il s'appelle, déjà… Pierre !
+
+@@ DewfordTown_Text_SetSailBackToPetalburg
+M. Marco : Tu as livré ta Lettre ?
+
+Ou tu veux rentrer à Clémenti-Ville ?
+
+@@ DewfordTown_Text_PetalburgWereSettingSail2
+M. Marco : Clémenti-Ville, alors !
+
+Levez l'ancre ! Peeko, ma chérie, on repart !
+
+@@ DewfordTown_Text_GoDeliverIllBeWaiting
+M. Marco : Alors va livrer ta Lettre. Je t'attends. J'ai du rhum et du temps.
+
+@@ DewfordTown_Text_BrineyLandedInDewford
+M. Marco : Ohé ! On est à Myokara !
+
+Dis-moi quand tu veux reprendre la mer !
+
+@@ DewfordTown_Text_WhereAreWeBound
+M. Marco : Ohé ! Pour toi, je prends la mer quand tu veux !
+
+Alors, on met le cap où ?
+
+@@ DewfordTown_Text_PetalburgWereSettingSail
+M. Marco : Clémenti-Ville, c'est ça ?
+
+Levez l'ancre ! Peeko, ma chérie, on repart !
+
+@@ DewfordTown_Text_SlateportWereSettingSail
+M. Marco : Poivressel, c'est ça ?
+
+Levez l'ancre ! Peeko, ma chérie, on repart !
+
+@@ DewfordTown_Text_JustTellMeWhenYouNeedToSetSail
+M. Marco : Dis-moi quand tu veux reprendre la mer !
+
+@@ DewfordTown_Text_GettingItchToFish
+C'est un coin de pêche réputé. Ça te démange de pêcher ?
+
+@@ DewfordTown_Text_GiveYouOneOfMyRods
+Ça, c'est une réponse qui me plaît !
+
+Je te donne une de mes Cannes.
+
+@@ DewfordTown_Text_ThrowInFishingAdvice
+Et en bonus, un petit conseil de pêche !
+
+D'abord, tourne-toi vers l'eau, puis utilise la Canne.
+
+Concentre-toi… Si ça mord, tire sur la Canne.
+
+Parfois, ça vient tout seul. Les gros, eux, il faut les fatiguer. Comme les ex.
+
+@@ DewfordTown_Text_ThatsTooBadThen
+Ah bon ? Dommage, alors.
+
+@@ DewfordTown_Text_HowsYourFishing
+Yo ! Ça mord ?
+
+@@ DewfordTown_Text_GreatHaulInSomeBigOnes
+C'est vrai ? Génial ! Ramène-moi des monstres !
+
+@@ DewfordTown_Text_FishingAdvice
+Hé, te décourage pas ! Un petit conseil de pêche.
+
+D'abord, tourne-toi vers l'eau, puis utilise la Canne.
+
+Concentre-toi… Si ça mord, tire sur la Canne.
+
+Parfois, ça vient tout seul. Les gros, eux, il faut les fatiguer.
+
+@@ DewfordTown_Text_XIsTheBiggestHappeningThingRight
+Moi, j'adore ce qui est branché. Je suis toujours à l'affût.
+
+Dis, t'as entendu parler du nouveau truc, “{STR_VAR_1}” ?
+
+Bien sûr que oui ! Tout le monde connaît !
+
+Franchement, “{STR_VAR_1}”… c'est le summum du cool !
+
+D'où que tu viennes, “{STR_VAR_1}”, c'est LE truc du moment, hein ?
+
+@@ DewfordTown_Text_TellMeWhatsNewAndIn
+Hein ? C'est plus à la mode ?
+
+Bon, alors dis-moi, c'est quoi le nouveau truc ?
+
+@@ DewfordTown_Text_OfCourseIKnowAboutThat
+Hein ? “{STR_VAR_2}” ?
+
+… …
+
+…Euh… Oui ! Évidemment ! Je savais ! Je l'ai toujours su !
+
+Bien sûr que je connais ! “{STR_VAR_2}”, c'est ça ?
+
+Oui, voilà, c'est ça ! C'est trop cool, “{STR_VAR_2}”, non ?
+
+Tu croyais vraiment que je connaissais pas ?
+
+“{STR_VAR_1}”… c'est tellement il y a cinq minutes.
+
+Maintenant, c'est “{STR_VAR_2}” qui est dans l'air du temps !
+
+@@ DewfordTown_Text_XHuhIThinkYIsCool
+Hmm… “{STR_VAR_2}”, hein ?
+
+Perso, je trouve que le vrai cool, c'est “{STR_VAR_1}”.
+
+@@ DewfordTown_Text_HearOfAnyTrendsComeShareWithMe
+Si t'entends parler d'une nouvelle mode, viens me le dire, OK ?
+
+@@ DewfordTown_Text_YeahDefinitionOfInRightNow
+Ouais, carrément !
+
+“{STR_VAR_1}”, c'est la définition même de la mode en ce moment.
+
+// ===== Arène de Myokara =====
+
+@@ DewfordTown_Gym_Text_GymGuideAdvice
+Yo, futur Maître {PLAYER} ! Ça roule ?
+
+Bastien, le Champion de Myokara, utilise des Pokémon Combat.
+
+Y aller avec des Pokémon Normal, c'est chercher les baffes.
+
+Le Combat écrase le Normal. Fais gaffe à tes dents.
+
+Pire : l'Arène est noire comme le fond de l'océan.
+
+Elle s'éclaire à mesure que tu bats les Dresseurs. Ou que tu te prends des murs.
+
+Allez, fonce !
+
+@@ DewfordTown_Gym_Text_GymGuidePostVictory
+Waouh ! Il fait trop clair d'un coup !
+
+Ton avenir aussi, il brille !
+
+@@ DewfordTown_Gym_Text_TakaoIntro
+La force fait le droit ! Viens !
+
+@@ DewfordTown_Gym_Text_TakaoDefeat
+Pas assez de puissance…
+
+@@ DewfordTown_Gym_Text_TakaoPostBattle
+Ta technique a battu ma force. Respect.
+
+@@ DewfordTown_Gym_Text_JocelynIntro
+Pas besoin de déranger Bastien !
+
+Je vais t'écraser moi-même !
+
+@@ DewfordTown_Gym_Text_JocelynDefeat
+Mais… comment ? Comment j'ai pu perdre si facilement ?
+
+@@ DewfordTown_Gym_Text_JocelynPostBattle
+Je vais pas gâcher cette défaite. Elle va me servir de carburant.
+
+Un jour, je serai Championne d'Arène…
+
+Non. Je serai Maître de la Ligue !
+
+@@ DewfordTown_Gym_Text_LauraIntro
+Me snobe pas ! Si tu pleures après, c'est pas ma faute !
+
+@@ DewfordTown_Gym_Text_LauraDefeat
+Ouiiiin ! J'ai perdu !
+
+@@ DewfordTown_Gym_Text_LauraPostBattle
+Je me bats dans le noir pour endurcir mon cœur.
+
+Mais à cause du noir, j'ai jamais vu le visage de Bastien… Il paraît qu'il est beau.
+
+@@ DewfordTown_Gym_Text_LilithIntro
+Hu hu… Tu trébuches dans le noir ?
+
+@@ DewfordTown_Gym_Text_LilithDefeat
+Oh, toi… Je veux pas te connaître !
+
+@@ DewfordTown_Gym_Text_LilithPostBattle
+Tu mérites de te perdre et de retomber à l'entrée !
+
+@@ DewfordTown_Gym_Text_BrendenIntro
+Je vais te montrer le cran d'un marin !
+
+@@ DewfordTown_Gym_Text_BrendenDefeat
+Comment c'est arrivé ? Moi, perdre comme ça ?
+
+@@ DewfordTown_Gym_Text_BrendenPostBattle
+Ouais ! T'as mérité de voir notre Champion.
+
+@@ DewfordTown_Gym_Text_CristianIntro
+Si tu veux passer, faudra me passer dessus !
+
+@@ DewfordTown_Gym_Text_CristianDefeat
+Grrrr ! Complètement dépassé !
+
+@@ DewfordTown_Gym_Text_CristianPostBattle
+T'as gagné ! Va chercher ce Badge !
+
+@@ DewfordTown_Gym_Text_BrawlyIntro
+Moi, c'est Bastien ! Champion de Myokara !
+
+J'ai grandi dans les rouleaux de ces eaux, et je me suis forgé dans la grotte la plus noire de l'île !
+
+Une nuit, la mer m'a avalé. Trois minutes sous l'eau. Je suis revenu. Depuis, j'ai plus peur de rien.
+
+Tu veux me défier ? Montre-moi ce que t'as dans le ventre !
+
+@@ DewfordTown_Gym_Text_BrawlyDefeat
+Waouh ! T'as fait une vague bien plus grosse que prévu !
+
+Tu m'as noyé !
+
+OK, t'as gagné. Prends ce Badge !
+
+@@ DewfordTown_Gym_Text_ReceivedKnuckleBadge
+{PLAYER} reçoit le Badge Poing de la part de Bastien.
+
+@@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis
+Avec le Badge Poing, tous les Pokémon jusqu'au N.30 t'obéissent, même ceux obtenus par échange.
+
+Et tu peux utiliser la CS Flash hors combat.
+
+Tiens, prends aussi cette Capsule Technique.
+
+@@ DewfordTown_Gym_Text_ExplainBulkUp
+La CT08 contient Gonflette.
+
+Elle augmente l'Attaque et la Défense. Comme moi, le matin.
+
+… … … … … …
+
+@@ DewfordTown_Gym_Text_RegisteredBrawly
+Le Champion Bastien a été enregistré dans le PokéNav.
+
+@@ DewfordTown_Gym_Text_BrawlyPostBattle
+Ton talent, c'est une vague géante. Un jour, elle va tout emporter chez les Dresseurs !
+
+@@ DewfordTown_Gym_Text_GymStatue
+Arène Pokémon de Myokara
+
+@@ DewfordTown_Gym_Text_GymStatueCertified
+Arène Pokémon de Myokara
+
+>Dresseurs reconnus par Bastien :
+>{PLAYER}
+
+@@ DewfordTown_Gym_Text_BrawlyPreRematch
+Bastien : Une vague recule, mais elle revient toujours sur le rivage.
+
+Une vague géante comme toi… Je savais que tu reviendrais !
+
+Montre-moi tes progrès !
+
+@@ DewfordTown_Gym_Text_BrawlyRematchDefeat
+Waouh ! Noyé, encore !
+
+@@ DewfordTown_Gym_Text_BrawlyPostRematch
+Bastien : Le combat, c'est vaste et profond. On n'en voit jamais le fond. Comme la mer de Hoenn !
+
+@@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
+Bastien : Une vague recule, mais elle revient toujours sur le rivage.
+
+Une vague géante comme toi… Je savais que tu reviendrais !
+
+Oh ? T'as qu'un seul Pokémon en état de se battre ?
+
+Désolé, reviens avec au moins deux Pokémon.
+
+// ===== Maisons et Centre Pokémon =====
+
+@@ DewfordTown_House1_Text_LotToBeSaidForLivingOnIsland
+Vivre sur une petite île comme celle-ci, en harmonie avec les Pokémon et la famille… ça a du bon.
+
+@@ DewfordTown_House1_Text_LifeGoesSlowlyOnIsland
+J'ai quitté le grand port de Poivressel pour épouser mon mari, ici.
+
+La vie est lente sur cette petite île. Mais être entourée par la mer… c'est aussi ça, le bonheur. Même les jours de tempête.
+
+@@ DewfordTown_House1_Text_Zigzagoon
+Zigzaton : Guguuh !
+
+@@ DewfordTown_House2_Text_WantYouToHaveSilkScarf
+Admire un peu ça !
+
+C'est un Mouchoir Soie. Le top de la mode, ouais !
+
+Oh, je vois tes yeux briller ! Tu apprécies mon style éblouissant !
+
+Tu es un amour ! Tiens, je te l'offre !
+
+@@ DewfordTown_House2_Text_NoRoom
+Oh, t'as pas de place ?
+
+Écoute bien : ce Mouchoir est indispensable ! Je vendrais tous mes objets pour l'avoir !
+
+@@ DewfordTown_House2_Text_ExplainSilkScarf
+Le Mouchoir Soie augmente la puissance des capacités Normal.
+
+Un Mouchoir merveilleux qui va avec presque tous les Pokémon !
+
+@@ DewfordTown_House2_Text_BrawlySoCool
+Waouh, t'as traversé la mer pour venir à Myokara ?
+
+C'est pour Bastien, hein ?
+
+Il est tellement cool… Tout le monde l'adore. Moi, je l'ai vu sans T-shirt une fois. J'en dors plus.
+
+@@ DewfordTown_PokemonCenter_1F_Text_StoneCavern
+Il y a une grotte de pierre au bout du village.
+
+Il paraît qu'on y trouve des pierres rares. Et qu'on y perd des gens.
+
+@@ DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM
+Même K.O., un Pokémon peut utiliser une capacité de CS (Capsule Secrète).
+
+// ===== Grotte Granite =====
+
+@@ GraniteCave_1F_Text_GetsDarkAheadHereYouGo
+Hé, toi. Plus loin, il fait noir comme dans un four. Pas facile d'explorer.
+
+Le type qui est passé tout à l'heure… Pierre, je crois.
+
+Il savait utiliser Flash, alors il devrait s'en sortir, mais…
+
+Nous, les Montagnards, on aide ceux qu'on croise. C'est notre règle. La montagne ne pardonne pas.
+
+Tiens, prends ça.
+
+@@ GraniteCave_1F_Text_ExplainFlash
+Apprends Flash à un Pokémon et utilise-la.
+
+Elle éclaire même les ténèbres des grottes.
+
+Mais il te faut le Badge de l'Arène de Myokara.
+
+@@ GraniteCave_StevensRoom_Text_ImStevenLetterForMe
+Je m'appelle Pierre.
+
+Je m'intéresse aux pierres rares, alors je voyage un peu partout. Loin de chez moi, surtout.
+
+Oh ? Une Lettre pour moi ?
+
+@@ GraniteCave_StevensRoom_Text_ThankYouTakeThis
+Pierre : …C'est de mon père.
+
+Il aurait pu m'appeler. Il a préféré envoyer quelqu'un au fond d'une grotte. C'est bien lui.
+
+Merci. Ça t'a donné beaucoup de mal. Je te dois quelque chose.
+
+Voyons… Je te donne cette CT.
+
+Elle contient ma capacité préférée : Aile d'Acier.
+
+@@ GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister
+Pierre : Tes Pokémon ont l'air solides.
+
+Si tu continues comme ça, tu pourrais devenir Maître de la Ligue un jour. Je le pense vraiment.
+
+Puisqu'on se connaît maintenant, enregistrons-nous dans nos PokéNav.
+
+… … … … … …
+
+@@ GraniteCave_StevensRoom_Text_RegisteredSteven
+Pierre a été enregistré dans le PokéNav.
+
+@@ GraniteCave_StevensRoom_Text_IveGotToHurryAlong
+Bon, je dois y aller.
+
+@@ GraniteCave_StevensRoom_Text_OhBagIsFull
+Oh, ton Sac est plein… Dommage.

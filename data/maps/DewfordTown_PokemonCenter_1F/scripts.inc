@@ -25,13 +25,12 @@ DewfordTown_PokemonCenter_1F_EventScript_Man::
 	end
 
 DewfordTown_PokemonCenter_1F_Text_StoneCavern:
-	.string "There's a stone cavern at the edge\n"
-	.string "of town.\p"
-	.string "I've heard you can find rare stones\n"
-	.string "there.$"
+	.string "Il y a une grotte de pierre au bout du\n"
+	.string "village.\p"
+	.string "Il paraît qu'on y trouve des pierres\n"
+	.string "rares. Et qu'on y perd des gens.$"
 
 DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
-	.string "Even if a POKéMON faints and can't\n"
-	.string "battle, it can still use a move learned\l"
-	.string "from a HIDDEN MACHINE (HM).$"
+	.string "Même K.O., un Pokémon peut utiliser une\n"
+	.string "capacité de CS (Capsule Secrète).$"
 

@@ -18,22 +18,22 @@ GraniteCave_1F_EventScript_ReceivedFlash::
 	end
 
 GraniteCave_1F_Text_GetsDarkAheadHereYouGo:
-	.string "Hey, you.\n"
-	.string "It gets awfully dark ahead.\l"
-	.string "It'll be tough trying to explore.\p"
-	.string "That guy who came by earlier…\n"
-	.string "STEVEN, I think it was.\p"
-	.string "He knew how to use FLASH, so he ought\n"
-	.string "to be all right, but…\p"
-	.string "Well, for us HIKERS, helping out those\n"
-	.string "that we meet is our motto.\p"
-	.string "Here you go, I'll pass this on to you.$"
+	.string "Hé, toi. Plus loin, il fait noir comme dans\n"
+	.string "un four. Pas facile d'explorer.\p"
+	.string "Le type qui est passé tout à l'heure…\n"
+	.string "Pierre, je crois.\p"
+	.string "Il savait utiliser Flash, alors il devrait\n"
+	.string "s'en sortir, mais…\p"
+	.string "Nous, les Montagnards, on aide ceux\n"
+	.string "qu'on croise. C'est notre règle. La\l"
+	.string "montagne ne pardonne pas.\p"
+	.string "Tiens, prends ça.$"
 
 GraniteCave_1F_Text_ExplainFlash:
-	.string "Teach that hidden move FLASH to\n"
-	.string "a POKéMON and use it.\p"
-	.string "It lights up even the inky darkness\n"
-	.string "of caves.\p"
-	.string "But, to use it, you need the GYM BADGE\n"
-	.string "from DEWFORD's POKéMON GYM.$"
+	.string "Apprends Flash à un Pokémon et\n"
+	.string "utilise-la.\p"
+	.string "Elle éclaire même les ténèbres des\n"
+	.string "grottes.\p"
+	.string "Mais il te faut le Badge de l'Arène de\n"
+	.string "Myokara.$"
 

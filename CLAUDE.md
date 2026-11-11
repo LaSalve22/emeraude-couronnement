@@ -147,7 +147,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Prochaines étapes, dans l'ordre
 
-0. Traduction : faire valider le ton v0.4 par Adrien, puis chapitres 2 et suivants et les descriptions.
+0. Traduction : chapitre 2 commencé (Myokara, Arène, Grotte Granite : `translations/fr/14_*`, `15_myokara.txt`) ; suite : Poivressel, Routes 109-110, Lavandia, puis les descriptions.
 1. Équipes Hard/Kaizo des chapitres 3 et suivants (même outil).
 2. Placer les Méga-Gemmes dans le monde.
 3. Puis : Couronnement Mondial, liens avec les Pokémon, Blue / Ash / Lucas / Dawn (sprites à fournir).

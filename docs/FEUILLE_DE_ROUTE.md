@@ -10,7 +10,7 @@ et sur GitHub.
 | 1 | Équipes Hard / Kaizo du chapitre 2 (Bastien, Voltère, rival Route 110, Timmy, Routes 106-117) - v0.9 | ✅ livré |
 | 2 | Téracristal débloqué après le 2e badge (Bastien), Méga-évolution après le 5e (Norman + Méga-Gemme du starter) - v0.10 | ✅ livré |
 | 3 | Liens avec les Pokémon : lien (amitié ≥ 150) et lien fort (≥ 220) donnent plus d'XP et d'EV, EV jusqu'à 302 avec un lien fort, bonus d'ancienneté - v0.11 | ✅ livré |
-| 4 | Traduction française du chapitre 2 (Myokara, Poivressel, Route 110, Lavandia) | en cours |
+| 4 | Traduction française du chapitre 2 : Village Myokara, Arène de Bastien et Grotte Granite traduits (v0.12) ; restent Poivressel, Routes 109-110 et Lavandia | 🟡 en partie |
 
 ## Déjà fait
 
@@ -22,6 +22,10 @@ et sur GitHub.
 - v0.6 - personnages jouables : Brice, Flora, Red, Green
 - v0.7 - règles Hard / Kaizo (mode Set, objets de soin interdits), baisse de difficulté dans OPTIONS
 - v0.8 - équipes Hard / Kaizo du chapitre 1
+- v0.9 - équipes Hard / Kaizo du chapitre 2
+- v0.10 - Téracristal (Bastien), Méga-évolution (Norman)
+- v0.11 - liens avec les Pokémon
+- v0.12 - Village Myokara en français
 
 ## Plus tard
 
