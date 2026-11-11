@@ -1,0 +1,142 @@
+GLAIVE_RUSH|Charge folle : au tour suivant, le lanceur prend double dégâts.
+REVIVAL_BLESSING|Ranime un allié K.O. avec la moitié de ses PV.
+SALT_CURE|Sel qui blesse chaque tour. Pire sur Acier et Eau.
+TRIPLE_DIVE|Trois plongeons d'affilée sur la cible.
+MORTAL_SPIN|Retire pièges et Vampigraine. Empoisonne les ennemis.
+DOODLE|Le lanceur et son allié copient le talent de la cible.
+FILLET_AWAY|Sacrifie la moitié de ses PV : attaques et Vitesse +2.
+KOWTOW_CLEAVE|S'incline puis tranche l'ennemi. Touche toujours.
+FLOWER_TRICK|Bouquet piégé. Toujours critique, touche toujours.
+TORCH_SONG|Chant de flammes. Augmente l'Atq. Spé. du lanceur.
+AQUA_STEP|Pas de danse aquatiques. Augmente la Vitesse.
+RAGING_BULL|Charge qui brise les murs. Le type dépend de la forme.
+MAKE_IT_RAIN|Pluie de pièces. Atq. Spé. -1. On ramasse l'argent après.
+COLLISION_COURSE|Explosion préhistorique, plus forte si super efficace.
+ELECTRO_DRIFT|Électricité futuriste, plus forte si super efficace.
+SHED_TAIL|Crée un Clone avec ses PV, puis change de Pokémon.
+CHILLY_RECEPTION|Blague glaciale : fait neiger et change de Pokémon.
+TIDY_UP|Range les pièges et clones. Attaque et Vitesse +1.
+SNOWSCAPE|Fait neiger 5 tours : la Défense des Glace augmente.
+TRAILBLAZE|Attaque soudaine. Augmente la Vitesse du lanceur.
+CHILLING_WATER|Douche glacée. Baisse l'Attaque de la cible.
+HYPER_DRILL|Pointe en vrille qui passe à travers Abri.
+TWIN_BEAM|Rayons des yeux qui frappent deux fois.
+RAGE_FIST|Plus le lanceur a été frappé, plus c'est fort.
+ARMOR_CANNON|Tire son armure. Les défenses du lanceur baissent.
+BITTER_BLADE|Coup de lame qui vole la moitié des dégâts.
+DOUBLE_SHOCK|Libère toute son électricité et perd le type Électrik.
+GIGATON_HAMMER|Énorme marteau. Pas deux fois de suite.
+COMEUPPANCE|Rend plus fort le dernier coup reçu.
+AQUA_CUTTER|Jet d'eau sous pression. Taux de critique élevé.
+BLAZING_TORQUE|Moteur enflammé. Peut brûler.
+WICKED_TORQUE|Moteur maléfique. Peut endormir.
+NOXIOUS_TORQUE|Moteur toxique. Peut empoisonner.
+COMBAT_TORQUE|Moteur de combat. Peut paralyser.
+MAGICAL_TORQUE|Moteur féerique. Peut rendre confus.
+PSYBLADE|Lame psychique. Plus forte sur Champ Électrifié.
+HYDRO_STEAM|Vapeur brûlante. Plus forte sous un grand soleil.
+BLOOD_MOON|Lune de sang. Pas deux fois de suite.
+MATCHA_GOTCHA|Vole la moitié des dégâts. Peut brûler.
+SYRUP_BOMB|Sirop collant : Vitesse -1 chaque tour pendant 3 tours.
+IVY_CUDGEL|Le type dépend du masque. Taux de critique élevé.
+ELECTRO_SHOT|Charge (Atq. Spé. +1), puis tire. Immédiat sous la pluie.
+TERA_STARSTORM|En Forme Stellaire, touche tous les ennemis.
+FICKLE_BEAM|Rayon de lumière. Parfois deux fois plus fort.
+BURNING_BULWARK|Pare les attaques. Brûle qui touche.
+THUNDERCLAP|Frappe en premier si l'ennemi prépare une attaque.
+MIGHTY_CLEAVE|Tranche avec la lumière. Ignore les protections.
+TACHYON_CUTTER|Lames de particules. Frappe deux fois.
+HARD_PRESS|Plus l'ennemi a de PV, plus c'est puissant.
+DRAGON_CHEER|Augmente le taux de critique des alliés, plus s'ils sont Dragon.
+ALLURING_VOICE|Rend confus l'ennemi dont les stats ont monté ce tour.
+TEMPER_FLARE|Double puissance si la capacité d'avant a échoué.
+SUPERCELL_SLAM|Charge électrique. Blesse le lanceur s'il rate.
+PSYCHIC_NOISE|Ondes sonores : la cible ne peut plus se soigner 2 tours.
+UPPER_HAND|Apeure la cible si elle prépare une capacité prioritaire.
+MALIGNANT_CHAIN|Chaîne corrosive. Peut gravement empoisonner.
+BREAKNECK_BLITZ|Capacité Z. Fonce à toute vitesse. Puissance variable.
+ALL_OUT_PUMMELING|Capacité Z. Orbe d'énergie. Puissance variable.
+SUPERSONIC_SKYSTRIKE|Capacité Z. Pique du ciel. Puissance variable.
+ACID_DOWNPOUR|Capacité Z. Marais toxique. Puissance variable.
+TECTONIC_RAGE|Capacité Z. Surgit du sol. Puissance variable.
+CONTINENTAL_CRUSH|Capacité Z. Montagne de roche. Puissance variable.
+SAVAGE_SPIN_OUT|Capacité Z. Ligote de fils. Puissance variable.
+NEVER_ENDING_NIGHTMARE|Capacité Z. Rancœurs profondes. Puissance variable.
+CORKSCREW_CRASH|Capacité Z. Vrille d'acier. Puissance variable.
+INFERNO_OVERDRIVE|Capacité Z. Souffle de feu. Puissance variable.
+HYDRO_VORTEX|Capacité Z. Tourbillon géant. Puissance variable.
+BLOOM_DOOM|Capacité Z. Énergie des plantes. Puissance variable.
+GIGAVOLT_HAVOC|Capacité Z. Décharge géante. Puissance variable.
+SHATTERED_PSYCHE|Capacité Z. Contrôle psychique. Puissance variable.
+SUBZERO_SLAMMER|Capacité Z. Froid extrême. Puissance variable.
+DEVASTATING_DRAKE|Capacité Z. Aura de dragon. Puissance variable.
+BLACK_HOLE_ECLIPSE|Capacité Z. Trou noir. Puissance variable.
+TWINKLE_TACKLE|Capacité Z. Espace féerique. Puissance variable.
+CATASTROPIKA|Pikachu bondit avec toute son électricité.
+10000000_VOLT_THUNDERBOLT|Pikachu à casquette. Taux de critique élevé.
+STOKED_SPARKSURFER|Raichu d'Alola surfe à fond. Paralyse.
+EXTREME_EVOBOOST|Évoli puise chez ses amis : toutes les stats +2.
+PULVERIZING_PANCAKE|Ronflex s'écrase de tout son poids.
+GENESIS_SUPERNOVA|Mew attaque à fond. Crée un Champ Psychique.
+MALICIOUS_MOONSAULT|Félinferno s'écrase sur la cible à fond.
+OCEANIC_OPERETTA|Oratoria déverse une masse d'eau sur l'ennemi.
+SPLINTERED_STORMSHARDS|Lougaroc attaque à fond. Détruit le champ.
+LETS_SNUGGLE_FOREVER|Mimiqui frappe la cible à fond.
+CLANGOROUS_SOULBLAZE|Ékaïser attaque à fond. Toutes les stats +1.
+GUARDIAN_OF_ALOLA|Le gardien d'Alola retire les trois quarts des PV.
+SEARING_SUNRAZE_SMASH|Solgaleo attaque à fond. Ignore les talents.
+MENACING_MOONRAZE_MAELSTROM|Lunala attaque à fond. Ignore les talents.
+LIGHT_THAT_BURNS_THE_SKY|Utilise la meilleure attaque. Ignore les talents.
+SOUL_STEALING_7_STAR_STRIKE|Marshadow frappe à fond, poings et pieds.
+MAX_GUARD|Pare toute attaque. Peut échouer si utilisée de suite.
+MAX_FLARE|Attaque Dynamax Feu. Grand soleil.
+MAX_FLUTTERBY|Attaque Dynamax Insecte. Atq. Spé. ennemie -1.
+MAX_LIGHTNING|Attaque Dynamax Électrik. Champ Électrifié.
+MAX_STRIKE|Attaque Dynamax Normal. Vitesse ennemie -1.
+MAX_KNUCKLE|Attaque Dynamax Combat. Attaque alliée +1.
+MAX_PHANTASM|Attaque Dynamax Spectre. Défense ennemie -1.
+MAX_HAILSTORM|Attaque Dynamax Glace. Fait neiger.
+MAX_OOZE|Attaque Dynamax Poison. Atq. Spé. alliée +1.
+MAX_GEYSER|Attaque Dynamax Eau. Fait pleuvoir.
+MAX_AIRSTREAM|Attaque Dynamax Vol. Vitesse alliée +1.
+MAX_STARFALL|Attaque Dynamax Fée. Champ Brumeux.
+MAX_WYRMWIND|Attaque Dynamax Dragon. Attaque ennemie -1.
+MAX_MINDSTORM|Attaque Dynamax Psy. Champ Psychique.
+MAX_ROCKFALL|Attaque Dynamax Roche. Tempête de sable.
+MAX_QUAKE|Attaque Dynamax Sol. Déf. Spé. alliée +1.
+MAX_DARKNESS|Attaque Dynamax Ténèbres. Déf. Spé. ennemie -1.
+MAX_OVERGROWTH|Attaque Dynamax Plante. Champ Herbu.
+MAX_STEELSPIKE|Attaque Dynamax Acier. Défense alliée +1.
+G_MAX_VINE_LASH|Gigamax Florizarre. Blesse les non-Plante 4 tours.
+G_MAX_WILDFIRE|Gigamax Dracaufeu. Blesse les non-Feu 4 tours.
+G_MAX_CANNONADE|Gigamax Tortank. Blesse les non-Eau 4 tours.
+G_MAX_BEFUDDLE|Gigamax Papilusion. Empoisonne, paralyse ou endort.
+G_MAX_VOLT_CRASH|Gigamax Pikachu. Paralyse les ennemis.
+G_MAX_GOLD_RUSH|Gigamax Miaouss. Rend les ennemis confus.
+G_MAX_CHI_STRIKE|Gigamax Mackogneur. Critique allié augmenté.
+G_MAX_TERROR|Gigamax Ectoplasma. Empêche la fuite.
+G_MAX_FOAM_BURST|Gigamax Krabboss. Vitesse ennemie -2.
+G_MAX_RESONANCE|Gigamax Lokhlass. Réduit les dégâts 5 tours.
+G_MAX_CUDDLE|Gigamax Évoli. Les ennemis tombent amoureux.
+G_MAX_REPLENISH|Gigamax Ronflex. Peut rendre les Baies mangées.
+G_MAX_MALODOR|Gigamax Miasmax. Empoisonne les ennemis.
+G_MAX_MELTDOWN|Gigamax Melmetal. Tourmente les ennemis.
+G_MAX_DRUM_SOLO|Gigamax Gorythmic. Ignore le talent de la cible.
+G_MAX_FIREBALL|Gigamax Pyrobut. Ignore le talent de la cible.
+G_MAX_HYDROSNIPE|Gigamax Lézargus. Ignore le talent de la cible.
+G_MAX_WIND_RAGE|Gigamax Corvaillus. Retire murs et pièges.
+G_MAX_GRAVITAS|Gigamax Astronelle. Gravité 5 tours.
+G_MAX_STONESURGE|Gigamax Torgamord. Pose des pierres pointues.
+G_MAX_VOLCALITH|Gigamax Monthracite. Blesse les non-Roche 4 tours.
+G_MAX_TARTNESS|Gigamax Pomdrapi. Esquive ennemie -1.
+G_MAX_SWEETNESS|Gigamax Dratatin. Soigne le statut des alliés.
+G_MAX_SANDBLAST|Gigamax Dunaconda. Piège dans le sable.
+G_MAX_STUN_SHOCK|Gigamax Salarsen. Empoisonne ou paralyse.
+G_MAX_CENTIFERNO|Gigamax Scolocendre. Piège dans les flammes.
+G_MAX_SMITE|Gigamax Sorcilence. Rend les ennemis confus.
+G_MAX_SNOOZE|Gigamax Angoliath. Peut endormir la cible.
+G_MAX_FINALE|Gigamax Charmilly. Soigne les PV alliés.
+G_MAX_STEELSURGE|Gigamax Pachyradjah. Pose des pics d'acier.
+G_MAX_DEPLETION|Gigamax Duralugon. Retire des PP.
+G_MAX_ONE_BLOW|Gigamax Shifours. Passe à travers Gardomax.
+G_MAX_RAPID_FLOW|Gigamax Shifours. Passe à travers Gardomax.

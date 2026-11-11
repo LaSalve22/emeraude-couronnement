@@ -97,3 +97,10 @@ TEST("Couronnement: mega stones cost the configured price")
     EXPECT_EQ(GetItemPrice(ITEM_RAICHUNITE_X), COURONNEMENT_PRIX_MEGA_GEMME);
     EXPECT_EQ(GetItemPrice(ITEM_ABSOLITE), COURONNEMENT_PRIX_MEGA_GEMME);
 }
+
+TEST("Couronnement: infinite repel is a free key item")
+{
+    EXPECT_EQ(GetItemPocket(ITEM_REPOUSSE_INFINIE), POCKET_KEY_ITEMS);
+    EXPECT_EQ(GetItemPrice(ITEM_REPOUSSE_INFINIE), 0);
+    EXPECT_EQ(WE_FLAG_NO_ENCOUNTER, FLAG_REPOUSSE_INFINIE);
+}

@@ -96,8 +96,8 @@ static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NON");
 static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}CHOIX");
 static const u8 gText_BattleStyleSet[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}DÉFINI");
-static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MONO");
-static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}STÉRÉO");
+static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}BOUTON B");
+static const u8 gText_SoundStereo[]        = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}AUTO");
 static const u8 gText_FrameType[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}TYPE");
 static const u8 gText_FrameTypeNumber[]    = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
 static const u8 gText_ButtonTypeNormal[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}NORMAL");
@@ -120,7 +120,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_TEXTSPEED]   = COMPOUND_STRING("VITESSE TEXTE"),
     [MENUITEM_BATTLESCENE] = COMPOUND_STRING("ANIMATIONS"),
     [MENUITEM_BATTLESTYLE] = COMPOUND_STRING("STYLE COMBAT"),
-    [MENUITEM_SOUND]       = COMPOUND_STRING("SON"),
+    [MENUITEM_SOUND]       = COMPOUND_STRING("COURSE"), // Couronnement : remplace SON (Mono / Stéréo)
     [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BOUTONS"),
     [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("CADRE"),
     [MENUITEM_BATTLEMUSIC] = COMPOUND_STRING("MUSIQUE COMBAT"),
@@ -271,7 +271,7 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
         gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
         gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-        gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
+        gTasks[taskId].tSound = FlagGet(FLAG_COURSE_AUTO); // Couronnement : ligne COURSE
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
         gTasks[taskId].tBattleMusic = VarGet(VAR_BATTLE_MUSIC);
@@ -414,7 +414,10 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsTextSpeed = gTasks[taskId].tTextSpeed;
     gSaveBlock2Ptr->optionsBattleSceneOff = gTasks[taskId].tBattleSceneOff;
     gSaveBlock2Ptr->optionsBattleStyle = gTasks[taskId].tBattleStyle;
-    gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
+    if (gTasks[taskId].tSound)
+        FlagSet(FLAG_COURSE_AUTO);
+    else
+        FlagClear(FLAG_COURSE_AUTO);
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     VarSet(VAR_BATTLE_MUSIC, gTasks[taskId].tBattleMusic);
@@ -556,7 +559,6 @@ static u8 Sound_ProcessInput(u8 selection)
     if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
         selection ^= 1;
-        SetPokemonCryStereo(selection);
         sArrowPressed = TRUE;
     }
 

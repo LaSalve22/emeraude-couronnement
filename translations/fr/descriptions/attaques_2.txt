@@ -1,0 +1,170 @@
+NATURAL_GIFT|L'effet dépend de la Baie tenue.
+FEINT|Frappe un ennemi qui se protège et annule sa protection.
+PLUCK|Mange la Baie de l'ennemi et en profite.
+TAILWIND|Vent arrière : la Vitesse de l'équipe double 4 tours.
+METAL_BURST|Rend plus fort le dernier coup reçu.
+U_TURN|Attaque puis revient pour laisser la place à un allié.
+CLOSE_COMBAT|Combat au corps à corps. Défense et Déf. Spé. baissent.
+PAYBACK|Plus puissante si le lanceur agit en dernier.
+ASSURANCE|Plus puissante si l'ennemi a déjà été blessé ce tour.
+EMBARGO|Empêche l'ennemi d'utiliser des objets.
+FLING|Lance l'objet tenu. L'effet dépend de l'objet.
+PSYCHO_SHIFT|Transfère le problème de statut du lanceur à l'ennemi.
+HEAL_BLOCK|Empêche les ennemis de se soigner pendant 5 tours.
+GASTRO_ACID|Un suc gastrique qui annule le talent de l'ennemi.
+LUCKY_CHANT|Empêche l'ennemi de porter des coups critiques.
+ME_FIRST|Utilise la capacité de l'ennemi en plus fort, avant lui.
+COPYCAT|Copie la dernière capacité utilisée.
+POWER_SWAP|Échange les changements d'Attaque et d'Atq. Spé.
+GUARD_SWAP|Échange les changements de Défense et de Déf. Spé.
+PUNISHMENT|Plus l'ennemi a boosté ses stats, plus c'est fort.
+LAST_RESORT|Utilisable seulement après toutes les autres capacités.
+WORRY_SEED|Une graine qui donne le talent Insomnia à l'ennemi.
+SUCKER_PUNCH|Frappe en premier si l'ennemi prépare une attaque.
+TOXIC_SPIKES|Pose des pics qui empoisonnent l'ennemi qui entre.
+HEART_SWAP|Échange tous les changements de stats avec l'ennemi.
+MAGNET_RISE|Lévite grâce au magnétisme pendant 5 tours.
+FLARE_BLITZ|Charge enflammée. Peut brûler. Blesse aussi le lanceur.
+ROCK_POLISH|Polit son corps : la Vitesse augmente beaucoup.
+POISON_JAB|Coup de dard. Peut empoisonner.
+DARK_PULSE|Aura terrifiante. Peut apeurer.
+X_SCISSOR|Tranche en croix avec faux ou griffes.
+BUG_BUZZ|Bourdonnement nocif. Peut baisser la Déf. Spé.
+POWER_GEM|Rayons de lumière étincelants comme des diamants.
+DRAIN_PUNCH|Un poing qui vole la moitié des dégâts infligés.
+FOCUS_BLAST|Attaque à pleine puissance. Peut baisser la Déf. Spé.
+ENERGY_BALL|Puise dans la nature pour attaquer. Peut baisser la Déf. Spé.
+SWITCHEROO|Échange les objets tenus avec l'ennemi en un éclair.
+GIGA_IMPACT|Très puissant, mais le lanceur doit se reposer ensuite.
+NASTY_PLOT|Pense à des trucs louches : l'Atq. Spé. augmente beaucoup.
+BULLET_PUNCH|Poing rapide comme une balle. Frappe toujours en premier.
+AVALANCHE|Plus puissante si le lanceur a été touché ce tour.
+MUD_BOMB|Une boule de boue. Peut baisser la Précision.
+PSYCHO_CUT|Lames psychiques. Taux de critique élevé.
+ZEN_HEADBUTT|Puissant coup de tête. Peut apeurer.
+MIRROR_SHOT|Éclair d'énergie. Peut baisser la Précision.
+FLASH_CANNON|Rayon de lumière. Peut baisser la Déf. Spé.
+DEFOG|Dissipe obstacles et pièges, baisse l'Esquive ennemie.
+TRICK_ROOM|5 tours : les Pokémon les plus lents agissent en premier.
+DRACO_METEOR|Fait pleuvoir des comètes. L'Atq. Spé. baisse beaucoup.
+DISCHARGE|Électrocute tout le monde. Peut paralyser.
+LAVA_PLUME|Flammes écarlates sur tout le monde. Peut brûler.
+LEAF_STORM|Tempête de feuilles. L'Atq. Spé. baisse beaucoup.
+POWER_WHIP|Fouette violemment avec lianes ou tentacules.
+ROCK_WRECKER|Très puissant, mais le lanceur doit se reposer ensuite.
+CAPTIVATE|Séduit le sexe opposé : son Atq. Spé. baisse beaucoup.
+STEALTH_ROCK|Pose des pierres qui blessent l'ennemi qui entre.
+GRASS_KNOT|Un piège d'herbe. Plus fort sur un ennemi lourd.
+JUDGMENT|Le type dépend de la Plaque tenue.
+BUG_BITE|Mange la Baie de l'ennemi et en profite.
+CHARGE_BEAM|Rayon électrique. Peut augmenter l'Atq. Spé.
+WOOD_HAMMER|Fonce de tout son corps. Blesse aussi le lanceur.
+AQUA_JET|Fonce à toute vitesse. Frappe toujours en premier.
+DEFEND_ORDER|Bouclier vivant : Défense et Déf. Spé. augmentent.
+HEAL_ORDER|Les sujets du lanceur lui rendent la moitié de ses PV.
+HEAD_SMASH|Coup de tête suicidaire qui blesse beaucoup le lanceur.
+ROAR_OF_TIME|Très puissant, mais le lanceur doit se reposer ensuite.
+LUNAR_DANCE|Le lanceur est K.O. ; le suivant récupère PV, PP et statut.
+CRUSH_GRIP|Plus l'ennemi a de PV, plus c'est puissant.
+SEED_FLARE|Onde de choc. Peut baisser beaucoup la Déf. Spé.
+SHADOW_FORCE|Disparaît puis frappe au tour suivant, même à travers Abri.
+GUARD_SPLIT|Partage la moyenne de Défense et Déf. Spé. avec l'ennemi.
+POWER_SPLIT|Partage la moyenne d'Attaque et d'Atq. Spé. avec l'ennemi.
+WONDER_ROOM|5 tours : Défense et Déf. Spé. sont inversées.
+PSYSHOCK|Onde psychique qui inflige des dégâts physiques.
+VENOSHOCK|Double puissance si l'ennemi est empoisonné.
+AUTOTOMIZE|Se déleste : la Vitesse augmente beaucoup.
+RAGE_POWDER|Une poudre qui force les ennemis à viser le lanceur.
+TELEKINESIS|Fait léviter l'ennemi : plus facile à toucher 3 tours.
+MAGIC_ROOM|5 tours : les objets tenus n'ont plus d'effet.
+SMACK_DOWN|Lance un rocher qui fait tomber l'ennemi au sol.
+FLAME_BURST|Une flamme qui explose et touche aussi les voisins.
+SLUDGE_WAVE|Vague de boue sur tout le monde. Peut empoisonner.
+QUIVER_DANCE|Danse : Atq. Spé., Déf. Spé. et Vitesse augmentent.
+HEAVY_SLAM|Plus le lanceur est lourd que l'ennemi, plus c'est fort.
+SYNCHRONOISE|Onde qui blesse les Pokémon du même type que le lanceur.
+ELECTRO_BALL|Boule électrique. Plus forte sur un ennemi lent.
+FLAME_CHARGE|Charge enflammée. Augmente la Vitesse.
+COIL|S'enroule : Attaque, Défense et Précision augmentent.
+FOUL_PLAY|Plus l'Attaque de l'ennemi est haute, plus c'est fort.
+ENTRAINMENT|L'ennemi imite le lanceur et prend son talent.
+AFTER_YOU|Aide la cible : elle agit juste après.
+ROUND|Un chant offensif. Les alliés peuvent chanter en chœur.
+ECHOED_VOICE|Plus forte à chaque tour où elle est utilisée.
+CHIP_AWAY|Ignore les changements de stats de l'ennemi.
+CLEAR_SMOG|Brume blanche qui annule les changements de stats.
+STORED_POWER|Plus les stats du lanceur sont boostées, plus c'est fort.
+ALLY_SWITCH|Le lanceur échange sa place avec son partenaire.
+SHELL_SMASH|Brise sa coquille : attaques et Vitesse +2, défenses -1.
+HEX|Double puissance si l'ennemi a un problème de statut.
+SKY_DROP|Emporte l'ennemi dans le ciel et le lâche au tour suivant.
+SHIFT_GEAR|Fait tourner ses engrenages : Attaque et Vitesse augmentent.
+CIRCLE_THROW|Projette l'ennemi qui est remplacé. Finit un combat sauvage.
+INCINERATE|Brûle les Baies de l'ennemi, qui deviennent inutilisables.
+ACROBATICS|Double puissance si le lanceur ne tient pas d'objet.
+RETALIATE|Plus forte si un allié a été mis K.O. au tour précédent.
+FINAL_GAMBIT|Le lanceur est K.O. et inflige autant que ses PV restants.
+WATER_PLEDGE|Colonne d'eau. Combinée, fait un arc-en-ciel.
+FIRE_PLEDGE|Colonne de feu. Combinée, enflamme l'herbe.
+GRASS_PLEDGE|Colonne d'herbe. Combinée, crée un marécage.
+VOLT_SWITCH|Attaque puis revient pour laisser la place à un allié.
+BULLDOZE|Piétine le sol. Touche tout le monde et baisse la Vitesse.
+DRAGON_TAIL|Projette l'ennemi qui est remplacé. Finit un combat sauvage.
+DRILL_RUN|Tourne comme une perceuse. Taux de critique élevé.
+DUAL_CHOP|Coups brutaux qui frappent deux fois.
+HEART_STAMP|Un coup soudain après un air mignon. Peut apeurer.
+HORN_LEECH|Vole la moitié des dégâts avec ses cornes.
+SACRED_SWORD|Ignore les changements de stats de l'ennemi.
+HEAT_CRASH|Plus le lanceur est lourd que l'ennemi, plus c'est fort.
+LEAF_TORNADO|Tornade de feuilles. Peut baisser la Précision.
+COTTON_GUARD|S'enveloppe de coton : la Défense augmente énormément.
+NIGHT_DAZE|Onde noire. Peut baisser la Précision.
+PSYSTRIKE|Onde psychique qui inflige des dégâts physiques.
+HURRICANE|Vent violent. Peut rendre l'ennemi confus.
+HEAD_CHARGE|Charge tête baissée. Blesse un peu le lanceur.
+SEARING_SHOT|Flammes écarlates sur tout le monde. Peut brûler.
+TECHNO_BLAST|Le type dépend du Module tenu.
+RELIC_SONG|Un chant ancien. Peut endormir.
+SECRET_SWORD|Tranche avec sa corne. Dégâts physiques.
+GLACIATE|Souffle glacial sur les ennemis. Baisse leur Vitesse.
+BOLT_STRIKE|Foudre surpuissante. Peut paralyser.
+BLUE_FLARE|Flamme bleue. Peut brûler.
+FIERY_DANCE|Danse enflammée. Peut augmenter l'Atq. Spé.
+FREEZE_SHOCK|Attaque puissante en 2 tours. Peut paralyser.
+ICE_BURN|Attaque puissante en 2 tours. Peut brûler.
+ICICLE_CRASH|Fait tomber de gros glaçons. Peut apeurer.
+V_CREATE|Très puissante. Défense, Déf. Spé. et Vitesse baissent.
+FUSION_FLARE|Boule de feu. Renforcée par Éclair Croix.
+FUSION_BOLT|Éclair. Renforcé par Flamme Croix.
+MAT_BLOCK|Protège l'équipe des attaques. Seulement au 1er tour.
+BELCH|Rot assourdissant. Il faut avoir mangé une Baie.
+ROTOTILLER|Augmente Attaque et Atq. Spé. des Pokémon Plante.
+STICKY_WEB|Toile collante : l'ennemi qui entre perd de la Vitesse.
+PHANTOM_FORCE|Disparaît puis frappe au tour suivant, même à travers Abri.
+TRICK_OR_TREAT|Ajoute le type Spectre à l'ennemi.
+NOBLE_ROAR|Rugissement qui baisse Attaque et Atq. Spé. ennemies.
+ION_DELUGE|Les capacités Normal deviennent Électrik ce tour.
+PARABOLIC_CHARGE|Touche tout le monde et soigne la moitié des dégâts.
+FORESTS_CURSE|Malédiction qui ajoute le type Plante à l'ennemi.
+PETAL_BLIZZARD|Tempête de pétales qui touche tout le monde.
+FREEZE_DRY|Super efficace sur le type Eau. Peut geler.
+DISARMING_VOICE|Cri charmeur qui touche toujours.
+PARTING_SHOT|Baisse Attaque et Atq. Spé. ennemies, puis change de Pokémon.
+DRAINING_KISS|Un bisou qui vole les trois quarts des dégâts.
+CRAFTY_SHIELD|Protège l'équipe des capacités de statut ce tour.
+FLOWER_SHIELD|Augmente la Défense des Pokémon Plante.
+GRASSY_TERRAIN|Champ d'herbe 5 tours. Soigne un peu chaque tour.
+MISTY_TERRAIN|Brume au sol 5 tours. Bloque les statuts.
+ELECTRIFY|La prochaine capacité de l'ennemi devient Électrik.
+BOOMBURST|Onde sonore destructrice qui touche tout le monde.
+FAIRY_LOCK|Bloque le terrain : personne ne fuit au tour suivant.
+KINGS_SHIELD|Pare les attaques. Baisse l'Attaque de qui touche.
+PLAY_NICE|Copine avec l'ennemi : son Attaque baisse à coup sûr.
+CONFIDE|Confie un secret : l'Atq. Spé. ennemie baisse.
+DIAMOND_STORM|Tempête de diamants. Peut augmenter la Défense.
+HYPERSPACE_HOLE|Attaque par un trou spatial. Ignore les protections.
+WATER_SHURIKEN|2 à 5 shurikens d'eau. Frappe toujours en premier.
+MYSTICAL_FIRE|Feu mystique. Baisse l'Atq. Spé.
+SPIKY_SHIELD|Pare les attaques et blesse qui touche.
+EERIE_IMPULSE|Onde bizarre. Baisse beaucoup l'Atq. Spé. ennemie.
+VENOM_DRENCH|Attaque, Atq. Spé. et Vitesse des empoisonnés baissent.

@@ -273,6 +273,28 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
 #endif
 }
 
+// Émeraude Couronnement : Repousse Infinie (bascule FLAG_REPOUSSE_INFINIE, lu par WE_FLAG_NO_ENCOUNTER).
+void ItemUseOutOfBattle_RepousseInfinie(u8 taskId)
+{
+    const u8 *text;
+
+    FlagToggle(FLAG_REPOUSSE_INFINIE);
+    if (FlagGet(FLAG_REPOUSSE_INFINIE))
+    {
+        PlaySE(SE_REPEL);
+        text = gText_RepousseInfinieOn;
+    }
+    else
+    {
+        PlaySE(SE_PC_OFF);
+        text = gText_RepousseInfinieOff;
+    }
+    if (!gTasks[taskId].data[2]) // SELECT sur le terrain
+        DisplayItemMessageOnField(taskId, text, Task_CloseCantUseKeyItemMessage);
+    else
+        DisplayItemMessage(taskId, FONT_NORMAL, text, CloseItemMessage);
+}
+
 void ItemUseOutOfBattle_Bike(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;

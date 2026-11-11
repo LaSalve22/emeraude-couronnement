@@ -1,0 +1,232 @@
+NONE|Aucun talent.
+DRIZZLE|Fait pleuvoir en entrant.
+STURDY|Résiste aux K.O. en un coup.
+COLOR_CHANGE|Prend le type de l'attaque reçue.
+LIGHTNING_ROD|Attire l'Électrik, Atq. Spé. +1.
+PICKUP|Ramasse parfois des objets.
+TANGLED_FEET|Esquive accrue si confus.
+MOTOR_DRIVE|L'Électrik augmente la Vitesse.
+RIVALRY|Fort contre le même sexe.
+STEADFAST|Avoir peur augmente la Vitesse.
+SNOW_CLOAK|Esquive accrue sous la neige.
+ANGER_POINT|Attaque au max si critique reçu.
+UNBURDEN|Perdre son objet double la Vitesse.
+HEATPROOF|Divise par 2 les dégâts Feu.
+SIMPLE|Double les changements de stats.
+DRY_SKIN|Eau soigne, Feu et soleil blessent.
+IRON_FIST|Renforce les coups de poing.
+POISON_HEAL|Le poison soigne au lieu de blesser.
+ADAPTABILITY|Renforce les capacités du même type.
+SKILL_LINK|Les attaques multiples frappent 5 fois.
+HYDRATION|Soigne le statut sous la pluie.
+SOLAR_POWER|Soleil : Atq. Spé. +50 %, mais blesse.
+QUICK_FEET|Vitesse accrue en cas de statut.
+NORMALIZE|Toutes les capacités deviennent Normal.
+SNIPER|Renforce les coups critiques.
+MAGIC_GUARD|Blessé seulement par les attaques.
+NO_GUARD|Toutes les attaques touchent.
+STALL|Agit toujours en dernier.
+TECHNICIAN|Renforce les capacités faibles.
+LEAF_GUARD|Pas de statut au soleil.
+KLUTZ|Ne peut pas utiliser son objet.
+MOLD_BREAKER|Les capacités ignorent les talents.
+SUPER_LUCK|Taux de critique augmenté.
+AFTERMATH|Blesse qui le met K.O. au contact.
+ANTICIPATION|Sent les capacités dangereuses.
+FOREWARN|Devine une capacité de l'ennemi.
+UNAWARE|Ignore les stats boostées ennemies.
+TINTED_LENS|Renforce le « pas très efficace ».
+FILTER|Réduit le « super efficace ».
+SLOW_START|Met 5 tours à démarrer.
+SCRAPPY|Normal et Combat touchent Spectre.
+ICE_BODY|Récupère des PV sous la neige.
+SOLID_ROCK|Réduit le « super efficace ».
+SNOW_WARNING|Fait neiger en entrant.
+HONEY_GATHER|Ramasse parfois du Miel.
+FRISK|Voit l'objet tenu par l'ennemi.
+RECKLESS|Renforce les capacités à recul.
+MULTITYPE|Type selon la Plaque tenue.
+FLOWER_GIFT|Soleil : Attaque et Déf. Spé. alliées +.
+PICKPOCKET|Vole l'objet de qui le touche.
+SHEER_FORCE|Sacrifie les effets pour la puissance.
+UNNERVE|Les ennemis ne mangent plus de Baies.
+DEFIANT|Une stat baissée : Attaque +2.
+DEFEATIST|Attaques divisées par 2 sous 50 % PV.
+CURSED_BODY|Peut bloquer la capacité qui le touche.
+HEALER|Peut soigner le statut d'un allié.
+WEAK_ARMOR|Coup physique : Défense -, Vitesse +.
+MULTISCALE|Moins de dégâts à PV pleins.
+TOXIC_BOOST|Attaque accrue s'il est empoisonné.
+FLARE_BOOST|Atq. Spé. accrue s'il est brûlé.
+TELEPATHY|Évite les attaques de ses alliés.
+MOODY|Une stat monte, une autre baisse.
+POISON_TOUCH|Le contact peut empoisonner.
+REGENERATOR|Récupère des PV en sortant.
+BIG_PECKS|Sa Défense ne peut pas baisser.
+SAND_RUSH|Vitesse doublée dans le sable.
+ANALYTIC|Plus fort s'il agit en dernier.
+ILLUSION|Se déguise en dernier allié.
+INFILTRATOR|Passe à travers murs et clones.
+MUMMY|Transmet son talent au contact.
+MOXIE|Un K.O. augmente l'Attaque.
+JUSTIFIED|Touché par Ténèbres : Attaque +1.
+RATTLED|La peur augmente la Vitesse.
+SAP_SIPPER|Absorbe la Plante : Attaque +1.
+PRANKSTER|Capacités de statut prioritaires.
+SAND_FORCE|Plus fort dans une tempête de sable.
+ZEN_MODE|Change de forme sous 50 % PV.
+VICTORY_STAR|Précision de l'équipe augmentée.
+TURBOBLAZE|Les capacités ignorent les talents.
+TERAVOLT|Les capacités ignorent les talents.
+AROMA_VEIL|Protège l'équipe de Provoc et autres.
+FLOWER_VEIL|Protège les alliés Plante.
+CHEEK_POUCH|Manger une Baie soigne aussi.
+PROTEAN|Prend le type de la capacité lancée.
+FUR_COAT|Divise par 2 les dégâts physiques.
+MAGICIAN|Vole l'objet de l'ennemi qu'il frappe.
+BULLETPROOF|Immunisé aux balles et bombes.
+COMPETITIVE|Une stat baissée : Atq. Spé. +2.
+STRONG_JAW|Renforce les morsures.
+REFRIGERATE|Normal devient Glace et plus fort.
+SWEET_VEIL|L'équipe ne peut pas s'endormir.
+STANCE_CHANGE|Change de forme selon l'action.
+GALE_WINGS|Capacités Vol prioritaires à PV pleins.
+MEGA_LAUNCHER|Renforce les capacités « Vibra ».
+GRASS_PELT|Défense accrue sur Champ Herbu.
+SYMBIOSIS|Donne son objet à un allié.
+TOUGH_CLAWS|Renforce les capacités de contact.
+PIXILATE|Normal devient Fée et plus fort.
+GOOEY|Le contact baisse la Vitesse ennemie.
+AERILATE|Normal devient Vol et plus fort.
+DARK_AURA|Renforce les capacités Ténèbres.
+FAIRY_AURA|Renforce toutes les capacités Fée.
+PRIMORDIAL_SEA|Déclenche une pluie battante.
+DESOLATE_LAND|Déclenche un soleil écrasant.
+DELTA_STREAM|Déclenche des vents violents.
+STAMINA|Touché : Défense +1.
+WIMP_OUT|Fuit sous 50 % PV.
+EMERGENCY_EXIT|Fuit sous 50 % PV.
+WATER_COMPACTION|Touché par Eau : Défense +2.
+MERCILESS|Critique sur les ennemis empoisonnés.
+SHIELDS_DOWN|La carapace casse sous 50 % PV.
+STAKEOUT|Double dégâts sur qui vient d'entrer.
+WATER_BUBBLE|Protège du Feu et des brûlures.
+STEELWORKER|Renforce les capacités Acier.
+BERSERK|Sous 50 % PV : Atq. Spé. +1.
+SLUSH_RUSH|Vitesse doublée sous la neige.
+LONG_REACH|Ses capacités ne font pas contact.
+LIQUID_VOICE|Les sons deviennent Eau.
+GALVANIZE|Normal devient Électrik et plus fort.
+SURGE_SURFER|Vitesse doublée sur Champ Électrifié.
+SCHOOLING|Forme un banc à PV hauts.
+DISGUISE|Un déguisement encaisse un coup.
+BATTLE_BOND|Change de forme après un K.O.
+POWER_CONSTRUCT|Change de forme sous 50 % PV.
+CORROSION|Peut empoisonner Acier et Poison.
+COMATOSE|Toujours somnolent, sans statut.
+QUEENLY_MAJESTY|Bloque les capacités prioritaires.
+INNARDS_OUT|K.O. : inflige ses derniers PV.
+DANCER|Copie les danses des autres.
+BATTERY|Renforce l'Atq. Spé. alliée.
+FLUFFY|Contact divisé par 2, Feu doublé.
+DAZZLING|Bloque les capacités prioritaires.
+SOUL_HEART|Chaque K.O. : Atq. Spé. +1.
+TANGLING_HAIR|Le contact baisse la Vitesse ennemie.
+RECEIVER|Copie le talent d'un allié K.O.
+POWER_OF_ALCHEMY|Copie le talent d'un allié K.O.
+BEAST_BOOST|Un K.O. augmente sa meilleure stat.
+RKS_SYSTEM|Type selon la ROM tenue.
+ELECTRIC_SURGE|Crée un Champ Électrifié.
+PSYCHIC_SURGE|Crée un Champ Psychique.
+MISTY_SURGE|Crée un Champ Brumeux.
+GRASSY_SURGE|Crée un Champ Herbu.
+FULL_METAL_BODY|Ses stats ne peuvent pas baisser.
+SHADOW_SHIELD|Moins de dégâts à PV pleins.
+PRISM_ARMOR|Réduit le « super efficace ».
+NEUROFORCE|Renforce le « super efficace ».
+INTREPID_SWORD|Attaque +1 en entrant (une fois).
+DAUNTLESS_SHIELD|Défense +1 en entrant (une fois).
+LIBERO|Prend le type de la capacité lancée.
+BALL_FETCH|Rapporte la 1re Ball ratée.
+COTTON_DOWN|Touché : la Vitesse des autres baisse.
+PROPELLER_TAIL|Ignore les attire-coups ennemis.
+MIRROR_ARMOR|Renvoie les baisses de stats.
+GULP_MISSILE|Crache une proie quand il est touché.
+STALWART|Ignore les attire-coups ennemis.
+STEAM_ENGINE|Touché par Feu ou Eau : Vitesse +6.
+PUNK_ROCK|Sons renforcés, sons reçus réduits.
+SAND_SPIT|Touché : tempête de sable.
+ICE_SCALES|Divise par 2 les dégâts spéciaux.
+RIPEN|Double l'effet des Baies.
+ICE_FACE|Bloque un coup physique.
+POWER_SPOT|Renforce les capacités alliées.
+MIMICRY|Change de type selon le champ.
+SCREEN_CLEANER|Retire les murs en entrant.
+STEELY_SPIRIT|Renforce l'Acier de l'équipe.
+PERISH_BODY|Contact : les deux K.O. dans 3 tours.
+WANDERING_SPIRIT|Échange les talents au contact.
+GORILLA_TACTICS|Attaque +50 %, une seule capacité.
+NEUTRALIZING_GAS|Annule les talents des autres.
+PASTEL_VEIL|L'équipe ne peut pas être empoisonnée.
+HUNGER_SWITCH|Change de forme à chaque tour.
+QUICK_DRAW|Agit parfois en premier.
+UNSEEN_FIST|Le contact passe les protections.
+CURIOUS_MEDICINE|Annule les stats changées des alliés.
+TRANSISTOR|Renforce les capacités Électrik.
+DRAGONS_MAW|Renforce les capacités Dragon.
+CHILLING_NEIGH|Un K.O. augmente l'Attaque.
+GRIM_NEIGH|Un K.O. augmente l'Atq. Spé.
+AS_ONE_ICE_RIDER|Tension et Blanche Ruade.
+AS_ONE_SHADOW_RIDER|Tension et Sombre Ruade.
+LINGERING_AROMA|Transmet son talent au contact.
+SEED_SOWER|Touché : crée un Champ Herbu.
+THERMAL_EXCHANGE|Touché par Feu : Attaque +1.
+ANGER_SHELL|Sous 50 % PV : attaques +, défenses -.
+PURIFYING_SALT|Pas de statut, Spectre réduit.
+WELL_BAKED_BODY|Touché par Feu : Défense +2.
+WIND_RIDER|Le vent augmente l'Attaque.
+GUARD_DOG|Intimidé : Attaque +1.
+ROCKY_PAYLOAD|Renforce les capacités Roche.
+WIND_POWER|Le vent le charge d'électricité.
+ZERO_TO_HERO|Change de forme en sortant.
+COMMANDER|Commande depuis la bouche d'Oyacata.
+ELECTROMORPHOSIS|Touché : se charge d'électricité.
+PROTOSYNTHESIS|Le soleil augmente sa meilleure stat.
+QUARK_DRIVE|Champ Électrifié : meilleure stat +.
+GOOD_AS_GOLD|Immunisé aux capacités de statut.
+VESSEL_OF_RUIN|Baisse l'Atq. Spé. des autres.
+SWORD_OF_RUIN|Baisse la Défense des autres.
+TABLETS_OF_RUIN|Baisse l'Attaque des autres.
+BEADS_OF_RUIN|Baisse la Déf. Spé. des autres.
+ORICHALCUM_PULSE|Grand soleil et Attaque accrue.
+HADRON_ENGINE|Champ Électrifié et Atq. Spé. accrue.
+OPPORTUNIST|Copie les boosts de stats ennemis.
+CUD_CHEW|Remange sa Baie au tour suivant.
+SHARPNESS|Renforce les capacités tranchantes.
+SUPREME_OVERLORD|Plus fort pour chaque allié K.O.
+COSTAR|Copie les stats de son allié.
+TOXIC_DEBRIS|Touché : pose des Pics Toxik.
+ARMOR_TAIL|Bloque les capacités prioritaires.
+EARTH_EATER|Le Sol le soigne au lieu de blesser.
+MYCELIUM_MIGHT|Statut en dernier, ignore les talents.
+HOSPITALITY|Soigne un allié en entrant.
+MINDS_EYE|Ignore l'Esquive, touche Spectre.
+EMBODY_ASPECT_TEAL_MASK|Téracristal : Vitesse +1.
+EMBODY_ASPECT_HEARTHFLAME_MASK|Téracristal : Attaque +1.
+EMBODY_ASPECT_WELLSPRING_MASK|Téracristal : Déf. Spé. +1.
+EMBODY_ASPECT_CORNERSTONE_MASK|Téracristal : Défense +1.
+TOXIC_CHAIN|Peut gravement empoisonner.
+SUPERSWEET_SYRUP|Baisse l'Esquive ennemie en entrant.
+TERA_SHIFT|Change de forme en entrant.
+TERA_SHELL|PV pleins : résiste à tout.
+TERAFORM_ZERO|Annule météo et champ.
+POISON_PUPPETEER|Le poison rend aussi confus.
+PIERCING_DRILL|Le contact passe les protections.
+DRAGONIZE|Normal devient Dragon et plus fort.
+EELEVATE|Lévitation et Boost Chimère.
+314|Aucun talent spécial.
+MEGA_SOL|Agit comme sous le soleil.
+FIRE_MANE|Renforce les capacités Feu.
+317|Aucun talent spécial.
+SPICY_SPRAY|Brûle qui lui inflige des dégâts.
+AURA_GUARD|Pas encore disponible.

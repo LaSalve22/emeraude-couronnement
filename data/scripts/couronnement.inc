@@ -22,6 +22,17 @@ Couronnement_EventScript_RivalDonnePass::
 	waitfanfare
 	special Couronnement_DonnerPass
 	msgbox Couronnement_Text_RivalPassExplique, MSGBOX_DEFAULT
+	call Couronnement_EventScript_DonnerRepousseInfinie
+	return
+
+@ Repousse Infinie (objet clé) : donnée avec le pass ; l'herboriste de Clémenti la donne aux sauvegardes plus anciennes.
+Couronnement_EventScript_DonnerRepousseInfinie::
+	checkitem ITEM_REPOUSSE_INFINIE
+	goto_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_DonnerRepousseInfinieFin
+	msgbox Couronnement_Text_RepousseInfinie, MSGBOX_DEFAULT
+	giveitem ITEM_REPOUSSE_INFINIE
+	msgbox Couronnement_Text_RepousseInfinieExplique, MSGBOX_DEFAULT
+Couronnement_EventScript_DonnerRepousseInfinieFin::
 	return
 
 @ ------------------------------------------------------------------ Hôtesse des tournois (villes et salles de Concours)
@@ -437,3 +448,13 @@ Couronnement_Text_FinaleRejouer:
 	.string "défendre son titre ?\p"
 	.string "Pas de récompense, mais ton Elo\n"
 	.string "est en jeu. On y va ?$"
+
+Couronnement_Text_RepousseInfinie:
+	.string "Ah, et prends ça. Les Pokémon\n"
+	.string "sauvages qui te sautent dessus tous\l"
+	.string "les trois pas, ça va cinq minutes.$"
+
+Couronnement_Text_RepousseInfinieExplique:
+	.string "La Repousse Infinie coupe les\n"
+	.string "rencontres, et les remet quand tu\l"
+	.string "veux. Mets-la sur SELECT.$"

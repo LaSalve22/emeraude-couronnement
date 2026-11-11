@@ -1,0 +1,150 @@
+POWDER|Blesse l'ennemi s'il utilise une capacité Feu.
+GEOMANCY|Charge 1 tour : Atq. Spé., Déf. Spé. et Vitesse +2.
+MAGNETIC_FLUX|Augmente les défenses des Pokémon à Plus ou Minus.
+ELECTRIC_TERRAIN|Sol électrifié 5 tours. Empêche le sommeil.
+BABY_DOLL_EYES|Yeux de bébé : baisse l'Attaque, en premier.
+NUZZLE|Frotte ses joues électriques. Paralyse.
+INFESTATION|Infeste l'ennemi et le blesse 4 à 5 tours.
+POWER_UP_PUNCH|Un poing dur qui augmente l'Attaque du lanceur.
+OBLIVION_WING|Vole les trois quarts des dégâts infligés.
+THOUSAND_WAVES|Ceux qui sont touchés ne peuvent plus fuir.
+LIGHT_OF_RUIN|Rayon de lumière. Blesse aussi beaucoup le lanceur.
+PRECIPICE_BLADES|Lames de pierre qui touchent les deux ennemis.
+DRAGON_ASCENT|Plonge du ciel. Défense et Déf. Spé. baissent.
+HYPERSPACE_FURY|Ignore les protections. Baisse la Défense du lanceur.
+SHORE_UP|Restaure des PV. Plus dans une tempête de sable.
+BANEFUL_BUNKER|Pare les attaques. Empoisonne qui touche.
+DARKEST_LARIAT|Moulinet des bras. Ignore les changements de stats.
+SPARKLING_ARIA|Chante avec des bulles. Soigne les brûlures.
+ICE_HAMMER|Poing lourd. Baisse la Vitesse du lanceur.
+STRENGTH_SAP|Soigne autant que l'Attaque ennemie, puis la baisse.
+SOLAR_BLADE|Charge 1 tour, puis tranche avec une lame de lumière.
+SPOTLIGHT|Les ennemis doivent attaquer le Pokémon visé.
+GEAR_UP|Augmente les attaques des Pokémon à Plus ou Minus.
+THROAT_CHOP|Frappe la gorge : plus de capacités sonores 2 tours.
+POLLEN_PUFF|Explose sur un ennemi, mais soigne un allié.
+ANCHOR_SHOT|Enchaîne l'ennemi, qui ne peut plus fuir.
+PSYCHIC_TERRAIN|Sol psychique 5 tours. Bloque les capacités prioritaires.
+LUNGE|Fonce sur l'ennemi et baisse son Attaque.
+POWER_TRIP|Plus les stats du lanceur sont boostées, plus c'est fort.
+BURN_UP|Brûle tout : le lanceur perd le type Feu.
+PURIFY|Soigne le statut de l'ennemi et récupère des PV.
+REVELATION_DANCE|Danse mystique du type principal du lanceur.
+TROP_KICK|Coup de pied tropical. Baisse l'Attaque ennemie.
+BEAK_BLAST|Chauffe son bec et frappe en dernier. Brûle qui touche.
+CLANGING_SCALES|Fracas d'écailles. Baisse la Défense du lanceur.
+AURORA_VEIL|Affaiblit toutes les attaques. Seulement sous la neige.
+SHELL_TRAP|Piège de coquille qui explose si on le touche.
+PSYCHIC_FANGS|Crocs psychiques qui brisent les murs.
+STOMPING_TANTRUM|Double puissance si la capacité d'avant a échoué.
+SHADOW_BONE|Os hanté. Peut baisser la Défense.
+LIQUIDATION|Frappe avec de l'eau. Peut baisser la Défense.
+PRISMATIC_LASER|Laser puissant. Le lanceur doit se reposer ensuite.
+SPECTRAL_THIEF|Vole les boosts de stats de la cible, puis attaque.
+SUNSTEEL_STRIKE|Charge solaire qui ignore les talents.
+MOONGEIST_BEAM|Rayon lunaire qui ignore les talents.
+TEARFUL_LOOK|Larmes aux yeux : Attaque et Atq. Spé. ennemies baissent.
+ZING_ZAP|Impact électrique. Peut apeurer.
+NATURES_MADNESS|Divise par deux les PV de l'ennemi.
+MULTI_ATTACK|Le type dépend de la ROM tenue.
+MIND_BLOWN|Fait exploser sa tête. Blesse tout le monde et le lanceur.
+PLASMA_FISTS|Poings électriques. Les capacités Normal deviennent Électrik.
+PHOTON_GEYSER|Physique ou spéciale selon la meilleure attaque.
+ZIPPY_ZAP|Éclair qui frappe en premier et augmente l'Esquive.
+SPLISHY_SPLASH|Vague électrifiée. Peut paralyser.
+FLOATY_FALL|Plonge du ciel. Peut apeurer.
+PIKA_PAPOW|Plus Pikachu aime son Dresseur, plus c'est fort.
+BOUNCY_BUBBLE|Bulles qui soignent autant que les dégâts.
+GLITZY_GLOW|Crée un mur qui affaiblit les attaques spéciales.
+BADDY_BAD|Crée un mur qui affaiblit les attaques physiques.
+SAPPY_SEED|Graines qui volent des PV à chaque tour.
+FREEZY_FROST|Cristal de glace qui annule les changements de stats.
+SPARKLY_SWIRL|Tourbillon parfumé qui soigne le statut de l'équipe.
+VEEVEE_VOLLEY|Plus Évoli aime son Dresseur, plus c'est fort.
+DOUBLE_IRON_BASH|Tourne et frappe deux fois avec ses bras. Peut apeurer.
+DYNAMAX_CANNON|Énergie du noyau. Double dégâts sur un Dynamax.
+SNIPE_SHOT|Ignore les capacités et talents qui attirent les coups.
+JAW_LOCK|Mâchoire bloquée : ni le lanceur ni la cible ne fuient.
+NO_RETREAT|Toutes les stats augmentent, mais plus de fuite possible.
+TAR_SHOT|Goudron : baisse la Vitesse, rend faible au Feu.
+DRAGON_DARTS|Frappe deux fois. En double, une fois chaque ennemi.
+TEATIME|Tout le monde prend le thé et mange sa Baie.
+OCTOLOCK|Empêche de fuir. Baisse les défenses chaque tour.
+BOLT_BEAK|Double puissance si le lanceur agit avant la cible.
+FISHIOUS_REND|Double puissance si le lanceur agit avant la cible.
+BODY_PRESS|Utilise la Défense du lanceur pour les dégâts.
+DECORATE|Augmente beaucoup l'Attaque et l'Atq. Spé. de la cible.
+DRUM_BEATING|Tambour offensif. Baisse la Vitesse ennemie.
+SNAP_TRAP|Piège à mâchoires pendant 4 à 5 tours.
+PYRO_BALL|Balle enflammée. Peut brûler.
+BEHEMOTH_BLADE|Frappe comme une épée. Double dégâts sur un Dynamax.
+BEHEMOTH_BASH|Frappe comme un bouclier. Double dégâts sur un Dynamax.
+AURA_WHEEL|Augmente la Vitesse. Le type dépend de la forme.
+BREAKING_SWIPE|Coup de queue sur les ennemis. Baisse leur Attaque.
+OVERDRIVE|Gratte sa guitare : vibrations sur tous les ennemis.
+APPLE_ACID|Acide de pomme acide. Baisse la Déf. Spé. ennemie.
+GRAV_APPLE|Fait tomber une pomme. Baisse la Défense ennemie.
+SPIRIT_BREAK|Brise le moral. Baisse l'Atq. Spé. ennemie.
+STRANGE_STEAM|Vapeur étrange. Peut rendre confus.
+LIFE_DEW|Asperge d'eau : soigne le lanceur et ses alliés.
+OBSTRUCT|Pare les attaques. Baisse beaucoup la Défense de qui touche.
+FALSE_SURRENDER|S'incline pour piquer avec ses cheveux. Touche toujours.
+METEOR_ASSAULT|Frappe avec un gros poireau. Le lanceur doit se reposer.
+ETERNABEAM|Rayon ultime. Le lanceur doit se reposer ensuite.
+STEEL_BEAM|Rayon d'acier. Coûte la moitié des PV du lanceur.
+EXPANDING_FORCE|Plus forte et touche tous les ennemis en Champ Psychique.
+STEEL_ROLLER|Détruit le champ. Échoue s'il n'y a pas de champ.
+SCALE_SHOT|2 à 5 écailles. Vitesse +1, Défense -1.
+METEOR_BEAM|Charge 1 tour (Atq. Spé. +1), puis attaque.
+SHELL_SIDE_ARM|Physique ou spéciale, la plus forte. Peut empoisonner.
+MISTY_EXPLOSION|Touche tout et met K.O. le lanceur. Plus fort en Champ Brumeux.
+GRASSY_GLIDE|Glisse sur l'herbe. En premier sur Champ Herbu.
+RISING_VOLTAGE|Double puissance sur Champ Électrifié.
+TERRAIN_PULSE|Type et puissance changent selon le champ.
+SKITTER_SMACK|Se faufile derrière l'ennemi. Baisse son Atq. Spé.
+BURNING_JEALOUSY|Brûle les ennemis dont les stats ont monté ce tour.
+LASH_OUT|Double puissance si les stats du lanceur ont baissé ce tour.
+POLTERGEIST|Attaque avec l'objet de l'ennemi. Échoue s'il n'en a pas.
+CORROSIVE_GAS|Gaz acide qui fait fondre les objets tenus autour.
+FLIP_TURN|Attaque puis revient pour laisser la place à un allié.
+TRIPLE_AXEL|Trois coups de pied, de plus en plus forts.
+SCORCHING_SANDS|Sable brûlant. Peut brûler.
+JUNGLE_HEALING|Soigne PV et statut du lanceur et de ses alliés.
+WICKED_BLOW|Style Poing Obscur : coup critique à coup sûr.
+SURGING_STRIKES|Style Mille Poings : trois coups critiques.
+THUNDER_CAGE|Enferme l'ennemi dans une cage électrique 4 à 5 tours.
+DRAGON_ENERGY|Plus les PV du lanceur sont hauts, plus c'est fort.
+FIERY_WRATH|Colère brûlante sur les ennemis. Peut apeurer.
+THUNDEROUS_KICK|Coup de pied foudroyant. Baisse la Défense ennemie.
+EERIE_SPELL|Pouvoir psychique. Retire 3 PP à la dernière capacité.
+DIRE_CLAW|Critique élevé. Peut paralyser, empoisonner ou endormir.
+PSYSHIELD_BASH|Charge psychique. Peut augmenter la Défense.
+SPRINGTIDE_STORM|Vents violents. L'effet dépend de la forme.
+MYSTICAL_POWER|Pouvoir mystérieux. Augmente l'Atq. Spé. du lanceur.
+RAGING_FURY|Déchaînement de 2 à 3 tours qui rend le lanceur confus.
+WAVE_CRASH|Charge enveloppée d'eau. Blesse aussi le lanceur.
+CHLOROBLAST|Rayon de chlorophylle. Coûte la moitié des PV.
+VICTORY_DANCE|Danse : Attaque, Défense et Vitesse augmentent.
+HEADLONG_RUSH|Charge de tout son corps. Les défenses du lanceur baissent.
+BARB_BARRAGE|Peut empoisonner. Double puissance sur un empoisonné.
+ESPER_WING|Critique élevé. Augmente la Vitesse du lanceur.
+SHELTER|Durcit sa peau : la Défense augmente beaucoup.
+TRIPLE_ARROWS|Critique élevé. Peut baisser la Défense ou apeurer.
+INFERNAL_PARADE|Plus forte sur un ennemi avec un statut. Peut brûler.
+CEASELESS_EDGE|Tranche et laisse des pics sous l'ennemi.
+BLEAKWIND_STORM|Vents glacials. Peut baisser la Vitesse.
+WILDBOLT_STORM|Tempête électrique. Peut paralyser.
+SANDSEAR_STORM|Sable brûlant. Peut brûler.
+LUNAR_BLESSING|Soigne PV et statut du lanceur et de son allié.
+TAKE_HEART|Soigne le statut. Atq. Spé. et Déf. Spé. augmentent.
+TERA_BLAST|Prend le type Téra si le lanceur est téracristallisé.
+SILK_TRAP|Pare les attaques. Baisse la Vitesse de qui touche.
+AXE_KICK|Peut blesser le lanceur s'il rate. Peut rendre confus.
+LAST_RESPECTS|Plus forte pour chaque allié mis K.O.
+LUMINA_CRASH|Lumière étrange. Baisse énormément la Déf. Spé.
+ORDER_UP|Augmente une stat selon le Nigirigon avalé.
+JET_PUNCH|Poing ultra rapide qui frappe en premier.
+SPICY_EXTRACT|Attaque de la cible +2, Défense -2.
+SPIN_OUT|Fait chauffer ses roues. Vitesse du lanceur -2.
+POPULATION_BOMB|Toute la famille frappe 1 à 10 fois.
+ICE_SPINNER|Pieds glacés qui frappent et détruisent le champ.

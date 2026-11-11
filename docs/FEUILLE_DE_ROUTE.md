@@ -52,6 +52,7 @@ et sur GitHub.
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 - v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
 - v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
+- v0.26 - course auto (OPTIONS), Repousse Infinie, niveau de lien dans le résumé, résumé et descriptions (attaques, talents, objets) en français
 
 ## Plus tard
 

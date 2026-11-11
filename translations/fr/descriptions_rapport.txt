@@ -1,0 +1,20 @@
+Descriptions restées en anglais (à compléter dans descriptions_overrides.json)
+Attaques	MOVE_NONE	pas de texte
+Objets	ITEM_TM56	trop long
+Objets	ITEM_TM58	trop long
+Objets	ITEM_TM64	trop long
+Objets	ITEM_TM69	trop long
+Objets	ITEM_TM72	trop long
+Objets	ITEM_TM74	trop long
+Objets	ITEM_TM77	trop long
+Objets	ITEM_TM81	trop long
+Objets	ITEM_TM86	trop long
+Objets	ITEM_TM89	trop long
+Objets	ITEM_TM90	trop long
+Objets	ITEM_TM91	trop long
+Objets	ITEM_TM92	trop long
+Objets	ITEM_TM94	trop long
+Objets	ITEM_TM100	trop long
+Objets	ITEM_CHOICE_DUMPLING	pas de texte
+Objets	ITEM_SWAP_SNACK	pas de texte
+Objets	ITEM_TWICE_SPICED_RADISH	pas de texte

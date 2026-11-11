@@ -269,10 +269,24 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Pokémon de Clémenti-Ville (1,4) après la Ligue, `data/scripts/mega_gemmes.inc`. Prix : `COURONNEMENT_PRIX_MEGA_GEMME` (10000)
   dans `include/config/item.h`, appliqué à toutes les Méga-Gemmes de `src/data/items.h`.
 
+## Fait (v0.26) - confort et traduction des menus
+
+- OPTIONS : la ligne SON (Mono / Stéréo) devient COURSE : BOUTON B / AUTO (`FLAG_COURSE_AUTO` 0x24 ; en AUTO on court sans
+  tenir B, B pour marcher, `src/field_player_avatar.c`). L'écran est plein (9 lignes) : toute nouvelle option devra en remplacer une.
+- Repousse Infinie (`ITEM_REPOUSSE_INFINIE` 874, objet clé assignable à SELECT) : bascule `FLAG_REPOUSSE_INFINIE` (0x25), branché sur
+  `WE_FLAG_NO_ENCOUNTER` (plus de rencontres dans l'herbe / l'eau ; la pêche marche toujours). Donnée par le rival avec le pass ;
+  l'herboriste de Clémenti la donne aux sauvegardes plus anciennes (`Couronnement_EventScript_DonnerRepousseInfinie`).
+- Résumé du Pokémon : la ligne RUBAN devient LIEN (aucun / lien / fort + bonus d'XP total). Titres de l'écran redessinés en français
+  dans `graphics/summary_screen/tiles.png` par `tools/fr/resume_titres.py` (PROFIL, TALENT, CAPACITES, OBJET, LIEN, EFFET, MEMO DRESSEUR…).
+- Descriptions en français : 933 attaques, 317 talents, 857 objets (`tools/fr/descriptions_fr.py <csv PokéAPI>`) : texte officiel
+  quand il tient dans la fenêtre (police normale, étroite ou plus étroite comme `GetFontIdToFit`), sinon traduction courte écrite à la
+  main dans `translations/fr/descriptions/*.txt` (CLÉ|texte, mis en forme automatiquement). Sac et boutiques choisissent une police
+  plus étroite si besoin. Restent : descriptions des Concours (`gContestEffects`), Pokédex.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
-1. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
+1. Puis : objets tenus récupérés après combat, descriptions des Concours et du Pokédex en français, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 

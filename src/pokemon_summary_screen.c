@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_bond.h"
 #include "main.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -3806,7 +3807,30 @@ static void PrintHeldItemName(void)
     PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_HELD_ITEM), text, x, 1, 0, 0, fontId);
 }
 
+// Émeraude Couronnement : la ligne RUBAN affiche le lien (aucun / lien / fort) et le bonus d'XP total
+// (lien + ancienneté, voir src/pokemon_bond.c). Les rubans ne servent pas dans ce jeu.
 static void PrintRibbonCount(void)
+{
+    static const u8 sText_LienAucun[] = _("AUCUN");
+    static const u8 sText_LienNormal[] = _("LIEN");
+    static const u8 sText_LienFort[] = _("FORT");
+    static const u8 sText_LienBonus[] = _(" +{STR_VAR_1} % XP");
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+    const u8 *niveau[] = {sText_LienAucun, sText_LienNormal, sText_LienFort};
+    u32 bonus = GetMonBondExpBonusPercent(mon);
+    int x;
+
+    StringCopy(gStringVar4, niveau[GetMonBondLevel(mon)]);
+    if (bonus != 0)
+    {
+        ConvertIntToDecimalStringN(gStringVar1, bonus, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringExpandPlaceholders(gStringVar4 + StringLength(gStringVar4), sText_LienBonus);
+    }
+    x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 70) + 6;
+    PrintTextOnWindowToFit(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gStringVar4, x, 1, 0, 0);
+}
+
+static void UNUSED PrintRibbonCountVanilla(void)
 {
     const u8 *text;
     int x;
@@ -4775,10 +4799,10 @@ static inline bool32 ShouldShowIvEvPrompt(void)
 static inline void ShowUtilityPrompt(s16 mode)
 {
     const u8* promptText = NULL;
-    const u8* gText_SkillPageIvs = COMPOUND_STRING("IVs");
-    const u8* gText_SkillPageEvs = COMPOUND_STRING("EVs");
+    const u8* gText_SkillPageIvs = COMPOUND_STRING("IV");
+    const u8* gText_SkillPageEvs = COMPOUND_STRING("EV");
     const u8* gText_SkillPageStats = COMPOUND_STRING("STATS");
-    const u8* gText_Rename = COMPOUND_STRING("RENAME");
+    const u8* gText_Rename = COMPOUND_STRING("RENOMMER");
 
     if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
     {

@@ -1,0 +1,155 @@
+DRACO_PLATE|À tenir. Renforce les capacités Dragon.
+DREAD_PLATE|À tenir. Renforce les capacités Ténèbres.
+IRON_PLATE|À tenir. Renforce les capacités Acier.
+PIXIE_PLATE|À tenir. Renforce les capacités Fée.
+DOUSE_DRIVE|Techno-Buster devient de type Eau.
+SHOCK_DRIVE|Techno-Buster devient de type Électrik.
+BURN_DRIVE|Techno-Buster devient de type Feu.
+CHILL_DRIVE|Techno-Buster devient de type Glace.
+FIRE_MEMORY|Données de type Feu. Change le type de Silvallié.
+FIRE_GEM|Renforce une fois une capacité Feu.
+WATER_MEMORY|Données de type Eau. Change le type de Silvallié.
+WATER_GEM|Renforce une fois une capacité Eau.
+ELECTRIC_MEMORY|Données de type Électrik. Change le type de Silvallié.
+ELECTRIC_GEM|Renforce une fois une capacité Électrik.
+GRASS_MEMORY|Données de type Plante. Change le type de Silvallié.
+GRASS_GEM|Renforce une fois une capacité Plante.
+ICE_MEMORY|Données de type Glace. Change le type de Silvallié.
+ICE_GEM|Renforce une fois une capacité Glace.
+FIGHTING_MEMORY|Données de type Combat. Change le type de Silvallié.
+FIGHTING_GEM|Renforce une fois une capacité Combat.
+POISON_MEMORY|Données de type Poison. Change le type de Silvallié.
+POISON_GEM|Renforce une fois une capacité Poison.
+GROUND_MEMORY|Données de type Sol. Change le type de Silvallié.
+GROUND_GEM|Renforce une fois une capacité Sol.
+FLYING_MEMORY|Données de type Vol. Change le type de Silvallié.
+FLYING_GEM|Renforce une fois une capacité Vol.
+PSYCHIC_MEMORY|Données de type Psy. Change le type de Silvallié.
+PSYCHIC_GEM|Renforce une fois une capacité Psy.
+BUG_MEMORY|Données de type Insecte. Change le type de Silvallié.
+BUG_GEM|Renforce une fois une capacité Insecte.
+ROCK_MEMORY|Données de type Roche. Change le type de Silvallié.
+ROCK_GEM|Renforce une fois une capacité Roche.
+GHOST_MEMORY|Données de type Spectre. Change le type de Silvallié.
+GHOST_GEM|Renforce une fois une capacité Spectre.
+DRAGON_MEMORY|Données de type Dragon. Change le type de Silvallié.
+DRAGON_GEM|Renforce une fois une capacité Dragon.
+DARK_MEMORY|Données de type Ténèbres. Change le type de Silvallié.
+DARK_GEM|Renforce une fois une capacité Ténèbres.
+STEEL_MEMORY|Données de type Acier. Change le type de Silvallié.
+STEEL_GEM|Renforce une fois une capacité Acier.
+FAIRY_MEMORY|Données de type Fée. Change le type de Silvallié.
+FAIRY_GEM|Renforce une fois une capacité Fée.
+NORMAL_GEM|Renforce une fois une capacité Normal.
+RUSTED_SWORD|Une épée qu'un héros utilisa pour arrêter une catastrophe.
+RUSTED_SHIELD|Un bouclier qu'un héros utilisa pour arrêter une catastrophe.
+VENUSAURITE|Permet à Florizarre de méga-évoluer en combat.
+CHARIZARDITE_X|Permet à Dracaufeu de méga-évoluer en combat.
+CHARIZARDITE_Y|Permet à Dracaufeu de méga-évoluer en combat.
+BLASTOISINITE|Permet à Tortank de méga-évoluer en combat.
+BEEDRILLITE|Permet à Dardargnan de méga-évoluer en combat.
+PIDGEOTITE|Permet à Roucarnage de méga-évoluer en combat.
+ALAKAZITE|Permet à Alakazam de méga-évoluer en combat.
+SLOWBRONITE|Permet à Flagadoss de méga-évoluer en combat.
+GENGARITE|Permet à Ectoplasma de méga-évoluer en combat.
+KANGASKHANITE|Permet à Kangourex de méga-évoluer en combat.
+PINSIRITE|Permet à Scarabrute de méga-évoluer en combat.
+GYARADOSITE|Permet à Léviator de méga-évoluer en combat.
+AERODACTYLITE|Permet à Ptéra de méga-évoluer en combat.
+MEWTWONITE_X|Permet à Mewtwo de méga-évoluer en combat.
+MEWTWONITE_Y|Permet à Mewtwo de méga-évoluer en combat.
+AMPHAROSITE|Permet à Pharamp de méga-évoluer en combat.
+STEELIXITE|Permet à Steelix de méga-évoluer en combat.
+SCIZORITE|Permet à Cizayox de méga-évoluer en combat.
+HERACRONITE|Permet à Scarhino de méga-évoluer en combat.
+HOUNDOOMINITE|Permet à Démolosse de méga-évoluer en combat.
+TYRANITARITE|Permet à Tyranocif de méga-évoluer en combat.
+SCEPTILITE|Permet à Jungko de méga-évoluer en combat.
+BLAZIKENITE|Permet à Braségali de méga-évoluer en combat.
+SWAMPERTITE|Permet à Laggron de méga-évoluer en combat.
+GARDEVOIRITE|Permet à Gardevoir de méga-évoluer en combat.
+SABLENITE|Permet à Ténéfix de méga-évoluer en combat.
+MAWILITE|Permet à Mysdibule de méga-évoluer en combat.
+AGGRONITE|Permet à Galeking de méga-évoluer en combat.
+MEDICHAMITE|Permet à Charmina de méga-évoluer en combat.
+MANECTITE|Permet à Élecsprint de méga-évoluer en combat.
+SHARPEDONITE|Permet à Sharpedo de méga-évoluer en combat.
+CAMERUPTITE|Permet à Camérupt de méga-évoluer en combat.
+ALTARIANITE|Permet à Altaria de méga-évoluer en combat.
+BANETTITE|Permet à Branette de méga-évoluer en combat.
+ABSOLITE|Permet à Absol de méga-évoluer en combat.
+GLALITITE|Permet à Oniglali de méga-évoluer en combat.
+SALAMENCITE|Permet à Drattak de méga-évoluer en combat.
+METAGROSSITE|Permet à Métalosse de méga-évoluer en combat.
+LATIASITE|Permet à Latias de méga-évoluer en combat.
+LATIOSITE|Permet à Latios de méga-évoluer en combat.
+LOPUNNITE|Permet à Lockpin de méga-évoluer en combat.
+GARCHOMPITE|Permet à Carchacrok de méga-évoluer en combat.
+LUCARIONITE|Permet à Lucario de méga-évoluer en combat.
+ABOMASITE|Permet à Blizzaroi de méga-évoluer en combat.
+GALLADITE|Permet à Gallame de méga-évoluer en combat.
+AUDINITE|Permet à Nanméouïe de méga-évoluer en combat.
+DIANCITE|Permet à Diancie de méga-évoluer en combat.
+CLEFABLITE|Permet à Mélodelfe de méga-évoluer en combat.
+VICTREEBELITE|Permet à Empiflor de méga-évoluer en combat.
+STARMINITE|Permet à Staross de méga-évoluer en combat.
+DRAGONINITE|Permet à Dracolosse de méga-évoluer en combat.
+MEGANIUMITE|Permet à Méganium de méga-évoluer en combat.
+FERALIGITE|Permet à Aligatueur de méga-évoluer en combat.
+SKARMORITE|Permet à Airmure de méga-évoluer en combat.
+FROSLASSITE|Permet à Momartik de méga-évoluer en combat.
+EMBOARITE|Permet à Roitiflam de méga-évoluer en combat.
+EXCADRITE|Permet à Minotaupe de méga-évoluer en combat.
+SCOLIPITE|Permet à Brutapode de méga-évoluer en combat.
+SCRAFTINITE|Permet à Baggaïd de méga-évoluer en combat.
+EELEKTROSSITE|Permet à Ohmassacre de méga-évoluer en combat.
+CHANDELURITE|Permet à Lugulabre de méga-évoluer en combat.
+CHESNAUGHTITE|Permet à Blindépique de méga-évoluer en combat.
+DELPHOXITE|Permet à Goupelin de méga-évoluer en combat.
+GRENINJITE|Permet à Amphinobi de méga-évoluer en combat.
+PYROARITE|Permet à Némélios de méga-évoluer en combat.
+FLOETTITE|Permet à Floette de méga-évoluer en combat.
+MALAMARITE|Permet à Sepiatroce de méga-évoluer en combat.
+BARBARACITE|Permet à Golgopathe de méga-évoluer en combat.
+DRAGALGITE|Permet à Kravarech de méga-évoluer en combat.
+HAWLUCHANITE|Permet à Brutalibré de méga-évoluer en combat.
+ZYGARDITE|Permet à Zygarde de méga-évoluer en combat.
+DRAMPANITE|Permet à Draïeul de méga-évoluer en combat.
+FALINKSITE|Permet à Hexadron de méga-évoluer en combat.
+HEATRANITE|Permet à Heatran de méga-évoluer en combat.
+DARKRANITE|Permet à Darkrai de méga-évoluer en combat.
+ZERAORITE|Permet à Zeraora de méga-évoluer en combat.
+RAICHUNITE_X|Permet à Raichu de méga-évoluer en combat.
+RAICHUNITE_Y|Permet à Raichu de méga-évoluer en combat.
+CHIMECHITE|Permet à Éoko de méga-évoluer en combat.
+ABSOLITE_Z|Permet à Absol de méga-évoluer en combat.
+STARAPTITE|Permet à Étouraptor de méga-évoluer en combat.
+GARCHOMPITE_Z|Permet à Carchacrok de méga-évoluer en combat.
+LUCARIONITE_Z|Permet à Lucario de méga-évoluer en combat.
+GOLURKITE|Permet à Golemastoc de méga-évoluer en combat.
+MEOWSTICITE|Permet à Mistigrix de méga-évoluer en combat.
+CRABOMINITE|Permet à Crabominable de méga-évoluer en combat.
+GOLISOPITE|Permet à Sarmuraï de méga-évoluer en combat.
+MAGEARNITE|Permet à Magearna de méga-évoluer en combat.
+SCOVILLAINITE|Permet à Scovilain de méga-évoluer en combat.
+BAXCALIBRITE|Permet à Glaivodo de méga-évoluer en combat.
+TATSUGIRINITE|Permet à Nigirigon de méga-évoluer en combat.
+GLIMMORANITE|Permet à Floréclat de méga-évoluer en combat.
+NORMALIUM_Z|Change les capacités Normal en capacités Z.
+FIRIUM_Z|Change les capacités Feu en capacités Z.
+WATERIUM_Z|Change les capacités Eau en capacités Z.
+ELECTRIUM_Z|Change les capacités Électrik en capacités Z.
+GRASSIUM_Z|Change les capacités Plante en capacités Z.
+ICIUM_Z|Change les capacités Glace en capacités Z.
+FIGHTINIUM_Z|Change les capacités Combat en capacités Z.
+POISONIUM_Z|Change les capacités Poison en capacités Z.
+GROUNDIUM_Z|Change les capacités Sol en capacités Z.
+FLYINIUM_Z|Change les capacités Vol en capacités Z.
+PSYCHIUM_Z|Change les capacités Psy en capacités Z.
+BUGINIUM_Z|Change les capacités Insecte en capacités Z.
+ROCKIUM_Z|Change les capacités Roche en capacités Z.
+GHOSTIUM_Z|Change les capacités Spectre en capacités Z.
+DRAGONIUM_Z|Change les capacités Dragon en capacités Z.
+DARKINIUM_Z|Change les capacités Ténèbres en capacités Z.
+STEELIUM_Z|Change les capacités Acier en capacités Z.
+FAIRIUM_Z|Change les capacités Fée en capacités Z.

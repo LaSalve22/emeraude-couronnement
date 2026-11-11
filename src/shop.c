@@ -777,7 +777,9 @@ static void BuyMenuInitWindows(void)
 
 static void BuyMenuPrint(u8 windowId, const u8 *text, u8 x, u8 y, s8 speed, u8 colorSet)
 {
-    AddTextPrinterParameterized4(windowId, FONT_NORMAL, x, y, 0, 0, sShopBuyMenuTextColors[colorSet], speed, text);
+    // Couronnement : police plus étroite si le texte français déborde de la fenêtre
+    u32 fontId = GetFontIdToFit(text, FONT_NORMAL, 0, GetWindowAttribute(windowId, WINDOW_WIDTH) * 8 - x);
+    AddTextPrinterParameterized4(windowId, fontId, x, y, 0, 0, sShopBuyMenuTextColors[colorSet], speed, text);
 }
 
 static void BuyMenuDisplayMessage(u8 taskId, const u8 *text, TaskFunc callback)

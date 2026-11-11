@@ -55,8 +55,8 @@
 #define FLAG_TERA_ORB_CHARGED 0x21 // Couronnement : Orbe Téracristal chargé (rechargé au Centre Pokémon)
 #define FLAG_COURONNEMENT_PASS    0x22 // Couronnement Mondial : pass remis par le rival
 #define FLAG_COURONNEMENT_EN_COURS    0x23 // Couronnement Mondial : tournoi en cours (pas de blackout)
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
+#define FLAG_COURSE_AUTO    0x24 // Émeraude Couronnement : OPTIONS > COURSE sur AUTO (B pour marcher)
+#define FLAG_REPOUSSE_INFINIE    0x25 // Émeraude Couronnement : Repousse Infinie activée (pas de rencontres)
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag

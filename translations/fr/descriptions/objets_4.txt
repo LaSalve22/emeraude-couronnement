@@ -1,0 +1,116 @@
+HM_DIVE|Plonge au 1er tour, puis attaque au tour suivant.
+OVAL_CHARM|Augmente les chances de trouver des Œufs.
+SHINY_CHARM|Augmente les chances de croiser des Pokémon chromatiques.
+CATCHING_CHARM|Augmente les chances de capture critique.
+EXP_CHARM|Augmente l'Exp. gagnée par les Pokémon.
+ROTOM_CATALOG|Fait entrer et sortir Motisma des appareils de la liste.
+REVEAL_GLASS|Rend sa forme d'origine à un Pokémon.
+DNA_SPLICERS|Fusionne Kyurem avec un certain Pokémon.
+ZYGARDE_CUBE|Change la forme de Zygarde.
+REINS_OF_UNITY|Unit ou sépare Sylveroy et sa monture.
+MEGA_RING|Permet aux Pokémon avec une Méga-Gemme de méga-évoluer.
+Z_POWER_RING|Permet aux Pokémon d'utiliser la Force Z.
+DYNAMAX_BAND|Permet de Dynamaxer sur un Point Dynamax.
+BICYCLE|Un vélo pliant, plus rapide que les Chaussures de Course.
+OLD_ROD|Pour pêcher des Pokémon sauvages au bord de l'eau.
+GOOD_ROD|Une bonne canne pour pêcher des Pokémon sauvages.
+SUPER_ROD|La meilleure canne pour pêcher des Pokémon sauvages.
+DOWSING_MACHINE|Signale par un bruit les objets cachés.
+TOWN_MAP|Consultable à tout moment. Montre où on se trouve.
+VS_SEEKER|Repère les Dresseurs prêts pour une revanche.
+BERRY_POUCH|Un sac pratique pour ranger ses Baies.
+POKEMON_BOX_LINK|Donne accès au système de stockage des Pokémon.
+COIN_CASE|Une boîte qui contient jusqu'à 9 999 Jetons.
+POWDER_JAR|Range la Poudre Baie faite au Broyeur à Baies.
+POKE_RADAR|Un outil qui détecte les Pokémon cachés dans l'herbe.
+POKEBLOCK_CASE|Une boîte pour ranger les Pokéblocs.
+POKE_FLUTE|Une flûte au son doux qui réveille les Pokémon.
+FAME_CHECKER|Garde des infos sur les célébrités.
+TEACHY_TV|Une TV branchée sur une émission de conseils.
+SS_TICKET|Le billet pour monter à bord du ferry.
+EON_TICKET|Le billet pour une île lointaine au sud.
+MYSTIC_TICKET|Le billet pour le bateau vers le Nombril du Monde.
+AURORA_TICKET|Le billet pour le bateau vers l'Île Originelle.
+OLD_SEA_MAP|Une vieille carte marine vers une certaine île.
+GO_GOGGLES|Des lunettes qui protègent les yeux des tempêtes de sable.
+DEVON_SCOPE|Un appareil Devon qui révèle les Pokémon invisibles.
+MAGMA_EMBLEM|Une médaille en forme de logo de la Team Magma.
+CONTEST_PASS|Le passe pour participer aux Concours Pokémon.
+PARCEL|Un colis pour le Prof. Chen, de la part du vendeur.
+SECRET_KEY|La clé de l'Arène de Cramois'Île.
+BIKE_VOUCHER|Un bon pour obtenir un vélo chez le marchand.
+GOLD_TEETH|Le dentier en or perdu par le gardien du Parc Safari.
+LIFT_KEY|La clé de l'ascenseur du repaire de la Team Rocket.
+SILPH_SCOPE|Le Scope de Sylphe SARL révèle les Pokémon invisibles.
+TRI_PASS|Un passe pour les ferries entre les Îles 1, 2 et 3.
+RAINBOW_PASS|Pour les ferries entre Carmin sur Mer et les Îles Sevii.
+RUBY|Un joyau rouge éclatant, symbole de passion.
+SAPPHIRE|Un joyau bleu brillant, symbole d'honnêteté.
+ABILITY_SHIELD|Empêche le talent du porteur d'être changé.
+CLEAR_AMULET|Empêche les stats du porteur d'être baissées.
+PUNCHING_GLOVE|Renforce les coups de poing, sans contact.
+COVERT_CLOAK|Protège le porteur des effets secondaires.
+LOADED_DICE|Les attaques multiples frappent plus de fois.
+AUSPICIOUS_ARMOR|Une armure qui fait évoluer certains Pokémon.
+BOOSTER_ENERGY|Active Paléosynthèse ou Charge Quantique.
+BIG_BAMBOO_SHOOT|Une grosse pousse de bambou, prisée des gourmets.
+GIMMIGHOUL_COIN|Une pièce que Mordudor amasse comme trésor.
+LEADERS_CREST|Un éclat de lame, tenu par les Scalproie chefs.
+MALICIOUS_ARMOR|Une armure qui fait évoluer certains Pokémon.
+MIRROR_HERB|Copie une fois les boosts de stats ennemis.
+SCROLL_OF_DARKNESS|Un rouleau étrange qui fait évoluer certains Pokémon.
+SCROLL_OF_WATERS|Un rouleau étrange qui fait évoluer certains Pokémon.
+TERA_ORB|Chargé, il permet de téracristalliser un Pokémon.
+TINY_BAMBOO_SHOOT|Une petite pousse de bambou, prisée des gourmets.
+ADAMANT_CRYSTAL|Un joyau qui change la forme de Dialga.
+GRISEOUS_CORE|Un joyau qui change la forme de Giratina.
+LUSTROUS_GLOBE|Un joyau qui change la forme de Palkia.
+BLACK_AUGURITE|Une pierre noire qu'adore un certain Pokémon.
+LINKING_CORD|Un fil chargé d'énergie qu'adorent certains Pokémon.
+PEAT_BLOCK|Un bloc de matière qu'adore un certain Pokémon.
+BERSERK_GENE|Augmente beaucoup l'Attaque, mais rend confus.
+FAIRY_FEATHER|À tenir. Renforce les capacités Fée.
+SYRUPY_APPLE|Une pomme étrange qui fait évoluer certains Pokémon.
+UNREMARKABLE_TEACUP|Un bol étrange qui fait évoluer certains Pokémon.
+MASTERPIECE_TEACUP|Un bol étrange qui fait évoluer certains Pokémon.
+CORNERSTONE_MASK|Ogerpon prend le type Roche en combat.
+WELLSPRING_MASK|Ogerpon prend le type Eau en combat.
+HEARTHFLAME_MASK|Ogerpon prend le type Feu en combat.
+HEALTH_MOCHI|Augmente les EV en PV d'un Pokémon.
+MUSCLE_MOCHI|Augmente les EV en Attaque d'un Pokémon.
+RESIST_MOCHI|Augmente les EV en Défense d'un Pokémon.
+GENIUS_MOCHI|Augmente les EV en Atq. Spé. d'un Pokémon.
+CLEVER_MOCHI|Augmente les EV en Déf. Spé. d'un Pokémon.
+SWIFT_MOCHI|Augmente les EV en Vitesse d'un Pokémon.
+FRESH_START_MOCHI|Remet tous les EV d'un Pokémon à zéro.
+GLIMMERING_CHARM|Plus de Téra-Éclats dans les raids.
+METAL_ALLOY|Un métal étrange qui fait évoluer certains Pokémon.
+JUBILIFE_MUFFIN|Spécialité locale qui soigne tous les statuts.
+REMEDY|Une poudre amère qui restaure 20 PV.
+FINE_REMEDY|Une poudre amère qui restaure 60 PV.
+SUPERB_REMEDY|Une poudre amère qui restaure 120 PV.
+AUX_EVASION|Augmente beaucoup l'Esquive pendant un combat.
+AUX_GUARD|Augmente beaucoup les défenses pendant un combat.
+AUX_POWER|Augmente beaucoup les attaques pendant un combat.
+AUX_POWERGUARD|Augmente beaucoup attaques et défenses pendant un combat.
+POKESHI_DOLL|Un jouet en bois à l'image d'un Pokémon. Se revend.
+REPOUSSE_INFINIE|Active ou coupe les rencontres sauvages. À vie.
+BUG_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+DARK_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+DRAGON_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+ELECTRIC_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+FAIRY_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+FIGHTING_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+FIRE_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+FLYING_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+GHOST_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+GRASS_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+GROUND_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+ICE_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+NORMAL_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+POISON_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+PSYCHIC_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+ROCK_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+STEEL_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+WATER_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.
+STELLAR_TERA_SHARD|Des éclats laissés par un Pokémon téracristallisé vaincu.

@@ -1,0 +1,140 @@
+NONE|?????
+STRANGE_BALL|Une Ball qui a voyagé à travers l'espace et le temps.
+POKE_BALL|Un objet pour capturer les Pokémon sauvages.
+GREAT_BALL|Une bonne Ball, plus efficace qu'une Poké Ball.
+ULTRA_BALL|Une Ball très efficace, meilleure qu'une Super Ball.
+MASTER_BALL|La meilleure Ball : capture à coup sûr.
+HEAL_BALL|Une Ball qui soigne le Pokémon capturé.
+NET_BALL|Plus efficace sur les Pokémon Eau et Insecte.
+NEST_BALL|Plus efficace sur les Pokémon de bas niveau.
+DIVE_BALL|Plus efficace sur les Pokémon dans l'eau.
+TIMER_BALL|Plus efficace quand le combat dure longtemps.
+QUICK_BALL|Plus efficace au tout début du combat.
+REPEAT_BALL|Plus efficace sur les espèces déjà capturées.
+LUXURY_BALL|Une Ball douillette : le Pokémon s'attache vite.
+LEVEL_BALL|Plus efficace si le Pokémon est de niveau plus bas.
+LURE_BALL|Plus efficace sur les Pokémon pêchés.
+MOON_BALL|Plus efficace sur ceux qui évoluent par Pierre Lune.
+FRIEND_BALL|Le Pokémon capturé est plus amical.
+FAST_BALL|Plus efficace sur les Pokémon rapides.
+HEAVY_BALL|Plus efficace sur les Pokémon très lourds.
+DREAM_BALL|Plus efficace sur les Pokémon endormis.
+BEAST_BALL|Une Ball spéciale pour les Ultra-Chimères.
+FULL_RESTORE|Restaure tous les PV et soigne le statut d'un Pokémon.
+HEAL_POWDER|Une poudre amère qui soigne tous les statuts.
+FULL_HEAL|Soigne tous les problèmes de statut d'un Pokémon.
+MAX_HONEY|Ranime un Pokémon K.O. avec tous ses PV.
+ABILITY_CAPSULE|Change le talent d'un Pokémon pour l'autre talent normal.
+ABILITY_PATCH|Donne au Pokémon son talent caché.
+LONELY_MINT|Son odeur change la nature : Attaque +, Défense -.
+ADAMANT_MINT|Son odeur change la nature : Attaque +, Atq. Spé. -.
+NAUGHTY_MINT|Son odeur change la nature : Attaque +, Déf. Spé. -.
+BRAVE_MINT|Son odeur change la nature : Attaque +, Vitesse -.
+BOLD_MINT|Son odeur change la nature : Défense +, Attaque -.
+IMPISH_MINT|Son odeur change la nature : Défense +, Atq. Spé. -.
+LAX_MINT|Son odeur change la nature : Défense +, Déf. Spé. -.
+RELAXED_MINT|Son odeur change la nature : Défense +, Vitesse -.
+MODEST_MINT|Son odeur change la nature : Atq. Spé. +, Attaque -.
+MILD_MINT|Son odeur change la nature : Atq. Spé. +, Défense -.
+RASH_MINT|Son odeur change la nature : Atq. Spé. +, Déf. Spé. -.
+QUIET_MINT|Son odeur change la nature : Atq. Spé. +, Vitesse -.
+CALM_MINT|Son odeur change la nature : Déf. Spé. +, Attaque -.
+GENTLE_MINT|Son odeur change la nature : Déf. Spé. +, Défense -.
+CAREFUL_MINT|Son odeur change la nature : Déf. Spé. +, Atq. Spé. -.
+SASSY_MINT|Son odeur change la nature : Déf. Spé. +, Vitesse -.
+TIMID_MINT|Son odeur change la nature : Vitesse +, Attaque -.
+HASTY_MINT|Son odeur change la nature : Vitesse +, Défense -.
+JOLLY_MINT|Son odeur change la nature : Vitesse +, Atq. Spé. -.
+NAIVE_MINT|Son odeur change la nature : Vitesse +, Déf. Spé. -.
+SERIOUS_MINT|Son odeur rend la nature neutre : stats équilibrées.
+EXP_CANDY_XS|Donne très peu d'Exp. à un Pokémon.
+EXP_CANDY_S|Donne un peu d'Exp. à un Pokémon.
+EXP_CANDY_M|Donne pas mal d'Exp. à un Pokémon.
+EXP_CANDY_L|Donne beaucoup d'Exp. à un Pokémon.
+EXP_CANDY_XL|Donne énormément d'Exp. à un Pokémon.
+DYNAMAX_CANDY|Augmente d'un le niveau Dynamax d'un Pokémon.
+LURE|Les Pokémon apparaissent plus souvent pendant 100 pas.
+SUPER_LURE|Les Pokémon apparaissent plus souvent pendant 200 pas.
+MAX_LURE|Les Pokémon apparaissent plus souvent pendant 250 pas.
+ESCAPE_ROPE|Permet de sortir aussitôt d'une grotte ou d'un donjon.
+X_SP_ATK|Augmente beaucoup l'Atq. Spé. pendant un combat.
+X_SP_DEF|Augmente beaucoup la Déf. Spé. pendant un combat.
+DIRE_HIT|Augmente le taux de critique pendant un combat.
+FLUFFY_TAIL|Permet de fuir n'importe quel combat sauvage.
+POKE_TOY|Permet de fuir n'importe quel combat sauvage.
+MAX_MUSHROOMS|Des champignons qui augmentent toutes les stats.
+GOLD_BOTTLE_CAP|Une capsule dorée. Maximise tous les IV d'un Pokémon.
+NUGGET|Une pépite d'or pur. Se revend très cher.
+BIG_NUGGET|Une grosse pépite d'or. Se revend très cher.
+BALM_MUSHROOM|Un champignon parfumé. Se revend cher.
+PEARL|Une jolie perle. Se revend un peu.
+BIG_PEARL|Une grosse perle. Se revend cher.
+PEARL_STRING|Trois grosses perles. Se revend très cher.
+STARDUST|Un beau sable rouge. Se revend cher.
+STAR_PIECE|Un éclat de joyau rouge. Se revend très cher.
+COMET_SHARD|Un éclat de comète. Se revend très cher.
+HEART_SCALE|Une jolie écaille, très prisée des collectionneurs.
+HONEY|Un miel sucré qui attire les Pokémon sauvages.
+RARE_BONE|Un os rare pour la recherche. Se revend cher.
+ODD_KEYSTONE|Un objet important. On en entend parfois des voix.
+STRANGE_SOUVENIR|Un bibelot qui représente un Pokémon d'Alola.
+RICH_MULCH|Engrais qui augmente la récolte de Baies.
+SURPRISE_MULCH|Engrais qui provoque des mutations de Baies.
+BOOST_MULCH|Engrais qui augmente la récolte quand on arrose.
+AMAZE_MULCH|Engrais qui combine les trois autres effets.
+WISHING_PIECE|À jeter dans un repaire pour attirer un Pokémon Dynamax.
+GALARICA_TWIG|Une branche d'arbre Galanoa, qui pousse à Galar.
+ARMORITE_ORE|Un minerai rare de l'Isolarmure.
+DYNITE_ORE|Un minerai mystérieux du Nid Dynamax.
+ORANGE_MAIL|Lettre motif Zigzaton, à faire tenir à un Pokémon.
+HARBOR_MAIL|Lettre motif Goélise, à faire tenir à un Pokémon.
+GLITTER_MAIL|Lettre motif Pikachu, à faire tenir à un Pokémon.
+MECH_MAIL|Lettre motif Magnéti, à faire tenir à un Pokémon.
+WOOD_MAIL|Lettre motif Parecool, à faire tenir à un Pokémon.
+WAVE_MAIL|Lettre motif Wailmer, à faire tenir à un Pokémon.
+BEAD_MAIL|Lettre avec le dessin du Pokémon qui la tient.
+SHADOW_MAIL|Lettre motif Skelénox, à faire tenir à un Pokémon.
+TROPIC_MAIL|Lettre motif Joliflor, à faire tenir à un Pokémon.
+DREAM_MAIL|Lettre avec le dessin du Pokémon qui la tient.
+FAB_MAIL|Lettre luxueuse, à faire tenir à un Pokémon.
+RETRO_MAIL|Lettre avec les dessins de trois Pokémon.
+FIRE_STONE|Fait évoluer certains Pokémon.
+WATER_STONE|Fait évoluer certains Pokémon.
+THUNDER_STONE|Fait évoluer certains Pokémon.
+LEAF_STONE|Fait évoluer certains Pokémon.
+ICE_STONE|Fait évoluer certains Pokémon.
+SUN_STONE|Fait évoluer certains Pokémon.
+MOON_STONE|Fait évoluer certains Pokémon.
+SHINY_STONE|Fait évoluer certains Pokémon.
+DUSK_STONE|Fait évoluer certains Pokémon.
+DAWN_STONE|Fait évoluer certains Pokémon.
+CRACKED_POT|Une théière bizarre qui fait évoluer certains Pokémon.
+CHIPPED_POT|Une théière bizarre qui fait évoluer certains Pokémon.
+GALARICA_CUFF|Un bracelet qui rend heureux Ramoloss de Galar.
+GALARICA_WREATH|Une couronne qui rend heureux Ramoloss de Galar.
+DRAGON_SCALE|Une écaille étrange que tiennent les Pokémon Dragon.
+UPGRADE|Une boîte étrange fabriquée par Sylphe SARL.
+ELECTIRIZER|Une boîte d'énergie électrique qu'adore un certain Pokémon.
+MAGMARIZER|Une boîte d'énergie magmatique qu'adore un certain Pokémon.
+REAPER_CLOTH|Un tissu chargé d'énergie qu'adore un certain Pokémon.
+PRISM_SCALE|Une écaille mystérieuse qui fait évoluer certains Pokémon.
+WHIPPED_DREAM|Une friandise douce qu'adore un certain Pokémon.
+SACHET|Un sachet parfumé qu'adore un certain Pokémon.
+OVAL_STONE|Fait évoluer certains Pokémon.
+RED_NECTAR|Nectar qui change la forme de certains Pokémon.
+YELLOW_NECTAR|Nectar qui change la forme de certains Pokémon.
+PINK_NECTAR|Nectar qui change la forme de certains Pokémon.
+PURPLE_NECTAR|Nectar qui change la forme de certains Pokémon.
+FLAME_PLATE|À tenir. Renforce les capacités Feu.
+SPLASH_PLATE|À tenir. Renforce les capacités Eau.
+ZAP_PLATE|À tenir. Renforce les capacités Électrik.
+MEADOW_PLATE|À tenir. Renforce les capacités Plante.
+ICICLE_PLATE|À tenir. Renforce les capacités Glace.
+FIST_PLATE|À tenir. Renforce les capacités Combat.
+TOXIC_PLATE|À tenir. Renforce les capacités Poison.
+EARTH_PLATE|À tenir. Renforce les capacités Sol.
+SKY_PLATE|À tenir. Renforce les capacités Vol.
+MIND_PLATE|À tenir. Renforce les capacités Psy.
+INSECT_PLATE|À tenir. Renforce les capacités Insecte.
+STONE_PLATE|À tenir. Renforce les capacités Roche.
+SPOOKY_PLATE|À tenir. Renforce les capacités Spectre.

@@ -1,0 +1,118 @@
+GHOSTIUM_Z|Change les capacités Spectre en capacités Z.
+DRAGONIUM_Z|Change les capacités Dragon en capacités Z.
+DARKINIUM_Z|Change les capacités Ténèbres en capacités Z.
+STEELIUM_Z|Change les capacités Acier en capacités Z.
+FAIRIUM_Z|Change les capacités Fée en capacités Z.
+PIKANIUM_Z|Change Électacle de Pikachu en capacité Z.
+EEVIUM_Z|Change Dernier Recours d'Évoli en capacité Z.
+SNORLIUM_Z|Change Giga Impact de Ronflex en capacité Z.
+DECIDIUM_Z|Change Tisse Ombre d'Archéduc en capacité Z.
+INCINIUM_Z|Change Dark Lariat de Félinferno en capacité Z.
+PRIMARIUM_Z|Change Aria de l'Écume d'Oratoria en capacité Z.
+LYCANIUM_Z|Change Lame de Roc de Lougaroc en capacité Z.
+MIMIKIUM_Z|Change Câlinerie de Mimiqui en capacité Z.
+KOMMONIUM_Z|Change Vibrécaille d'Ékaïser en capacité Z.
+TAPUNIUM_Z|Change Ire de la Nature des Tokos en capacité Z.
+SOLGANIUM_Z|Change Choc Météore de Solgaleo en capacité Z.
+LUNALIUM_Z|Change Rayon Spectral de Lunala en capacité Z.
+MARSHADIUM_Z|Change Vol-Force de Marshadow en capacité Z.
+ALORAICHIUM_Z|Change Tonnerre de Raichu d'Alola en capacité Z.
+PIKASHUNIUM_Z|Change Tonnerre de Pikachu à casquette en capacité Z.
+ULTRANECROZIUM_Z|Change Photo-Geyser de Necrozma en capacité Z.
+LIGHT_BALL|À tenir. Augmente Attaque et Atq. Spé. de Pikachu.
+LEEK|Augmente le taux de critique de Canarticho et Palarticho.
+LUCKY_PUNCH|Augmente le taux de critique de Leveinard.
+METAL_POWDER|À tenir. Augmente la Défense de Métamorph.
+QUICK_POWDER|À tenir. Augmente la Vitesse de Métamorph.
+DEEP_SEA_SCALE|À tenir. Augmente la Déf. Spé. de Coquiperl.
+DEEP_SEA_TOOTH|À tenir. Augmente l'Atq. Spé. de Coquiperl.
+SOUL_DEW|Renforce les capacités Psy et Dragon de Latios et Latias.
+ADAMANT_ORB|Renforce les capacités Dragon et Acier de Dialga.
+LUSTROUS_ORB|Renforce les capacités Dragon et Eau de Palkia.
+GRISEOUS_ORB|Renforce les capacités Dragon et Spectre de Giratina.
+SEA_INCENSE|À tenir. Renforce les capacités Eau.
+ODD_INCENSE|À tenir. Renforce les capacités Psy.
+ROCK_INCENSE|À tenir. Renforce les capacités Roche.
+FULL_INCENSE|Le Pokémon qui le tient agit en dernier.
+WAVE_INCENSE|À tenir. Renforce les capacités Eau.
+ROSE_INCENSE|À tenir. Renforce les capacités Plante.
+PURE_INCENSE|À tenir. Éloigne les Pokémon sauvages.
+MACHO_BRACE|Double les EV gagnés, mais baisse la Vitesse.
+POWER_WEIGHT|Plus d'EV en PV, mais baisse la Vitesse.
+POWER_BRACER|Plus d'EV en Attaque, mais baisse la Vitesse.
+POWER_BELT|Plus d'EV en Défense, mais baisse la Vitesse.
+POWER_LENS|Plus d'EV en Atq. Spé., mais baisse la Vitesse.
+POWER_BAND|Plus d'EV en Déf. Spé., mais baisse la Vitesse.
+POWER_ANKLET|Plus d'EV en Vitesse, mais baisse la Vitesse.
+SILK_SCARF|À tenir. Renforce les capacités Normal.
+MYSTIC_WATER|À tenir. Renforce les capacités Eau.
+NEVER_MELT_ICE|À tenir. Renforce les capacités Glace.
+BLACK_BELT|À tenir. Renforce les capacités Combat.
+POISON_BARB|À tenir. Renforce les capacités Poison.
+TWISTED_SPOON|À tenir. Renforce les capacités Psy.
+SILVER_POWDER|À tenir. Renforce les capacités Insecte.
+HARD_STONE|À tenir. Renforce les capacités Roche.
+SPELL_TAG|À tenir. Renforce les capacités Spectre.
+BLACK_GLASSES|À tenir. Renforce les capacités Ténèbres.
+METAL_COAT|À tenir. Renforce les capacités Acier.
+CHOICE_BAND|Augmente l'Attaque, mais bloque sur une seule capacité.
+CHOICE_SPECS|Augmente l'Atq. Spé., mais bloque sur une seule capacité.
+CHOICE_SCARF|Augmente la Vitesse, mais bloque sur une seule capacité.
+SMOOTH_ROCK|Prolonge la tempête de sable lancée par le porteur.
+ELECTRIC_SEED|Défense +1 sur Champ Électrifié. Usage unique.
+PSYCHIC_SEED|Déf. Spé. +1 sur Champ Psychique. Usage unique.
+MISTY_SEED|Déf. Spé. +1 sur Champ Brumeux. Usage unique.
+ABSORB_BULB|Atq. Spé. +1 si le porteur est touché par l'Eau.
+CELL_BATTERY|Attaque +1 si le porteur est touché par l'Électrik.
+LUMINOUS_MOSS|Déf. Spé. +1 si le porteur est touché par l'Eau.
+SNOWBALL|Attaque +1 si le porteur est touché par la Glace.
+EXP_SHARE|Toute l'équipe partage l'Exp. gagnée.
+CLEANSE_TAG|À tenir. Éloigne les Pokémon sauvages.
+SMOKE_BALL|À tenir. Permet de fuir à coup sûr les Pokémon sauvages.
+LUCKY_EGG|À tenir. Augmente l'Exp. gagnée en combat.
+LEFTOVERS|À tenir. Restaure peu à peu des PV en combat.
+MUSCLE_BAND|Bandeau qui renforce un peu les attaques physiques.
+WISE_GLASSES|Lunettes qui renforcent un peu les attaques spéciales.
+EXPERT_BELT|Ceinture qui renforce les coups super efficaces.
+LIGHT_CLAY|Les murs comme Mur Lumière durent plus longtemps.
+LIFE_ORB|Renforce les attaques, mais coûte des PV à chaque coup.
+POWER_HERB|Lance aussitôt une capacité qui demande de charger.
+FOCUS_SASH|À PV pleins, survit à un coup fatal avec 1 PV.
+METRONOME|Renforce une capacité utilisée plusieurs fois de suite.
+IRON_BALL|Baisse la Vitesse, le porteur peut être touché par le Sol.
+DESTINY_KNOT|Si le porteur tombe amoureux, l'ennemi aussi.
+BLACK_SLUDGE|Soigne peu à peu les Poison. Blesse les autres.
+GRIP_CLAW|Les capacités comme Étreinte durent plus longtemps.
+STICKY_BARB|Blesse le porteur chaque tour. S'accroche au contact.
+SHED_SHELL|Le porteur peut toujours changer de Pokémon.
+EVIOLITE|Augmente les défenses d'un Pokémon qui peut évoluer.
+ROCKY_HELMET|Blesse les ennemis qui touchent le porteur.
+AIR_BALLOON|Fait léviter le porteur. Éclate quand il est touché.
+RED_CARD|L'ennemi qui touche le porteur est renvoyé.
+RING_TARGET|Les immunités de type du porteur ne marchent plus.
+BINDING_BAND|Renforce les capacités qui ligotent.
+EJECT_BUTTON|Le porteur est remplacé quand il est touché.
+WEAKNESS_POLICY|Touché super efficacement : Attaque et Atq. Spé. +2.
+ASSAULT_VEST|Déf. Spé. accrue, mais pas de capacités de statut.
+SAFETY_GOGGLES|Protège de la météo, des poudres et des spores.
+TERRAIN_EXTENDER|Prolonge le champ créé par le porteur.
+PROTECTIVE_PADS|Protège des effets liés au contact.
+THROAT_SPRAY|Atq. Spé. +1 quand le porteur utilise un son.
+EJECT_PACK|Le porteur est remplacé si ses stats baissent.
+HEAVY_DUTY_BOOTS|Protège des pièges posés sur le terrain.
+BLUNDER_POLICY|Vitesse +2 si une capacité rate.
+ROOM_SERVICE|Baisse la Vitesse du porteur sous Distorsion.
+LUM_BERRY|À tenir. Soigne n'importe quel problème de statut.
+FIGY_BERRY|Restaure des PV, mais rend confus si le goût déplaît.
+WIKI_BERRY|Restaure des PV, mais rend confus si le goût déplaît.
+MAGO_BERRY|Restaure des PV, mais rend confus si le goût déplaît.
+AGUAV_BERRY|Restaure des PV, mais rend confus si le goût déplaît.
+IAPAPA_BERRY|Restaure des PV, mais rend confus si le goût déplaît.
+ROSELI_BERRY|Affaiblit une capacité Fée super efficace.
+JABOCA_BERRY|Touché par une attaque physique : l'ennemi est blessé aussi.
+ROWAP_BERRY|Touché par une attaque spéciale : l'ennemi est blessé aussi.
+KEE_BERRY|Touché par une attaque physique : Défense +1.
+MARANGA_BERRY|Touché par une attaque spéciale : Déf. Spé. +1.
+TM_BULLET_SEED|Tire 2 à 5 graines d'affilée sur l'ennemi.
+TM_PROTECT|Pare toute attaque. Peut échouer si utilisée de suite.
+TM_REFLECT|Mur de lumière qui réduit les dégâts physiques.

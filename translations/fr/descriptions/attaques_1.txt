@@ -1,0 +1,159 @@
+PAY_DAY|Lance des pièces sur l'ennemi. On les ramasse après.
+RAZOR_WIND|Attaque en deux tours qui frappe au 2e tour.
+SWORDS_DANCE|Danse guerrière qui augmente beaucoup l'Attaque.
+JUMP_KICK|Puissant coup de pied sauté. Blesse le lanceur s'il rate.
+ROLLING_KICK|Coup de pied rapide en pivotant. Peut apeurer.
+HORN_DRILL|Une corne en vrille. Met K.O. en un coup.
+WRAP|Ligote et serre l'ennemi pendant 4 à 5 tours.
+TAIL_WHIP|Remue la queue pour baisser la Défense ennemie.
+TWINEEDLE|Pique deux fois avec des dards. Peut empoisonner.
+GROWL|Grogne d'un air mignon pour baisser l'Attaque ennemie.
+ACID|Projette un acide corrosif. Peut baisser la Déf. Spé.
+MIST|Une brume qui empêche la baisse des stats alliées.
+HYPER_BEAM|Très puissant, mais le lanceur doit se reposer au tour suivant.
+LOW_KICK|Coup de pied plus efficace sur les ennemis lourds.
+SEISMIC_TOSS|Inflige des dégâts égaux au niveau du lanceur.
+LEECH_SEED|Plante une graine qui vole des PV à chaque tour.
+PETAL_DANCE|Déchaînement de 2 à 3 tours qui rend le lanceur confus.
+DRAGON_RAGE|Onde de choc qui inflige toujours 40 PV de dégâts.
+THUNDER|Un éclair violent. Peut paralyser.
+EARTHQUAKE|Un séisme puissant qui touche tous les autres Pokémon.
+FISSURE|Fait tomber l'ennemi dans une faille. K.O. en un coup.
+CONFUSION|Attaque psychique. Peut rendre l'ennemi confus.
+PSYCHIC|Puissante attaque psychique. Peut baisser la Déf. Spé.
+QUICK_ATTACK|Attaque très rapide qui frappe toujours en premier.
+RAGE|L'Attaque du lanceur monte à chaque coup reçu.
+MIMIC|Copie la dernière capacité de l'ennemi pour le combat.
+DOUBLE_TEAM|Crée des copies illusoires pour augmenter l'Esquive.
+MINIMIZE|Le lanceur rapetisse : l'Esquive augmente beaucoup.
+LIGHT_SCREEN|Mur de lumière qui réduit les dégâts spéciaux 5 tours.
+REFLECT|Mur de lumière qui réduit les dégâts physiques 5 tours.
+FOCUS_ENERGY|Se concentre pour augmenter le taux de critique.
+BIDE|Encaisse les coups 2 tours, puis les rend au double.
+METRONOME|Agite un doigt et lance une capacité au hasard.
+SELF_DESTRUCT|Dégâts énormes, mais le lanceur est mis K.O.
+EGG_BOMB|Un gros œuf lancé de force sur l'ennemi.
+SMOG|Gaz d'échappement toxique. Peut empoisonner.
+SKULL_BASH|Rentre la tête (Défense +), puis charge au tour suivant.
+AMNESIA|Oublie tout pour augmenter beaucoup la Déf. Spé.
+HIGH_JUMP_KICK|Genou sauté. Blesse le lanceur s'il rate.
+DREAM_EATER|Vole la moitié des dégâts infligés à un ennemi endormi.
+LEECH_LIFE|Vole la moitié des dégâts infligés.
+LOVELY_KISS|Exige un bisou avec une tête effrayante. Endort.
+PSYWAVE|Onde psychique d'intensité variable.
+ACID_ARMOR|Le corps devient liquide : la Défense monte beaucoup.
+EXPLOSION|Dégâts énormes, mais le lanceur est mis K.O.
+BONEMERANG|Lance un os en boomerang qui frappe deux fois.
+REST|Dort 2 tours pour récupérer tous ses PV et soigner son statut.
+SHARPEN|Réduit ses polygones pour augmenter l'Attaque.
+TRI_ATTACK|Trois rayons. Peut brûler, paralyser ou geler.
+STRUGGLE|Utilisée quand il n'y a plus de PP. Blesse un peu le lanceur.
+SKETCH|Copie pour toujours la dernière capacité de l'ennemi.
+THIEF|Attaque et vole l'objet tenu par l'ennemi.
+SPIDER_WEB|Une toile qui empêche l'ennemi de fuir ou d'être changé.
+MIND_READER|Lit les gestes de l'ennemi : la prochaine attaque touche.
+SNORE|Ronflement bruyant, utilisable en dormant. Peut apeurer.
+FLAIL|Plus puissante quand les PV du lanceur sont bas.
+CONVERSION_2|Résiste au type de la dernière attaque reçue.
+AEROBLAST|Lance un tourbillon d'air. Taux de critique élevé.
+COTTON_SPORE|Des spores collent à l'ennemi : sa Vitesse baisse beaucoup.
+REVERSAL|Plus puissante quand les PV du lanceur sont bas.
+SPITE|Retire 4 PP à la dernière capacité de l'ennemi.
+PROTECT|Pare toute attaque. Peut échouer si utilisée de suite.
+SWEET_KISS|Exige un bisou d'un air mignon. Rend confus.
+MUD_SLAP|Jette de la boue au visage. Baisse la Précision.
+OCTAZOOKA|Tire un jet d'encre. Peut baisser la Précision.
+SPIKES|Pose des pics qui blessent l'ennemi qui entre.
+FORESIGHT|Annule l'Esquive et les immunités du type Spectre.
+DESTINY_BOND|Si le lanceur est mis K.O., l'ennemi l'est aussi.
+PERISH_SONG|Tout Pokémon qui entend ce chant est K.O. dans 3 tours.
+DETECT|Pare toute attaque. Peut échouer si utilisée de suite.
+OUTRAGE|Déchaînement de 2 à 3 tours qui rend le lanceur confus.
+SANDSTORM|Déclenche une tempête de sable pendant 5 tours.
+ENDURE|Tient bon un tour : garde au moins 1 PV.
+ROLLOUT|Roule 5 tours, de plus en plus fort.
+FALSE_SWIPE|Attaque qui laisse toujours au moins 1 PV à l'ennemi.
+SWAGGER|Rend l'ennemi confus mais augmente beaucoup son Attaque.
+FURY_CUTTER|Plus puissante à chaque coup réussi d'affilée.
+STEEL_WING|Frappe avec des ailes d'acier. Peut augmenter la Défense.
+MEAN_LOOK|Un regard noir qui empêche l'ennemi de fuir.
+RETURN|Plus puissante si le Pokémon aime son Dresseur.
+PRESENT|Un cadeau piégé. Peut aussi soigner l'ennemi.
+MAGNITUDE|Secoue le sol avec une force aléatoire.
+DYNAMIC_PUNCH|Puissant et rend toujours confus, mais imprécis.
+DRAGON_BREATH|Souffle puissant sur l'ennemi. Peut paralyser.
+BATON_PASS|Change de Pokémon en transmettant les changements de stats.
+RAPID_SPIN|Tourne sur soi : retire les pièges et augmente la Vitesse.
+MORNING_SUN|Restaure des PV. La quantité dépend de la météo.
+SYNTHESIS|Restaure des PV. La quantité dépend de la météo.
+MOONLIGHT|Restaure des PV. La quantité dépend de la météo.
+CROSS_CHOP|Double manchette. Taux de critique élevé.
+RAIN_DANCE|Fait pleuvoir 5 tours : les capacités Eau sont renforcées.
+MIRROR_COAT|Renvoie une attaque spéciale au double de sa puissance.
+PSYCH_UP|Copie les changements de stats de l'ennemi.
+ANCIENT_POWER|Attaque ancestrale. Peut augmenter toutes les stats.
+SHADOW_BALL|Projette une boule d'ombre. Peut baisser la Déf. Spé.
+FUTURE_SIGHT|Concentre son énergie et frappe 2 tours plus tard.
+BEAT_UP|Toute l'équipe participe à l'attaque.
+UPROAR|Fait du raffut pendant 3 tours. Personne ne peut dormir.
+STOCKPILE|Accumule de la force (3 fois max). Augmente les défenses.
+HAIL|Fait grêler 5 tours. Blesse tous les non-Glace.
+MEMENTO|Le lanceur est K.O., mais l'Attaque et l'Atq. Spé. ennemies baissent beaucoup.
+FACADE|Plus puissante si le lanceur est brûlé, paralysé ou empoisonné.
+FOCUS_PUNCH|Se concentre puis frappe. Échoue si le lanceur est touché.
+SMELLING_SALTS|Puissant sur un ennemi paralysé, mais le soigne.
+CHARGE|Renforce la prochaine capacité Électrik. Déf. Spé. +1.
+TRICK|Échange les objets tenus avec l'ennemi.
+ASSIST|Utilise au hasard une capacité d'un allié de l'équipe.
+INGRAIN|Plante des racines qui soignent. Empêche de fuir.
+MAGIC_COAT|Renvoie les effets de statut à l'envoyeur.
+RECYCLE|Recycle un objet utilisé pour s'en resservir.
+REVENGE|Plus puissante si le lanceur a été touché ce tour.
+BRICK_BREAK|Brise les murs comme Protection, puis frappe.
+KNOCK_OFF|Plus forte si l'ennemi tient un objet, qu'elle lui fait tomber.
+ERUPTION|Plus les PV du lanceur sont hauts, plus c'est puissant.
+IMPRISON|Empêche l'ennemi d'utiliser les capacités du lanceur.
+REFRESH|Soigne le poison, la paralysie et les brûlures.
+GRUDGE|Si le lanceur est K.O., la capacité qui l'a battu perd ses PP.
+SNATCH|Vole la prochaine capacité de soin ou de boost ennemie.
+CAMOUFLAGE|Change le type du lanceur selon le terrain.
+TAIL_GLOW|Une lumière qui augmente énormément l'Atq. Spé.
+LUSTER_PURGE|Rayon de lumière. Peut baisser la Déf. Spé.
+MIST_BALL|Nuée de duvet. Peut baisser l'Atq. Spé.
+BLAZE_KICK|Coup de pied enflammé. Critique élevé, peut brûler.
+ICE_BALL|Roule 5 tours, de plus en plus fort.
+HYPER_VOICE|Un cri puissant qui blesse avec des ondes sonores.
+POISON_FANG|Morsure aux crocs acérés. Peut gravement empoisonner.
+BLAST_BURN|Très puissant, mais le lanceur doit se reposer ensuite.
+METEOR_MASH|Poing pareil à une météorite. Peut augmenter l'Attaque.
+AROMATHERAPY|Un parfum apaisant qui soigne le statut de l'équipe.
+FAKE_TEARS|Fait semblant de pleurer. Baisse beaucoup la Déf. Spé.
+AIR_CUTTER|Vent tranchant. Taux de critique élevé.
+OVERHEAT|Attaque à pleine puissance, mais l'Atq. Spé. baisse beaucoup.
+ODOR_SLEUTH|Annule l'Esquive et les immunités du type Spectre.
+SILVER_WIND|Vent de poudre. Peut augmenter toutes les stats.
+METAL_SOUND|Un crissement horrible. Baisse beaucoup la Déf. Spé.
+COSMIC_POWER|Énergie mystique : Défense et Déf. Spé. augmentent.
+WATER_SPOUT|Plus les PV du lanceur sont hauts, plus c'est puissant.
+SIGNAL_BEAM|Rayon étrange. Peut rendre l'ennemi confus.
+EXTRASENSORY|Pouvoir étrange. Peut apeurer l'ennemi.
+SKY_UPPERCUT|Un uppercut lancé comme un saut vers le ciel.
+SAND_TOMB|Piège l'ennemi dans des sables mouvants 4 à 5 tours.
+MUDDY_WATER|Projette de l'eau boueuse. Peut baisser la Précision.
+BULLET_SEED|Tire 2 à 5 graines d'affilée sur l'ennemi.
+FRENZY_PLANT|Très puissant, mais le lanceur doit se reposer ensuite.
+BULK_UP|Gonfle ses muscles : Attaque et Défense augmentent.
+BOUNCE|Bondit, puis retombe au tour suivant. Peut paralyser.
+MUD_SHOT|Lance de la boue qui baisse la Vitesse ennemie.
+COVET|Supplie d'un air mignon pour voler l'objet de l'ennemi.
+VOLT_TACKLE|Charge électrique qui blesse le lanceur. Peut paralyser.
+CALM_MIND|Se concentre : Atq. Spé. et Déf. Spé. augmentent.
+DRAGON_DANCE|Danse mystique : Attaque et Vitesse augmentent.
+DOOM_DESIRE|Appelle une lumière qui frappe 2 tours plus tard.
+PSYCHO_BOOST|Attaque à pleine puissance, mais l'Atq. Spé. baisse beaucoup.
+GRAVITY|Gravité accrue 5 tours : plus rien ne lévite.
+MIRACLE_EYE|Annule l'Esquive et les immunités du type Ténèbres.
+WAKE_UP_SLAP|Puissant sur un ennemi endormi, mais le réveille.
+GYRO_BALL|Toupie rapide. Plus forte si l'ennemi est plus rapide.
+HEALING_WISH|Le lanceur est K.O. ; le Pokémon suivant est soigné.
+BRINE|Double puissance si l'ennemi a la moitié de ses PV ou moins.
