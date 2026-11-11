@@ -1,99 +1,99 @@
-// Chapitre 1 — Laboratoire du Prof. Seko (Bourg-en-Vol), y compris l'après-Ligue
+// Chapitre 1 — Laboratoire du Prof. Seko (Bourg-en-Vol), y compris l'après-Ligue (v0.4)
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork
 Hein ? Le Prof. Seko ?
 
-Le Prof est sur le terrain. Ergo, il n'est pas là.
+Le Prof est sur le terrain. Ergo, il n'est pas là. Ergo, il est probablement en danger.
 
-Le terrain, c'est quand on étudie les Pokémon dans leur milieu naturel. Les herbes, les grottes, les montagnes…
+Le terrain, c'est étudier les Pokémon dans la nature au lieu de rester au chaud avec un café.
 
-Le Prof déteste les bureaux. Il préfère se faire courser par des bêtes sauvages plutôt que de lire des rapports. Un jour, ça va mal finir.
+Le Prof a une phobie des bureaux. Il dit qu'on apprend plus en se faisant mordre qu'en lisant. Il a beaucoup appris.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork
-Le Prof déteste les bureaux. Il préfère se faire courser par des bêtes sauvages plutôt que de lire des rapports. Un jour, ça va mal finir.
+Le Prof a une phobie des bureaux. Il dit qu'on apprend plus en se faisant mordre qu'en lisant. Il a beaucoup appris.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo
 Le Prof. Seko étudie l'habitat et la répartition des Pokémon.
 
-{RIVAL} l'aide souvent. Ils se disputent comme des chiffonniers, mais ils s'adorent.
+{RIVAL} l'aide souvent. Ils se hurlent dessus toute la journée, puis se partagent une pizza en silence. C'est leur façon de s'aimer.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
 Prof. Seko : Bon, {PLAYER}.
 
-Ton père m'a beaucoup parlé de toi.
+Ton père m'a beaucoup parlé de toi. Enfin, “beaucoup” pour lui. Quatre phrases.
 
-Il paraît que tu n'avais pas encore de Pokémon.
+Tu n'avais jamais eu de Pokémon. Et pourtant, tout à l'heure, tu as foncé sans réfléchir pour sauver un vieux crétin en short.
 
-Et pourtant, tout à l'heure, tu as combattu comme un vétéran. Sans trembler.
+C'est stupide. C'est courageux. C'est exactement ce qu'il faut pour ce métier.
 
-Pas de doute : tu as le sang de ton père dans les veines. Pour le meilleur et pour le pire.
-
-Pour te remercier de m'avoir sauvé la peau, garde le Pokémon que tu as utilisé. Vous vous êtes choisis, tous les deux.
+Garde ce Pokémon. Entre vous deux, c'est une évidence. Ça ne se refuse pas, un truc pareil.
 
 {PLAYER} reçoit {STR_VAR_1} !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon
-Prof. Seko : Tant qu'on y est, pourquoi ne pas donner un surnom à {STR_VAR_1} ?
+Prof. Seko : Tu veux lui donner un surnom ? Un nom, c'est ce qui fait d'un Pokémon un compagnon et pas un numéro.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival
-Prof. Seko : Si tu t'accroches et que tu survis assez longtemps, tu feras un Dresseur redoutable.
+Prof. Seko : Si tu bosses dur et que tu survis, tu feras un sacré Dresseur.
 
 Mon enfant, {RIVAL}, étudie les Pokémon en m'aidant sur le terrain.
 
-{PLAYER}, tu devrais aller voir {RIVAL}. Ça te fera du bien. Et ça lui rabattra peut-être le caquet.
+Va donc voir {RIVAL}. Vous allez vous détester, puis vous rendre meilleurs. C'est comme ça que ça marche, les rivaux.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou
-Prof. Seko : Parfait ! {RIVAL} sera content… enfin, à sa manière.
+Prof. Seko : Parfait ! {RIVAL} va être ravi. Enfin, à sa façon : en faisant la gueule.
 
-Demande-lui de t'apprendre ce que ça veut dire, être Dresseur. Le vrai prix.
+Demande-lui ce que c'est, être Dresseur. Le côté brillant, et l'autre.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay
-Prof. Seko : Allons, ne fais pas cette tête. Va voir mon gamin.
+Prof. Seko : Oh, fais pas ta tête de mule. Va voir mon gamin.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome
-Prof. Seko : {RIVAL} ? Rentré à la maison, je crois.
+Prof. Seko : {RIVAL} ? À la maison, je crois.
 
-Ou en train de ramper dans les hautes herbes, comme son vieux père…
+Ou à plat ventre dans les herbes. Tel père, tel enfant. Ma femme dit qu'on va finir sur la même plaque commémorative.
 
-Si tes Pokémon sont épuisés, rentre chez toi te reposer. Les cimetières sont pleins de Dresseurs qui voulaient faire « juste un combat de plus ».
+Si tes Pokémon sont crevés, rentre te reposer. Les cimetières sont pleins de gens qui disaient “allez, juste un combat de plus”.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex
 Prof. Seko : Ah, {PLAYER} !
 
-Il paraît que tu as battu {RIVAL} du premier coup. Pas mal du tout !
+Tu as battu {RIVAL} du premier coup ?! HA ! J'aurais payé pour voir sa tête !
 
-{RIVAL} m'aide dans mes recherches depuis des années.
+{RIVAL} m'aide depuis des années. C'est un Dresseur solide.
 
-C'est un Dresseur aguerri. Et tu l'as mis à terre.
+Et tu l'as mis au tapis. Quelque chose me dit que Hoenn va entendre parler de toi.
 
-Tiens, {PLAYER}. J'avais commandé ça pour mes recherches, mais il sera mieux entre tes mains. Ce Pokédex est à toi.
+Tiens. Ce Pokédex était pour mes recherches. Il sera plus utile entre tes mains.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex
 {PLAYER} reçoit le Pokédex !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex
-Prof. Seko : Le Pokédex est un appareil de pointe qui enregistre automatiquement chaque Pokémon que tu croises ou captures.
+Prof. Seko : Le Pokédex enregistre automatiquement chaque Pokémon que tu croises ou captures.
 
-{RIVAL} ne s'en sépare jamais.
+{RIVAL} ne le lâche jamais. Même aux toilettes.
 
-Dès que mon gamin attrape un Pokémon rare, il me traque jusque sur le terrain pour me le montrer. Même au milieu d'une meute.
+Dès qu'il attrape un Pokémon rare, il me traque sur le terrain pour me le montrer. Même quand je suis coincé sous un rocher.
+
+Chaque page, c'est une rencontre. Certaines te feront rire. D'autres, tu t'en souviendras toute ta vie.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait
-Prof. Seko : D'innombrables Pokémon t'attendent ! Certains voudront ta peau.
+Prof. Seko : Des centaines de Pokémon t'attendent ! Certains veulent être tes amis. D'autres veulent ta peau. Apprends à faire la différence.
 
-Argh, ça me démange ! Il faut que je retourne sur le terrain !
+Argh, ça me démange ! Faut que je retourne sur le terrain !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese
-Flora : Oh, {PLAYER} ! Toi aussi, tu as un Pokédex !
+Flora : Ooooh ! {PLAYER} ! T'as un Pokédex aussi ?!
 
-Génial ! Comme moi ! Tiens, j'ai un truc pour toi.
+Trop bien ! On est collègues, maintenant ! Tiens, cadeau !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls
 Flora : Plus on a de Pokémon, plus c'est drôle !
 
-Je vais fouiller partout pour en trouver de nouveaux.
+Je vais fouiller chaque buisson de Hoenn !
 
-Et si j'en vois un mignon, hop, Poké Ball ! Même s'il essaie de me mordre.
+Et si j'en vois un mignon : BAM, Poké Ball ! Même s'il essaie de me mordre. Surtout s'il essaie de me mordre.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull
 Oh ? Ton Sac est plein.
@@ -102,16 +102,16 @@ Oh ? Ton Sac est plein.
 Flora : Je me demande où chercher des Pokémon, maintenant…
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese
-Brice : Hm… T'as eu un Pokédex, toi aussi.
+Brice : Hm… T'as un Pokédex, toi aussi.
 
-Bon. Tiens, prends ça. Que tu crèves pas bêtement au premier buisson.
+Bon. Tiens, prends ça. Je veux pas qu'on dise que ma rivale est morte bêtement dans un buisson.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls
 Brice : Plus t'as de Pokémon, plus c'est marrant.
 
-Je vais explorer tout Hoenn pour en trouver d'autres.
+Je vais retourner tout Hoenn.
 
-Et si j'en vois un qui a de la gueule, crois-moi, il finit dans une Poké Ball.
+Et si j'en vois un qui a de la gueule, il finit dans une Poké Ball. Fin de l'histoire.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull
 Hé, ton Sac est plein.
@@ -120,111 +120,105 @@ Hé, ton Sac est plein.
 Brice : Où est-ce que je vais chasser, maintenant…
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine
-Une machine à l'air très sérieux. Il y a une tache brune sur le côté. Mieux vaut ne pas savoir.
+Une machine très sérieuse. Il y a une trace de dents sur le côté. Mieux vaut ne pas savoir.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch
-Le PC de recherche du Prof. Mieux vaut ne pas y toucher.
+Le PC de recherche. Fond d'écran : le Prof. Seko, couvert de bandages, pouce levé.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon
-L'étagère déborde de livres sur les Pokémon.
+L'étagère déborde de livres sur les Pokémon. Un des livres est en fait une boîte à biscuits.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead
-Un livre bien trop compliqué. “Morsures et traumatismes : cas cliniques”.
+Un livre trop compliqué. “Morsures, griffures et autres joies du terrain - Tome 3”.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational
 Prof. Seko : Bien…
 
-{PLAYER}, {RIVAL}, vous m'avez beaucoup aidé tous les deux.
+{PLAYER}, {RIVAL}, vous m'avez énormément aidé tous les deux.
 
 Grâce à vous, on découvre des choses nouvelles.
 
-Il semble qu'on trouve à Hoenn des Pokémon venus d'autres régions.
+Il y a, à Hoenn, des Pokémon venus d'autres régions.
 
-Ça prouve à quel point la nature de Hoenn est riche. Et imprévisible.
+Ce monde est plus grand que nos cartes. Et il se fiche complètement de nos frontières.
 
-Je vais donc passer vos Pokédex en mode National.
+Je vais passer vos Pokédex en mode National.
 
 Donnez-moi vos appareils.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool
 Flora : Hé hé !
 
-Trop bien, même mon Pokédex est mis à jour !
+Trop la classe, même mon Pokédex passe au niveau supérieur !
 
-C'est parce que tu as capturé des tonnes de Pokémon, {PLAYER} !
+C'est grâce à toi, {PLAYER}. T'as capturé tellement de Pokémon que je commence à m'inquiéter pour ta santé mentale.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe
 Brice : J'ai retourné tout Hoenn pour recenser les Pokémon.
 
-Le mode National, c'est grâce à moi. Tu peux me remercier.
+Le mode National, c'est grâce à moi. Tu peux dire merci.
 
-Ouais, t'as de la chance, {PLAYER}.
+Ouais, t'as de la chance de m'avoir, {PLAYER}.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_OkayAllDone
-Prof. Seko : Voilà, c'est fait !
+Prof. Seko : Et voilà, c'est fait !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational
 Le Pokédex de {PLAYER} passe en mode National !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2
-Prof. Seko : Écoute. Te voilà Maître, mais ton voyage n'est pas fini.
+Prof. Seko : Écoute. Te voilà Maître. Mais ton voyage n'est pas fini.
 
-La route des Pokémon n'a pas de fin. Seulement des gens qui s'arrêtent en chemin.
+La route des Pokémon n'a pas de fin. Il y a juste des gens qui s'arrêtent, et des gens qui continuent.
 
-Quelque part, des hautes herbes t'attendent.
+Quelque part, des hautes herbes t'attendent. Et probablement un truc qui veut te mordre.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork
-Flora : Je vais faire une pause avec le terrain.
+Flora : Je fais une pause avec le terrain.
 
-Je reste aider le Prof ici quelque temps. Quelqu'un doit l'empêcher de faire n'importe quoi.
+Je reste aider le Prof. Quelqu'un doit l'empêcher de mettre sa tête dans la gueule d'un Pokémon “pour voir”.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork
-Brice : Pour l'instant, je lève le pied avec le terrain.
+Brice : Pour l'instant, je lève le pied.
 
-Je reste filer un coup de main au Prof. Avant qu'il se fasse bouffer.
+Je reste filer un coup de main au Prof. Il a encore essayé de caresser un Pokémon sauvage avec ses dents.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon
 Prof. Seko : Oh, {PLAYER} ! Montre-moi ton Pokédex.
 
 … … … … … … … … … … … …
 
-Oui. Aucun doute.
+…
 
-Tu as vraiment complété le Pokédex de Hoenn.
+Tu l'as fait. Tu as vraiment complété le Pokédex de Hoenn.
 
-C'est plus qu'impressionnant. Des chercheurs y ont laissé leur vie.
+Des chercheurs y ont passé leur vie. Certains l'y ont laissée.
 
-J'ai un cadeau pour toi.
-
-Considère ça comme ma reconnaissance pour ton travail.
+Je n'ai pas les mots. Alors je vais faire un cadeau. C'est plus facile.
 
 Un Pokémon rare, qu'on ne trouve que dans une autre région !
 
 Choisis-en un parmi ces trois-là.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon
-Prof. Seko : Ce sont des Pokémon rares, venus d'une autre région !
+Prof. Seko : Ce sont des Pokémon rares, venus d'ailleurs !
 
 Choisis-en un parmi ces trois-là.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil
-Prof. Seko : Héricendre, le Pokémon Feu, a attiré ton attention !
+Prof. Seko : Héricendre, le Pokémon Feu, a attiré ton regard !
 
 Toujours aussi vif !
 
 Alors, tu prends Héricendre ?
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile
-Prof. Seko : Kaiminus, le Pokémon Eau !
-
-Tu sais choisir.
+Prof. Seko : Kaiminus, le Pokémon Eau ! Il mord. Fort. Tu vas l'adorer.
 
 Alors, tu prends Kaiminus ?
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita
-Prof. Seko : Germignon, le Pokémon Plante !
-
-Tu sais ce que tu fais.
+Prof. Seko : Germignon, le Pokémon Plante ! Doux comme un agneau, têtu comme une mule.
 
 Alors, tu prends Germignon ?
 
@@ -234,7 +228,7 @@ Prof. Seko : Prends ton temps.
 Ils sont tous précieux.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_PickedFinePokemon
-Prof. Seko : Je vois ! Excellent choix !
+Prof. Seko : Excellent choix !
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_ReceivedJohtoStarter
 {PLAYER} reçoit {STR_VAR_1} de la part du Prof. Seko !
@@ -245,9 +239,9 @@ Donner un surnom à {STR_VAR_1} ?
 @@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting
 Prof. Seko : Écoute, {PLAYER}. Tu as complété le Pokédex de Hoenn, mais ton voyage n'est pas fini.
 
-La route des Pokémon n'a pas de fin. Seulement des gens qui s'arrêtent en chemin.
+La route des Pokémon n'a pas de fin. Il y a juste des gens qui s'arrêtent, et des gens qui continuent.
 
-Quelque part, des hautes herbes t'attendent.
+Quelque part, des hautes herbes t'attendent. Et probablement un truc qui veut te mordre.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BetterLeaveOthersAlone
 Tu as reçu le Pokémon promis. Mieux vaut laisser les autres.
@@ -256,16 +250,16 @@ Tu as reçu le Pokémon promis. Mieux vaut laisser les autres.
 Oh, tu n'as plus de place pour ce Pokémon.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere
-Flora : {PLAYER}, et après… tu vas faire quoi ?
+Flora : {PLAYER}… et maintenant, tu vas faire quoi ?
 
-Continuer à te battre et à t'endurcir ?
+Continuer à te battre jusqu'à devenir une légende ?
 
-Ou essayer de remplir le Pokédex National ?
+Ou remplir le Pokédex National, page par page ?
 
-Moi, je reste ici pour aider le Prof.
+Moi, je reste ici. Pour une fois, c'est moi qui veille sur mon père.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly
-Brice : Collectionner, très peu pour moi. Je préfère élever un seul Pokémon, lentement, jusqu'à ce qu'il soit une arme.
+Brice : Collectionner, c'est pas mon truc. Je préfère élever un seul Pokémon, lentement, jusqu'à ce qu'il soit plus fort que tout ce que mon père a connu.
 
 @@ LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier
 Flora : Oh, {PLAYER} ! Tu connais la Zone de Combat ?
@@ -276,16 +270,16 @@ Brice : Hé, {PLAYER} ! T'as fait un tour à la Zone de Combat ?
 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall
 … … … … … … … … … … … Bip !
 
-Scott : Salut, salut, {PLAYER} ! C'est Scott.
+Scott : Salut, salut, {PLAYER} ! C'est Scott !
 
-Je suis à bord du M.S. Marée. La mer, rien de tel !
+Je suis à bord du M.S. Marée ! La mer, le vent, le mal de mer… le rêve !
 
 Au fait…
 
 Il y a un endroit où j'aimerais t'inviter.
 
-Si ça t'intéresse, prends le ferry à Poivressel ou à Nénucrique.
+Si ça te tente, prends le ferry à Poivressel ou à Nénucrique.
 
-Je t'expliquerai tout sur place. Je t'attends !
+Je t'expliquerai tout là-bas. Je t'attends !
 
 … … … … … … … … … … … Clic !

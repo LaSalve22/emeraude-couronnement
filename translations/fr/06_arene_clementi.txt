@@ -1,138 +1,142 @@
-// Chapitre 1 — Arène de Clémenti-Ville (Norman), y compris le combat à 4 badges et les revanches
+// Chapitre 1 — Arène de Clémenti-Ville (Norman), y compris le combat à 4 badges et les revanches (v0.4)
 
 @@ PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon
 Papa : Hm ?
 
-Tiens, {PLAYER}. Le déménagement est fini ?
+…{PLAYER}.
 
-Je suis surpris que tu aies trouvé le chemin sans aide.
+Le déménagement est fini ?
 
-Ah, je vois. Tu as un Pokémon.
+Tu as trouvé le chemin sans aide. Bien.
 
-Hm… Alors tu vas devenir Dresseur. Comme moi.
+…Tu as un Pokémon.
 
-C'est une bonne nouvelle. J'attendrai de voir ce que tu vaux.
+Alors tu vas devenir Dresseur. Comme moi.
+
+…
+
+Je suis content. Je ne sais pas le montrer. Mais je suis content.
 
 @@ PetalburgCity_Gym_Text_WallyIdLikeAPokemon
-Euh… Je… J'aimerais avoir un Pokémon, s'il vous plaît…
+Euh… Je… Excusez-moi… Je voudrais un Pokémon, s'il vous plaît…
 
 @@ PetalburgCity_Gym_Text_DadOhYoureWallyRight
-Papa : Hm ? Tu es… Ah, oui. Timmy, c'est ça ?
+Papa : Hm ? Tu es… Ah. Le petit Timmy.
 
 @@ PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon
-Timmy : Je pars vivre chez des parents à Vergazon. À cause de mes poumons.
+Timmy : Je pars vivre chez mes cousins à Vergazon. Pour mes poumons.
 
-J'ai peur d'être seul là-bas… et de… enfin… Je voulais emmener un Pokémon avec moi.
+Je vais être tout seul là-bas. Et si… si ça se passe mal… je voudrais avoir quelqu'un avec moi.
 
-Mais je n'en ai jamais capturé. Je ne sais pas comment faire…
+Mais j'ai jamais capturé de Pokémon. J'ai jamais rien fait tout seul, en fait.
 
 @@ PetalburgCity_Gym_Text_DadHmISee
-Papa : Hm. Je vois.
+Papa : …Hm. Je vois.
 
 @@ PetalburgCity_Gym_Text_DadPlayerGoWithWally
-Papa : {PLAYER}, tu as entendu ?
+Papa : {PLAYER}. Tu as entendu.
 
-Accompagne Timmy. Veille à ce qu'il capture un Pokémon sans se faire blesser.
+Accompagne-le. S'il lui arrive quoi que ce soit, c'est sur toi que ça retombe.
 
 @@ PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon
-Timmy, je te prête mon Pokémon.
+Timmy, je te prête mon Pokémon. Il est têtu, mais il ne lâche jamais personne.
 
 Timmy reçoit un Zigzaton !
 
 @@ PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall
-Timmy : Oh, waouh ! Un Pokémon !
+Timmy : Waouh ! Un vrai Pokémon !
 
-Papa : Hm. Je te donne aussi une Poké Ball. Vas-y.
+Papa : Et une Poké Ball. Tu en auras besoin. Va.
 
 Timmy reçoit une Poké Ball !
 
 @@ PetalburgCity_Gym_Text_WallyOhWowThankYou
-Timmy : Oh, waouh ! Merci !
+Timmy : Waouh ! Merci ! Merci, merci, merci !
 
 @@ PetalburgCity_Gym_Text_WouldYouReallyComeWithMe
-{PLAYER}… Tu veux bien venir avec moi ? Vraiment ?
+{PLAYER}… Tu veux vraiment venir avec moi ? Même si je suis lent ?
 
 @@ PetalburgCity_Gym_Text_DadSoDidItWorkOut
-Papa : Alors, ça a marché ?
+Papa : Alors ?
 
 @@ PetalburgCity_Gym_Text_WallyThankYouBye
-Timmy : Oui, merci. Je vous rends votre Pokémon.
+Timmy : Oui ! Ça a marché ! Je vous rends votre Zigzaton.
 
 {PLAYER}, merci de m'avoir accompagné.
 
-C'est grâce à vous deux que j'ai pu capturer mon Pokémon.
+C'est grâce à vous deux. J'ai… j'ai mon Pokémon à moi.
 
-Je vous promets d'en prendre soin. Même si moi, je ne suis pas là très longtemps.
+Je vous promets d'en prendre soin. Même si je suis pas là très longtemps, il saura qu'il a été aimé.
 
-Oh ! Ma mère m'attend, je dois y aller !
+Oh ! Ma mère m'attend ! Je dois y aller !
 
-Au revoir, {PLAYER} !
+Au revoir, {PLAYER} ! On se reverra ! Je te le promets !
 
 @@ PetalburgCity_Gym_Text_DadGoCollectBadges
-Papa : Bien…
+Papa : Bien.
 
-{PLAYER}, si tu veux devenir un Dresseur digne de ce nom, écoute-moi.
+{PLAYER}. Écoute-moi.
 
-Va à Mérouville, au-delà de cette ville.
+Va à Mérouville, au nord.
 
-Défie la Championne d'Arène, Roxanne.
+Défie la Championne, Roxanne.
 
-Ensuite, affronte les autres Champions. Écrase-les un par un.
+Puis les autres Champions d'Arène. Un par un. Bats-les tous.
 
-Rapporte-moi leurs Badges. Compris ?
+Ramène-moi leurs Badges.
 
-Moi aussi, je suis Champion. On s'affrontera un jour, {PLAYER}.
+Moi aussi, je suis Champion. Un jour, on se battra.
 
-Mais pas avant que tu en sois digne. Je ne fais pas de cadeaux. Même à mon enfant.
+Et ce jour-là, je ne serai pas ton père. Je serai ton adversaire. Je ne ferai aucun cadeau.
 
 @@ PetalburgCity_Gym_Text_NormanGoToRustboro
-Papa : Hm ? Tu ne vas pas à l'Arène de Mérouville ?
+Papa : Hm ? Tu n'es pas à Mérouville ?
 
-Battre un bleu ne m'intéresse pas.
+Je n'affronte pas les débutants. Ce n'est pas du mépris. C'est du respect pour le jour où tu seras prêt.
 
-{PLAYER}, reviens quand tu auras fait tes preuves.
-
-Montre-moi quatre Badges. Alors seulement, je te prendrai au sérieux.
+Reviens avec quatre Badges, {PLAYER}. Alors je me battrai. Sérieusement.
 
 @@ PetalburgCity_Gym_Text_NormanGoToDewford
-Papa : Je vois… Tu as battu la Championne de Mérouville.
+Papa : …Tu as battu Roxanne.
 
-Mais il reste beaucoup de Dresseurs plus forts que toi, {PLAYER}. Ne prends pas la grosse tête.
+Bien. Mais il reste des dizaines de Dresseurs plus forts que toi. Ne prends pas la grosse tête. C'est comme ça qu'on tombe.
 
-De l'autre côté de la mer, au Village Myokara, il y a un Champion nommé Bastien.
+De l'autre côté de la mer, au Village Myokara, il y a Bastien.
 
 Va le défier.
 
 @@ PetalburgCity_Gym_Text_YouHaveGottenStronger
-Papa : Hm… {PLAYER}, tu as pris de l'assurance.
+Papa : Hm… {PLAYER}. Tu as changé.
 
-Tes Badges parlent pour toi.
+Tes Badges parlent pour toi. Et ton regard aussi.
 
 @@ PetalburgCity_Gym_Text_NormanIntro
-Papa : Hm… Tu as donc obtenu quatre Badges.
+Papa : Quatre Badges.
 
-Bien. Comme promis, nous allons nous battre.
+Bien. J'ai fait une promesse. Je la tiens.
 
 {PLAYER}…
 
-Pouvoir affronter mon propre enfant dans un vrai combat… J'en ai rêvé. Et je l'ai redouté.
+J'ai raté tes anniversaires. Tes premiers pas. Tes premiers mots.
 
-Mais un combat reste un combat.
+Je n'ai pas le droit de rater ça.
 
-En tant que Champion, je vais tout faire pour t'écraser.
+Alors je vais te donner ce que j'ai de plus précieux : tout ce que j'ai.
 
-Alors donne tout ce que tu as, {PLAYER}. Ne me déçois pas.
+En garde. Et ne me pardonne rien.
 
 @@ PetalburgCity_Gym_Text_NormanDefeat
 …
 
-Je… Ce n'est pas…
+…Ha.
 
-C'est impossible. {PLAYER}…
+J'ai perdu.
 
-J'ai perdu contre {PLAYER} ?
+Contre {PLAYER}.
 
-Mais les règles sont les règles. Tiens. Prends ça.
+…
+
+Les règles sont les règles. Prends ça.
 
 @@ PetalburgCity_Gym_Text_ReceivedBalanceBadge
 {PLAYER} reçoit le Badge Balance de la part de Papa !
@@ -140,21 +144,23 @@ Mais les règles sont les règles. Tiens. Prends ça.
 @@ PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis
 Papa : Ce Badge augmente la Défense de tous tes Pokémon.
 
-Et tes Pokémon qui connaissent la CS Surf pourront naviguer sur l'eau.
+Et tes Pokémon qui connaissent la CS Surf pourront traverser l'eau.
 
-Voici mon cadeau. {PLAYER}, je sais que tu sauras t'en servir.
+Et ceci. C'est mon cadeau. Je sais que tu en feras bon usage.
 
 @@ PetalburgCity_Gym_Text_ExplainFacade
 Papa : La CT42 contient Façade.
 
 Sa puissance double si le Pokémon est empoisonné, paralysé ou brûlé.
 
-Transformer la douleur en force. C'est tout ce que je sais faire.
+Transformer la douleur en force. C'est la seule chose que j'ai jamais su faire.
 
 @@ PetalburgCity_Gym_Text_DadHappyAndSad
-Papa : En tant que Champion, je suis fou de rage…
+Papa : Le Champion en moi a envie de tout casser.
 
-Mais en tant que père, je suis fier. Et un peu triste. Tu n'as plus besoin de moi.
+Le père en moi… est fier. Et triste. Tu n'as plus besoin de moi pour avancer.
+
+Tu n'en as peut-être jamais eu besoin.
 
 @@ PetalburgCity_Gym_Text_PleaseComeWithMe
 Ah, te voilà, {PLAYER} !
@@ -162,180 +168,180 @@ Ah, te voilà, {PLAYER} !
 Suis-moi, s'il te plaît. J'ai quelque chose pour toi.
 
 @@ PetalburgCity_Gym_Text_LetMeBorrowPlayer
-Norman, ça ne vous dérange pas ?
+Norman, vous permettez ?
 
-Je vous emprunte {PLAYER} une minute ou deux.
+Je vous emprunte {PLAYER} deux minutes. Promis, je vous rends votre enfant en un seul morceau.
 
 @@ PetalburgCity_Gym_Text_DadGoingToKeepTraining
-Papa : {PLAYER}, passe voir ta mère de temps en temps. Elle ne dort plus.
+Papa : {PLAYER}. Va voir ta mère.
 
-Moi, je reste ici. Je vais m'entraîner deux fois plus.
+Je sais qu'elle ne dort plus. Je sais que c'est en partie ma faute.
 
-En tant que Dresseur, je ne supporterai pas de rester sur cette défaite.
+Moi, je reste ici. Je vais m'entraîner deux fois plus. Je veux ma revanche.
 
 @@ PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough
-Papa : {PLAYER}, comment ça va ?
+Papa : {PLAYER}. Comment ça va ?
 
-Le monde des Pokémon est sans fond.
+Le monde des Pokémon n'a pas de fond.
 
-Aucun entraînement ne suffira jamais. On s'y noie, ou on s'y perd.
+On peut s'y noyer. J'ai failli. Ne fais pas comme moi. Garde quelqu'un sur la rive.
 
 @@ PetalburgCity_Gym_Text_GymGuideAdvice
-Salut, futur Maître {PLAYER} !
+Yo, futur Maître {PLAYER} !
 
 Ici, les portes s'ouvrent quand tu bats les Dresseurs qui les gardent.
 
-Oh là ! Les portes de cette salle sont déjà ouvertes, alors ne m'attaque pas !
+Wow wow ! Les portes de cette salle sont déjà ouvertes ! Range ton Pokémon, je suis pas un challenger !
 
-Les Dresseurs de l'Arène de Clémenti-Ville utilisent toutes sortes d'objets.
+Les Dresseurs de cette Arène utilisent toutes sortes d'objets. Prépare-toi à souffrir.
 
-La porte de gauche mène à la Salle Vitesse.
+À gauche, la Salle Vitesse.
 
-Celle de droite mène à la Salle Précision.
+À droite, la Salle Précision.
 
-Le nom de chaque salle est écrit sur la porte. Choisis bien.
+Le nom est écrit sur la porte. Choisis bien.
 
-Une fois la porte choisie… eh bien, fonce !
+Et après… bah, fonce !
 
 @@ PetalburgCity_Gym_Text_GymGuidePostVictory
-{PLAYER} ! Waouh ! Tu as battu ton propre père !
+{PLAYER} ! Tu as battu ton propre père !
 
-Le fils prodigue, ou la fille prodigue… Quel retournement !
+L'élève dépasse le maître ! Le petit dévore le grand ! C'est du shonen pur jus !
 
 @@ PetalburgCity_Gym_Text_RandallIntro
-Attaquer avant l'adversaire…
+Frapper avant l'adversaire…
 
-Rien que ça, c'est un avantage énorme. Tu ne trouves pas ?
+Rien que ça, c'est la moitié de la victoire. L'autre moitié, c'est de frapper fort.
 
 @@ PetalburgCity_Gym_Text_RandallDefeat
-Un combat magnifique !
+Un combat magnifique ! J'en ai des frissons !
 
 @@ PetalburgCity_Gym_Text_RandallPostBattle
-Passe à la salle suivante, un nouveau défi t'attend.
+Va à la salle suivante, un nouveau défi t'attend.
 
 À gauche, la Salle Confusion.
 
 À droite, la Salle Défense.
 
 @@ PetalburgCity_Gym_Text_RandallPostBadge
-Qu'on gagne ou qu'on perde, on ne cesse jamais de s'entraîner, soi et ses Pokémon.
+Qu'on gagne ou qu'on perde, on ne s'arrête jamais de s'entraîner.
 
-Pour moi, c'est ça, être Champion. Une vie de sacrifices.
+C'est ça, être Champion. Une vie entière dans une salle qui sent la sueur.
 
 @@ PetalburgCity_Gym_Text_ParkerIntro
-Voici la Salle Confusion.
+Bienvenue dans la Salle Confusion !
 
-Voyons à quel point tu es lié à tes Pokémon !
+Voyons si ton lien avec tes Pokémon résiste quand ils ne savent plus où ils sont !
 
 @@ PetalburgCity_Gym_Text_ParkerDefeat
-Je n'ai pas réussi à semer le chaos dans ton équipe… Votre lien est solide.
+J'ai pas réussi à les embrouiller… Votre lien est solide. C'est presque écœurant.
 
 @@ PetalburgCity_Gym_Text_ParkerPostBattle
 La salle suivante, c'est la Salle Force. Tu sauras encaisser la force brute ?
 
 @@ PetalburgCity_Gym_Text_ParkerPostBadge
-Depuis que tu as battu le Champion, l'entraînement est devenu infernal.
+Depuis que tu as battu le Champion, l'entraînement est devenu infernal. Merci, hein.
 
 @@ PetalburgCity_Gym_Text_GeorgeIntro
-Juste quand tu crois gagner, l'adversaire récupère ses PV…
+Juste quand tu crois gagner, l'adversaire se soigne…
 
-Tu imagines comme c'est horrible ?
+Tu imagines la frustration ?
 
-Je vais te le faire vivre !
+Je vais te la faire vivre ! Encore ! Et encore !
 
 @@ PetalburgCity_Gym_Text_GeorgeDefeat
-Je n'ai pas assez soigné… Quelle puissance d'Attaque…
+J'ai pas assez soigné… Quelle puissance d'Attaque…
 
 @@ PetalburgCity_Gym_Text_GeorgePostBattle
 Normal, venant de l'enfant du Champion.
 
-Non, attends ! Le talent d'un Dresseur ne vient que de ses efforts.
+Non ! Je retire ! Le talent, ça n'existe pas. Il n'y a que le travail.
 
-J'ai perdu parce que je n'en ai pas fait assez.
+J'ai perdu parce que j'ai pas assez bossé. Point.
 
-Vas-y ! La Salle K.O. en un coup est juste après.
+Vas-y. La Salle K.O. en un coup est juste après.
 
 @@ PetalburgCity_Gym_Text_GeorgePostBadge
-Je vais continuer à m'entraîner dans les Arènes. Un jour, je serai Champion.
+Je vais continuer à m'entraîner. Un jour, je serai Champion. Ou je mourrai en essayant. Les deux me vont.
 
 @@ PetalburgCity_Gym_Text_BerkeIntro
-Je ne vais pas te ménager sous prétexte que tu es l'enfant du Champion.
+Je vais pas te ménager parce que t'es l'enfant du Champion.
 
-Je vais te montrer ce que ça fait, un coup critique en pleine tête !
+Je vais te montrer ce que ça fait, un coup critique en pleine poire !
 
 @@ PetalburgCity_Gym_Text_BerkeDefeat
-Cette puissance… T'es le vrai truc.
+Cette puissance… Tu es la vraie affaire.
 
 @@ PetalburgCity_Gym_Text_BerkePostBattle
-Ton père est vraiment fort. Il mérite mon respect.
+Ton père est un monstre. Au bon sens du terme.
 
-Et je sens chez toi la même lueur que chez lui.
+Et je vois la même flamme chez toi.
 
-J'espère que votre combat sera mémorable. Et que vous en sortirez tous les deux debout.
+J'espère que votre combat sera épique. Et que vous vous parlerez, après.
 
 @@ PetalburgCity_Gym_Text_BerkePostBadge
-Depuis que ton père est Champion, les Dresseurs de Clémenti-Ville sont devenus bien plus coriaces.
+Depuis que ton père est Champion, les Dresseurs de Clémenti-Ville sont devenus des bêtes de guerre.
 
 @@ PetalburgCity_Gym_Text_MaryIntro
-Hi hi… Voici la Salle Précision.
+Hi hi… Bienvenue dans la Salle Précision.
 
-C'est cruel, quand chaque attaque touche à coup sûr.
+Chaque attaque touche. Chaque fois. C'est cruel, hein ?
 
 @@ PetalburgCity_Gym_Text_MaryDefeat
 Tu étais un cran au-dessus…
 
 @@ PetalburgCity_Gym_Text_MaryPostBattle
-Des Dresseurs encore plus forts t'attendent.
+D'autres Dresseurs encore plus forts t'attendent.
 
 À gauche, la Salle Défense. À droite, la Salle Soin.
 
-Dans les deux cas, ta puissance d'Attaque sera mise à l'épreuve.
+Dans les deux cas, ta puissance d'Attaque va être mise à rude épreuve.
 
 @@ PetalburgCity_Gym_Text_MaryPostBadge
-Tu sais ce qu'on cherche, en tant que Dresseurs ?
+Tu sais ce qu'on cherche, nous, les Dresseurs ?
 
-Devenir l'âme sœur de nos Pokémon. Jusqu'à la mort.
+Devenir l'âme sœur de nos Pokémon. Pour la vie. Et un peu après.
 
 @@ PetalburgCity_Gym_Text_AlexiaIntro
-Plus ma Défense est haute, plus je peux attaquer comme une folle.
+Plus ma Défense est haute, plus je peux attaquer comme une furie !
 
 @@ PetalburgCity_Gym_Text_AlexiaDefeat
-Nos défenses n'ont pas suffi…
+Nos défenses ont cédé…
 
 @@ PetalburgCity_Gym_Text_AlexiaPostBattle
 Tu m'as donné une sacrée leçon.
 
-Vas-y ! La porte de gauche mène à la Salle Force.
+Vas-y ! À gauche, la Salle Force.
 
-Celle de droite, à la Salle K.O. en un coup.
+À droite, la Salle K.O. en un coup.
 
-Dans les deux, des Dresseurs taillés pour l'attaque.
+Les deux sont remplies de brutes.
 
 @@ PetalburgCity_Gym_Text_AlexiaPostBadge
-Salut ! Tu as essayé Surf ?
+Salut ! Tu as essayé Surf ? C'est comme courir, mais sur l'eau, et avec plus de chances de se noyer.
 
 @@ PetalburgCity_Gym_Text_JodyIntro
 Le Champion nous a ordonné de tout donner pour te battre.
 
-Même si tu es son enfant !
+Même si tu es son enfant. SURTOUT parce que tu es son enfant !
 
 @@ PetalburgCity_Gym_Text_JodyDefeat
 Mais… j'ai tout donné !
 
 @@ PetalburgCity_Gym_Text_JodyPostBattle
-Ta façon de diriger tes Pokémon… C'est le style de ton père.
+Ta façon de diriger tes Pokémon… C'est tout ton père.
 
-Passe. Le Champion, ton père, t'attend.
+Passe. Il t'attend. Il fait semblant de rien, mais il fait les cent pas depuis ce matin.
 
 @@ PetalburgCity_Gym_Text_JodyPostBadge
 Rendre ses Pokémon plus forts, c'est bien.
 
-Mais qu'est-ce qui décide du vainqueur ?
+Mais au final, qu'est-ce qui fait gagner ?
 
-Ce que le Dresseur ressent pour ses Pokémon. Et ce qu'il est prêt à sacrifier.
+Ce que tu ressens pour eux. Et ce que tu acceptes de perdre pour eux.
 
 @@ PetalburgCity_Gym_Text_DoorAppearsLocked
-Cette porte semble verrouillée…
+Cette porte est verrouillée…
 
 @@ PetalburgCity_Gym_Text_EnterSpeedRoom
 “Salle Vitesse”, indique le panneau.
@@ -343,7 +349,7 @@ Cette porte semble verrouillée…
 Entrer ?
 
 @@ PetalburgCity_Gym_Text_DoorAppearsLocked2
-Cette porte semble verrouillée…
+Cette porte est verrouillée…
 
 @@ PetalburgCity_Gym_Text_EnterAccuracyRoom
 “Salle Précision”, indique le panneau.
@@ -392,35 +398,37 @@ Arène Pokémon de Clémenti-Ville
 >{PLAYER}
 
 @@ PetalburgCity_Gym_Text_NormanPreRematch
-Papa : {PLAYER}… Je savais que tu viendrais.
+Papa : {PLAYER}. Je savais que tu viendrais.
 
-Je ne refuserai jamais un défi de ta part.
+Je ne refuserai jamais un de tes défis.
 
-Tu le sais, n'est-ce pas ?
+Tu le sais.
 
-Dans une Arène, peu importe qu'on soit parent et enfant.
+Dans une Arène, on n'est pas parent et enfant.
 
-…Non. Justement parce qu'on est parent et enfant, on se doit de tout donner. N'est-ce pas, {PLAYER} ?
+…Non. C'est faux. C'est justement parce qu'on est parent et enfant qu'on se doit de tout donner. Pas vrai, {PLAYER} ?
 
 @@ PetalburgCity_Gym_Text_NormanRematchDefeat
-Euh… Ha ha… J'y suis peut-être allé un peu fort…
+Euh… Ha ha… Je crois que j'ai pris une raclée…
 
 @@ PetalburgCity_Gym_Text_NormanPostRematch
-Papa : {PLAYER}… Quel est ton rêve ?
+Papa : {PLAYER}… C'est quoi, ton rêve ?
 
-Le mien… Ha ha ha… Il s'est déjà réalisé, en fait.
+Le mien…
+
+Ha ha ha… Il est devant moi. Il vient de me mettre une raclée.
 
 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
-Papa : {PLAYER}… Je savais que tu viendrais.
+Papa : {PLAYER}. Je savais que tu viendrais.
 
-Je ne refuserai jamais un défi de ta part.
+Je ne refuserai jamais un de tes défis.
 
-Tu le sais, n'est-ce pas ?
+Tu le sais.
 
-Dans une Arène, peu importe qu'on soit parent et enfant.
+Dans une Arène, on n'est pas parent et enfant.
 
-Hm ? Attends une seconde, {PLAYER}.
+Hm ? Attends.
 
 Tu n'as qu'un seul Pokémon en état de se battre ?
 
-Désolé, mais reviens avec au moins deux Pokémon.
+Reviens avec au moins deux Pokémon. Je ne me bats pas à moitié.

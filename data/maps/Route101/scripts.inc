@@ -257,43 +257,46 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "À… à l'aide !$"
+	.string "AU SECOURS ! JE VAIS MOURIIIIR !$"
 
 Route101_Text_PleaseHelp:
-	.string "Hé ! Toi, là-bas ! Je t'en supplie !\n"
-	.string "Aide-moi !\p"
-	.string "Dans mon Sac ! Il y a des Poké Balls !\n"
-	.string "Vite, avant qu'il m'arrache la jambe !$"
+	.string "Hé ! Toi ! Oui, toi ! Aide-moi, bordel !\p"
+	.string "Mon Sac ! Il y a des Poké Balls dedans !\n"
+	.string "Prends-en une avant qu'il me bouffe le\l"
+	.string "mollet !$"
 
 Route101_Text_DontLeaveMe:
-	.string "Où tu vas ?! Ne me laisse pas crever ici !$"
+	.string "Où tu vas ?! Tu vas laisser un pauvre\n"
+	.string "scientifique se faire dévorer ?! J'ai\l"
+	.string "une famille ! Et un article à finir !$"
 
 Route101_Text_YouSavedMe:
-	.string "Prof. Seko : Pfiou…\p"
-	.string "J'étudiais les Pokémon sauvages dans\n"
-	.string "les hautes herbes quand il m'a sauté\l"
-	.string "dessus.\p"
-	.string "Sans toi, on aurait retrouvé mes\n"
-	.string "lunettes et pas grand-chose d'autre.\l"
-	.string "Merci.\p"
-	.string "Oh ?\p"
-	.string "Mais tu es {PLAYER} !\p"
-	.string "Pas le meilleur endroit pour discuter.\n"
-	.string "Passe à mon labo tout à l'heure,\l"
-	.string "d'accord ?$"
+	.string "Prof. Seko : Pfiou… Pfiou…\p"
+	.string "J'observais les Pokémon sauvages quand\n"
+	.string "celui-là a décidé que j'étais son\l"
+	.string "déjeuner.\p"
+	.string "Ça fait quinze. Quinze fois que je frôle\n"
+	.string "la mort. Je tiens un carnet.\p"
+	.string "Merci. Vraiment. Sans toi, on aurait\n"
+	.string "retrouvé mes lunettes et une sandale.\p"
+	.string "Oh ? Mais tu es {PLAYER} !\p"
+	.string "Pas le meilleur endroit pour faire\n"
+	.string "connaissance. Passe au labo, d'accord ?\l"
+	.string "Avant qu'un autre ait faim.$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "Si tes Pokémon sont épuisés,\n"
-	.string "emmène-les dans un Centre Pokémon.\p"
-	.string "Il y en a un à Rosyères, juste à côté.\n"
-	.string "N'attends pas qu'il soit trop tard.$"
+	.string "Si tes Pokémon sont à bout, emmène-les\n"
+	.string "dans un Centre Pokémon.\p"
+	.string "Il y en a un à Rosyères, juste au nord.\n"
+	.string "N'attends pas qu'il soit trop tard. On\l"
+	.string "attend toujours trop.$"
 
 Route101_Text_WildPokemonInTallGrass:
 	.string "Les Pokémon sauvages surgissent des\n"
 	.string "hautes herbes.\p"
-	.string "Pour en capturer, il faut y aller et\n"
-	.string "chercher. Et accepter de prendre des\l"
-	.string "coups.$"
+	.string "Pour en capturer, il faut y aller. Et\n"
+	.string "accepter de se faire mordre les\l"
+	.string "chevilles.$"
 
 Route101_Text_RouteSign:
 	.string "Route 101\n"

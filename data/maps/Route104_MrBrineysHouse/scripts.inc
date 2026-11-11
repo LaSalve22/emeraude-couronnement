@@ -95,49 +95,51 @@ Route104_MrBrineysHouse_EventScript_Peeko::
 	end
 
 Route104_MrBrineysHouse_Text_WaitUpPeeko:
-	.string "M. Marco : Attends, ma belle !\n"
-	.string "Attends-moi, Peeko !$"
+	.string "M. Marco : Attends, ma belle ! Attends\n"
+	.string "ton vieux, Peeko !$"
 
 Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford:
 	.string "Hm ? Mais c'est {PLAYER} ! Tu as sauvé ma\n"
-	.string "Peeko adorée ! Je te dois tout !\p"
+	.string "Peeko adorée ! Je te dois tout ! Tu veux\l"
+	.string "un rhum ? Non, t'as pas l'âge. Un jus ?\p"
 	.string "Comment ? Tu veux prendre la mer avec\n"
 	.string "moi ?\p"
 	.string "Hmhm…\p"
 	.string "Une Lettre pour Myokara et un colis\n"
 	.string "pour Poivressel, c'est ça ?\p"
-	.string "Quelle vie trépidante !\p"
-	.string "Mais bien sûr, ce que tu demandes ne\n"
-	.string "pose aucun problème.\p"
-	.string "Tu t'adresses au bon marin ! Cap sur\n"
-	.string "Myokara. La mer ne me reprendra pas ce\l"
-	.string "que j'aime une deuxième fois.$"
+	.string "Quelle vie de dingue !\p"
+	.string "Bien sûr que je t'emmène. J'ai juré de ne\n"
+	.string "plus jamais prendre la mer. Mais pour\l"
+	.string "toi, je romps ce serment.\p"
+	.string "Cap sur Myokara ! Et cette fois, la mer\n"
+	.string "ne me prendra personne.$"
 
 Route104_MrBrineysHouse_Text_SetSailForDewford:
-	.string "M. Marco : Myokara, donc !\p"
-	.string "Levez l'ancre ! Peeko, ma chérie, on\n"
-	.string "prend le large !$"
+	.string "M. Marco : Myokara, alors !\p"
+	.string "LEVEZ L'ANCRE ! Peeko, ma chérie, on\n"
+	.string "reprend la mer !$"
 
 Route104_MrBrineysHouse_Text_DeclineDeliverySail:
 	.string "M. Marco : Ah bon ? Tes livraisons\n"
 	.string "peuvent attendre ?\p"
-	.string "Dis-moi quand tu veux partir !$"
+	.string "Bah, la mer aussi. Elle a l'habitude\n"
+	.string "d'attendre.$"
 
 Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford:
-	.string "M. Marco : Ohé ! Je sais exactement ce\n"
-	.string "que tu vas dire !\p"
-	.string "Tu dois livrer une Lettre à Myokara et\n"
-	.string "un colis à Poivressel.\p"
-	.string "Aucun problème, je suis l'homme de la\n"
+	.string "M. Marco : Ohé ! Je sais déjà ce que tu\n"
+	.string "vas dire !\p"
+	.string "Une Lettre pour Myokara et un colis\n"
+	.string "pour Poivressel.\p"
+	.string "Pas de souci, je suis l'homme de la\n"
 	.string "situation !\p"
 	.string "D'abord, cap sur Myokara.$"
 
 Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford:
-	.string "M. Marco : Ohé ! Je sais exactement ce\n"
-	.string "que tu vas dire !\p"
-	.string "Tu dois livrer un colis au Capitaine\n"
-	.string "Stern, à Poivressel.\p"
-	.string "Aucun problème, je suis l'homme de la\n"
+	.string "M. Marco : Ohé ! Je sais déjà ce que tu\n"
+	.string "vas dire !\p"
+	.string "Un colis pour le Capitaine Stern, à\n"
+	.string "Poivressel.\p"
+	.string "Pas de souci, je suis l'homme de la\n"
 	.string "situation !\p"
 	.string "D'abord, cap sur Myokara.$"
 
@@ -148,9 +150,10 @@ Route104_MrBrineysHouse_Text_WhereAreWeBound:
 
 Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail:
 	.string "M. Marco : Ah bon ? Peeko te doit la vie,\n"
-	.string "tu sais.\p"
-	.string "Dis-moi quand tu veux partir !$"
+	.string "tu sais. Et moi, je te dois Peeko.\p"
+	.string "Dis-moi quand tu veux partir.$"
 
 Route104_MrBrineysHouse_Text_Peeko:
-	.string "Peeko : Pii piihyoro !$"
+	.string "Peeko : Pii piihyoro ! (Elle a piqué une\n"
+	.string "olive dans le verre de M. Marco.)$"
 

@@ -46,9 +46,9 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - À revoir plus tard : le Prof. Seko propose encore Héricendre parmi les starters de Johto après la Ligue ; pas de poupée Carapuce
   (la poupée Gobou reste pour le choix eau).
 
-## Fait (v0.3)
+## Fait (v0.3 et v0.4)
 
-- Traduction française du chapitre 1 (intro → Mérouville, Tunnel Mérazon compris), ton plus adulte façon manga :
+- Traduction française du chapitre 1 (intro → Mérouville, Tunnel Mérazon compris). v0.4 : ton réécrit après le test d Adrien, humour manga + textes adultes avec du fond + trash si besoin :
   jurons, thèmes durs (mort, maladie, deuil), scénario inchangé. Guide de ton et lexique : `translations/fr/GUIDE.md`.
 - Textes sources dans `translations/fr/*.txt`, appliqués par `python3 tools/fr/textfr.py apply translations/fr/*.txt`
   (mise en forme automatique au pixel près ; `check` signale les lignes trop larges).

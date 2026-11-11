@@ -996,66 +996,75 @@ Route104_EventScript_Darian::
 
 Route104_Text_BrineyLivesInSeasideCottage:
 	.string "C'est là que vit M. Marco.\p"
-	.string "Autrefois, c'était un marin redoutable.\n"
-	.string "Il ne craignait aucune tempête. Puis la\l"
-	.string "mer lui a pris tout son équipage. Depuis,\n"
-	.string "il ne sort plus.$"
+	.string "C'était un marin légendaire. Il a\n"
+	.string "affronté des tempêtes qui ont avalé\l"
+	.string "des navires entiers.\p"
+	.string "Une nuit, la mer lui a pris tout son\n"
+	.string "équipage. Il est le seul à être rentré.\l"
+	.string "Depuis, il boit. Et il parle à son\n"
+	.string "Pokémon.$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
 	.string "La mer, hein ?\p"
 	.string "Je me demande ce qu'il y a tout au fond.\n"
-	.string "Combien de bateaux. Combien de corps.$"
+	.string "Des trésors. Des épaves. Des gens.\p"
+	.string "Des fois je me dis qu'elle les garde\n"
+	.string "comme une collection.$"
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
 	.string "Avant de lancer une Poké Ball, affaiblis\n"
 	.string "le Pokémon sauvage.\p"
 	.string "C'est plus facile s'il est empoisonné,\n"
-	.string "brûlé ou endormi. Pas très glorieux, mais\l"
-	.string "efficace.$"
+	.string "brûlé ou endormi.\p"
+	.string "Pas très glorieux. Mais la gloire, ça ne\n"
+	.string "remplit pas un Pokédex.$"
 
 Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "Voler le Pokémon de quelqu'un, c'est\n"
-	.string "être un voleur. Et les voleurs, ici, on\l"
-	.string "les retrouve dans la rivière.\p"
+	.string "être un voleur. Et ici, les voleurs, on\l"
+	.string "les retrouve dans la rivière. Avec des\n"
+	.string "cailloux dans les poches.\p"
 	.string "Ne lance tes Poké Balls que sur des\n"
 	.string "Pokémon sauvages.$"
 
 Route104_Text_ImNotATrainer:
-	.string "Oh non, je ne suis pas Dresseur.\p"
+	.string "Moi ? Non, je suis pas Dresseur.\p"
 	.string "Mais c'est vrai : quand deux Dresseurs\n"
-	.string "se regardent dans les yeux, le combat\l"
-	.string "est inévitable.\p"
-	.string "Si tu ne veux pas te battre, reste hors\n"
-	.string "de leur vue.$"
+	.string "se regardent, le combat est inévitable.\l"
+	.string "C'est comme les chiens.\p"
+	.string "Si tu veux pas te battre, regarde tes\n"
+	.string "pieds.$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "J'adore me remplir la bouche de graines\n"
-	.string "et les recracher à toute vitesse !\l"
-	.string "Comme une mitraillette !\p"
+	.string "et les recracher à toute vitesse ! PTOU\l"
+	.string "PTOU PTOU ! Comme une mitraillette !\p"
 	.string "Tiens, prends ça et essaie !\p"
-	.string "Un Pokémon qui l'utilise apprendra une\n"
-	.string "attaque qui tire des graines en rafale.$"
+	.string "Ton Pokémon apprendra à cracher des\n"
+	.string "graines en rafale. Les voisins vont\l"
+	.string "adorer.$"
 
 Route104_Text_TMsAreOneTimeUse:
 	.string "Un conseil !\p"
 	.string "Les CT, les Capsules Techniques, se\n"
 	.string "réutilisent à volonté.\p"
-	.string "Alors n'aie pas peur de t'en servir !$"
+	.string "Alors vas-y, abuses-en ! C'est fait pour\n"
+	.string "ça !$"
 
 Route104_Text_DontNeedThisTakeIt:
 	.string "La Boutique de fleurs vend des jeunes\n"
 	.string "pousses depuis peu.\p"
 	.string "J'étais tellement contente que j'ai\n"
-	.string "acheté n'importe quoi.\p"
+	.string "tout acheté. Mon appartement est une\l"
+	.string "jungle. Mon chat a disparu.\p"
 	.string "Je n'ai plus besoin de cette Herbe\n"
 	.string "Blanche. Tu la veux ?$"
 
 Route104_Text_FlowerShopSellingSaplings:
 	.string "La Boutique de fleurs vend des jeunes\n"
 	.string "pousses depuis peu.\p"
-	.string "J'étais tellement contente que j'ai\n"
-	.string "acheté n'importe quoi. Où est-ce que je\l"
-	.string "vais mettre tout ça ?$"
+	.string "J'ai tout acheté. Où est-ce que je vais\n"
+	.string "mettre tout ça ? Et où est mon chat ?$"
 
 Route104_Text_MrBrineysCottage:
 	.string "Maison de M. Marco$"
@@ -1075,16 +1084,18 @@ Route104_Text_TrainerTipsDoubleBattles:
 	.string "Conseils aux Dresseurs\p"
 	.string "À Hoenn, certains Dresseurs se battent\n"
 	.string "en duo : ce sont les combats en Duo.\p"
-	.string "Dans un combat en Duo, tu envoies tes\n"
-	.string "deux premiers Pokémon. Pense à l'ordre\l"
-	.string "de ton équipe.$"
+	.string "Tu envoies alors tes deux premiers\n"
+	.string "Pokémon. Pense à l'ordre de ton équipe.\l"
+	.string "Ou prépare-toi à souffrir deux fois\n"
+	.string "plus.$"
 
 Route104_Text_MayWeShouldRegister:
-	.string "Flora : Oh, salut, {PLAYER} !\p"
-	.string "Devon a ajouté le système Match Call à\n"
-	.string "ton PokéNav, hein ?\p"
-	.string "On devrait s'enregistrer, comme ça on\n"
-	.string "pourra s'appeler quand on veut.$"
+	.string "Flora : Ooh, salut, {PLAYER} !\p"
+	.string "Devon t'a installé le Match Call sur ton\n"
+	.string "PokéNav ?\p"
+	.string "Enregistre-moi ! Comme ça je pourrai\n"
+	.string "t'appeler pour te raconter mes\l"
+	.string "victoires. Et toi tes défaites.$"
 
 Route104_Text_RegisteredMay:
 	.string "{PLAYER} enregistre Flora dans le\n"
@@ -1095,43 +1106,44 @@ Route104_Text_MayHowsYourPokedex:
 	.string "Pokédex ?$"
 
 Route104_Text_MayMinesDecentLetsBattle:
-	.string "Le mien commence à avoir de l'allure.\n"
-	.string "Alors… un petit combat ?$"
+	.string "Le mien a une sacrée gueule. Alors…\n"
+	.string "revanche ?$"
 
 Route104_Text_MayHaventRaisedPokemon:
-	.string "Flora : Qu'est-ce qui t'arrive ?\p"
-	.string "Tu n'as pas beaucoup entraîné tes\n"
-	.string "Pokémon ?\p"
-	.string "C'est pas brillant, pour un Dresseur.\n"
-	.string "Dehors, ce genre d'erreur, ça se paie\l"
-	.string "cher.$"
+	.string "Flora : Hé, c'est quoi ce bordel ?\p"
+	.string "Tu ne t'es pas occupé de tes Pokémon ?!\p"
+	.string "Ils ne sont pas des jouets, {PLAYER}.\n"
+	.string "Dehors, quand on les néglige, ce sont\l"
+	.string "eux qui paient.$"
 
 Route104_Text_MayLetsBattle:
-	.string "Flora : Alors, t'en dis quoi ? Un petit\n"
-	.string "combat, ici ?$"
+	.string "Flora : Alors ? On se fait cette\n"
+	.string "revanche ?$"
 
 Route104_Text_MayIntro:
-	.string "Flora : Tu viens à peine de commencer,\n"
-	.string "{PLAYER}. Je ne perdrai pas deux fois !$"
+	.string "Flora : La dernière fois, c'était un\n"
+	.string "accident ! Cette fois, je vais te\l"
+	.string "réduire en miettes !$"
 
 Route104_Text_MayDefeat:
-	.string "Aïe ! Tu es meilleur que je pensais !$"
+	.string "QUOI ?! ENCORE ?! Mais t'es qui, toi ?!$"
 
 Route104_Text_MayPostBattle:
-	.string "Flora : Tu commences à savoir t'y\n"
-	.string "prendre avec tes Pokémon.\p"
-	.string "Mais au lieu de juste les faire se\n"
-	.string "battre, tu devrais faire comme M. Marco.\p"
-	.string "Il faut aussi devenir leur ami. Sinon, le\n"
-	.string "jour où ils tomberont, tu ne sauras même\l"
-	.string "pas ce que tu as perdu.$"
+	.string "Flora : …Bon. Tu deviens vraiment fort.\p"
+	.string "Mais promets-moi un truc. Ne fais pas\n"
+	.string "que les faire se battre.\p"
+	.string "Regarde M. Marco. Son Pokémon, c'est sa\n"
+	.string "famille. Le jour où il le perdra, il n'aura\l"
+	.string "plus rien.\p"
+	.string "Aime-les pour de vrai, {PLAYER}. Sinon, à\n"
+	.string "quoi bon ?$"
 
 Route104_Text_BrendanWeShouldRegister:
 	.string "Brice : Oh, salut, {PLAYER} !\p"
-	.string "Pas mal, t'as fait installer le Match Call\n"
-	.string "sur ton PokéNav !\p"
-	.string "On s'enregistre ? Comme ça, on reste en\n"
-	.string "contact.$"
+	.string "Pas mal, t'as le Match Call sur ton\n"
+	.string "PokéNav !\p"
+	.string "On s'enregistre ? Je pourrai t'appeler\n"
+	.string "pour me vanter.$"
 
 Route104_Text_RegisteredBrendan:
 	.string "{PLAYER} enregistre Brice dans le\n"
@@ -1139,32 +1151,36 @@ Route104_Text_RegisteredBrendan:
 
 Route104_Text_BrendanHowsYourPokedex:
 	.string "Brice : {PLAYER}, il en est où, ton\n"
-	.string "Pokédex ? T'as rempli des pages ?$"
+	.string "Pokédex ? T'as rempli des pages, ou tu\l"
+	.string "fais du tourisme ?$"
 
 Route104_Text_BrendanDoingGreatLetsBattle:
-	.string "Moi, ça roule !\p"
+	.string "Moi, ça déchire.\p"
 	.string "Tu veux voir à quel point je suis bon ?\n"
 	.string "Un combat, et je te montre.$"
 
 Route104_Text_BrendanNoConfidence:
 	.string "Brice : Qu'est-ce qu'il y a ? T'as pas\n"
-	.string "confiance en tes Pokémon ?$"
+	.string "confiance en tes Pokémon ? Eux, ils te\l"
+	.string "font confiance, pourtant.$"
 
 Route104_Text_BrendanLetsBattle:
-	.string "Brice : Alors ? On se fait un combat ?$"
+	.string "Brice : Alors ? On s'y met ?$"
 
 Route104_Text_BrendanIntro:
-	.string "Brice : Je sais que tu débutes, mais je\n"
-	.string "vais pas te faire de cadeau !$"
+	.string "Brice : La dernière fois, j'étais pas\n"
+	.string "échauffé. Là, je vais te défoncer !$"
 
 Route104_Text_BrendanDefeat:
-	.string "Hmm… T'es pas mauvaise. Ça m'énerve.$"
+	.string "Hmm… Encore. Putain. Encore.$"
 
 Route104_Text_BrendanPostBattle:
-	.string "Brice : Tu commences à bien gérer tes\n"
-	.string "Pokémon.\p"
-	.string "Mais tu sais, faut pas juste les faire\n"
-	.string "se battre.\p"
-	.string "Comme M. Marco, faut aussi devenir leur\n"
-	.string "ami. Sinon t'es juste un chef de meute\l"
-	.string "qui envoie les autres crever.$"
+	.string "Brice : T'es douée. Ça me fout les nerfs.\p"
+	.string "Mais faut pas juste les faire se battre,\n"
+	.string "tu sais.\p"
+	.string "M. Marco, son Pokémon, c'est tout ce qui\n"
+	.string "lui reste. Ça, c'est un vrai lien.\p"
+	.string "Moi, je sais même pas si les miens\n"
+	.string "m'aiment ou s'ils ont juste peur de\l"
+	.string "décevoir mon père.\p"
+	.string "…Oublie ce que j'ai dit.$"

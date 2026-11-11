@@ -1,70 +1,76 @@
-// Chapitre 1 — Tunnel Mérazon (le voyou de la Team Aqua, Peeko otage, les Pièces Devon)
+// Chapitre 1 — Tunnel Mérazon (le voyou de la Team Aqua, Peeko otage, les Pièces Devon) (v0.4)
 
 @@ RusturfTunnel_Text_ComeAndGetSome
-Quoi, tu t'approches ? Viens, si t'as des couilles !
+Quoi, tu t'approches ? Viens, si t'as les tripes ! J'ai un couteau ! …Enfin, une cuillère. Mais elle est pointue !
 
 @@ RusturfTunnel_Text_Peeko
-Peeko : Pii pihyoh !
+Peeko : Pii pihyoh ! (Elle essaie de mordre l'oreille du voyou.)
 
 @@ RusturfTunnel_Text_GruntIntro
-Bordel de merde !
+Bordel de MERDE !
 
-Ce Pokémon otage ne vaut rien ! J'aurais dû lui tordre le cou tout de suite !
+Cet oiseau de malheur m'a chié dessus trois fois ! TROIS ! Comme otage, c'est zéro !
 
-Et moi qui me suis enfui… dans un tunnel qui ne mène nulle part !
+Et moi, comme un con, je me suis enfui dans le seul tunnel de Hoenn qui mène NULLE PART !
 
-Hé ! Toi ! Tu veux te battre ? Tu vas le regretter !
+Hé ! Toi ! Tu veux te battre ? Parfait ! J'ai besoin de me défouler sur quelqu'un !
 
 @@ RusturfTunnel_Text_GruntDefeat
-Arrrgh ! Ma carrière de truand finit dans un cul-de-sac !
+Arrrgh ! Ma carrière de truand finit dans un cul-de-sac ! Au sens propre !
 
 @@ RusturfTunnel_Text_GruntTakePackage
 C'est pas juste…
 
-Le Boss m'avait dit que ce serait un boulot facile.
+Le Boss avait dit : “Boulot facile. Tu piques un colis chez Devon et tu rentres.”
 
-J'avais juste à piquer un colis chez Devon.
+Facile, mon cul. Je me suis fait battre par un gamin, chier dessus par un piaf, et je suis coincé dans un trou.
 
-Tch ! Tu le veux tant que ça ? Prends-le ! Mais le Boss n'oublie jamais un visage.
+Tch ! Tiens, ton colis de merde ! Prends-le !
+
+Mais retiens bien : le Boss n'oublie jamais un visage. Et la mer, elle, n'oublie jamais un corps.
 
 @@ RusturfTunnel_Text_PeekoGladToSeeYouSafe
-Peeko ! Dieu merci, tu es saine et sauve !
+PEEKO ! Ma Peeko ! Tu es vivante ! Tu es vivante… Oh, mon Dieu… Tu es vivante…
 
 @@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko
-Peeko te doit la vie ! Et moi aussi. Je n'aurais pas survécu à une autre perte.
+Peeko te doit la vie.
+
+…Et moi aussi. Si je l'avais perdue, elle aussi… je ne serais pas rentré à la maison. Je serais rentré dans la mer.
 
 On m'appelle M. Marco. Et toi, tu es… ?
 
 … … … … … … … … … … … …
 
-Ah, tu es {PLAYER} ! Merci, du fond du cœur !
+{PLAYER}. Je ne l'oublierai jamais.
 
-Si un jour tu as besoin de quoi que ce soit, n'hésite pas !
+Si un jour tu as besoin de quoi que ce soit, n'importe quoi, viens me voir.
 
-Je vis dans une cabane au bord de la mer, près du Bois Clémenti.
+J'habite une cabane au bord de la mer, près du Bois Clémenti.
 
-Viens, Peeko, on rentre à la maison.
+Viens, Peeko. On rentre. Je te paie des sardines. Des fraîches.
 
 Peeko : Pihyoh !
 
 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging
 … …
 
-Pourquoi ils ne continuent pas de creuser ? La roche est trop dure ?
+Pourquoi ils arrêtent de creuser ? La roche est trop dure ?
 
-Ma bien-aimée m'attend à Vergazon, juste de l'autre côté…
+Ma fiancée m'attend à Vergazon, juste de l'autre côté…
 
 Si ce tunnel reliait Mérouville et Vergazon, je pourrais la voir tous les jours…
 
-Mais là… Qu'est-ce que je suis censé faire ? Creuser à mains nues jusqu'à en crever ?
+Là, je fais le tour par la mer, deux villes et une montagne. Quatre jours de voyage pour un bisou.
+
+Je vais finir par creuser avec les dents.
 
 @@ RusturfTunnel_Text_ToGetToVerdanturf
-Pour aller de Mérouville à Vergazon, il faut passer par Myokara, puis par Poivressel et Lavandia…
+Pour aller de Mérouville à Vergazon, il faut passer par Myokara, Poivressel et Lavandia… Quatre jours. Pour une ville qui est juste derrière ce mur.
 
 @@ RusturfTunnel_Text_YouShatteredBoulderTakeHM
-Waouh ! Tu as pulvérisé le rocher qui bloquait le passage.
+Waouh ! Tu as pulvérisé le rocher qui bloquait le passage !
 
-Pour te remercier, je veux que tu aies cette CS.
+Tu viens de me rendre la femme de ma vie. Tiens, prends cette CS. Prends tout ce que tu veux. Prends ma voiture.
 
 @@ RusturfTunnel_Text_ExplainStrength
 Cette CS contient Force.
@@ -74,24 +80,30 @@ Un Pokémon musclé qui l'apprend peut déplacer même les plus gros rochers.
 @@ RusturfTunnel_Text_WandaReunion
 Wanda ! Maintenant, je pourrai te voir quand je veux !
 
-Wanda : C'est… merveilleux.
+Wanda : C'est… merveilleux. Tu es tout couvert de poussière.
 
-Viens te reposer chez moi.
+Viens te reposer à la maison. Et prends une douche, par pitié.
 
 @@ RusturfTunnel_Text_BoyfriendOnOtherSideOfRock
 De l'autre côté de ce rocher… il y a mon fiancé.
 
-Il… il ne creuse pas ce tunnel seulement pour me voir.
+Il… il ne creuse pas ce tunnel seulement pour moi.
 
-Il s'arrache les mains pour le bien de tous. Un jour, la montagne va s'effondrer sur lui. Je le sais.
+Il dit que c'est pour tout le monde. Pour que les gens ne soient plus séparés.
+
+Chaque soir, j'ai peur que la montagne s'effondre sur lui. Chaque matin, il recommence.
 
 @@ RusturfTunnel_Text_MikeIntro
 Un homme sauvage dans les montagnes, c'est un montagnard, non ?
 
 Alors pourquoi on dit pas “Pokémon montagnard” pour un Pokémon des montagnes ?
 
+Ça me travaille depuis trois ans. Bats-toi, ça m'aidera à penser à autre chose.
+
 @@ RusturfTunnel_Text_MikeDefeat
-Mes Pokémon… sont à bout…
+Mes Pokémon… sont à plat… Comme mon argumentation…
 
 @@ RusturfTunnel_Text_MikePostBattle
-Ils ont arrêté les travaux ici pour protéger les Pokémon, hein ? Une belle histoire, pour une fois.
+Ils ont arrêté les travaux ici pour protéger les Chuchmur, hein ?
+
+Une entreprise qui choisit des Pokémon plutôt que l'argent. Pour une fois. Ça me redonne un peu foi en l'humanité.

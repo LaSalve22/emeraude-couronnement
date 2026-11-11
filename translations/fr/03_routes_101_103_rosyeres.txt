@@ -1,40 +1,40 @@
-// Chapitre 1 — Route 101, Rosyères, Route 102, Route 103
+// Chapitre 1 — Route 101, Rosyères, Route 102, Route 103 (v0.4)
 
 // ===== Route 101 =====
 
 @@ Route101_Text_HelpMe
-À… à l'aide !
+AU SECOURS ! JE VAIS MOURIIIIR !
 
 @@ Route101_Text_PleaseHelp
-Hé ! Toi, là-bas ! Je t'en supplie ! Aide-moi !
+Hé ! Toi ! Oui, toi ! Aide-moi, bordel !
 
-Dans mon Sac ! Il y a des Poké Balls ! Vite, avant qu'il m'arrache la jambe !
+Mon Sac ! Il y a des Poké Balls dedans ! Prends-en une avant qu'il me bouffe le mollet !
 
 @@ Route101_Text_DontLeaveMe
-Où tu vas ?! Ne me laisse pas crever ici !
+Où tu vas ?! Tu vas laisser un pauvre scientifique se faire dévorer ?! J'ai une famille ! Et un article à finir !
 
 @@ Route101_Text_YouSavedMe
-Prof. Seko : Pfiou…
+Prof. Seko : Pfiou… Pfiou…
 
-J'étudiais les Pokémon sauvages dans les hautes herbes quand il m'a sauté dessus.
+J'observais les Pokémon sauvages quand celui-là a décidé que j'étais son déjeuner.
 
-Sans toi, on aurait retrouvé mes lunettes et pas grand-chose d'autre. Merci.
+Ça fait quinze. Quinze fois que je frôle la mort. Je tiens un carnet.
 
-Oh ?
+Merci. Vraiment. Sans toi, on aurait retrouvé mes lunettes et une sandale.
 
-Mais tu es {PLAYER} !
+Oh ? Mais tu es {PLAYER} !
 
-Pas le meilleur endroit pour discuter. Passe à mon labo tout à l'heure, d'accord ?
+Pas le meilleur endroit pour faire connaissance. Passe au labo, d'accord ? Avant qu'un autre ait faim.
 
 @@ Route101_Text_TakeTiredPokemonToPokeCenter
-Si tes Pokémon sont épuisés, emmène-les dans un Centre Pokémon.
+Si tes Pokémon sont à bout, emmène-les dans un Centre Pokémon.
 
-Il y en a un à Rosyères, juste à côté. N'attends pas qu'il soit trop tard.
+Il y en a un à Rosyères, juste au nord. N'attends pas qu'il soit trop tard. On attend toujours trop.
 
 @@ Route101_Text_WildPokemonInTallGrass
 Les Pokémon sauvages surgissent des hautes herbes.
 
-Pour en capturer, il faut y aller et chercher. Et accepter de prendre des coups.
+Pour en capturer, il faut y aller. Et accepter de se faire mordre les chevilles.
 
 @@ Route101_Text_RouteSign
 >Route 101
@@ -43,118 +43,129 @@ Pour en capturer, il faut y aller et chercher. Et accepter de prendre des coups.
 // ===== Rosyères =====
 
 @@ OldaleTown_Text_SavingMyProgress
-Je fais une pause, alors je sauvegarde. On ne sait jamais ce qui peut arriver.
+Je fais une pause, alors je sauvegarde. Dans la vie, on n'a pas de bouton pour ça. Autant en profiter ici.
 
 @@ OldaleTown_Text_IWorkAtPokemonMart
-Salut ! Je travaille à la Boutique Pokémon.
+Salut ! Je bosse à la Boutique Pokémon !
 
-Tu me suis une seconde ?
+Tu me suis ? Promis, c'est pas une arnaque. Enfin, pas tout de suite.
+
 
 @@ OldaleTown_Text_ThisIsAPokemonMart
-Voici la Boutique Pokémon. Tu la reconnaîtras toujours à son toit bleu.
+Voici la Boutique Pokémon ! Le toit bleu, tu peux pas le rater.
 
 On vend de tout, dont des Poké Balls pour capturer des Pokémon.
 
-Tiens, un échantillon gratuit. Le premier est offert, comme on dit.
+Tiens, un échantillon gratuit ! La première dose est offerte, comme dit mon patron.
 
 @@ OldaleTown_Text_PotionExplanation
-Une Potion s'utilise n'importe quand. Au milieu de nulle part, ça vaut plus qu'un Centre Pokémon.
+Une Potion s'utilise n'importe où. Au milieu de nulle part, avec un Pokémon qui saigne, ça vaut tous les Centres du monde.
 
 @@ OldaleTown_Text_WaitDontComeInHere
-Aaaah ! Stop ! N'avance pas !
+AAAAH ! STOP ! Bouge pas !
 
-Je viens de trouver les empreintes d'un Pokémon rare !
+J'ai trouvé des empreintes de Pokémon rare ! Peut-être une nouvelle espèce !
 
-Laisse-moi finir mon croquis, d'accord ?
+Je finis mon croquis. Si tu marches dessus, je te tue. Avec amour.
 
 @@ OldaleTown_Text_DiscoveredFootprints
-Je viens de trouver les empreintes d'un Pokémon rare !
+J'ai trouvé des empreintes de Pokémon rare !
 
 Laisse-moi finir mon croquis, d'accord ?
 
 @@ OldaleTown_Text_FinishedSketchingFootprints
 J'ai fini de dessiner les empreintes du Pokémon rare.
 
-En fait, c'étaient les miennes. Je suis un génie.
+…C'étaient les miennes.
+
+J'ai passé trois heures à dessiner mes propres pieds. Je vais aller m'allonger dans un fossé.
 
 @@ OldaleTown_Text_MayLetsGoBack
-Flora : {PLAYER} ! Par ici ! On rentre, vite !
+Flora : {PLAYER} ! Par ici ! On rentre ! J'ai faim et mon père a sûrement encore fait exploser un truc !
 
 @@ OldaleTown_Text_BrendanLetsGoBack
-Brice : Je retourne au labo de mon père. Bouge-toi, toi aussi.
+Brice : Je rentre au labo. Bouge-toi, toi aussi. J'attendrai pas.
 
 @@ OldaleTown_Text_TownSign
 >Rosyères
 >“Ici, tout commence avec trois fois rien.”
 
 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst
-Au début d'un combat, c'est le premier Pokémon de ton équipe qui sort.
+Au début d'un combat, c'est le premier Pokémon de ton équipe qui y va.
 
 Quand tu en auras plusieurs, change l'ordre selon l'adversaire.
 
-Envoyer le mauvais Pokémon en premier, c'est parfois l'envoyer à l'abattoir.
+Envoyer le mauvais en premier, c'est l'envoyer à l'abattoir. J'ai appris ça de la pire des façons.
 
 @@ OldaleTown_House2_Text_PokemonLevelUp
-À force de combattre, les Pokémon montent de niveau et deviennent plus forts.
+À force de combattre, les Pokémon montent de niveau et deviennent plus forts. Comme les gens. Ou plus durs, en tout cas.
 
 @@ OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon
-Plus tes Pokémon seront forts, plus tu pourras aller loin. Les faibles ne reviennent pas toujours.
+Plus tes Pokémon seront forts, plus tu iras loin.
+
+Mon fils est parti avec un seul Pokémon, il y a six ans. Il m'envoie une carte à chaque Noël. Ça me suffit.
 
 @@ OldaleTown_Mart_Text_PokeBallsAreSoldOut
-Le vendeur dit qu'il n'y en a plus. Impossible d'acheter des Poké Balls.
+Le vendeur dit qu'il n'y en a plus. Plus une seule Poké Ball. C'est la crise.
 
 @@ OldaleTown_Mart_Text_ImGoingToBuyPokeBalls
-Je vais acheter un max de Poké Balls et capturer un max de Pokémon !
+Je vais acheter une montagne de Poké Balls et capturer TOUT CE QUI BOUGE !
 
 @@ OldaleTown_Mart_Text_RestoreHPWithPotion
-Quand un Pokémon perd tous ses PV, il est K.O. et ne peut plus se battre.
+Quand un Pokémon n'a plus de PV, il est K.O. et ne peut plus se battre.
 
-Soigne-le avec une Potion avant d'en arriver là. Un K.O. de trop, et il pourrait ne jamais se relever.
+Soigne-le avec une Potion avant. Un K.O. de trop, et certains ne se relèvent pas. On ne te le dit pas dans les brochures.
 
 @@ OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC
 Le PC dans le coin est à la disposition de tous les Dresseurs.
 
-Toi aussi, bien sûr.
+Toi aussi. Même si t'as la tête de quelqu'un qui débute.
 
 @@ OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat
 Les Centres Pokémon, c'est génial !
 
-C'est gratuit, autant de fois qu'on veut. Personne ne demande d'où viennent les blessures.
+C'est gratuit, illimité, et personne ne demande d'où viennent les blessures. Personne. Jamais.
 
 @@ OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable
 Le Club Sans-Fil du premier étage vient d'ouvrir.
 
-Mais il paraît qu'ils font encore des réglages.
+Mais il paraît qu'ils font encore des réglages. Le technicien pleure dans les toilettes depuis mardi.
 
 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub
 Le Club Sans-Fil du premier étage vient d'ouvrir.
 
-J'ai tout de suite échangé des Pokémon.
+J'ai tout de suite échangé des Pokémon ! Mon pote m'a filé un Magicarpe contre mon meilleur Pokémon. Je le hais.
 
 // ===== Route 102 =====
 
 @@ Route102_Text_WatchMeCatchPokemon
-Timmy : {PLAYER}… Les Pokémon se cachent dans les hautes herbes comme ça, non ?
+Timmy : {PLAYER}… Les Pokémon se cachent dans les hautes herbes comme ça, hein ?
 
-Regarde-moi. Je veux savoir si j'en suis capable… au moins une fois.
+Regarde-moi, s'il te plaît. Je veux savoir si j'en suis capable.
+
+Juste une fois. Faire un truc tout seul. Avant que…
 
 …Waah !
 
 @@ Route102_Text_WallyIDidIt
-Timmy : J'ai réussi… C'est mon… mon Pokémon à moi !
+Timmy : J'ai réussi… C'est mon… mon Pokémon à moi…
+
+J'ai jamais rien eu à moi. À part des médicaments.
 
 @@ Route102_Text_LetsGoBack
-{PLAYER}, merci. Vraiment. On retourne à l'Arène ?
+{PLAYER}… merci. Je m'en souviendrai toute ma vie. Même si elle est courte. On retourne à l'Arène ?
 
 @@ Route102_Text_ImNotVeryTall
 Je suis… pas très grand, alors je disparais dans les hautes herbes.
 
 L'herbe me rentre dans le nez et… Fwafwafwafwa…
 
-Atchaaa !
+ATCHAAA !
+
+…J'ai éternué sur un Chenipotte. Il me regarde. Il est pas content.
 
 @@ Route102_Text_CatchWholeBunchOfPokemon
-Je vais attraper plein de Pokémon !
+Je vais attraper plein de Pokémon ! Et les appeler tous Gérard !
 
 @@ Route102_Text_RouteSignOldale
 >Route 102
@@ -167,60 +178,67 @@ Je vais attraper plein de Pokémon !
 // ===== Route 103 =====
 
 @@ Route103_Text_MayRoute103Pokemon
-Flora : Voyons… Sur la Route 103, on trouve…
+Flora : Alors… Sur la Route 103, on trouve… euh… un truc qui m'a mordue… et un autre qui m'a mordue aussi…
 
 @@ Route103_Text_MayLetsBattle
-Oh, salut, {PLAYER} !
+Oh ! Salut, {PLAYER} !
 
-…Ah, je vois. Mon père t'a donné un Pokémon.
+…Attends. C'est un Pokémon, ça ? Mon père te l'a donné ?
 
-Puisqu'on est là, un petit combat ?
+Il me fait attendre des mois et toi, tu débarques et hop ?
 
-Je vais te montrer ce que c'est, être Dresseur. Ça risque de piquer.
+…Bon. On se fait un combat. Tout de suite.
+
+Je vais te montrer ce que c'est, être Dresseur ! Prépare-toi à manger la poussière !
+
 
 @@ Route103_Text_MayDefeated
-Waouh ! Pas mal du tout ! Tu sais te battre, {PLAYER} !
+QUOI ?! J'ai perdu ?! Contre un débutant ?! C'est pas possible, t'as triché ! …T'as pas triché. Merde.
 
 @@ Route103_Text_MayTimeToHeadBack
-Flora : Je crois que je comprends pourquoi mon père te surveille.
+Flora : Bon. Je crois que je comprends pourquoi mon père a l'œil sur toi.
 
-Tu viens d'avoir ce Pokémon, et il t'obéit déjà comme s'il te connaissait depuis toujours.
+Ton Pokémon vient d'arriver dans ta vie, et il se bat déjà comme s'il te connaissait depuis toujours.
 
-Tu pourrais peut-être apprivoiser n'importe quel Pokémon. Même les plus dangereux.
+Moi, il m'a fallu un an pour que le mien arrête de me mordre.
 
-Bon, il est temps de rentrer au labo.
+…T'as peut-être un don. Ça m'énerve. Mais c'est cool.
+
+Allez, on rentre au labo. Le premier arrivé a le dernier gâteau.
 
 @@ Route103_Text_BrendanRoute103Pokemon
-Brice : Bon, sur la Route 103, il y a celui-là et celui-là…
+Brice : Bon, sur la Route 103, on a celui-là, celui-là, et celui-là qui sent bizarre…
 
 @@ Route103_Text_BrendanLetsBattle
-Tiens, {PLAYER} !
+Tiens, {PLAYER}.
 
-…Ah ouais, mon père t'a filé un Pokémon.
+…C'est mon père qui t'a filé ce Pokémon ?
 
-Puisqu'on est là, on se fait un petit combat ?
+Moi, j'ai dû le supplier pendant deux ans.
 
-Je vais t'apprendre ce que c'est, être Dresseur. Accroche-toi.
+Bon. On se fait un petit combat ? Je vais te montrer ce que c'est, un vrai Dresseur. Ça va piquer.
 
 @@ Route103_Text_BrendanDefeated
-Merde… T'es pas si nulle que ça, {PLAYER}.
+Hein ?! … … Bordel. T'es pas si nulle, en fait.
 
 @@ Route103_Text_BrendanTimeToHeadBack
 Brice : OK. Je crois que je pige pourquoi mon père a l'œil sur toi.
 
-Ton Pokémon t'aime déjà. Alors que tu viens de l'avoir.
+Ton Pokémon t'adore déjà. Alors que vous vous connaissez depuis une heure.
 
-{PLAYER}, j'ai l'impression que tu pourrais te mettre n'importe quel Pokémon dans la poche.
+Le mien m'a ignoré pendant six mois. Il me respecte seulement depuis que je lui ai acheté des Baies de luxe.
 
-Bon. On rentre au labo.
+T'as un truc, {PLAYER}. Ça m'énerve. Je vais devoir bosser deux fois plus.
+
+On rentre au labo.
 
 @@ Route103_Text_ShouldHaveBroughtPotion
-Mon Pokémon tient à peine debout… J'aurais dû prendre une Potion… S'il meurt, c'est ma faute…
+Mon Pokémon tient à peine debout… J'aurais dû prendre une Potion… Tiens bon, mon grand… Tiens bon…
 
 @@ Route103_Text_ShortcutToOldale
-En traversant la mer d'ici, on arrive plus vite à Rosyères.
+En traversant la mer d'ici, on arrive direct à Rosyères.
 
-Hé hé, pratique, hein ?
+Hé hé, pratique, hein ? Faut juste pas croiser de Tentacool. Ou de requins. Ou de mon ex.
 
 @@ Route103_Text_RouteSign
 >Route 103

@@ -1,111 +1,115 @@
-// Chapitre 1 — Mérouville (extérieur)
+// Chapitre 1 — Mérouville (extérieur) (v0.4)
 
 @@ RustboroCity_Text_WeShortenItToDevon
-La Devon Corporation… Ici, on dit juste Devon.
+La Devon Corporation… Ici, tout le monde dit juste Devon.
 
-Ils fabriquent de tout. Des objets pratiques… et d'autres dont personne ne parle.
+Ils fabriquent tout. Tes chaussures, tes Poké Balls, ton PokéNav, le béton sous tes pieds.
+
+Si un jour Devon s'arrête, la moitié de Hoenn s'arrête avec.
 
 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner
 Hm ? Un type louche ?
 
-Maintenant que tu le dis, oui. Un gars avec une sale gueule a tourné au coin, là-bas.
+Ouais, un gars en bandana avec une sale gueule de pirate. Il a tourné au coin en courant. Il sentait la marée.
 
 @@ RustboroCity_Text_HaveYouChallengedGym
-Tu as défié l'Arène Pokémon ?
+Tu as défié l'Arène ?
 
-C'est quand on tient son premier Badge qu'on comprend ce qu'on attend de nous. Et que ça ne fait que commencer.
+C'est quand tu tiens ton premier Badge que tu comprends : c'était facile. Après, ça devient sérieux.
 
 @@ RustboroCity_Text_HeyThatsRustborosGymBadge
 Hé, c'est le Badge de Mérouville !
 
-De tous les Badges, c'est le plus classe. Je dis ça, je dis rien.
+De tous les Badges, c'est le plus classe. Je dis ça, je dis rien. Je suis de Mérouville.
 
 @@ RustboroCity_Text_YoureNewAroundHere
-Oh ? Qui es-tu donc ? Je ne connais pas ton visage.
+Oh ? Qui es-tu ? Je ne connais pas ton visage.
 
-Tu viens d'entrer à l'École des Dresseurs ?
+Tu viens d'entrer à l'École des Dresseurs ? Bon courage. Le dernier transfert a fait une dépression en deux semaines.
 
 @@ RustboroCity_Text_GymLeaderIsntEasyWithFire
-J'ai défié la Championne, mais…
+J'ai défié la Championne…
 
-Avec mes Pokémon Feu, c'est mal parti…
+Avec mes Pokémon Feu…
 
-Le Feu ne fait rien contre la Roche. Ils se sont fait broyer.
+Le Feu contre la Roche… Ils se sont fait éteindre comme des allumettes. Je suis un idiot.
 
 @@ RustboroCity_Text_MrBrineyWalksInTheTunnel
-Le vieux marin, M. Marco, vit dans une cabane au bord de la mer.
+Le vieux M. Marco vit dans une cabane au bord de la mer.
 
-Il vient parfois marcher dans le tunnel. Seul. Pendant des heures.
+Il vient parfois marcher dans le tunnel. Seul. Dans le noir. Il dit que ça lui rappelle le fond de la cale.
 
 @@ RustboroCity_Text_MrBrineyLovesPeeko
-Le vieux marin, M. Marco, vit dans une cabane au bord de la mer.
+Le vieux M. Marco vit dans une cabane au bord de la mer.
 
-Il a dit qu'il allait faire des courses à Poivressel pour sa Peeko.
+Il est parti faire des courses à Poivressel pour sa Peeko.
 
-Ce vieux loup de mer… Elle est tout ce qui lui reste.
+Ce vieux loup de mer… Elle est tout ce qui lui reste. Si quelqu'un touche à cette bestiole, il le noie à mains nues.
 
 @@ RustboroCity_Text_WowYouHavePokemon
-Waouh, toi aussi tu as des Pokémon.
+Waouh, t'as des Pokémon !
 
-Quand je serai grand, je partirai à l'aventure avec des Pokémon, moi aussi.
+Quand je serai grand, je partirai à l'aventure moi aussi ! Et je reviendrai jamais ! Enfin si, pour le goûter.
 
 @@ RustboroCity_Text_CatchRarePokemonIfIGoToSchool
 L'École des Dresseurs !
 
-Si je vais dans cette école, je pourrai attraper des Pokémon rares facilement ?
+Si je vais là, je pourrai attraper des Pokémon rares facilement ? Ou c'est que des maths ?
 
 @@ RustboroCity_Text_PokemonCanChangeLookFromExp
-Quand un Pokémon gagne de l'expérience au combat, son apparence peut parfois changer.
+Quand un Pokémon gagne assez d'expérience, il peut changer d'apparence. On appelle ça l'évolution.
+
+Comme les ados. Mais en plus utile.
 
 @@ RustboroCity_Text_PokemonChangeShape
-Un Pokémon qui change de forme ? Si ça arrivait devant moi, je ferais une crise cardiaque !
+Un Pokémon qui change de forme ?! Si ça arrive devant moi, je fais une crise cardiaque !
 
 @@ RustboroCity_Text_TradePokemonGrowFast
-Un Pokémon obtenu par échange grandit vite.
+Un Pokémon obtenu par échange grandit plus vite.
 
-Mais sans certains Badges, il risque de ne pas t'obéir. Et un Pokémon qui n'obéit pas, c'est un fauve en liberté.
+Mais sans certains Badges, il risque de t'ignorer. Ou de te mordre. Ou de te mordre en t'ignorant.
 
 @@ RustboroCity_Text_OutOfTheWay
-Dégage ! Bouge de là, bordel !
+DÉGAGE ! Bouge de là, bordel !
 
 @@ RustboroCity_Text_WaitDontTakeMyGoods
-Attendez ! Je vous en supplie !
+NOOON ! Attendez ! Pitiééé !
 
-Pas mes Pièces !
+Pas les Pièces ! Pas les Pièces ! On va me virer ! On va me tuer ! On va me virer ET me tuer !
 
 @@ RustboroCity_Text_HelpMeIWasRobbed
 Oh, c'est toi !
 
-Le Dresseur génial qui m'a aidé dans le Bois Clémenti !
+Le Dresseur de génie du Bois Clémenti !
 
-Aide-moi ! La Team Aqua m'a volé ! Il faut récupérer les Pièces Devon !
+Aide-moi ! La Team Aqua m'a volé les Pièces Devon ! ENCORE ! Deux fois dans la même journée !
 
-Sinon… je suis fini. Ils vont me virer. Ou pire.
+Si je ne les récupère pas, ma carrière est finie. Mon couple aussi, sûrement. Et mon crédit…
 
 @@ RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel
-Le type louche… je crois qu'il a filé vers le tunnel, là-bas.
+Le type louche… il a filé vers le tunnel, là-bas. Celui qui ne mène nulle part.
 
 @@ RustboroCity_Text_YouGotItThankYou
 Oh ! Alors ? Les Pièces Devon ?
 
-Tu les as ! Tu les as récupérées !
+Tu… tu les as ! Tu les as RÉCUPÉRÉES !
 
-Tu es vraiment un Dresseur hors pair !
+Je pourrais t'embrasser ! Je ne vais pas le faire. Mais je pourrais.
 
-Tiens ! Pour te remercier, encore une Super Ball !
+Tiens ! Encore une Super Ball ! Je vais finir par en acheter en gros pour toi !
 
 @@ RustboroCity_Text_YoureLoadedWithItems
 Ton Sac déborde. Je ne peux pas te donner cette Super Ball.
 
 @@ RustboroCity_Text_PleaseComeWithMe
-Excusez-moi ! Suivez-moi, s'il vous plaît !
+Excusez-moi ! Suivez-moi, s'il vous plaît ! C'est urgent ! Enfin, c'est important ! Enfin, venez !
 
 @@ RustboroCity_Text_MayHiLetsRegister
 Flora : Oh, salut, {PLAYER} !
 
-Tu as le Match Call sur ton PokéNav !
+T'as le Match Call sur ton PokéNav !
 
-On s'enregistre ? Comme ça, on pourra s'appeler n'importe quand !
+On s'enregistre ! Comme ça, je pourrai t'appeler à 3 h du matin pour te parler d'un Pokémon trop mignon !
 
 … … … … … …
 
@@ -115,39 +119,43 @@ Flora a été enregistrée dans le PokéNav.
 @@ RustboroCity_Text_MayPassedBrineyWantToBattle
 Flora : Au fait, j'ai croisé M. Marco dans le Bois Clémenti.
 
-Il rentrait sûrement chez lui, dans sa cabane au bord de la mer.
+Il rentrait chez lui. Il avait l'air bizarre. Comme quelqu'un qui a perdu quelque chose.
 
-Il avance, ton Pokédex, {PLAYER} ? Le mien a de l'allure !
+Bon, et ton Pokédex, {PLAYER} ? Le mien a une sacrée gueule !
 
-Alors… un petit combat ?
+Alors… revanche ?
 
 @@ RustboroCity_Text_MayOhHaventRaisedPokemonEnough
-Flora : Qu'est-ce qui t'arrive ?
+Flora : Hé, c'est quoi ce bordel ?
 
-Tu n'as pas beaucoup entraîné tes Pokémon ?
+Tu ne t'es pas occupé de tes Pokémon ?!
 
-C'est pas brillant, pour un Dresseur. Dehors, ce genre d'erreur, ça se paie cher.
+Ils ne sont pas des jouets, {PLAYER}. Dehors, quand on les néglige, ce sont eux qui paient.
 
 @@ RustboroCity_Text_MayWantToBattle
-Flora : Alors, t'en dis quoi ? Un petit combat, ici ?
+Flora : Alors ? On se fait cette revanche ?
 
 @@ RustboroCity_Text_MayImNotGoingToLose
-Flora : Tu viens à peine de commencer, {PLAYER}. Je ne perdrai pas deux fois !
+Flora : La dernière fois, c'était un accident ! Cette fois, je vais te réduire en miettes !
 
 @@ RustboroCity_Text_MayDefeat
-Aïe ! Tu es meilleur que je pensais !
+QUOI ?! ENCORE ?! Mais t'es qui, toi ?!
 
 @@ RustboroCity_Text_MayMrBrineyHint
-Flora : Au fait, M. Marco, celui que je viens de croiser…
+Flora : Au fait, M. Marco…
 
-Tu viens d'arriver, alors tu ne le sais peut-être pas, mais c'était un marin légendaire. Avant le naufrage.
+Tu viens d'arriver, alors tu sais pas. C'était le plus grand marin de Hoenn.
+
+Une nuit de tempête, son bateau a coulé. Tout son équipage y est resté. Lui, il est rentré seul.
+
+Depuis, il ne quitte plus la terre ferme. Mais si quelqu'un peut le convaincre de reprendre la mer… c'est peut-être toi.
 
 @@ RustboroCity_Text_BrendanHiLetsRegister
 Brice : Oh, salut, {PLAYER} !
 
-T'as le Match Call sur ton PokéNav ! Pas mal !
+T'as le Match Call ! Pas mal !
 
-On s'enregistre ? Comme ça, on peut s'appeler quand on veut.
+On s'enregistre ? Comme ça, je pourrai t'appeler pour te dire à quel point je suis meilleur que toi.
 
 … … … … … …
 
@@ -157,40 +165,44 @@ Brice a été enregistré dans le PokéNav.
 @@ RustboroCity_Text_BrendanPassedBrineyWantToBattle
 Brice : Au fait, {PLAYER}, j'ai croisé M. Marco dans le Bois Clémenti.
 
-Il rentrait sûrement à sa cabane au bord de la mer.
+Il marmonnait un nom. Peeko, je crois. Il avait l'air paumé.
 
-{PLAYER}, il en est où, ton Pokédex ? T'as rempli des pages ?
+Bon. Ton Pokédex, il en est où ? Le mien déchire.
 
-Le mien déchire.
-
-Un combat, pour voir si t'as progressé ?
+On se fait un combat ? Pour voir si t'as progressé, ou si t'as juste eu de la chance.
 
 @@ RustboroCity_Text_BrendanNoConfidenceInPokemon
-Brice : Qu'est-ce qu'il y a ? T'as pas confiance en tes Pokémon ?
+Brice : Qu'est-ce qu'il y a ? T'as pas confiance en tes Pokémon ? Eux, ils te font confiance, pourtant.
 
 @@ RustboroCity_Text_BrendanWantToBattle
-Brice : Alors ? On se fait un combat ?
+Brice : Alors ? On s'y met ?
 
 @@ RustboroCity_Text_BrendanIWontGoEasy
-Brice : Je sais que tu débutes, mais je vais pas te faire de cadeau !
+Brice : La dernière fois, j'étais pas échauffé. Là, je vais te défoncer !
 
 @@ RustboroCity_Text_BrendanDefeat
-Hmm… T'es pas mauvaise. Ça m'énerve.
+Hmm… Encore. Putain. Encore.
 
 @@ RustboroCity_Text_BrendanMrBrineyHint
-Brice : Au fait, tu connais M. Marco ? Le vieux que je viens de croiser ?
+Brice : Au fait, M. Marco, le vieux que je viens de croiser…
 
-Tu viens d'arriver, alors tu sais sûrement pas, mais c'était un grand marin. Avant que la mer lui prenne tout.
+Tu sais pas, mais c'était le meilleur marin de Hoenn.
+
+Son bateau a coulé une nuit de tempête. Il est le seul à être rentré.
+
+Survivre quand les autres meurent… je sais pas si c'est de la chance ou une malédiction.
 
 @@ RustboroCity_Text_TunnelNearingCompletion
 “Tunnel express bientôt terminé !”
 
-…dit le panneau. Mais quelqu'un a barré le tout d'une grande croix à la peinture rouge…
+…dit le panneau. Mais quelqu'un a peint une énorme croix rouge dessus. Et écrit en dessous : “ASSASSINS DE CHUCHMUR”.
 
 @@ RustboroCity_Text_DevonCorpSign
 Devon Corporation
 
 “Tout pour votre quotidien. Nous fabriquons tout.”
+
+Quelqu'un a gratté et ajouté : “même vos problèmes”.
 
 @@ RustboroCity_Text_GymSign
 >Arène Pokémon de Mérouville
@@ -217,34 +229,34 @@ Mérouville
 Maison du Coupeur
 
 @@ RustboroCity_Text_DevelopedNewPokenavFeature
-Je développais une nouvelle fonction pour le PokéNav…
+Je développe une nouvelle fonction pour le PokéNav depuis trois mois…
 
-Et c'est une réussite !
+Trois mois sans dormir. Mais c'est une RÉUSSITE !
 
-{PLAYER}, je peux voir ton PokéNav ? Celui que notre Président t'a donné ?
+{PLAYER}, je peux voir ton PokéNav ? Celui que le Président t'a donné ?
 
 @@ RustboroCity_Text_AddedMatchCallPleaseCallMrStone
 Voilà, {PLAYER} !
 
-J'ai ajouté une fonction appelée Match Call à ton PokéNav.
+J'ai ajouté le Match Call à ton PokéNav.
 
-Elle te permet de discuter avec les personnes enregistrées dans ton PokéNav.
+Tu peux discuter avec toutes les personnes enregistrées dedans.
 
 Le Président Rochard devrait déjà y être.
 
-Essaie-la. Appelle donc notre Président.
+Appelle-le, pour tester. Il aime bien qu'on l'appelle. Son fils ne le fait jamais.
 
 @@ RustboroCity_Text_PleaseSelectPokenav
 Choisis le PokéNav.
 
 @@ RustboroCity_Text_IdBetterGetBackToWork
-Bon, je retourne au travail. Prends soin de toi, {PLAYER} !
+Bon, je retourne au boulot. Ou je vais m'évanouir sur mon clavier. Les deux, sûrement. Prends soin de toi, {PLAYER} !
 
 @@ RustboroCity_Text_YouCanHave2On2Battle
 Tu savais ça ?
 
 On peut faire un combat à deux contre deux, même sans partenaire.
 
-Si deux Dresseurs te repèrent en même temps et que tu as au moins deux Pokémon, ils t'attaqueront ensemble.
+Si deux Dresseurs te repèrent en même temps et que t'as au moins deux Pokémon, ils t'attaquent ensemble.
 
-Battre deux Dresseurs à soi tout seul… la classe, non ?
+Battre deux Dresseurs à soi tout seul… la grande classe, non ?

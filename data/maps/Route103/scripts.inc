@@ -287,67 +287,82 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "Flora : Voyons… Sur la Route 103, on\n"
-	.string "trouve…$"
+	.string "Flora : Alors… Sur la Route 103, on\n"
+	.string "trouve… euh… un truc qui m'a mordue… et\l"
+	.string "un autre qui m'a mordue aussi…$"
 
 Route103_Text_MayLetsBattle:
-	.string "Oh, salut, {PLAYER} !\p"
-	.string "…Ah, je vois. Mon père t'a donné un\n"
-	.string "Pokémon.\p"
-	.string "Puisqu'on est là, un petit combat ?\p"
+	.string "Oh ! Salut, {PLAYER} !\p"
+	.string "…Attends. C'est un Pokémon, ça ? Mon\n"
+	.string "père te l'a donné ?\p"
+	.string "Il me fait attendre des mois et toi, tu\n"
+	.string "débarques et hop ?\p"
+	.string "…Bon. On se fait un combat. Tout de\n"
+	.string "suite.\p"
 	.string "Je vais te montrer ce que c'est, être\n"
-	.string "Dresseur. Ça risque de piquer.$"
+	.string "Dresseur ! Prépare-toi à manger la\l"
+	.string "poussière !$"
 
 Route103_Text_MayDefeated:
-	.string "Waouh ! Pas mal du tout ! Tu sais te\n"
-	.string "battre, {PLAYER} !$"
+	.string "QUOI ?! J'ai perdu ?! Contre un débutant\n"
+	.string "?! C'est pas possible, t'as triché ! …T'as\l"
+	.string "pas triché. Merde.$"
 
 Route103_Text_MayTimeToHeadBack:
-	.string "Flora : Je crois que je comprends\n"
-	.string "pourquoi mon père te surveille.\p"
-	.string "Tu viens d'avoir ce Pokémon, et il\n"
-	.string "t'obéit déjà comme s'il te connaissait\l"
-	.string "depuis toujours.\p"
-	.string "Tu pourrais peut-être apprivoiser\n"
-	.string "n'importe quel Pokémon. Même les plus\l"
-	.string "dangereux.\p"
-	.string "Bon, il est temps de rentrer au labo.$"
+	.string "Flora : Bon. Je crois que je comprends\n"
+	.string "pourquoi mon père a l'œil sur toi.\p"
+	.string "Ton Pokémon vient d'arriver dans ta vie,\n"
+	.string "et il se bat déjà comme s'il te\l"
+	.string "connaissait depuis toujours.\p"
+	.string "Moi, il m'a fallu un an pour que le mien\n"
+	.string "arrête de me mordre.\p"
+	.string "…T'as peut-être un don. Ça m'énerve.\n"
+	.string "Mais c'est cool.\p"
+	.string "Allez, on rentre au labo. Le premier\n"
+	.string "arrivé a le dernier gâteau.$"
 
 Route103_Text_BrendanRoute103Pokemon:
-	.string "Brice : Bon, sur la Route 103, il y a\n"
-	.string "celui-là et celui-là…$"
+	.string "Brice : Bon, sur la Route 103, on a\n"
+	.string "celui-là, celui-là, et celui-là qui sent\l"
+	.string "bizarre…$"
 
 Route103_Text_BrendanLetsBattle:
-	.string "Tiens, {PLAYER} !\p"
-	.string "…Ah ouais, mon père t'a filé un Pokémon.\p"
-	.string "Puisqu'on est là, on se fait un petit\n"
-	.string "combat ?\p"
-	.string "Je vais t'apprendre ce que c'est, être\n"
-	.string "Dresseur. Accroche-toi.$"
+	.string "Tiens, {PLAYER}.\p"
+	.string "…C'est mon père qui t'a filé ce Pokémon\n"
+	.string "?\p"
+	.string "Moi, j'ai dû le supplier pendant deux\n"
+	.string "ans.\p"
+	.string "Bon. On se fait un petit combat ? Je\n"
+	.string "vais te montrer ce que c'est, un vrai\l"
+	.string "Dresseur. Ça va piquer.$"
 
 Route103_Text_BrendanDefeated:
-	.string "Merde… T'es pas si nulle que ça,\n"
-	.string "{PLAYER}.$"
+	.string "Hein ?! … … Bordel. T'es pas si nulle, en\n"
+	.string "fait.$"
 
 Route103_Text_BrendanTimeToHeadBack:
 	.string "Brice : OK. Je crois que je pige pourquoi\n"
 	.string "mon père a l'œil sur toi.\p"
-	.string "Ton Pokémon t'aime déjà. Alors que tu\n"
-	.string "viens de l'avoir.\p"
-	.string "{PLAYER}, j'ai l'impression que tu\n"
-	.string "pourrais te mettre n'importe quel\l"
-	.string "Pokémon dans la poche.\p"
-	.string "Bon. On rentre au labo.$"
+	.string "Ton Pokémon t'adore déjà. Alors que\n"
+	.string "vous vous connaissez depuis une heure.\p"
+	.string "Le mien m'a ignoré pendant six mois. Il\n"
+	.string "me respecte seulement depuis que je lui\l"
+	.string "ai acheté des Baies de luxe.\p"
+	.string "T'as un truc, {PLAYER}. Ça m'énerve. Je\n"
+	.string "vais devoir bosser deux fois plus.\p"
+	.string "On rentre au labo.$"
 
 Route103_Text_ShouldHaveBroughtPotion:
 	.string "Mon Pokémon tient à peine debout…\n"
-	.string "J'aurais dû prendre une Potion… S'il\l"
-	.string "meurt, c'est ma faute…$"
+	.string "J'aurais dû prendre une Potion… Tiens\l"
+	.string "bon, mon grand… Tiens bon…$"
 
 Route103_Text_ShortcutToOldale:
 	.string "En traversant la mer d'ici, on arrive\n"
-	.string "plus vite à Rosyères.\p"
-	.string "Hé hé, pratique, hein ?$"
+	.string "direct à Rosyères.\p"
+	.string "Hé hé, pratique, hein ? Faut juste pas\n"
+	.string "croiser de Tentacool. Ou de requins. Ou\l"
+	.string "de mon ex.$"
 
 Route103_Text_RouteSign:
 	.string "Route 103\n"

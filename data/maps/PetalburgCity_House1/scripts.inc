@@ -11,20 +11,21 @@ PetalburgCity_House1_EventScript_Woman::
 
 PetalburgCity_House1_Text_TravelingIsWonderful:
 	.string "Voyager, c'est merveilleux !\p"
-	.string "Dans ma jeunesse, j'ai parcouru les mers\n"
-	.string "et les montagnes ! J'ai enterré deux\l"
-	.string "compagnons de route en chemin. Je ne\n"
-	.string "regrette rien.$"
+	.string "Jeune, j'ai traversé les mers et les\n"
+	.string "montagnes ! J'ai perdu deux amis, un\l"
+	.string "orteil et ma dignité en chemin. Je\n"
+	.string "referais tout.$"
 
 PetalburgCity_House1_Text_GoOnAdventure:
 	.string "Soupir…\p"
 	.string "J'aimerais tellement partir à l'aventure\n"
 	.string "avec des Pokémon…\p"
-	.string "Ramper dans l'herbe humide… Escalader\n"
-	.string "des montagnes escarpées…\p"
-	.string "Traverser des mers déchaînées… Errer\n"
-	.string "dans des grottes obscures…\p"
-	.string "Et parfois, avoir un peu le mal du pays…\p"
-	.string "Ça doit être fabuleux, de voyager ! Même\n"
-	.string "si on ne revient pas.$"
+	.string "Ramper dans l'herbe mouillée… Escalader\n"
+	.string "des montagnes…\p"
+	.string "Traverser des mers déchaînées… Me\n"
+	.string "perdre dans des grottes…\p"
+	.string "Avoir le mal du pays… Pleurer sous la\n"
+	.string "pluie…\p"
+	.string "Ça doit être fabuleux. Moi, je suis\n"
+	.string "comptable.$"
 

@@ -698,41 +698,42 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Où est passé notre Timmy ?\p"
-	.string "On doit partir pour Vergazon très\n"
-	.string "bientôt… Il ne devrait pas courir comme\l"
-	.string "ça, avec ses poumons…$"
+	.string "Où est passé Timmy ?!\p"
+	.string "On part pour Vergazon dans une heure…\n"
+	.string "Il ne doit pas courir, avec ses poumons…\l"
+	.string "Timmy ! TIMMY !$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Salut ! Tu serais pas… un Dresseur\n"
-	.string "débutant ?\p"
-	.string "Tu sais ce que font les Dresseurs en\n"
+	.string "Yo ! T'es pas un peu… novice, toi ?\p"
+	.string "Tu sais ce que fait un Dresseur en\n"
 	.string "arrivant dans une ville ?\p"
-	.string "D'abord, ils repèrent l'Arène. Pour\n"
-	.string "savoir qui il faudra abattre.$"
+	.string "Il cherche l'Arène. Pour savoir à qui il\n"
+	.string "va devoir casser la gueule.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "Tu vois ? C'est l'Arène de\n"
-	.string "Clémenti-Ville.$"
+	.string "Voilà ! L'Arène de Clémenti-Ville !$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "Le panneau de l'Arène. Cherche-le dès\n"
-	.string "que tu arrives quelque part.$"
+	.string "Ça, c'est le panneau de l'Arène.\n"
+	.string "Retiens-le. C'est souvent la dernière\l"
+	.string "chose que voient les challengers avant\n"
+	.string "de se faire humilier.$"
 
 PetalburgCity_Text_WaterReflection:
 	.string "Mon visage se reflète dans l'eau.\p"
 	.string "Un sourire plein d'espoir…\p"
-	.string "Ou un silence crispé, qui lutte contre la\n"
-	.string "peur…\p"
-	.string "Et toi, qu'est-ce que tu vois dans ton\n"
-	.string "reflet ?$"
+	.string "Ou une grimace de quelqu'un qui fait\n"
+	.string "semblant d'aller bien…\p"
+	.string "Et toi ? Tu vois quoi, quand tu te\n"
+	.string "regardes ?$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Admettons que tu aies six Pokémon. Si\n"
-	.string "tu en captures un autre…\p"
-	.string "Il est envoyé automatiquement dans\n"
-	.string "une Boîte du PC. Rangé dans le noir, en\l"
-	.string "attendant que tu penses à lui.$"
+	.string "Admettons que tu aies déjà six Pokémon.\n"
+	.string "Si tu en captures un septième…\p"
+	.string "Il part direct dans une Boîte du PC.\n"
+	.string "Dans le noir. À attendre que tu te\l"
+	.string "souviennes de lui.\p"
+	.string "Pense à eux de temps en temps.$"
 
 PetalburgCity_Text_GymSign:
 	.string "Arène Pokémon de Clémenti-Ville\n"
@@ -748,18 +749,19 @@ PetalburgCity_Text_WallyHouseSign:
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse-moi !\p"
-	.string "Laisse-moi deviner… À ta tenue, je\n"
-	.string "dirais que tu es Dresseur ?$"
+	.string "Laisse-moi deviner… Vu ta dégaine, tu\n"
+	.string "es Dresseur ?$"
 
 PetalburgCity_Text_WellMaybeNot:
 	.string "… … … … … …\p"
-	.string "Hm, peut-être pas. Tes vêtements ne\n"
-	.string "sont pas assez sales. Pas une goutte de\l"
-	.string "sang.\p"
-	.string "Soit tu débutes, soit tu n'es qu'un\n"
-	.string "gamin comme les autres.$"
+	.string "Hmm, non. Tes fringues sont trop\n"
+	.string "propres. Pas une tache de boue, pas une\l"
+	.string "goutte de sang.\p"
+	.string "Soit tu débutes, soit tu te balades en\n"
+	.string "pyjama de luxe.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "Je parcours le pays à la recherche de\n"
 	.string "Dresseurs talentueux.\p"
-	.string "Désolé de t'avoir fait perdre ton temps.$"
+	.string "Désolé de t'avoir fait perdre ton temps.\n"
+	.string "Reviens quand tu seras sale.$"

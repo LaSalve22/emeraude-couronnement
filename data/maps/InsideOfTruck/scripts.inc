@@ -53,6 +53,6 @@ InsideOfTruck_EventScript_MovingBox::
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "Un carton marqué d'un logo Pokémon.\p"
-	.string "“Déménagements Pokémon - Vos\n"
-	.string "souvenirs, nos muscles.”$"
+	.string "“Déménagements Pokémon - Nos Machoc\n"
+	.string "portent tout. Même vos regrets.”$"
 

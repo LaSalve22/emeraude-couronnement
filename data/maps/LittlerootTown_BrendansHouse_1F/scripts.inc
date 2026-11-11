@@ -284,62 +284,66 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs2:
 	step_end
 
 PlayersHouse_1F_Text_IsntItNiceInHere:
-	.string "Maman : Regarde, {PLAYER}. C'est joli, non\n"
-	.string "? Ça sent le neuf.$"
+	.string "Maman : Regarde, {PLAYER}. C'est mignon,\n"
+	.string "non ? Ça sent la peinture fraîche et les\l"
+	.string "nouveaux départs.$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "Les Pokémon des déménageurs ont tout\n"
-	.string "porté et tout nettoyé. Moi, je n'ai eu\l"
-	.string "qu'à pointer du doigt.\p"
+	.string "Les Machoc des déménageurs ont tout\n"
+	.string "monté en dix minutes. Moi, j'ai juste\l"
+	.string "pointé du doigt et bu un café.\p"
 	.string "{PLAYER}, ta chambre est en haut. Va\n"
-	.string "jeter un œil.\p"
-	.string "Ton père t'a offert une horloge pour le\n"
-	.string "déménagement. C'est sa façon de dire\l"
-	.string "“je pense à toi” sans être là. Règle-la.$"
+	.string "voir !\p"
+	.string "Ton père t'a offert une horloge pour\n"
+	.string "l'emménagement. Il n'est pas là, mais il a\l"
+	.string "envoyé une horloge. Tout lui ressemble.\p"
+	.string "Va la régler. Que le temps reparte, au\n"
+	.string "moins ici.$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom:
 	.string "Maman : Alors, {PLAYER} ?\p"
-	.string "Ta chambre ne t'intéresse pas ? Tu as\n"
-	.string "attendu ça pendant des années.$"
+	.string "Ta chambre ne t'intéresse pas ? Tu m'as\n"
+	.string "saoulée avec ça pendant tout le trajet.$"
 
 PlayersHouse_1F_Text_GoSetTheClock:
 	.string "Maman : {PLAYER}.\p"
-	.string "Va régler l'horloge dans ta chambre, mon\n"
-	.string "cœur.$"
+	.string "L'horloge. Dans ta chambre. Maintenant,\n"
+	.string "s'il te plaît.$"
 
 PlayersHouse_1F_Text_OhComeQuickly:
-	.string "Maman : Oh ! {PLAYER}, {PLAYER} ! Vite !\n"
-	.string "Viens vite !$"
+	.string "Maman : {PLAYER} ! {PLAYER} ! Vite ! Viens\n"
+	.string "vite !$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
-	.string "Maman : Regarde ! L'Arène de\n"
+	.string "Maman : Regarde ! C'est l'Arène de\n"
 	.string "Clémenti-Ville ! On va peut-être voir\l"
 	.string "ton père !$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
 	.string "Maman : Oh… C'est fini.\p"
-	.string "Il est passé, je crois. Et on l'a raté.\n"
-	.string "Comme d'habitude.$"
+	.string "Il était là, je crois. Et on l'a raté.\p"
+	.string "…Comme les anniversaires. Et Noël. Et à\n"
+	.string "peu près tout le reste.$"
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
-	.string "Ah, oui. Un ami de ton père vit ici.\p"
-	.string "Le Prof. Seko.\p"
-	.string "C'est juste à côté. Va te présenter. Il\n"
-	.string "sait des choses sur ton père que même\l"
-	.string "moi j'ignore.$"
+	.string "Ah, oui. Un ami de ton père habite ici.\p"
+	.string "Le Prof. Seko. Juste à côté.\p"
+	.string "Va te présenter. Il est gentil. Un peu\n"
+	.string "fou. Il sent souvent le Pokémon mouillé,\l"
+	.string "mais il est gentil.$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "Maman : À tout à l'heure, mon cœur !$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
-	.string "Maman : Tu es allé te présenter au Prof.\n"
-	.string "Seko ?$"
+	.string "Maman : Tu as vu le Prof. Seko ? Il avait\n"
+	.string "encore ses deux bras ?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "Maman : Ça va, {PLAYER} ? Tu as une mine\n"
-	.string "affreuse.\p"
-	.string "Repose-toi un peu. Le monde ne va pas\n"
-	.string "s'écrouler en une nuit.$"
+	.string "de zombie.\p"
+	.string "Repose-toi. Le monde ne va pas exploser\n"
+	.string "pendant ta sieste. Enfin, j'espère.$"
 
 PlayersHouse_1F_Text_TakeCareHoney:
 	.string "Maman : Fais attention à toi !$"
@@ -347,20 +351,24 @@ PlayersHouse_1F_Text_TakeCareHoney:
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom:
 	.string "Maman : Oh ? C'est ton père qui t'a donné\n"
 	.string "ce Badge ?\p"
-	.string "Il t'a enfin regardé en face, alors.\n"
-	.string "Tiens, voilà quelque chose de la part de\l"
-	.string "ta mère.$"
+	.string "Il a fini par te regarder dans les yeux,\n"
+	.string "alors.\p"
+	.string "Tiens. Ça, c'est de ma part. Les mères\n"
+	.string "aussi distribuent des récompenses.$"
 
 PlayersHouse_1F_Text_DontPushYourselfTooHard:
-	.string "Ne te tue pas à la tâche. Je ne le\n"
-	.string "supporterais pas.\p"
+	.string "Ne te tue pas à la tâche. J'ai déjà un\n"
+	.string "homme dans cette famille qui fait ça\l"
+	.string "très bien.\p"
 	.string "Tu peux toujours rentrer. Allez, fonce.$"
 
 PlayersHouse_1F_Text_IsThatAPokenav:
-	.string "Maman : C'est quoi, ce truc ? Un PokéNav\n"
-	.string "? Quelqu'un de Devon te l'a donné ?\p"
-	.string "Alors enregistre ta mère dedans. Comme\n"
-	.string "ça, je saurai que tu es en vie.\p"
+	.string "Maman : C'est quoi, ce machin ? Un\n"
+	.string "PokéNav ? Quelqu'un de Devon te l'a\l"
+	.string "donné ?\p"
+	.string "Parfait. Enregistre-moi. Comme ça,\n"
+	.string "quand tu ne m'appelles pas, je saurai\l"
+	.string "que c'est exprès.\p"
 	.string "… … …$"
 
 PlayersHouse_1F_Text_RegisteredMom:
@@ -371,7 +379,8 @@ PlayersHouse_1F_Text_Vigoroth1:
 	.string "Fugiiiiih !$"
 
 PlayersHouse_1F_Text_Vigoroth2:
-	.string "Huggoh, uggo uggo…$"
+	.string "Huggoh, uggo uggo… (Il a cassé une\n"
+	.string "assiette et fait semblant de rien.)$"
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "Journaliste : …Nous sommes en direct\n"
@@ -379,56 +388,59 @@ PlayersHouse_1F_Text_ReportFromPetalburgGym:
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "Un film passe à la télé.\p"
-	.string "Deux types se battent à mains nues sur\n"
-	.string "un pont qui s'effondre.\p"
-	.string "Pas le temps de regarder la fin.$"
+	.string "Deux types se hurlent dessus sous la\n"
+	.string "pluie, puis s'embrassent… non, se\l"
+	.string "mettent un coup de boule. Classique.\p"
+	.string "Pas le temps de voir la fin.$"
 
 PlayersHouse_1F_Text_RunningShoesManual:
 	.string "La notice des Chaussures de sport.\p"
 	.string "“Maintenez le Bouton B pour courir.”\p"
-	.string "“Lacez-les bien. Ce qui vous poursuit\n"
-	.string "ne s'arrêtera pas pour un lacet défait.”$"
+	.string "“Courir ne résout pas vos problèmes.\n"
+	.string "Mais ça les fait passer plus vite.”$"
 
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 	.string "Papa : Hm ?\p"
-	.string "Tiens, {PLAYER}.\p"
-	.string "Ça fait un bail. Tu as… changé. Tu as\n"
-	.string "l'air plus solide.\p"
-	.string "C'est l'impression que tu me donnes.\n"
-	.string "Mais ton vieux n'a pas encore dit son\l"
-	.string "dernier mot.\p"
-	.string "Ah, oui. Ceci est arrivé pour toi. De la\n"
-	.string "part d'un certain M. Marco.$"
+	.string "Tiens. {PLAYER}.\p"
+	.string "…\p"
+	.string "Tu as changé. Tu tiens debout\n"
+	.string "autrement. Comme quelqu'un qui a déjà\l"
+	.string "pris des coups.\p"
+	.string "Ça me plaît. Mais ton vieux n'est pas\n"
+	.string "encore à la retraite.\p"
+	.string "Ah. Ceci est arrivé pour toi. De la part\n"
+	.string "d'un certain M. Marco.$"
 
 PlayersHouse_1F_Text_PortsInSlateportLilycove:
-	.string "Papa : Hm, un billet de ferry ?\p"
-	.string "Si je me souviens bien, il y a des ports à\n"
-	.string "Poivressel et à Nénucrique.$"
+	.string "Papa : Hm. Un billet de ferry.\p"
+	.string "Il y a des ports à Poivressel et à\n"
+	.string "Nénucrique.$"
 
 PlayersHouse_1F_Text_BetterGetBackToGym:
-	.string "Je dois retourner à l'Arène de\n"
-	.string "Clémenti-Ville.\p"
-	.string "Merci de tenir la maison pendant que je\n"
-	.string "ne suis pas là. Encore une fois.$"
+	.string "Je dois retourner à l'Arène.\p"
+	.string "Merci de tenir la maison. Je sais. Je sais\n"
+	.string "que je dis ça à chaque fois.$"
 
 PlayersHouse_1F_Text_DadShouldStayLonger:
 	.string "Maman : Ton père…\p"
-	.string "Il rentre pour la première fois depuis\n"
-	.string "des mois et il ne parle que de Pokémon.\p"
-	.string "Un jour, il rentrera et il n'y aura plus\n"
-	.string "personne pour l'écouter.$"
+	.string "Il rentre pour la première fois en trois\n"
+	.string "mois et il me parle de taux de coups\l"
+	.string "critiques pendant le dîner.\p"
+	.string "…Un jour, il rentrera et la maison sera\n"
+	.string "vide. Et il ne comprendra même pas\l"
+	.string "pourquoi.$"
 
 PlayersHouse_1F_Text_IsThatABreakingStory:
 	.string "Maman : C'est un flash spécial ?$"
 
 PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
-	.string "Flash d'information urgent !\p"
+	.string "Flash spécial !\p"
 	.string "Partout dans Hoenn, des témoins\n"
-	.string "signalent un Pokémon BZZT… en plein\l"
-	.string "vol.\p"
-	.string "Son identité reste inconnue. Les\n"
-	.string "autorités demandent de ne pas\l"
-	.string "l'approcher.\p"
+	.string "signalent un Pokémon BZZT… volant à\l"
+	.string "une vitesse folle.\p"
+	.string "Son identité est inconnue. Trois\n"
+	.string "personnes ont déjà fini dans un arbre\l"
+	.string "en essayant de le prendre en photo.\p"
 	.string "Nous reprenons le cours normal de nos\n"
 	.string "programmes.$"
 
@@ -437,6 +449,7 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 	.string "Il a dit quelle couleur, ce Pokémon ?$"
 
 PlayersHouse_1F_Text_StillUnknownPokemon:
-	.string "Maman : Eh ben… Il reste encore des\n"
-	.string "Pokémon que personne ne connaît. Ça me\l"
-	.string "rassure et ça m'inquiète à la fois.$"
+	.string "Maman : Il reste des Pokémon que\n"
+	.string "personne ne connaît… Le monde est\l"
+	.string "encore plus grand que ce qu'on nous\n"
+	.string "raconte. Ça fait du bien à entendre.$"

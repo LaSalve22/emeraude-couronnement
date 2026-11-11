@@ -1139,135 +1139,130 @@ PetalburgCity_Gym_EventScript_GymStatue::
 
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "Papa : Hm ?\p"
-	.string "Tiens, {PLAYER}. Le déménagement est\n"
-	.string "fini ?\p"
-	.string "Je suis surpris que tu aies trouvé le\n"
-	.string "chemin sans aide.\p"
-	.string "Ah, je vois. Tu as un Pokémon.\p"
-	.string "Hm… Alors tu vas devenir Dresseur.\n"
-	.string "Comme moi.\p"
-	.string "C'est une bonne nouvelle. J'attendrai\n"
-	.string "de voir ce que tu vaux.$"
+	.string "…{PLAYER}.\p"
+	.string "Le déménagement est fini ?\p"
+	.string "Tu as trouvé le chemin sans aide. Bien.\p"
+	.string "…Tu as un Pokémon.\p"
+	.string "Alors tu vas devenir Dresseur. Comme\n"
+	.string "moi.\p"
+	.string "…\p"
+	.string "Je suis content. Je ne sais pas le\n"
+	.string "montrer. Mais je suis content.$"
 
 PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
-	.string "Euh… Je… J'aimerais avoir un Pokémon,\n"
-	.string "s'il vous plaît…$"
+	.string "Euh… Je… Excusez-moi… Je voudrais un\n"
+	.string "Pokémon, s'il vous plaît…$"
 
 PetalburgCity_Gym_Text_DadOhYoureWallyRight:
-	.string "Papa : Hm ? Tu es… Ah, oui. Timmy, c'est\n"
-	.string "ça ?$"
+	.string "Papa : Hm ? Tu es… Ah. Le petit Timmy.$"
 
 PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
-	.string "Timmy : Je pars vivre chez des parents à\n"
-	.string "Vergazon. À cause de mes poumons.\p"
-	.string "J'ai peur d'être seul là-bas… et de…\n"
-	.string "enfin… Je voulais emmener un Pokémon\l"
-	.string "avec moi.\p"
-	.string "Mais je n'en ai jamais capturé. Je ne\n"
-	.string "sais pas comment faire…$"
+	.string "Timmy : Je pars vivre chez mes cousins à\n"
+	.string "Vergazon. Pour mes poumons.\p"
+	.string "Je vais être tout seul là-bas. Et si… si\n"
+	.string "ça se passe mal… je voudrais avoir\l"
+	.string "quelqu'un avec moi.\p"
+	.string "Mais j'ai jamais capturé de Pokémon. J'ai\n"
+	.string "jamais rien fait tout seul, en fait.$"
 
 PetalburgCity_Gym_Text_DadHmISee:
-	.string "Papa : Hm. Je vois.$"
+	.string "Papa : …Hm. Je vois.$"
 
 PetalburgCity_Gym_Text_DadPlayerGoWithWally:
-	.string "Papa : {PLAYER}, tu as entendu ?\p"
-	.string "Accompagne Timmy. Veille à ce qu'il\n"
-	.string "capture un Pokémon sans se faire\l"
-	.string "blesser.$"
+	.string "Papa : {PLAYER}. Tu as entendu.\p"
+	.string "Accompagne-le. S'il lui arrive quoi que\n"
+	.string "ce soit, c'est sur toi que ça retombe.$"
 
 PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon:
-	.string "Timmy, je te prête mon Pokémon.\p"
+	.string "Timmy, je te prête mon Pokémon. Il est\n"
+	.string "têtu, mais il ne lâche jamais personne.\p"
 	.string "Timmy reçoit un Zigzaton !$"
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
-	.string "Timmy : Oh, waouh ! Un Pokémon !\p"
-	.string "Papa : Hm. Je te donne aussi une Poké\n"
-	.string "Ball. Vas-y.\p"
+	.string "Timmy : Waouh ! Un vrai Pokémon !\p"
+	.string "Papa : Et une Poké Ball. Tu en auras\n"
+	.string "besoin. Va.\p"
 	.string "Timmy reçoit une Poké Ball !$"
 
 PetalburgCity_Gym_Text_WallyOhWowThankYou:
-	.string "Timmy : Oh, waouh ! Merci !$"
+	.string "Timmy : Waouh ! Merci ! Merci, merci, merci\n"
+	.string "!$"
 
 PetalburgCity_Gym_Text_WouldYouReallyComeWithMe:
-	.string "{PLAYER}… Tu veux bien venir avec moi ?\n"
-	.string "Vraiment ?$"
+	.string "{PLAYER}… Tu veux vraiment venir avec\n"
+	.string "moi ? Même si je suis lent ?$"
 
 PetalburgCity_Gym_Text_DadSoDidItWorkOut:
-	.string "Papa : Alors, ça a marché ?$"
+	.string "Papa : Alors ?$"
 
 PetalburgCity_Gym_Text_WallyThankYouBye:
-	.string "Timmy : Oui, merci. Je vous rends votre\n"
-	.string "Pokémon.\p"
+	.string "Timmy : Oui ! Ça a marché ! Je vous rends\n"
+	.string "votre Zigzaton.\p"
 	.string "{PLAYER}, merci de m'avoir accompagné.\p"
-	.string "C'est grâce à vous deux que j'ai pu\n"
-	.string "capturer mon Pokémon.\p"
+	.string "C'est grâce à vous deux. J'ai… j'ai mon\n"
+	.string "Pokémon à moi.\p"
 	.string "Je vous promets d'en prendre soin. Même\n"
-	.string "si moi, je ne suis pas là très longtemps.\p"
-	.string "Oh ! Ma mère m'attend, je dois y aller !\p"
-	.string "Au revoir, {PLAYER} !$"
+	.string "si je suis pas là très longtemps, il\l"
+	.string "saura qu'il a été aimé.\p"
+	.string "Oh ! Ma mère m'attend ! Je dois y aller !\p"
+	.string "Au revoir, {PLAYER} ! On se reverra ! Je\n"
+	.string "te le promets !$"
 
 PetalburgCity_Gym_Text_DadGoCollectBadges:
-	.string "Papa : Bien…\p"
-	.string "{PLAYER}, si tu veux devenir un Dresseur\n"
-	.string "digne de ce nom, écoute-moi.\p"
-	.string "Va à Mérouville, au-delà de cette ville.\p"
-	.string "Défie la Championne d'Arène, Roxanne.\p"
-	.string "Ensuite, affronte les autres Champions.\n"
-	.string "Écrase-les un par un.\p"
-	.string "Rapporte-moi leurs Badges. Compris ?\p"
-	.string "Moi aussi, je suis Champion. On\n"
-	.string "s'affrontera un jour, {PLAYER}.\p"
-	.string "Mais pas avant que tu en sois digne. Je\n"
-	.string "ne fais pas de cadeaux. Même à mon\l"
-	.string "enfant.$"
+	.string "Papa : Bien.\p"
+	.string "{PLAYER}. Écoute-moi.\p"
+	.string "Va à Mérouville, au nord.\p"
+	.string "Défie la Championne, Roxanne.\p"
+	.string "Puis les autres Champions d'Arène. Un\n"
+	.string "par un. Bats-les tous.\p"
+	.string "Ramène-moi leurs Badges.\p"
+	.string "Moi aussi, je suis Champion. Un jour, on\n"
+	.string "se battra.\p"
+	.string "Et ce jour-là, je ne serai pas ton père.\n"
+	.string "Je serai ton adversaire. Je ne ferai\l"
+	.string "aucun cadeau.$"
 
 PetalburgCity_Gym_Text_NormanGoToRustboro:
-	.string "Papa : Hm ? Tu ne vas pas à l'Arène de\n"
-	.string "Mérouville ?\p"
-	.string "Battre un bleu ne m'intéresse pas.\p"
-	.string "{PLAYER}, reviens quand tu auras fait\n"
-	.string "tes preuves.\p"
-	.string "Montre-moi quatre Badges. Alors\n"
-	.string "seulement, je te prendrai au sérieux.$"
+	.string "Papa : Hm ? Tu n'es pas à Mérouville ?\p"
+	.string "Je n'affronte pas les débutants. Ce\n"
+	.string "n'est pas du mépris. C'est du respect\l"
+	.string "pour le jour où tu seras prêt.\p"
+	.string "Reviens avec quatre Badges, {PLAYER}.\n"
+	.string "Alors je me battrai. Sérieusement.$"
 
 PetalburgCity_Gym_Text_NormanGoToDewford:
-	.string "Papa : Je vois… Tu as battu la\n"
-	.string "Championne de Mérouville.\p"
-	.string "Mais il reste beaucoup de Dresseurs\n"
-	.string "plus forts que toi, {PLAYER}. Ne prends\l"
-	.string "pas la grosse tête.\p"
+	.string "Papa : …Tu as battu Roxanne.\p"
+	.string "Bien. Mais il reste des dizaines de\n"
+	.string "Dresseurs plus forts que toi. Ne prends\l"
+	.string "pas la grosse tête. C'est comme ça qu'on\n"
+	.string "tombe.\p"
 	.string "De l'autre côté de la mer, au Village\n"
-	.string "Myokara, il y a un Champion nommé\l"
-	.string "Bastien.\p"
+	.string "Myokara, il y a Bastien.\p"
 	.string "Va le défier.$"
 
 PetalburgCity_Gym_Text_YouHaveGottenStronger:
-	.string "Papa : Hm… {PLAYER}, tu as pris de\n"
-	.string "l'assurance.\p"
-	.string "Tes Badges parlent pour toi.$"
+	.string "Papa : Hm… {PLAYER}. Tu as changé.\p"
+	.string "Tes Badges parlent pour toi. Et ton\n"
+	.string "regard aussi.$"
 
 PetalburgCity_Gym_Text_NormanIntro:
-	.string "Papa : Hm… Tu as donc obtenu quatre\n"
-	.string "Badges.\p"
-	.string "Bien. Comme promis, nous allons nous\n"
-	.string "battre.\p"
+	.string "Papa : Quatre Badges.\p"
+	.string "Bien. J'ai fait une promesse. Je la tiens.\p"
 	.string "{PLAYER}…\p"
-	.string "Pouvoir affronter mon propre enfant\n"
-	.string "dans un vrai combat… J'en ai rêvé. Et je\l"
-	.string "l'ai redouté.\p"
-	.string "Mais un combat reste un combat.\p"
-	.string "En tant que Champion, je vais tout faire\n"
-	.string "pour t'écraser.\p"
-	.string "Alors donne tout ce que tu as, {PLAYER}.\n"
-	.string "Ne me déçois pas.$"
+	.string "J'ai raté tes anniversaires. Tes\n"
+	.string "premiers pas. Tes premiers mots.\p"
+	.string "Je n'ai pas le droit de rater ça.\p"
+	.string "Alors je vais te donner ce que j'ai de\n"
+	.string "plus précieux : tout ce que j'ai.\p"
+	.string "En garde. Et ne me pardonne rien.$"
 
 PetalburgCity_Gym_Text_NormanDefeat:
 	.string "…\p"
-	.string "Je… Ce n'est pas…\p"
-	.string "C'est impossible. {PLAYER}…\p"
-	.string "J'ai perdu contre {PLAYER} ?\p"
-	.string "Mais les règles sont les règles. Tiens.\n"
-	.string "Prends ça.$"
+	.string "…Ha.\p"
+	.string "J'ai perdu.\p"
+	.string "Contre {PLAYER}.\p"
+	.string "…\p"
+	.string "Les règles sont les règles. Prends ça.$"
 
 PetalburgCity_Gym_Text_ReceivedBalanceBadge:
 	.string "{PLAYER} reçoit le Badge Balance de la\n"
@@ -1277,23 +1272,23 @@ PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
 	.string "Papa : Ce Badge augmente la Défense de\n"
 	.string "tous tes Pokémon.\p"
 	.string "Et tes Pokémon qui connaissent la CS\n"
-	.string "Surf pourront naviguer sur l'eau.\p"
-	.string "Voici mon cadeau. {PLAYER}, je sais que\n"
-	.string "tu sauras t'en servir.$"
+	.string "Surf pourront traverser l'eau.\p"
+	.string "Et ceci. C'est mon cadeau. Je sais que\n"
+	.string "tu en feras bon usage.$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Papa : La CT42 contient Façade.\p"
 	.string "Sa puissance double si le Pokémon est\n"
 	.string "empoisonné, paralysé ou brûlé.\p"
 	.string "Transformer la douleur en force. C'est\n"
-	.string "tout ce que je sais faire.$"
+	.string "la seule chose que j'ai jamais su faire.$"
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
-	.string "Papa : En tant que Champion, je suis fou\n"
-	.string "de rage…\p"
-	.string "Mais en tant que père, je suis fier. Et\n"
-	.string "un peu triste. Tu n'as plus besoin de\l"
-	.string "moi.$"
+	.string "Papa : Le Champion en moi a envie de\n"
+	.string "tout casser.\p"
+	.string "Le père en moi… est fier. Et triste. Tu\n"
+	.string "n'as plus besoin de moi pour avancer.\p"
+	.string "Tu n'en as peut-être jamais eu besoin.$"
 
 PetalburgCity_Gym_Text_PleaseComeWithMe:
 	.string "Ah, te voilà, {PLAYER} !\p"
@@ -1301,77 +1296,78 @@ PetalburgCity_Gym_Text_PleaseComeWithMe:
 	.string "chose pour toi.$"
 
 PetalburgCity_Gym_Text_LetMeBorrowPlayer:
-	.string "Norman, ça ne vous dérange pas ?\p"
-	.string "Je vous emprunte {PLAYER} une minute ou\n"
-	.string "deux.$"
+	.string "Norman, vous permettez ?\p"
+	.string "Je vous emprunte {PLAYER} deux minutes.\n"
+	.string "Promis, je vous rends votre enfant en\l"
+	.string "un seul morceau.$"
 
 PetalburgCity_Gym_Text_DadGoingToKeepTraining:
-	.string "Papa : {PLAYER}, passe voir ta mère de\n"
-	.string "temps en temps. Elle ne dort plus.\p"
+	.string "Papa : {PLAYER}. Va voir ta mère.\p"
+	.string "Je sais qu'elle ne dort plus. Je sais que\n"
+	.string "c'est en partie ma faute.\p"
 	.string "Moi, je reste ici. Je vais m'entraîner\n"
-	.string "deux fois plus.\p"
-	.string "En tant que Dresseur, je ne supporterai\n"
-	.string "pas de rester sur cette défaite.$"
+	.string "deux fois plus. Je veux ma revanche.$"
 
 PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough:
-	.string "Papa : {PLAYER}, comment ça va ?\p"
-	.string "Le monde des Pokémon est sans fond.\p"
-	.string "Aucun entraînement ne suffira jamais.\n"
-	.string "On s'y noie, ou on s'y perd.$"
+	.string "Papa : {PLAYER}. Comment ça va ?\p"
+	.string "Le monde des Pokémon n'a pas de fond.\p"
+	.string "On peut s'y noyer. J'ai failli. Ne fais\n"
+	.string "pas comme moi. Garde quelqu'un sur la\l"
+	.string "rive.$"
 
 PetalburgCity_Gym_Text_GymGuideAdvice:
-	.string "Salut, futur Maître {PLAYER} !\p"
+	.string "Yo, futur Maître {PLAYER} !\p"
 	.string "Ici, les portes s'ouvrent quand tu bats\n"
 	.string "les Dresseurs qui les gardent.\p"
-	.string "Oh là ! Les portes de cette salle sont\n"
-	.string "déjà ouvertes, alors ne m'attaque pas !\p"
-	.string "Les Dresseurs de l'Arène de\n"
-	.string "Clémenti-Ville utilisent toutes sortes\l"
-	.string "d'objets.\p"
-	.string "La porte de gauche mène à la Salle\n"
-	.string "Vitesse.\p"
-	.string "Celle de droite mène à la Salle\n"
-	.string "Précision.\p"
-	.string "Le nom de chaque salle est écrit sur la\n"
-	.string "porte. Choisis bien.\p"
-	.string "Une fois la porte choisie… eh bien,\n"
-	.string "fonce !$"
+	.string "Wow wow ! Les portes de cette salle\n"
+	.string "sont déjà ouvertes ! Range ton\l"
+	.string "Pokémon, je suis pas un challenger !\p"
+	.string "Les Dresseurs de cette Arène utilisent\n"
+	.string "toutes sortes d'objets. Prépare-toi à\l"
+	.string "souffrir.\p"
+	.string "À gauche, la Salle Vitesse.\p"
+	.string "À droite, la Salle Précision.\p"
+	.string "Le nom est écrit sur la porte. Choisis\n"
+	.string "bien.\p"
+	.string "Et après… bah, fonce !$"
 
 PetalburgCity_Gym_Text_GymGuidePostVictory:
-	.string "{PLAYER} ! Waouh ! Tu as battu ton\n"
-	.string "propre père !\p"
-	.string "Le fils prodigue, ou la fille prodigue…\n"
-	.string "Quel retournement !$"
+	.string "{PLAYER} ! Tu as battu ton propre père !\p"
+	.string "L'élève dépasse le maître ! Le petit\n"
+	.string "dévore le grand ! C'est du shonen pur\l"
+	.string "jus !$"
 
 PetalburgCity_Gym_Text_RandallIntro:
-	.string "Attaquer avant l'adversaire…\p"
-	.string "Rien que ça, c'est un avantage énorme.\n"
-	.string "Tu ne trouves pas ?$"
+	.string "Frapper avant l'adversaire…\p"
+	.string "Rien que ça, c'est la moitié de la\n"
+	.string "victoire. L'autre moitié, c'est de\l"
+	.string "frapper fort.$"
 
 PetalburgCity_Gym_Text_RandallDefeat:
-	.string "Un combat magnifique !$"
+	.string "Un combat magnifique ! J'en ai des\n"
+	.string "frissons !$"
 
 PetalburgCity_Gym_Text_RandallPostBattle:
-	.string "Passe à la salle suivante, un nouveau\n"
-	.string "défi t'attend.\p"
+	.string "Va à la salle suivante, un nouveau défi\n"
+	.string "t'attend.\p"
 	.string "À gauche, la Salle Confusion.\p"
 	.string "À droite, la Salle Défense.$"
 
 PetalburgCity_Gym_Text_RandallPostBadge:
-	.string "Qu'on gagne ou qu'on perde, on ne cesse\n"
-	.string "jamais de s'entraîner, soi et ses\l"
-	.string "Pokémon.\p"
-	.string "Pour moi, c'est ça, être Champion. Une\n"
-	.string "vie de sacrifices.$"
+	.string "Qu'on gagne ou qu'on perde, on ne\n"
+	.string "s'arrête jamais de s'entraîner.\p"
+	.string "C'est ça, être Champion. Une vie entière\n"
+	.string "dans une salle qui sent la sueur.$"
 
 PetalburgCity_Gym_Text_ParkerIntro:
-	.string "Voici la Salle Confusion.\p"
-	.string "Voyons à quel point tu es lié à tes\n"
-	.string "Pokémon !$"
+	.string "Bienvenue dans la Salle Confusion !\p"
+	.string "Voyons si ton lien avec tes Pokémon\n"
+	.string "résiste quand ils ne savent plus où ils\l"
+	.string "sont !$"
 
 PetalburgCity_Gym_Text_ParkerDefeat:
-	.string "Je n'ai pas réussi à semer le chaos dans\n"
-	.string "ton équipe… Votre lien est solide.$"
+	.string "J'ai pas réussi à les embrouiller… Votre\n"
+	.string "lien est solide. C'est presque écœurant.$"
 
 PetalburgCity_Gym_Text_ParkerPostBattle:
 	.string "La salle suivante, c'est la Salle Force.\n"
@@ -1379,120 +1375,122 @@ PetalburgCity_Gym_Text_ParkerPostBattle:
 
 PetalburgCity_Gym_Text_ParkerPostBadge:
 	.string "Depuis que tu as battu le Champion,\n"
-	.string "l'entraînement est devenu infernal.$"
+	.string "l'entraînement est devenu infernal.\l"
+	.string "Merci, hein.$"
 
 PetalburgCity_Gym_Text_GeorgeIntro:
 	.string "Juste quand tu crois gagner,\n"
-	.string "l'adversaire récupère ses PV…\p"
-	.string "Tu imagines comme c'est horrible ?\p"
-	.string "Je vais te le faire vivre !$"
+	.string "l'adversaire se soigne…\p"
+	.string "Tu imagines la frustration ?\p"
+	.string "Je vais te la faire vivre ! Encore ! Et\n"
+	.string "encore !$"
 
 PetalburgCity_Gym_Text_GeorgeDefeat:
-	.string "Je n'ai pas assez soigné… Quelle\n"
-	.string "puissance d'Attaque…$"
+	.string "J'ai pas assez soigné… Quelle puissance\n"
+	.string "d'Attaque…$"
 
 PetalburgCity_Gym_Text_GeorgePostBattle:
 	.string "Normal, venant de l'enfant du Champion.\p"
-	.string "Non, attends ! Le talent d'un Dresseur\n"
-	.string "ne vient que de ses efforts.\p"
-	.string "J'ai perdu parce que je n'en ai pas fait\n"
-	.string "assez.\p"
-	.string "Vas-y ! La Salle K.O. en un coup est\n"
-	.string "juste après.$"
+	.string "Non ! Je retire ! Le talent, ça n'existe\n"
+	.string "pas. Il n'y a que le travail.\p"
+	.string "J'ai perdu parce que j'ai pas assez\n"
+	.string "bossé. Point.\p"
+	.string "Vas-y. La Salle K.O. en un coup est juste\n"
+	.string "après.$"
 
 PetalburgCity_Gym_Text_GeorgePostBadge:
-	.string "Je vais continuer à m'entraîner dans\n"
-	.string "les Arènes. Un jour, je serai Champion.$"
+	.string "Je vais continuer à m'entraîner. Un\n"
+	.string "jour, je serai Champion. Ou je mourrai en\l"
+	.string "essayant. Les deux me vont.$"
 
 PetalburgCity_Gym_Text_BerkeIntro:
-	.string "Je ne vais pas te ménager sous\n"
-	.string "prétexte que tu es l'enfant du\l"
-	.string "Champion.\p"
+	.string "Je vais pas te ménager parce que t'es\n"
+	.string "l'enfant du Champion.\p"
 	.string "Je vais te montrer ce que ça fait, un\n"
-	.string "coup critique en pleine tête !$"
+	.string "coup critique en pleine poire !$"
 
 PetalburgCity_Gym_Text_BerkeDefeat:
-	.string "Cette puissance… T'es le vrai truc.$"
+	.string "Cette puissance… Tu es la vraie\n"
+	.string "affaire.$"
 
 PetalburgCity_Gym_Text_BerkePostBattle:
-	.string "Ton père est vraiment fort. Il mérite\n"
-	.string "mon respect.\p"
-	.string "Et je sens chez toi la même lueur que\n"
-	.string "chez lui.\p"
-	.string "J'espère que votre combat sera\n"
-	.string "mémorable. Et que vous en sortirez tous\l"
-	.string "les deux debout.$"
+	.string "Ton père est un monstre. Au bon sens du\n"
+	.string "terme.\p"
+	.string "Et je vois la même flamme chez toi.\p"
+	.string "J'espère que votre combat sera épique.\n"
+	.string "Et que vous vous parlerez, après.$"
 
 PetalburgCity_Gym_Text_BerkePostBadge:
 	.string "Depuis que ton père est Champion, les\n"
 	.string "Dresseurs de Clémenti-Ville sont\l"
-	.string "devenus bien plus coriaces.$"
+	.string "devenus des bêtes de guerre.$"
 
 PetalburgCity_Gym_Text_MaryIntro:
-	.string "Hi hi… Voici la Salle Précision.\p"
-	.string "C'est cruel, quand chaque attaque\n"
-	.string "touche à coup sûr.$"
+	.string "Hi hi… Bienvenue dans la Salle Précision.\p"
+	.string "Chaque attaque touche. Chaque fois.\n"
+	.string "C'est cruel, hein ?$"
 
 PetalburgCity_Gym_Text_MaryDefeat:
 	.string "Tu étais un cran au-dessus…$"
 
 PetalburgCity_Gym_Text_MaryPostBattle:
-	.string "Des Dresseurs encore plus forts\n"
+	.string "D'autres Dresseurs encore plus forts\n"
 	.string "t'attendent.\p"
 	.string "À gauche, la Salle Défense. À droite, la\n"
 	.string "Salle Soin.\p"
 	.string "Dans les deux cas, ta puissance\n"
-	.string "d'Attaque sera mise à l'épreuve.$"
+	.string "d'Attaque va être mise à rude épreuve.$"
 
 PetalburgCity_Gym_Text_MaryPostBadge:
-	.string "Tu sais ce qu'on cherche, en tant que\n"
+	.string "Tu sais ce qu'on cherche, nous, les\n"
 	.string "Dresseurs ?\p"
-	.string "Devenir l'âme sœur de nos Pokémon.\n"
-	.string "Jusqu'à la mort.$"
+	.string "Devenir l'âme sœur de nos Pokémon. Pour\n"
+	.string "la vie. Et un peu après.$"
 
 PetalburgCity_Gym_Text_AlexiaIntro:
 	.string "Plus ma Défense est haute, plus je peux\n"
-	.string "attaquer comme une folle.$"
+	.string "attaquer comme une furie !$"
 
 PetalburgCity_Gym_Text_AlexiaDefeat:
-	.string "Nos défenses n'ont pas suffi…$"
+	.string "Nos défenses ont cédé…$"
 
 PetalburgCity_Gym_Text_AlexiaPostBattle:
 	.string "Tu m'as donné une sacrée leçon.\p"
-	.string "Vas-y ! La porte de gauche mène à la\n"
-	.string "Salle Force.\p"
-	.string "Celle de droite, à la Salle K.O. en un\n"
-	.string "coup.\p"
-	.string "Dans les deux, des Dresseurs taillés\n"
-	.string "pour l'attaque.$"
+	.string "Vas-y ! À gauche, la Salle Force.\p"
+	.string "À droite, la Salle K.O. en un coup.\p"
+	.string "Les deux sont remplies de brutes.$"
 
 PetalburgCity_Gym_Text_AlexiaPostBadge:
-	.string "Salut ! Tu as essayé Surf ?$"
+	.string "Salut ! Tu as essayé Surf ? C'est comme\n"
+	.string "courir, mais sur l'eau, et avec plus de\l"
+	.string "chances de se noyer.$"
 
 PetalburgCity_Gym_Text_JodyIntro:
 	.string "Le Champion nous a ordonné de tout\n"
 	.string "donner pour te battre.\p"
-	.string "Même si tu es son enfant !$"
+	.string "Même si tu es son enfant. SURTOUT parce\n"
+	.string "que tu es son enfant !$"
 
 PetalburgCity_Gym_Text_JodyDefeat:
 	.string "Mais… j'ai tout donné !$"
 
 PetalburgCity_Gym_Text_JodyPostBattle:
 	.string "Ta façon de diriger tes Pokémon… C'est\n"
-	.string "le style de ton père.\p"
-	.string "Passe. Le Champion, ton père, t'attend.$"
+	.string "tout ton père.\p"
+	.string "Passe. Il t'attend. Il fait semblant de\n"
+	.string "rien, mais il fait les cent pas depuis ce\l"
+	.string "matin.$"
 
 PetalburgCity_Gym_Text_JodyPostBadge:
 	.string "Rendre ses Pokémon plus forts, c'est\n"
 	.string "bien.\p"
-	.string "Mais qu'est-ce qui décide du vainqueur\n"
+	.string "Mais au final, qu'est-ce qui fait gagner\n"
 	.string "?\p"
-	.string "Ce que le Dresseur ressent pour ses\n"
-	.string "Pokémon. Et ce qu'il est prêt à\l"
-	.string "sacrifier.$"
+	.string "Ce que tu ressens pour eux. Et ce que tu\n"
+	.string "acceptes de perdre pour eux.$"
 
 PetalburgCity_Gym_Text_DoorAppearsLocked:
-	.string "Cette porte semble verrouillée…$"
+	.string "Cette porte est verrouillée…$"
 
 PetalburgCity_Gym_Text_EnterSpeedRoom:
 	.string "“Salle Vitesse”, indique le panneau.\p"
@@ -1500,7 +1498,7 @@ PetalburgCity_Gym_Text_EnterSpeedRoom:
 
 @ Unused
 PetalburgCity_Gym_Text_DoorAppearsLocked2:
-	.string "Cette porte semble verrouillée…$"
+	.string "Cette porte est verrouillée…$"
 
 PetalburgCity_Gym_Text_EnterAccuracyRoom:
 	.string "“Salle Précision”, indique le panneau.\p"
@@ -1543,37 +1541,36 @@ PetalburgCity_Gym_Text_GymStatueCertified:
 	.string "{PLAYER}$"
 
 PetalburgCity_Gym_Text_NormanPreRematch:
-	.string "Papa : {PLAYER}… Je savais que tu\n"
+	.string "Papa : {PLAYER}. Je savais que tu\n"
 	.string "viendrais.\p"
-	.string "Je ne refuserai jamais un défi de ta\n"
-	.string "part.\p"
-	.string "Tu le sais, n'est-ce pas ?\p"
-	.string "Dans une Arène, peu importe qu'on soit\n"
-	.string "parent et enfant.\p"
-	.string "…Non. Justement parce qu'on est parent\n"
-	.string "et enfant, on se doit de tout donner.\l"
-	.string "N'est-ce pas, {PLAYER} ?$"
+	.string "Je ne refuserai jamais un de tes défis.\p"
+	.string "Tu le sais.\p"
+	.string "Dans une Arène, on n'est pas parent et\n"
+	.string "enfant.\p"
+	.string "…Non. C'est faux. C'est justement parce\n"
+	.string "qu'on est parent et enfant qu'on se\l"
+	.string "doit de tout donner. Pas vrai, {PLAYER} ?$"
 
 PetalburgCity_Gym_Text_NormanRematchDefeat:
-	.string "Euh… Ha ha… J'y suis peut-être allé un\n"
-	.string "peu fort…$"
+	.string "Euh… Ha ha… Je crois que j'ai pris une\n"
+	.string "raclée…$"
 
 PetalburgCity_Gym_Text_NormanPostRematch:
-	.string "Papa : {PLAYER}… Quel est ton rêve ?\p"
-	.string "Le mien… Ha ha ha… Il s'est déjà réalisé,\n"
-	.string "en fait.$"
+	.string "Papa : {PLAYER}… C'est quoi, ton rêve ?\p"
+	.string "Le mien…\p"
+	.string "Ha ha ha… Il est devant moi. Il vient de\n"
+	.string "me mettre une raclée.$"
 
 PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
-	.string "Papa : {PLAYER}… Je savais que tu\n"
+	.string "Papa : {PLAYER}. Je savais que tu\n"
 	.string "viendrais.\p"
-	.string "Je ne refuserai jamais un défi de ta\n"
-	.string "part.\p"
-	.string "Tu le sais, n'est-ce pas ?\p"
-	.string "Dans une Arène, peu importe qu'on soit\n"
-	.string "parent et enfant.\p"
-	.string "Hm ? Attends une seconde, {PLAYER}.\p"
+	.string "Je ne refuserai jamais un de tes défis.\p"
+	.string "Tu le sais.\p"
+	.string "Dans une Arène, on n'est pas parent et\n"
+	.string "enfant.\p"
+	.string "Hm ? Attends.\p"
 	.string "Tu n'as qu'un seul Pokémon en état de se\n"
 	.string "battre ?\p"
-	.string "Désolé, mais reviens avec au moins deux\n"
-	.string "Pokémon.$"
+	.string "Reviens avec au moins deux Pokémon. Je\n"
+	.string "ne me bats pas à moitié.$"
 

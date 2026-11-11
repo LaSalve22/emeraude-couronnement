@@ -332,7 +332,8 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "{PLAYER}{KUN}, I'll catch you later!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
-	.string "Pokémon soignés ! Objets prêts, et…$"
+	.string "Pokémon soignés ! Potions ! Pansements\n"
+	.string "! Spray anti-morsure ! Et…$"
 
 RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Hey!\n"
@@ -355,40 +356,45 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Some other time, okay?$"
 
 RivalsHouse_2F_Text_BrendanGettingReady:
-	.string "Pokémon soignés… Sac bouclé, et…$"
+	.string "Pokémon soignés… Sac bouclé… Charisme\n"
+	.string ": au max… Et…$"
 
 RivalsHouse_2F_Text_ItsRivalsPokeBall:
 	.string "C'est la Poké Ball de {RIVAL} !\p"
-	.string "Mieux vaut ne pas y toucher.$"
+	.string "Mieux vaut ne pas y toucher. Il y a un\n"
+	.string "post-it : “TOUCHE PAS.”$"
 
 RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 	.string "Flora : {PLAYER} !\p"
 	.string "Je regardais mon Pokédex.\p"
-	.string "Il y a plein de Pokémon que j'ai vus sans\n"
-	.string "arriver à les attraper.\p"
-	.string "Et d'autres qui vont sûrement évoluer.\n"
-	.string "Si je les garde en vie assez longtemps.\p"
-	.string "Je me demande où aller chasser,\n"
-	.string "maintenant.$"
+	.string "Y a plein de Pokémon que j'ai vus sans\n"
+	.string "réussir à les attraper. L'un d'eux m'a\l"
+	.string "même volé mon goûter.\p"
+	.string "Et d'autres qui vont évoluer. Si je les\n"
+	.string "garde en vie assez longtemps.\p"
+	.string "Tu sais, mon père dit qu'un Pokédex,\n"
+	.string "c'est la liste de tout ce qu'on a eu la\l"
+	.string "chance de croiser. Moi, j'y vois surtout\n"
+	.string "ce qui manque.$"
 
 RivalsHouse_2F_Text_MayWhereShouldIGoNext:
-	.string "Flora : Je me demande où aller capturer\n"
-	.string "des Pokémon…\p"
-	.string "Ce serait drôle qu'on tombe l'un sur\n"
-	.string "l'autre, {PLAYER}. Drôle pour moi, en tout\l"
-	.string "cas.$"
+	.string "Flora : Je me demande où aller chasser,\n"
+	.string "maintenant…\p"
+	.string "Ce serait drôle qu'on se croise,\n"
+	.string "{PLAYER}. Drôle pour moi. Toi, tu vas\l"
+	.string "pleurer.$"
 
 RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
 	.string "Brice : Tiens, {PLAYER}.\p"
 	.string "Je regardais mon Pokédex.\p"
 	.string "Il m'en manque encore un paquet, mais ça\n"
 	.string "commence à avoir de la gueule.\p"
-	.string "Rien que de le regarder, ça me donne\n"
-	.string "envie de reprendre la route.$"
+	.string "Mon père a rempli le sien à mon âge. Je le\n"
+	.string "sais, il me l'a dit. Quarante fois.$"
 
 RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
-	.string "Brice : J'arrive pas à décider où chasser\n"
-	.string "ensuite.\p"
-	.string "Hé, {PLAYER}, si je te croise sur la\n"
-	.string "route, je te défonce en combat. Avec\l"
-	.string "plaisir.$"
+	.string "Brice : J'hésite sur ma prochaine zone\n"
+	.string "de chasse.\p"
+	.string "Hé, {PLAYER}. Si je te croise en route, je\n"
+	.string "te défonce. Rien de personnel. Enfin, un\l"
+	.string "peu.$"

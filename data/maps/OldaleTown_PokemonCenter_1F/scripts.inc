@@ -40,22 +40,26 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
 	.string "Le PC dans le coin est à la disposition\n"
 	.string "de tous les Dresseurs.\p"
-	.string "Toi aussi, bien sûr.$"
+	.string "Toi aussi. Même si t'as la tête de\n"
+	.string "quelqu'un qui débute.$"
 
 OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
 	.string "Les Centres Pokémon, c'est génial !\p"
-	.string "C'est gratuit, autant de fois qu'on\n"
-	.string "veut. Personne ne demande d'où\l"
-	.string "viennent les blessures.$"
+	.string "C'est gratuit, illimité, et personne ne\n"
+	.string "demande d'où viennent les blessures.\l"
+	.string "Personne. Jamais.$"
 
 OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
 	.string "Le Club Sans-Fil du premier étage vient\n"
 	.string "d'ouvrir.\p"
 	.string "Mais il paraît qu'ils font encore des\n"
-	.string "réglages.$"
+	.string "réglages. Le technicien pleure dans les\l"
+	.string "toilettes depuis mardi.$"
 
 OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 	.string "Le Club Sans-Fil du premier étage vient\n"
 	.string "d'ouvrir.\p"
-	.string "J'ai tout de suite échangé des Pokémon.$"
+	.string "J'ai tout de suite échangé des Pokémon\n"
+	.string "! Mon pote m'a filé un Magicarpe contre\l"
+	.string "mon meilleur Pokémon. Je le hais.$"
 

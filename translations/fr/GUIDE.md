@@ -1,28 +1,37 @@
 # Traduction française — guide de ton et lexique
 
-## Ton
+## Ton (v0.4, après le premier test d'Adrien)
 
-- **Plus adulte, façon manga** : plus mûr, plus sombre, avec de l'humour et des répliques qui piquent.
-- **Jurons autorisés** quand le personnage s'y prête : « merde », « putain », « bordel », « connard », « fais chier ».
-  Jamais dans la bouche des enfants, ni dans les panneaux et les messages système.
-- **Thèmes durs** autorisés : la mort, le deuil, la maladie, la violence des Pokémon sauvages, la peur, l'ambition qui écrase les autres.
-  Pas de contenu sexuel, pas de gore gratuit.
-- **Le scénario d'Émeraude ne change pas** : mêmes événements, mêmes objets, mêmes combats. Seuls le ton et les dialogues changent.
-- Messages système (objets reçus, panneaux, PC, menus) : sobres et clairs, sans jurons.
+Le mélange recherché : **humour manga + textes adultes qui ont du fond + trash quand ça sert la scène.**
+
+- **Humour manga** : réactions exagérées, gags récurrents, persos qui cassent le quatrième mur ou commentent la situation,
+  ruptures de ton (une scène tragique coupée net par un gag, puis une phrase qui fait mal), répliques punchlines.
+  Exemples de ressorts : le Prof. Seko qui frôle la mort à chaque apparition, Maman qui pleure en mode cascade puis lâche
+  une phrase glaciale, le rival qui se la raconte et se fait remettre à sa place.
+- **Profondeur et vrai sens** : chaque personnage important porte un thème (l'absence du père, la peur de mourir jeune,
+  le deuil, le prix de la force, ce qu'on doit aux Pokémon qu'on envoie se battre). Une ou deux phrases qui restent en tête
+  par scène, pas plus : le fond se glisse entre deux vannes.
+- **Trash si besoin** : jurons francs, insultes, humour cru ou dégueu, menaces violentes chez les voyous, cynisme assumé.
+  Ça doit servir le perso ou la scène, pas remplir. Pas de contenu sexuel explicite, pas de gore gratuit.
+- **Enfants** : ils peuvent être drôles et dire des choses dures avec innocence, mais ils ne jurent pas.
+- **Panneaux et messages système** (objet reçu, PC, menus) : clairs. Un panneau peut avoir une blague tagguée dessus.
+- **Le scénario d'Émeraude ne change pas** : mêmes événements, objets et combats.
+- **Le joueur** peut être une fille ou un garçon : pas d'accord genré quand on s'adresse à lui.
 
 ## Personnages (voix)
 
 | Personnage | Nom FR | Voix |
 |---|---|---|
-| Professeur Birch | Prof. Seko | Chercheur de terrain brillant mais imprudent, un peu cynique. Sait que la nature tue. |
-| Mom | Maman | Fatiguée, aimante, inquiète. Elle connaît le prix de la vie de dresseur (son mari n'est jamais là). |
-| Norman | Norman | Champion de Clémenti-Ville. Dur, distant, fier. Père absent. |
-| May / Brendan (rival) | Flora / Brice | Compétitif, sarcastique, piquant, mais loyal au fond. Jure un peu. |
-| Wally | Timmy | Enfant malade, fragile, lucide sur sa maladie. Touchant. Ne jure pas. |
-| Team Aqua / Magma | Team Aqua / Team Magma | Voyous et fanatiques. Menaces réelles. Jurent. |
-| Roxanne | Roxanne | Prodige froide, méthodique, condescendante. |
-| Mr. Stone | M. Rochard | PDG de Devon SA. Charmeur, ambigu. |
-| Mr. Briney | M. Marco | Vieux marin, a perdu son équipage en mer. Bourru. |
+| Professeur Birch | Prof. Seko | Génie de terrain suicidaire. Gag : il manque de mourir à chaque scène et tient le compte. Fond : il sait que la nature ne doit rien à personne, et il y va quand même. |
+| Mom | Maman | Mère poule en mode pleurs-cascade, puis phrase glaciale. Fond : elle a épousé un homme qui ne rentre jamais et voit son enfant prendre le même chemin. |
+| Norman | Norman | Shōnen de 45 ans, obsédé par la force. Parle peu. Fond : il a choisi l'Arène plutôt que sa famille et il le sait. |
+| May (rival si joueur garçon) | Flora | Pile électrique, grande gueule, jure quand elle est vexée. Gag : elle veut être amie avec les Pokémon qui ont essayé de la bouffer. Fond : elle a peur de finir comme son père. |
+| Brendan (rival si joueuse fille) | Brice | Rival shōnen qui se la raconte, se fait remettre à sa place. Fond : il vit dans l'ombre de son père et n'en peut plus. |
+| Wally | Timmy | Gamin malade, petit corps, volonté monstre. Fond : il sait qu'il peut mourir et veut vivre une vraie aventure avant. Ne jure pas. |
+| Team Aqua / Magma | Team Aqua / Team Magma | Voyous, trash-talk, menaces sérieuses. Bêtes mais dangereux. |
+| Roxanne | Roxanne | Major de promo à lunettes, froide, condescendante. Gag : elle cite ses notes. Fond : elle n'a jamais perdu et ne sait pas quoi faire de l'échec. |
+| Mr. Stone | M. Rochard | PDG charmeur, trop poli pour être honnête. Fond : il ne parle plus à son fils. |
+| Mr. Briney | M. Marco | Vieux loup de mer bruyant qui sent le rhum. Fond : la mer a pris son équipage, Peeko est tout ce qui lui reste. |
 | Steven | Pierre Rochard | Fils de M. Rochard, ne lui parle plus. |
 | Scott | Scott | Recruteur mystérieux. |
 

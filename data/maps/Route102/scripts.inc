@@ -76,28 +76,36 @@ Route102_EventScript_Allen::
 Route102_Text_WatchMeCatchPokemon:
 	.string "Timmy : {PLAYER}… Les Pokémon se\n"
 	.string "cachent dans les hautes herbes comme\l"
-	.string "ça, non ?\p"
-	.string "Regarde-moi. Je veux savoir si j'en suis\n"
-	.string "capable… au moins une fois.\p"
+	.string "ça, hein ?\p"
+	.string "Regarde-moi, s'il te plaît. Je veux\n"
+	.string "savoir si j'en suis capable.\p"
+	.string "Juste une fois. Faire un truc tout seul.\n"
+	.string "Avant que…\p"
 	.string "…Waah !$"
 
 Route102_Text_WallyIDidIt:
 	.string "Timmy : J'ai réussi… C'est mon… mon\n"
-	.string "Pokémon à moi !$"
+	.string "Pokémon à moi…\p"
+	.string "J'ai jamais rien eu à moi. À part des\n"
+	.string "médicaments.$"
 
 Route102_Text_LetsGoBack:
-	.string "{PLAYER}, merci. Vraiment. On retourne à\n"
-	.string "l'Arène ?$"
+	.string "{PLAYER}… merci. Je m'en souviendrai\n"
+	.string "toute ma vie. Même si elle est courte. On\l"
+	.string "retourne à l'Arène ?$"
 
 Route102_Text_ImNotVeryTall:
 	.string "Je suis… pas très grand, alors je\n"
 	.string "disparais dans les hautes herbes.\p"
 	.string "L'herbe me rentre dans le nez et…\n"
 	.string "Fwafwafwafwa…\p"
-	.string "Atchaaa !$"
+	.string "ATCHAAA !\p"
+	.string "…J'ai éternué sur un Chenipotte. Il me\n"
+	.string "regarde. Il est pas content.$"
 
 Route102_Text_CatchWholeBunchOfPokemon:
-	.string "Je vais attraper plein de Pokémon !$"
+	.string "Je vais attraper plein de Pokémon ! Et\n"
+	.string "les appeler tous Gérard !$"
 
 Route102_Text_RouteSignOldale:
 	.string "Route 102\n"

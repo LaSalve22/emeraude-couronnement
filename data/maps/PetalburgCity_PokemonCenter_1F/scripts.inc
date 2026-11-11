@@ -55,38 +55,38 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
 	.string "Le système de stockage de Pokémon sur\n"
 	.string "PC…\p"
-	.string "Celui qui l'a inventé est un génie. Ou un\n"
-	.string "monstre. Je n'ai pas encore décidé.$"
+	.string "Celui qui a inventé ça est un génie. Ou\n"
+	.string "un psychopathe. Je n'ai pas encore\l"
+	.string "tranché.$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
 	.string "Mon Pokémon a mangé une Baie Oran et il\n"
-	.string "a récupéré des PV !$"
+	.string "a récupéré des PV ! Moi, j'en ai mangé\l"
+	.string "une et j'ai eu la diarrhée.$"
 
 PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
-	.string "Il existe beaucoup de types de\n"
-	.string "Pokémon.\p"
-	.string "Chaque type a ses forces et ses\n"
-	.string "faiblesses face aux autres.\p"
+	.string "Il existe plein de types de Pokémon.\p"
+	.string "Chacun a ses forces et ses faiblesses\n"
+	.string "face aux autres.\p"
 	.string "Selon les types, un combat peut être\n"
-	.string "une formalité… ou un massacre.$"
+	.string "une promenade… ou une exécution.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
 	.string "Par exemple, ton Arcko est de type\n"
 	.string "Plante.\p"
-	.string "Il est fort contre les types Eau et Sol.\p"
-	.string "Mais le Feu le réduit en cendres.$"
+	.string "Il écrase les types Eau et Sol.\p"
+	.string "Mais face au Feu, il fait barbecue.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
 	.string "Par exemple, ton Héricendre est de type\n"
 	.string "Feu.\p"
-	.string "Il est fort contre les types Plante et\n"
-	.string "Insecte.\p"
-	.string "Mais l'Eau l'éteint en un rien de temps.$"
+	.string "Il crame les types Plante et Insecte.\p"
+	.string "Mais un seau d'Eau et pfft. Plus rien.$"
 
 PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
 	.string "Par exemple, ton Carapuce est de type\n"
 	.string "Eau.\p"
-	.string "Il est fort contre le type Feu.\p"
-	.string "Mais il craint les types Plante et\n"
-	.string "Électrik.$"
+	.string "Il noie le type Feu.\p"
+	.string "Mais il craint les Plantes et l'Électrik.\n"
+	.string "Surtout dans le bain.$"
 
