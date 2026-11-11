@@ -231,12 +231,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Générés : 40 dresseurs des Routes 121 / 123 et du Mont Mémoria (plancher 58 / 62), 24 du Repaire Aqua et des Routes 124-125
   (60 / 64), 12 de l'Arène de Lévy & Tatia (réserve Psy, 64 / 68) ; cap 72. Réserves ajoutées : spectre (Hex Maniac), aqua (Team Aqua).
 
+## Fait (v0.22) - équipes Hard / Kaizo du chapitre 7
+
+- Faits à la main : Max et Tabitha au Centre Spatial (combat multi : 3 Pokémon chacun, 71-77), Arlette à la Grotte Fonds Marins
+  (3 / 5), Arthur (4 / 6, jusqu'au 77 / 79), Juan (5 en Hard 78-80, 6 en Kaizo 80-81).
+- Pierre (partenaire du Centre Spatial) a des blocs Hard / Kaizo dans `src/data/battle_partners.party` (Métalosse, Airmure,
+  Galeking, 72-76).
+- Générés : 12 sbires Magma / Aqua (68 / 72), 23 dresseurs des Routes 126-128 (66 / 70), 10 de l'Arène de Juan (réserve Eau,
+  72 / 76) ; cap 81. Réserve ajoutée : magma (Team Magma).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Placer les Méga-Gemmes dans le monde.
 2. Demandé par Adrien : changement d'EV après la Ligue.
-3. Équipes Hard/Kaizo du chapitre 7 (Centre Spatial, Routes 126-128, Algatia, Grotte Fonds Marins, Juan ; cap 81).
+3. Équipes Hard/Kaizo du chapitre 8 (Routes 129-134, Route Victoire, rival / Wally, Conseil 4, Champion ; cap 90 puis 100).
 4. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail

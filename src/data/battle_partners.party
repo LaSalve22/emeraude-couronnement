@@ -42,3 +42,83 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+/* Émeraude Couronnement : Pierre au niveau des combats Hard / Kaizo du Centre Spatial. */
+=== PARTNER_STEVEN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+AI: Smart Trainer
+Difficulty: Hard
+
+Metagross
+Adamant Nature
+Level: 73
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 Atk / 252 HP
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Protect
+
+Skarmory
+Impish Nature
+Level: 72
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 HP / 252 Def
+- Brave Bird
+- Iron Head
+- Tailwind
+- Protect
+
+Aggron
+Adamant Nature
+Level: 72
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 252 Atk / 252 HP
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Protect
+
+=== PARTNER_STEVEN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+AI: Smart Trainer
+Difficulty: Kaizo
+
+Metagross
+Adamant Nature
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Protect
+
+Skarmory
+Impish Nature
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Brave Bird
+- Iron Head
+- Tailwind
+- Protect
+
+Aggron
+Adamant Nature
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Protect
+

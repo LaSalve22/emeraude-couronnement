@@ -534,6 +534,62 @@ for rival in ('MAY', 'BRENDAN'):
                       f"{fin} @ Sitrus Berry | {nat} | {ha} | 66 | 252 Spe / 252 HP | {mk}"],
         }
 
+# ------------------------------------------------------------------ chapitre 7 : Centre Spatial, Grotte Fonds Marins, Juan (cap 81)
+# Max et Tabitha se battent ensemble contre le joueur et Pierre (combat multi) : 3 Pokémon chacun au maximum.
+TEAMS.update({
+    'TABITHA_MOSSDEEP': {
+        'Hard': ["Camerupt | Modest | Solid Rock | 71 | 128 SpA / 128 HP | Lava Plume, Earth Power, Rock Slide, Yawn",
+                 "Mightyena | Jolly | Intimidate | 71 | 128 Atk / 128 Spe | Crunch, Play Rough, Sucker Punch, Fire Fang",
+                 "Crobat @ Sitrus Berry | Jolly | Inner Focus | 72 | 252 Atk / 252 Spe | Cross Poison, Brave Bird, Super Fang, Taunt"],
+        'Kaizo': ["Torkoal @ Heat Rock | Quiet | Drought | 74 | 252 HP / 252 SpA | Eruption, Earth Power, Solar Beam, Protect",
+                  "Houndoom @ Life Orb | Timid | Flash Fire | 74 | 252 SpA / 252 Spe | Heat Wave, Dark Pulse, Sludge Bomb, Nasty Plot",
+                  "Crobat @ Sitrus Berry | Jolly | Inner Focus | 75 | 252 Atk / 252 Spe | Cross Poison, Brave Bird, Super Fang, Tailwind"],
+    },
+    'MAXIE_MOSSDEEP': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 73 | 128 Atk / 128 Spe | Crunch, Play Rough, Sucker Punch, Fire Fang",
+                 "Weezing | Bold | Levitate | 73 | 128 HP / 128 Def | Sludge Bomb, Fire Blast, Will-O-Wisp, Pain Split",
+                 "Camerupt @ Sitrus Berry | Modest | Solid Rock | 74 | 252 SpA / 252 HP | Eruption, Earth Power, Rock Slide, Protect"],
+        'Kaizo': ["Mightyena @ Sitrus Berry | Jolly | Intimidate | 76 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Fire Fang",
+                  "Weezing-Galar @ Black Sludge | Bold | Neutralizing Gas | 76 | 252 HP / 252 Def | Strange Steam, Sludge Bomb, Will-O-Wisp, Protect",
+                  "Camerupt @ Choice Specs | Quiet | Solid Rock | 77 | 252 HP / 252 SpA | Eruption, Earth Power, Heat Wave, Ancient Power"],
+    },
+    'SHELLY_SEAFLOOR_CAVERN': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 72 | 128 Atk / 128 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                 "Pelipper @ Damp Rock | Modest | Drizzle | 72 | 128 SpA / 128 HP | Scald, Hurricane, Roost, Protect",
+                 "Sharpedo @ Sitrus Berry | Adamant | Rough Skin | 73 | 252 Atk / 252 Spe | Crunch, Waterfall, Ice Fang, Poison Fang"],
+        'Kaizo': ["Pelipper @ Damp Rock | Modest | Drizzle | 75 | 252 SpA / 252 HP | Scald, Hurricane, U-turn, Roost",
+                  "Kingdra @ Life Orb | Modest | Swift Swim | 75 | 252 SpA / 252 Spe | Hydro Pump, Draco Meteor, Ice Beam, Flash Cannon",
+                  "Ludicolo @ Sitrus Berry | Modest | Swift Swim | 75 | 252 SpA / 252 Spe | Hydro Pump, Giga Drain, Ice Beam, Fake Out",
+                  "Mightyena @ Oran Berry | Jolly | Intimidate | 75 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                  "Sharpedo @ Focus Sash | Adamant | Speed Boost | 76 | 252 Atk / 252 Spe | Crunch, Waterfall, Close Combat, Protect"],
+    },
+    'ARCHIE': {
+        'Hard': ["Mightyena | Jolly | Intimidate | 75 | 128 Atk / 128 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                 "Crobat | Jolly | Inner Focus | 75 | 128 Atk / 128 Spe | Cross Poison, Brave Bird, Super Fang, Confuse Ray",
+                 "Muk | Adamant | Poison Touch | 76 | 128 Atk / 128 HP | Gunk Shot, Knock Off, Ice Punch, Shadow Sneak",
+                 "Sharpedo @ Sitrus Berry | Adamant | Rough Skin | 77 | 252 Atk / 252 Spe | Crunch, Waterfall, Ice Fang, Close Combat"],
+        'Kaizo': ["Pelipper @ Damp Rock | Modest | Drizzle | 78 | 252 SpA / 252 HP | Scald, Hurricane, U-turn, Roost",
+                  "Crobat @ Sitrus Berry | Jolly | Inner Focus | 78 | 252 Atk / 252 Spe | Cross Poison, Brave Bird, Super Fang, U-turn",
+                  "Muk-Alola @ Assault Vest | Adamant | Poison Touch | 78 | 252 HP / 252 Atk | Knock Off, Poison Jab, Ice Punch, Shadow Sneak",
+                  "Mightyena @ Sitrus Berry | Jolly | Intimidate | 78 | 252 Atk / 252 Spe | Crunch, Play Rough, Sucker Punch, Ice Fang",
+                  "Swampert @ Leftovers | Adamant | Damp | 78 | 252 HP / 252 Atk | Waterfall, Earthquake, Ice Punch, Stealth Rock",
+                  "Sharpedo @ Life Orb | Adamant | Speed Boost | 79 | 252 Atk / 252 Spe | Crunch, Waterfall, Close Combat, Protect"],
+    },
+    'JUAN_1': {
+        'Hard': ["Whiscash | Adamant | Oblivious | 78 | 128 Atk / 128 HP | Earthquake, Waterfall, Stone Edge, Dragon Dance",
+                 "Walrein | Modest | Thick Fat | 78 | 128 SpA / 128 HP | Surf, Ice Beam, Body Slam, Rest",
+                 "Crawdaunt | Adamant | Adaptability | 79 | 128 Atk / 128 Spe | Crabhammer, Knock Off, Aqua Jet, Swords Dance",
+                 "Milotic | Bold | Marvel Scale | 79 | 128 HP / 128 Def | Scald, Ice Beam, Recover, Dragon Tail",
+                 "Kingdra @ Sitrus Berry | Modest | Swift Swim | 80 | 252 SpA / 252 Spe | Hydro Pump, Draco Meteor, Ice Beam, Rain Dance"],
+        'Kaizo': ["Politoed @ Damp Rock | Calm | Drizzle | 80 | 252 HP / 252 SpD | Scald, Ice Beam, Encore, Perish Song",
+                  "Kingdra @ Life Orb | Modest | Swift Swim | 80 | 252 SpA / 252 Spe | Hydro Pump, Draco Meteor, Ice Beam, Flash Cannon",
+                  "Crawdaunt @ Focus Sash | Adamant | Adaptability | 80 | 252 Atk / 252 Spe | Crabhammer, Knock Off, Aqua Jet, Swords Dance",
+                  "Whiscash @ Sitrus Berry | Adamant | Oblivious | 80 | 252 Atk / 252 HP | Earthquake, Waterfall, Stone Edge, Dragon Dance",
+                  "Walrein @ Leftovers | Modest | Thick Fat | 80 | 252 HP / 252 SpA | Blizzard, Surf, Protect, Substitute",
+                  "Milotic @ Flame Orb | Bold | Marvel Scale | 81 | 252 HP / 252 Def | Scald, Ice Beam, Recover, Haze"],
+    },
+})
+
 # Attaques qui ne font que baisser les stats adverses (ou presque rien) : retirées des équipes Hard / Kaizo
 # pour que l'IA attaque au lieu de spammer Rugissement / Jet de Sable (retour d'Adrien, v0.17).
 WEAK_MOVES = {'Leer', 'Tail Whip', 'Growl', 'Sand Attack', 'Smokescreen', 'String Shot', 'Sweet Scent',
@@ -584,6 +640,7 @@ POOLS = {
     'normal':   ['Ursaring', 'Zangoose', 'Kecleon', 'Spinda', 'Bibarel', 'Lopunny', 'Furret', 'Tauros', 'Miltank', 'Porygon', 'Linoone', 'Girafarig'],
     'spectre':  ['Shuppet', 'Duskull', 'Misdreavus', 'Gastly', 'Sableye', 'Litwick', 'Drifloon', 'Phantump'],
     'aqua':     ['Carvanha', 'Zubat', 'Poochyena', 'Wailmer', 'Corphish', 'Tentacool', 'Spheal', 'Barboach'],
+    'magma':    ['Numel', 'Poochyena', 'Zubat', 'Slugma', 'Baltoy', 'Koffing', 'Houndour', 'Torkoal'],
     'mixte':    ['Zigzagoon', 'Skitty', 'Whismur', 'Aron', 'Poochyena', 'Azurill', 'Eevee', 'Teddiursa', 'Snubbull', 'Buneary'],
 }
 CLASS_POOL = {
@@ -591,7 +648,7 @@ CLASS_POOL = {
     'Fisherman': 'eau', 'Swimmer M': 'eau', 'Swimmer F': 'eau', 'Psychic': 'psy', 'Triathlete': 'electrik',
     'Guitarist': 'electrik', 'Pokefan': 'electrik', 'Bug Maniac': 'insecte', 'Aroma Lady': 'plante',
     'Collector': 'plante', 'Pkmn Breeder': 'mixte', 'Youngster': 'mixte', 'Twins': 'electrik', 'Sr And Jr': 'mixte',
-    'Camper': 'sol', 'Hex Maniac': 'spectre', 'Team Aqua': 'aqua', 'Cooltrainer 2': 'elite', 'Pkmn Ranger': 'plante', 'Bug Catcher': 'insecte', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
+    'Camper': 'sol', 'Hex Maniac': 'spectre', 'Team Aqua': 'aqua', 'Team Magma': 'magma', 'Cooltrainer 2': 'elite', 'Pkmn Ranger': 'plante', 'Bug Catcher': 'insecte', 'Ruin Maniac': 'sol', 'Picnicker': 'plante', 'Kindler': 'feu', 'Hiker': 'roche',
     'Bird Keeper': 'oiseau', 'Ninja Boy': 'poison', 'Cooltrainer': 'elite', 'Expert': 'combat',
     'Parasol Lady': 'beaute', 'Sis And Bro': 'eau', 'Young Couple': 'insecte', 'Gentleman': 'mixte', 'Lass': 'mixte', 'Beauty': 'beaute', 'Pokemaniac': 'roche', 'Winstrate': 'mixte',
 }
@@ -660,6 +717,19 @@ for tid in ['GRUNT_AQUA_HIDEOUT_1', 'GRUNT_AQUA_HIDEOUT_2', 'GRUNT_AQUA_HIDEOUT_
 for tid in ['BLAKE', 'CLIFFORD', 'HANNAH', 'KATHLEEN', 'MACEY', 'MAURA', 'NATE', 'NICHOLAS', 'PRESTON',
             'SAMANTHA', 'SYLVIA', 'VIRGIL']:  # Arène de Lévy & Tatia
     AUTO[tid] = (72, 64, 68, 'psy')
+
+# Chapitre 7 : Centre Spatial (Magma), Routes 126-128 (mer), Grotte Fonds Marins (Aqua), Arène de Juan (cap 81).
+for tid in ['GRUNT_SPACE_CENTER_1', 'GRUNT_SPACE_CENTER_2', 'GRUNT_SPACE_CENTER_3', 'GRUNT_SPACE_CENTER_4',
+            'GRUNT_SPACE_CENTER_5', 'GRUNT_SPACE_CENTER_6', 'GRUNT_SPACE_CENTER_7',
+            'GRUNT_SEAFLOOR_CAVERN_1', 'GRUNT_SEAFLOOR_CAVERN_2', 'GRUNT_SEAFLOOR_CAVERN_3', 'GRUNT_SEAFLOOR_CAVERN_4',
+            'GRUNT_SEAFLOOR_CAVERN_5']:
+    AUTO[tid] = (81, 68, 72)
+for tid in ['BARRY', 'BRENDA', 'DEAN', 'ISOBEL', 'LEONARDO', 'NIKKI', 'PABLO_1', 'SIENNA',
+            'AIDAN', 'ATHENA', 'CAMDEN', 'DONNY', 'HENRY', 'JONAH', 'KOJI_1', 'ROGER',
+            'ALEXA', 'CARLEE', 'HARRISON', 'ISAIAH_1', 'KATELYN_1', 'RUBEN', 'WAYNE']:
+    AUTO[tid] = (81, 66, 70)
+for tid in ['ANDREA', 'ANNIKA', 'BETHANY', 'BRIANNA', 'BRIDGET', 'CONNIE', 'CRISSY', 'DAPHNE', 'OLIVIA', 'TIFFANY']:
+    AUTO[tid] = (81, 72, 76, 'eau')  # Arène de Juan
 
 # Évolutions par niveau (espèce -> (niveau, évolution)), utilisées quand un plancher fait monter le niveau.
 EVOLVE = {
