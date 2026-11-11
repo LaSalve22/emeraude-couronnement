@@ -1,51 +1,50 @@
 gText_WouldYouLikeToRestYourPkmn::
-	.string "Hello, and welcome to\n"
-	.string "the POKéMON CENTER.\p"
-	.string "We restore your tired POKéMON\n"
-	.string "to full health.\p"
-	.string "Would you like to rest your POKéMON?$"
+	.string "Bonjour et bienvenue au Centre\n"
+	.string "Pokémon.\p"
+	.string "Nous soignons vos Pokémon épuisés.\n"
+	.string "Gratuitement, et sans poser de\l"
+	.string "questions.\p"
+	.string "Voulez-vous soigner vos Pokémon ?$"
 
 gText_IllTakeYourPkmn::
-	.string "Okay, I'll take your POKéMON\n"
-	.string "for a few seconds.$"
+	.string "Très bien, je prends vos Pokémon\n"
+	.string "quelques secondes.$"
 
 gText_RestoredPkmnToFullHealth::
-	.string "Thank you for waiting.\p"
-	.string "We've restored your POKéMON\n"
-	.string "to full health.$"
+	.string "Merci d'avoir patienté.\p"
+	.string "Vos Pokémon sont en pleine forme.$"
 
 gText_WeHopeToSeeYouAgain::
-	.string "We hope to see you again!$"
+	.string "À bientôt ! Pas trop vite, j'espère.$"
 
 gText_WelcomeCutShort::
-	.string "Hello, and welcome to\n"
-	.string "the POKéMON CENTER.\p"
-	.string "We restore your tired POKéMON\n"
-	.string "to full health.\p"
-	.string "Would you like to…$"
+	.string "Bonjour et bienvenue au Centre\n"
+	.string "Pokémon.\p"
+	.string "Nous soignons vos Pokémon épuisés.\p"
+	.string "Voulez-vous…$"
 
 gText_NoticesGoldCard::
-	.string "Th-that card…\n"
-	.string "Could it be… The GOLD CARD?!\p"
-	.string "Oh, the gold color is brilliant!\n"
-	.string "The four stars seem to sparkle!\p"
-	.string "I've seen several TRAINERS with\n"
-	.string "a SILVER CARD before, but, {PLAYER},\l"
-	.string "you're the first TRAINER I've ever\l"
-	.string "seen with a GOLD CARD!\p"
-	.string "Okay, {PLAYER}, please allow me\n"
-	.string "the honor of resting your POKéMON!$"
+	.string "Cette… cette carte… Ce serait… la\n"
+	.string "CARTE OR ?!\p"
+	.string "Oh, ce doré éclatant ! Ces quatre\n"
+	.string "étoiles qui scintillent !\p"
+	.string "J'ai déjà vu des Dresseurs avec une\n"
+	.string "CARTE ARGENT, mais {PLAYER}, tu es la\l"
+	.string "première personne que je vois avec une\n"
+	.string "CARTE OR !\p"
+	.string "{PLAYER}, accorde-moi l'honneur de\n"
+	.string "soigner tes Pokémon !$"
 
 gText_YouWantTheUsual::
-	.string "I'm delighted to see you, {PLAYER}!\n"
-	.string "You want the usual, am I right?$"
+	.string "Ravie de te revoir, {PLAYER} ! Comme\n"
+	.string "d'habitude, c'est ça ?$"
 
 gText_IllTakeYourPkmn2::
-	.string "Okay, I'll take your POKéMON\n"
-	.string "for a few seconds.$"
+	.string "Très bien, je prends tes Pokémon\n"
+	.string "quelques secondes.$"
 
 gText_ThankYouForWaiting::
-	.string "Thank you for waiting.$"
+	.string "Merci d'avoir patienté.$"
 
 gText_WeHopeToSeeYouAgain2::
-	.string "We hope to see you again!$"
+	.string "À bientôt !$"

@@ -1,0 +1,236 @@
+// Messages système en jeu : Centre Pokémon, objets reçus, sauvegarde, PC, Surf, Maître des Capacités
+
+@@ gText_WouldYouLikeToRestYourPkmn
+Bonjour et bienvenue au Centre Pokémon.
+
+Nous soignons vos Pokémon épuisés. Gratuitement, et sans poser de questions.
+
+Voulez-vous soigner vos Pokémon ?
+
+@@ gText_IllTakeYourPkmn
+Très bien, je prends vos Pokémon quelques secondes.
+
+@@ gText_RestoredPkmnToFullHealth
+Merci d'avoir patienté.
+
+Vos Pokémon sont en pleine forme.
+
+@@ gText_WeHopeToSeeYouAgain
+À bientôt ! Pas trop vite, j'espère.
+
+@@ gText_WelcomeCutShort
+Bonjour et bienvenue au Centre Pokémon.
+
+Nous soignons vos Pokémon épuisés.
+
+Voulez-vous…
+
+@@ gText_NoticesGoldCard
+Cette… cette carte… Ce serait… la CARTE OR ?!
+
+Oh, ce doré éclatant ! Ces quatre étoiles qui scintillent !
+
+J'ai déjà vu des Dresseurs avec une CARTE ARGENT, mais {PLAYER}, tu es la première personne que je vois avec une CARTE OR !
+
+{PLAYER}, accorde-moi l'honneur de soigner tes Pokémon !
+
+@@ gText_YouWantTheUsual
+Ravie de te revoir, {PLAYER} ! Comme d'habitude, c'est ça ?
+
+@@ gText_IllTakeYourPkmn2
+Très bien, je prends tes Pokémon quelques secondes.
+
+@@ gText_ThankYouForWaiting
+Merci d'avoir patienté.
+
+@@ gText_WeHopeToSeeYouAgain2
+À bientôt !
+
+@@ gText_ObtainedTheItem
+Tu obtiens : {STR_VAR_2} !
+
+@@ gText_TheBagIsFull
+Le SAC est plein…
+
+@@ gText_PutItemInPocket
+{PLAYER} range {STR_VAR_2} dans la poche {STR_VAR_3}.
+
+@@ gText_PlayerFoundOneItem
+{PLAYER} trouve : {STR_VAR_2} !
+
+@@ gText_TooBadBagIsFull
+Dommage ! Le SAC est plein…
+
+@@ gText_PlayerPutItemInBag
+{PLAYER} range {STR_VAR_2} dans le SAC.
+
+@@ gText_ObtainedTheDecor
+Tu obtiens : {STR_VAR_2} !
+
+@@ gText_NoRoomLeftForAnother
+Dommage ! Plus de place pour {STR_VAR_2}…
+
+@@ gText_TheDecorWasTransferredToThePC
+{STR_VAR_2} est envoyé sur le PC.
+
+@@ gText_ObtainedTheItems
+Tu obtiens : {STR_VAR_2} x{STR_VAR_1} !
+
+@@ gText_PlayerFoundItems
+{PLAYER} trouve : {STR_VAR_2} x{STR_VAR_1} !
+
+@@ gText_PutCoinsAwayInCoinCase
+{PLAYER} range les JETONS dans la BOÎTE JETONS.
+
+@@ gText_FoundXCoins
+{PLAYER} trouve {STR_VAR_1} {STR_VAR_2} !
+
+@@ gText_FoundXItems
+{PLAYER} trouve : {STR_VAR_2} x{STR_VAR_1} !
+
+@@ gText_CoinCaseIsFull
+Dommage ! La BOÎTE JETONS est pleine…
+
+@@ gText_NothingToPutThemIn
+Dommage ! Tu n'as rien pour les ranger…
+
+@@ gText_ConfirmSave
+Sauvegarder la partie ?
+
+@@ gText_AlreadySavedFile
+Une sauvegarde existe déjà. L'écraser ?
+
+@@ gText_SavingDontTurnOff
+SAUVEGARDE… N'ÉTEINS PAS LA CONSOLE.
+
+@@ gText_PlayerSavedGame
+{PLAYER} sauvegarde la partie.
+
+@@ gText_DifferentSaveFile
+ATTENTION !
+
+Une autre partie est déjà sauvegardée.
+
+Si tu sauvegardes maintenant, l'autre aventure sera entièrement perdue, objets et Pokémon compris.
+
+Sauvegarder quand même et écraser l'autre partie ?
+
+@@ gText_SaveError
+Erreur de sauvegarde.
+
+Remplace la mémoire de sauvegarde.
+
+@@ gText_SavingDontTurnOffPower
+SAUVEGARDE… N'ÉTEINS PAS LA CONSOLE.
+
+@@ Text_BootUpPC
+{PLAYER} allume le PC.
+
+@@ gText_WhichPCShouldBeAccessed
+Quel PC utiliser ?
+
+@@ gText_AccessedSomeonesPC
+Connexion au PC de quelqu'un.
+
+@@ gText_StorageSystemOpened
+Système de stockage de Pokémon ouvert.
+
+@@ gText_AccessedPlayersPC
+Connexion au PC de {PLAYER}.
+
+@@ gText_AccessedLanettesPC
+Connexion au PC de Lanette.
+
+@@ gText_AccessedBillsPC
+Connexion au PC de Léo.
+
+@@ gText_PkmnTransferredSomeonesPC
+{STR_VAR_2} est envoyé sur le PC de quelqu'un.
+
+Il est rangé dans la BOÎTE “{STR_VAR_1}”.
+
+@@ gText_PkmnTransferredSomeonesPCBoxFull
+La BOÎTE “{STR_VAR_3}” du PC de quelqu'un est pleine.
+
+{STR_VAR_2} est envoyé dans la BOÎTE “{STR_VAR_1}”.
+
+@@ gText_PkmnSentToPCAfterCatch
+{STR_VAR_2} est envoyé sur le PC {B_PC_CREATOR_NAME}.
+
+Il est rangé dans la BOÎTE “{STR_VAR_1}”.
+
+@@ gText_PlayerObtainedTheMon
+{PLAYER} obtient {STR_VAR_1} !
+
+@@ gText_NoMoreRoomForPokemon
+Plus de place pour les Pokémon !
+
+Les BOÎTES sont pleines et ne peuvent plus en accueillir !
+
+@@ gText_NicknameThisPokemon
+Donner un surnom à {STR_VAR_1} ?
+
+@@ gText_WantToUseSurf
+L'eau est d'un bleu profond… Utiliser SURF ?
+
+@@ gText_PlayerUsedSurf
+{STR_VAR_1} utilise SURF !
+
+@@ Text_CurrentTooFast
+Le courant est bien trop fort ! Impossible d'utiliser SURF ici…
+
+@@ MoveRelearner_Text_WouldLearnNewMoves
+Salut, je suis le Maître des Capacités. Tu veux faire apprendre des capacités à tes Pokémon ?
+
+@@ MoveRelearner_Text_LevelUpMoves
+Par niveau
+
+@@ MoveRelearner_Text_EggMoves
+Œuf
+
+@@ MoveRelearner_Text_TMMoves
+CT
+
+@@ MoveRelearner_Text_TutormoveMoves
+Donneur
+
+@@ MoveRelearner_Text_SeeYa
+À plus !
+
+@@ MoveRelearner_Text_AnythingElse
+Je peux faire autre chose pour toi ?
+
+@@ MoveRelearner_Text_ChoosePkmn
+Choisis ton Pokémon.
+
+@@ MoveRelearner_Text_HaveNoPkmn
+Tu n'as aucun Pokémon.
+
+@@ MoveRelearner_Text_CantTeachMoveToEgg
+Désolé… Un Œuf ne peut rien apprendre.
+
+@@ MoveRelearner_Text_CantTeachMoveToPkmn
+Désolé…
+
+Je n'ai aucune capacité à apprendre à ce Pokémon.
+
+@@ MoveRelearner_Text_LevelUpMoveLWR
+capacité de niveau
+
+@@ MoveRelearner_Text_EggMoveLWR
+capacité Œuf
+
+@@ MoveRelearner_Text_TMMoveLWR
+capacité de CT
+
+@@ MoveRelearner_Text_TutorMoveLWR
+capacité de donneur
+
+@@ MoveRelearner_Text_MoveLWR
+capacité
+
+@@ MoveRelearner_Text_WhichXmoveShouldTeach
+Quelle {STR_VAR_3} apprendre ?
+
+@@ MoveRelearner_Text_ThankYouComeAgain
+Merci et à bientôt !
