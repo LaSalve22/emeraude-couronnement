@@ -50,11 +50,11 @@ et sur GitHub.
 - v0.22 - équipes Hard / Kaizo du chapitre 7 (Centre Spatial, Grotte Fonds Marins, Juan)
 - v0.23 - équipes Hard / Kaizo du chapitre 8 (Route Victoire, Conseil 4, Marc)
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
+- v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
 
 ## Plus tard
 
 - Placer les autres Méga-Gemmes dans le monde
 - Traduction des chapitres suivants et des descriptions (à la fin, priorité au contenu du jeu - choix d'Adrien)
 - Objets tenus récupérés après chaque combat, formes régionales
-- Demandé par Adrien : objet pour changer la nature d'un Pokémon après Norman, puis changer les EV après la Ligue
 - Mis de côté : Blue, Lucas, Aurore (en attente de sprites)

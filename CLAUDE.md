@@ -254,12 +254,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - `CAP_COMBAT` dans `tools/trainers/equipes_couronnement.py` décale vers le bas les équipes faites à la main qui dépassaient
   (Lévy & Tatia 71, Arthur 78, Juan 78 ; écarts conservés). Règle : l'as d'un combat ne dépasse jamais le cap du badge en jeu.
 
+## Fait (v0.24) - Coach EV (changement d'EV après la Ligue)
+
+- Coach EV (Black Belt) au Centre Pokémon de Clémenti-Ville (10,4), à côté de l'herboriste, après la Ligue (FLAG_SYS_GAME_CLEAR).
+  Gratuit : choix du Pokémon, puis stat par stat 252 / 128 / 4 / 0, ou tout à 0 ; limite 252 par stat et 510 au total
+  (valeur réduite au maximum possible s'il manque de la place). Stats recalculées aussitôt.
+- Code : `src/coach_ev.c`, `include/coach_ev.h`, script `data/scripts/coach_ev.inc` ; tests `test/coach_ev.c` (`TESTS="Coach EV"`).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Placer les Méga-Gemmes dans le monde.
-2. Demandé par Adrien : changement d'EV après la Ligue.
-3. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
+2. Puis : niveau de lien dans le résumé, objets tenus récupérés après combat, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 
