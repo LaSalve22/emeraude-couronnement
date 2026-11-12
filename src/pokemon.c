@@ -1391,6 +1391,7 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
 
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
     bool32 isPlayerStarter = GetMonData(mon, MON_DATA_PLAYER_STARTER);
+    bool32 isDarkBall = GetMonData(mon, MON_DATA_IS_SHADOW);
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -1420,6 +1421,8 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
             baseStat = baseStat * (100 + P_PLAYER_STARTER_STAT_BONUS) / 100;
         s32 n = (((2 * baseStat + iv[i] + ev[i] / 4) * level) / 100) + 5;
         n = ModifyStatByNature(nature, n, i);
+        if (isDarkBall) // Couronnement : Dark Ball, +20 % hors PV
+            n = n * (100 + COURONNEMENT_DARK_BALL_BONUS) / 100;
         if (B_FRIENDSHIP_BOOST == TRUE)
             n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));
         SetMonData(mon, MON_DATA_MAX_HP + i, &n);
@@ -2657,6 +2660,8 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_FRIENDSHIP:
             SET8(GetSubstruct0(boxMon)->friendship);
+            if (GetSubstruct3(boxMon)->isShadow) // Couronnement : Dark Ball, aucune amitié
+                GetSubstruct0(boxMon)->friendship = 0;
             break;
         case MON_DATA_MOVE1:
             SET16(GetSubstruct1(boxMon)->move1);

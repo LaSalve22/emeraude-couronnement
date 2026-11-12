@@ -7813,6 +7813,14 @@ static void FinalizeCapture(void)
     struct Pokemon *caughtMon = GetBattlerMon(gBattlerTarget);
     SetMonData(caughtMon, MON_DATA_POKEBALL, &ballId);
     RestoreCaughtWildMonHeldItem(caughtMon, gBattlerTarget);
+    if (ballId == BALL_STRANGE) // Couronnement : Dark Ball (ex-Étrange Ball) : aura sombre, plus d'amitié, stats +20 %
+    {
+        bool8 dark = TRUE;
+        u8 zero = 0;
+        SetMonData(caughtMon, MON_DATA_IS_SHADOW, &dark);
+        SetMonData(caughtMon, MON_DATA_FRIENDSHIP, &zero);
+        CalculateMonStats(caughtMon);
+    }
 
     if (CalculatePlayerPartyCount() == PARTY_SIZE)
         gBattleCommunication[MULTISTRING_CHOOSER] = 0;

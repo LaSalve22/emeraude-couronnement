@@ -18,6 +18,8 @@
 #include "constants/songs.h"
 #include "trainer_pools.h"
 #include "battle_transition.h"
+#include "item_icon.h"
+#include "sprite.h"
 
 // Émeraude Couronnement : Couronnement Mondial.
 // - Elo de départ 1500 ; K = 32 ; attente E = 1 / (1 + 10^((Elo adverse - Elo joueur) / 400)).
@@ -75,14 +77,14 @@ static const u16 sEloBase[COURONNEMENT_NB_TOURNOIS_TOTAL] =
     1950,
 };
 
-static const u8 sText_Poke[] = _("Poké");
-static const u8 sText_Super[] = _("Super");
-static const u8 sText_Hyper[] = _("Hyper");
-static const u8 sText_Master[] = _("Master");
+static const u8 sText_Poke[] = _("Poké Ball");
+static const u8 sText_Super[] = _("Super Ball");
+static const u8 sText_Hyper[] = _("Hyper Ball");
+static const u8 sText_Master[] = _("Master Ball");
 static const u8 sText_Champions[] = _("Champions");
 static const u8 *const sNomsPaliers[] = { sText_Poke, sText_Super, sText_Hyper, sText_Master, sText_Champions };
 
-static const u8 sText_Statut[] = _("Couronnement Mondial\nPalier {STR_VAR_1}\pRang {STR_VAR_2}\nElo : {STR_VAR_3}");
+static const u8 sText_Statut[] = _("Rang mondial : {STR_VAR_2}\nPalier : {STR_VAR_1}\pElo : {STR_VAR_3}");
 static const u8 sText_EquipeDe[] = _("Équipe de ");
 static const u8 sText_DeuxPoints[] = _(" :\n");
 static const u8 sText_Virgule[] = _(", ");
@@ -475,4 +477,52 @@ void Couronnement_BufferMenuL(void)
 void Couronnement_EstChampionDuMonde(void)
 {
     gSpecialVar_Result = (VarGet(VAR_COURONNEMENT_TOURNOIS) & (1 << COURONNEMENT_TOURNOI_FINALE)) != 0;
+}
+
+// ------------------------------------------------------------------ Icône de la Ball du palier (statut, menu L)
+#define TAG_BALLE_PALIER 0x5DB1
+EWRAM_DATA static u8 sBallePalierSprite = 0; // id du sprite + 1 (0 = aucun)
+
+void Couronnement_AfficherBallePalier(void)
+{
+    static const u16 sBalles[] = {
+        [PALIER_POKE] = ITEM_POKE_BALL, [PALIER_SUPER] = ITEM_GREAT_BALL, [PALIER_HYPER] = ITEM_ULTRA_BALL,
+        [PALIER_MASTER] = ITEM_MASTER_BALL, [PALIER_CHAMPIONS] = ITEM_MASTER_BALL,
+    };
+    u8 id = AddItemIconSprite(TAG_BALLE_PALIER, TAG_BALLE_PALIER, sBalles[Couronnement_PalierDepuisElo(Couronnement_GetElo())]);
+
+    if (id != MAX_SPRITES)
+    {
+        sBallePalierSprite = id + 1;
+        gSprites[id].x2 = 213; // dans le coin droit de la boîte de message
+        gSprites[id].y2 = 140;
+        gSprites[id].oam.priority = 0;
+    }
+}
+
+void Couronnement_CacherBallePalier(void)
+{
+    if (sBallePalierSprite == 0)
+        return;
+    FreeSpriteTilesByTag(TAG_BALLE_PALIER);
+    FreeSpritePaletteByTag(TAG_BALLE_PALIER);
+    FreeSpriteOamMatrix(&gSprites[sBallePalierSprite - 1]);
+    DestroySprite(&gSprites[sBallePalierSprite - 1]);
+    sBallePalierSprite = 0;
+}
+
+// ------------------------------------------------------------------ Menu L : Type Téra
+// VAR_0x8004 = Pokémon de l'équipe, VAR_0x8005 = choix dans la liste du script (même ordre que sTypesTera).
+void Couronnement_ChangerTypeTera(void)
+{
+    static const u8 sTypesTera[] = {
+        TYPE_NORMAL, TYPE_FIRE, TYPE_WATER, TYPE_GRASS, TYPE_ELECTRIC, TYPE_ICE, TYPE_FIGHTING, TYPE_POISON, TYPE_GROUND,
+        TYPE_FLYING, TYPE_PSYCHIC, TYPE_BUG, TYPE_ROCK, TYPE_GHOST, TYPE_DRAGON, TYPE_DARK, TYPE_STEEL, TYPE_FAIRY,
+    };
+    u8 type;
+
+    if (gSpecialVar_0x8004 >= PARTY_SIZE || gSpecialVar_0x8005 >= ARRAY_COUNT(sTypesTera))
+        return;
+    type = sTypesTera[gSpecialVar_0x8005];
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_TERA_TYPE, &type);
 }

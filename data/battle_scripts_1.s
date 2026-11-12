@@ -5421,6 +5421,15 @@ BattleScript_LifeOrbActivates::
 	tryfaintmon BS_ATTACKER
 	return
 
+@ Émeraude Couronnement : contrecoup de la Dark Ball
+BattleScript_DarkAuraRecoil::
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
+	printstring STRINGID_LOSTSOMEOFITSHP
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER
+	return
+
 BattleScript_ItemHealHP_Ret::
 	call BattleScript_ItemPopUp_Attacker
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT

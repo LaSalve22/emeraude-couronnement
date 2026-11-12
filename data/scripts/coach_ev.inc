@@ -5,18 +5,27 @@ CoachEV_EventScript_Coach::
 	faceplayer
 	goto_if_unset FLAG_SYS_GAME_CLEAR, CoachEV_EventScript_PasEncore
 	msgbox CoachEV_Text_Bienvenue, MSGBOX_DEFAULT
+	call CoachEV_EventScript_Session
+	msgbox CoachEV_Text_AuRevoir, MSGBOX_DEFAULT
+	release
+	end
+
+@ Choix du Pokémon puis réglage stat par stat ; aussi appelé par le menu L (après la Ligue).
+CoachEV_EventScript_Session::
 	special ChoosePartyMon
 	waitstate
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CoachEV_EventScript_Fin
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CoachEV_EventScript_SessionFin
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-	goto_if_eq VAR_RESULT, SPECIES_EGG, CoachEV_EventScript_Oeuf
+	goto_if_ne VAR_RESULT, SPECIES_EGG, CoachEV_EventScript_Menu
+	msgbox CoachEV_Text_Oeuf, MSGBOX_DEFAULT
+	goto CoachEV_EventScript_SessionFin
 CoachEV_EventScript_Menu::
 	special CoachEV_Afficher
 	message gStringVar4
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 8, 0, DYN_MULTICHOICE_CB_NONE, CoachEV_Text_PV, CoachEV_Text_Attaque, CoachEV_Text_Defense, CoachEV_Text_AtqSpe, CoachEV_Text_DefSpe, CoachEV_Text_Vitesse, CoachEV_Text_ToutAZero, CoachEV_Text_Termine
-	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, CoachEV_EventScript_Fin
-	goto_if_eq VAR_RESULT, 7, CoachEV_EventScript_Fin
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, CoachEV_EventScript_SessionFin
+	goto_if_eq VAR_RESULT, 7, CoachEV_EventScript_SessionFin
 	copyvar VAR_0x8005, VAR_RESULT
 	goto_if_eq VAR_RESULT, COACH_EV_TOUT_A_ZERO, CoachEV_EventScript_Appliquer
 	message CoachEV_Text_Combien
@@ -29,16 +38,8 @@ CoachEV_EventScript_Appliquer::
 	goto_if_eq VAR_RESULT, FALSE, CoachEV_EventScript_Menu
 	msgbox CoachEV_Text_PasDePlace, MSGBOX_DEFAULT
 	goto CoachEV_EventScript_Menu
-
-CoachEV_EventScript_Oeuf::
-	msgbox CoachEV_Text_Oeuf, MSGBOX_DEFAULT
-	release
-	end
-
-CoachEV_EventScript_Fin::
-	msgbox CoachEV_Text_AuRevoir, MSGBOX_DEFAULT
-	release
-	end
+CoachEV_EventScript_SessionFin::
+	return
 
 CoachEV_EventScript_PasEncore::
 	msgbox CoachEV_Text_PasEncore, MSGBOX_DEFAULT

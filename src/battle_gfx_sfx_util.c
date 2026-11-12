@@ -674,6 +674,13 @@ void BattleLoadMonSpriteGfx(struct Pokemon *mon, enum BattlerId battler)
         CpuCopy32(&gPlttBufferFaded[paletteOffset], &gPlttBufferUnfaded[paletteOffset], PLTT_SIZEOF(16));
     }
 
+    // Émeraude Couronnement : aura sombre des Pokémon capturés en Dark Ball
+    if (GetMonData(mon, MON_DATA_IS_SHADOW))
+    {
+        BlendPalette(paletteOffset, 16, 7, RGB(8, 0, 14));
+        CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, PLTT_SIZEOF(16));
+    }
+
     // dynamax tint
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
     {

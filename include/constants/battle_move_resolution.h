@@ -161,6 +161,7 @@ enum MoveEndState
     MOVEEND_CARD_BUTTON, // Red Card / Eject Button
     MOVEEND_FORM_CHANGE,
     MOVEEND_LIFE_ORB_SHELL_BELL,
+    MOVEEND_DARK_AURA, // Couronnement : contrecoup de la Dark Ball
     MOVEEND_EMERGENCY_EXIT,
     MOVEEND_HIT_ESCAPE,
     MOVEEND_PICKPOCKET,

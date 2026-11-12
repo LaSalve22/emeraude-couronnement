@@ -37,14 +37,14 @@ const struct ItemInfo gItemsInfo[] =
 
 // Poké Balls
 
-    [ITEM_STRANGE_BALL] =
+    [ITEM_STRANGE_BALL] = // Émeraude Couronnement : devenue la Dark Ball
     {
-        .name = ITEM_NAME("Étrange Ball"),
-        .price = 0,
+        .name = ITEM_NAME("Dark Ball"),
+        .price = COURONNEMENT_PRIX_DARK_BALL,
         .description = COMPOUND_STRING(
-            "Une Ball qui a voyagé\n"
-            "à travers l'espace\n"
-            "et le temps."),
+            "Le Pokémon capturé n'a\n"
+            "aucune amitié. Stats +20 %,\n"
+            "mais -10 % PV par attaque."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,

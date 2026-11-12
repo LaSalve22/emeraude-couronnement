@@ -1,5 +1,5 @@
 NONE|?????
-STRANGE_BALL|Une Ball qui a voyagé à travers l'espace et le temps.
+STRANGE_BALL|Le Pokémon capturé n'a aucune amitié. Stats +20 %, mais -10 % PV par attaque.
 POKE_BALL|Un objet pour capturer les Pokémon sauvages.
 GREAT_BALL|Une bonne Ball, plus efficace qu'une Poké Ball.
 ULTRA_BALL|Une Ball très efficace, meilleure qu'une Super Ball.

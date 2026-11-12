@@ -36,5 +36,8 @@ void Couronnement_ChoixAdverse(void);
 void Couronnement_FinTournoi(void);
 void Couronnement_EstChampionDuMonde(void);
 void Couronnement_BufferMenuL(void);
+void Couronnement_AfficherBallePalier(void);
+void Couronnement_CacherBallePalier(void);
+void Couronnement_ChangerTypeTera(void);
 
 #endif // GUARD_COURONNEMENT_H

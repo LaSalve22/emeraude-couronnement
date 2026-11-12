@@ -4,15 +4,25 @@
 @ ------------------------------------------------------------------ Menu Start « MONDIAL »
 Couronnement_EventScript_Statut::
 	lockall
+	call Couronnement_EventScript_AfficherRang
+	releaseall
+	end
+
+@ Rang, palier (avec l'icône de la Ball du palier), Elo, tournois gagnés. Utilisé par MONDIAL et le menu L.
+Couronnement_EventScript_AfficherRang::
 	special Couronnement_BufferStatut
+	special Couronnement_AfficherBallePalier
 	msgbox gCouronnementTexteEquipe, MSGBOX_DEFAULT
 	msgbox Couronnement_Text_TournoisGagnes, MSGBOX_DEFAULT
 	special Couronnement_EstChampionDuMonde
-	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_StatutFin
+	call_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_TitreChampion
+	special Couronnement_CacherBallePalier
+	closemessage
+	return
+
+Couronnement_EventScript_TitreChampion::
 	msgbox Couronnement_Text_TitreChampion, MSGBOX_DEFAULT
-Couronnement_EventScript_StatutFin::
-	releaseall
-	end
+	return
 
 @ ------------------------------------------------------------------ Pass remis par le rival (labo du Prof. Seko)
 Couronnement_EventScript_RivalDonnePass::
@@ -459,19 +469,59 @@ Couronnement_Text_RepousseInfinieExplique:
 	.string "rencontres, et les remet quand tu\l"
 	.string "veux. Mets-la sur SELECT.$"
 
-@ ------------------------------------------------------------------ Menu L (terrain) : Repousse Infinie et course
+@ ------------------------------------------------------------------ Menu L (terrain), fonctions débloquées au fil du jeu
+@ Repousse Infinie et Course : dès le début ; PC : 1er badge ; Rang mondial : pass ; Type Téra : Orbe Téracristal ;
+@ Soin : 8e badge ; EV : après la Ligue. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
 Couronnement_EventScript_MenuL::
 	lockall
 Couronnement_EventScript_MenuLBoucle::
 	special Couronnement_BufferMenuL
 	message Couronnement_Text_MenuL
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, gStringVar1, gStringVar2, Couronnement_Text_MenuLFermer
-	goto_if_eq VAR_RESULT, 0, Couronnement_EventScript_MenuLRepousse
-	goto_if_eq VAR_RESULT, 1, Couronnement_EventScript_MenuLCourse
+	goto_if_set FLAG_COURONNEMENT_EN_COURS, Couronnement_EventScript_MenuLRepousseCourse
+	goto_if_unset FLAG_BADGE08_GET, Couronnement_EventScript_MenuLPC
+	dynmultipush Couronnement_Text_MenuLSoin, 0
+Couronnement_EventScript_MenuLPC::
+	goto_if_unset FLAG_BADGE01_GET, Couronnement_EventScript_MenuLRepousseCourse
+	dynmultipush Couronnement_Text_MenuLPC, 1
+Couronnement_EventScript_MenuLRepousseCourse::
+	dynmultipush gStringVar1, 2
+	dynmultipush gStringVar2, 3
+	goto_if_set FLAG_COURONNEMENT_EN_COURS, Couronnement_EventScript_MenuLRang
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Couronnement_EventScript_MenuLTera
+	dynmultipush Couronnement_Text_MenuLEV, 4
+Couronnement_EventScript_MenuLTera::
+	checkitem ITEM_TERA_ORB
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLRang
+	dynmultipush Couronnement_Text_MenuLTera, 5
+Couronnement_EventScript_MenuLRang::
+	goto_if_unset FLAG_COURONNEMENT_PASS, Couronnement_EventScript_MenuLFermer
+	dynmultipush Couronnement_Text_MenuLRang, 6
+Couronnement_EventScript_MenuLFermer::
+	dynmultipush Couronnement_Text_MenuLFermer, 7
+	dynmultistack 0, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	switch VAR_RESULT
+	case 0, Couronnement_EventScript_MenuLSoin
+	case 1, Couronnement_EventScript_MenuLOuvrirPC
+	case 2, Couronnement_EventScript_MenuLRepousse
+	case 3, Couronnement_EventScript_MenuLCourse
+	case 4, Couronnement_EventScript_MenuLEV
+	case 5, Couronnement_EventScript_MenuLChoisirTera
+	case 6, Couronnement_EventScript_MenuLAfficherRang
 	closemessage
 	releaseall
 	end
+
+Couronnement_EventScript_MenuLSoin::
+	special HealPlayerParty
+	playse SE_USE_ITEM
+	msgbox Couronnement_Text_MenuLSoigne, MSGBOX_DEFAULT
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLOuvrirPC::
+	playse SE_PC_LOGIN
+	special ShowPokemonStorageSystemPC
+	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLRepousse::
 	goto_if_set FLAG_REPOUSSE_INFINIE, Couronnement_EventScript_MenuLRepousseOff
@@ -493,8 +543,87 @@ Couronnement_EventScript_MenuLCourseOff::
 	playse SE_SELECT
 	goto Couronnement_EventScript_MenuLBoucle
 
+Couronnement_EventScript_MenuLEV::
+	call CoachEV_EventScript_Session
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLAfficherRang::
+	call Couronnement_EventScript_AfficherRang
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLChoisirTera::
+	msgbox Couronnement_Text_MenuLQuelPokemon, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Couronnement_EventScript_MenuLBoucle
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_eq VAR_RESULT, SPECIES_EGG, Couronnement_EventScript_MenuLBoucle
+	message Couronnement_Text_MenuLQuelType
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 7, 0, DYN_MULTICHOICE_CB_NONE, Couronnement_Text_TypeNormal, Couronnement_Text_TypeFeu, Couronnement_Text_TypeEau, Couronnement_Text_TypePlante, Couronnement_Text_TypeElectrik, Couronnement_Text_TypeGlace, Couronnement_Text_TypeCombat, Couronnement_Text_TypePoison, Couronnement_Text_TypeSol, Couronnement_Text_TypeVol, Couronnement_Text_TypePsy, Couronnement_Text_TypeInsecte, Couronnement_Text_TypeRoche, Couronnement_Text_TypeSpectre, Couronnement_Text_TypeDragon, Couronnement_Text_TypeTenebres, Couronnement_Text_TypeAcier, Couronnement_Text_TypeFee
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Couronnement_EventScript_MenuLBoucle
+	copyvar VAR_0x8005, VAR_RESULT
+	special Couronnement_ChangerTypeTera
+	playse SE_SUCCESS
+	msgbox Couronnement_Text_MenuLTeraChange, MSGBOX_DEFAULT
+	goto Couronnement_EventScript_MenuLBoucle
+
 Couronnement_Text_MenuL:
 	.string "Réglages rapides (L).$"
-
+Couronnement_Text_MenuLSoin:
+	.string "Soigner l'équipe$"
+Couronnement_Text_MenuLPC:
+	.string "PC de stockage$"
+Couronnement_Text_MenuLEV:
+	.string "Modifier les EV$"
+Couronnement_Text_MenuLTera:
+	.string "Type Téra$"
+Couronnement_Text_MenuLRang:
+	.string "Rang mondial$"
 Couronnement_Text_MenuLFermer:
 	.string "Fermer$"
+Couronnement_Text_MenuLSoigne:
+	.string "Ton équipe est en pleine forme.$"
+Couronnement_Text_MenuLQuelPokemon:
+	.string "Quel Pokémon change de type Téra ?$"
+Couronnement_Text_MenuLQuelType:
+	.string "Quel type Téra ?$"
+Couronnement_Text_MenuLTeraChange:
+	.string "Type Téra changé.$"
+Couronnement_Text_TypeNormal:
+	.string "Normal$"
+Couronnement_Text_TypeFeu:
+	.string "Feu$"
+Couronnement_Text_TypeEau:
+	.string "Eau$"
+Couronnement_Text_TypePlante:
+	.string "Plante$"
+Couronnement_Text_TypeElectrik:
+	.string "Électrik$"
+Couronnement_Text_TypeGlace:
+	.string "Glace$"
+Couronnement_Text_TypeCombat:
+	.string "Combat$"
+Couronnement_Text_TypePoison:
+	.string "Poison$"
+Couronnement_Text_TypeSol:
+	.string "Sol$"
+Couronnement_Text_TypeVol:
+	.string "Vol$"
+Couronnement_Text_TypePsy:
+	.string "Psy$"
+Couronnement_Text_TypeInsecte:
+	.string "Insecte$"
+Couronnement_Text_TypeRoche:
+	.string "Roche$"
+Couronnement_Text_TypeSpectre:
+	.string "Spectre$"
+Couronnement_Text_TypeDragon:
+	.string "Dragon$"
+Couronnement_Text_TypeTenebres:
+	.string "Ténèbres$"
+Couronnement_Text_TypeAcier:
+	.string "Acier$"
+Couronnement_Text_TypeFee:
+	.string "Fée$"
+

@@ -294,6 +294,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Menu L sur le terrain (`Couronnement_EventScript_MenuL`) : Repousse Infinie OUI / NON et Course AUTO / BOUTON B (sauf si
   BOUTONS = L=A). On court dès le début, sans les Chaussures de Course (condition `FLAG_SYS_B_DASH` retirée).
 
+## Fait (v0.28) - menu L complet, rang avec Ball, Dark Ball
+
+- Menu L (`Couronnement_EventScript_MenuL`, `dynmultipush`) : Soigner l'équipe (8e badge), PC de stockage (1er badge), Repousse
+  Infinie et Course (dès le début), Modifier les EV (après la Ligue, `CoachEV_EventScript_Session`), Type Téra (avec l'Orbe
+  Téracristal, `Couronnement_ChangerTypeTera`), Rang mondial (avec le pass). Soin / PC / EV / Téra masqués pendant un tournoi.
+- Rang mondial (MONDIAL et menu L) : palier affiché en Ball (Poké / Super / Hyper / Master, Champions = Master Ball) avec l'icône
+  de la Ball dans la boîte de message (`Couronnement_AfficherBallePalier` / `CacherBallePalier`).
+- Carte Dresseur : Red / Green ont leur sprite (`CreateTrainerCardTrainerPic`, `src/trainer_card.c`).
+- Dark Ball = ex-Étrange Ball (`ITEM_STRANGE_BALL`, `BALL_STRANGE`) : le Pokémon capturé a `MON_DATA_IS_SHADOW` (bit isShadow, inutilisé
+  par le moteur), amitié bloquée à 0 (SetBoxMonData), stats hors PV +20 % (`CalculateMonStats`), perd 10 % de ses PV max après
+  chaque attaque qui touche (`MOVEEND_DARK_AURA`, `BattleScript_DarkAuraRecoil`), aura violet sombre en combat
+  (`BattleLoadMonSpriteGfx`). Réglages : `COURONNEMENT_DARK_BALL_*` dans `include/config/item.h`. Graphismes tirés du dessin
+  d'Adrien : `tools/couronnement/dark_ball_gfx.py`. 4 cachées (Chemin Escarpé, Routes 113-114, Repaire Aqua ; `tools/megas/placer.py`),
+  vendues 5000 par le Méga-Collectionneur après la Ligue. Tests : `test/dark_ball.c` (`TESTS="Dark Ball"`).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

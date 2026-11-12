@@ -4719,6 +4719,28 @@ static enum MoveEndResult MoveEndLifeOrbShellBell(struct BattleCalcValues *cv)
     return result;
 }
 
+// Émeraude Couronnement : un Pokémon capturé en Dark Ball perd 10 % de ses PV max après chaque attaque qui touche.
+static enum MoveEndResult MoveEndDarkAura(struct BattleCalcValues *cv)
+{
+    enum MoveEndResult result = MOVEEND_RESULT_CONTINUE;
+    enum BattlerId battlerAtk = cv->battlerAtk;
+
+    if (!gBattleStruct->unableToUseMove
+     && IsBattlerAlive(battlerAtk)
+     && gBattleStruct->battlerState[battlerAtk].originalBattlerPartyId == PARTY_SIZE
+     && GetMonData(GetBattlerMon(battlerAtk), MON_DATA_IS_SHADOW)
+     && (IsAnyTargetTurnDamaged(battlerAtk, INCLUDING_SUBSTITUTES) || gBattleScripting.savedDmg > 0)
+     && !IsAbilityAndRecord(battlerAtk, GetBattlerAbility(battlerAtk), ABILITY_MAGIC_GUARD))
+    {
+        SetPassiveDamageAmount(battlerAtk, GetNonDynamaxMaxHP(battlerAtk) * COURONNEMENT_DARK_BALL_CONTRECOUP / 100);
+        BattleScriptCall(BattleScript_DarkAuraRecoil);
+        result = MOVEEND_RESULT_RUN_SCRIPT;
+    }
+
+    gBattleScripting.moveendState++;
+    return result;
+}
+
 static enum MoveEndResult MoveEndEmergencyExit(struct BattleCalcValues *cv)
 {
     enum MoveEndResult result = MOVEEND_RESULT_CONTINUE;
@@ -5354,6 +5376,7 @@ static enum MoveEndResult (*const sMoveEndHandlers[])(struct BattleCalcValues *c
     [MOVEEND_CARD_BUTTON] = MoveEndCardButton,
     [MOVEEND_FORM_CHANGE] = MoveEndFormChange,
     [MOVEEND_LIFE_ORB_SHELL_BELL] = MoveEndLifeOrbShellBell,
+    [MOVEEND_DARK_AURA] = MoveEndDarkAura,
     [MOVEEND_EMERGENCY_EXIT] = MoveEndEmergencyExit,
     [MOVEEND_HIT_ESCAPE] = MoveEndHitEscape,
     [MOVEEND_PICKPOCKET] = MoveEndPickpocket,

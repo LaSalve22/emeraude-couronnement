@@ -20,6 +20,9 @@ gSpecials::
 	def_special HealPlayerParty
 	def_special Couronnement_DonnerPass
 	def_special Couronnement_BufferMenuL
+	def_special Couronnement_AfficherBallePalier
+	def_special Couronnement_CacherBallePalier
+	def_special Couronnement_ChangerTypeTera
 	def_special CoachEV_Afficher
 	def_special CoachEV_Appliquer
 	def_special Couronnement_BufferStatut

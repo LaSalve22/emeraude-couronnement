@@ -19,6 +19,7 @@ MegaGemmes_EventScript_PasEncore::
 
 	.align 2
 MegaGemmes_Boutique:
+	.2byte ITEM_STRANGE_BALL @ Dark Ball
 	.2byte ITEM_BLASTOISINITE
 	.2byte ITEM_MEWTWONITE_X
 	.2byte ITEM_MEWTWONITE_Y

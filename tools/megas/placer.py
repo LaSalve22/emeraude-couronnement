@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Émeraude Couronnement : place les Méga-Gemmes dans des Poké Balls existantes (objets ordinaires remplacés).
+"""Émeraude Couronnement : place les Méga-Gemmes (et les Dark Balls) dans des Poké Balls existantes (objets ordinaires remplacés).
 
 Relançable : chaque entrée (carte, objet d'origine) remplace la première Poké Ball restante de cet objet. Si l'objet a déjà été
 remplacé, l'entrée est ignorée. Les autres Méga-Gemmes sont vendues après la Ligue (data/scripts/mega_gemmes.inc).
@@ -50,6 +50,11 @@ PLACEMENTS = [
     ('VictoryRoad_B1F', 'FULL_RESTORE', 'GARCHOMPITE'),
     ('VictoryRoad_B2F', 'FULL_HEAL', 'AGGRONITE'),
     ('ArtisanCave_B1F', 'HP_UP', 'METAGROSSITE'),
+    # Dark Balls (ex-Étrange Ball) : quelques-unes dès le chapitre 3, les autres vendues après la Ligue
+    ('JaggedPass', 'BURN_HEAL', 'STRANGE_BALL'),
+    ('Route113', 'SUPER_REPEL', 'STRANGE_BALL'),
+    ('Route114', 'ENERGY_POWDER', 'STRANGE_BALL'),
+    ('AquaHideout_B1F', 'MAX_ELIXIR', 'STRANGE_BALL'),
 ]
 
 
