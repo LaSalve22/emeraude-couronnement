@@ -235,12 +235,12 @@ struct PokeBallParticles
 
 static const struct PokeBallParticles sBallParticles[POKEBALL_COUNT] =
 {
-    [BALL_STRANGE] =
+    [BALL_STRANGE] = // Couronnement : Dark Ball, ouverture façon Master Ball, éclat violet sombre
     {
         POKE_BALL_ANIMATION(TAG_PARTICLES_STRANGE_BALL, gBattleAnimSpriteGfx_Particles, gBattleAnimSpritePal_CircleImpact),
-        .openFadeColor = RGB(16, 23, 30),
-        .animNums = 0,
-        .particleAnimationFunc = GreatBallOpenParticleAnimation,
+        .openFadeColor = RGB(12, 4, 20),
+        .animNums = 1,
+        .particleAnimationFunc = MasterBallOpenParticleAnimation,
     },
 
     [BALL_POKE] =

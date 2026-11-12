@@ -3820,6 +3820,16 @@ static void PrintRibbonCount(void)
     u32 bonus = GetMonBondExpBonusPercent(mon);
     int x;
 
+    static const u8 sText_Sombre[] = _("SOMBRE +{STR_VAR_1} %");
+
+    if (GetMonData(mon, MON_DATA_IS_SHADOW)) // Dark Ball : aucun lien possible, on affiche l'état Sombre
+    {
+        ConvertIntToDecimalStringN(gStringVar1, COURONNEMENT_DARK_BALL_BONUS, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringExpandPlaceholders(gStringVar4, sText_Sombre);
+        x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 70) + 6;
+        PrintTextOnWindowToFit(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gStringVar4, x, 1, 0, 0);
+        return;
+    }
     StringCopy(gStringVar4, niveau[GetMonBondLevel(mon)]);
     if (bonus != 0)
     {

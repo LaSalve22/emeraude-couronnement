@@ -2,7 +2,7 @@
 """Émeraude Couronnement : graphismes de la Dark Ball (ex-Étrange Ball) à partir du dessin d'Adrien.
 
 - graphics/items/icons/strange_ball.png + icon_palettes/strange_ball.pal : icône 24x24 (sac, boutiques)
-- graphics/balls/strange.png : Ball lancée en combat (3 images 16x16 : fermée = dessin réduit, ouverture recolorée)
+- graphics/balls/strange.png : Ball lancée en combat (3 images 16x16, forme ronde de l'Hyper Ball, violet clair)
 Sources : graphics/couronnement/dark_ball_source.jpg et strange_ball_original.png (fond en damier « transparent » incrusté : on découpe le disque).
 """
 from pathlib import Path
@@ -73,39 +73,38 @@ def icone():
 
 
 def balle():
-    path = ROOT / 'graphics/balls/strange.png'
-    old = Image.open(ROOT / 'graphics/couronnement/strange_ball_original.png')  # sprite d'origine, jamais modifié
-    pal = (old.getpalette() + [0] * 48)[:48]
-    # recolore la palette d'origine (vert / turquoise) en violet sombre / gris
-    neuve = list(pal)
-    for i in range(1, 16):
-        r, g, b = pal[i*3:i*3+3]
-        lum = (r + g + b) / 3
-        if abs(r - g) < 12 and abs(g - b) < 12:  # gris / blanc / contour : garder
-            continue
-        if b > r + 20 and g > r + 20:  # turquoise -> gris des bandes
-            v = int(lum * 0.6)
-            neuve[i*3:i*3+3] = [v, v, v + 8]
-        else:  # vert -> violet
-            neuve[i*3:i*3+3] = [min(255, int(lum * 0.55)), int(lum * 0.3), min(255, int(lum * 0.95))]
-    rgb_pal = [tuple(neuve[i*3:i*3+3]) for i in range(16)]
-    # image fermée : dessin réduit à 12x12, couleurs ramenées à la palette commune
-    d = contour(disque(12), (65, 65, 65, 255))
-    img = old.copy()
-    img.putpalette(neuve)
-    px = img.load()
-    for y in range(16):
+    """Ball de combat : silhouette ronde de l'Hyper Ball, violet clair, bandes grises en X et bouton argent
+    (comme le dessin) ; les images d'ouverture sont celles de l'Hyper Ball recolorées en violet."""
+    import math
+    ultra = Image.open(ROOT / 'graphics/balls/ultra.png')
+    u = ultra.load()
+    pal = [(255, 255, 255), (88, 56, 136), (124, 88, 184), (160, 128, 216), (208, 184, 248), (255, 255, 255),
+           (176, 172, 192), (56, 48, 72), (104, 100, 120)] + [(255, 255, 255)] * 7
+    out = Image.new('P', (16, 48), 0)
+    o = out.load()
+    for y in range(16, 48):
         for x in range(16):
-            px[x, y] = 0
-    dp = d.load()
-    for y in range(12):
-        for x in range(12):
-            r, g, b, a = dp[x, y]
-            if a < 128:
-                continue
-            best = min(range(1, 16), key=lambda i: (rgb_pal[i][0]-r)**2 + (rgb_pal[i][1]-g)**2 + (rgb_pal[i][2]-b)**2)
-            px[x + 2, y + 2] = best
-    img.save(path, transparency=0)
+            o[x, y] = u[x, y]
+    masque = {(x, y) for y in range(16) for x in range(16) if u[x, y]}
+
+    def bord(x, y):
+        return any((x + dx, y + dy) not in masque for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))
+
+    for (x, y) in masque:
+        if bord(x, y):
+            o[x, y] = 7
+            continue
+        d = math.hypot(x - 5.5, y - 5)  # lumière en haut à gauche
+        c = 4 if d < 1.6 else 3 if d < 3.6 else 2 if d < 5.6 else 1
+        dx, dy = x - 7.5, y - 9.5
+        if y >= 5 and (abs(dx - dy * 0.8) < 0.7 or abs(dx + dy * 0.8) < 0.7):
+            c = 6 if d < 2.5 else 8
+        o[x, y] = c
+    for p, c in (((10, 4), 5), ((11, 5), 6), ((10, 5), 6), ((9, 4), 6)):
+        if p in masque and not bord(*p):
+            o[p] = c
+    out.putpalette([v for t in pal for v in t])
+    out.save(ROOT / 'graphics/balls/strange.png', transparency=0)
 
 
 if __name__ == '__main__':

@@ -309,6 +309,14 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   d'Adrien : `tools/couronnement/dark_ball_gfx.py`. 4 cachées (Chemin Escarpé, Routes 113-114, Repaire Aqua ; `tools/megas/placer.py`),
   vendues 5000 par le Méga-Collectionneur après la Ligue ; Seko en donne une avant le combat du rival (v0.28.1, tous modes). Tests : `test/dark_ball.c` (`TESTS="Dark Ball"`).
 
+## Fait (v0.29) - Dark Ball retouchée
+
+- Ball de combat redessinée (silhouette ronde de l'Hyper Ball, violet clair, bandes en X) : `balle()` de `tools/couronnement/dark_ball_gfx.py`.
+- Capture x2,6 (Hyper Ball +30 %, `COURONNEMENT_DARK_BALL_TAUX` 260), stats hors PV +30 % (`COURONNEMENT_DARK_BALL_BONUS`).
+- Sortie du Pokémon : particules de la Master Ball avec un éclat violet sombre (`sBallParticles[BALL_STRANGE]`, `src/battle_anim_throw.c`).
+- Méga-Collectionneur : Dark Ball seule à 5000 dès le 6e badge (`MegaGemmes_BoutiqueDarkBall`), tout le stock après la Ligue.
+- Résumé : la ligne LIEN affiche « SOMBRE +30 % » pour un Pokémon capturé en Dark Ball.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

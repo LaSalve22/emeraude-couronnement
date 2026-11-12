@@ -4,7 +4,7 @@
 MegaGemmes_EventScript_Collectionneur::
 	lock
 	faceplayer
-	goto_if_unset FLAG_SYS_GAME_CLEAR, MegaGemmes_EventScript_PasEncore
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MegaGemmes_EventScript_AvantLigue
 	message MegaGemmes_Text_Bienvenue
 	waitmessage
 	pokemart MegaGemmes_Boutique
@@ -12,10 +12,25 @@ MegaGemmes_EventScript_Collectionneur::
 	release
 	end
 
+@ Avant la Ligue : seulement la Dark Ball, à partir du 6e badge.
+MegaGemmes_EventScript_AvantLigue::
+	goto_if_unset FLAG_BADGE06_GET, MegaGemmes_EventScript_PasEncore
+	message MegaGemmes_Text_DarkBall
+	waitmessage
+	pokemart MegaGemmes_BoutiqueDarkBall
+	msgbox MegaGemmes_Text_PasEncore, MSGBOX_DEFAULT
+	release
+	end
+
 MegaGemmes_EventScript_PasEncore::
 	msgbox MegaGemmes_Text_PasEncore, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+MegaGemmes_BoutiqueDarkBall:
+	.2byte ITEM_STRANGE_BALL
+	.2byte ITEM_NONE
 
 	.align 2
 MegaGemmes_Boutique:
@@ -82,6 +97,11 @@ MegaGemmes_Text_Bienvenue:
 MegaGemmes_Text_AuRevoir:
 	.string "Les autres, je les ai semées dans\n"
 	.string "Hoenn. Ouvre l'œil.$"
+
+MegaGemmes_Text_DarkBall:
+	.string "Six badges, hein ? Alors je peux te\n"
+	.string "refiler mes Dark Balls. Sous le\l"
+	.string "manteau, et sans questions.$"
 
 MegaGemmes_Text_PasEncore:
 	.string "Ma collection de Méga-Gemmes n'est\n"

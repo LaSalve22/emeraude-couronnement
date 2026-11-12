@@ -3,7 +3,7 @@
 
 // Émeraude Couronnement : Dark Ball (ex-Étrange Ball). Pokémon marqué par MON_DATA_IS_SHADOW.
 
-TEST("Dark Ball: +20% stats except HP and no friendship")
+TEST("Dark Ball: +30% stats except HP and no friendship")
 {
     struct Pokemon mon;
     u32 hp, atk, spe;

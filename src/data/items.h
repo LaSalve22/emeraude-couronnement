@@ -43,7 +43,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = COURONNEMENT_PRIX_DARK_BALL,
         .description = COMPOUND_STRING(
             "Le Pokémon capturé n'a\n"
-            "aucune amitié. Stats +20 %,\n"
+            "aucune amitié. Stats +30 %,\n"
             "mais -10 % PV par attaque."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,

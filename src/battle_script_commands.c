@@ -7813,7 +7813,7 @@ static void FinalizeCapture(void)
     struct Pokemon *caughtMon = GetBattlerMon(gBattlerTarget);
     SetMonData(caughtMon, MON_DATA_POKEBALL, &ballId);
     RestoreCaughtWildMonHeldItem(caughtMon, gBattlerTarget);
-    if (ballId == BALL_STRANGE) // Couronnement : Dark Ball (ex-Étrange Ball) : aura sombre, plus d'amitié, stats +20 %
+    if (ballId == BALL_STRANGE) // Couronnement : Dark Ball (ex-Étrange Ball) : aura sombre, plus d'amitié, stats +30 %
     {
         bool8 dark = TRUE;
         u8 zero = 0;
@@ -7880,6 +7880,9 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         break;
     case BALL_ULTRA:
         ball->multiplier = 200;
+        break;
+    case BALL_STRANGE: // Couronnement : Dark Ball, Hyper Ball +30 %
+        ball->multiplier = COURONNEMENT_DARK_BALL_TAUX;
         break;
     case BALL_MASTER:
         ball->guaranteedCapture = TRUE;
