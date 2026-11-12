@@ -131,6 +131,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	call_if_eq VAR_DIFFICULTY, DIFFICULTY_KAIZO, LittlerootTown_ProfessorBirchsLab_EventScript_KaizoPokeBalls @ Couronnement
+	call LittlerootTown_ProfessorBirchsLab_EventScript_DarkBall @ Couronnement : une Dark Ball avant le rival
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
@@ -1026,3 +1027,20 @@ LittlerootTown_ProfessorBirchsLab_Text_KaizoPokeBalls:
 LittlerootTown_ProfessorBirchsLab_Text_KaizoPokeBalls2:
 	.string "La boutique de Rosyères en vend\n"
 	.string "aussi. Bonne chance, sérieusement.$"
+
+@ Émeraude Couronnement : Seko confie une Dark Ball avant le combat contre le rival (tous les modes).
+LittlerootTown_ProfessorBirchsLab_EventScript_DarkBall::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DarkBall, MSGBOX_DEFAULT
+	giveitem ITEM_STRANGE_BALL
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DarkBall2, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_Text_DarkBall:
+	.string "Seko : Et prends aussi ça. Une Dark\n"
+	.string "Ball, confisquée à un braconnier.\p"
+	.string "Le Pokémon capturé devient plus\n"
+	.string "fort, mais il ne t'aimera jamais.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_DarkBall2:
+	.string "Chaque attaque lui coûte des PV.\n"
+	.string "Choisis bien ta cible. Une seule.$"

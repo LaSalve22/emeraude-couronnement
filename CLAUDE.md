@@ -307,7 +307,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   chaque attaque qui touche (`MOVEEND_DARK_AURA`, `BattleScript_DarkAuraRecoil`), aura violet sombre en combat
   (`BattleLoadMonSpriteGfx`). Réglages : `COURONNEMENT_DARK_BALL_*` dans `include/config/item.h`. Graphismes tirés du dessin
   d'Adrien : `tools/couronnement/dark_ball_gfx.py`. 4 cachées (Chemin Escarpé, Routes 113-114, Repaire Aqua ; `tools/megas/placer.py`),
-  vendues 5000 par le Méga-Collectionneur après la Ligue. Tests : `test/dark_ball.c` (`TESTS="Dark Ball"`).
+  vendues 5000 par le Méga-Collectionneur après la Ligue ; Seko en donne une avant le combat du rival (v0.28.1, tous modes). Tests : `test/dark_ball.c` (`TESTS="Dark Ball"`).
 
 ## Prochaines étapes, dans l'ordre
 
