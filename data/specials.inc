@@ -19,6 +19,7 @@ gSpecials::
 .endif
 	def_special HealPlayerParty
 	def_special Couronnement_DonnerPass
+	def_special Couronnement_BufferMenuL
 	def_special CoachEV_Afficher
 	def_special CoachEV_Appliquer
 	def_special Couronnement_BufferStatut

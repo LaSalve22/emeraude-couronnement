@@ -15,7 +15,7 @@ struct FieldInput
     bool8 input_field_1_1:1;
     bool8 input_field_1_2:1;
     bool8 input_field_1_3:1;
-    bool8 input_field_1_4:1;
+    bool8 pressedLButton:1; // Couronnement : menu L (Repousse Infinie, course)
     bool8 input_field_1_5:1;
     bool8 input_field_1_6:1;
     bool8 input_field_1_7:1;

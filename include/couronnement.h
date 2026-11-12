@@ -35,5 +35,6 @@ void Couronnement_TournoiGagne(void);
 void Couronnement_ChoixAdverse(void);
 void Couronnement_FinTournoi(void);
 void Couronnement_EstChampionDuMonde(void);
+void Couronnement_BufferMenuL(void);
 
 #endif // GUARD_COURONNEMENT_H

@@ -7,6 +7,7 @@ OldaleTown_Mart_EventScript_Clerk::
 	message gText_HowMayIServeYou
 	waitmessage
 	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_ExpandedItems
+	goto_if_eq VAR_DIFFICULTY, DIFFICULTY_KAIZO, OldaleTown_Mart_ExpandedItems @ Couronnement : Poké Balls dès le début en Kaizo
 	pokemart OldaleTown_Mart_Pokemart_Basic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release

@@ -458,3 +458,43 @@ Couronnement_Text_RepousseInfinieExplique:
 	.string "La Repousse Infinie coupe les\n"
 	.string "rencontres, et les remet quand tu\l"
 	.string "veux. Mets-la sur SELECT.$"
+
+@ ------------------------------------------------------------------ Menu L (terrain) : Repousse Infinie et course
+Couronnement_EventScript_MenuL::
+	lockall
+Couronnement_EventScript_MenuLBoucle::
+	special Couronnement_BufferMenuL
+	message Couronnement_Text_MenuL
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, gStringVar1, gStringVar2, Couronnement_Text_MenuLFermer
+	goto_if_eq VAR_RESULT, 0, Couronnement_EventScript_MenuLRepousse
+	goto_if_eq VAR_RESULT, 1, Couronnement_EventScript_MenuLCourse
+	closemessage
+	releaseall
+	end
+
+Couronnement_EventScript_MenuLRepousse::
+	goto_if_set FLAG_REPOUSSE_INFINIE, Couronnement_EventScript_MenuLRepousseOff
+	setflag FLAG_REPOUSSE_INFINIE
+	playse SE_REPEL
+	goto Couronnement_EventScript_MenuLBoucle
+Couronnement_EventScript_MenuLRepousseOff::
+	clearflag FLAG_REPOUSSE_INFINIE
+	playse SE_PC_OFF
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLCourse::
+	goto_if_set FLAG_COURSE_AUTO, Couronnement_EventScript_MenuLCourseOff
+	setflag FLAG_COURSE_AUTO
+	playse SE_SELECT
+	goto Couronnement_EventScript_MenuLBoucle
+Couronnement_EventScript_MenuLCourseOff::
+	clearflag FLAG_COURSE_AUTO
+	playse SE_SELECT
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_Text_MenuL:
+	.string "Réglages rapides (L).$"
+
+Couronnement_Text_MenuLFermer:
+	.string "Fermer$"

@@ -460,6 +460,18 @@ void Couronnement_TournoiGagne(void)
 }
 
 // VAR_RESULT = TRUE si la finale a été gagnée.
+// Menu L : STR_VAR_1 / STR_VAR_2 = libellés avec l'état actuel de la Repousse Infinie et de la course.
+void Couronnement_BufferMenuL(void)
+{
+    static const u8 sText_RepousseOui[] = _("Repousse Infinie : OUI");
+    static const u8 sText_RepousseNon[] = _("Repousse Infinie : NON");
+    static const u8 sText_CourseAuto[] = _("Course : AUTO");
+    static const u8 sText_CourseB[] = _("Course : BOUTON B");
+
+    StringCopy(gStringVar1, FlagGet(FLAG_REPOUSSE_INFINIE) ? sText_RepousseOui : sText_RepousseNon);
+    StringCopy(gStringVar2, FlagGet(FLAG_COURSE_AUTO) ? sText_CourseAuto : sText_CourseB);
+}
+
 void Couronnement_EstChampionDuMonde(void)
 {
     gSpecialVar_Result = (VarGet(VAR_COURONNEMENT_TOURNOIS) & (1 << COURONNEMENT_TOURNOI_FINALE)) != 0;

@@ -283,6 +283,17 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   main dans `translations/fr/descriptions/*.txt` (CLÉ|texte, mis en forme automatiquement). Sac et boutiques choisissent une police
   plus étroite si besoin. Restent : descriptions des Concours (`gContestEffects`), Pokédex.
 
+## Fait (v0.27) - retours d'Adrien
+
+- Menu Start MONDIAL : écran noir corrigé (`HandleStartMenuInput` lançait un fondu au noir pour toute entrée hors liste ;
+  `StartMenuCouronnementCallback` ajouté aux exceptions comme Safari / Sauvegarde). Toute nouvelle entrée qui lance un script
+  sur le terrain doit y être ajoutée.
+- Réapprentissage : les capacités Œuf sont dans la liste « par niveau » (`GetRelearnerLevelUpMoves`, `src/move_relearner.c`),
+  toujours proposées tant que le Pokémon ne les connaît pas ; onglet Œuf séparé désactivé ; `MAX_RELEARNER_MOVES` = 100.
+- Kaizo : Seko donne 5 Poké Balls avant le combat contre le rival (Route 103) et la boutique de Rosyères en vend dès le début.
+- Menu L sur le terrain (`Couronnement_EventScript_MenuL`) : Repousse Infinie OUI / NON et Course AUTO / BOUTON B (sauf si
+  BOUTONS = L=A). On court dès le début, sans les Chaussures de Course (condition `FLAG_SYS_B_DASH` retirée).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

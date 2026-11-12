@@ -941,6 +941,24 @@ static u32 GetRelearnerLevelUpMoves(struct BoxPokemon *mon, u16 *moves)
         species = (P_PRE_EVO_MOVES ? GetSpeciesPreEvolution(species) : SPECIES_NONE);
     } while (species != SPECIES_NONE);
 
+    // Émeraude Couronnement : les capacités Œuf sont dans la même liste, réapprenables à l'infini
+    // (l'onglet séparé revenait sur « par niveau » à chaque ouverture : elles semblaient disparaître).
+    {
+        u16 eggMoves[MAX_RELEARNER_MOVES];
+        u32 numEgg = GetRelearnerEggMoves(mon, eggMoves);
+        for (u32 i = 0; i < numEgg && numMoves < MAX_RELEARNER_MOVES; i++)
+        {
+            bool32 alreadyInList = FALSE;
+            for (u32 j = 0; j < numMoves; j++)
+            {
+                if (eggMoves[i] == moves[j])
+                    alreadyInList = TRUE;
+            }
+            if (!alreadyInList)
+                moves[numMoves++] = eggMoves[i];
+        }
+    }
+
     return numMoves;
 }
 
@@ -1055,7 +1073,7 @@ static bool32 HasRelearnerLevelUpMoves(struct BoxPokemon *boxMon)
 
     } while (species != SPECIES_NONE);
 
-    return FALSE;
+    return HasRelearnerEggMoves(boxMon); // Couronnement : capacités Œuf dans la liste « par niveau »
 }
 
 static bool32 HasRelearnerEggMoves(struct BoxPokemon *boxMon)
@@ -1127,7 +1145,7 @@ static bool32 IsLevelUpMoveRelearnerActive(void)
 
 static bool32 IsEggMoveRelearnerActive(void)
 {
-    return (FlagGet(P_FLAG_EGG_MOVES) || P_ENABLE_MOVE_RELEARNERS);
+    return FALSE; // Couronnement : déjà incluses dans la liste « par niveau » (GetRelearnerLevelUpMoves)
 }
 
 static bool32 IsTMMoveRelearnerActive(void)

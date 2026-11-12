@@ -130,6 +130,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	call_if_eq VAR_DIFFICULTY, DIFFICULTY_KAIZO, LittlerootTown_ProfessorBirchsLab_EventScript_KaizoPokeBalls @ Couronnement
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
@@ -1007,3 +1008,21 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "Je t'expliquerai tout là-bas. Je\n"
 	.string "t'attends !\p"
 	.string "… … … … … … … … … … … Clic !$"
+
+@ Émeraude Couronnement : en Kaizo, Poké Balls avant le combat contre le rival (Route 103) pour monter une équipe.
+LittlerootTown_ProfessorBirchsLab_EventScript_KaizoPokeBalls::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_KaizoPokeBalls, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 5
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_KaizoPokeBalls2, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_Text_KaizoPokeBalls:
+	.string "Seko : Attends ! Vu le niveau de\n"
+	.string "{RIVAL} en ce moment, y aller avec\l"
+	.string "un seul Pokémon, c'est du suicide.\p"
+	.string "Prends ça. Capture deux ou trois\n"
+	.string "copains en route.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_KaizoPokeBalls2:
+	.string "La boutique de Rosyères en vend\n"
+	.string "aussi. Bonne chance, sérieusement.$"

@@ -911,7 +911,7 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
      && (((heldKeys & B_BUTTON) != 0) != FlagGet(FLAG_COURSE_AUTO)) // Couronnement : course auto, B pour marcher
-     && FlagGet(FLAG_SYS_B_DASH)
+     // Couronnement : on court dès le début, sans les Chaussures de Course
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
      && !FollowerNPCComingThroughDoor()
      && (I_ORAS_DOWSING_FLAG == 0 || (I_ORAS_DOWSING_FLAG != 0 && !FlagGet(I_ORAS_DOWSING_FLAG))))

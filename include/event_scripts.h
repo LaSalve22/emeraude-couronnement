@@ -808,5 +808,6 @@ extern const u8 EventScript_Indigo_HighestAuthority[];
 
 // Émeraude Couronnement
 extern const u8 Couronnement_EventScript_Statut[];
+extern const u8 Couronnement_EventScript_MenuL[];
 
 #endif // GUARD_EVENT_SCRIPTS_H
