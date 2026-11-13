@@ -29,6 +29,7 @@
 #include "naming_screen.h"
 #include "party_menu.h"
 #include "palette.h"
+#include "trig.h"
 #include "pokeball.h"
 #include "pokemon.h"
 #include "pokemon_sprite_visualizer.h"
@@ -330,6 +331,8 @@ void ExtractMonSkillIvData(struct Pokemon *mon, struct PokeSummary *sum);
 void ExtractMonSkillEvData(struct Pokemon *mon, struct PokeSummary *sum);
 static void PrintTextOnWindow(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId);
 static void PrintTextOnWindowWithFont(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId, u32 fontId);
+static void PrintStatLabelRight(const u8 *text, u32 y);
+static bool32 PrintDarkStats(bool32 left);
 static const u8 *GetLetterGrade(u32 stat);
 static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 templateId);
 static u8 IncrementSkillsStatsMode(u8 mode);
@@ -530,11 +533,11 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .paletteNum = 6,
         .baseBlock = 209,
     },
-    [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT] = {
+    [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT] = { // Couronnement : 4 tuiles, la colonne de valeurs prend la 5e
         .bg = 0,
         .tilemapLeft = 22,
         .tilemapTop = 7,
-        .width = 5,
+        .width = 4,
         .height = 6,
         .paletteNum = 6,
         .baseBlock = 245,
@@ -681,14 +684,14 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
         .paletteNum = 6,
         .baseBlock = 507,
     },
-    [PSS_DATA_WINDOW_SKILLS_STATS_RIGHT] = {
+    [PSS_DATA_WINDOW_SKILLS_STATS_RIGHT] = { // Couronnement : élargie (stats avec bonus Dark Ball)
         .bg = 0,
-        .tilemapLeft = 27,
+        .tilemapLeft = 26,
         .tilemapTop = 7,
-        .width = 3,
+        .width = 4,
         .height = 6,
         .paletteNum = 6,
-        .baseBlock = 543,
+        .baseBlock = 585,
     },
     [PSS_DATA_WINDOW_EXP] = {
         .bg = 0,
@@ -3161,6 +3164,14 @@ static void PrintTextOnWindow(u8 windowId, const u8 *string, u8 x, u8 y, u8 line
     PrintTextOnWindowWithFont(windowId, string, x, y, lineSpacing, colorId, FONT_NORMAL);
 }
 
+// Couronnement : étiquette de la colonne de droite centrée sur 32 px, police plus étroite si besoin
+static void PrintStatLabelRight(const u8 *text, u32 y)
+{
+    u32 fontId = GetFontIdToFit(text, FONT_NORMAL, 0, 32);
+    u32 x = GetStringCenterAlignXOffset(fontId, text, 32);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, text, x, y, 0, 1, fontId);
+}
+
 static void PrintTextOnWindowToFitPx(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId, u32 width)
 {
     u32 fontId = GetFontIdToFit(string, FONT_NORMAL, 0, width);
@@ -3284,12 +3295,9 @@ static void PrintPageNamesAndStats(void)
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Attack3, statsXPos, 17, 0, 1);
     statsXPos = 6 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_Defense3, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Defense3, statsXPos, 33, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_SpAtk4, 36);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpAtk4, statsXPos, 1, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_SpDef4, 36);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpDef4, statsXPos, 17, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_Speed2, 36);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_Speed2, statsXPos, 33, 0, 1);
+    PrintStatLabelRight(gText_SpAtk4, 1);
+    PrintStatLabelRight(gText_SpDef4, 17);
+    PrintStatLabelRight(gText_Speed2, 33);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_ExpPoints, 6, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_NextLv, 6, 17, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS, gText_Status, 2, 1, 0, 1);
@@ -3949,9 +3957,52 @@ static void BufferLeftColumnIvEvStats(void)
     Free(defenseIvEvString);
 }
 
+// Couronnement : Pokémon de la Dark Ball, « vraie stat -> stat avec le bonus » (police étroite)
+static bool32 PrintDarkStats(bool32 left)
+{
+    static const u8 sFleche[] = _("{COLOR}{01}{RIGHT_ARROW}");
+    static const u8 sStatsGauche[] = {STAT_ATK, STAT_DEF};
+    static const u8 sStatsDroite[] = {STAT_SPATK, STAT_SPDEF, STAT_SPEED};
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+    struct Pokemon *sans;
+    const u8 *stats = left ? sStatsGauche : sStatsDroite;
+    u32 i, n = left ? 2 : 3, width = left ? 48 : 32, ligne = left ? 1 : 0;
+    u8 windowId, *txt;
+    bool8 faux = FALSE;
+
+    if (sMonSummaryScreen->skillsPageMode != SUMMARY_SKILLS_MODE_STATS || !GetMonData(mon, MON_DATA_IS_SHADOW))
+        return FALSE;
+    sans = Alloc(sizeof(struct Pokemon));
+    *sans = *mon;
+    SetMonData(sans, MON_DATA_IS_SHADOW, &faux);
+    CalculateMonStats(sans);
+    windowId = AddWindowFromTemplateList(sPageSkillsTemplate, left ? PSS_DATA_WINDOW_SKILLS_STATS_LEFT : PSS_DATA_WINDOW_SKILLS_STATS_RIGHT);
+    if (left) // PV : pas de bonus, ligne normale
+    {
+        txt = ConvertIntToDecimalStringN(gStringVar4, sMonSummaryScreen->summary.currentHP, STR_CONV_MODE_LEFT_ALIGN, 3);
+        *txt++ = CHAR_SLASH;
+        ConvertIntToDecimalStringN(txt, sMonSummaryScreen->summary.maxHP, STR_CONV_MODE_LEFT_ALIGN, 3);
+        PrintTextOnWindow(windowId, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, width), 1, 0, 0);
+    }
+    for (i = 0; i < n; i++)
+    {
+        BufferStat(gStringVar4, stats[i], GetMonData(sans, MON_DATA_ATK + stats[i] - STAT_ATK), 0, 3);
+        StringAppend(gStringVar4, sFleche);
+        ConvertIntToDecimalStringN(gStringVar4 + StringLength(gStringVar4), GetMonData(mon, MON_DATA_ATK + stats[i] - STAT_ATK),
+                                   STR_CONV_MODE_LEFT_ALIGN, 3);
+        PrintTextOnWindowWithFont(windowId, gStringVar4, GetStringRightAlignXOffset(FONT_SMALL_NARROWER, gStringVar4, width),
+                                  1 + 16 * (i + ligne) + 2, 0, 0, FONT_SMALL_NARROWER);
+    }
+    Free(sans);
+    return TRUE;
+}
+
 static void PrintLeftColumnStats(void)
 {
     int x;
+
+    if (PrintDarkStats(TRUE))
+        return;
 
     if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
         x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 46);
@@ -3976,10 +4027,12 @@ static void PrintRightColumnStats(void)
 {
     int x;
 
+    if (PrintDarkStats(FALSE))
+        return;
     if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
-        x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 20);
+        x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 20) + 8;
     else
-        x = 2;
+        x = 2 + 8; // fenêtre élargie d'une tuile vers la gauche
 
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, x, 1, 0, 0);
 }
@@ -4561,10 +4614,71 @@ static void PlayMonCry(void)
     }
 }
 
+// Couronnement : aura sombre (teinte violette qui pulse) sur le sprite d'un Pokémon capturé en Dark Ball
+static EWRAM_DATA u16 sPalSombre[16] = {0};
+static EWRAM_DATA u8 sTacheAuraSombre = 0; // id de tâche + 1
+
+static void TeinterPalSombre(u32 offset, u32 coeff, u16 *dest)
+{
+    u32 i;
+    for (i = 0; i < 16; i++)
+    {
+        s32 r = GET_R(sPalSombre[i]), g = GET_G(sPalSombre[i]), b = GET_B(sPalSombre[i]);
+        r += ((8 - r) * (s32)coeff) >> 4;
+        g += ((0 - g) * (s32)coeff) >> 4;
+        b += ((14 - b) * (s32)coeff) >> 4;
+        dest[offset + i] = RGB(r, g, b);
+    }
+}
+
+static void Task_AuraSombre(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    struct Sprite *sprite = &gSprites[data[0]];
+
+    if (!sprite->inUse || sprite->oam.paletteNum != data[1])
+    {
+        sTacheAuraSombre = 0;
+        DestroyTask(taskId);
+        return;
+    }
+    if (gPaletteFade.active)
+        return;
+    data[2] = (data[2] + 3) & 0xFF;
+    TeinterPalSombre(OBJ_PLTT_ID(data[1]), 7 + Sin(data[2], 3), gPlttBufferFaded);
+}
+
+static void ArreterAuraSombre(void)
+{
+    if (sTacheAuraSombre != 0 && FuncIsActiveTask(Task_AuraSombre))
+        DestroyTask(sTacheAuraSombre - 1);
+    sTacheAuraSombre = 0;
+}
+
+static void LancerAuraSombre(u8 spriteId)
+{
+    u32 pal = gSprites[spriteId].oam.paletteNum;
+    u8 taskId;
+
+    ArreterAuraSombre();
+    if (!GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_IS_SHADOW) || sMonSummaryScreen->summary.isEgg)
+        return;
+    CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(pal)], sPalSombre, sizeof(sPalSombre));
+    TeinterPalSombre(OBJ_PLTT_ID(pal), 7, gPlttBufferUnfaded);
+    TeinterPalSombre(OBJ_PLTT_ID(pal), 7, gPlttBufferFaded);
+    taskId = CreateTask(Task_AuraSombre, 2);
+    gTasks[taskId].data[0] = spriteId;
+    gTasks[taskId].data[1] = pal;
+    gTasks[taskId].data[2] = 0;
+    sTacheAuraSombre = taskId + 1;
+}
+
 static u8 CreateMonSprite(struct Pokemon *unused)
 {
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u8 spriteId = CreateSprite(&gMultiuseSpriteTemplate, 40, 64, 5);
+
+    LancerAuraSombre(spriteId);
 
     FreeSpriteOamMatrix(&gSprites[spriteId]);
     gSprites[spriteId].data[0] = summary->species2;

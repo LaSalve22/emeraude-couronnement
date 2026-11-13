@@ -2,7 +2,7 @@
 """Émeraude Couronnement : graphismes de la Dark Ball (ex-Étrange Ball) à partir du dessin d'Adrien.
 
 - graphics/items/icons/strange_ball.png + icon_palettes/strange_ball.pal : icône 24x24 (sac, boutiques)
-- graphics/balls/strange.png : Ball lancée en combat (3 images 16x16, forme ronde de l'Hyper Ball, violet clair)
+- graphics/balls/strange.png : Ball lancée en combat (3 images 16x16, forme ronde de l'Hyper Ball, violet sombre)
 Sources : graphics/couronnement/dark_ball_source.jpg et strange_ball_original.png (fond en damier « transparent » incrusté : on découpe le disque).
 """
 from pathlib import Path
@@ -73,13 +73,14 @@ def icone():
 
 
 def balle():
-    """Ball de combat : silhouette ronde de l'Hyper Ball, violet clair, bandes grises en X et bouton argent
+    """Ball de combat : silhouette ronde de l'Hyper Ball, violet sombre, bandes grises en X et bouton argent
     (comme le dessin) ; les images d'ouverture sont celles de l'Hyper Ball recolorées en violet."""
     import math
     ultra = Image.open(ROOT / 'graphics/balls/ultra.png')
     u = ultra.load()
-    pal = [(255, 255, 255), (88, 56, 136), (124, 88, 184), (160, 128, 216), (208, 184, 248), (255, 255, 255),
-           (176, 172, 192), (56, 48, 72), (104, 100, 120)] + [(255, 255, 255)] * 7
+    # v0.30 : plus sombre qu'en v0.29 (trop clair, détails perdus), bandes bien contrastées
+    pal = [(255, 255, 255), (40, 22, 72), (64, 38, 110), (96, 64, 156), (150, 116, 210), (255, 255, 255),
+           (150, 146, 168), (16, 10, 24), (78, 74, 92)] + [(255, 255, 255)] * 7
     out = Image.new('P', (16, 48), 0)
     o = out.load()
     for y in range(16, 48):

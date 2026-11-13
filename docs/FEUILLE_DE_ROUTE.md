@@ -52,6 +52,7 @@ et sur GitHub.
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 - v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
 - v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
+- v0.30 - Pokémon sombres violets avec aura qui pulse dans le résumé, stats « vraie -> avec bonus », Dark Ball plus sombre, boutiques et arbres à Baies en français
 - v0.29 - Dark Ball retouchée : sprite rond et plus clair, capture Hyper Ball +30 %, vendue dès le 6e badge (5000), sortie façon Master Ball, stats +30 %, mention SOMBRE dans le résumé
 - v0.28.1 - le Prof. Seko donne une Dark Ball avant le combat du rival
 - v0.28 - menu L complet (soin, PC, Repousse, course, EV, Téra, rang), rang avec la Ball du palier, carte Dresseur de Red / Green, Dark Ball

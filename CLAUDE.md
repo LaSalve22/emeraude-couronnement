@@ -317,6 +317,15 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Méga-Collectionneur : Dark Ball seule à 5000 dès le 6e badge (`MegaGemmes_BoutiqueDarkBall`), tout le stock après la Ligue.
 - Résumé : la ligne LIEN affiche « SOMBRE +30 % » pour un Pokémon capturé en Dark Ball.
 
+## Fait (v0.30) - retours d'Adrien sur la Dark Ball
+
+- Résumé : sprite d'un Pokémon sombre teinté violet avec une aura qui pulse (`LancerAuraSombre` / `Task_AuraSombre`,
+  `src/pokemon_summary_screen.c`) ; stats affichées « vraie valeur -> valeur avec bonus » en police étroite (`PrintDarkStats`,
+  calcul sur une copie sans `MON_DATA_IS_SHADOW`). Colonne de droite des stats élargie d'une tuile (étiquettes sur 32 px).
+- Ball de combat plus sombre (palette de `balle()` dans `tools/couronnement/dark_ball_gfx.py`).
+- Vendeurs des Boutiques et arbres à Baies en français (`translations/fr/23_boutiques_baies.txt`, stades `.if` traduits à la main).
+  Restent en anglais (désactivés par la config) : mutations de Baies, engrais, Noigrumes.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
