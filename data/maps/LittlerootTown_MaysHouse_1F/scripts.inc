@@ -335,7 +335,7 @@ RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "notre enfant.\p"
 	.string "S'il n'est pas au labo, il est dans les\n"
 	.string "herbes en train de se faire mordre au\l"
-	.string "nom de la science. J'ai acheté des\n"
+	.string "nom de la science. J'ai acheté des\l"
 	.string "bandages en gros.$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:

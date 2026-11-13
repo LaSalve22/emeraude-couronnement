@@ -325,7 +325,7 @@ PetalburgWoods_Text_HaveYouSeenShroomish:
 	.string "Balignon, par ici ?\p"
 	.string "J'adore ces petites bêtes. Et leurs\n"
 	.string "spores… quand on sait les doser, c'est\l"
-	.string "le paradis. Quand on sait pas, c'est\n"
+	.string "le paradis. Quand on sait pas, c'est\l"
 	.string "l'hôpital.$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
@@ -446,7 +446,7 @@ PetalburgWoods_Text_CantBePopularIfLose:
 PetalburgWoods_Text_IveBeenTrainingHard:
 	.string "Avec des Pokémon forts, on devient\n"
 	.string "populaire, non ? Alors je me suis\l"
-	.string "entraîné comme un malade. J'ai plus de\n"
+	.string "entraîné comme un malade. J'ai plus de\l"
 	.string "vie sociale, mais je vais être populaire.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
@@ -462,7 +462,7 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "même si on ne les voit pas.\p"
 	.string "C'est pour ça que je regarde toujours\n"
 	.string "où je mets les pieds. J'ai trouvé des\l"
-	.string "objets, des pièces… et une dent. Pas\n"
+	.string "objets, des pièces… et une dent. Pas\l"
 	.string "humaine. J'espère.$"
 
 PetalburgWoods_Text_TryUsingThisItem:

@@ -533,11 +533,11 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .paletteNum = 6,
         .baseBlock = 209,
     },
-    [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT] = { // Couronnement : 4 tuiles, la colonne de valeurs prend la 5e
+    [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT] = { // Couronnement : décalée d'une tuile vers la gauche (page_skills.bin)
         .bg = 0,
-        .tilemapLeft = 22,
+        .tilemapLeft = 21,
         .tilemapTop = 7,
-        .width = 4,
+        .width = 5,
         .height = 6,
         .paletteNum = 6,
         .baseBlock = 245,
@@ -675,11 +675,11 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
         .paletteNum = 6,
         .baseBlock = 487,
     },
-    [PSS_DATA_WINDOW_SKILLS_STATS_LEFT] = {
+    [PSS_DATA_WINDOW_SKILLS_STATS_LEFT] = { // Couronnement : 5 tuiles (la 6e passe aux étiquettes de droite)
         .bg = 0,
         .tilemapLeft = 16,
         .tilemapTop = 7,
-        .width = 6,
+        .width = 5,
         .height = 6,
         .paletteNum = 6,
         .baseBlock = 507,
@@ -3167,8 +3167,8 @@ static void PrintTextOnWindow(u8 windowId, const u8 *string, u8 x, u8 y, u8 line
 // Couronnement : étiquette de la colonne de droite centrée sur 32 px, police plus étroite si besoin
 static void PrintStatLabelRight(const u8 *text, u32 y)
 {
-    u32 fontId = GetFontIdToFit(text, FONT_NORMAL, 0, 32);
-    u32 x = GetStringCenterAlignXOffset(fontId, text, 32);
+    u32 fontId = GetFontIdToFit(text, FONT_NORMAL, 0, 38);
+    u32 x = 1 + GetStringCenterAlignXOffset(fontId, text, 38);
     PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, text, x, y, 0, 1, fontId);
 }
 
@@ -3966,7 +3966,7 @@ static bool32 PrintDarkStats(bool32 left)
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     struct Pokemon *sans;
     const u8 *stats = left ? sStatsGauche : sStatsDroite;
-    u32 i, n = left ? 2 : 3, width = left ? 48 : 32, ligne = left ? 1 : 0;
+    u32 i, n = left ? 2 : 3, width = left ? 40 : 32, ligne = left ? 1 : 0;
     u8 windowId, *txt;
     bool8 faux = FALSE;
 
@@ -3982,7 +3982,8 @@ static bool32 PrintDarkStats(bool32 left)
         txt = ConvertIntToDecimalStringN(gStringVar4, sMonSummaryScreen->summary.currentHP, STR_CONV_MODE_LEFT_ALIGN, 3);
         *txt++ = CHAR_SLASH;
         ConvertIntToDecimalStringN(txt, sMonSummaryScreen->summary.maxHP, STR_CONV_MODE_LEFT_ALIGN, 3);
-        PrintTextOnWindow(windowId, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, width), 1, 0, 0);
+        u32 fontPv = GetFontIdToFit(gStringVar4, FONT_NORMAL, 0, width);
+        PrintTextOnWindowWithFont(windowId, gStringVar4, GetStringRightAlignXOffset(fontPv, gStringVar4, width), 1, 0, 0, fontPv);
     }
     for (i = 0; i < n; i++)
     {
@@ -4001,15 +4002,14 @@ static void PrintLeftColumnStats(void)
 {
     int x;
 
+    u32 fontId;
+
     if (PrintDarkStats(TRUE))
         return;
-
-    if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
-        x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 46);
-    else
-        x = 4;
-
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, x, 1, 0, 0);
+    // Couronnement : colonne réduite à 40 px ; valeurs alignées à droite, police plus étroite si « 999/999 » ne tient pas
+    fontId = GetFontIdToFit(gStringVar4, FONT_NORMAL, 0, 40);
+    x = GetStringRightAlignXOffset(fontId, gStringVar4, 40);
+    PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, x, 1, 0, 0, fontId);
 }
 
 static void BufferRightColumnStats(void)

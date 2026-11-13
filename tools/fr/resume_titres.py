@@ -40,7 +40,7 @@ BLANC, OMBRE = 2, 6  # couleurs de la banque 0
 # (texte, y, début de bande, fin de bande)
 TITRES = [
     ('PROFIL', 64, 0, 72), ('TALENT', 72, 0, 72), ('ETAT', 88, 0, 72), ('CAPACITES', 96, 0, 72),
-    ('DESCRIPTION', 104, 0, 80), ('MEMO DRESSEUR', 112, 0, 80),
+    ('DESCRIPTION', 104, 0, 80), ('CARNET', 112, 0, 80),
     ('OBJET', 64, 72, 128), ('LIEN', 72, 72, 128), ('STATS', 80, 72, 128), ('EXP.', 88, 72, 128),
     ('EFFET', 96, 80, 128),
 ]

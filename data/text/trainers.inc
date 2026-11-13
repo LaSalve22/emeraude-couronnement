@@ -2296,7 +2296,7 @@ Route116_Text_DawsonDefeat:
 Route116_Text_DawsonPostBattle:
 	.string "Non, non, non ! T'as ébouriffé la\n"
 	.string "fourrure de mes Pokémon ! Et ma\l"
-	.string "coiffure ! J'appelle mon styliste. C'est\n"
+	.string "coiffure ! J'appelle mon styliste. C'est\l"
 	.string "une urgence.$"
 
 Route116_Text_DevanIntro:

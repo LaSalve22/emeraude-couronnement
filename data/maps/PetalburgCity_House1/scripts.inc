@@ -13,7 +13,7 @@ PetalburgCity_House1_Text_TravelingIsWonderful:
 	.string "Voyager, c'est merveilleux !\p"
 	.string "Jeune, j'ai traversé les mers et les\n"
 	.string "montagnes ! J'ai perdu deux amis, un\l"
-	.string "orteil et ma dignité en chemin. Je\n"
+	.string "orteil et ma dignité en chemin. Je\l"
 	.string "referais tout.$"
 
 PetalburgCity_House1_Text_GoOnAdventure:

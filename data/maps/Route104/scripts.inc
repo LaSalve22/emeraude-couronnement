@@ -1001,7 +1001,7 @@ Route104_Text_BrineyLivesInSeasideCottage:
 	.string "des navires entiers.\p"
 	.string "Une nuit, la mer lui a pris tout son\n"
 	.string "équipage. Il est le seul à être rentré.\l"
-	.string "Depuis, il boit. Et il parle à son\n"
+	.string "Depuis, il boit. Et il parle à son\l"
 	.string "Pokémon.$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
@@ -1022,7 +1022,7 @@ Route104_Text_ThrowBallAtWeakenedPokemon:
 Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "Voler le Pokémon de quelqu'un, c'est\n"
 	.string "être un voleur. Et ici, les voleurs, on\l"
-	.string "les retrouve dans la rivière. Avec des\n"
+	.string "les retrouve dans la rivière. Avec des\l"
 	.string "cailloux dans les poches.\p"
 	.string "Ne lance tes Poké Balls que sur des\n"
 	.string "Pokémon sauvages.$"
@@ -1086,7 +1086,7 @@ Route104_Text_TrainerTipsDoubleBattles:
 	.string "en duo : ce sont les combats en Duo.\p"
 	.string "Tu envoies alors tes deux premiers\n"
 	.string "Pokémon. Pense à l'ordre de ton équipe.\l"
-	.string "Ou prépare-toi à souffrir deux fois\n"
+	.string "Ou prépare-toi à souffrir deux fois\l"
 	.string "plus.$"
 
 Route104_Text_MayWeShouldRegister:

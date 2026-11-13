@@ -12,7 +12,7 @@ OldaleTown_House2_EventScript_Man::
 OldaleTown_House2_Text_PokemonLevelUp:
 	.string "À force de combattre, les Pokémon\n"
 	.string "montent de niveau et deviennent plus\l"
-	.string "forts. Comme les gens. Ou plus durs, en\n"
+	.string "forts. Comme les gens. Ou plus durs, en\l"
 	.string "tout cas.$"
 
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:

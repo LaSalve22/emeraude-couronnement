@@ -521,7 +521,7 @@ Route109_Text_LittleKidsDartAround:
 	.string "seconde. C'est épuisant.\p"
 	.string "Les miens sont avec mes Pokémon, donc\n"
 	.string "ça devrait aller, mais… J'ai déjà perdu\l"
-	.string "quelqu'un sur une plage. Une fois\n"
+	.string "quelqu'un sur une plage. Une fois\l"
 	.string "suffit.$"
 
 Route109_Text_SandCastleTakingLongTime:

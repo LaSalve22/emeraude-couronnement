@@ -233,7 +233,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 	.string "Poivressel !\p"
 	.string "Au fait, il paraît que des criminels,\n"
 	.string "Magma et Aqua je crois, sèment le chaos\l"
-	.string "un peu partout. Il y a déjà eu des\n"
+	.string "un peu partout. Il y a déjà eu des\l"
 	.string "disparitions.\p"
 	.string "Repose-toi avant de partir. C'est un\n"
 	.string "conseil.$"

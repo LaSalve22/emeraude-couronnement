@@ -219,7 +219,7 @@ Route117_Text_DayCarePokemonHadNewMove:
 	.string "J'ai laissé mon Pokémon à la Pension.\p"
 	.string "Quand je l'ai récupéré, il connaissait\n"
 	.string "une attaque que je lui avais jamais\l"
-	.string "apprise. J'étais vraiment, vraiment\n"
+	.string "apprise. J'étais vraiment, vraiment\l"
 	.string "surpris.$"
 
 Route117_Text_ArentTheseFlowersPretty:

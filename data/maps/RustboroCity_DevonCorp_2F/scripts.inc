@@ -373,7 +373,7 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "maintenant ?\p"
 	.string "Ici, on nous laisse transformer nos\n"
 	.string "idées en réalité. Toutes nos idées. Même\l"
-	.string "celles qui devraient rester sur le\n"
+	.string "celles qui devraient rester sur le\l"
 	.string "papier.\p"
 	.string "Un ingénieur ne pourrait pas rêver\n"
 	.string "mieux.$"

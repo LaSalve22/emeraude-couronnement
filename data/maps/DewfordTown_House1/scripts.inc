@@ -29,7 +29,7 @@ DewfordTown_House1_Text_LifeGoesSlowlyOnIsland:
 	.string "pour épouser mon mari, ici.\p"
 	.string "La vie est lente sur cette petite île.\n"
 	.string "Mais être entourée par la mer… c'est\l"
-	.string "aussi ça, le bonheur. Même les jours de\n"
+	.string "aussi ça, le bonheur. Même les jours de\l"
 	.string "tempête.$"
 
 DewfordTown_House1_Text_Zigzagoon:

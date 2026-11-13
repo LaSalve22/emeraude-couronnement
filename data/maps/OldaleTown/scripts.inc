@@ -361,7 +361,7 @@ OldaleTown_Text_ThisIsAPokemonMart:
 OldaleTown_Text_PotionExplanation:
 	.string "Une Potion s'utilise n'importe où. Au\n"
 	.string "milieu de nulle part, avec un Pokémon\l"
-	.string "qui saigne, ça vaut tous les Centres du\n"
+	.string "qui saigne, ça vaut tous les Centres du\l"
 	.string "monde.$"
 
 OldaleTown_Text_WaitDontComeInHere:

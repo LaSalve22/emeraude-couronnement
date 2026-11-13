@@ -497,7 +497,7 @@ MauvilleCity_Text_WallyWillYouBattleMe:
 MauvilleCity_Text_WallyMyUncleWontKnowImStrong:
 	.string "Timmy : Oh… Si tu refuses, mon oncle ne\n"
 	.string "saura jamais que je suis vraiment\l"
-	.string "devenu fort. Il continuera à me\n"
+	.string "devenu fort. Il continuera à me\l"
 	.string "regarder comme si j'allais casser.$"
 
 MauvilleCity_Text_UncleCanYouBattleWally:

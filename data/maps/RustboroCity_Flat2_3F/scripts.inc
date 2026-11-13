@@ -16,6 +16,6 @@ RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones:
 RustboroCity_Flat2_3F_Text_PresidentsSonAlsoCollectsRareStones:
 	.string "Il paraît que son fils collectionne\n"
 	.string "aussi les pierres rares. Ils ne se\l"
-	.string "parlent plus, mais ils ont au moins ça en\n"
+	.string "parlent plus, mais ils ont au moins ça en\l"
 	.string "commun.$"
 

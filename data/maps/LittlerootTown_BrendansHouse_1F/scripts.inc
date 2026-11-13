@@ -451,5 +451,5 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "Maman : Il reste des Pokémon que\n"
 	.string "personne ne connaît… Le monde est\l"
-	.string "encore plus grand que ce qu'on nous\n"
+	.string "encore plus grand que ce qu'on nous\l"
 	.string "raconte. Ça fait du bien à entendre.$"

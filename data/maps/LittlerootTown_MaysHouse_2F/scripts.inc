@@ -340,7 +340,7 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Je savais pas que t'étais une fille.\p"
 	.string "Mon père, le Prof. Seko, m'a dit que\n"
 	.string "l'enfant d'un Champion d'Arène\l"
-	.string "emménageait à côté. J'ai cru que ce\n"
+	.string "emménageait à côté. J'ai cru que ce\l"
 	.string "serait un mec. Mon erreur.\p"
 	.string "Moi, c'est Brice. Salut, voisine !\p"
 	.string "Hein ? Attends, t'as pas de Pokémon ?\p"
@@ -371,7 +371,7 @@ RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 	.string "garde en vie assez longtemps.\p"
 	.string "Tu sais, mon père dit qu'un Pokédex,\n"
 	.string "c'est la liste de tout ce qu'on a eu la\l"
-	.string "chance de croiser. Moi, j'y vois surtout\n"
+	.string "chance de croiser. Moi, j'y vois surtout\l"
 	.string "ce qui manque.$"
 
 RivalsHouse_2F_Text_MayWhereShouldIGoNext:

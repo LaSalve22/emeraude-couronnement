@@ -50,7 +50,7 @@ Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf:
 Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel:
 	.string "Pour aller à Vergazon sans ce Tunnel,\n"
 	.string "faut traverser la mer jusqu'à Myokara,\l"
-	.string "naviguer jusqu'à Poivressel, puis\n"
+	.string "naviguer jusqu'à Poivressel, puis\l"
 	.string "passer par Lavandia.$"
 
 Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough:

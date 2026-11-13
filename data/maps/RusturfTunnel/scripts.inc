@@ -495,7 +495,7 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging:
 RusturfTunnel_Text_ToGetToVerdanturf:
 	.string "Pour aller de Mérouville à Vergazon, il\n"
 	.string "faut passer par Myokara, Poivressel et\l"
-	.string "Lavandia… Quatre jours. Pour une ville\n"
+	.string "Lavandia… Quatre jours. Pour une ville\l"
 	.string "qui est juste derrière ce mur.$"
 
 RusturfTunnel_Text_YouShatteredBoulderTakeHM:

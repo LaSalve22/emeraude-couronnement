@@ -1753,7 +1753,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     const u8 *description;
     u8 digitCount = (NATIONAL_DEX_COUNT > 999 && value != 0) ? 4 : 3;
 
-    if (value == 0)
+    if (value == 0 && NationalToRegionalOrder(num) != 0) // Couronnement : hors Pokédex de Hoenn -> n° national
         value = NationalToRegionalOrder(num);
     else
         value = num;
@@ -2433,7 +2433,7 @@ static void PrintStatsScreen_NameGender(u8 taskId, u32 num, u32 value)
         PrintStatsScreenTextSmallNarrower(WIN_STATS_NAME_GENDER, name, base_x, base_y);
 
     //Number
-    if (value == 0)
+    if (value == 0 && NationalToRegionalOrder(num) != 0) // Couronnement : hors Pokédex de Hoenn -> n° national
         value = NationalToRegionalOrder(num);
     else
         value = num;

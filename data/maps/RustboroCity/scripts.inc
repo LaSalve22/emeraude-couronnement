@@ -1044,7 +1044,7 @@ RustboroCity_Text_YoureNewAroundHere:
 	.string "visage.\p"
 	.string "Tu viens d'entrer à l'École des\n"
 	.string "Dresseurs ? Bon courage. Le dernier\l"
-	.string "transfert a fait une dépression en\n"
+	.string "transfert a fait une dépression en\l"
 	.string "deux semaines.$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:

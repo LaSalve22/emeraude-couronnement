@@ -269,7 +269,7 @@ RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
 	.string "Les Pokémon peuvent tenir des objets,\n"
 	.string "mais ils ne savent pas se servir des\l"
-	.string "objets humains comme les Potions ou les\n"
+	.string "objets humains comme les Potions ou les\l"
 	.string "Antidotes.$"
 
 RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:

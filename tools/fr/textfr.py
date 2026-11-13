@@ -21,7 +21,8 @@ police FONT_NORMAL) et remplace le texte du label dans le fichier .inc où il es
 
 Usage :
     python3 tools/fr/textfr.py apply translations/fr/*.txt   # applique les traductions
-    python3 tools/fr/textfr.py check  data/maps/*/scripts.inc  # signale les lignes trop larges
+    python3 tools/fr/textfr.py check  data/maps/*/scripts.inc  # signale les lignes trop larges et les \\n après \\l
+    python3 tools/fr/textfr.py fixl   data/text/*.inc           # remplace les \\n après \\l par \\l
 """
 import re
 import sys
@@ -103,7 +104,7 @@ def format_text(paragraphs):
             last_line = li == len(lines) - 1
             if last_line:
                 end = '$' if pi == len(paragraphs) - 1 else '\\p'
-            elif li % LINES_PER_BOX == 0:
+            elif li == 0:  # seule la 1re coupure en \n ; après un \l, toutes les suivantes en \l (sinon la boîte bloque)
                 end = '\\n'
             else:
                 end = '\\l'
@@ -217,10 +218,60 @@ def dump(paths):
             print(f'@@ {m.group(1)}\n{body}')
 
 
+def scan_n_after_l(path, fix=False):
+    """Repère (et corrige si fix) les \\n qui suivent un \\l dans le même paragraphe : la boîte de texte se bloque."""
+    lines = Path(path).read_text(encoding='utf-8').splitlines(keepends=True)
+    found, prev, changed = [], None, False
+    for n, line in enumerate(lines):
+        m = re.match(r'(\s*\.string\s+")(.*)("\s*)$', line)
+        if not m:
+            if line.strip() and not line.strip().startswith(('@', '.if', '.else', '.endif')):
+                prev = None  # nouveau label ou instruction : nouveau texte
+            continue
+        body = m.group(2)
+        out, i = [], 0
+        while i < len(body):
+            if body[i] == '\\' and i + 1 < len(body) and body[i + 1] in 'nlp':
+                code = body[i + 1]
+                if code == 'n' and prev == 'l':
+                    found.append((n + 1, line.strip()))
+                    if fix:
+                        code = 'l'
+                        changed = True
+                out.append('\\' + code)
+                prev = None if code == 'p' else code
+                i += 2
+                continue
+            if body[i] == '$':
+                prev = None
+            out.append(body[i])
+            i += 1
+        if fix:
+            lines[n] = m.group(1) + ''.join(out) + m.group(3)
+    if fix and changed:
+        Path(path).write_text(''.join(lines), encoding='utf-8')
+    return found
+
+
+def fixl(paths):
+    total = 0
+    for p in paths:
+        f = scan_n_after_l(p, fix=True)
+        total += len(f)
+        for n, l in f:
+            print(f'{p}:{n}: corrigé : {l}')
+    print(f'{total} \\n après \\l corrigés')
+    return 0
+
+
 def check(paths):
     worst = 0
     bad = 0
+    nl = 0
     for p in paths:
+        for n, l in scan_n_after_l(p):
+            nl += 1
+            print(f'{p}:{n}: \\n après \\l (la boîte bloque) : {l}')
         for n, line in enumerate(Path(p).read_text(encoding='utf-8').splitlines(), 1):
             m = re.match(r'\s*\.string\s+"(.*)"\s*$', line)
             if not m:
@@ -231,12 +282,12 @@ def check(paths):
                 if w > MAX_WIDTH:
                     bad += 1
                     print(f'{p}:{n}: {w}px > {MAX_WIDTH}px : {part}')
-    print(f'Ligne la plus large : {worst}px ; lignes trop larges : {bad}')
-    return 1 if bad else 0
+    print(f'Ligne la plus large : {worst}px ; lignes trop larges : {bad} ; \\n après \\l : {nl}')
+    return 1 if bad or nl else 0
 
 
 if __name__ == '__main__':
-    commands = {'apply': apply, 'check': check, 'dump': dump}
+    commands = {'apply': apply, 'check': check, 'dump': dump, 'fixl': fixl}
     if len(sys.argv) < 3 or sys.argv[1] not in commands:
         print(__doc__)
         sys.exit(2)

@@ -311,7 +311,7 @@ SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
 SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong:
 	.string "Je viens voir pourquoi vous mettez\n"
 	.string "trois heures à voler des pièces, et je\l"
-	.string "vous trouve tenus en échec par… un\n"
+	.string "vous trouve tenus en échec par… un\l"
 	.string "enfant ?$"
 
 SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
@@ -392,7 +392,7 @@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 	.string "“Près de la surface, elle est faible.\p"
 	.string "“Mais dans les abysses, elle peut\n"
 	.string "atteindre des dizaines de milliers de\l"
-	.string "tonnes sur une petite surface. De quoi\n"
+	.string "tonnes sur une petite surface. De quoi\l"
 	.string "écraser un sous-marin comme une\l"
 	.string "canette.”$"
 

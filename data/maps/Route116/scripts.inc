@@ -370,7 +370,7 @@ Route116_Text_DiggingTunnelWhenGoonOrderedMeOut:
 	.string "machines…\p"
 	.string "J'ai peur que ce crétin fasse une\n"
 	.string "connerie et provoque une panique\l"
-	.string "générale. Des Pokémon terrifiés dans un\n"
+	.string "générale. Des Pokémon terrifiés dans un\l"
 	.string "tunnel, ça finit mal. Pour tout le monde.$"
 
 Route116_Text_GoonHightailedItOutOfTunnel:

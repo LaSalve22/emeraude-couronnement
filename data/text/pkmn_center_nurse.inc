@@ -30,7 +30,7 @@ gText_NoticesGoldCard::
 	.string "étoiles qui scintillent !\p"
 	.string "J'ai déjà vu des Dresseurs avec une\n"
 	.string "CARTE ARGENT, mais {PLAYER}, tu es la\l"
-	.string "première personne que je vois avec une\n"
+	.string "première personne que je vois avec une\l"
 	.string "CARTE OR !\p"
 	.string "{PLAYER}, accorde-moi l'honneur de\n"
 	.string "soigner tes Pokémon !$"

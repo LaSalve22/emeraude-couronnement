@@ -14,7 +14,7 @@ PetalburgCity_House2_Text_NormanBecameGymLeader:
 	.string "ville.\p"
 	.string "Il a fait venir sa famille de loin,\n"
 	.string "paraît-il. On ne le voit jamais avec eux.\l"
-	.string "On le voit juste s'entraîner à 5 h du\n"
+	.string "On le voit juste s'entraîner à 5 h du\l"
 	.string "matin en hurlant.$"
 
 PetalburgCity_House2_Text_BattledNormanOnce:

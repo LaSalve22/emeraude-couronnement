@@ -326,6 +326,16 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Vendeurs des Boutiques et arbres à Baies en français (`translations/fr/23_boutiques_baies.txt`, stades `.if` traduits à la main).
   Restent en anglais (désactivés par la config) : mutations de Baies, engrais, Noigrumes.
 
+## Fait (v0.30.3) - corrections après test sur mGBA
+
+- Boîtes de texte bloquées : `format_text` de `tools/fr/textfr.py` ne met plus qu'un `\n` par paragraphe, puis des `\l`
+  (un `\n` après un `\l` bloque la boîte). `textfr.py check` signale aussi ces cas, `textfr.py fixl` les corrige ; 49 textes régénérés.
+- Page stats : case blanche de gauche réduite à 5 tuiles, étiquettes de droite décalées d'une tuile (`page_skills.bin`), valeurs alignées à droite.
+- Menus de l'équipe et du PC en français (`src/data/party_menu.h`, `src/pokemon_storage_system.c`). Étiquettes de type en français
+  (`tools/fr/types_fr.py`, originaux dans `graphics/couronnement/types_en/`). Titre « MEMO DRESSEUR » remplacé par « CARNET ».
+- Pokédex : n° national pour les espèces hors Pokédex de Hoenn, mètres / kilos (`UNITS_METRIC`), « Données ajoutées au POKéDEX. ».
+  Reste en anglais : descriptions du Pokédex, étiquettes de Concours.
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

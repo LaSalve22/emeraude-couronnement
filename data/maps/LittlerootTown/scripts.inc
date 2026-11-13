@@ -946,7 +946,7 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "“Maintenez le Bouton B pour courir.”\p"
 	.string "“Le fabricant décline toute\n"
 	.string "responsabilité en cas de chute, de\l"
-	.string "collision ou de poursuite par un\n"
+	.string "collision ou de poursuite par un\l"
 	.string "Pokémon sauvage.”$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
@@ -963,7 +963,7 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "Et des Pokémon.\p"
 	.string "Tu transformes un être vivant en\n"
 	.string "fichier et tu le ranges dans un dossier.\l"
-	.string "Personne ne trouve ça bizarre ?\n"
+	.string "Personne ne trouve ça bizarre ?\l"
 	.string "Personne ?$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
@@ -983,7 +983,7 @@ LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 LittlerootTown_Text_DangerousIfYouDontHavePokemon:
 	.string "Sans Pokémon, c'est hyper dangereux.\n"
 	.string "Mon frère a perdu une chaussure l'été\l"
-	.string "dernier. Et le pied qui allait avec,\n"
+	.string "dernier. Et le pied qui allait avec,\l"
 	.string "presque.$"
 
 LittlerootTown_Text_CanYouGoSeeWhatsHappening:

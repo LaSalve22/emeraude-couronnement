@@ -682,7 +682,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "répartition des Pokémon.\p"
 	.string "{RIVAL} l'aide souvent. Ils se hurlent\n"
 	.string "dessus toute la journée, puis se\l"
-	.string "partagent une pizza en silence. C'est\n"
+	.string "partagent une pizza en silence. C'est\l"
 	.string "leur façon de s'aimer.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
@@ -692,7 +692,7 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "phrases.\p"
 	.string "Tu n'avais jamais eu de Pokémon. Et\n"
 	.string "pourtant, tout à l'heure, tu as foncé\l"
-	.string "sans réfléchir pour sauver un vieux\n"
+	.string "sans réfléchir pour sauver un vieux\l"
 	.string "crétin en short.\p"
 	.string "C'est stupide. C'est courageux. C'est\n"
 	.string "exactement ce qu'il faut pour ce métier.\p"
@@ -713,7 +713,7 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "Pokémon en m'aidant sur le terrain.\p"
 	.string "Va donc voir {RIVAL}. Vous allez vous\n"
 	.string "détester, puis vous rendre meilleurs.\l"
-	.string "C'est comme ça que ça marche, les\n"
+	.string "C'est comme ça que ça marche, les\l"
 	.string "rivaux.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
@@ -735,7 +735,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "finir sur la même plaque commémorative.\p"
 	.string "Si tes Pokémon sont crevés, rentre te\n"
 	.string "reposer. Les cimetières sont pleins de\l"
-	.string "gens qui disaient “allez, juste un\n"
+	.string "gens qui disaient “allez, juste un\l"
 	.string "combat de plus”.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
@@ -761,7 +761,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "toilettes.\p"
 	.string "Dès qu'il attrape un Pokémon rare, il me\n"
 	.string "traque sur le terrain pour me le\l"
-	.string "montrer. Même quand je suis coincé sous\n"
+	.string "montrer. Même quand je suis coincé sous\l"
 	.string "un rocher.\p"
 	.string "Chaque page, c'est une rencontre.\n"
 	.string "Certaines te feront rire. D'autres, tu\l"
@@ -770,7 +770,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 	.string "Prof. Seko : Des centaines de Pokémon\n"
 	.string "t'attendent ! Certains veulent être tes\l"
-	.string "amis. D'autres veulent ta peau.\n"
+	.string "amis. D'autres veulent ta peau.\l"
 	.string "Apprends à faire la différence.\p"
 	.string "Argh, ça me démange ! Faut que je\n"
 	.string "retourne sur le terrain !$"
@@ -985,7 +985,7 @@ LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
 LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
 	.string "Brice : Collectionner, c'est pas mon\n"
 	.string "truc. Je préfère élever un seul Pokémon,\l"
-	.string "lentement, jusqu'à ce qu'il soit plus\n"
+	.string "lentement, jusqu'à ce qu'il soit plus\l"
 	.string "fort que tout ce que mon père a connu.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:

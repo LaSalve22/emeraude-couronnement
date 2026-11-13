@@ -750,7 +750,7 @@ Route110_Text_KickUpARuckus:
 Route110_Text_MyFirstJobInAqua:
 	.string "C'est ma première mission depuis que je\n"
 	.string "suis entré dans la Team Aqua. J'ai un\l"
-	.string "peu peur. Ils ont un drôle de regard, les\n"
+	.string "peu peur. Ils ont un drôle de regard, les\l"
 	.string "anciens.$"
 
 Route110_Text_AquaActionsBringSmiles:
@@ -782,7 +782,7 @@ Route110_Text_MayExplainItemfinder:
 	.string "prochaine fois, je ne perdrai pas.\p"
 	.string "…Et fais attention à la Team Aqua. J'ai\n"
 	.string "vu ce qu'ils ont fait à un Goélise blessé\l"
-	.string "sur la plage. Je veux plus jamais voir\n"
+	.string "sur la plage. Je veux plus jamais voir\l"
 	.string "ça.$"
 
 Route110_Text_BrendanLetsBattle:

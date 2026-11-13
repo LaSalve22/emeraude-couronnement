@@ -56,7 +56,7 @@ gText_Birch_AreYouReady::
 	.string "parfois franchement débile.\p"
 	.string "Tu vas te faire des amis. Tu vas en\n"
 	.string "perdre. Tu vas te battre pour des\l"
-	.string "choses qui comptent, et pour d'autres\n"
+	.string "choses qui comptent, et pour d'autres\l"
 	.string "qui ne valent rien.\p"
 	.string "Choisis bien lesquelles.\p"
 	.string "Allez ! Passe me voir au labo quand tu\n"

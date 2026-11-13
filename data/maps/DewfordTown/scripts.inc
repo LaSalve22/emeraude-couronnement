@@ -630,7 +630,7 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 DewfordTown_Text_TinyIslandCommunity:
 	.string "Myokara, c'est un tout petit village. Si\n"
 	.string "un truc devient à la mode ici, tout le\l"
-	.string "monde l'adopte en une heure. Et l'oublie\n"
+	.string "monde l'adopte en une heure. Et l'oublie\l"
 	.string "en deux.$"
 
 DewfordTown_Text_TownSign:

@@ -716,7 +716,7 @@ PetalburgCity_Text_ThisIsPetalburgGym:
 PetalburgCity_Text_ThisIsGymSign:
 	.string "Ça, c'est le panneau de l'Arène.\n"
 	.string "Retiens-le. C'est souvent la dernière\l"
-	.string "chose que voient les challengers avant\n"
+	.string "chose que voient les challengers avant\l"
 	.string "de se faire humilier.$"
 
 PetalburgCity_Text_WaterReflection:

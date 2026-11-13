@@ -442,7 +442,7 @@ PetalburgCity_Gym_Text_TakeMegaRing:
 PetalburgCity_Gym_Text_ExplainMegaRing:
 	.string "Papa : Avec ce Méga-Anneau, un Pokémon\n"
 	.string "qui tient sa Méga-Gemme peut\l"
-	.string "Méga-évoluer en combat. Une fois par\n"
+	.string "Méga-évoluer en combat. Une fois par\l"
 	.string "combat.\p"
 	.string "C'est une puissance énorme. Elle a brisé\n"
 	.string "des Dresseurs plus solides que toi. Ne\l"
@@ -1281,7 +1281,7 @@ PetalburgCity_Gym_Text_NormanGoToDewford:
 	.string "Papa : …Tu as battu Roxanne.\p"
 	.string "Bien. Mais il reste des dizaines de\n"
 	.string "Dresseurs plus forts que toi. Ne prends\l"
-	.string "pas la grosse tête. C'est comme ça qu'on\n"
+	.string "pas la grosse tête. C'est comme ça qu'on\l"
 	.string "tombe.\p"
 	.string "De l'autre côté de la mer, au Village\n"
 	.string "Myokara, il y a Bastien.\p"

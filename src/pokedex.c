@@ -686,9 +686,9 @@ static const u8 sText_UnkHeight[] = _("{CLEAR_TO 12}??'??”");
 static const u8 sText_UnkHeightMetric[] = _("???.? m");
 static const u8 sText_UnkWeight[] = _("????.? lbs.");
 static const u8 sText_UnkWeightMetric[] = _("???.? kg.");
-static const u8 sText_PokedexRegistration[] = _("POKéDEX registration completed.");
-static const u8 sText_HTHeight[] = _("HT");
-static const u8 sText_WTWeight[] = _("WT");
+static const u8 sText_PokedexRegistration[] = _("Données ajoutées au POKéDEX.");
+static const u8 sText_HTHeight[] = _("TAI");
+static const u8 sText_WTWeight[] = _("PDS");
 static const u8 sText_SearchingPleaseWait[] = _("Searching…\nPlease wait.");
 static const u8 sText_SearchCompleted[] = _("Search completed.");
 static const u8 sText_NoMatchingPkmnWereFound[] = _("No matching POKéMON were found.");
@@ -2338,7 +2338,7 @@ void CreateMonDexNum(u16 entryNum, u8 left, u8 top, u16 unused)
         offset = 0;
 
     dexNum = sPokedexView->pokedexList[entryNum].dexNum;
-    if (sPokedexView->dexMode == DEX_MODE_HOENN)
+    if (sPokedexView->dexMode == DEX_MODE_HOENN && NationalToRegionalOrder(dexNum) != 0) // Couronnement : hors Pokédex de Hoenn -> n° national
         dexNum = NationalToRegionalOrder(dexNum);
     memcpy(text, sText_No0000, ARRAY_COUNT(sText_No0000));
     if (NATIONAL_DEX_COUNT > 999 && sPokedexView->dexMode != DEX_MODE_HOENN)
@@ -4167,7 +4167,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
 
     if (newEntry)
         PrintInfoScreenText(sText_PokedexRegistration, GetStringCenterAlignXOffset(FONT_NORMAL, sText_PokedexRegistration, DISPLAY_WIDTH), 0);
-    if (value == 0)
+    if (value == 0 && NationalToRegionalOrder(num) != 0) // Couronnement : hors Pokédex de Hoenn -> n° national
         value = NationalToRegionalOrder(num);
     else
         value = num;
