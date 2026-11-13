@@ -14,23 +14,22 @@ def font(name, size, index=0):
     return ImageFont.truetype(SUP + name, size, index=index)
 
 
-def fond():
+def fond(cx=W / 2, cy=H * 0.56):
     img = Image.new('RGB', (W, H))
     px = img.load()
-    cx, cy = W / 2, H * 0.56
     for y in range(H):
         for x in range(W):
-            d = min(1, math.hypot(x - cx, y - cy) / 820)
-            px[x, y] = (int(14 * (1 - d) + 4), int(92 * (1 - d) ** 1.4 + 8), int(62 * (1 - d) ** 1.4 + 14))
+            d = min(1, math.hypot(x - cx, y - cy) / 900)
+            px[x, y] = (int(150 * (1 - d) + 20), int(225 * (1 - d) + 110), int(150 * (1 - d) + 40))
     # rayons de lumière
     rays = Image.new('L', (W, H), 0)
     dr = ImageDraw.Draw(rays)
     for i in range(24):
         a = i * math.pi / 12
         pts = [(cx, cy)] + [(cx + 1800 * math.cos(a + s), cy + 1800 * math.sin(a + s)) for s in (-0.05, 0.05)]
-        dr.polygon(pts, fill=34)
-    rays = rays.filter(ImageFilter.GaussianBlur(10))
-    img = Image.composite(Image.new('RGB', (W, H), (120, 230, 170)), img, rays)
+        dr.polygon(pts, fill=150)
+    rays = rays.filter(ImageFilter.GaussianBlur(12))
+    img = Image.composite(Image.new('RGB', (W, H), (235, 255, 225)), img, rays)
     return img
 
 
@@ -86,10 +85,10 @@ def couronne(img, cx, base, w):
         d.ellipse((x - 13, y - 13, x + 13, y + 13), fill=(255, 236, 150), outline=(90, 55, 10), width=4)
 
 
-def texte_or(img, txt, f, cy, spacing=0):
+def texte_or(img, txt, f, cy, centre=W / 2):
     d = ImageDraw.Draw(img)
     bb = d.textbbox((0, 0), txt, font=f, stroke_width=14)
-    x = (W - (bb[2] - bb[0])) / 2 - bb[0]
+    x = centre - (bb[2] - bb[0]) / 2 - bb[0]
     y = cy - (bb[3] - bb[1]) / 2 - bb[1]
     ombre = Image.new('L', (W, H), 0)
     ImageDraw.Draw(ombre).text((x + 8, y + 12), txt, font=f, fill=200, stroke_width=14, stroke_fill=200)
@@ -109,11 +108,11 @@ def texte_or(img, txt, f, cy, spacing=0):
     img.paste(grad, mask=masque)
 
 
-def texte_centre(img, txt, f, cy, fill, stroke=0, stroke_fill=None, track=0):
+def texte_centre(img, txt, f, cy, fill, stroke=0, stroke_fill=None, track=0, centre=W / 2):
     d = ImageDraw.Draw(img)
     largeurs = [d.textlength(ch, font=f) for ch in txt]
     total = sum(largeurs) + track * (len(txt) - 1)
-    x = (W - total) / 2
+    x = centre - total / 2
     for ch, lw in zip(txt, largeurs):
         d.text((x, cy), ch, font=f, fill=fill, anchor='lm', stroke_width=stroke, stroke_fill=stroke_fill)
         x += lw + track
@@ -131,18 +130,55 @@ def dark_ball(img, cx, cy, r):
     img.paste(src, (cx - r, cy - r), m)
 
 
-def main():
-    img = fond()
-    emeraude(img, W // 2, 760, 220)
-    couronne(img, W // 2, 548, 270)
-    dark_ball(img, 1010, 1010, 92)
-    texte_or(img, 'ÉMERAUDE', font('Impact.ttf', 210), 160)
-    texte_centre(img, 'COURONNEMENT MONDIAL', font('Copperplate.ttc', 62, 1), 300, (235, 255, 240), 4, (8, 40, 28), 6)
+def bande_laterale(img, largeur):
+    """Bande argentée verticale à gauche, façon boîte de cartouche, avec le nom du hack."""
+    bande = Image.new('RGB', (largeur, H))
+    d = ImageDraw.Draw(bande)
+    for x in range(largeur):
+        t = x / largeur
+        v = int(150 + 95 * math.sin(t * math.pi * 1.6 + 0.3) ** 2)
+        d.line([(x, 0), (x, H)], fill=(v, v, min(255, v + 10)))
+    for y in range(0, H, 3):  # léger brossé
+        d.line([(0, y), (largeur, y)], fill=None)
+    txt = Image.new('RGBA', (H, largeur), (0, 0, 0, 0))
+    td = ImageDraw.Draw(txt)
+    f = font('Arial Black.ttf', 96)
+    td.text((H / 2, largeur / 2), 'COURONNEMENT', font=f, anchor='mm', fill=(70, 50, 130), stroke_width=4, stroke_fill=(250, 250, 255))
+    bande.paste(txt.rotate(90, expand=True), (0, 0), txt.rotate(90, expand=True))
+    img.paste(bande, (0, 0))
+    ImageDraw.Draw(img).line([(largeur, 0), (largeur, H)], fill=(40, 40, 50), width=4)
+
+
+def badge_rond(img, cx, cy, r):
     d = ImageDraw.Draw(img)
-    d.rectangle((0, H - 92, W, H), fill=(6, 22, 16))
-    d.line((0, H - 92, W, H - 92), fill=(232, 182, 48), width=4)
-    texte_centre(img, 'NORMAL  ·  HARD  ·  KAIZO', font('Futura.ttc', 40, 2), H - 46, (232, 182, 48), track=3)
-    d.text((34, 34), 'ROMHACK', font=font('Futura.ttc', 28, 2), fill=(170, 230, 200))
+    d.ellipse((cx - r - 6, cy - r - 6, cx + r + 6, cy + r + 6), fill=(255, 255, 255))
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=(20, 20, 20))
+    d.ellipse((cx - r * 0.78, cy - r * 0.78, cx + r * 0.78, cy + r * 0.78), fill=(250, 215, 30))
+    f = font('Arial Black.ttf', 23)
+    for k, t in enumerate(('NORMAL', 'HARD', 'KAIZO')):
+        d.text((cx, cy - 34 + k * 34), t, font=f, anchor='mm', fill=(20, 20, 20))
+
+
+def main():
+    gauche = 230
+    centre = gauche + (W - gauche) / 2
+    img = fond(centre, H * 0.5)
+    emeraude(img, int(centre), 840, 190)
+    couronne(img, int(centre), 660, 235)
+    dark_ball(img, int(centre) + 280, 880, 78)
+    d = ImageDraw.Draw(img)
+    d.text((centre, 30), 'TEXTE ÉCRAN EN FRANÇAIS', font=font('Arial Bold.ttf', 22), anchor='mm', fill=(30, 30, 30))
+    texte_or(img, 'ÉMERAUDE', font('Impact.ttf', 200), 160, centre)
+    f = font('Arial Black.ttf', 84)
+    for cy, t in ((322, 'COURONNEMENT'), (412, 'MONDIAL')):
+        ombre = Image.new('L', (W, H), 0)
+        ImageDraw.Draw(ombre).text((centre + 6, cy + 8), t, font=f, anchor='mm', fill=170, stroke_width=10, stroke_fill=170)
+        img.paste((0, 0, 0), mask=ombre.filter(ImageFilter.GaussianBlur(6)))
+        d.text((centre, cy), t, font=f, anchor='mm', fill=(255, 255, 255), stroke_width=10, stroke_fill=(15, 15, 15))
+    bande_laterale(img, gauche)
+    badge_rond(img, W - 120, H - 120, 92)
+    d.text((gauche + 40, H - 50), 'Romhack par LaSalve22', font=font('Arial Bold.ttf', 34), anchor='lm', fill=(20, 20, 20),
+           stroke_width=3, stroke_fill=(255, 255, 255))
     out = ROOT / 'docs/jaquette/jaquette.png'
     img.save(out)
     print(out)
