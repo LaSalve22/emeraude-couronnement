@@ -336,6 +336,12 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Pokédex : n° national pour les espèces hors Pokédex de Hoenn, mètres / kilos (`UNITS_METRIC`), « Données ajoutées au POKéDEX. ».
   Reste en anglais : descriptions du Pokédex, étiquettes de Concours.
 
+## Fait (v0.31) - starters retouchés
+
+- Feurisson (N.36) -> Typhlosion le jour (désormais Feu / Sol), Typhlosion de Hisui la nuit (Feu / Spectre) :
+  `IF_TIME` / `IF_NOT_TIME` `TIME_NIGHT` dans `src/data/pokemon/species_info/gen_2_families.h` (horloge de la cartouche).
+- Arcko, Massko et Jungko sont Plante / Dragon (`gen_3_families.h`).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
