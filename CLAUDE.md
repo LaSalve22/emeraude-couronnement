@@ -447,10 +447,24 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Idées d'Adrien à concevoir plus tard
 
-- **Arènes** : devenir Champion après la Ligue dans une ville sans arène ; plusieurs arènes achetables, type au choix (hors types des
-  Champions existants) ; Pokémon déposés dans l'arène, bloqués et stockés, qui y gagnent de l'expérience ; challengers de niveaux
-  différents selon leur nombre de badges (Pokémon du joueur au niveau équivalent pour les affronter). Poser des questions avant.
-  Piste technique : stocker les Pokémon d'arène dans une boîte du PC réservée (la sauvegarde n'a plus de place libre ailleurs).
+- **Graphique de la Bourse (choix d'Adrien, 14/11)** : chandeliers japonais par défaut sur la fiche, SELECT bascule en courbe, 30 jours.
+  Stocker seulement les clôtures (30 x 10 entreprises, ~600 octets dans SaveBlock3) ; ouverture = clôture de la veille,
+  mèches recalculées par le hasard fixe du jour. Vert hausse / rouge baisse, échelle de prix.
+- **Arènes (choix d'Adrien, 14/11)** : après la Ligue, plusieurs arènes achetables dans les villes sans arène (Rosyères, Poivressel,
+  Vergazon, Vermilava, Nénucrique, Pacifiville…). Type majoritaire : au moins 4 Pokémon du type choisi parmi Plante, Glace, Insecte,
+  Poison, Sol, Spectre, Dragon, Ténèbres, Acier, Fée. Dépôt : 6 titulaires + 3 remplaçants, bloqués tant qu'ils y sont.
+  Combats toujours joués par le joueur : les challengers attendent à l'arène. Selon les badges du challenger (1 à 8), nombre de
+  Pokémon (2 à 6, comme les vraies arènes) et niveau au cap de ses badges (18 … 78) le temps du combat.
+  Revenus : XP chaque jour aux Pokémon déposés + bonus par combat (jusqu'au N.100), sponsors et réputation (plus de victoires =
+  plus de challengers), l'arène compte comme un commerce de la société (trésorerie, valeur dans le cours).
+  Défaite : le challenger gagne le badge, le joueur paie la prime du badge, réputation en baisse, moins de challengers quelques jours.
+  À fixer au moment du code : prix d'achat, challengers par jour. Place : SaveBlock3 (les Pokémon déposés : ~1 568 octets libres
+  en fin de PC, ou une boîte réservée).
+- **Saisons du Couronnement (choix d'Adrien, 14/11)** : nouvelle saison juste après la finale (gagnée ou perdue) ; Elo ramené à
+  mi-chemin de 1500 (2000 -> 1750) ; adversaires plus forts (Elo +100 par saison, N.100, EV, objets), équipes qui tournent,
+  finaliste différent selon la saison (Red, Blue, Green, Champions d'autres régions). Récompenses de fin de saison selon le palier
+  (Super / Hyper / Master / Champions) : objets rares (Patch Talent, Capsule d'Or, Master Ball, Dark Ball…), primes en argent,
+  titre et palmarès (saisons gagnées) dans le menu MONDIAL.
 - Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.
 
 ## Prochaines étapes, dans l'ordre
