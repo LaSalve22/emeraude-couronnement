@@ -71,6 +71,11 @@ gSpecials::
 	def_special Commerce_EtatBoutique
 	def_special Commerce_EtatCentre
 	def_special Commerce_TexteAgrandir
+	def_special Banque_Ouvrir
+	def_special Banque_Resume
+	def_special Banque_Fiche
+	def_special Banque_ScriptEmprunter
+	def_special Banque_ScriptRembourser
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

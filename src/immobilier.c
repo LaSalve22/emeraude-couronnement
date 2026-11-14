@@ -129,7 +129,7 @@ static void Encaisser(u32 montant)
     if (gSaveBlock2Ptr->pokedex.societe.etat != 0)
     {
         u32 *tresorerie = &gSaveBlock2Ptr->pokedex.societe.tresorerie;
-        *tresorerie = (u64)*tresorerie + montant > 99999999 ? 99999999 : *tresorerie + montant;
+        *tresorerie = (u64)*tresorerie + montant > 2000000000 ? 2000000000 : *tresorerie + montant;
     }
     else
     {
@@ -270,8 +270,9 @@ static u32 Aujourdhui(void)
 
 static u8 *AjouterNombre(u8 *fin, u32 n)
 {
-    u32 chiffres = 1, p = 10;
-    while (n >= p && chiffres < 9)
+    u32 chiffres = 1;
+    u64 p = 10;
+    while (n >= p && chiffres < 10)
     {
         chiffres++;
         p *= 10;
@@ -422,7 +423,7 @@ void Immo_Fiche(void)
 static const u8 sText_Achete[] = _("Signé ! Les clés sont à toi.\nUn locataire emménage demain.");
 static const u8 sText_AchatRate[] = _("Pas assez d'argent pour le prix et\nle notaire. Reviens plus riche.");
 static const u8 sText_Vendu[] = _("Vendu ! L'argent est sur ton compte.");
-static const u8 sText_VenteRatee[] = _("Ton portefeuille est trop plein\n(999 999 ¥ max). Dépense d'abord.");
+static const u8 sText_VenteRatee[] = _("Ton portefeuille est trop plein\n(999 999 999 ¥ max). Dépense d'abord.");
 
 void Immo_ScriptAcheter(void)
 {

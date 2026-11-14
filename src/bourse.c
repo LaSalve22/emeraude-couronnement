@@ -1,6 +1,7 @@
 #include "global.h"
 #include "bourse.h"
 #include "couronnement.h"
+#include "calendrier.h"
 #include "event_data.h"
 #include "money.h"
 #include "rtc.h"
@@ -200,11 +201,12 @@ s32 Bourse_VariationDuJour(u32 entreprise, u32 jour)
     return variation;
 }
 
+// Dividende des Grands Magasins : chaque vendredi (v0.37).
 static void VerserDividende(u32 jour)
 {
     u32 dividende;
 
-    if (jour < BOURSE.jourDividende + 7)
+    if (Calendrier_JourSemaine(jour) != WEEKDAY_FRI || BOURSE.jourDividende == jour)
         return;
     BOURSE.jourDividende = jour;
     dividende = (u64)BOURSE.parts[BOURSE_MAGASINS] * BOURSE.cours[BOURSE_MAGASINS] * BOURSE_DIVIDENDE_POURMILLE / 1000;
@@ -216,10 +218,12 @@ void Bourse_PasserJour(u32 jour)
 {
     u32 i;
 
+    // Pas de cotation le samedi ni le dimanche (v0.37) : les cours restent figés.
     for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
     {
         BOURSE.veille[i] = BOURSE.cours[i];
-        BOURSE.cours[i] = AppliquerPourMille(BOURSE.cours[i], Bourse_VariationDuJour(i, jour));
+        if (!Calendrier_EstWeekend(jour))
+            BOURSE.cours[i] = AppliquerPourMille(BOURSE.cours[i], Bourse_VariationDuJour(i, jour));
     }
     if (BOURSE.dette)
     {
@@ -249,7 +253,7 @@ u32 Bourse_ValeurPortefeuille(void)
 
     for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
         total += (u64)BOURSE.parts[i] * BOURSE.cours[i];
-    return Borner(total, 0, 99999999);
+    return Borner(total, 0, 2000000000);
 }
 
 // L'huissier passe si la dette dépasse le portefeuille + 10 000 : il vend tout (avec une pénalité de 10 %),
@@ -339,7 +343,7 @@ u32 Bourse_Vendre(u32 entreprise, u32 quantite)
         return 0;
     if (quantite > BOURSE.parts[entreprise])
         quantite = BOURSE.parts[entreprise];
-    // On ne vend pas plus que ce que le portefeuille (999 999 ¥ max) peut encaisser.
+    // On ne vend pas plus que ce que le portefeuille (MAX_MONEY) peut encaisser.
     place = MAX_MONEY - GetMoney(&gSaveBlock1Ptr->money);
     cours = BOURSE.cours[entreprise];
     possible = (u64)place * 100 / ((u64)cours * (100 - BOURSE_FRAIS_POURCENT));
@@ -392,8 +396,9 @@ static const u8 sText_Yens[] = _(" ¥");
 
 static u8 *AjouterNombre(u8 *fin, u32 n)
 {
-    u32 chiffres = 1, p = 10;
-    while (n >= p && chiffres < 9)
+    u32 chiffres = 1;
+    u64 p = 10;
+    while (n >= p && chiffres < 10)
     {
         chiffres++;
         p *= 10;
@@ -456,6 +461,7 @@ static const u8 sText_Resume1[] = _("Liquide : ");
 static const u8 sText_Resume2[] = _("\nPlacements : ");
 static const u8 sText_Resume3[] = _("\pDette : ");
 static const u8 sText_Resume4[] = _(". Bourse de Hoenn,\non fait quoi ?");
+static const u8 sText_Resume4Weekend[] = _(". Week-end : cours\nfigés jusqu'à lundi. On fait quoi ?");
 
 void Bourse_Resume(void)
 {
@@ -465,7 +471,7 @@ void Bourse_Resume(void)
     fin = AjouterYens(fin, Bourse_ValeurPortefeuille());
     fin = AjouterTexte(fin, sText_Resume3);
     fin = AjouterYens(fin, BOURSE.dette);
-    AjouterTexte(fin, sText_Resume4);
+    AjouterTexte(fin, Calendrier_EstWeekend(Aujourdhui()) ? sText_Resume4Weekend : sText_Resume4);
 }
 
 // Lignes de la liste du marché : « Devon SA 612 ¥ ↑ ».
@@ -523,7 +529,7 @@ static const u8 sText_Vente1[] = _("Vendu : ");
 static const u8 sText_Ordre2[] = _(" parts de\n");
 static const u8 sText_Ordre3[] = _(".");
 static const u8 sText_AchatRien[] = _("Pas assez de liquide, ou plafond de\n9999 parts atteint. Rien acheté.");
-static const u8 sText_VenteRien[] = _("Rien à vendre, ou ton portefeuille\nest plein (999 999 ¥). Rien vendu.");
+static const u8 sText_VenteRien[] = _("Rien à vendre, ou ton portefeuille\nest plein. Rien vendu.");
 
 static void TexteOrdre(const u8 *debut, u32 quantite, u32 entreprise)
 {
@@ -615,20 +621,28 @@ void Bourse_ScriptRembourser(void)
 
 // Tuyau du jour : une rumeur sur le cours de demain d'une entreprise, vraie 7 fois sur 10.
 static const u8 sText_TuyauHausse1[] = _("Un type louche au Centre Pokémon\njure que ");
-static const u8 sText_TuyauHausse2[] = _("\lva s'envoler demain. Il a l'air sûr\lde lui.");
+static const u8 sText_TuyauHausse2[] = _("\lva s'envoler ");
+static const u8 sText_TuyauHausse3[] = _(". Il a l'air sûr\lde lui.");
 static const u8 sText_TuyauBaisse1[] = _("Rumeur à la télé : ");
-static const u8 sText_TuyauBaisse2[] = _("\nva prendre une claque demain.");
+static const u8 sText_TuyauBaisse2[] = _("\nva prendre une claque ");
+static const u8 sText_TuyauBaisse3[] = _(".");
+static const u8 sText_Demain[] = _("demain");
+static const u8 sText_Lundi[] = _("lundi");
 static const u8 sText_TuyauFin[] = _("\pÀ toi de voir si tu y crois.");
 
 void Bourse_Tuyau(void)
 {
-    u32 jour = Aujourdhui(), e = Alea(jour, 77, 0) % BOURSE_NB_ENTREPRISES;
-    bool32 vrai = Alea(jour, 77, 1) % 100 < BOURSE_TUYAU_FIABLE;
-    bool32 hausse = (Bourse_VariationDuJour(e, jour + 1) >= 0) == vrai;
+    u32 jour = Aujourdhui(), e = Alea(jour, 77, 0) % BOURSE_NB_ENTREPRISES, seance = jour + 1;
+    bool32 vrai = Alea(jour, 77, 1) % 100 < BOURSE_TUYAU_FIABLE, hausse;
     u8 *fin;
 
+    while (Calendrier_EstWeekend(seance)) // prochaine séance : lundi après un week-end
+        seance++;
+    hausse = (Bourse_VariationDuJour(e, seance) >= 0) == vrai;
     fin = AjouterTexte(gStringVar4, hausse ? sText_TuyauHausse1 : sText_TuyauBaisse1);
     fin = AjouterTexte(fin, sEntreprises[e].nom);
     fin = AjouterTexte(fin, hausse ? sText_TuyauHausse2 : sText_TuyauBaisse2);
+    fin = AjouterTexte(fin, seance == jour + 1 ? sText_Demain : sText_Lundi);
+    fin = AjouterTexte(fin, hausse ? sText_TuyauHausse3 : sText_TuyauBaisse3);
     AjouterTexte(fin, sText_TuyauFin);
 }

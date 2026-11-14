@@ -187,7 +187,7 @@
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE              0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER               0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
-#define VAR_UNUSED_0x40A8                                0x40A8 // Unused Var
+#define VAR_BANQUE_PAYE_BAS                              0x40A8 // Couronnement : échéances prélevées à annoncer (16 bits bas)
 #define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB
@@ -203,7 +203,7 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
+#define VAR_BANQUE_PAYE_HAUT                             0x40B8 // Couronnement : échéances prélevées à annoncer (16 bits hauts)
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
 #define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
@@ -274,7 +274,7 @@
 #define VAR_COMMERCE_RECETTES_HAUT                       0x40FC // Couronnement : recettes à annoncer (16 bits hauts)
 #define VAR_COMMERCE_GUERRE_PRIX                         0x40FD // Couronnement : jours de prix bas face au concurrent
 #define VAR_COMMERCE_REMETTRE                            0x40FE // Couronnement : drapeau du concurrent à remettre « non battu »
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_BANQUE_DEFAUTS                               0x40FF // Couronnement : défauts de paiement à annoncer (un bit par banque)
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

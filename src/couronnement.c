@@ -1,4 +1,5 @@
 #include "global.h"
+#include "calendrier.h"
 #include "couronnement.h"
 #include "battle.h"
 #include "battle_util.h"
@@ -472,6 +473,7 @@ void Couronnement_BufferMenuL(void)
 
     StringCopy(gStringVar1, FlagGet(FLAG_REPOUSSE_INFINIE) ? sText_RepousseOui : sText_RepousseNon);
     StringCopy(gStringVar2, FlagGet(FLAG_COURSE_AUTO) ? sText_CourseAuto : sText_CourseB);
+    StringCopy(gStringVar3, Calendrier_NomJour(Calendrier_JourSemaine(Calendrier_Aujourdhui()))); // v0.37
 }
 
 void Couronnement_EstChampionDuMonde(void)

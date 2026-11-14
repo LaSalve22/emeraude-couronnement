@@ -320,6 +320,16 @@ struct ImmoSave
     u32 travaux;                      // travaux payés depuis le dernier rapport
 };
 
+// Émeraude Couronnement : banques (v0.37). Dette du Prêteur du Casino + jour traité + nombre magique, dans les 8 derniers
+// octets de la zone libre de SaveBlock1 (après l'immobilier) ; les deux autres dettes sont dans SaveBlock2 (detteBanque).
+#define BANQUE_MAGIE 0xBA9C
+struct BanqueSave
+{
+    u32 detteCasino;
+    u16 jour;
+    u16 magie;
+};
+
 struct Pokedex
 {
     /*0x00*/ u8 order;
@@ -335,6 +345,7 @@ struct Pokedex
         struct {
             struct BourseSave bourse;   // Émeraude Couronnement : Bourse de Hoenn (v0.33), src/bourse.c
             struct SocieteSave societe; // Émeraude Couronnement : société du joueur (v0.35), src/societe.c
+            u32 detteBanque[2];         // Émeraude Couronnement : dettes Banque Devon et Crédit Foncier (v0.37), src/banques.c
         };
     };
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2
@@ -1170,7 +1181,10 @@ struct SaveBlock1
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1 == FALSE
     union {
         /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
-        struct ImmoSave immo;       // Émeraude Couronnement : immobilier (v0.34), src/immobilier.c
+        struct {
+            struct ImmoSave immo;       // Émeraude Couronnement : immobilier (v0.34), src/immobilier.c
+            struct BanqueSave banque;   // Émeraude Couronnement : banques (v0.37), src/banques.c
+        };
     };
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];

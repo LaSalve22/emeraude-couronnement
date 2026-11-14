@@ -24,7 +24,7 @@ enum BourseEntreprise
 #define BOURSE_RATTRAPAGE_MAX     30      // jours rattrapés au maximum à l'ouverture
 #define BOURSE_INTERET_POURMILLE  10      // intérêts du crédit : 1 % par jour
 #define BOURSE_CREDIT_BASE        10000   // plafond du crédit : 10 000 + moitié du portefeuille
-#define BOURSE_CREDIT_MAX         500000
+#define BOURSE_CREDIT_MAX         5000000
 #define BOURSE_HUISSIER_MARGE     10000   // l'huissier passe si dette > portefeuille + 10 000
 #define BOURSE_HUISSIER_PENALITE  10      // % retenu sur les parts vendues de force
 #define BOURSE_DIVIDENDE_POURMILLE 20     // Grands Magasins : 2 % du cours par part et par semaine

@@ -471,7 +471,7 @@ Couronnement_Text_RepousseInfinieExplique:
 
 @ ------------------------------------------------------------------ Menu L (terrain), fonctions débloquées au fil du jeu
 @ Repousse Infinie et Course : dès le début ; PC : 1er badge ; Rang mondial : pass ; Type Téra : Orbe Téracristal ;
-@ Soin : 8e badge ; Coach EV / IV : après la Ligue ; Bourse de Hoenn, Immobilier, Ma société et Mes commerces : avec le pass. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
+@ Soin : 8e badge ; Coach EV / IV : après la Ligue ; Bourse de Hoenn, Immobilier, Ma société, Mes commerces et Banques : avec le pass. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
 Couronnement_EventScript_MenuL::
 	lockall
 Couronnement_EventScript_MenuLBoucle::
@@ -501,6 +501,7 @@ Couronnement_EventScript_MenuLRang::
 	dynmultipush Couronnement_Text_MenuLImmo, 9
 	dynmultipush Couronnement_Text_MenuLSociete, 10
 	dynmultipush Couronnement_Text_MenuLCommerces, 11
+	dynmultipush Couronnement_Text_MenuLBanques, 12
 Couronnement_EventScript_MenuLFermer::
 	dynmultipush Couronnement_Text_MenuLFermer, 7
 	dynmultistack 0, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE
@@ -516,6 +517,7 @@ Couronnement_EventScript_MenuLFermer::
 	case 9, Couronnement_EventScript_MenuLImmo
 	case 10, Couronnement_EventScript_MenuLSociete
 	case 11, Couronnement_EventScript_MenuLCommerces
+	case 12, Couronnement_EventScript_MenuLBanques
 	closemessage
 	releaseall
 	end
@@ -553,6 +555,10 @@ Couronnement_EventScript_MenuLCourseOff::
 
 Couronnement_EventScript_MenuLEV::
 	call CoachEV_EventScript_Choix
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLBanques::
+	call Banque_EventScript_Appli
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLCommerces::
@@ -593,11 +599,13 @@ Couronnement_EventScript_MenuLChoisirTera::
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_Text_MenuL:
-	.string "Réglages rapides (L).$"
+	.string "{STR_VAR_3}. Réglages rapides (L).$"
 Couronnement_Text_MenuLSoin:
 	.string "Soigner l'équipe$"
 Couronnement_Text_MenuLPC:
 	.string "PC de stockage$"
+Couronnement_Text_MenuLBanques:
+	.string "Banques$"
 Couronnement_Text_MenuLCommerces:
 	.string "Mes commerces$"
 Couronnement_Text_MenuLSociete:

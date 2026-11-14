@@ -1,6 +1,7 @@
 #include "global.h"
 #include "commerces.h"
 #include "caps.h"
+#include "calendrier.h"
 #include "coach_ev.h"
 #include "event_data.h"
 #include "immobilier.h"
@@ -94,7 +95,7 @@ static void Encaisser(u32 montant)
     u32 recettes;
 
     if (soc->etat != SOCIETE_ETAT_AUCUNE)
-        soc->tresorerie = (u64)soc->tresorerie + montant > 99999999 ? 99999999 : soc->tresorerie + montant;
+        soc->tresorerie = (u64)soc->tresorerie + montant > 2000000000 ? 2000000000 : soc->tresorerie + montant;
     else
         AddMoney(&gSaveBlock1Ptr->money, montant);
     recettes = VarGet(VAR_COMMERCE_RECETTES_BAS) | (VarGet(VAR_COMMERCE_RECETTES_HAUT) << 16);
@@ -158,7 +159,14 @@ u32 Commerce_RecetteBoutique(u32 jour)
     u32 b = Boutique(), alea = sStockAlea[B_STOCK(b)];
     s32 ecart = (s32)(Alea(jour, 1) % (2 * alea + 1)) - (s32)alea;
 
-    return (u64)Commerce_RecetteMoyenneBoutique() * (100 + ecart) / 100;
+    u32 recette = (u64)Commerce_RecetteMoyenneBoutique() * (100 + ecart) / 100;
+
+    // Samedi : jour d'affluence (+30 %) ; dimanche : ouverture réduite (-50 %). (v0.37)
+    if (Calendrier_JourSemaine(jour) == WEEKDAY_SAT)
+        recette = recette * 130 / 100;
+    else if (Calendrier_JourSemaine(jour) == WEEKDAY_SUN)
+        recette = recette / 2;
+    return recette;
 }
 
 bool32 Commerce_OuvrirBoutique(u32 ville, u32 stock)
@@ -248,7 +256,9 @@ void Commerce_PasserJour(u32 jour)
     }
     if (Commerce_CentreOuvert())
     {
-        u32 niveau = C_NIVEAU(Centre()) + 1, points = VarGet(VAR_COMMERCE_POINTS) + COMMERCE_CENTRE_POINTS * niveau;
+        u32 niveau = C_NIVEAU(Centre()) + 1, points;
+        u32 gain = COMMERCE_CENTRE_POINTS * niveau * (Calendrier_JourSemaine(jour) == WEEKDAY_SUN ? 2 : 1); // dimanche : stage x2
+        points = VarGet(VAR_COMMERCE_POINTS) + gain;
         Encaisser(COMMERCE_CENTRE_RECETTE * niveau);
         VarSet(VAR_COMMERCE_POINTS, points > COMMERCE_POINTS_MAX ? COMMERCE_POINTS_MAX : points);
     }
@@ -339,8 +349,9 @@ bool32 Commerce_SeanceEV(struct Pokemon *mon, u32 stat)
 
 static u8 *AjouterNombre(u8 *fin, u32 n)
 {
-    u32 chiffres = 1, p = 10;
-    while (n >= p && chiffres < 9)
+    u32 chiffres = 1;
+    u64 p = 10;
+    while (n >= p && chiffres < 10)
     {
         chiffres++;
         p *= 10;

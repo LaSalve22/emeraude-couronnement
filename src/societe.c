@@ -87,12 +87,12 @@ u32 Societe_Valeur(u32 jour)
 {
     if (SOC.etat == SOCIETE_ETAT_AUCUNE)
         return 0;
-    return Borner((u64)Immo_ValeurBiens(jour) + Commerce_Valeur() + SOC.tresorerie, 0, 99999999);
+    return Borner((u64)Immo_ValeurBiens(jour) + Commerce_Valeur() + SOC.tresorerie, 0, 2000000000);
 }
 
 u32 Societe_Cours(u32 jour)
 {
-    return Borner((u64)Societe_Valeur(jour) * SOC.sentiment / 1000 / SOCIETE_ACTIONS, 1, 99999);
+    return Borner((u64)Societe_Valeur(jour) * SOC.sentiment / 1000 / SOCIETE_ACTIONS, 1, 9999999);
 }
 
 u32 Societe_RetirerTresorerie(void)
@@ -163,8 +163,9 @@ bool32 Societe_RacheterActions(u32 jour)
 
 static u8 *AjouterNombre(u8 *fin, u32 n)
 {
-    u32 chiffres = 1, p = 10;
-    while (n >= p && chiffres < 9)
+    u32 chiffres = 1;
+    u64 p = 10;
+    while (n >= p && chiffres < 10)
     {
         chiffres++;
         p *= 10;

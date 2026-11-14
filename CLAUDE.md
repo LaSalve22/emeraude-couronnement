@@ -423,6 +423,24 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - État : variables `VAR_COMMERCE_*` (0x40F7 à 0x40FE, ex-variables libres), boutique et centre codés en bits. Tests : `test/commerces.c`
   (`TESTS="Commerces"`). Variables encore libres : 0x40FF, 0x40A8, 0x40B8, 0x40BB, 0x40E5.
 
+## Fait (v0.37) - argent illimité, banques, jours de la semaine
+
+- Argent : `MAX_MONEY` = 999 999 999 ¥ (`include/money.h`) ; plafonds internes de la Bourse, de l'immobilier, de la société et des
+  commerces relevés (2 000 000 000 en calcul, nombres jusqu'à 10 chiffres). Crédit de la Bourse jusqu'à 5 000 000.
+- Calendrier (`src/calendrier.c`, `include/calendrier.h`) : jour 1 de l'horloge = samedi 1er janvier 2000. Le jour s'affiche en tête
+  du menu L. Effets : Bourse fermée le week-end (cours figés, tuyau pour lundi), dividende des Grands Magasins le vendredi ;
+  boutiques +30 % le samedi, -50 % le dimanche ; centre d'entraînement : points x2 le dimanche.
+- Banques (appli « Banques » du menu L avec le pass ; `src/banques.c`, `include/banques.h`, `data/scripts/banques.inc`) :
+  Banque Devon 0,3 %/jour, plafond 30 000 + 40 000 par badge (+1 000 000 après la Ligue), défaut = +10 % ;
+  Crédit Foncier 0,5 %/jour, plafond 60 % des maisons et commerces, défaut = maison la moins chère saisie et vendue -20 % ;
+  Prêteur du Casino 2 %/jour, 200 000 + 50 000 par badge, défaut = tout le liquide saisi + 20 %.
+  Intérêts chaque jour, échéance chaque lundi : 5 % de la dette (500 ¥ minimum) prélevés sur l'argent du joueur ; rapport à l'ouverture.
+- Sauvegarde : dettes Devon / Foncier dans `pokedex.detteBanque[2]` (SaveBlock2, zone libre pleine : 104 / 104 octets),
+  `struct BanqueSave` (dette Casino, jour, magie) après `ImmoSave` dans `filler1` de SaveBlock1 (52 / 52 octets).
+  Variables : `VAR_BANQUE_DEFAUTS` 0x40FF, `VAR_BANQUE_PAYE_BAS` 0x40A8, `VAR_BANQUE_PAYE_HAUT` 0x40B8.
+  Il ne reste que 0x40BB et 0x40E5 de libres : les arènes passeront par une boîte du PC réservée.
+  Tests : `test/banques.c` (`TESTS="Banques"` et `TESTS="Calendrier"`).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Arènes** : devenir Champion après la Ligue dans une ville sans arène ; plusieurs arènes achetables, type au choix (hors types des
