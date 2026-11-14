@@ -475,18 +475,28 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Sauvegarde : `struct CouronnementSaison` (6 octets) dans SaveBlock3, nombre magique ; une partie qui avait déjà gagné la finale
   démarre avec 1 titre. Tests : `test/couronnement_saisons.c` (`TESTS="Saisons"`).
 
+## Fait (v0.40) - arènes du joueur
+
+- Après la Ligue, un responsable d'arène (Topdresseur, `Arene_EventScript_Guichet0..5`) dans les 6 villes sans arène :
+  Bourg-en-Vol, Rosyères, Poivressel, Vergazon, Vermilava, Nénucrique (`tools/couronnement/arenes_placer.py`, relançable).
+  Achat 500 000 ¥ (trésorerie de la société d'abord), type au choix : Plante, Glace, Insecte, Poison, Sol, Spectre, Dragon,
+  Ténèbres, Acier, Fée. L'arène compte dans la valeur de la société (`Arene_Valeur`), ses recettes vont à la trésorerie.
+- Dépôt : 6 titulaires + 3 remplaçants pris dans l'équipe ; il faut au moins 4 titulaires du type pour recevoir des challengers.
+  Les Pokémon déposés restent dans le PC (dernières boîtes d'abord), marqués `MON_DATA_ARENE` (1-6) et `MON_DATA_ARENE_PLACE` (0-8)
+  dans les anciens bits libres de PokemonSubstruct1 ; le PC les bloque (`SetMenuTexts_Mon` : résumé / marquage seulement ;
+  déplacement groupé désactivé tant qu'il y en a). Retirer : retour dans l'équipe, ou libre dans le PC si l'équipe est pleine.
+- Chaque jour (rattrapé à la visite, 30 jours au plus) : XP aux Pokémon déposés (20 à 40 % d'un niveau, jusqu'au N.100),
+  sponsors 150 ¥ par point de réputation, 1 à 3 challengers (1 + réputation / 40, 3 en attente au plus ; file pleine = -1 réputation).
+- Combat : le joueur affronte le premier challenger (1 à 8 badges, plus forts avec la réputation ; 2 à 6 Pokémon au cap de ses badges,
+  18 à 78). Les meilleurs Pokémon de l'arène face à lui (types) sont prêtés au même niveau, sans XP de combat (`BattleTypeAllowsExp`),
+  pas de blackout ; l'équipe revient après (`Arene_DebutCombat` / `Arene_FinCombat`, emplacement `TRAINER_COURONNEMENT`).
+  Victoire : +3 réputation, +50 % de niveau aux combattants, sponsors 2 000 ¥ par badge. Défaite : le challenger gagne le badge,
+  prime 5 000 ¥ par badge, -8 réputation, 2 jours sans challenger.
+- Menu L « Mes arènes » après la Ligue (résumé, challengers qui attendent). Sauvegarde : `struct AreneSave` (68 octets) dans SaveBlock3.
+  Tests : `test/arenes.c` (`TESTS="Arenes"`).
+
 ## Idées d'Adrien à concevoir plus tard
 
-- **Arènes (choix d'Adrien, 14/11)** : après la Ligue, plusieurs arènes achetables dans les villes sans arène (Rosyères, Poivressel,
-  Vergazon, Vermilava, Nénucrique, Pacifiville…). Type majoritaire : au moins 4 Pokémon du type choisi parmi Plante, Glace, Insecte,
-  Poison, Sol, Spectre, Dragon, Ténèbres, Acier, Fée. Dépôt : 6 titulaires + 3 remplaçants, bloqués tant qu'ils y sont.
-  Combats toujours joués par le joueur : les challengers attendent à l'arène. Selon les badges du challenger (1 à 8), nombre de
-  Pokémon (2 à 6, comme les vraies arènes) et niveau au cap de ses badges (18 … 78) le temps du combat.
-  Revenus : XP chaque jour aux Pokémon déposés + bonus par combat (jusqu'au N.100), sponsors et réputation (plus de victoires =
-  plus de challengers), l'arène compte comme un commerce de la société (trésorerie, valeur dans le cours).
-  Défaite : le challenger gagne le badge, le joueur paie la prime du badge, réputation en baisse, moins de challengers quelques jours.
-  À fixer au moment du code : prix d'achat, challengers par jour. Place : SaveBlock3 (les Pokémon déposés : ~1 568 octets libres
-  en fin de PC, ou une boîte réservée).
 - Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.
 
 ## Prochaines étapes, dans l'ordre

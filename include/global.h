@@ -278,6 +278,29 @@ struct CouronnementSaison
     u8 finales;   // finales jouées
 };
 
+// Émeraude Couronnement : arènes du joueur (v0.40), src/arenes.c.
+#define ARENE_NB 6
+#define ARENE_MAGIE 0xA4E7
+struct AreneEtat
+{
+    u8 type;          // index dans la liste des types d'arène
+    u8 reputation;    // 0-100
+    u8 attente:2;     // challengers qui attendent (0-3)
+    u8 repos:3;       // jours sans challenger après une défaite
+    u8 achetee:1;
+    u8 libre:2;
+    u8 libre2;
+    u16 victoires;
+    u16 arrivees;     // challengers arrivés depuis l'achat (graine du suivant)
+};
+struct AreneSave
+{
+    struct AreneEtat arenes[ARENE_NB];
+    u32 sponsors;     // sponsors encaissés depuis la dernière visite (rapport)
+    u16 jour;
+    u16 magie;
+};
+
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
@@ -295,6 +318,7 @@ struct SaveBlock3
     u8 dexNavChain;
     struct BourseHistorique bourseHisto; // Émeraude Couronnement (v0.38), src/bourse.c
     struct CouronnementSaison couronnementSaison; // Émeraude Couronnement (v0.39), src/couronnement.c
+    struct AreneSave arenes; // Émeraude Couronnement (v0.40), src/arenes.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

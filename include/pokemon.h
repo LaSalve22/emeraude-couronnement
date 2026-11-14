@@ -113,6 +113,8 @@ enum MonData {
     MON_DATA_MODERN_FATEFUL_ENCOUNTER,
     MON_DATA_PLAYER_STARTER,
     MON_DATA_BOND_BATTLES,
+    MON_DATA_ARENE,        // Émeraude Couronnement (v0.40) : arène où le Pokémon est déposé (0 = aucune, 1-6)
+    MON_DATA_ARENE_PLACE,  // Émeraude Couronnement (v0.40) : place dans l'arène (0-5 titulaires, 6-8 remplaçants)
     MON_DATA_KNOWN_MOVES,
     MON_DATA_RIBBON_COUNT,
     MON_DATA_RIBBONS,
@@ -154,9 +156,9 @@ struct PokemonSubstruct1
     enum Move move2:11; // 2047 moves.
     u16 evolutionTracker2:5;
     enum Move move3:11; // 2047 moves.
-    u16 unused_04:5;
+    u16 arenePlace:5; // Émeraude Couronnement (v0.40), ex-unused_04
     enum Move move4:11; // 2047 moves.
-    u16 unused_06:3;
+    u16 arene:3;      // Émeraude Couronnement (v0.40), ex-unused_06
     u16 hyperTrainedHP:1;
     u16 hyperTrainedAttack:1;
     u8 pp1:7; // 127 PP.

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "arenes.h"
 #include "societe.h"
 #include "bourse.h"
 #include "immobilier.h"
@@ -87,7 +88,7 @@ u32 Societe_Valeur(u32 jour)
 {
     if (SOC.etat == SOCIETE_ETAT_AUCUNE)
         return 0;
-    return Borner((u64)Immo_ValeurBiens(jour) + Commerce_Valeur() + SOC.tresorerie, 0, 2000000000);
+    return Borner((u64)Immo_ValeurBiens(jour) + Commerce_Valeur() + Arene_Valeur() + SOC.tresorerie, 0, 2000000000);
 }
 
 u32 Societe_Cours(u32 jour)

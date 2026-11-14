@@ -1,6 +1,7 @@
 #include "global.h"
 #include "calendrier.h"
 #include "couronnement.h"
+#include "arenes.h"
 #include "battle.h"
 #include "battle_util.h"
 #include "data.h"
@@ -304,6 +305,8 @@ static const struct Trainer *AdversaireDeBase(void)
 
 const struct Trainer *GetCouronnementTrainer(void)
 {
+    if (Arene_CombatEnCours()) // v0.40 : challenger d'une arène du joueur
+        return Arene_Challenger();
     return sAdversairePret ? &sAdversaire : AdversaireDeBase();
 }
 

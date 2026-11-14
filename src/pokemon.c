@@ -2308,6 +2308,12 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_BOND_BATTLES:
             retVal = GetSubstruct0(boxMon)->bondBattles;
             break;
+        case MON_DATA_ARENE:
+            retVal = GetSubstruct1(boxMon)->arene;
+            break;
+        case MON_DATA_ARENE_PLACE:
+            retVal = GetSubstruct1(boxMon)->arenePlace;
+            break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = GetSubstruct0(boxMon)->species;
             if (retVal && IsEggOrBadEgg(boxMon))
@@ -2831,6 +2837,12 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_BOND_BATTLES:
             SET8(GetSubstruct0(boxMon)->bondBattles);
+            break;
+        case MON_DATA_ARENE:
+            SET8(GetSubstruct1(boxMon)->arene);
+            break;
+        case MON_DATA_ARENE_PLACE:
+            SET8(GetSubstruct1(boxMon)->arenePlace);
             break;
         case MON_DATA_IVS:
         {

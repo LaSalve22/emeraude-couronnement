@@ -1,4 +1,5 @@
 #include "global.h"
+#include "arenes.h"
 #include "malloc.h"
 #include "bg.h"
 #include "data.h"
@@ -7253,6 +7254,8 @@ static u8 InBoxInput_Normal(void)
             }
             else
             {
+                if (Arene_PokemonDansLePC()) // v0.40 : pas de déplacement groupé quand des Pokémon d'arène sont bloqués
+                    return INPUT_IN_MENU;
                 sStorage->inBoxMovingMode = MOVE_MODE_MULTIPLE_SELECTING;
                 return INPUT_MULTIMOVE_START;
             }
@@ -7758,6 +7761,15 @@ static u8 SetSelectionMenuTexts(void)
 static bool8 SetMenuTexts_Mon(void)
 {
     enum Species species = GetSpeciesAtCursorPosition();
+
+    // Émeraude Couronnement (v0.40) : un Pokémon déposé dans une arène est bloqué (résumé et marquage seulement).
+    if (species != SPECIES_NONE && sCursorArea == CURSOR_AREA_IN_BOX && Arene_EstBloque(GetCursorBoxMon()))
+    {
+        SetMenuText(MENU_SUMMARY);
+        SetMenuText(MENU_MARK);
+        SetMenuText(MENU_CANCEL);
+        return TRUE;
+    }
 
     switch (sStorage->boxOption)
     {

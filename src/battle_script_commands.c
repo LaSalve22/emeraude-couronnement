@@ -1,4 +1,5 @@
 #include "global.h"
+#include "arenes.h"
 #include "pokemon_bond.h"
 #include "battle.h"
 #include "battle_hold_effects.h"
@@ -2099,6 +2100,8 @@ FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag)
 
 static bool32 BattleTypeAllowsExp(void)
 {
+    if (Arene_CombatEnCours()) // Émeraude Couronnement (v0.40) : Pokémon d'arène prêtés, pas d'XP
+        return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;
     else if (gBattleTypeFlags &

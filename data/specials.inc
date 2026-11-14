@@ -81,6 +81,15 @@ gSpecials::
 	def_special Banque_Fiche
 	def_special Banque_ScriptEmprunter
 	def_special Banque_ScriptRembourser
+	def_special Arene_Ouvrir
+	def_special Arene_ScriptAcheter
+	def_special Arene_PreparerChallenger
+	def_special Arene_DebutCombat
+	def_special Arene_FinCombat
+	def_special Arene_ScriptDeposer
+	def_special Arene_PreparerListe
+	def_special Arene_ScriptRetirer
+	def_special Arene_Resume
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

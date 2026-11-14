@@ -553,6 +553,8 @@ Couronnement_EventScript_MenuLRang::
 	dynmultipush Couronnement_Text_MenuLSociete, 10
 	dynmultipush Couronnement_Text_MenuLCommerces, 11
 	dynmultipush Couronnement_Text_MenuLBanques, 12
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Couronnement_EventScript_MenuLFermer
+	dynmultipush Couronnement_Text_MenuLArenes, 13
 Couronnement_EventScript_MenuLFermer::
 	dynmultipush Couronnement_Text_MenuLFermer, 7
 	dynmultistack 0, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE
@@ -569,6 +571,7 @@ Couronnement_EventScript_MenuLFermer::
 	case 10, Couronnement_EventScript_MenuLSociete
 	case 11, Couronnement_EventScript_MenuLCommerces
 	case 12, Couronnement_EventScript_MenuLBanques
+	case 13, Couronnement_EventScript_MenuLArenes
 	closemessage
 	releaseall
 	end
@@ -606,6 +609,10 @@ Couronnement_EventScript_MenuLCourseOff::
 
 Couronnement_EventScript_MenuLEV::
 	call CoachEV_EventScript_Choix
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLArenes::
+	call Arene_EventScript_MenuL
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLBanques::
@@ -655,6 +662,8 @@ Couronnement_Text_MenuLSoin:
 	.string "Soigner l'équipe$"
 Couronnement_Text_MenuLPC:
 	.string "PC de stockage$"
+Couronnement_Text_MenuLArenes:
+	.string "Mes arènes$"
 Couronnement_Text_MenuLBanques:
 	.string "Banques$"
 Couronnement_Text_MenuLCommerces:
