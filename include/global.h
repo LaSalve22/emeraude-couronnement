@@ -291,6 +291,23 @@ struct BourseSave
     u32 huissier;                       // montant saisi par l'huissier, à annoncer à la prochaine ouverture
 };
 
+// Émeraude Couronnement : immobilier (v0.34). Rangé dans l'ancienne zone des drapeaux du Pokédex de SaveBlock1 (0x34 octets).
+#define IMMO_NB_BIENS 12
+#define IMMO_MAGIE    0xB13E
+struct ImmoSave
+{
+    u16 magie;                        // IMMO_MAGIE quand c'est initialisé (la zone peut contenir de vieilles données)
+    u16 possede;                      // un bit par bien
+    u16 squat;                        // biens occupés par un squatteur de la Team Aqua
+    u16 indice;                       // indice immobilier en pour mille (1000 = prix de base)
+    u16 jour;                         // dernier jour traité (RtcGetLocalDayCount)
+    u16 prixAchat[IMMO_NB_BIENS];     // prix payé, en centaines de ¥ (plus-value affichée)
+    u8 impayes;                       // depuis le dernier rapport
+    u8 nouveauxSquats;
+    u32 loyers;                       // loyers encaissés depuis le dernier rapport
+    u32 travaux;                      // travaux payés depuis le dernier rapport
+};
+
 struct Pokedex
 {
     /*0x00*/ u8 order;
@@ -1136,7 +1153,10 @@ struct SaveBlock1
     /*0x560*/ struct Bag bag;
     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1 == FALSE
-    /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
+    union {
+        /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
+        struct ImmoSave immo;       // Émeraude Couronnement : immobilier (v0.34), src/immobilier.c
+    };
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[2];

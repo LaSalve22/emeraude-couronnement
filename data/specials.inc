@@ -39,6 +39,14 @@ gSpecials::
 	def_special Bourse_ScriptEmprunter
 	def_special Bourse_ScriptRembourser
 	def_special Bourse_Tuyau
+	def_special Immo_Ouvrir
+	def_special Immo_Resume
+	def_special Immo_PreparerListe
+	def_special Immo_Fiche
+	def_special Immo_ScriptAcheter
+	def_special Immo_ScriptVendre
+	def_special Immo_ScriptExpulser
+	def_special Immo_NiveauSquatteur
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

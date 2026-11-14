@@ -471,7 +471,7 @@ Couronnement_Text_RepousseInfinieExplique:
 
 @ ------------------------------------------------------------------ Menu L (terrain), fonctions débloquées au fil du jeu
 @ Repousse Infinie et Course : dès le début ; PC : 1er badge ; Rang mondial : pass ; Type Téra : Orbe Téracristal ;
-@ Soin : 8e badge ; Coach EV / IV : après la Ligue ; Bourse de Hoenn : avec le pass. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
+@ Soin : 8e badge ; Coach EV / IV : après la Ligue ; Bourse de Hoenn et Immobilier : avec le pass. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
 Couronnement_EventScript_MenuL::
 	lockall
 Couronnement_EventScript_MenuLBoucle::
@@ -498,6 +498,7 @@ Couronnement_EventScript_MenuLRang::
 	goto_if_unset FLAG_COURONNEMENT_PASS, Couronnement_EventScript_MenuLFermer
 	dynmultipush Couronnement_Text_MenuLRang, 6
 	dynmultipush Couronnement_Text_MenuLBourse, 8
+	dynmultipush Couronnement_Text_MenuLImmo, 9
 Couronnement_EventScript_MenuLFermer::
 	dynmultipush Couronnement_Text_MenuLFermer, 7
 	dynmultistack 0, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE
@@ -510,6 +511,7 @@ Couronnement_EventScript_MenuLFermer::
 	case 5, Couronnement_EventScript_MenuLChoisirTera
 	case 6, Couronnement_EventScript_MenuLAfficherRang
 	case 8, Couronnement_EventScript_MenuLBourse
+	case 9, Couronnement_EventScript_MenuLImmo
 	closemessage
 	releaseall
 	end
@@ -549,6 +551,10 @@ Couronnement_EventScript_MenuLEV::
 	call CoachEV_EventScript_Choix
 	goto Couronnement_EventScript_MenuLBoucle
 
+Couronnement_EventScript_MenuLImmo::
+	call Immo_EventScript_Appli
+	goto Couronnement_EventScript_MenuLBoucle
+
 Couronnement_EventScript_MenuLBourse::
 	call Bourse_EventScript_Appli
 	goto Couronnement_EventScript_MenuLBoucle
@@ -580,6 +586,8 @@ Couronnement_Text_MenuLSoin:
 	.string "Soigner l'équipe$"
 Couronnement_Text_MenuLPC:
 	.string "PC de stockage$"
+Couronnement_Text_MenuLImmo:
+	.string "Immobilier$"
 Couronnement_Text_MenuLBourse:
 	.string "Bourse de Hoenn$"
 Couronnement_Text_MenuLEV:

@@ -372,8 +372,27 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Sauvegarde : `struct BourseSave` (`include/global.h`) dans l'ancienne zone libre `pokedex.filler` de SaveBlock2 (0x68 octets) ;
   zéros = initialisation à la première ouverture (les chocs déjà passés ne sont pas rejoués). Remise à zéro dans `NewGameInitData`.
   Réglages : `BOURSE_*` dans `include/bourse.h`. Tests : `test/bourse.c` (`TESTS="Bourse"`).
-- Reste prévu : courtier louche et quêtes de sabotage (v0.34), rumeurs à la télé / PNJ, immobilier (demande d'Adrien : maisons,
-  location, société cotée, boutiques, centre d'entraînement).
+- Reste prévu : courtier louche et quêtes de sabotage, rumeurs à la télé / PNJ.
+
+## Fait (v0.34) - immobilier
+
+- 12 maisons, une par ville (Rosyères, Clémenti, Mérouville, Myokara, Poivressel, Lavandia, Vergazon, Vermilava, Cimetronelle,
+  Nénucrique, Algatia, Atalanopolis ; 35 000 à 300 000 ¥) : `sBiens` dans `src/immobilier.c`.
+- Agence : entrée « Immobilier » du menu L (avec le pass) -> résumé (biens, valeur, loyers par jour, indice, promo de la semaine)
+  -> catalogue (+ à toi, ! squatté, % en promo) -> fiche : Acheter / Vendre / Expulser. Panneaux « À vendre » (OBJ_EVENT_GFX_SIGN)
+  devant une maison de chaque ville, ouverts dès le début (`Immo_EventScript_Panneau0..11`, positions calculées sur les cases libres).
+- Prix = base x indice immobilier (+0,1 %/jour, ±0,8 %, krach 2/1000 de -15 à -30 %, creux pendant la crise des légendaires)
+  x écart local ±10 % par semaine ; un bien par semaine à -25 %. Achat +8 % de notaire, revente -5 % d'agence.
+- Loyer chaque jour (~0,55 % du prix) avec imprévus : impayé 5 %, travaux 3 % (3 % du prix de base, payés d'office),
+  squatteur Aqua 1,5 % tant que la Team Aqua sévit (avant `FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE`) : plus de loyer jusqu'à
+  l'expulsion en combat contre un sbire existant selon les badges (Bois Clémenti, Musée, Institut Météo, Repaire Aqua) ; son drapeau
+  de dresseur est remis dans son état d'avant (`VAR_IMMO_REMETTRE` 0x40DC, bien dans `VAR_IMMO_BIEN` 0x40DB).
+  Rapport de gestion à l'ouverture (loyers, travaux, impayés, alerte squat).
+- Sauvegarde : `struct ImmoSave` dans l'ancienne zone libre `filler1` de SaveBlock1 (0x34 octets, 44 utilisés), avec un nombre magique
+  (`IMMO_MAGIE`) car la zone peut contenir de vieilles données. Place restante : ~32 octets dans SaveBlock2 (après la Bourse).
+  Réglages : `IMMO_*` dans `include/immobilier.h`. Tests : `test/immobilier.c` (`TESTS="Immo"`).
+- Prochaine étape (choix d'Adrien) : v0.35 société cotée à son nom (regroupe biens et commerces, entre en Bourse),
+  puis v0.36 commerces (boutique à son nom, centre d'entraînement XP/EV, améliorations, concurrence), puis courtier et sabotages.
 
 ## Prochaines étapes, dans l'ordre
 
