@@ -55,6 +55,22 @@ gSpecials::
 	def_special Societe_ScriptVendre
 	def_special Societe_ScriptRacheter
 	def_special Societe_LigneBourse
+	def_special Commerce_Ouvrir
+	def_special Commerce_Resume
+	def_special Commerce_PreparerVilles
+	def_special Commerce_ScriptOuvrirBoutique
+	def_special Commerce_ScriptOuvrirCentre
+	def_special Commerce_ScriptStock
+	def_special Commerce_ScriptPrix
+	def_special Commerce_ScriptAgrandirBoutique
+	def_special Commerce_ScriptAgrandirCentre
+	def_special Commerce_ScriptSeanceXP
+	def_special Commerce_ScriptSeanceEV
+	def_special Commerce_ConcurrentBattu
+	def_special Commerce_NiveauConcurrent
+	def_special Commerce_EtatBoutique
+	def_special Commerce_EtatCentre
+	def_special Commerce_TexteAgrandir
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

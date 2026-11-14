@@ -1717,6 +1717,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/bourse.inc"
 	.include "data/scripts/immobilier.inc"
 	.include "data/scripts/societe.inc"
+	.include "data/scripts/commerces.inc"
 	.include "data/scripts/roulette.inc"
 	.include "data/scripts/pokedex_rating.inc"
 	.include "data/text/pokedex_rating.inc"

@@ -266,14 +266,14 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_COMMERCE_BOUTIQUE                            0x40F7 // Couronnement : boutique du joueur (bits, src/commerces.c)
+#define VAR_COMMERCE_CENTRE                              0x40F8 // Couronnement : centre d'entraînement (bits)
+#define VAR_COMMERCE_JOUR                                0x40F9 // Couronnement : dernier jour traité par les commerces
+#define VAR_COMMERCE_POINTS                              0x40FA // Couronnement : points d'entraînement du centre
+#define VAR_COMMERCE_RECETTES_BAS                        0x40FB // Couronnement : recettes à annoncer (16 bits bas)
+#define VAR_COMMERCE_RECETTES_HAUT                       0x40FC // Couronnement : recettes à annoncer (16 bits hauts)
+#define VAR_COMMERCE_GUERRE_PRIX                         0x40FD // Couronnement : jours de prix bas face au concurrent
+#define VAR_COMMERCE_REMETTRE                            0x40FE // Couronnement : drapeau du concurrent à remettre « non battu »
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

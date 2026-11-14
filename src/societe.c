@@ -2,6 +2,7 @@
 #include "societe.h"
 #include "bourse.h"
 #include "immobilier.h"
+#include "commerces.h"
 #include "event_data.h"
 #include "main.h"
 #include "money.h"
@@ -13,7 +14,7 @@
 
 // Émeraude Couronnement : société du joueur (v0.35).
 // Créée pour 20 000 ¥ avec un nom au choix, elle encaisse les loyers de l'immobilier dans sa trésorerie.
-// Valeur = biens + trésorerie ; cours d'une action = valeur x humeur du marché / 10 000 actions.
+// Valeur = biens + commerces (investissement, v0.36) + trésorerie ; cours d'une action = valeur x humeur du marché / 10 000 actions.
 // Une fois la valeur à 100 000 ¥, introduction en Bourse : 25 % des actions vendues au public (argent pour le joueur).
 // Ensuite on vend / rachète par paquets de 500 (3 % de frais), sans jamais descendre sous 51 %.
 // Retirer la trésorerie verse au joueur sa part (le reste revient aux autres actionnaires).
@@ -86,7 +87,7 @@ u32 Societe_Valeur(u32 jour)
 {
     if (SOC.etat == SOCIETE_ETAT_AUCUNE)
         return 0;
-    return Borner((u64)Immo_ValeurBiens(jour) + SOC.tresorerie, 0, 99999999);
+    return Borner((u64)Immo_ValeurBiens(jour) + Commerce_Valeur() + SOC.tresorerie, 0, 99999999);
 }
 
 u32 Societe_Cours(u32 jour)

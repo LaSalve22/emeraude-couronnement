@@ -406,8 +406,30 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Il reste ~8 octets dans SaveBlock2 et 8 dans SaveBlock1 : les commerces (v0.36) devront tenir dans des variables libres
   (`VAR_UNUSED_0x40F7` à `0x40FF`, 0x40A8, 0x40B8, 0x40BB, 0x40E5) ou dans des drapeaux.
   Tests : `test/societe.c` (`TESTS="Societe"`).
-- Prochaine étape (choix d'Adrien) : v0.36 commerces (boutique à son nom, centre d'entraînement XP/EV, améliorations, concurrence),
-  rattachés à la société, puis courtier et sabotages.
+
+## Fait (v0.36) - commerces de la société
+
+- Appli « Mes commerces » du menu L (avec le pass ; il faut avoir créé sa société) : `src/commerces.c`, `include/commerces.h`,
+  `data/scripts/commerces.inc`. Les recettes vont dans la trésorerie de la société ; les achats sont payés par la trésorerie d'abord,
+  puis par le joueur. Les commerces comptent dans la valeur de la société (`Commerce_Valeur`, investissement).
+- Boutique : une ville au choix (local = passage x 150, de 22 500 à 135 000 ¥), un stock (Baies 80 %, Soins 100 %, Poké Balls 120 %,
+  Objets rares 150 %, aléa ±20 à ±70 %/jour), prix bas / normaux / élevés (90 / 100 / 115 %), 3 niveaux (100 / 160 / 220 %,
+  agrandissements 40 000 puis 100 000 ¥). Concurrent : 0,5 / 1 / 2 % par jour selon les prix, -40 % de recette ; il part après
+  5 jours de prix bas ou si on le bat en combat (dresseur existant selon les badges : Winston 1, Winston 2, Walter 3, Thomas ;
+  drapeau remis dans son état d'avant via `VAR_COMMERCE_REMETTRE`).
+- Centre d'entraînement : 80 000 ¥, 3 niveaux (agrandissements 60 000 puis 150 000 ¥) ; 250 ¥ et 30 points par jour et par niveau.
+  Séance XP (100 points) : un niveau de plus, jamais au-dessus du level cap (`GetCurrentLevelCap`) ; les attaques se réapprennent
+  chez le Maître des Capacités, l'évolution se fera au prochain passage de niveau. Séance EV (40 points) : +12 EV dans une stat.
+- État : variables `VAR_COMMERCE_*` (0x40F7 à 0x40FE, ex-variables libres), boutique et centre codés en bits. Tests : `test/commerces.c`
+  (`TESTS="Commerces"`). Variables encore libres : 0x40FF, 0x40A8, 0x40B8, 0x40BB, 0x40E5.
+
+## Idées d'Adrien à concevoir plus tard
+
+- **Arènes** : devenir Champion après la Ligue dans une ville sans arène ; plusieurs arènes achetables, type au choix (hors types des
+  Champions existants) ; Pokémon déposés dans l'arène, bloqués et stockés, qui y gagnent de l'expérience ; challengers de niveaux
+  différents selon leur nombre de badges (Pokémon du joueur au niveau équivalent pour les affronter). Poser des questions avant.
+  Piste technique : stocker les Pokémon d'arène dans une boîte du PC réservée (la sauvegarde n'a plus de place libre ailleurs).
+- Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.
 
 ## Prochaines étapes, dans l'ordre
 
