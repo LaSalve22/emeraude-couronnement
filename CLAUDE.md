@@ -507,6 +507,11 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Idées d'Adrien à concevoir plus tard
 
+- **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
+  avant de détruire la Team Aqua). Piste : positions courtes dans SaveBlock3 (u16 par actif + prix moyen d'ouverture, ~60 octets),
+  liquide crédité à l'ouverture (frais 3 %), frais d'emprunt ~0,1 %/jour, rachat pour clôturer ; appel de marge / huissier si la perte
+  dépasse le liquide + portefeuille ; faillite (Aqua / Magma) = clôture automatique à ~0 et gain encaissé. Fiche : « Vendre à
+  découvert » / « Racheter », positions courtes affichées dans le portefeuille. L'or et la société du joueur : à décider.
 - Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.
 
 ## Prochaines étapes, dans l'ordre
