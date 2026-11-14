@@ -438,7 +438,11 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Sauvegarde : dettes Devon / Foncier dans `pokedex.detteBanque[2]` (SaveBlock2, zone libre pleine : 104 / 104 octets),
   `struct BanqueSave` (dette Casino, jour, magie) après `ImmoSave` dans `filler1` de SaveBlock1 (52 / 52 octets).
   Variables : `VAR_BANQUE_DEFAUTS` 0x40FF, `VAR_BANQUE_PAYE_BAS` 0x40A8, `VAR_BANQUE_PAYE_HAUT` 0x40B8.
-  Il ne reste que 0x40BB et 0x40E5 de libres : les arènes passeront par une boîte du PC réservée.
+  Il ne reste que 0x40BB et 0x40E5 de libres.
+- Place réelle restante (mesurée sur la v0.37, secteurs effacés à zéro avant écriture) : SaveBlock3 ~1 620 octets
+  (`struct SaveBlock3`, prévu par l'expansion pour les ajouts, 4 utilisés), fin de SaveBlock1 304 octets (15 568 / 15 872),
+  fin de SaveBlock2 84 octets (3 884 / 3 968), fin du PC 1 568 octets (34 144 / 35 712). Ajouter les futurs systèmes
+  (arènes…) dans SaveBlock3 en priorité, avec un nombre magique.
   Tests : `test/banques.c` (`TESTS="Banques"` et `TESTS="Calendrier"`).
 
 ## Idées d'Adrien à concevoir plus tard
