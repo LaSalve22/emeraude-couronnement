@@ -471,7 +471,7 @@ Couronnement_Text_RepousseInfinieExplique:
 
 @ ------------------------------------------------------------------ Menu L (terrain), fonctions débloquées au fil du jeu
 @ Repousse Infinie et Course : dès le début ; PC : 1er badge ; Rang mondial : pass ; Type Téra : Orbe Téracristal ;
-@ Soin : 8e badge ; EV : après la Ligue. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
+@ Soin : 8e badge ; Coach EV / IV : après la Ligue. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
 Couronnement_EventScript_MenuL::
 	lockall
 Couronnement_EventScript_MenuLBoucle::
@@ -544,7 +544,7 @@ Couronnement_EventScript_MenuLCourseOff::
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLEV::
-	call CoachEV_EventScript_Session
+	call CoachEV_EventScript_Choix
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLAfficherRang::
@@ -575,7 +575,7 @@ Couronnement_Text_MenuLSoin:
 Couronnement_Text_MenuLPC:
 	.string "PC de stockage$"
 Couronnement_Text_MenuLEV:
-	.string "Modifier les EV$"
+	.string "Coach EV / IV$"
 Couronnement_Text_MenuLTera:
 	.string "Type Téra$"
 Couronnement_Text_MenuLRang:

@@ -295,6 +295,21 @@ void ItemUseOutOfBattle_RepousseInfinie(u8 taskId)
         DisplayItemMessage(taskId, FONT_NORMAL, text, CloseItemMessage);
 }
 
+// Émeraude Couronnement : Capsules d'Argent / d'Or (v0.32). Le choix du Pokémon et de la stat se fait dans un script
+// sur le terrain (Capsule_EventScript_Utiliser, data/scripts/coach_ev.inc) ; la Capsule n'est retirée que si un IV change.
+static void ItemUseOnFieldCB_Capsule(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(Capsule_EventScript_Utiliser);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_Capsule(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_Capsule;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
 void ItemUseOutOfBattle_Bike(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;

@@ -25,6 +25,10 @@ gSpecials::
 	def_special Couronnement_ChangerTypeTera
 	def_special CoachEV_Afficher
 	def_special CoachEV_Appliquer
+	def_special CoachIV_Afficher
+	def_special CoachIV_Appliquer
+	def_special Capsule_EstOr
+	def_special Capsule_Utiliser
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

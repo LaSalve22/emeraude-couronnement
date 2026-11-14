@@ -342,6 +342,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   `IF_TIME` / `IF_NOT_TIME` `TIME_NIGHT` dans `src/data/pokemon/species_info/gen_2_families.h` (horloge de la cartouche).
 - Arcko, Massko et Jungko sont Plante / Dragon (`gen_3_families.h`).
 
+## Fait (v0.32) - modification des IV
+
+- Capsule d'Argent (`ITEM_BOTTLE_CAP`) : une stat au choix à IV 31 ; Capsule d'Or (`ITEM_GOLD_BOTTLE_CAP`) : les six.
+  Utilisables depuis le sac (`ItemUseOutOfBattle_Capsule`, `src/item_use.c`) : script `Capsule_EventScript_Utiliser`
+  (`data/scripts/coach_ev.inc`), consommée seulement si un IV change. Pas en combat.
+  Vendues par le Méga-Collectionneur de Clémenti dès le 6e badge (avec la Dark Ball) : 30 000 / 150 000
+  (`COURONNEMENT_PRIX_CAPSULE_*`, `include/config/item.h`).
+- Coach EV / IV (après la Ligue, Centre Pokémon de Clémenti et menu L « Coach EV / IV ») : choix EV ou IV
+  (`CoachEV_EventScript_Choix`) ; IV de 0 à 31 stat par stat ou « Tout à 31 », gratuit (`CoachIV_*`, `src/coach_ev.c`).
+- On écrit l'IV réel (visible dans le résumé, compte pour Puissance Cachée) et on retire l'Entraînement Ultime éventuel.
+  Tests : `test/coach_iv.c` (`TESTS="Coach IV"` et `TESTS="Capsules"`).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

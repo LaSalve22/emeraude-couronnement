@@ -30,11 +30,15 @@ MegaGemmes_EventScript_PasEncore::
 	.align 2
 MegaGemmes_BoutiqueDarkBall:
 	.2byte ITEM_STRANGE_BALL
+	.2byte ITEM_BOTTLE_CAP      @ Capsule d'Argent (v0.32)
+	.2byte ITEM_GOLD_BOTTLE_CAP @ Capsule d'Or (v0.32)
 	.2byte ITEM_NONE
 
 	.align 2
 MegaGemmes_Boutique:
 	.2byte ITEM_STRANGE_BALL @ Dark Ball
+	.2byte ITEM_BOTTLE_CAP
+	.2byte ITEM_GOLD_BOTTLE_CAP
 	.2byte ITEM_BLASTOISINITE
 	.2byte ITEM_MEWTWONITE_X
 	.2byte ITEM_MEWTWONITE_Y
@@ -100,8 +104,9 @@ MegaGemmes_Text_AuRevoir:
 
 MegaGemmes_Text_DarkBall:
 	.string "Six badges, hein ? Alors je peux te\n"
-	.string "refiler mes Dark Balls. Sous le\l"
-	.string "manteau, et sans questions.$"
+	.string "refiler mes Dark Balls et mes\l"
+	.string "Capsules. Sous le manteau, et sans\l"
+	.string "questions. Mais pas donné.$"
 
 MegaGemmes_Text_PasEncore:
 	.string "Ma collection de Méga-Gemmes n'est\n"

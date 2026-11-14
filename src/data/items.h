@@ -2515,18 +2515,19 @@ const struct ItemInfo gItemsInfo[] =
 
 // Treasures
 
+    // Émeraude Couronnement (v0.32) : utilisables depuis le sac, vendues par le Méga-Collectionneur dès le 6e badge.
     [ITEM_BOTTLE_CAP] =
     {
         .name = ITEM_NAME("Capsule d'Argent"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 5000,
+        .price = COURONNEMENT_PRIX_CAPSULE_ARGENT,
         .description = COMPOUND_STRING(
-            "Une jolie capsule en argent.\n"
-            "Certaines personnes adorent\n"
-            "en recevoir."),
+            "Monte à 31 l'IV\n"
+            "d'une stat au choix\n"
+            "d'un Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_Capsule,
         .flingPower = 30,
         .iconPic = gItemIcon_BottleCap,
         .iconPalette = gItemIconPalette_BottleCap,
@@ -2535,15 +2536,15 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_GOLD_BOTTLE_CAP] =
     {
         .name = ITEM_NAME("Capsule d'Or"),
-        .price = (I_PRICE >= GEN_9) ? 60000 : 10000,
+        .price = COURONNEMENT_PRIX_CAPSULE_OR,
         .description = COMPOUND_STRING(
-            "Une capsule dorée.\n"
-            "Maximise tous les IV\n"
-            "d'un Pokémon."),
+            "Monte à 31 les six\n"
+            "IV d'un Pokémon,\n"
+            "d'un seul coup."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_Capsule,
         .flingPower = 30,
         .iconPic = gItemIcon_BottleCap,
         .iconPalette = gItemIconPalette_GoldBottleCap,

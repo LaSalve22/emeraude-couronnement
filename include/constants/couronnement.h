@@ -60,5 +60,7 @@
 
 // Coach EV (src/coach_ev.c) : stats 0 PV, 1 Attaque, 2 Défense, 3 Atq. Spé., 4 Déf. Spé., 5 Vitesse ; 6 = tout à 0.
 #define COACH_EV_TOUT_A_ZERO 6
+#define COACH_IV_TOUT_A_31 6   // Coach IV : choix « Tout à 31 »
+#define CAPSULE_TOUTES_STATS 6 // Capsule d'Or : les 6 stats
 
 #endif // GUARD_CONSTANTS_COURONNEMENT_H

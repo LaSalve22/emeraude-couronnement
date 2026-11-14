@@ -20,6 +20,8 @@
 #define COURONNEMENT_DARK_BALL_TAUX     260         // Dark Ball : multiplicateur de capture (x100) ; Hyper Ball = 200, donc +30 %.
 #define COURONNEMENT_DARK_BALL_CONTRECOUP 10        // Dark Ball : PV max perdus (en %) après chaque attaque qui touche.
 #define COURONNEMENT_PRIX_DARK_BALL     5000        // Dark Ball : prix chez le Méga-Collectionneur (dès le 6e badge).
+#define COURONNEMENT_PRIX_CAPSULE_ARGENT 30000     // Capsule d'Argent (une stat à IV 31) : Méga-Collectionneur, dès le 6e badge.
+#define COURONNEMENT_PRIX_CAPSULE_OR     150000    // Capsule d'Or (six IV à 31) : Méga-Collectionneur, dès le 6e badge.
 #define COURONNEMENT_PRIX_MEGA_GEMME    10000       // Émeraude Couronnement : prix d'une Méga-Gemme chez le Méga-Collectionneur (Clémenti, après la Ligue).
 #define I_BERRY_PRICE                   GEN_7       // In Gen8+, the value of Berries increased since they can no longer be planted.
 #define I_POWER_ITEM_BOOST              GEN_LATEST  // In Gen7+, Pokémon holding Power items gain 8 extra EVs instead of 4.

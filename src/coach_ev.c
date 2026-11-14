@@ -5,6 +5,9 @@
 #include "string_util.h"
 #include "constants/pokemon.h"
 #include "constants/characters.h"
+#include "constants/items.h"
+#include "item.h"
+#include "item_menu.h"
 
 // Émeraude Couronnement : Coach EV. Après la Ligue, règle les EV d'un Pokémon stat par stat
 // (252, 128, 4 ou 0), dans la limite de 252 par stat et 510 au total. Gratuit.
@@ -96,4 +99,106 @@ void CoachEV_Appliquer(void)
         return;
     voulu = sValeurs[gSpecialVar_0x8006];
     gSpecialVar_Result = (CoachEV_Regler(mon, gSpecialVar_0x8005, voulu) < voulu);
+}
+
+// ---------------------------------------------------------------- IV (v0.32)
+// Coach IV (après la Ligue) : IV réglé de 0 à 31, stat par stat, gratuit.
+// Capsule d'Argent : une stat à 31 ; Capsule d'Or : les 6. Vendues par le Méga-Collectionneur dès le 6e badge.
+// On écrit l'IV réel (visible dans le résumé, compte pour Puissance Cachée) et on retire l'Entraînement Ultime éventuel.
+
+static const u8 sStatIv[NUM_STATS] =
+{
+    MON_DATA_HP_IV, MON_DATA_ATK_IV, MON_DATA_DEF_IV, MON_DATA_SPATK_IV, MON_DATA_SPDEF_IV, MON_DATA_SPEED_IV,
+};
+
+static const u8 sStatHyper[NUM_STATS] =
+{
+    MON_DATA_HYPER_TRAINED_HP, MON_DATA_HYPER_TRAINED_ATK, MON_DATA_HYPER_TRAINED_DEF,
+    MON_DATA_HYPER_TRAINED_SPATK, MON_DATA_HYPER_TRAINED_SPDEF, MON_DATA_HYPER_TRAINED_SPEED,
+};
+
+static const u8 sText_IvChange[] = _("\pJe change quoi ?");
+static const u8 sText_IvQuelle[] = _("\pQuelle stat monter à 31 ?");
+
+static void EcrireIv(struct Pokemon *mon, u32 stat, u32 valeur)
+{
+    u8 iv = valeur, faux = FALSE;
+    SetMonData(mon, sStatIv[stat], &iv);
+    SetMonData(mon, sStatHyper[stat], &faux);
+}
+
+void CoachIV_Regler(struct Pokemon *mon, u32 stat, u32 valeur)
+{
+    if (valeur > MAX_PER_STAT_IVS)
+        valeur = MAX_PER_STAT_IVS;
+    if (stat == COACH_IV_TOUT_A_31)
+    {
+        for (stat = 0; stat < NUM_STATS; stat++)
+            EcrireIv(mon, stat, MAX_PER_STAT_IVS);
+    }
+    else if (stat < NUM_STATS)
+    {
+        EcrireIv(mon, stat, valeur);
+    }
+    CalculateMonStats(mon);
+}
+
+// Renvoie le nombre de stats montées à 31 (0 = rien à faire, la Capsule n'est pas consommée).
+u32 Capsule_Maximiser(struct Pokemon *mon, u32 stat)
+{
+    u32 i, n = 0;
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        if (stat != CAPSULE_TOUTES_STATS && i != stat)
+            continue;
+        if (GetMonData(mon, sStatIv[i]) < MAX_PER_STAT_IVS)
+        {
+            EcrireIv(mon, i, MAX_PER_STAT_IVS);
+            n++;
+        }
+    }
+    if (n)
+        CalculateMonStats(mon);
+    return n;
+}
+
+static void AfficherIv(struct Pokemon *mon, const u8 *fin)
+{
+    u32 i;
+    gStringVar4[0] = EOS;
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        StringAppend(gStringVar4, sLibelles[i]);
+        ConvertIntToDecimalStringN(gStringVar4 + StringLength(gStringVar4), GetMonData(mon, sStatIv[i]), STR_CONV_MODE_LEFT_ALIGN, 2);
+    }
+    StringAppend(gStringVar4, fin);
+}
+
+// VAR_0x8004 : Pokémon. Affiche ses IV ; la fin du texte dépend de l'appelant (VAR_0x8007 = 1 : Capsule).
+void CoachIV_Afficher(void)
+{
+    AfficherIv(&gPlayerParty[gSpecialVar_0x8004], gSpecialVar_0x8007 == 1 ? sText_IvQuelle : sText_IvChange);
+}
+
+// VAR_0x8004 : Pokémon, VAR_0x8005 : stat (ou COACH_IV_TOUT_A_31), VAR_0x8006 : index du choix (0 = 31 ... 31 = 0).
+void CoachIV_Appliquer(void)
+{
+    if (gSpecialVar_0x8006 > MAX_PER_STAT_IVS)
+        gSpecialVar_0x8006 = 0;
+    CoachIV_Regler(&gPlayerParty[gSpecialVar_0x8004], gSpecialVar_0x8005, MAX_PER_STAT_IVS - gSpecialVar_0x8006);
+}
+
+u16 Capsule_EstOr(void)
+{
+    return gSpecialVar_ItemId == ITEM_GOLD_BOTTLE_CAP;
+}
+
+// VAR_0x8004 : Pokémon, VAR_0x8005 : stat (CAPSULE_TOUTES_STATS pour l'Or). Consomme la Capsule si un IV a changé.
+u16 Capsule_Utiliser(void)
+{
+    u32 stat = Capsule_EstOr() ? CAPSULE_TOUTES_STATS : gSpecialVar_0x8005;
+    if (Capsule_Maximiser(&gPlayerParty[gSpecialVar_0x8004], stat) == 0)
+        return FALSE;
+    RemoveBagItem(gSpecialVar_ItemId, 1);
+    return TRUE;
 }
