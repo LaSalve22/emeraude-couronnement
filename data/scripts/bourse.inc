@@ -19,9 +19,24 @@ Bourse_EventScript_Marche::
 	special Bourse_PreparerListe
 	message Bourse_Text_QuelleEntreprise
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, gBourseLignes + 0, gBourseLignes + 32, gBourseLignes + 64, gBourseLignes + 96, gBourseLignes + 128, gBourseLignes + 160, gBourseLignes + 192, gBourseLignes + 224, gBourseLignes + 256, Bourse_Text_Retour
+	dynmultipush gBourseLignes + 0, 0
+	dynmultipush gBourseLignes + 32, 1
+	dynmultipush gBourseLignes + 64, 2
+	dynmultipush gBourseLignes + 96, 3
+	dynmultipush gBourseLignes + 128, 4
+	dynmultipush gBourseLignes + 160, 5
+	dynmultipush gBourseLignes + 192, 6
+	dynmultipush gBourseLignes + 224, 7
+	dynmultipush gBourseLignes + 256, 8
+	special Societe_LigneBourse
+	goto_if_eq VAR_RESULT, FALSE, Bourse_EventScript_MarcheRetour
+	dynmultipush gBourseLignes + 288, 9
+Bourse_EventScript_MarcheRetour::
+	dynmultipush Bourse_Text_Retour, 10
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Bourse_EventScript_Accueil
-	goto_if_eq VAR_RESULT, 9, Bourse_EventScript_Accueil
+	goto_if_eq VAR_RESULT, 10, Bourse_EventScript_Accueil
+	goto_if_eq VAR_RESULT, 9, Bourse_EventScript_MaSociete
 	copyvar VAR_0x8004, VAR_RESULT
 Bourse_EventScript_Fiche::
 	special Bourse_Fiche
@@ -31,6 +46,10 @@ Bourse_EventScript_Fiche::
 	switch VAR_RESULT
 	case 0, Bourse_EventScript_Acheter
 	case 1, Bourse_EventScript_Vendre
+	goto Bourse_EventScript_Marche
+
+Bourse_EventScript_MaSociete::
+	call Societe_EventScript_Appli
 	goto Bourse_EventScript_Marche
 
 Bourse_EventScript_Acheter::

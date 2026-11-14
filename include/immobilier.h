@@ -22,6 +22,7 @@ void Immo_MettreAJourJusqua(u32 aujourdhui);
 u32 Immo_Prix(u32 bien, u32 jour);          // prix du marché (sans frais)
 u32 Immo_LoyerJour(u32 bien);               // loyer moyen par jour
 u32 Immo_BonneAffaire(u32 jour);            // bien soldé cette semaine
+u32 Immo_ValeurBiens(u32 jour);             // valeur de marché de tous les biens du joueur
 bool32 Immo_Possede(u32 bien);
 bool32 Immo_Acheter(u32 bien, u32 jour);
 bool32 Immo_Vendre(u32 bien, u32 jour);

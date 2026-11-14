@@ -80,7 +80,7 @@ static const struct Choc sChocs[] =
 
 STATIC_ASSERT(ARRAY_COUNT(sChocs) <= 32, BourseTropDeChocs);
 
-EWRAM_DATA u8 gBourseLignes[BOURSE_NB_ENTREPRISES][32] = {0};
+EWRAM_DATA u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 1][32] = {0};
 
 // ---------------------------------------------------------------- hasard déterministe
 

@@ -12,6 +12,7 @@ enum {
     NAMING_SCREEN_WALDA,
     NAMING_SCREEN_CODE,
     NAMING_SCREEN_RIVAL,
+    NAMING_SCREEN_SOCIETE, // Émeraude Couronnement : nom de la société du joueur
 };
 
 extern void BattleMainCB2(void);

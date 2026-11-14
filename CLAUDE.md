@@ -391,8 +391,23 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Sauvegarde : `struct ImmoSave` dans l'ancienne zone libre `filler1` de SaveBlock1 (0x34 octets, 44 utilisés), avec un nombre magique
   (`IMMO_MAGIE`) car la zone peut contenir de vieilles données. Place restante : ~32 octets dans SaveBlock2 (après la Bourse).
   Réglages : `IMMO_*` dans `include/immobilier.h`. Tests : `test/immobilier.c` (`TESTS="Immo"`).
-- Prochaine étape (choix d'Adrien) : v0.35 société cotée à son nom (regroupe biens et commerces, entre en Bourse),
-  puis v0.36 commerces (boutique à son nom, centre d'entraînement XP/EV, améliorations, concurrence), puis courtier et sabotages.
+
+## Fait (v0.35) - société du joueur, cotée en Bourse
+
+- Appli « Ma société » du menu L (avec le pass) : création pour 20 000 ¥ avec un nom au choix (écran de saisie
+  `NAMING_SCREEN_SOCIETE`, 10 caractères, vide = « Hoenn Corp »). `src/societe.c`, `include/societe.h`, `data/scripts/societe.inc`.
+- Une fois créée, les loyers de l'immobilier vont dans sa trésorerie (`Encaisser` / `Payer` de `src/immobilier.c`), les travaux y sont pris d'abord.
+  Retirer la trésorerie : le joueur reçoit sa part (actions détenues / 10 000), le reste revient aux autres actionnaires.
+- Valeur = biens immobiliers + trésorerie ; cours = valeur x humeur du marché / 10 000 actions. Humeur : ±1,5 %/jour, +0,3 % si la
+  trésorerie n'est pas vide (300 à 3000 pour mille).
+- Entrée en Bourse dès 100 000 ¥ de valeur : 25 % des actions vendues au public (argent au joueur, 3 % de frais). Ensuite vendre /
+  racheter par paquets de 500, jamais sous 51 %. La société apparaît en 10e ligne du marché de la Bourse (+Nom cours), qui ouvre l'appli.
+- Sauvegarde : `struct SocieteSave` (24 octets) juste après `BourseSave` dans la zone libre du Pokédex de SaveBlock2 (96 / 104 octets).
+  Il reste ~8 octets dans SaveBlock2 et 8 dans SaveBlock1 : les commerces (v0.36) devront tenir dans des variables libres
+  (`VAR_UNUSED_0x40F7` à `0x40FF`, 0x40A8, 0x40B8, 0x40BB, 0x40E5) ou dans des drapeaux.
+  Tests : `test/societe.c` (`TESTS="Societe"`).
+- Prochaine étape (choix d'Adrien) : v0.36 commerces (boutique à son nom, centre d'entraînement XP/EV, améliorations, concurrence),
+  rattachés à la société, puis courtier et sabotages.
 
 ## Prochaines étapes, dans l'ordre
 

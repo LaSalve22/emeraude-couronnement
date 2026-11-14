@@ -109,10 +109,43 @@ u32 Immo_LoyerJour(u32 bien)
     return (u64)sBiens[bien].loyer * IMMO.indice / 1000;
 }
 
+// Avec une société (v0.35), les loyers vont dans sa trésorerie et les travaux y sont pris en premier.
 static void Payer(u32 montant)
 {
-    u32 argent = GetMoney(&gSaveBlock1Ptr->money);
+    u32 argent;
+    if (gSaveBlock2Ptr->pokedex.societe.etat != 0)
+    {
+        u32 tresorerie = gSaveBlock2Ptr->pokedex.societe.tresorerie;
+        u32 pris = montant < tresorerie ? montant : tresorerie;
+        gSaveBlock2Ptr->pokedex.societe.tresorerie -= pris;
+        montant -= pris;
+    }
+    argent = GetMoney(&gSaveBlock1Ptr->money);
     RemoveMoney(&gSaveBlock1Ptr->money, montant < argent ? montant : argent);
+}
+
+static void Encaisser(u32 montant)
+{
+    if (gSaveBlock2Ptr->pokedex.societe.etat != 0)
+    {
+        u32 *tresorerie = &gSaveBlock2Ptr->pokedex.societe.tresorerie;
+        *tresorerie = (u64)*tresorerie + montant > 99999999 ? 99999999 : *tresorerie + montant;
+    }
+    else
+    {
+        AddMoney(&gSaveBlock1Ptr->money, montant);
+    }
+}
+
+u32 Immo_ValeurBiens(u32 jour)
+{
+    u32 i, valeur = 0;
+    for (i = 0; i < IMMO_NB_BIENS; i++)
+    {
+        if (Immo_Possede(i))
+            valeur += Immo_Prix(i, jour);
+    }
+    return valeur;
 }
 
 void Immo_PasserJour(u32 jour)
@@ -159,7 +192,7 @@ void Immo_PasserJour(u32 jour)
         else
         {
             u32 loyer = Immo_LoyerJour(i);
-            AddMoney(&gSaveBlock1Ptr->money, loyer);
+            Encaisser(loyer);
             IMMO.loyers += loyer;
         }
     }

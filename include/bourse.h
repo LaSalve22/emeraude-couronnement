@@ -56,6 +56,6 @@ void Bourse_ScriptEmprunter(void);
 void Bourse_ScriptRembourser(void);
 void Bourse_Tuyau(void);
 
-extern u8 gBourseLignes[BOURSE_NB_ENTREPRISES][32];
+extern u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 1][32]; // + la société du joueur (v0.35)
 
 #endif // GUARD_BOURSE_H

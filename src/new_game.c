@@ -186,6 +186,7 @@ void NewGameInitData(void)
     ClearPokedexFlags();
     memset(&gSaveBlock2Ptr->pokedex.bourse, 0, sizeof(gSaveBlock2Ptr->pokedex.bourse)); // Couronnement : Bourse de Hoenn
     memset(&gSaveBlock1Ptr->immo, 0, sizeof(gSaveBlock1Ptr->immo)); // Couronnement : immobilier
+    memset(&gSaveBlock2Ptr->pokedex.societe, 0, sizeof(gSaveBlock2Ptr->pokedex.societe)); // Couronnement : société
     InitEventData();
     VarSet(VAR_PLAYER_CHARACTER, gPendingPlayerCharacter); // Couronnement : personnage choisi dans l'intro
     ClearTVShowData();

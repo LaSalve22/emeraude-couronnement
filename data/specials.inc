@@ -47,6 +47,14 @@ gSpecials::
 	def_special Immo_ScriptVendre
 	def_special Immo_ScriptExpulser
 	def_special Immo_NiveauSquatteur
+	def_special Societe_SaisirNom
+	def_special Societe_ScriptCreer
+	def_special Societe_Resume
+	def_special Societe_ScriptRetirer
+	def_special Societe_ScriptIntroduire
+	def_special Societe_ScriptVendre
+	def_special Societe_ScriptRacheter
+	def_special Societe_LigneBourse
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

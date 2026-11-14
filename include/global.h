@@ -291,6 +291,18 @@ struct BourseSave
     u32 huissier;                       // montant saisi par l'huissier, à annoncer à la prochaine ouverture
 };
 
+// Émeraude Couronnement : société du joueur (v0.35), juste après la Bourse dans la zone libre du Pokédex de SaveBlock2.
+#define SOCIETE_NOM_LONGUEUR 10
+struct SocieteSave
+{
+    u8 nom[SOCIETE_NOM_LONGUEUR + 1];
+    u8 etat;                          // 0 = pas de société, 1 = créée, 2 = cotée en Bourse
+    u16 actionsJoueur;                // actions détenues par le joueur, sur 10 000
+    u16 sentiment;                    // humeur du marché envers la société, en pour mille (0 = pas initialisé)
+    u16 jour;                         // dernier jour traité
+    u32 tresorerie;                   // argent de la société (loyers encaissés)
+};
+
 // Émeraude Couronnement : immobilier (v0.34). Rangé dans l'ancienne zone des drapeaux du Pokédex de SaveBlock1 (0x34 octets).
 #define IMMO_NB_BIENS 12
 #define IMMO_MAGIE    0xB13E
@@ -320,7 +332,10 @@ struct Pokedex
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2 == FALSE
     union {
         /*0x10*/ u8 filler[0x68]; // Previously Dex Flags, feel free to remove.
-        struct BourseSave bourse; // Émeraude Couronnement : Bourse de Hoenn (v0.33), src/bourse.c
+        struct {
+            struct BourseSave bourse;   // Émeraude Couronnement : Bourse de Hoenn (v0.33), src/bourse.c
+            struct SocieteSave societe; // Émeraude Couronnement : société du joueur (v0.35), src/societe.c
+        };
     };
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2
 };
