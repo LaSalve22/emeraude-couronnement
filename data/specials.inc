@@ -29,6 +29,16 @@ gSpecials::
 	def_special CoachIV_Appliquer
 	def_special Capsule_EstOr
 	def_special Capsule_Utiliser
+	def_special Bourse_Ouvrir
+	def_special Bourse_Resume
+	def_special Bourse_PreparerListe
+	def_special Bourse_Fiche
+	def_special Bourse_ScriptAcheter
+	def_special Bourse_ScriptVendre
+	def_special Bourse_Credit
+	def_special Bourse_ScriptEmprunter
+	def_special Bourse_ScriptRembourser
+	def_special Bourse_Tuyau
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

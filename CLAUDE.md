@@ -354,6 +354,27 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - On écrit l'IV réel (visible dans le résumé, compte pour Puissance Cachée) et on retire l'Entraînement Ultime éventuel.
   Tests : `test/coach_iv.c` (`TESTS="Coach IV"` et `TESTS="Capsules"`).
 
+## Fait (v0.33) - Bourse de Hoenn (marché)
+
+- Appli « Bourse de Hoenn » dans le menu L dès que le rival a remis le pass (`data/scripts/bourse.inc`, `src/bourse.c`, `include/bourse.h`).
+  Accueil (liquide, placements, dette) -> Le marché (9 cours du jour avec flèche) -> fiche (cours, variation d'hier, parts, valeur)
+  -> Acheter / Vendre 1, 10, 100 ou le maximum ; Tuyau du jour ; Crédit (emprunter 5 000 / 20 000 / 50 000, rembourser).
+- Entreprises : Devon SA, Chantier Stern, Casino Lavandia, Télé Hoenn, Grands Magasins, Aqua Corp, Magma Corp, Pension, Parc Safari
+  (cours de départ, tendance, volatilité, krach, envolée dans `sEntreprises`). Frais 3 %, 9999 parts max par entreprise.
+- Cours : une fois par jour de jeu (`RtcGetLocalDayCount`, 30 jours rattrapés au plus), hasard déterministe (jour + n° de Dresseur :
+  recharger ne change rien). Krachs -40 à -80 %, envolées jusqu'à x3 (Casino), krach général ~1 jour sur 250.
+  Chocs du scénario appliqués une fois (`sChocs`, un bit par choc) : pièces Devon, Mont Chimnée, Repaire Magma, Grotte Fonds Marins,
+  Centre Spatial, fin de crise à Atalanopolis, badges et Ligue (Télé Hoenn). Crise des légendaires : Stern chute, Aqua / Magma montent ;
+  Aqua / Magma en faillite après leur défaite. Télé Hoenn : tendance + (Elo - 1500) / 100 pour mille.
+- Grands Magasins : dividende de 2 % du cours par part tous les 7 jours. Crédit : plafond 10 000 + moitié du portefeuille
+  (max 500 000), 1 % d'intérêts par jour ; si dette > portefeuille + 10 000, l'huissier vend tout (-10 %) et saisit le liquide,
+  annoncé à l'ouverture suivante. Tuyau du jour : rumeur sur le cours de demain d'une entreprise, vraie 7 fois sur 10.
+- Sauvegarde : `struct BourseSave` (`include/global.h`) dans l'ancienne zone libre `pokedex.filler` de SaveBlock2 (0x68 octets) ;
+  zéros = initialisation à la première ouverture (les chocs déjà passés ne sont pas rejoués). Remise à zéro dans `NewGameInitData`.
+  Réglages : `BOURSE_*` dans `include/bourse.h`. Tests : `test/bourse.c` (`TESTS="Bourse"`).
+- Reste prévu : courtier louche et quêtes de sabotage (v0.34), rumeurs à la télé / PNJ, immobilier (demande d'Adrien : maisons,
+  location, société cotée, boutiques, centre d'entraînement).
+
 ## Prochaines étapes, dans l'ordre
 
 0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

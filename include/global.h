@@ -276,6 +276,21 @@ struct SaveBlock3
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
 
+// Émeraude Couronnement : Bourse de Hoenn (v0.33). Rangée dans l'ancienne zone des drapeaux du Pokédex (0x68 octets libres) :
+// les sauvegardes existantes y ont des zéros, ce qui déclenche l'initialisation à la première ouverture.
+#define BOURSE_NB_ENTREPRISES 9
+struct BourseSave
+{
+    u16 cours[BOURSE_NB_ENTREPRISES];   // cours actuel (¥ par part), 0 = Bourse pas encore initialisée
+    u16 veille[BOURSE_NB_ENTREPRISES];  // cours de la veille (variation affichée)
+    u16 parts[BOURSE_NB_ENTREPRISES];   // parts détenues
+    u16 jour;                           // dernier jour traité (RtcGetLocalDayCount)
+    u16 jourDividende;                  // dernier versement du dividende des Grands Magasins
+    u32 dette;                          // crédit en cours (¥)
+    u32 evenements;                     // chocs du scénario déjà appliqués (un bit par choc)
+    u32 huissier;                       // montant saisi par l'huissier, à annoncer à la prochaine ouverture
+};
+
 struct Pokedex
 {
     /*0x00*/ u8 order;
@@ -286,7 +301,10 @@ struct Pokedex
     /*0x08*/ u32 spindaPersonality; // set when you first see Spinda
     /*0x0C*/ u32 unknown3;
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2 == FALSE
-    /*0x10*/ u8 filler[0x68]; // Previously Dex Flags, feel free to remove.
+    union {
+        /*0x10*/ u8 filler[0x68]; // Previously Dex Flags, feel free to remove.
+        struct BourseSave bourse; // Émeraude Couronnement : Bourse de Hoenn (v0.33), src/bourse.c
+    };
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK2
 };
 
