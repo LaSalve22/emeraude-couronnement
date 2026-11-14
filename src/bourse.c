@@ -18,6 +18,9 @@
 // ce qui permet aussi d'annoncer une rumeur sur demain (vraie 7 fois sur 10).
 
 #define BOURSE (gSaveBlock2Ptr->pokedex.bourse)
+#define HISTO (gSaveBlock3Ptr->bourseHisto)
+
+static void HistoriqueAjouter(u32 jour);
 
 STATIC_ASSERT(sizeof(struct BourseSave) <= 0x68, BourseSaveTropGrande);
 
@@ -148,6 +151,7 @@ void Bourse_Initialiser(u32 jour)
     }
     BOURSE.jour = jour;
     BOURSE.jourDividende = jour;
+    HISTO.magie = 0; // l'historique sera reconstruit
     // Ce qui s'est passé avant l'ouverture de la Bourse est déjà « dans les cours ».
     for (i = 0; i < ARRAY_COUNT(sChocs); i++)
     {
@@ -225,12 +229,100 @@ void Bourse_PasserJour(u32 jour)
         if (!Calendrier_EstWeekend(jour))
             BOURSE.cours[i] = AppliquerPourMille(BOURSE.cours[i], Bourse_VariationDuJour(i, jour));
     }
+    if (!Calendrier_EstWeekend(jour))
+        HistoriqueAjouter(jour);
     if (BOURSE.dette)
     {
         u32 interets = (u64)BOURSE.dette * BOURSE_INTERET_POURMILLE / 1000;
         BOURSE.dette += interets ? interets : 1;
     }
     VerserDividende(jour);
+}
+
+
+// ---------------------------------------------------------------- historique (v0.38)
+
+static u32 JourOuvrePrecedent(u32 jour)
+{
+    do
+        jour--;
+    while (jour > 0 && Calendrier_EstWeekend(jour));
+    return jour;
+}
+
+static u32 CaseHisto(u32 age)
+{
+    return (HISTO.tete + BOURSE_HISTO_JOURS - age) % BOURSE_HISTO_JOURS;
+}
+
+// Reconstitue les 30 derniers jours ouvrés à partir des cours actuels, avec les variations du hasard fixe.
+void Bourse_HistoriqueInitialiser(u32 jour)
+{
+    u32 e, age;
+
+    while (jour > 0 && Calendrier_EstWeekend(jour))
+        jour--;
+    HISTO.magie = BOURSE_HISTO_MAGIE;
+    HISTO.tete = BOURSE_HISTO_JOURS - 1;
+    HISTO.jour = jour;
+    for (e = 0; e < BOURSE_NB_ENTREPRISES; e++)
+    {
+        u32 cours = BOURSE.cours[e], j = jour;
+        for (age = 0; age < BOURSE_HISTO_JOURS; age++)
+        {
+            HISTO.clotures[e][CaseHisto(age)] = cours;
+            cours = Borner((u64)cours * 1000 / (1000 + Bourse_VariationDuJour(e, j)), BOURSE_COURS_MIN, BOURSE_COURS_MAX);
+            j = JourOuvrePrecedent(j);
+        }
+    }
+}
+
+static void HistoriqueAjouter(u32 jour)
+{
+    u32 e;
+
+    if (HISTO.magie != BOURSE_HISTO_MAGIE)
+        return;
+    HISTO.tete = (HISTO.tete + 1) % BOURSE_HISTO_JOURS;
+    HISTO.jour = jour;
+    for (e = 0; e < BOURSE_NB_ENTREPRISES; e++)
+        HISTO.clotures[e][HISTO.tete] = BOURSE.cours[e];
+}
+
+// La dernière clôture suit le cours actuel (chocs du scénario compris).
+static void HistoriqueSynchroniser(void)
+{
+    u32 e;
+
+    if (HISTO.magie != BOURSE_HISTO_MAGIE)
+        return;
+    for (e = 0; e < BOURSE_NB_ENTREPRISES; e++)
+        HISTO.clotures[e][HISTO.tete] = BOURSE.cours[e];
+}
+
+u32 Bourse_HistoriqueCloture(u32 entreprise, u32 age)
+{
+    if (entreprise >= BOURSE_NB_ENTREPRISES || age >= BOURSE_HISTO_JOURS || HISTO.magie != BOURSE_HISTO_MAGIE)
+        return 0;
+    return HISTO.clotures[entreprise][CaseHisto(age)];
+}
+
+// Bougie d'âge 0 (aujourd'hui) à 29. Les mèches viennent du hasard fixe du jour : rien à sauvegarder en plus.
+void Bourse_Bougie(u32 entreprise, u32 age, struct BourseBougie *b)
+{
+    u32 j = HISTO.jour, i, w, haut, bas;
+
+    b->cloture = Bourse_HistoriqueCloture(entreprise, age);
+    b->ouverture = Bourse_HistoriqueCloture(entreprise, age + 1);
+    if (b->ouverture == 0)
+        b->ouverture = b->cloture;
+    for (i = 0; i < age; i++)
+        j = JourOuvrePrecedent(j);
+    w = 2 + Alea(j, entreprise, 9) % (sEntreprises[entreprise].volatilite / 2 + 1);
+    haut = max(b->ouverture, b->cloture);
+    bas = min(b->ouverture, b->cloture);
+    b->haut = Borner((u64)haut * (1000 + w) / 1000, BOURSE_COURS_MIN, BOURSE_COURS_MAX);
+    b->bas = Borner((u64)bas * (1000 - w) / 1000, 1, BOURSE_COURS_MAX);
 }
 
 void Bourse_AppliquerChocs(void)
@@ -292,6 +384,8 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
 
     if (BOURSE.cours[0] == 0)
         Bourse_Initialiser(aujourdhui);
+    if (HISTO.magie != BOURSE_HISTO_MAGIE)
+        Bourse_HistoriqueInitialiser(BOURSE.jour);
     if (aujourdhui < BOURSE.jour) // horloge remise à zéro
     {
         BOURSE.jour = aujourdhui;
@@ -308,6 +402,7 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
     }
     Bourse_AppliquerChocs();
     Bourse_VerifierHuissier();
+    HistoriqueSynchroniser();
 }
 
 static u32 PrixAvecFrais(u32 entreprise, u32 quantite)
@@ -428,6 +523,20 @@ static u8 *AjouterVariation(u8 *fin, u32 entreprise)
     *fin++ = CHAR_PERCENT;
     *fin = EOS;
     return fin;
+}
+
+// En-tête du graphique : « Devon SA  612 ¥  +2 % ».
+u8 *Bourse_TexteEntete(u8 *dest, u32 entreprise)
+{
+    if (entreprise >= BOURSE_NB_ENTREPRISES)
+        entreprise = 0;
+    dest = AjouterTexte(dest, sEntreprises[entreprise].nom);
+    *dest++ = CHAR_SPACE;
+    *dest++ = CHAR_SPACE;
+    dest = AjouterYens(dest, BOURSE.cours[entreprise]);
+    *dest++ = CHAR_SPACE;
+    *dest++ = CHAR_SPACE;
+    return AjouterVariation(dest, entreprise);
 }
 
 static u32 Aujourdhui(void)

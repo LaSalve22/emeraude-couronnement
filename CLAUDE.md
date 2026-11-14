@@ -445,11 +445,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (arènes…) dans SaveBlock3 en priorité, avec un nombre magique.
   Tests : `test/banques.c` (`TESTS="Banques"` et `TESTS="Calendrier"`).
 
+## Fait (v0.38) - graphique de la Bourse
+
+- Fiche d'une entreprise -> « Graphique » : 30 chandeliers japonais (vert hausse, rouge baisse, mèches), SELECT bascule en courbe
+  des clôtures, A / B pour revenir. Fenêtre de 30 x 13 tuiles sur le terrain (BG0, base 8, palette de fond 13 sauvegardée et rendue),
+  au-dessus de la boîte de message : `src/bourse_graphique.c` (special `Bourse_Graphique` + `waitstate`).
+- Historique : `struct BourseHistorique` dans SaveBlock3 (31 clôtures x 9 entreprises, tampon circulaire, 564 octets ; ~1 050 restent),
+  une case par jour ouvré (`HistoriqueAjouter` dans `Bourse_PasserJour`), dernière case recalée sur le cours après les chocs.
+  À la première ouverture (nombre magique absent), les 30 jours passés sont reconstitués à rebours avec les variations du hasard fixe.
+  Ouverture = clôture précédente ; mèches tirées du hasard fixe du jour (`Bourse_Bougie`), rien de plus à sauvegarder.
+  La société du joueur n'a pas de graphique (cours sur 32 bits, hors historique).
+- Aperçu sans émulateur : `make check TESTS="Graphique"` vide les pixels de la fenêtre dans le journal, puis
+  `python3 tools/couronnement/apercu_graphique.py <journal> <prefixe>` en fait deux PNG. Tests : `TESTS="Bourse"` (historique).
+
 ## Idées d'Adrien à concevoir plus tard
 
-- **Graphique de la Bourse (choix d'Adrien, 14/11)** : chandeliers japonais par défaut sur la fiche, SELECT bascule en courbe, 30 jours.
-  Stocker seulement les clôtures (30 x 10 entreprises, ~600 octets dans SaveBlock3) ; ouverture = clôture de la veille,
-  mèches recalculées par le hasard fixe du jour. Vert hausse / rouge baisse, échelle de prix.
 - **Arènes (choix d'Adrien, 14/11)** : après la Ligue, plusieurs arènes achetables dans les villes sans arène (Rosyères, Poivressel,
   Vergazon, Vermilava, Nénucrique, Pacifiville…). Type majoritaire : au moins 4 Pokémon du type choisi parmi Plante, Glace, Insecte,
   Poison, Sol, Spectre, Dragon, Ténèbres, Acier, Fée. Dépôt : 6 titulaires + 3 remplaçants, bloqués tant qu'ils y sont.

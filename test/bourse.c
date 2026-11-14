@@ -103,3 +103,35 @@ TEST("Bourse: no bailiff while holdings cover the debt")
     EXPECT_EQ(BOURSE.parts[BOURSE_DEVON], 100);
     EXPECT_EQ(BOURSE.huissier, 0);
 }
+
+// v0.38 : historique des cours pour le graphique.
+TEST("Bourse: the price history ends on today's price and candles chain")
+{
+    struct BourseBougie b0, b1;
+    u32 e;
+    Preparer(0);
+    Bourse_MettreAJourJusqua(704); // mardi
+    for (e = 0; e < BOURSE_NB_ENTREPRISES; e++)
+    {
+        EXPECT_EQ(Bourse_HistoriqueCloture(e, 0), gSaveBlock2Ptr->pokedex.bourse.cours[e]);
+        Bourse_Bougie(e, 0, &b0);
+        Bourse_Bougie(e, 1, &b1);
+        EXPECT_EQ(b0.ouverture, b1.cloture);
+        EXPECT_GE(b0.haut, max(b0.ouverture, b0.cloture));
+        EXPECT_LE(b0.bas, min(b0.ouverture, b0.cloture));
+    }
+}
+
+TEST("Bourse: a new candle only on trading days")
+{
+    u32 avant;
+    Preparer(0);
+    Bourse_MettreAJourJusqua(704); // mardi
+    avant = Bourse_HistoriqueCloture(BOURSE_CASINO, 0);
+    Bourse_MettreAJourJusqua(705); // mercredi : nouvelle bougie
+    EXPECT_EQ(Bourse_HistoriqueCloture(BOURSE_CASINO, 1), avant);
+    EXPECT_EQ(Bourse_HistoriqueCloture(BOURSE_CASINO, 0), gSaveBlock2Ptr->pokedex.bourse.cours[BOURSE_CASINO]);
+    avant = Bourse_HistoriqueCloture(BOURSE_CASINO, 1);
+    Bourse_MettreAJourJusqua(708); // jeudi, vendredi, samedi : 2 bougies de plus seulement
+    EXPECT_EQ(Bourse_HistoriqueCloture(BOURSE_CASINO, 3), avant);
+}

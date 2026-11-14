@@ -44,6 +44,18 @@ u32 Bourse_Vendre(u32 entreprise, u32 quantite);  // renvoie le nombre de parts 
 u32 Bourse_Emprunter(u32 montant);                // renvoie le montant emprunté
 u32 Bourse_Rembourser(void);                      // renvoie le montant remboursé
 
+// Historique et graphique (v0.38)
+struct BourseBougie
+{
+    u16 ouverture, haut, bas, cloture;
+};
+void Bourse_HistoriqueInitialiser(u32 jour);
+u32 Bourse_HistoriqueCloture(u32 entreprise, u32 age); // âge 0 = aujourd'hui, 0 si pas d'historique
+void Bourse_Bougie(u32 entreprise, u32 age, struct BourseBougie *bougie);
+u8 *Bourse_TexteEntete(u8 *dest, u32 entreprise);
+void Bourse_GraphiqueDessiner(u8 windowId, u32 entreprise, u32 mode); // mode 0 = bougies, 1 = courbe
+void Bourse_Graphique(void); // special + waitstate, VAR_0x8004 = entreprise (src/bourse_graphique.c)
+
 // Specials (data/specials.inc)
 void Bourse_Ouvrir(void);
 void Bourse_Resume(void);

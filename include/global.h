@@ -254,6 +254,19 @@ struct NPCFollower
 #include "constants/items.h"
 #define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
+// Émeraude Couronnement : historique des cours de la Bourse (v0.38), pour le graphique (chandeliers / courbe).
+#define BOURSE_NB_ENTREPRISES 9
+#define BOURSE_HISTO_JOURS 31 // 31 clôtures = 30 bougies (l'ouverture d'un jour est la clôture du précédent)
+#define BOURSE_HISTO_MAGIE 0xB0C5
+struct BourseHistorique
+{
+    u16 clotures[BOURSE_NB_ENTREPRISES][BOURSE_HISTO_JOURS]; // tampon circulaire, une case par jour ouvré
+    u16 jour;   // jour (RtcGetLocalDayCount) de la clôture la plus récente
+    u16 magie;  // BOURSE_HISTO_MAGIE une fois initialisé
+    u8 tete;    // case de la clôture la plus récente
+    u8 libre;
+};
+
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
@@ -269,6 +282,7 @@ struct SaveBlock3
     u8 dexNavSearchLevels[NUM_SPECIES];
 #endif
     u8 dexNavChain;
+    struct BourseHistorique bourseHisto; // Émeraude Couronnement (v0.38), src/bourse.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif
@@ -278,7 +292,6 @@ extern struct SaveBlock3 *gSaveBlock3Ptr;
 
 // Émeraude Couronnement : Bourse de Hoenn (v0.33). Rangée dans l'ancienne zone des drapeaux du Pokédex (0x68 octets libres) :
 // les sauvegardes existantes y ont des zéros, ce qui déclenche l'initialisation à la première ouverture.
-#define BOURSE_NB_ENTREPRISES 9
 struct BourseSave
 {
     u16 cours[BOURSE_NB_ENTREPRISES];   // cours actuel (¥ par part), 0 = Bourse pas encore initialisée

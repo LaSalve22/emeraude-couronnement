@@ -42,11 +42,20 @@ Bourse_EventScript_Fiche::
 	special Bourse_Fiche
 	message gStringVar4
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Bourse_Text_Acheter, Bourse_Text_Vendre, Bourse_Text_Retour
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Bourse_Text_Acheter, Bourse_Text_Vendre, Bourse_Text_Graphique, Bourse_Text_Retour
 	switch VAR_RESULT
 	case 0, Bourse_EventScript_Acheter
 	case 1, Bourse_EventScript_Vendre
+	case 2, Bourse_EventScript_Graphique
 	goto Bourse_EventScript_Marche
+
+@ v0.38 : graphique en chandeliers japonais (SELECT : courbe), src/bourse_graphique.c
+Bourse_EventScript_Graphique::
+	message Bourse_Text_AideGraphique
+	waitmessage
+	special Bourse_Graphique
+	waitstate
+	goto Bourse_EventScript_Fiche
 
 Bourse_EventScript_MaSociete::
 	call Societe_EventScript_Appli
@@ -116,6 +125,10 @@ Bourse_Text_Credit:
 	.string "Crédit$"
 Bourse_Text_Fermer:
 	.string "Fermer$"
+Bourse_Text_Graphique:
+	.string "Graphique$"
+Bourse_Text_AideGraphique:
+	.string "30 derniers jours de cotation.\nSELECT : bougies / courbe. B : retour.$"
 Bourse_Text_Retour:
 	.string "Retour$"
 Bourse_Text_Acheter:
