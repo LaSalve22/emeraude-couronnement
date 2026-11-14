@@ -21,6 +21,11 @@ s32 Couronnement_ScoreAdverse(const struct TrainerMon *mon, struct Pokemon *joue
 u32 Couronnement_NbTournoisGagnes(void);
 const struct Trainer *GetCouronnementTrainer(void);
 bool32 Couronnement_EquipeValide(const u16 *species, u32 count);
+u32 Couronnement_Saison(void);
+u32 Couronnement_Titres(void);
+u32 Couronnement_MultiplicateurSaison(void);
+u32 Couronnement_EquipeDeLaSaison(u32 index);
+u32 Couronnement_NiveauDeLaSaison(u32 index);
 
 // Specials (data/specials.inc)
 void Couronnement_DonnerPass(void);
@@ -39,5 +44,9 @@ void Couronnement_BufferMenuL(void);
 void Couronnement_AfficherBallePalier(void);
 void Couronnement_CacherBallePalier(void);
 void Couronnement_ChangerTypeTera(void);
+void Couronnement_RecompensePalier(void);
+void Couronnement_EtaitFinale(void);
+void Couronnement_FinSaison(void);
+void Couronnement_TexteFinaliste(void);
 
 #endif // GUARD_COURONNEMENT_H

@@ -84,6 +84,7 @@ Couronnement_EventScript_Manche::
 	special Couronnement_EnregistrerResultat
 	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_Elimine
 	msgbox Couronnement_Text_MancheGagnee, MSGBOX_DEFAULT
+	call Couronnement_EventScript_RecompensePalier
 	special Couronnement_MancheSuivante
 	goto_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_Manche
 	call Couronnement_EventScript_Fin
@@ -95,9 +96,36 @@ Couronnement_EventScript_Manche::
 	end
 
 Couronnement_EventScript_GagneSansRecompense::
+	goto_if_eq VAR_0x8007, TRUE, Couronnement_EventScript_PrimeTournoi
 	msgbox Couronnement_Text_RegagneElo, MSGBOX_DEFAULT
 	release
 	end
+
+@ Saison 2 et suivantes : prime en argent au premier titre de la saison (texte dans gStringVar4).
+Couronnement_EventScript_PrimeTournoi::
+	playse SE_SHOP
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	release
+	end
+
+@ v0.39 : prime de palier, une fois par saison (texte dans gStringVar4).
+Couronnement_EventScript_RecompensePalier::
+	special Couronnement_RecompensePalier
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_RecompensePalierFin
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	waitfanfare
+Couronnement_EventScript_RecompensePalierFin::
+	return
+
+@ v0.39 : fin de saison après la finale (VAR_0x8004 = victoire).
+Couronnement_EventScript_FinDeSaison::
+	special Couronnement_FinSaison
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox Couronnement_Text_NouvelleSaison, MSGBOX_DEFAULT
+	return
 
 Couronnement_EventScript_Abandon::
 	call Couronnement_EventScript_Fin
@@ -108,7 +136,15 @@ Couronnement_EventScript_Abandon::
 Couronnement_EventScript_Elimine::
 	msgbox Couronnement_Text_Elimine, MSGBOX_DEFAULT
 	call Couronnement_EventScript_Fin
+	special Couronnement_EtaitFinale
+	goto_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_ElimineFinale
 	msgbox Couronnement_Text_Revenir, MSGBOX_DEFAULT
+	release
+	end
+
+Couronnement_EventScript_ElimineFinale::
+	setvar VAR_0x8004, FALSE
+	call Couronnement_EventScript_FinDeSaison
 	release
 	end
 
@@ -163,10 +199,12 @@ Couronnement_EventScript_FinaleManche::
 	special HealPlayerParty
 	playfanfare MUS_HEAL
 	waitfanfare
-	msgbox Couronnement_Text_FinaleBlue, MSGBOX_DEFAULT
+	special Couronnement_TexteFinaliste
+	msgbox gStringVar4, MSGBOX_DEFAULT
 Couronnement_EventScript_FinaleAnnonce::
 	goto_if_ne VAR_0x8008, 4, Couronnement_EventScript_FinaleTour
-	msgbox Couronnement_Text_FinaleRed, MSGBOX_DEFAULT
+	special Couronnement_TexteFinaliste
+	msgbox gStringVar4, MSGBOX_DEFAULT
 Couronnement_EventScript_FinaleTour::
 	msgbox Couronnement_Text_FinaleTour, MSGBOX_DEFAULT
 	msgbox gCouronnementTexteEquipe, MSGBOX_DEFAULT
@@ -177,6 +215,7 @@ Couronnement_EventScript_FinaleTour::
 	special Couronnement_EnregistrerResultat
 	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_Elimine
 	msgbox Couronnement_Text_MancheGagnee, MSGBOX_DEFAULT
+	call Couronnement_EventScript_RecompensePalier
 	special Couronnement_MancheSuivante
 	goto_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_FinaleManche
 	call Couronnement_EventScript_Fin
@@ -184,9 +223,12 @@ Couronnement_EventScript_FinaleTour::
 	playfanfare MUS_OBTAIN_SYMBOL
 	msgbox Couronnement_Text_ChampionDuMonde, MSGBOX_DEFAULT
 	waitfanfare
-	goto_if_eq VAR_0x8006, ITEM_NONE, Couronnement_EventScript_GagneSansRecompense
+	goto_if_eq VAR_0x8006, ITEM_NONE, Couronnement_EventScript_FinaleSaison
 	giveitem VAR_0x8006
 	giveitem ITEM_MASTER_BALL
+Couronnement_EventScript_FinaleSaison::
+	setvar VAR_0x8004, TRUE
+	call Couronnement_EventScript_FinDeSaison
 	release
 	end
 
@@ -383,7 +425,16 @@ Couronnement_Text_PasAssez:
 
 Couronnement_Text_TitreChampion:
 	.string "Titre : Champion du Monde.\n"
-	.string "Rien que ça.$"
+	.string "Titres remportés : {STR_VAR_1}.$"
+
+Couronnement_Text_NouvelleSaison:
+	.string "La saison {STR_VAR_1} commence !\n"
+	.string "Ton Elo repart à {STR_VAR_2}.\p"
+	.string "Remonte dans le Top 32 pour\n"
+	.string "rejouer la finale.\p"
+	.string "Les adversaires sont plus forts\n"
+	.string "et les finalistes changent.\l"
+	.string "Les tournois paient une prime.$"
 
 Couronnement_Text_RegagneElo:
 	.string "Encore gagné ! Pas de récompense\n"
@@ -456,8 +507,8 @@ Couronnement_Text_ChampionDuMonde:
 Couronnement_Text_FinaleRejouer:
 	.string "Le Champion du Monde revient\n"
 	.string "défendre son titre ?\p"
-	.string "Pas de récompense, mais ton Elo\n"
-	.string "est en jeu. On y va ?$"
+	.string "La finale clôt la saison. On y\n"
+	.string "va ?$"
 
 Couronnement_Text_RepousseInfinie:
 	.string "Ah, et prends ça. Les Pokémon\n"

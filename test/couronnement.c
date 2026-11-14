@@ -57,7 +57,7 @@ TEST("Couronnement: only one legendary per team")
 
 TEST("Couronnement: 12 tournaments of 3 rounds then a 5-round final")
 {
-    EXPECT_EQ(COURONNEMENT_ADV_COUNT, 41);
+    EXPECT_EQ(COURONNEMENT_ADV_FINALISTES_SAISON, 41);
     EXPECT_EQ(Couronnement_PremierAdversaire(COURONNEMENT_TOURNOI_NENUCRIQUE), 33);
     EXPECT_EQ(Couronnement_PremierAdversaire(COURONNEMENT_TOURNOI_FINALE), 36);
     EXPECT_EQ(Couronnement_NbManches(COURONNEMENT_TOURNOI_FINALE), 5);

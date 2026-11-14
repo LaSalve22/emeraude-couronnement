@@ -23,6 +23,10 @@ gSpecials::
 	def_special Couronnement_AfficherBallePalier
 	def_special Couronnement_CacherBallePalier
 	def_special Couronnement_ChangerTypeTera
+	def_special Couronnement_RecompensePalier
+	def_special Couronnement_EtaitFinale
+	def_special Couronnement_FinSaison
+	def_special Couronnement_TexteFinaliste
 	def_special CoachEV_Afficher
 	def_special CoachEV_Appliquer
 	def_special CoachIV_Afficher

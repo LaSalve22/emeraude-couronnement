@@ -267,6 +267,17 @@ struct BourseHistorique
     u8 libre;
 };
 
+// Émeraude Couronnement : saisons du Couronnement Mondial (v0.39), src/couronnement.c.
+#define COURONNEMENT_SAISON_MAGIE 0xC5A1
+struct CouronnementSaison
+{
+    u16 magie;
+    u8 saison;    // 1 = première saison
+    u8 titres;    // finales gagnées (Champion du Monde)
+    u8 paliers;   // paliers déjà récompensés cette saison (un bit par palier)
+    u8 finales;   // finales jouées
+};
+
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
@@ -283,6 +294,7 @@ struct SaveBlock3
 #endif
     u8 dexNavChain;
     struct BourseHistorique bourseHisto; // Émeraude Couronnement (v0.38), src/bourse.c
+    struct CouronnementSaison couronnementSaison; // Émeraude Couronnement (v0.39), src/couronnement.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

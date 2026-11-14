@@ -365,6 +365,40 @@ FINALE = [
         "Lapras @ Assault Vest | Modest | Water Absorb | 252 HP / 252 SpA | Freeze-Dry, Sparkling Aria, Ice Shard, Perish Song"]),
 ]
 
+# v0.39 : finalistes des saisons suivantes (niveau 100). Ordre de rotation dans src/couronnement.c :
+# Blue (39), Red (40), Green (41), Peter (42), Pierre (43), Marc (44).
+FINALISTES_SAISON = [
+    ('Green', 'Champion', 'Leaf', 'Female', [
+        "Venusaur @ Life Orb | Modest | Chlorophyll | 252 SpA / 252 Spe | Leaf Storm, Sludge Bomb, Earth Power, Protect",
+        "Ninetales-Alola @ Light Clay | Timid | Snow Warning | 252 SpA / 252 Spe | Aurora Veil, Blizzard, Moonblast, Protect",
+        "Clefable @ Sitrus Berry | Bold | Magic Guard | 252 HP / 252 Def | Follow Me, Moonblast, Helping Hand, Protect",
+        "Gengar @ Focus Sash | Timid | Cursed Body | 252 SpA / 252 Spe | Shadow Ball, Sludge Bomb, Icy Wind, Protect",
+        "Nidoqueen @ Assault Vest | Modest | Sheer Force | 252 HP / 252 SpA | Earth Power, Sludge Wave, Ice Beam, Flamethrower",
+        "Jolteon @ Choice Specs | Timid | Volt Absorb | 252 SpA / 252 Spe | Thunderbolt, Volt Switch, Shadow Ball, Hyper Voice"]),
+    ('Peter', 'Champion', 'Elite Four Lance Frlg', 'Male', [
+        "Dragonite @ Lum Berry | Adamant | Multiscale | 252 Atk / 252 Spe | Dragon Dance, Extreme Speed, Dragon Claw, Protect",
+        "Kingdra @ Choice Specs | Modest | Swift Swim | 252 SpA / 252 Spe | Draco Meteor, Muddy Water, Ice Beam, Hurricane",
+        "Gyarados @ Sitrus Berry | Jolly | Intimidate | 252 Atk / 252 Spe | Waterfall, Bounce, Thunder Wave, Protect",
+        "Aerodactyl @ Focus Sash | Jolly | Unnerve | 252 Atk / 252 Spe | Rock Slide, Tailwind, Wide Guard, Protect",
+        "Charizard @ Charcoal | Timid | Blaze | 252 SpA / 252 Spe | Heat Wave, Air Slash, Dragon Pulse, Protect",
+        "Salamence @ Life Orb | Naive | Intimidate | 252 Atk / 252 Spe | Draco Meteor, Dragon Claw, Fire Blast, Protect"]),
+    ('Pierre', 'Champion', 'Steven', 'Male', [
+        "Metagross @ Weakness Policy | Adamant | Clear Body | 252 Atk / 252 HP | Iron Head, Zen Headbutt, Bullet Punch, Protect",
+        "Aggron @ Sitrus Berry | Adamant | Rock Head | 252 Atk / 252 HP | Head Smash, Heavy Slam, Earthquake, Protect",
+        "Cradily @ Leftovers | Calm | Storm Drain | 252 HP / 252 SpD | Giga Drain, Rock Slide, Recover, Protect",
+        "Armaldo @ Life Orb | Adamant | Battle Armor | 252 Atk / 252 Spe | X-Scissor, Rock Slide, Earthquake, Protect",
+        "Skarmory @ Rocky Helmet | Impish | Sturdy | 252 HP / 252 Def | Brave Bird, Tailwind, Iron Defense, Protect",
+        "Claydol @ Mental Herb | Sassy | Levitate | 252 HP / 252 SpD | Trick Room, Earth Power, Psychic, Ally Switch"]),
+    ('Marc', 'Champion', 'Champion Wallace', 'Male', [
+        "Milotic @ Leftovers | Bold | Competitive | 252 HP / 252 Def | Scald, Ice Beam, Recover, Protect",
+        "Pelipper @ Damp Rock | Modest | Drizzle | 252 HP / 252 SpA | Hurricane, Scald, Tailwind, Protect",
+        "Ludicolo @ Life Orb | Modest | Swift Swim | 252 SpA / 252 Spe | Fake Out, Hydro Pump, Giga Drain, Protect",
+        "Swampert @ Sitrus Berry | Adamant | Damp | 252 Atk / 252 HP | Waterfall, High Horsepower, Ice Punch, Protect",
+        "Kingdra @ Life Orb | Modest | Swift Swim | 252 SpA / 252 Spe | Muddy Water, Draco Meteor, Ice Beam, Protect",
+        "Wailord @ Sitrus Berry | Quiet | Pressure | 252 HP / 252 SpA | Water Spout, Ice Beam, Hydro Pump, Protect"]),
+]
+
+
 def mon_block(spec, level):
     parts = [p.strip() for p in spec.split('|')]
     species, nature, ability, evs, moves = parts
@@ -401,6 +435,15 @@ def main():
                 f'Gender: {gender}', f'Music: {gender}', 'Double Battle: Yes',
                 'AI: Smart Trainer / Smart Switching', '']
         out += [mon_block(m, FINALE_NIVEAUX[r]) + '\n' for m in mons]
+        idx += 1
+    defines.append(f'#define COURONNEMENT_ADV_FINALISTES_SAISON {idx}')
+    for name, cls, pic, gender, mons in FINALISTES_SAISON:
+        assert len(mons) == 6, name
+        defines.append(f'#define COURONNEMENT_ADV_{idx} {idx}')
+        out += [f'=== COURONNEMENT_ADV_{idx} ===', f'Name: {name}', f'Class: {cls}', f'Pic: {pic}',
+                f'Gender: {gender}', f'Music: {gender}', 'Double Battle: Yes',
+                'AI: Smart Trainer / Smart Switching', '']
+        out += [mon_block(m, 100) + '\n' for m in mons]
         idx += 1
     defines += ['', f'#define COURONNEMENT_ADV_COUNT {idx}', '', '#endif // GUARD_CONSTANTS_COURONNEMENT_ADVERSAIRES_H', '']
     (ROOT / 'src/data/couronnement.party').write_text('\n'.join(out) + '\n', encoding='utf-8')

@@ -3074,3 +3074,303 @@ EVs: 252 HP / 252 SpA
 - Ice Shard
 - Perish Song
 
+=== COURONNEMENT_ADV_41 ===
+Name: Green
+Class: Champion
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Smart Trainer / Smart Switching
+
+Venusaur @ Life Orb
+Modest Nature
+Level: 100
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Leaf Storm
+- Sludge Bomb
+- Earth Power
+- Protect
+
+Ninetales-Alola @ Light Clay
+Timid Nature
+Level: 100
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Aurora Veil
+- Blizzard
+- Moonblast
+- Protect
+
+Clefable @ Sitrus Berry
+Bold Nature
+Level: 100
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Follow Me
+- Moonblast
+- Helping Hand
+- Protect
+
+Gengar @ Focus Sash
+Timid Nature
+Level: 100
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Shadow Ball
+- Sludge Bomb
+- Icy Wind
+- Protect
+
+Nidoqueen @ Assault Vest
+Modest Nature
+Level: 100
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Flamethrower
+
+Jolteon @ Choice Specs
+Timid Nature
+Level: 100
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Thunderbolt
+- Volt Switch
+- Shadow Ball
+- Hyper Voice
+
+=== COURONNEMENT_ADV_42 ===
+Name: Peter
+Class: Champion
+Pic: Elite Four Lance Frlg
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer / Smart Switching
+
+Dragonite @ Lum Berry
+Adamant Nature
+Level: 100
+Ability: Multiscale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Dragon Dance
+- Extreme Speed
+- Dragon Claw
+- Protect
+
+Kingdra @ Choice Specs
+Modest Nature
+Level: 100
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Draco Meteor
+- Muddy Water
+- Ice Beam
+- Hurricane
+
+Gyarados @ Sitrus Berry
+Jolly Nature
+Level: 100
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Waterfall
+- Bounce
+- Thunder Wave
+- Protect
+
+Aerodactyl @ Focus Sash
+Jolly Nature
+Level: 100
+Ability: Unnerve
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Rock Slide
+- Tailwind
+- Wide Guard
+- Protect
+
+Charizard @ Charcoal
+Timid Nature
+Level: 100
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Heat Wave
+- Air Slash
+- Dragon Pulse
+- Protect
+
+Salamence @ Life Orb
+Naive Nature
+Level: 100
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- Draco Meteor
+- Dragon Claw
+- Fire Blast
+- Protect
+
+=== COURONNEMENT_ADV_43 ===
+Name: Pierre
+Class: Champion
+Pic: Steven
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer / Smart Switching
+
+Metagross @ Weakness Policy
+Adamant Nature
+Level: 100
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Iron Head
+- Zen Headbutt
+- Bullet Punch
+- Protect
+
+Aggron @ Sitrus Berry
+Adamant Nature
+Level: 100
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Head Smash
+- Heavy Slam
+- Earthquake
+- Protect
+
+Cradily @ Leftovers
+Calm Nature
+Level: 100
+Ability: Storm Drain
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Giga Drain
+- Rock Slide
+- Recover
+- Protect
+
+Armaldo @ Life Orb
+Adamant Nature
+Level: 100
+Ability: Battle Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe
+- X-Scissor
+- Rock Slide
+- Earthquake
+- Protect
+
+Skarmory @ Rocky Helmet
+Impish Nature
+Level: 100
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Brave Bird
+- Tailwind
+- Iron Defense
+- Protect
+
+Claydol @ Mental Herb
+Sassy Nature
+Level: 100
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD
+- Trick Room
+- Earth Power
+- Psychic
+- Ally Switch
+
+=== COURONNEMENT_ADV_44 ===
+Name: Marc
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Smart Trainer / Smart Switching
+
+Milotic @ Leftovers
+Bold Nature
+Level: 100
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def
+- Scald
+- Ice Beam
+- Recover
+- Protect
+
+Pelipper @ Damp Rock
+Modest Nature
+Level: 100
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Hurricane
+- Scald
+- Tailwind
+- Protect
+
+Ludicolo @ Life Orb
+Modest Nature
+Level: 100
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Fake Out
+- Hydro Pump
+- Giga Drain
+- Protect
+
+Swampert @ Sitrus Berry
+Adamant Nature
+Level: 100
+Ability: Damp
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP
+- Waterfall
+- High Horsepower
+- Ice Punch
+- Protect
+
+Kingdra @ Life Orb
+Modest Nature
+Level: 100
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe
+- Muddy Water
+- Draco Meteor
+- Ice Beam
+- Protect
+
+Wailord @ Sitrus Berry
+Quiet Nature
+Level: 100
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA
+- Water Spout
+- Ice Beam
+- Hydro Pump
+- Protect
+

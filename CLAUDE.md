@@ -458,6 +458,23 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Aperçu sans émulateur : `make check TESTS="Graphique"` vide les pixels de la fenêtre dans le journal, puis
   `python3 tools/couronnement/apercu_graphique.py <journal> <prefixe>` en fait deux PNG. Tests : `TESTS="Bourse"` (historique).
 
+## Fait (v0.39) - saisons du Couronnement Mondial
+
+- Une saison se termine à la finale, gagnée ou perdue (`Couronnement_EventScript_FinDeSaison`, special `Couronnement_FinSaison`) :
+  prime de finale 500 000 ¥ (+3 000 000 ¥, Master Ball et Capsule d'Or si victoire, titre +1), puis saison suivante :
+  Elo ramené à mi-chemin de 1500 (2000 -> 1750), tournois remis à zéro (`VAR_COURONNEMENT_TOURNOIS`), il faut regagner le Top 32.
+- Primes de palier une fois par saison, après la manche qui fait monter (`Couronnement_RecompensePalier`) :
+  Super 30 000 ¥ + Capsule d'Argent ; Hyper 100 000 ¥ + Capsule d'Argent + Dark Ball ; Master 300 000 ¥ + Capsule d'Or + Dark Ball ;
+  Champions 1 000 000 ¥ + Capsule d'Or + Patch Talent. Saison 2+ : chaque tournoi gagné paie 20 000 + 10 000 x n° de tournoi
+  au lieu de l'objet. Toutes les primes x1 en saison 1, +50 % par saison, x3 au plus (`Couronnement_MultiplicateurSaison`).
+- Adversaires dès la saison 2 : Elo +100 par saison, équipes qui tournent (`Couronnement_EquipeDeLaSaison` : réserve des
+  27 équipes évoluées, index 12 à 38), niveau 88 + n° de tournoi (finale au N.100). Finalistes par roulement de 6 :
+  Blue, Red, Green, Peter (Lance), Pierre, Marc (`FINALISTES_SAISON` de `tools/couronnement/tournois.py`, index 41-44),
+  réplique propre à chacun (`Couronnement_TexteFinaliste`). Red / Green s'échangent si le joueur joue le même personnage.
+- Statut MONDIAL : saison et finales jouées ; titre « Champion du Monde » avec le nombre de titres.
+- Sauvegarde : `struct CouronnementSaison` (6 octets) dans SaveBlock3, nombre magique ; une partie qui avait déjà gagné la finale
+  démarre avec 1 titre. Tests : `test/couronnement_saisons.c` (`TESTS="Saisons"`).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Arènes (choix d'Adrien, 14/11)** : après la Ligue, plusieurs arènes achetables dans les villes sans arène (Rosyères, Poivressel,
@@ -470,11 +487,6 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Défaite : le challenger gagne le badge, le joueur paie la prime du badge, réputation en baisse, moins de challengers quelques jours.
   À fixer au moment du code : prix d'achat, challengers par jour. Place : SaveBlock3 (les Pokémon déposés : ~1 568 octets libres
   en fin de PC, ou une boîte réservée).
-- **Saisons du Couronnement (choix d'Adrien, 14/11)** : nouvelle saison juste après la finale (gagnée ou perdue) ; Elo ramené à
-  mi-chemin de 1500 (2000 -> 1750) ; adversaires plus forts (Elo +100 par saison, N.100, EV, objets), équipes qui tournent,
-  finaliste différent selon la saison (Red, Blue, Green, Champions d'autres régions). Récompenses de fin de saison selon le palier
-  (Super / Hyper / Master / Champions) : objets rares (Patch Talent, Capsule d'Or, Master Ball, Dark Ball…), primes en argent,
-  titre et palmarès (saisons gagnées) dans le menu MONDIAL.
 - Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.
 
 ## Prochaines étapes, dans l'ordre
