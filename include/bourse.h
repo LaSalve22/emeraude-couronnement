@@ -18,6 +18,12 @@ enum BourseEntreprise
 };
 
 #define BOURSE_FRAIS_POURCENT     3       // frais à l'achat et à la vente
+#define BOURSE_OR                 BOURSE_NB_ENTREPRISES  // v0.41 : l'or XAU/¥ (index après les 9 entreprises)
+#define BOURSE_NB_ACTIFS          (BOURSE_NB_ENTREPRISES + 1)
+#define BOURSE_OR_DEPART          20000   // ¥ par once
+#define BOURSE_OR_MIN             2000
+#define BOURSE_OR_MAX             2000000
+#define BOURSE_OR_FRAIS_POURCENT  1
 #define BOURSE_PARTS_MAX          9999    // parts maximum par entreprise
 #define BOURSE_COURS_MIN          2
 #define BOURSE_COURS_MAX          60000
@@ -33,6 +39,9 @@ enum BourseEntreprise
 // Moteur (testable)
 void Bourse_Initialiser(u32 jour);
 s32 Bourse_VariationDuJour(u32 entreprise, u32 jour); // en pour mille, sans les chocs du scénario
+s32 Bourse_VariationOr(u32 jour);                     // v0.41, en pour mille
+u32 Bourse_Cours(u32 actif);                          // entreprise ou BOURSE_OR
+u32 Bourse_Parts(u32 actif);
 void Bourse_PasserJour(u32 jour);
 void Bourse_AppliquerChocs(void);
 void Bourse_VerifierHuissier(void);
@@ -47,7 +56,7 @@ u32 Bourse_Rembourser(void);                      // renvoie le montant rembours
 // Historique et graphique (v0.38)
 struct BourseBougie
 {
-    u16 ouverture, haut, bas, cloture;
+    u32 ouverture, haut, bas, cloture;
 };
 void Bourse_HistoriqueInitialiser(u32 jour);
 u32 Bourse_HistoriqueCloture(u32 entreprise, u32 age); // âge 0 = aujourd'hui, 0 si pas d'historique
@@ -68,6 +77,6 @@ void Bourse_ScriptEmprunter(void);
 void Bourse_ScriptRembourser(void);
 void Bourse_Tuyau(void);
 
-extern u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 1][32]; // + la société du joueur (v0.35)
+extern u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 2][32]; // + la société du joueur (v0.35) + l'or (v0.41)
 
 #endif // GUARD_BOURSE_H

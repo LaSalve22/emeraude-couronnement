@@ -19,8 +19,11 @@
 
 #define BOURSE (gSaveBlock2Ptr->pokedex.bourse)
 #define HISTO (gSaveBlock3Ptr->bourseHisto)
+#define OR (gSaveBlock3Ptr->bourseOr)
 
 static void HistoriqueAjouter(u32 jour);
+static void OrHistoriqueReconstruire(void);
+static void OrInitialiser(void);
 
 STATIC_ASSERT(sizeof(struct BourseSave) <= 0x68, BourseSaveTropGrande);
 
@@ -84,7 +87,7 @@ static const struct Choc sChocs[] =
 
 STATIC_ASSERT(ARRAY_COUNT(sChocs) <= 32, BourseTropDeChocs);
 
-EWRAM_DATA u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 1][32] = {0};
+EWRAM_DATA u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 2][32] = {0};
 
 // ---------------------------------------------------------------- hasard déterministe
 
@@ -126,6 +129,42 @@ static u16 AppliquerPourMille(u16 cours, s32 pourmille)
 static bool32 CriseDesLegendaires(void)
 {
     return FlagGet(FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN) && !FlagGet(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+}
+
+static const u8 sText_Or[] = _("Or XAU/¥");
+
+// ---------------------------------------------------------------- actifs : 9 entreprises + l'or (v0.41)
+u32 Bourse_Cours(u32 e)
+{
+    return e == BOURSE_OR ? OR.cours : (e < BOURSE_NB_ENTREPRISES ? BOURSE.cours[e] : 0);
+}
+
+static u32 Veille(u32 e)
+{
+    return e == BOURSE_OR ? OR.veille : BOURSE.veille[e];
+}
+
+u32 Bourse_Parts(u32 e)
+{
+    return e == BOURSE_OR ? OR.parts : (e < BOURSE_NB_ENTREPRISES ? BOURSE.parts[e] : 0);
+}
+
+static void ChangerParts(u32 e, s32 delta)
+{
+    if (e == BOURSE_OR)
+        OR.parts += delta;
+    else
+        BOURSE.parts[e] += delta;
+}
+
+static u32 Frais(u32 e)
+{
+    return e == BOURSE_OR ? BOURSE_OR_FRAIS_POURCENT : BOURSE_FRAIS_POURCENT;
+}
+
+static const u8 *Nom(u32 e)
+{
+    return e == BOURSE_OR ? sText_Or : sEntreprises[e].nom;
 }
 
 static bool32 EnFaillite(u32 entreprise)
@@ -205,6 +244,28 @@ s32 Bourse_VariationDuJour(u32 entreprise, u32 jour)
     return variation;
 }
 
+// L'or (v0.41) : tendance douce, faible volatilité, valeur refuge pendant les krachs et la crise des légendaires.
+s32 Bourse_VariationOr(u32 jour)
+{
+    s32 tendance = 1 + (CriseDesLegendaires() ? 3 : 0), variation;
+    u32 de = Alea(jour, 20, 0) % 1000;
+
+    if (de < 2)
+        variation = -(50 + (s32)(Alea(jour, 20, 1) % 51));
+    else if (de >= 997)
+        variation = 50 + (s32)(Alea(jour, 20, 2) % 101);
+    else
+        variation = tendance + (s32)(Alea(jour, 20, 3) % 21) - 10;
+    if (Alea(jour, 15, 0) % 1000 < 4) // krach général : tout le monde se rue sur l'or
+        variation += 40 + (s32)(Alea(jour, 20, 4) % 61);
+    return variation;
+}
+
+static u32 AppliquerOr(u32 cours, s32 pourmille)
+{
+    return Borner((u64)cours * (1000 + pourmille) / 1000, BOURSE_OR_MIN, BOURSE_OR_MAX);
+}
+
 // Dividende des Grands Magasins : chaque vendredi (v0.37).
 static void VerserDividende(u32 jour)
 {
@@ -228,6 +289,12 @@ void Bourse_PasserJour(u32 jour)
         BOURSE.veille[i] = BOURSE.cours[i];
         if (!Calendrier_EstWeekend(jour))
             BOURSE.cours[i] = AppliquerPourMille(BOURSE.cours[i], Bourse_VariationDuJour(i, jour));
+    }
+    if (OR.magie == BOURSE_OR_MAGIE)
+    {
+        OR.veille = OR.cours;
+        if (!Calendrier_EstWeekend(jour))
+            OR.cours = AppliquerOr(OR.cours, Bourse_VariationOr(jour));
     }
     if (!Calendrier_EstWeekend(jour))
         HistoriqueAjouter(jour);
@@ -275,6 +342,31 @@ void Bourse_HistoriqueInitialiser(u32 jour)
             j = JourOuvrePrecedent(j);
         }
     }
+    OrHistoriqueReconstruire();
+}
+
+// Reconstitue l'historique de l'or à partir du cours actuel (même tampon que les entreprises).
+static void OrHistoriqueReconstruire(void)
+{
+    u32 age, j = HISTO.jour, cours = OR.cours;
+
+    if (HISTO.magie != BOURSE_HISTO_MAGIE || OR.magie != BOURSE_OR_MAGIE)
+        return;
+    for (age = 0; age < BOURSE_HISTO_JOURS; age++)
+    {
+        OR.clotures[CaseHisto(age)] = cours;
+        cours = Borner((u64)cours * 1000 / (1000 + Bourse_VariationOr(j)), BOURSE_OR_MIN, BOURSE_OR_MAX);
+        j = JourOuvrePrecedent(j);
+    }    OR.veille = OR.clotures[CaseHisto(1)]; // la variation affichée suit la dernière bougie
+}
+
+static void OrInitialiser(void)
+{
+    memset(&OR, 0, sizeof(OR));
+    OR.magie = BOURSE_OR_MAGIE;
+    OR.cours = BOURSE_OR_DEPART;
+    OR.veille = BOURSE_OR_DEPART;
+    OrHistoriqueReconstruire();
 }
 
 static void HistoriqueAjouter(u32 jour)
@@ -287,6 +379,8 @@ static void HistoriqueAjouter(u32 jour)
     HISTO.jour = jour;
     for (e = 0; e < BOURSE_NB_ENTREPRISES; e++)
         HISTO.clotures[e][HISTO.tete] = BOURSE.cours[e];
+    if (OR.magie == BOURSE_OR_MAGIE)
+        OR.clotures[HISTO.tete] = OR.cours;
 }
 
 // La dernière clôture suit le cours actuel (chocs du scénario compris).
@@ -298,12 +392,16 @@ static void HistoriqueSynchroniser(void)
         return;
     for (e = 0; e < BOURSE_NB_ENTREPRISES; e++)
         HISTO.clotures[e][HISTO.tete] = BOURSE.cours[e];
+    if (OR.magie == BOURSE_OR_MAGIE)
+        OR.clotures[HISTO.tete] = OR.cours;
 }
 
 u32 Bourse_HistoriqueCloture(u32 entreprise, u32 age)
 {
-    if (entreprise >= BOURSE_NB_ENTREPRISES || age >= BOURSE_HISTO_JOURS || HISTO.magie != BOURSE_HISTO_MAGIE)
+    if (entreprise > BOURSE_OR || age >= BOURSE_HISTO_JOURS || HISTO.magie != BOURSE_HISTO_MAGIE)
         return 0;
+    if (entreprise == BOURSE_OR)
+        return OR.magie == BOURSE_OR_MAGIE ? OR.clotures[CaseHisto(age)] : 0;
     return HISTO.clotures[entreprise][CaseHisto(age)];
 }
 
@@ -318,11 +416,11 @@ void Bourse_Bougie(u32 entreprise, u32 age, struct BourseBougie *b)
         b->ouverture = b->cloture;
     for (i = 0; i < age; i++)
         j = JourOuvrePrecedent(j);
-    w = 2 + Alea(j, entreprise, 9) % (sEntreprises[entreprise].volatilite / 2 + 1);
+    w = 2 + Alea(j, entreprise, 9) % ((entreprise == BOURSE_OR ? 10 : sEntreprises[entreprise].volatilite) / 2 + 1);
     haut = max(b->ouverture, b->cloture);
     bas = min(b->ouverture, b->cloture);
-    b->haut = Borner((u64)haut * (1000 + w) / 1000, BOURSE_COURS_MIN, BOURSE_COURS_MAX);
-    b->bas = Borner((u64)bas * (1000 - w) / 1000, 1, BOURSE_COURS_MAX);
+    b->haut = Borner((u64)haut * (1000 + w) / 1000, 1, BOURSE_OR_MAX);
+    b->bas = Borner((u64)bas * (1000 - w) / 1000, 1, BOURSE_OR_MAX);
 }
 
 void Bourse_AppliquerChocs(void)
@@ -345,6 +443,8 @@ u32 Bourse_ValeurPortefeuille(void)
 
     for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
         total += (u64)BOURSE.parts[i] * BOURSE.cours[i];
+    if (OR.magie == BOURSE_OR_MAGIE)
+        total += (u64)OR.parts * OR.cours;
     return Borner(total, 0, 2000000000);
 }
 
@@ -359,6 +459,7 @@ void Bourse_VerifierHuissier(void)
     recupere = (u64)valeur * (100 - BOURSE_HUISSIER_PENALITE) / 100;
     for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
         BOURSE.parts[i] = 0;
+    OR.parts = 0;
     if (recupere >= BOURSE.dette)
     {
         AddMoney(&gSaveBlock1Ptr->money, recupere - BOURSE.dette);
@@ -384,6 +485,8 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
 
     if (BOURSE.cours[0] == 0)
         Bourse_Initialiser(aujourdhui);
+    if (OR.magie != BOURSE_OR_MAGIE)
+        OrInitialiser();
     if (HISTO.magie != BOURSE_HISTO_MAGIE)
         Bourse_HistoriqueInitialiser(BOURSE.jour);
     if (aujourdhui < BOURSE.jour) // horloge remise à zéro
@@ -407,25 +510,25 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
 
 static u32 PrixAvecFrais(u32 entreprise, u32 quantite)
 {
-    u64 brut = (u64)quantite * BOURSE.cours[entreprise];
-    return Borner(brut + brut * BOURSE_FRAIS_POURCENT / 100, 0, 0xFFFFFFFF);
+    u64 brut = (u64)quantite * Bourse_Cours(entreprise);
+    return Borner(brut + brut * Frais(entreprise) / 100, 0, 0xFFFFFFFF);
 }
 
 u32 Bourse_Acheter(u32 entreprise, u32 quantite)
 {
     u32 argent = GetMoney(&gSaveBlock1Ptr->money), possible;
 
-    if (entreprise >= BOURSE_NB_ENTREPRISES)
+    if (entreprise > BOURSE_OR || Bourse_Cours(entreprise) == 0)
         return 0;
-    possible = (u64)argent * 100 / ((u64)BOURSE.cours[entreprise] * (100 + BOURSE_FRAIS_POURCENT));
-    if (possible > BOURSE_PARTS_MAX - BOURSE.parts[entreprise])
-        possible = BOURSE_PARTS_MAX - BOURSE.parts[entreprise];
+    possible = (u64)argent * 100 / ((u64)Bourse_Cours(entreprise) * (100 + Frais(entreprise)));
+    if (possible > BOURSE_PARTS_MAX - Bourse_Parts(entreprise))
+        possible = BOURSE_PARTS_MAX - Bourse_Parts(entreprise);
     if (quantite > possible)
         quantite = possible;
     if (quantite == 0)
         return 0;
     RemoveMoney(&gSaveBlock1Ptr->money, PrixAvecFrais(entreprise, quantite));
-    BOURSE.parts[entreprise] += quantite;
+    ChangerParts(entreprise, quantite);
     return quantite;
 }
 
@@ -434,21 +537,21 @@ u32 Bourse_Vendre(u32 entreprise, u32 quantite)
     u32 place, cours, possible;
     u64 net;
 
-    if (entreprise >= BOURSE_NB_ENTREPRISES)
+    if (entreprise > BOURSE_OR || Bourse_Cours(entreprise) == 0)
         return 0;
-    if (quantite > BOURSE.parts[entreprise])
-        quantite = BOURSE.parts[entreprise];
+    if (quantite > Bourse_Parts(entreprise))
+        quantite = Bourse_Parts(entreprise);
     // On ne vend pas plus que ce que le portefeuille (MAX_MONEY) peut encaisser.
     place = MAX_MONEY - GetMoney(&gSaveBlock1Ptr->money);
-    cours = BOURSE.cours[entreprise];
-    possible = (u64)place * 100 / ((u64)cours * (100 - BOURSE_FRAIS_POURCENT));
+    cours = Bourse_Cours(entreprise);
+    possible = (u64)place * 100 / ((u64)cours * (100 - Frais(entreprise)));
     if (quantite > possible)
         quantite = possible;
     if (quantite == 0)
         return 0;
-    net = (u64)quantite * cours * (100 - BOURSE_FRAIS_POURCENT) / 100;
+    net = (u64)quantite * cours * (100 - Frais(entreprise)) / 100;
     AddMoney(&gSaveBlock1Ptr->money, net);
-    BOURSE.parts[entreprise] -= quantite;
+    ChangerParts(entreprise, -(s32)quantite);
     return quantite;
 }
 
@@ -515,10 +618,16 @@ static u8 *AjouterYens(u8 *fin, u32 n)
 // Variation depuis la veille, en pour cent arrondi, avec le signe.
 static u8 *AjouterVariation(u8 *fin, u32 entreprise)
 {
-    s32 veille = BOURSE.veille[entreprise] ? BOURSE.veille[entreprise] : 1;
-    s32 pc = ((s32)BOURSE.cours[entreprise] - veille) * 100 / veille;
-    *fin++ = pc < 0 ? CHAR_HYPHEN : CHAR_PLUS;
+    s32 veille = Veille(entreprise) ? Veille(entreprise) : 1;
+    s32 pm = ((s64)Bourse_Cours(entreprise) - veille) * 1000 / veille;
+    s32 pc = pm / 10;
+    *fin++ = pm < 0 ? CHAR_HYPHEN : CHAR_PLUS;
     fin = AjouterNombre(fin, pc < 0 ? -pc : pc);
+    if (entreprise == BOURSE_OR) // l'or bouge peu : une décimale
+    {
+        *fin++ = CHAR_COMMA;
+        fin = AjouterNombre(fin, (pm < 0 ? -pm : pm) % 10);
+    }
     *fin++ = CHAR_SPACE;
     *fin++ = CHAR_PERCENT;
     *fin = EOS;
@@ -528,12 +637,12 @@ static u8 *AjouterVariation(u8 *fin, u32 entreprise)
 // En-tête du graphique : « Devon SA  612 ¥  +2 % ».
 u8 *Bourse_TexteEntete(u8 *dest, u32 entreprise)
 {
-    if (entreprise >= BOURSE_NB_ENTREPRISES)
+    if (entreprise > BOURSE_OR)
         entreprise = 0;
-    dest = AjouterTexte(dest, sEntreprises[entreprise].nom);
+    dest = AjouterTexte(dest, Nom(entreprise));
     *dest++ = CHAR_SPACE;
     *dest++ = CHAR_SPACE;
-    dest = AjouterYens(dest, BOURSE.cours[entreprise]);
+    dest = AjouterYens(dest, Bourse_Cours(entreprise));
     *dest++ = CHAR_SPACE;
     *dest++ = CHAR_SPACE;
     return AjouterVariation(dest, entreprise);
@@ -602,6 +711,15 @@ void Bourse_PreparerListe(void)
             *fin++ = CHAR_EQUALS;
         *fin = EOS;
     }
+    // v0.41 : l'or, ligne gBourseLignes[BOURSE_NB_ENTREPRISES + 1]
+    {
+        u8 *fin = AjouterTexte(gBourseLignes[BOURSE_NB_ENTREPRISES + 1], sText_Or);
+        *fin++ = CHAR_SPACE;
+        fin = AjouterYens(fin, OR.cours);
+        *fin++ = CHAR_SPACE;
+        *fin++ = OR.cours > OR.veille ? CHAR_UP_ARROW : (OR.cours < OR.veille ? CHAR_DOWN_ARROW : CHAR_EQUALS);
+        *fin = EOS;
+    }
 }
 
 static const u8 sText_Fiche1[] = _(" : ");
@@ -609,6 +727,8 @@ static const u8 sText_Fiche2[] = _("\nHier : ");
 static const u8 sText_Fiche3[] = _(". Tu as ");
 static const u8 sText_Fiche4[] = _(" parts.\pValeur : ");
 static const u8 sText_Fiche5[] = _(". Frais : 3 %.\nOn fait quoi ?");
+static const u8 sText_Fiche4Or[] = _(" onces.\pValeur : ");
+static const u8 sText_Fiche5Or[] = _(". Frais : 1 %.\nValeur refuge. On fait quoi ?");
 static const u8 sText_FicheFaillite[] = _(". En faillite, ça ne\nvaut plus rien. On fait quoi ?");
 
 // VAR_0x8004 : entreprise.
@@ -617,18 +737,18 @@ void Bourse_Fiche(void)
     u32 e = gSpecialVar_0x8004;
     u8 *fin;
 
-    if (e >= BOURSE_NB_ENTREPRISES)
+    if (e > BOURSE_OR)
         e = 0;
-    fin = AjouterTexte(gStringVar4, sEntreprises[e].nom);
+    fin = AjouterTexte(gStringVar4, Nom(e));
     fin = AjouterTexte(fin, sText_Fiche1);
-    fin = AjouterYens(fin, BOURSE.cours[e]);
+    fin = AjouterYens(fin, Bourse_Cours(e));
     fin = AjouterTexte(fin, sText_Fiche2);
     fin = AjouterVariation(fin, e);
     fin = AjouterTexte(fin, sText_Fiche3);
-    fin = AjouterNombre(fin, BOURSE.parts[e]);
-    fin = AjouterTexte(fin, sText_Fiche4);
-    fin = AjouterYens(fin, (u64)BOURSE.parts[e] * BOURSE.cours[e]);
-    AjouterTexte(fin, EnFaillite(e) ? sText_FicheFaillite : sText_Fiche5);
+    fin = AjouterNombre(fin, Bourse_Parts(e));
+    fin = AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche4Or : sText_Fiche4);
+    fin = AjouterYens(fin, (u64)Bourse_Parts(e) * Bourse_Cours(e));
+    AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche5Or : (EnFaillite(e) ? sText_FicheFaillite : sText_Fiche5));
 }
 
 static const u16 sQuantites[] = {1, 10, 100, BOURSE_PARTS_MAX};
@@ -636,6 +756,7 @@ static const u16 sQuantites[] = {1, 10, 100, BOURSE_PARTS_MAX};
 static const u8 sText_Achat1[] = _("Acheté : ");
 static const u8 sText_Vente1[] = _("Vendu : ");
 static const u8 sText_Ordre2[] = _(" parts de\n");
+static const u8 sText_Ordre2Or[] = _(" onces\nd'");
 static const u8 sText_Ordre3[] = _(".");
 static const u8 sText_AchatRien[] = _("Pas assez de liquide, ou plafond de\n9999 parts atteint. Rien acheté.");
 static const u8 sText_VenteRien[] = _("Rien à vendre, ou ton portefeuille\nest plein. Rien vendu.");
@@ -644,8 +765,8 @@ static void TexteOrdre(const u8 *debut, u32 quantite, u32 entreprise)
 {
     u8 *fin = AjouterTexte(gStringVar4, debut);
     fin = AjouterNombre(fin, quantite);
-    fin = AjouterTexte(fin, sText_Ordre2);
-    fin = AjouterTexte(fin, sEntreprises[entreprise].nom);
+    fin = AjouterTexte(fin, entreprise == BOURSE_OR ? sText_Ordre2Or : sText_Ordre2);
+    fin = AjouterTexte(fin, Nom(entreprise));
     AjouterTexte(fin, sText_Ordre3);
 }
 

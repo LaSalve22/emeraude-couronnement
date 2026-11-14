@@ -267,6 +267,17 @@ struct BourseHistorique
     u8 libre;
 };
 
+// Émeraude Couronnement : l'or XAU/¥ à la Bourse (v0.41), src/bourse.c. Cours en ¥ par once, sur 32 bits.
+#define BOURSE_OR_MAGIE 0x0A0B
+struct BourseOr
+{
+    u32 cours;
+    u32 veille;
+    u32 clotures[BOURSE_HISTO_JOURS]; // même tampon circulaire que BourseHistorique (case HISTO.tete)
+    u16 parts;   // onces détenues
+    u16 magie;
+};
+
 // Émeraude Couronnement : saisons du Couronnement Mondial (v0.39), src/couronnement.c.
 #define COURONNEMENT_SAISON_MAGIE 0xC5A1
 struct CouronnementSaison
@@ -319,6 +330,7 @@ struct SaveBlock3
     struct BourseHistorique bourseHisto; // Émeraude Couronnement (v0.38), src/bourse.c
     struct CouronnementSaison couronnementSaison; // Émeraude Couronnement (v0.39), src/couronnement.c
     struct AreneSave arenes; // Émeraude Couronnement (v0.40), src/arenes.c
+    struct BourseOr bourseOr; // Émeraude Couronnement (v0.41), src/bourse.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

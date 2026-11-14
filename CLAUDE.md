@@ -495,6 +495,16 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Menu L « Mes arènes » après la Ligue (résumé, challengers qui attendent). Sauvegarde : `struct AreneSave` (68 octets) dans SaveBlock3.
   Tests : `test/arenes.c` (`TESTS="Arenes"`).
 
+## Fait (v0.41) - l'or à la Bourse
+
+- « Or XAU/¥ » dans la liste du marché (après les 9 entreprises, valeur 12 dans le script, index `BOURSE_OR` = 9 pour les specials) :
+  fiche, achat / vente en onces (1, 10, 100, max ; 9999 onces au plus), frais 1 %, graphique en bougies / courbe.
+- Cours de départ 20 000 ¥ l'once (2 000 à 2 000 000), sur 32 bits. Variation (`Bourse_VariationOr`) : +0,1 ‰ de tendance (+0,3 %
+  pendant la crise des légendaires), ±1 %/jour, 2/1000 de chute de -5 à -10 %, 3/1000 d'envolée de +5 à +15 %, et +4 à +10 %
+  les jours de krach général (valeur refuge). Fermé le week-end comme le reste. Variation affichée avec une décimale.
+- Compte dans le portefeuille (plafond de crédit, huissier qui saisit aussi l'or). Accès unifiés `Bourse_Cours` / `Bourse_Parts`.
+- Sauvegarde : `struct BourseOr` (136 octets) dans SaveBlock3 (cours, veille, onces, historique sur le même tampon que les entreprises).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.

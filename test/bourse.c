@@ -12,6 +12,7 @@
 static void Preparer(u32 argent)
 {
     memset(&BOURSE, 0, sizeof(BOURSE));
+    memset(&gSaveBlock3Ptr->bourseOr, 0, sizeof(gSaveBlock3Ptr->bourseOr));
     FlagClear(FLAG_RECOVERED_DEVON_GOODS);
     FlagClear(FLAG_BADGE01_GET);
     SetMoney(&gSaveBlock1Ptr->money, argent);
@@ -134,4 +135,37 @@ TEST("Bourse: a new candle only on trading days")
     avant = Bourse_HistoriqueCloture(BOURSE_CASINO, 1);
     Bourse_MettreAJourJusqua(708); // jeudi, vendredi, samedi : 2 bougies de plus seulement
     EXPECT_EQ(Bourse_HistoriqueCloture(BOURSE_CASINO, 3), avant);
+}
+
+// v0.41 : l'or XAU/¥.
+TEST("Bourse: gold starts at 20000 per ounce and costs 1% fees")
+{
+    Preparer(1000000);
+    EXPECT_EQ(Bourse_Cours(BOURSE_OR), BOURSE_OR_DEPART);
+    EXPECT_EQ(Bourse_Acheter(BOURSE_OR, 10), 10);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 1000000 - 202000);
+    EXPECT_EQ(Bourse_Parts(BOURSE_OR), 10);
+    EXPECT_EQ(Bourse_ValeurPortefeuille(), 200000);
+    EXPECT_EQ(Bourse_Vendre(BOURSE_OR, 10), 10);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 1000000 - 202000 + 198000);
+}
+
+TEST("Bourse: gold moves gently, has a history and shines in a crash")
+{
+    u32 j, n = 0;
+    struct BourseBougie b;
+    Preparer(0);
+    Bourse_MettreAJourJusqua(704);
+    EXPECT_EQ(Bourse_HistoriqueCloture(BOURSE_OR, 0), Bourse_Cours(BOURSE_OR));
+    Bourse_Bougie(BOURSE_OR, 0, &b);
+    EXPECT_GE(b.haut, max(b.ouverture, b.cloture));
+    for (j = 1; j < 2000; j++)
+    {
+        s32 v = Bourse_VariationOr(j);
+        EXPECT_GE(v, -100);
+        EXPECT_LE(v, 250);
+        if (v > 0)
+            n++;
+    }
+    EXPECT_GT(n, 900); // légère tendance haussière
 }

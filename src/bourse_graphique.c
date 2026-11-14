@@ -96,7 +96,7 @@ static void Etiquette(u8 fen, u32 valeur, u32 y)
     u8 txt[12];
     u32 chiffres = 1, p = 10;
 
-    while (valeur >= p && chiffres < 5)
+    while (valeur >= p && chiffres < 7)
     {
         chiffres++;
         p *= 10;
@@ -109,7 +109,7 @@ void Bourse_GraphiqueDessiner(u8 fen, u32 entreprise, u32 mode)
 {
     struct BourseBougie b[NB_BOUGIES];
     u8 txt[64];
-    u32 k, mini = 0xFFFF, maxi = 0, marge;
+    u32 k, mini = 0xFFFFFFFF, maxi = 0, marge;
     s32 x, xPrec = 0, yPrec = 0;
 
     for (k = 0; k < NB_BOUGIES; k++)
@@ -198,7 +198,7 @@ void Bourse_Graphique(void)
         .bg = 0, .tilemapLeft = 0, .tilemapTop = 0, .width = GRAPH_LARGEUR, .height = GRAPH_HAUTEUR,
         .paletteNum = GRAPH_PAL, .baseBlock = GRAPH_BASE,
     };
-    u32 entreprise = gSpecialVar_0x8004 < BOURSE_NB_ENTREPRISES ? gSpecialVar_0x8004 : 0;
+    u32 entreprise = gSpecialVar_0x8004 <= BOURSE_OR ? gSpecialVar_0x8004 : 0;
     u8 fen = AddWindow(&sFenetre), taskId;
 
     if (fen == WINDOW_NONE)

@@ -28,6 +28,7 @@ Bourse_EventScript_Marche::
 	dynmultipush gBourseLignes + 192, 6
 	dynmultipush gBourseLignes + 224, 7
 	dynmultipush gBourseLignes + 256, 8
+	dynmultipush gBourseLignes + 320, 12
 	special Societe_LigneBourse
 	goto_if_eq VAR_RESULT, FALSE, Bourse_EventScript_MarcheRetour
 	dynmultipush gBourseLignes + 288, 9
@@ -37,6 +38,7 @@ Bourse_EventScript_MarcheRetour::
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Bourse_EventScript_Accueil
 	goto_if_eq VAR_RESULT, 10, Bourse_EventScript_Accueil
 	goto_if_eq VAR_RESULT, 9, Bourse_EventScript_MaSociete
+	goto_if_eq VAR_RESULT, 12, Bourse_EventScript_Or
 	copyvar VAR_0x8004, VAR_RESULT
 Bourse_EventScript_Fiche::
 	special Bourse_Fiche
@@ -55,6 +57,11 @@ Bourse_EventScript_Graphique::
 	waitmessage
 	special Bourse_Graphique
 	waitstate
+	goto Bourse_EventScript_Fiche
+
+@ v0.41 : l'or XAU/¥ (index BOURSE_OR = 9 pour les specials).
+Bourse_EventScript_Or::
+	setvar VAR_0x8004, 9
 	goto Bourse_EventScript_Fiche
 
 Bourse_EventScript_MaSociete::

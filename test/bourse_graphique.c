@@ -21,13 +21,14 @@ TEST("Graphique: draws candles and the curve")
     static const char sHex[] = "0123456789abcdef";
 
     memset(&gSaveBlock2Ptr->pokedex.bourse, 0, sizeof(gSaveBlock2Ptr->pokedex.bourse));
+    memset(&gSaveBlock3Ptr->bourseOr, 0, sizeof(gSaveBlock3Ptr->bourseOr));
     Bourse_MettreAJourJusqua(704);
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, &sBg, 1);
     InitWindows(sFen);
-    for (mode = 0; mode < 2; mode++)
+    for (mode = 0; mode < 4; mode++)
     {
-        Bourse_GraphiqueDessiner(0, BOURSE_CASINO, mode);
+        Bourse_GraphiqueDessiner(0, mode < 2 ? BOURSE_CASINO : BOURSE_OR, mode % 2);
         pix = gWindows[0].tileData;
         EXPECT(pix != NULL);
         for (i = 0; i < 30 * 13 * 32; i += 64)

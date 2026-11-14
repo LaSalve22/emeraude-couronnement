@@ -25,12 +25,14 @@ def png(chemin, larg, haut, rgb):
 
 def main():
     journal, prefixe = sys.argv[1], sys.argv[2]
-    donnees = {0: "", 1: ""}
+    donnees = {0: "", 1: "", 2: "", 3: ""}
     for ligne in open(journal, errors="replace"):
         m = re.search(r"GRAPH (\d):([0-9a-f]+)", ligne)
         if m:
             donnees[int(m.group(1))] += m.group(2)
-    for mode, nom in ((0, "bougies"), (1, "courbe")):
+    for mode, nom in ((0, "bougies"), (1, "courbe"), (2, "or_bougies"), (3, "or_courbe")):
+        if not donnees[mode]:
+            continue
         octets = bytes.fromhex(donnees[mode])
         larg, haut = LARG_TUILES * 8, HAUT_TUILES * 8
         pixels = [[0] * larg for _ in range(haut)]
