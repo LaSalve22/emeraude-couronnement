@@ -478,7 +478,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 ## Fait (v0.40) - arènes du joueur
 
 - Après la Ligue, un responsable d'arène (Topdresseur, `Arene_EventScript_Guichet0..5`) dans les 6 villes sans arène :
-  Bourg-en-Vol, Rosyères, Poivressel, Vergazon, Vermilava, Nénucrique (`tools/couronnement/arenes_placer.py`, relançable).
+  Bourg-en-Vol, Rosyères, Poivressel, Vergazon, Autéquia, Nénucrique (`tools/couronnement/arenes_placer.py`, relançable).
   Achat 500 000 ¥ (trésorerie de la société d'abord), type au choix : Plante, Glace, Insecte, Poison, Sol, Spectre, Dragon,
   Ténèbres, Acier, Fée. L'arène compte dans la valeur de la société (`Arene_Valeur`), ses recettes vont à la trésorerie.
 - Dépôt : 6 titulaires + 3 remplaçants pris dans l'équipe ; il faut au moins 4 titulaires du type pour recevoir des challengers.

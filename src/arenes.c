@@ -46,7 +46,7 @@ static const u8 sTypes[ARENE_NB_TYPES] =
 static const u8 *const sVilles[ARENE_NB] =
 {
     COMPOUND_STRING("Bourg-en-Vol"), COMPOUND_STRING("Rosyères"), COMPOUND_STRING("Poivressel"),
-    COMPOUND_STRING("Vergazon"), COMPOUND_STRING("Vermilava"), COMPOUND_STRING("Nénucrique"),
+    COMPOUND_STRING("Vergazon"), COMPOUND_STRING("Autéquia"), COMPOUND_STRING("Nénucrique"),
 };
 
 // Par nombre de badges du challenger (1 à 8) : niveau (cap de ses badges) et nombre de Pokémon.
