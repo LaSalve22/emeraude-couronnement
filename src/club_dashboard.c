@@ -8,6 +8,7 @@
 #include "rtc.h"
 #include "script.h"
 #include "sound.h"
+#include "sprite.h"
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
@@ -109,13 +110,96 @@ static void ChargerCouleurClub(u32 club)
     LoadPalette(&c, BG_PLTT_ID(DASH_PAL) + COUL_CLUB, PLTT_SIZEOF(1));
 }
 
-// Blason 9 x 10 : écu aux couleurs du club (couleur chargée dans l'entrée 11 à 15 de la palette), liseré doré pour les tiers A et S.
+// Blasons d'Adrien (v0.45) : sprites 16 x 16 (dessin de 12 px de haut, une palette chacun), tirés de sa planche par
+// tools/couronnement/blasons_gfx.py. S'il n'y a plus de palette de sprite libre sur le terrain, on dessine l'écu ci-dessous.
+static const u32 sBlasonGfx0[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_0.4bpp");
+static const u16 sBlasonPal0[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_0.gbapal");
+static const u32 sBlasonGfx1[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_1.4bpp");
+static const u16 sBlasonPal1[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_1.gbapal");
+static const u32 sBlasonGfx2[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_2.4bpp");
+static const u16 sBlasonPal2[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_2.gbapal");
+static const u32 sBlasonGfx3[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_3.4bpp");
+static const u16 sBlasonPal3[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_3.gbapal");
+static const u32 sBlasonGfx4[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_4.4bpp");
+static const u16 sBlasonPal4[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_4.gbapal");
+static const u32 sBlasonGfx5[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_5.4bpp");
+static const u16 sBlasonPal5[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_5.gbapal");
+static const u32 sBlasonGfx6[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_6.4bpp");
+static const u16 sBlasonPal6[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_6.gbapal");
+static const u32 sBlasonGfx7[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_7.4bpp");
+static const u16 sBlasonPal7[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_7.gbapal");
+static const u32 sBlasonGfx8[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_8.4bpp");
+static const u16 sBlasonPal8[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_8.gbapal");
+static const u32 sBlasonGfx9[] = INCBIN_U32("graphics/couronnement/blasons/blason_petit_9.4bpp");
+static const u16 sBlasonPal9[] = INCBIN_U16("graphics/couronnement/blasons/blason_petit_9.gbapal");
+static const u32 *const sBlasonsGfx[CLUB_NB] = {sBlasonGfx0, sBlasonGfx1, sBlasonGfx2, sBlasonGfx3, sBlasonGfx4, sBlasonGfx5, sBlasonGfx6, sBlasonGfx7, sBlasonGfx8, sBlasonGfx9};
+static const u16 *const sBlasonsPal[CLUB_NB] = {sBlasonPal0, sBlasonPal1, sBlasonPal2, sBlasonPal3, sBlasonPal4, sBlasonPal5, sBlasonPal6, sBlasonPal7, sBlasonPal8, sBlasonPal9};
+
+#define TAG_BLASON      0x5C20
+#define MAX_BLASONS     6
+static EWRAM_DATA u8 sBlasons[MAX_BLASONS] = {0};
+static EWRAM_DATA u8 sNbBlasons = 0;
+static EWRAM_DATA bool8 sAvecSprites = FALSE;
+
+static const struct OamData sOamBlason =
+{
+    .shape = SPRITE_SHAPE(16x16),
+    .size = SPRITE_SIZE(16x16),
+    .priority = 0,
+};
+
+static void EffacerBlasons(void)
+{
+    u32 i;
+    for (i = 0; i < sNbBlasons; i++)
+    {
+        u16 tag = gSprites[sBlasons[i]].template->tileTag;
+        DestroySprite(&gSprites[sBlasons[i]]);
+        FreeSpriteTilesByTag(tag);
+        FreeSpritePaletteByTag(tag);
+    }
+    sNbBlasons = 0;
+}
+
+// (x, y) = coin haut gauche de la toile 16 x 16 dans la fenêtre (qui commence en haut à gauche de l'écran).
+static bool32 BlasonSprite(s32 x, s32 y, u32 club)
+{
+    u16 tag = TAG_BLASON + club;
+    struct SpriteSheet feuille = {sBlasonsGfx[club], 16 * 16 / 2, tag};
+    struct SpritePalette palette = {sBlasonsPal[club], tag};
+    struct SpriteTemplate modele =
+    {
+        .tileTag = tag, .paletteTag = tag, .oam = &sOamBlason, .anims = gDummySpriteAnimTable,
+        .images = NULL, .affineAnims = gDummySpriteAffineAnimTable, .callback = SpriteCallbackDummy,
+    };
+    u8 id;
+
+    if (!sAvecSprites || sNbBlasons >= MAX_BLASONS || club >= CLUB_NB)
+        return FALSE;
+    if (LoadSpritePalette(&palette) == 0xFF)
+        return FALSE;
+    LoadSpriteSheet(&feuille);
+    id = CreateSprite(&modele, x + 8, y + 8, 0);
+    if (id == MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(tag);
+        FreeSpritePaletteByTag(tag);
+        return FALSE;
+    }
+    sBlasons[sNbBlasons++] = id;
+    return TRUE;
+}
+
+// Repli : écu 9 x 10 aux couleurs du club (couleur chargée dans l'entrée 11 à 15 de la palette), liseré doré pour les tiers A et S.
 #define COUL_BLASON 11
 static void Blason(u8 fen, u32 x, u32 y, u32 club, u32 entree)
 {
     static const u8 sLargeurs[10] = {9, 9, 9, 9, 9, 9, 7, 5, 3, 1};
     u16 c = Club_CouleurClub(club);
     u32 i;
+
+    if (BlasonSprite((s32)x - 4, (s32)y - 3, club)) // le dessin (env. 10 x 12) se cale sur l'écu de repli
+        return;
     LoadPalette(&c, BG_PLTT_ID(DASH_PAL) + COUL_BLASON + entree, PLTT_SIZEOF(1));
     for (i = 0; i < 10; i++)
         FillWindowPixelRect(fen, COUL_BLASON + entree, x + (9 - sLargeurs[i]) / 2, y + i, sLargeurs[i], 1);
@@ -387,7 +471,7 @@ static void DessinerEffectif(u8 fen, u32 club)
     fin = StringCopy(txt, Club_NomStade(club));
     fin = StringCopy(fin, sText_Effet);
     StringCopy(fin, Club_NomEffet(Club_Stade(club)));
-    Texte(fen, sTexteGris, 4, 26, txt);
+    Texte(fen, sTexteGris, 16, 26, txt);
 
     Texte(fen, sTexteGris, 4, 37, sText_ColDresseur);
     TexteDroite(fen, sTexteGris, 176, 37, sText_ColRating);
@@ -564,6 +648,7 @@ void Club_TableauDessiner(u8 fen, u32 onglet, u32 poule, u32 journee, u32 match,
 {
     u32 joueur = Club_DuJoueur();
 
+    EffacerBlasons();
     FillWindowPixelBuffer(fen, PIXEL_FILL(COUL_FOND));
     switch (onglet)
     {
@@ -613,6 +698,8 @@ static void Task_TableauDeBord(u8 taskId)
         ClearWindowTilemap(fen);
         CopyWindowToVram(fen, COPYWIN_MAP);
         RemoveWindow(fen);
+        EffacerBlasons();
+        sAvecSprites = FALSE;
         LoadPalette(sPaletteSauvee, BG_PLTT_ID(DASH_PAL), PLTT_SIZE_4BPP);
         DestroyTask(taskId);
         ScriptContext_Enable();
@@ -684,6 +771,8 @@ void Club_TableauDeBord(void)
     }
     CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(DASH_PAL)], sPaletteSauvee, PLTT_SIZE_4BPP);
     LoadPalette(sPalette, BG_PLTT_ID(DASH_PAL), PLTT_SIZE_4BPP);
+    sNbBlasons = 0;
+    sAvecSprites = TRUE;
     taskId = CreateTask(Task_TableauDeBord, 80);
     gTasks[taskId].data[T_FENETRE] = fen;
     gTasks[taskId].data[T_ONGLET] = ONGLET_CLASSEMENT;

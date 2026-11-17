@@ -584,6 +584,14 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Blasons : écu 9 x 10 aux couleurs du club (entrées 11-15 de la palette 13), liseré doré pour les tiers A / S, dans Classement,
   Feuille de match, Effectif et Mercato. Colonnes du classement décalées (« Diff »).
 
+## Fait (v0.45) - blasons d'Adrien
+
+- Planche de 10 blasons fournie par Adrien (ordre des clubs 0 à 9) : `tools/couronnement/blasons_gfx.py <planche>` découpe, réduit
+  et quantifie (15 couleurs + transparent, une palette par blason) dans `graphics/couronnement/blasons/` : `blason_petit_N.png`
+  (dessin de 12 px dans une toile 16 x 16, utilisé) et `blason_N.png` (16 px, en réserve pour le PokéNav / l'édition Carrière).
+- Tableau de bord : sprites 16 x 16 priorité 0 au-dessus de la fenêtre (`BlasonSprite`, tag 0x5C20 + club, 6 au plus), détruits à
+  chaque dessin et à la fermeture ; s'il n'y a plus de palette de sprite libre (ou dans le test d'aperçu), l'écu dessiné prend le relais.
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -597,7 +605,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
-    Pokémon de prêt, niveaux par tier). À valider avec
+    Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
+    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
