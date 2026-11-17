@@ -1,5 +1,6 @@
 #include "global.h"
 #include "immobilier.h"
+#include "banques.h"
 #include "event_data.h"
 #include "money.h"
 #include "test/test.h"
@@ -111,4 +112,19 @@ TEST("Immo: turning the clock back neither replays rents nor changes the week")
     Immo_MettreAJourJusqua(730); // puis ramenée : rien n'est rejoué
     EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), argent);
     FlagClear(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+}
+
+TEST("Immo: a home backing a Credit Foncier loan cannot be sold")
+{
+    u32 b;
+    Preparer(500000);
+    gSaveBlock2Ptr->pokedex.societe.etat = 0;
+    b = BienPasEnPromo(700);
+    EXPECT(Immo_Acheter(b, 700));
+    gSaveBlock2Ptr->pokedex.detteBanque[BANQUE_FONCIER] = 10000;
+    EXPECT(Immo_Hypothequee(b, 700));
+    EXPECT(!Immo_Vendre(b, 700));
+    EXPECT(Immo_Possede(b));
+    gSaveBlock2Ptr->pokedex.detteBanque[BANQUE_FONCIER] = 0;
+    EXPECT(Immo_Vendre(b, 700));
 }

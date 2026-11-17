@@ -525,6 +525,13 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   solder la dette (`BANQUE_DEFAUTS_*` dans `include/banques.h`). Une dette soldée efface ses défauts. Aucun octet de sauvegarde en plus.
 - Simulateur à jour (`--v041` pour les anciennes règles). Tests : `TESTS="Banques"` (11), `TESTS="Immo"` (7).
 
+## Fait (v0.42.1) - réglages de l'audit
+
+- Dividende des Grands Magasins 0,2 %/semaine (`BOURSE_DIVIDENDE_POURMILLE` 20 -> 2) ; sponsors des arènes 50 ¥ par point
+  (`ARENE_SPONSORS_PAR_POINT` 150 -> 50) ; maisons hypothéquées : `Immo_Hypothequee` refuse la vente si les biens restants
+  (+ commerces) ne couvrent plus 60 % de la dette du Crédit Foncier. Restent (lot 2) : double comptage maisons / société,
+  humeur de la société, aller-retour sur le bien soldé. Tests : `TESTS="Immo"` (8).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp

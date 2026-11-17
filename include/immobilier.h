@@ -26,6 +26,7 @@ u32 Immo_ValeurBiens(u32 jour);             // valeur de marché de tous les bie
 bool32 Immo_Possede(u32 bien);
 bool32 Immo_Acheter(u32 bien, u32 jour);
 bool32 Immo_Vendre(u32 bien, u32 jour);
+bool32 Immo_Hypothequee(u32 bien, u32 jour);  // garantit le prêt du Crédit Foncier : invendable (v0.42.1)
 void Immo_Expulser(u32 bien);
 
 // Specials (data/specials.inc)

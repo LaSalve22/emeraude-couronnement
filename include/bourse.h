@@ -33,7 +33,7 @@ enum BourseEntreprise
 #define BOURSE_CREDIT_MAX         5000000
 #define BOURSE_HUISSIER_MARGE     10000   // l'huissier passe si dette > portefeuille + 10 000
 #define BOURSE_HUISSIER_PENALITE  10      // % retenu sur les parts vendues de force
-#define BOURSE_DIVIDENDE_POURMILLE 20     // Grands Magasins : 2 % du cours par part et par semaine
+#define BOURSE_DIVIDENDE_POURMILLE 2      // Grands Magasins : 0,2 % du cours par part et par semaine (~10 %/an ; 2 % avant la v0.42.1)
 #define BOURSE_TUYAU_FIABLE       70      // % de rumeurs vraies
 
 // Moteur (testable)

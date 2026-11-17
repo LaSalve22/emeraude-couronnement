@@ -14,7 +14,7 @@
 #define ARENE_ATTENTE_MAX     3
 #define ARENE_REPOS_DEFAITE   2       // jours sans challenger après une défaite
 #define ARENE_REPUTATION_DEPART 20
-#define ARENE_SPONSORS_PAR_POINT 150  // ¥ par jour et par point de réputation
+#define ARENE_SPONSORS_PAR_POINT 50   // ¥ par jour et par point de réputation (150 avant la v0.42.1, audit de l'économie)
 #define ARENE_PRIME_BADGE     5000    // payée par badge du challenger quand il gagne
 #define ARENE_BONUS_BADGE     2000    // sponsors par badge du challenger battu
 #define ARENE_RATTRAPAGE_MAX  30

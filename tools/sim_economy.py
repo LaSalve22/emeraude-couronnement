@@ -133,7 +133,7 @@ class Bourse:
             i = self.dette * 10 // 1000
             self.dette += i if i else 1
         if jour_semaine(jour) == FRI:
-            joueur.ajouter(self.parts[MAGASINS] * self.cours[MAGASINS] * 20 // 1000, 'dividendes')
+            joueur.ajouter(self.parts[MAGASINS] * self.cours[MAGASINS] * (20 if V041 else 2) // 1000, 'dividendes')
         self.verifier_huissier(joueur)
 
     def valeur(self):
@@ -261,6 +261,11 @@ class Immo:
     def vendre(self, joueur, b, jour):
         if b not in self.possede:
             return False
+        sim = joueur.sim
+        if not V041 and sim.banques.dette[B_FONCIER]:  # maison hypothéquée (v0.42.1)
+            garantie = (self.valeur(jour) - self.prix(b, jour) + sim.commerce.valeur()) * 60 // 100
+            if garantie < sim.banques.dette[B_FONCIER]:
+                return False
         joueur.argent = min(MAX_MONEY, joueur.argent + self.prix(b, jour) * 95 // 100)
         self.possede.discard(b)
         self.squat.discard(b)
@@ -505,7 +510,7 @@ class Arenes:
 
     def passer_jour(self, jour, joueur, defis_par_jour=1):
         for a in self.arenes:
-            joueur.encaisser_societe(150 * a['rep'], 'arènes')
+            joueur.encaisser_societe((150 if V041 else 50) * a['rep'], 'arènes')
             for _ in range(min(defis_par_jour, 1 + a['rep'] // 40)):
                 badges = 1 + melanger(jour * 31 + a['id']) % 8
                 joueur.encaisser_societe(2000 * badges, 'arènes')
@@ -798,7 +803,7 @@ def fmt(n):
 
 
 def rapport(graine, jours):
-    regles = 'v0.41.1' if V041 else 'v0.42 (correctifs horloge et banques)'
+    regles = 'v0.41.1' if V041 else 'v0.42.1 (horloge, banques, dividende, hypothèque, sponsors)'
     out = [f'# Audit économique, règles {regles} (simulation, graine 0x{graine:08X}, {jours} jours)', '']
     profils = [('Prudent (4 badges, 150 000 ¥, sans crédit)', profil_prudent),
                ('Agressif (4 badges, 60 000 ¥, crédits au maximum, tout en Bourse)', profil_agressif),

@@ -1,6 +1,8 @@
 #include "global.h"
 #include "calendrier.h"
 #include "immobilier.h"
+#include "banques.h"
+#include "commerces.h"
 #include "event_data.h"
 #include "money.h"
 #include "rtc.h"
@@ -240,11 +242,24 @@ bool32 Immo_Acheter(u32 bien, u32 jour)
     return TRUE;
 }
 
+// Une maison est hypothéquée si, sans elle, les biens restants (et les commerces) ne garantissent plus la dette du Crédit Foncier
+// (plafond de 60 %). On ne peut pas la vendre avant d'avoir remboursé assez (audit de l'économie, v0.42.1).
+bool32 Immo_Hypothequee(u32 bien, u32 jour)
+{
+    u64 garantie;
+    u32 dette = Banque_Dette(BANQUE_FONCIER);
+
+    if (dette == 0 || !Immo_Possede(bien))
+        return FALSE;
+    garantie = ((u64)Immo_ValeurBiens(jour) - Immo_Prix(bien, jour) + Commerce_Valeur()) * 60 / 100;
+    return garantie < dette;
+}
+
 bool32 Immo_Vendre(u32 bien, u32 jour)
 {
     u32 net;
 
-    if (!Immo_Possede(bien))
+    if (!Immo_Possede(bien) || Immo_Hypothequee(bien, jour))
         return FALSE;
     net = ApresAgence(Immo_Prix(bien, jour));
     if (GetMoney(&gSaveBlock1Ptr->money) + (u64)net > MAX_MONEY)
@@ -424,6 +439,7 @@ void Immo_Fiche(void)
 static const u8 sText_Achete[] = _("Signé ! Les clés sont à toi.\nUn locataire emménage demain.");
 static const u8 sText_AchatRate[] = _("Pas assez d'argent pour le prix et\nle notaire. Reviens plus riche.");
 static const u8 sText_Vendu[] = _("Vendu ! L'argent est sur ton compte.");
+static const u8 sText_Hypotheque[] = _("Cette maison garantit ton prêt du\nCrédit Foncier. Rembourse d'abord.");
 static const u8 sText_VenteRatee[] = _("Ton portefeuille est trop plein\n(999 999 999 ¥ max). Dépense d'abord.");
 
 void Immo_ScriptAcheter(void)
@@ -434,8 +450,10 @@ void Immo_ScriptAcheter(void)
 
 void Immo_ScriptVendre(void)
 {
+    bool32 hypotheque = Immo_Hypothequee(gSpecialVar_0x8004, Aujourdhui());
+
     gSpecialVar_Result = Immo_Vendre(gSpecialVar_0x8004, Aujourdhui());
-    StringCopy(gStringVar4, gSpecialVar_Result ? sText_Vendu : sText_VenteRatee);
+    StringCopy(gStringVar4, gSpecialVar_Result ? sText_Vendu : (hypotheque ? sText_Hypotheque : sText_VenteRatee));
 }
 
 // VAR_IMMO_BIEN : bien libéré après la victoire contre le squatteur.

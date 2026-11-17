@@ -45,9 +45,9 @@ Lecture :
 | 3 | **Double comptage maisons / société** : les maisons appartiennent au joueur mais gonflent la valeur de **sa** société. On vend 49 % des actions puis on revend les maisons. | +555 000 ¥ immédiats sur 1,9 M de maisons, la société cotée vaut 0. | Les maisons comptent dans la société seulement si elles y sont **apportées** (apport en capital, lot 2.3) ; un bien apporté ne se revend que par la société. |
 | 4 | **Humeur de la société** sans lien avec les résultats (300 à 3 000 ‰, marche au hasard) : on vend des actions jusqu'à 3× la valeur réelle. | +36 % en 1 an sans rien produire (480 000 -> 652 175 ¥). | Humeur bornée 700-1 500 ‰ et rappelée vers 1 000 ; cours qui baisse quand le joueur vend (impact de 1 % par paquet) ; humeur liée aux bénéfices (recettes - charges). |
 | 5 | **Bien soldé de la semaine** : -25 % à l'achat, puis revente la semaine où l'écart local est à +10 %. | 22 allers-retours rentables en 30 semaines, +450 000 ¥ (en plus des loyers). | Revente au prix d'indice **sans** écart local ni remise, ou impôt sur la plus-value (lot 2.4) de 30 % si détenu moins de 30 jours. |
-| 6 | **Dividende des Grands Magasins** : 2 % du cours **par semaine** (~104 % par an). | Position de 5 M ¥ : 100 000 ¥ par semaine sans risque. | 0,2 % par semaine (~10 %/an), ou dividende sur le bénéfice. |
-| 7 | **Crédit Foncier** : plafond sur les maisons, mais les maisons restent vendables une fois l'argent emprunté. | Prêt sans garantie (puis défaut = +10 % seulement s'il n'y a plus de maison). | Maison hypothéquée = invendable tant que la dette Foncier n'est pas remboursée. |
-| 8 | **Sponsors des arènes** trop forts (voir profil post-Ligue). | 15 000 ¥/jour par arène à réputation 100, ~5,4 M ¥/an par arène. | 50 ¥ par point (5 000 ¥/jour max), plus les charges d'entretien du lot 2.4. |
+| 6 | ✅ v0.42.1 — **Dividende des Grands Magasins** : 2 % du cours **par semaine** (~104 % par an). | Position de 5 M ¥ : 100 000 ¥ par semaine sans risque. | 0,2 % par semaine (~10 %/an), ou dividende sur le bénéfice. |
+| 7 | ✅ v0.42.1 — **Crédit Foncier** : plafond sur les maisons, mais les maisons restent vendables une fois l'argent emprunté. | Prêt sans garantie (puis défaut = +10 % seulement s'il n'y a plus de maison). | Maison hypothéquée = invendable tant que la dette Foncier n'est pas remboursée. |
+| 8 | ✅ v0.42.1 — **Sponsors des arènes** trop forts (voir profil post-Ligue). | 15 000 ¥/jour par arène à réputation 100, ~5,4 M ¥/an par arène. | 50 ¥ par point (5 000 ¥/jour max), plus les charges d'entretien du lot 2.4. |
 | 9 | **Voyage dans le futur** : le hasard ne dépend que du jour et du n° de Dresseur. Avancer l'horloge, regarder les cours, relancer sans sauvegarder, acheter. | Information parfaite sur les cours de demain. | Inévitable avec l'horloge de la cartouche ; à accepter (c'est l'esprit du « délit d'initié ») ou à freiner avec un délai d'un jour ouvré avant de revendre. |
 | 10 | **Délit d'initié du scénario** (prévu) : Aqua +80 % à la Grotte Fonds Marins, Stern +100 % à Atalanopolis, Magma +60 % au Repaire. | 9 999 parts d'Aqua (~8 M ¥) : +6,4 M ¥ en un jour. | Garder (c'est voulu), mais c'est la bonne place pour la vente à découvert du lot 2.1 (Aqua / Magma avant leur faillite). |
 
@@ -71,8 +71,16 @@ Lecture :
   comprise) et une maison saisie ; 4e : maisons saisies jusqu'à solder la dette. Rembourser une dette efface ses défauts.
   Simulation : 1,95 M ¥ empruntés et placés en Bourse ; il en reste 0,9 M au bout de 100 jours (2,3 M avant le correctif).
 
-## 6. Ordre de correction proposé (suite)
+## 6. Corrigé en v0.42.1 (réglages)
+
+- **Dividende** des Grands Magasins : 0,2 % du cours par part et par semaine (`BOURSE_DIVIDENDE_POURMILLE` = 2), soit ~10 %/an.
+- **Hypothèque** : une maison dont la vente ferait passer la garantie (60 % des biens restants + commerces) sous la dette du Crédit Foncier
+  est invendable (`Immo_Hypothequee`) ; message « Cette maison garantit ton prêt du Crédit Foncier. Rembourse d'abord. ».
+- **Sponsors** des arènes : 50 ¥ par point de réputation et par jour (`ARENE_SPONSORS_PAR_POINT`), 5 000 ¥/jour par arène au maximum.
+  Profil post-Ligue sur 100 jours : 8,9 M -> 5,8 M ¥ ; ce qui reste vient surtout des combats contre les challengers (à jouer soi-même).
+
+## 7. Ordre de correction proposé (suite)
 
 1. ~~Horloge et défauts bancaires~~ (fait en v0.42).
-2. Dividende, sponsors, Foncier (failles 6, 7, 8) : réglages chiffrés dans les en-têtes.
+2. ~~Dividende, sponsors, Foncier~~ (fait en v0.42.1).
 3. Société et immobilier (failles 3, 4, 5) : à faire avec les comptes séparés et la fiscalité du lot 2 (apport en capital, plus-values).
