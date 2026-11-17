@@ -157,6 +157,10 @@ else
 O_LEVEL ?= 2
 endif
 CPPFLAGS := $(INCLUDE_CPP_ARGS) -Wno-trigraphs -DMODERN=1 -DTESTING=$(TEST) -D$(GAME_VERSION) -std=gnu17
+# Émeraude Couronnement : édition Carrière & Business (make EDITION=carriere) ; tout recompiler en changeant d'édition.
+ifeq ($(EDITION),carriere)
+override CPPFLAGS += -DEDITION_TYCOON_SIM=TRUE
+endif
 ifeq ($(RELEASE),1)
 	override CPPFLAGS += -DRELEASE
 	ifeq ($(USE_LTO_ON_RELEASE),1)

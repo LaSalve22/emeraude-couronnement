@@ -1635,6 +1635,11 @@ bool8 PartyHasMonWithSurf(void)
 {
     u8 i;
 
+#if EDITION_TYCOON_SIM // Taxi Surfant dès le début
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPECIES) != SPECIES_NONE)
+        return TRUE;
+#endif
+
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         for (i = 0; i < PARTY_SIZE; i++)

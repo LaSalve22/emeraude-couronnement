@@ -1,4 +1,5 @@
 #include "global.h"
+#include "tycoon.h"
 #include "frontier_util.h"
 #include "battle_setup.h"
 #include "battle_util.h"
@@ -2315,6 +2316,12 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
             gSpecialVar_0x8004 = species;
             break;
         }
+    }
+    // Émeraude Couronnement (édition Carrière) : capacité débloquée par le club, le 1er Pokémon s'en charge.
+    if (gSpecialVar_Result == PARTY_SIZE && Tycoon_CapaciteSansPokemon(fieldMove))
+    {
+        gSpecialVar_Result = 0;
+        gSpecialVar_0x8004 = GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPECIES);
     }
 
     return FALSE;

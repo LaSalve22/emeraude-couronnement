@@ -3,6 +3,7 @@
 #include "couronnement.h"
 #include "arenes.h"
 #include "league_club.h"
+#include "tycoon.h"
 #include "battle.h"
 #include "battle_util.h"
 #include "data.h"
@@ -122,7 +123,9 @@ static void SaisonVerifier(void)
     SAISON.saison = 1;
     SAISON.titres = (VarGet(VAR_COURONNEMENT_TOURNOIS) & (1 << COURONNEMENT_TOURNOI_FINALE)) ? 1 : 0;
     SAISON.finales = SAISON.titres;
-    SAISON.paliers = BitsJusquAuPalier(Couronnement_PalierDepuisElo(Couronnement_GetElo())); // pas de rattrapage
+    SAISON.paliers = (SAISON.paliers & COURONNEMENT_CHAMPIONS_ATTEINT) | BitsJusquAuPalier(Couronnement_PalierDepuisElo(Couronnement_GetElo())); // pas de rattrapage
+    if (Couronnement_PalierDepuisElo(Couronnement_GetElo()) == PALIER_CHAMPIONS)
+        SAISON.paliers |= COURONNEMENT_CHAMPIONS_ATTEINT;
 }
 
 u32 Couronnement_Saison(void)
@@ -657,6 +660,8 @@ void Couronnement_RecompensePalier(void)
 
     SaisonVerifier();
     gSpecialVar_Result = FALSE;
+    if (palier == PALIER_CHAMPIONS)
+        SAISON.paliers |= COURONNEMENT_CHAMPIONS_ATTEINT; // ouvre la Ligue dans l'édition Carrière
     if ((SAISON.paliers & BitsJusquAuPalier(palier)) == BitsJusquAuPalier(palier))
         return;
     for (p = PALIER_SUPER; p <= palier; p++)
@@ -749,7 +754,7 @@ void Couronnement_FinSaison(void)
     elo = COURONNEMENT_ELO_DEPART + (elo - COURONNEMENT_ELO_DEPART) / 2;
     Couronnement_SetElo(elo);
     VarSet(VAR_COURONNEMENT_TOURNOIS, 0);
-    SAISON.paliers = BitsJusquAuPalier(Couronnement_PalierDepuisElo(Couronnement_GetElo()));
+    SAISON.paliers = (SAISON.paliers & COURONNEMENT_CHAMPIONS_ATTEINT) | BitsJusquAuPalier(Couronnement_PalierDepuisElo(Couronnement_GetElo())); // le bit « Champions atteint » reste
     AjouterNombre(gStringVar1, SAISON.saison);
     AjouterNombre(gStringVar2, Couronnement_GetElo());
 }

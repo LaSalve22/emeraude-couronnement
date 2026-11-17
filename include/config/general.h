@@ -87,8 +87,11 @@
 // Émeraude Couronnement (v0.42) : double édition dans le même dépôt.
 // FALSE : aventure classique à 8 badges, avec la Ligue des Clubs (src/league_club.c).
 // TRUE  : édition « Carrière & Business » (joueur adulte, pas d'arènes, clubs dans les anciens bâtiments d'arène,
-//         taxis dès le jour 1, Pokémon de prêt, niveaux adaptés au tier du club). Pas encore codée : la compilation refuse.
+//         taxis dès le jour 1, Pokémon de prêt, niveaux adaptés au tier du club). En cours : v0.46 = règles de terrain
+//         (src/tycoon.c) ; l'intro adulte et les sièges des clubs viendront ensuite.
+#ifndef EDITION_TYCOON_SIM // make EDITION=carriere (tools/couronnement/editions.sh compile les deux ROM)
 #define EDITION_TYCOON_SIM           FALSE
+#endif
 
 // Naming Screen
 #define AUTO_LOWERCASE_KEYBOARD      GEN_LATEST  // Starting in GEN_6, after entering the first uppercase character, the keyboard switches to lowercase letters.

@@ -539,6 +539,12 @@ Couronnement_EventScript_MenuLRepousseCourse::
 	dynmultipush gStringVar1, 2
 	dynmultipush gStringVar2, 3
 	goto_if_set FLAG_COURONNEMENT_EN_COURS, Couronnement_EventScript_MenuLRang
+	special Tycoon_EstActif @ édition Carrière & Business : taxis et capacités de terrain
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLApresTaxis
+	dynmultipush Couronnement_Text_MenuLTaxiVolant, 15
+	dynmultipush Couronnement_Text_MenuLTaxiSurfant, 16
+	dynmultipush Couronnement_Text_MenuLCapacites, 17
+Couronnement_EventScript_MenuLApresTaxis::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, Couronnement_EventScript_MenuLTera
 	dynmultipush Couronnement_Text_MenuLEV, 4
 Couronnement_EventScript_MenuLTera::
@@ -574,6 +580,9 @@ Couronnement_EventScript_MenuLFermer::
 	case 12, Couronnement_EventScript_MenuLBanques
 	case 13, Couronnement_EventScript_MenuLArenes
 	case 14, Couronnement_EventScript_MenuLClubs
+	case 15, Couronnement_EventScript_MenuLTaxiVolant
+	case 16, Couronnement_EventScript_MenuLTaxiSurfant
+	case 17, Couronnement_EventScript_MenuLCapacites
 	closemessage
 	releaseall
 	end
@@ -615,6 +624,30 @@ Couronnement_EventScript_MenuLEV::
 
 Couronnement_EventScript_MenuLArenes::
 	call Arene_EventScript_MenuL
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLTaxiVolant::
+	special Tycoon_PeutVoler
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLPasDeTaxi
+	closemessage
+	special Tycoon_TaxiVolant
+	releaseall
+	end
+
+Couronnement_EventScript_MenuLTaxiSurfant::
+	special Tycoon_PeutSurfer
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLPasDeTaxi
+	closemessage
+	releaseall
+	goto EventScript_UseSurf
+
+Couronnement_EventScript_MenuLPasDeTaxi::
+	msgbox Couronnement_Text_MenuLPasDeTaxi, MSGBOX_DEFAULT
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLCapacites::
+	special Tycoon_TexteCapacites
+	msgbox gStringVar4, MSGBOX_DEFAULT
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLClubs::
@@ -670,6 +703,15 @@ Couronnement_Text_MenuLPC:
 	.string "PC de stockage$"
 Couronnement_Text_MenuLArenes:
 	.string "Mes arènes$"
+Couronnement_Text_MenuLTaxiVolant:
+	.string "Taxi Volant$"
+Couronnement_Text_MenuLTaxiSurfant:
+	.string "Taxi Surfant$"
+Couronnement_Text_MenuLCapacites:
+	.string "Capacités de terrain$"
+Couronnement_Text_MenuLPasDeTaxi:
+	.string "Le taxi ne peut pas venir ici.\n"
+	.string "Volant : dehors. Surfant : face à l'eau.$"
 Couronnement_Text_MenuLClubs:
 	.string "Ligue des Clubs$"
 Couronnement_Text_MenuLBanques:

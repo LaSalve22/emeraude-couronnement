@@ -1,4 +1,5 @@
 #include "global.h"
+extern bool8 gTaxiVolant;
 #include "main.h"
 #include "text.h"
 #include "menu.h"
@@ -2488,10 +2489,15 @@ static void CB_ExitFlyMap(void)
                 SetFlyDestination(tempRegionMap);
                 ReturnToFieldFromFlyMapSelect();
             }
+            else if (gTaxiVolant) // Émeraude Couronnement : Taxi Volant du menu L
+            {
+                SetMainCallback2(CB2_ReturnToField);
+            }
             else
             {
                 SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
             }
+            gTaxiVolant = FALSE;
             TRY_FREE_AND_SET_NULL(sFlyMap);
             FreeAllWindowBuffers();
         }

@@ -82,6 +82,12 @@ gSpecials::
 	def_special Banque_ScriptEmprunter
 	def_special Banque_ScriptRembourser
 	def_special Club_Ouvrir
+	def_special Tycoon_LigueOuverte
+	def_special Tycoon_EstActif
+	def_special Tycoon_TaxiVolant
+	def_special Tycoon_PeutSurfer
+	def_special Tycoon_PeutVoler
+	def_special Tycoon_TexteCapacites
 	def_special Club_Resume
 	def_special Club_TableauDeBord
 	def_special Club_PreparerMatch

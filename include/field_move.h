@@ -37,8 +37,15 @@ static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
     return gFieldMoveInfo[fieldMove].fieldMoveFunc();
 }
 
+bool32 Tycoon_CapaciteDebloquee(u32 fieldMove);
+u32 Tycoon_TierRequis(u32 fieldMove);
+
 static inline bool32 IsFieldMoveUnlocked(enum FieldMove fieldMove)
 {
+#if EDITION_TYCOON_SIM // Émeraude Couronnement : capacités débloquées par le tier du club (src/tycoon.c)
+    if (Tycoon_TierRequis(fieldMove) != 0xFE)
+        return Tycoon_CapaciteDebloquee(fieldMove);
+#endif
     return gFieldMoveUnlocks[gFieldMoveInfo[fieldMove].unlockType].isUnlockedFunc(fieldMove);
 }
 

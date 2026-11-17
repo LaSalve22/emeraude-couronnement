@@ -23,10 +23,6 @@
 // Rien n'est rejoué : tout ce qui est simulé l'est le jour venu, enregistré dans la sauvegarde (4 bits par duel), et le hasard
 // est déterministe (n° de Dresseur + saison + match + duel). Horloge remise en arrière : aucun jour n'est retraité.
 
-#if EDITION_TYCOON_SIM
-#error "Édition Carrière & Business : pas encore codée (intro adulte, sièges des clubs, prêt de Pokémon, niveaux par tier)."
-#endif
-
 #define LC (gSaveBlock3Ptr->ligueClubs)
 
 STATIC_ASSERT(CLUB_LIGUE_NB_FORME == CLUB_NB * CLUB_DRESSEURS, ClubLigueForme);

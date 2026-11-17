@@ -592,6 +592,24 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Tableau de bord : sprites 16 x 16 priorité 0 au-dessus de la fenêtre (`BlasonSprite`, tag 0x5C20 + club, 6 au plus), détruits à
   chaque dessin et à la fermeture ; s'il n'y a plus de palette de sprite libre (ou dans le test d'aperçu), l'écu dessiné prend le relais.
 
+## Fait (v0.46) - édition Carrière & Business, 1re partie (règles de terrain)
+
+- Deux ROM : `tools/couronnement/editions.sh X.Y` compile `emeraude-couronnement-vX.Y.gba` (classique) puis
+  `emeraude-couronnement-vX.Y-carriere.gba` (`make EDITION=carriere` -> `-DEDITION_TYCOON_SIM=TRUE` ; changer d'édition = tout
+  recompiler, le script touche `include/config/general.h`). Les tests se compilent en classique.
+- Choix d'Adrien (17/11) : pas de level cap (`GetCurrentLevelCap` = 100) ; Taxi Volant et Taxi Surfant dès le début ; les autres
+  capacités de terrain selon le tier du club du joueur, sans qu'un Pokémon les connaisse : C Coupe / Flash, B Éclate-Roc / Force,
+  A Plongée / Cascade, S Escalade / Anti-Brume (`src/tycoon.c`, `include/tycoon.h` ; branché dans `IsFieldMoveUnlocked`
+  (`include/field_move.h`), `checkfieldmove` (1er Pokémon de l'équipe), `PartyHasMonWithSurf`). Sans club : taxis seulement.
+- Menu L (édition Carrière) : Taxi Volant (dehors ; carte de vol, Bourg-en-Vol + 10 villes de club marquées visitées,
+  annuler = retour au terrain via `gTaxiVolant` dans `src/region_map.c`), Taxi Surfant (face à l'eau), Capacités de terrain.
+- Ligue Pokémon : la porte d'Éternara appelle `Tycoon_LigueOuverte` (classique : badge d'Alizée comme avant ; Carrière : rang
+  Champions atteint une fois). Bit `COURONNEMENT_CHAMPIONS_ATTEINT` (0x80) de `CouronnementSaison.paliers`, jamais remis à zéro.
+- Pas encore fait dans l'édition Carrière : intro adulte (appartement, profil Épargnant / Trader / Espoir Sportif, Seko sur la
+  Route 101 sans quête du Pokédex ni rival), arènes -> sièges des clubs (guichets dans les arènes), Pokémon de prêt du club,
+  niveaux des sauvages / dresseurs selon le tier (`tycoon_scaling`). Aqua / Magma restent aux mêmes lieux (choix d'Adrien).
+  Attention : sans badges, des scripts du scénario qui testent les badges restent à revoir.
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -606,7 +624,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
     Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
-    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. À valider avec
+    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain faites ;
+    ensuite intro adulte, sièges des clubs, Pokémon de prêt, niveaux par tier. À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
@@ -617,7 +636,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Compiler : `make -j$(sysctl -n hw.ncpu)` sur Mac. La ROM sort en `pokeemerald.gba`.
   Toolchain sur le Mac d'Adrien : ARM GNU Toolchain 14.3 dans `~/opt/arm-gnu-toolchain` (pas de devkitPro) ;
   si `arm-none-eabi-gcc` est introuvable : `export PATH="$HOME/opt/arm-gnu-toolchain/bin:$PATH"`.
-- Après chaque étape qui compile : commit en français, push sur `main`, puis livrer une copie nommée `emeraude-couronnement-vX.Y.gba`.
+- Après chaque étape qui compile : commit en français, push sur `main`, puis livrer `emeraude-couronnement-vX.Y.gba`
+  et `emeraude-couronnement-vX.Y-carriere.gba` (`tools/couronnement/editions.sh X.Y`).
 - Adrien teste sur Eclipse (iPhone) et mGBA (Mac).
 - Garder les réglages dans `include/config/` quand c'est possible plutôt que de modifier le moteur.
 - Mettre à jour la section « Fait » et « Prochaines étapes » de ce fichier à chaque étape.
