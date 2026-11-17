@@ -90,6 +90,7 @@ gSpecials::
 	def_special Tycoon_TexteCapacites
 	def_special Tycoon_ChoisirProfil
 	def_special Tycoon_Loyer
+	def_special Tycoon_Accreditation
 	def_special Club_Resume
 	def_special Club_TableauDeBord
 	def_special Club_PreparerMatch

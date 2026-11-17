@@ -18,6 +18,9 @@ FortreeCity_Gym_EventScript_InitRotatingGates::
 	end
 
 FortreeCity_Gym_EventScript_Winona::
+	setvar VAR_0x8004, TRAINER_WINONA_1 @ Couronnement, édition Carrière : président du club, accréditation sans combat
+	special Tycoon_Accreditation
+	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaAccreditation
 	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
@@ -317,3 +320,9 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 	.string "POKéMON with you?\p"
 	.string "Please return with two POKéMON\n"
 	.string "at the very least.$"
+
+FortreeCity_Gym_EventScript_WinonaAccreditation::
+	lock
+	faceplayer
+	msgbox Tycoon_Text_President, MSGBOX_DEFAULT
+	goto FortreeCity_Gym_EventScript_WinonaDefeated

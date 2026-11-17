@@ -179,3 +179,16 @@ Tycoon_Text_SekoAuRevoir:
 	.string "SEKO : Les clubs de la Ligue cherchent\n"
 	.string "des recrues. Passe à un guichet de\l"
 	.string "ligue dans un Centre Pokémon !$"
+
+@ Sièges des clubs (v0.48) : le champion d'arène est le président du club de sa ville.
+Tycoon_Text_President:
+	.string "Bienvenue au siège du club ! Ici,\n"
+	.string "plus d'arène : on gère une équipe.\p"
+	.string "Tu es des nôtres maintenant. Voici\n"
+	.string "ton accréditation et de quoi bosser.$"
+
+Tycoon_Text_PresidentNorman:
+	.string "NORMAN : Le siège de Clémenti, c'est\n"
+	.string "moi qui le dirige. Pas de combat.\p"
+	.string "Tu as fait ton chemin. Voici ton\n"
+	.string "accréditation, et le reste avec.$"

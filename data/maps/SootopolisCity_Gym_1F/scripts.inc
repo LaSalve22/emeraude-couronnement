@@ -80,6 +80,9 @@ SootopolisCity_Gym_1F_Movement_FallThroughIce:
 	step_end
 
 SootopolisCity_Gym_1F_EventScript_Juan::
+	setvar VAR_0x8004, TRAINER_JUAN_1 @ Couronnement, édition Carrière : président du club, accréditation sans combat
+	special Tycoon_Accreditation
+	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanAccreditation
 	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
@@ -317,3 +320,9 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "I wish that you would return with\n"
 	.string "two, perhaps more, POKéMON, please.$"
 
+
+SootopolisCity_Gym_1F_EventScript_JuanAccreditation::
+	lock
+	faceplayer
+	msgbox Tycoon_Text_President, MSGBOX_DEFAULT
+	goto SootopolisCity_Gym_1F_EventScript_JuanDefeated

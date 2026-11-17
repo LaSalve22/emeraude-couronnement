@@ -16,6 +16,7 @@
 #include "script.h"
 #include "string_util.h"
 #include "task.h"
+#include "battle_setup.h"
 #include "constants/flags.h"
 #include "constants/rgb.h"
 
@@ -250,5 +251,19 @@ void Tycoon_Loyer(void)
             TY.impayes++;
         StringCopy(fin, sText_LoyerImpaye);
     }
+    gSpecialVar_Result = TRUE;
+}
+
+// ---------------------------------------------------------------- sièges des clubs (v0.48)
+
+// Édition Carrière : le champion d'arène est le président du club de sa ville. Lui parler la première fois remet
+// l'accréditation (tout ce que donnait la victoire : badge, CT, objets, suite du scénario) sans combat.
+// VAR_0x8004 = dresseur du champion. VAR_RESULT = l'accréditation est à remettre (le drapeau du dresseur est posé).
+void Tycoon_Accreditation(void)
+{
+    gSpecialVar_Result = FALSE;
+    if (!EDITION_TYCOON_SIM || HasTrainerBeenFought(gSpecialVar_0x8004))
+        return;
+    SetTrainerFlag(gSpecialVar_0x8004);
     gSpecialVar_Result = TRUE;
 }

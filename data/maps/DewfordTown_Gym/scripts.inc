@@ -133,6 +133,9 @@ DewfordTown_Gym_EventScript_StopCountingTrainers::
 	return
 
 DewfordTown_Gym_EventScript_Brawly::
+	setvar VAR_0x8004, TRAINER_BRAWLY_1 @ Couronnement, édition Carrière : président du club, accréditation sans combat
+	special Tycoon_Accreditation
+	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyAccreditation
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
@@ -480,3 +483,9 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "se battre ?\p"
 	.string "Désolé, reviens avec au moins deux\n"
 	.string "Pokémon.$"
+
+DewfordTown_Gym_EventScript_BrawlyAccreditation::
+	lock
+	faceplayer
+	msgbox Tycoon_Text_President, MSGBOX_DEFAULT
+	goto DewfordTown_Gym_EventScript_BrawlyDefeated

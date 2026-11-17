@@ -103,6 +103,12 @@ PetalburgCity_Gym_EventScript_Norman::
 	vsseeker_rematchid TRAINER_NORMAN_1
 	lock
 	faceplayer
+	goto_if_lt VAR_PETALBURG_GYM_STATE, 2, PetalburgCity_Gym_EventScript_NormanSuite
+	goto_if_gt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_NormanSuite
+	setvar VAR_0x8004, TRAINER_NORMAN_1 @ Couronnement, édition Carrière : accréditation sans combat ni badges requis
+	special Tycoon_Accreditation
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_NormanAccreditation
+PetalburgCity_Gym_EventScript_NormanSuite::
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
@@ -372,6 +378,7 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+PetalburgCity_Gym_EventScript_NormanRemiseBadge::
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -1621,3 +1628,7 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "Reviens avec au moins deux Pokémon. Je\n"
 	.string "ne me bats pas à moitié.$"
 
+
+PetalburgCity_Gym_EventScript_NormanAccreditation::
+	msgbox Tycoon_Text_PresidentNorman, MSGBOX_DEFAULT
+	goto PetalburgCity_Gym_EventScript_NormanRemiseBadge

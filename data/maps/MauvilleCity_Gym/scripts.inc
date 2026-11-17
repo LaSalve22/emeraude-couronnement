@@ -74,6 +74,9 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle::
 	end
 
 MauvilleCity_Gym_EventScript_Wattson::
+	setvar VAR_0x8004, TRAINER_WATTSON_1 @ Couronnement, édition Carrière : président du club, accréditation sans combat
+	special Tycoon_Accreditation
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonAccreditation
 	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
@@ -419,3 +422,9 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "Reviens avec au moins deux Pokémon,\n"
 	.string "d'accord ?$"
 
+
+MauvilleCity_Gym_EventScript_WattsonAccreditation::
+	lock
+	faceplayer
+	msgbox Tycoon_Text_President, MSGBOX_DEFAULT
+	goto MauvilleCity_Gym_EventScript_WattsonDefeated

@@ -2,6 +2,9 @@ RustboroCity_Gym_MapScripts::
 	.byte 0
 
 RustboroCity_Gym_EventScript_Roxanne::
+	setvar VAR_0x8004, TRAINER_ROXANNE_1 @ Couronnement, édition Carrière : président du club, accréditation sans combat
+	special Tycoon_Accreditation
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneAccreditation
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
@@ -295,3 +298,9 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "Statistiquement, c'est du suicide.\n"
 	.string "Reviens avec au moins un Pokémon de\l"
 	.string "plus.$"
+
+RustboroCity_Gym_EventScript_RoxanneAccreditation::
+	lock
+	faceplayer
+	msgbox Tycoon_Text_President, MSGBOX_DEFAULT
+	goto RustboroCity_Gym_EventScript_RoxanneDefeated

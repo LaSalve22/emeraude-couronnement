@@ -625,6 +625,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Pas encore : effets du profil Trader (vente à découvert, à coder) et Espoir Sportif (+4 de rating, quand le joueur aura un rating).
   Non vérifié dans un émulateur : à tester en priorité (réveil, horloge, sortie de la maison, Route 101, labo).
 
+## Fait (v0.48) - édition Carrière & Business : sièges des clubs dans les arènes
+
+- Les 8 champions sont les présidents des clubs de leur ville. Édition Carrière : leur parler la première fois appelle
+  `Tycoon_Accreditation` (`src/tycoon.c` ; VAR_0x8004 = dresseur du champion, pose son drapeau de dresseur) puis le script
+  « Defeated » d'origine sans combat : badge (= accréditation), CT, Orbe Téracristal, Méga-Anneau, drapeaux du scénario.
+  Branché au début de `RustboroCity_Gym_EventScript_Roxanne`, `DewfordTown_Gym_EventScript_Brawly`, `..._Wattson`, `..._Flannery`,
+  `..._Winona`, `..._TateAndLiza`, `..._Juan` (étiquettes `...Accreditation` en fin de fichier) ; Norman (Petalburg) : états 2 à 6
+  du `VAR_PETALBURG_GYM_STATE`, plus besoin de 4 badges (la scène avec Timmy reste au 1er passage), `PetalburgCity_Gym_EventScript_NormanRemiseBadge`.
+  Textes `Tycoon_Text_President` / `Tycoon_Text_PresidentNorman`. Édition classique inchangée (combat normal).
+- Guichets de ligue à l'entrée des 7 arènes des villes de club (dans les deux éditions) : `tools/couronnement/clubs_placer.py`
+  (porte = la plus basse ; case évitant l'allée de la porte, les cases spéciales (glace, trous) et ne coupant aucune zone
+  praticable). Les guichets des Centres Pokémon et de la Tour de Combat ont été replacés avec ces règles.
+- Restent dans les arènes : les dresseurs et les énigmes (membres du club à l'entraînement). Les vérifications de badges hors arènes
+  sont décoratives (Nénucrique, Poivressel, Mérouville) et suivent les accréditations.
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -639,8 +654,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
     Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
-    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain, v0.47 : intro adulte ;
-    ensuite sièges des clubs (arènes), Pokémon de prêt, niveaux par tier. À valider avec
+    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain, v0.47 : intro adulte, v0.48 : sièges des clubs ;
+    ensuite Pokémon de prêt, niveaux par tier. À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
