@@ -12,6 +12,12 @@ InsideOfTruck_OnFrame:
 InsideOfTruck_EventScript_ChooseDifficulty::
 	lockall
 	msgbox InsideOfTruck_Text_ChooseDifficultyIntro, MSGBOX_DEFAULT
+	call InsideOfTruck_EventScript_DifficultyChoice
+	releaseall
+	end
+
+@ Aussi appelé par l'intro adulte de l'édition Carrière (data/scripts/tycoon_intro.inc).
+InsideOfTruck_EventScript_DifficultyChoice::
 InsideOfTruck_EventScript_DifficultyMenu::
 	message InsideOfTruck_Text_WhichDifficulty
 	waitmessage
@@ -43,8 +49,7 @@ InsideOfTruck_EventScript_PickKaizo::
 InsideOfTruck_EventScript_DifficultyChosen::
 	setvar VAR_DIFFICULTY_CHOSEN, 1
 	msgbox InsideOfTruck_Text_DifficultyChosen, MSGBOX_DEFAULT
-	releaseall
-	end
+	return
 
 InsideOfTruck_Text_DifficultyNormal:
 	.string "Normal$"

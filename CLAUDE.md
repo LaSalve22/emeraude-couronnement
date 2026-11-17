@@ -610,6 +610,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   niveaux des sauvages / dresseurs selon le tier (`tycoon_scaling`). Aqua / Magma restent aux mêmes lieux (choix d'Adrien).
   Attention : sans badges, des scripts du scénario qui testent les badges restent à revoir.
 
+## Fait (v0.47) - édition Carrière & Business : intro adulte
+
+- Nouvelle partie (Carrière) : `WarpToTruck` (`src/new_game.c`) envoie dans la chambre du 2e étage (4, 3) avec
+  `VAR_LITTLEROOT_INTRO_STATE` = 20 ; le `MAP_SCRIPT_ON_FRAME_TABLE` ajouté aux deux chambres lance `Tycoon_EventScript_Reveil`
+  (`data/scripts/tycoon_intro.inc`) : décor (maman, camions, cartons, Vigoroth cachés ; rival déjà parti, `FLAG_HIDE_ROUTE_103_RIVAL`),
+  difficulté (`InsideOfTruck_EventScript_DifficultyChoice`, désormais appelable), horloge, profil sur le terminal
+  (Épargnant 12 000 ¥, Trader 8 000 ¥, Espoir Sportif 6 000 ¥ + 3 Bonbons Exp. S ; `Tycoon_ChoisirProfil`), pass, PokéNav,
+  Repousse Infinie, puis `VAR_LITTLEROOT_INTRO_STATE` = 7. Bourg-en-Vol est ouvert (`VAR_LITTLEROOT_TOWN_STATE` = 1).
+- Route 101 inchangée (Seko sauvé, choix du starter). Au labo, `GoSeeRival` bascule sur `Tycoon_EventScript_LaboApresStarter` :
+  Pokédex (+ Multi Exp), 5 Poké Balls, Dark Ball, combat de la Route 103 marqué comme fait, états du labo / de Bourg-en-Vol finaux.
+- Loyer de l'appartement : 2 500 ¥ tous les 30 jours tant que le joueur n'a aucune maison (immobilier), prélevé à l'ouverture
+  du menu L (`Tycoon_Loyer`, 12 mois rattrapés au plus, impayés comptés). `struct TycoonSave` (8 octets) dans SaveBlock3.
+- Pas encore : effets du profil Trader (vente à découvert, à coder) et Espoir Sportif (+4 de rating, quand le joueur aura un rating).
+  Non vérifié dans un émulateur : à tester en priorité (réveil, horloge, sortie de la maison, Route 101, labo).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -624,8 +639,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
     Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
-    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain faites ;
-    ensuite intro adulte, sièges des clubs, Pokémon de prêt, niveaux par tier. À valider avec
+    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain, v0.47 : intro adulte ;
+    ensuite sièges des clubs (arènes), Pokémon de prêt, niveaux par tier. À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

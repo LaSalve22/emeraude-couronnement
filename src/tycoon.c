@@ -10,6 +10,9 @@
 #include "party_menu.h"
 #include "pokemon.h"
 #include "region_map.h"
+#include "immobilier.h"
+#include "money.h"
+#include "rtc.h"
 #include "script.h"
 #include "string_util.h"
 #include "task.h"
@@ -153,4 +156,99 @@ void Tycoon_TexteCapacites(void)
     if (n == 0)
         fin = StringCopy(fin, sText_CapAucune);
     StringCopy(fin, sText_CapSuite);
+}
+
+// ---------------------------------------------------------------- intro adulte et loyer (v0.47)
+
+#define TY (gSaveBlock3Ptr->tycoon)
+#define TYCOON_LOYER        2500
+#define TYCOON_JOURS_LOYER  30
+
+static const u32 sArgentProfil[3] = {12000, 8000, 6000};
+static const u8 *const sNomsProfils[3] =
+{
+    COMPOUND_STRING("Épargnant"), COMPOUND_STRING("Trader"), COMPOUND_STRING("Espoir Sportif"),
+};
+static const u8 sText_Profil1[] = _("Profil ");
+static const u8 sText_Profil2[] = _(" validé.\n");
+static const u8 sText_Profil3[] = _(" ¥ sur ton compte.");
+
+static u8 *Nombre(u8 *fin, u32 n)
+{
+    u32 chiffres = 1;
+    u64 p = 10;
+    while (n >= p && chiffres < 10)
+    {
+        chiffres++;
+        p *= 10;
+    }
+    return ConvertIntToDecimalStringN(fin, n, STR_CONV_MODE_LEFT_ALIGN, chiffres);
+}
+
+// VAR_0x8004 = profil (0 Épargnant, 1 Trader, 2 Espoir Sportif). Les Bonbons Exp. S de l'Espoir sont donnés par le script.
+void Tycoon_ChoisirProfil(void)
+{
+    u32 p = gSpecialVar_0x8004 % 3;
+    u8 *fin;
+    memset(&TY, 0, sizeof(TY));
+    TY.magie = TYCOON_MAGIE;
+    TY.profil = p;
+    TY.jourLoyer = RtcGetLocalDayCount();
+    SetMoney(&gSaveBlock1Ptr->money, sArgentProfil[p]);
+    fin = StringCopy(gStringVar4, sText_Profil1);
+    fin = StringCopy(fin, sNomsProfils[p]);
+    fin = StringCopy(fin, sText_Profil2);
+    fin = Nombre(fin, sArgentProfil[p]);
+    StringCopy(fin, sText_Profil3);
+}
+
+u32 Tycoon_Profil(void)
+{
+    return TY.magie == TYCOON_MAGIE ? TY.profil : 0;
+}
+
+static bool32 ProprietaireDUneMaison(void)
+{
+    u32 i;
+    for (i = 0; i < IMMO_NB_BIENS; i++)
+        if (Immo_Possede(i))
+            return TRUE;
+    return FALSE;
+}
+
+static const u8 sText_Loyer1[] = _("Le propriétaire est passé : loyer\nde ");
+static const u8 sText_Loyer2[] = _(" mois, ");
+static const u8 sText_Loyer3[] = _(" ¥ payés.");
+static const u8 sText_LoyerImpaye[] = _("\pIl manquait de l'argent : impayé\nnoté sur ton dossier.");
+
+// Loyer de l'appartement tous les 30 jours tant que le joueur n'a pas de maison (édition Carrière). VAR_RESULT = rapport.
+void Tycoon_Loyer(void)
+{
+    u32 aujourdhui = RtcGetLocalDayCount(), mois, du, paye;
+    u8 *fin;
+
+    gSpecialVar_Result = FALSE;
+    if (!EDITION_TYCOON_SIM || TY.magie != TYCOON_MAGIE || aujourdhui < TY.jourLoyer + TYCOON_JOURS_LOYER)
+        return;
+    mois = (aujourdhui - TY.jourLoyer) / TYCOON_JOURS_LOYER;
+    TY.jourLoyer += mois * TYCOON_JOURS_LOYER;
+    if (ProprietaireDUneMaison())
+        return;
+    if (mois > 12)
+        mois = 12;
+    du = mois * TYCOON_LOYER;
+    paye = min(du, GetMoney(&gSaveBlock1Ptr->money));
+    RemoveMoney(&gSaveBlock1Ptr->money, paye);
+    fin = StringCopy(gStringVar4, sText_Loyer1);
+    fin = Nombre(fin, mois);
+    fin = StringCopy(fin, sText_Loyer2);
+    fin = Nombre(fin, paye);
+    fin = StringCopy(fin, sText_Loyer3);
+    if (paye < du)
+    {
+        if (TY.impayes < 0xFF)
+            TY.impayes++;
+        StringCopy(fin, sText_LoyerImpaye);
+    }
+    gSpecialVar_Result = TRUE;
 }

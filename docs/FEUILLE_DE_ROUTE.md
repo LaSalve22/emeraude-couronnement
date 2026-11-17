@@ -52,6 +52,7 @@ et sur GitHub.
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 - v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
 - v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
+- v0.47 - Édition Carrière : intro adulte (réveil seul dans un appartement loué 2 500 ¥/mois, profil Épargnant / Trader / Espoir Sportif, pass et PokéNav tout de suite, Seko donne le Pokédex sans passer par le rival)
 - v0.46 - Édition Carrière & Business (2e ROM), 1re partie : pas de level cap, Taxi Volant / Surfant dès le début, capacités de terrain selon le tier du club, Ligue ouverte au rang Champions
 - v0.45 - Blasons des clubs dessinés par Adrien
 - v0.44 - Ligue des Clubs : guichets dans les Centres Pokémon des 10 villes, Grande Finale à la Tour de Combat après la Ligue, coaching avec les objets de combat, blasons des clubs

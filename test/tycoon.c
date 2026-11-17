@@ -2,6 +2,7 @@
 #include "league_club.h"
 #include "money.h"
 #include "tycoon.h"
+#include "event_data.h"
 #include "test/test.h"
 
 // Émeraude Couronnement (v0.46) : règles de l'édition Carrière & Business (les fonctions existent dans les deux éditions).
@@ -27,4 +28,15 @@ TEST("Carriere: the Champions rank is remembered")
     EXPECT(!Couronnement_ChampionsAtteint());
     gSaveBlock3Ptr->couronnementSaison.paliers |= COURONNEMENT_CHAMPIONS_ATTEINT;
     EXPECT(Couronnement_ChampionsAtteint());
+}
+
+TEST("Carriere: the starting profile sets the money")
+{
+    gSpecialVar_0x8004 = 0;
+    Tycoon_ChoisirProfil();
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 12000);
+    gSpecialVar_0x8004 = 2;
+    Tycoon_ChoisirProfil();
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 6000);
+    EXPECT_EQ(Tycoon_Profil(), 2);
 }

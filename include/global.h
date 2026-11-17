@@ -339,6 +339,17 @@ struct ClubLigueSave
     u32 bilan[6];                     // dernier bilan : billetterie, TV, boutique, charges, impôt, résultat (s32)
 };
 
+// Émeraude Couronnement : édition Carrière & Business (v0.47), src/tycoon.c.
+#define TYCOON_MAGIE 0x7C0E
+struct TycoonSave
+{
+    u16 magie;
+    u16 jourLoyer;    // dernier jour où le loyer a été payé (RtcGetLocalDayCount)
+    u8 profil;        // 0 Épargnant, 1 Trader, 2 Espoir Sportif
+    u8 impayes;       // loyers impayés (rapport)
+    u16 padding;
+};
+
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
@@ -359,6 +370,7 @@ struct SaveBlock3
     struct AreneSave arenes; // Émeraude Couronnement (v0.40), src/arenes.c
     struct BourseOr bourseOr; // Émeraude Couronnement (v0.41), src/bourse.c
     struct ClubLigueSave ligueClubs; // Émeraude Couronnement (v0.42), src/league_club.c
+    struct TycoonSave tycoon; // Émeraude Couronnement (v0.47), édition Carrière, src/tycoon.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

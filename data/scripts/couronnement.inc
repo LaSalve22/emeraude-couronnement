@@ -525,6 +525,7 @@ Couronnement_Text_RepousseInfinieExplique:
 @ Soin : 8e badge ; Coach EV / IV : après la Ligue ; Bourse de Hoenn, Immobilier, Ma société, Mes commerces et Banques : avec le pass. Soin, PC, EV et Téra sont masqués pendant un tournoi du Couronnement.
 Couronnement_EventScript_MenuL::
 	lockall
+	call Tycoon_EventScript_Loyer @ édition Carrière : loyer de l'appartement
 Couronnement_EventScript_MenuLBoucle::
 	special Couronnement_BufferMenuL
 	message Couronnement_Text_MenuL

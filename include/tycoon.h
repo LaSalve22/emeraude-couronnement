@@ -15,5 +15,7 @@ bool32 Tycoon_CapaciteDebloquee(u32 fieldMove);   // règle de l'édition Carri�
 bool32 Tycoon_CapaciteSansPokemon(u32 fieldMove); // Carrière : pas besoin qu'un Pokémon connaisse la capacité
 u32 Tycoon_TierRequis(u32 fieldMove);             // CLUB_TIER_* ; 0xFF = toujours (taxis)
 bool32 Couronnement_ChampionsAtteint(void);
+void Tycoon_ChoisirProfil(void);                  // VAR_0x8004 = profil (intro adulte)
+u32 Tycoon_Profil(void);
 
 #endif // GUARD_TYCOON_H
