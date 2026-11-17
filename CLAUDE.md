@@ -505,6 +505,15 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Compte dans le portefeuille (plafond de crédit, huissier qui saisit aussi l'or). Accès unifiés `Bourse_Cours` / `Bourse_Parts`.
 - Sauvegarde : `struct BourseOr` (136 octets) dans SaveBlock3 (cours, veille, onces, historique sur le même tampon que les entreprises).
 
+## Fait (lot 0 du cahier v0.42) - audit de l'économie
+
+- `tools/sim_economy.py` : simulateur autonome (formules exactes de la v0.41.1, même hasard déterministe, arithmétique du C),
+  4 profils sur 100 jours (prudent, agressif, levier raisonné, post-Ligue) et 5 failles rejouées. Rapport : `docs/AUDIT_ECONOMIE.md`.
+- Failles majeures : horloge remise en arrière = jours rejoués (loyers, cours, dividendes, sponsors) ; défaut bancaire sans saisie
+  (échéance prise sur le liquide seul) ; maisons du joueur comptées dans sa société (vendre 49 % puis revendre les maisons) ;
+  humeur de la société sans lien avec les résultats ; aller-retour sur le bien soldé de la semaine ; dividende 2 %/semaine ;
+  sponsors des arènes qui écrasent tout après la Ligue. Correctifs proposés dans le rapport, à valider par Adrien. Pas de changement en jeu.
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
