@@ -514,6 +514,42 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   humeur de la société sans lien avec les résultats ; aller-retour sur le bien soldé de la semaine ; dividende 2 %/semaine ;
   sponsors des arènes qui écrasent tout après la Ligue. Correctifs proposés dans le rapport, à valider par Adrien. Pas de changement en jeu.
 
+## Fait (v0.42) - Ligue des Clubs, 1re partie (joueur licencié)
+
+- Spec d'Adrien du 17/11 (« Système de Ligue des Clubs & édition Carrière & Business »). Cette version : édition classique,
+  phase 1 (joueur licencié). Appli « Ligue des Clubs » du menu L (avec le pass) : `src/league_club.c`, `include/league_club.h`,
+  `data/scripts/ligue_clubs.inc`, tableau de bord `src/club_dashboard.c`. Tests : `test/league_club.c` (`TESTS="Clubs"`).
+- 10 clubs (Clémenti, Autéquia : tier C ; Vermilava, Cimetronelle, Mérouville, Lavandia : B ; Poivressel, Algatia : A ;
+  Nénucrique, Atalanopolis : S), 4 dresseurs chacun (Capitaine, Titulaire, Titulaire, Recrue ; rating 42 à 88, équipe de 6
+  au premier stade, évoluée selon le niveau : `EvoluerPourNiveau`, pierres / échanges / amitié au N.36). Niveau en combat =
+  cap du badge en jeu - (100 - rating) / 12 ; IV = rating x 31 / 100, EV selon le tier, IA Smart dès 65.
+- Saison de 30 jours (`RtcGetLocalDayCount`, démarre à la 1re ouverture) : poules A / B tirées au sort (hasard fixe), mercato
+  jours 1-2, 10 journées (5 clubs en aller-retour = 10 tours, pas 9 comme dans la spec : jours 3, 5, 8, 11, 13, 16, 19, 21, 24, 27),
+  chaque club reçoit 4 fois et est exempt 2 fois ; finale jour 30 entre les 1ers de poule, terrain neutre, mort subite simulée
+  entre Capitaines si égalité. Départage : points, diff. K.O., confrontation directe, bonus offensifs.
+- Barème modèle 1 (`CalculateDuelPoints`). Simulation (`Club_SimulerDuel`) : +6 à domicile, +4 si 3 Pokémon profitent du stade,
+  P(domicile) = 50 % + 1,5 % par point d'écart ; écart >= 25 : 6-0 60 % ; écart <= 5 : fins à 1 survivant, 1 % de nul.
+  Forme de la saison : +1 toutes les 3 victoires, +2 par 6-0 (max +15, remise à zéro chaque saison).
+- Joueur licencié = la Recrue. Licence C / B / A / S 4 000 / 8 000 / 15 000 / 25 000 ¥ par saison (renouvelée d'office si assez
+  d'argent), transfert hors mercato : +50 % de l'ancienne licence. Son duel (« Jouer mon duel », menu L) : 6 contre 6 en simple
+  contre la Recrue adverse, sac interdit (`IsAllowedToUseBag`), soin avant / après, pas de blackout, XP normale ; à jouer avant
+  la journée suivante, sinon forfait 0-6. Prime : base + par point du club (800 + 400 à 2 500 + 1 200). Finaliste 15 000 ¥,
+  vainqueur 30 000 ¥ + Patch Talent (titres comptés). Il faut 6 Pokémon.
+- Effets de stade au 1er tour, 5 tours (Vent Arrière 4) via `startingStatus` du dresseur adverse ; Gravité ajoutée au moteur
+  (`STARTING_STATUS_GRAVITY_TEMPORARY`, `B_MSG_SET_GRAVITY`, `B_ANIM_GRAVITY`). Adversaire via `TRAINER_COURONNEMENT`
+  (`Club_CombatEnCours` / `Club_Adversaire` dans `GetCouronnementTrainer`).
+- Tableau de bord (fenêtre 30 x 13 sur le terrain, palette 13) : L / R onglets Classement (SELECT : poule), Feuille de match
+  (croix : journée / match, 4 duels et points), Effectif (croix : club, rating, bilan V-N-D) ; B pour quitter. Texte en fond
+  transparent (police de 12 px, lignes de 11 px). Aperçu sans émulateur : `make check TESTS="Clubs"` puis
+  `python3 tools/couronnement/apercu_clubs.py <journal> <prefixe>`.
+- Sauvegarde : `struct ClubLigueSave` (140 octets, nombre magique) dans SaveBlock3 : SaveBlock3 = 904 / 1 624 octets.
+  4 bits par duel (0 = pas joué, 1-6 victoire à domicile avec n survivants, 7-12 à l'extérieur, 13 nul), tout le reste recalculé.
+- `EDITION_TYCOON_SIM` (FALSE) dans `include/config/general.h` : à TRUE la compilation s'arrête (édition pas encore codée).
+- Pas encore fait (suite de la spec) : guichets physiques et finale jouée à la Tour de Combat (tout passe par le menu L),
+  phase 2 propriétaire (rachat, billetterie, droits TV, impôt 20 %, stade niv. 1-4, mercato / coaching des dresseurs IA,
+  onglets Mercato et Finances), PokéNav, blasons 16 x 16, édition Carrière & Business (intro adulte, sièges dans les arènes,
+  taxis, `league_loan_party.c`, `tycoon_scaling.c`).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -525,6 +561,10 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Prochaines étapes, dans l'ordre
 
+00. **Ligue des Clubs, suite** (spec du 17/11, voir « Fait (v0.42) ») : v0.43 phase 2 propriétaire (compte pro à la banque,
+    rachat, bilan du jour 30, stade, mercato / coaching) et onglets Mercato / Finances ; puis guichets dans les villes et finale à
+    la Tour de Combat ; puis l'édition Carrière & Business. À valider avec Adrien : 10 journées au lieu de 9, licence renouvelée
+    d'office, jeu depuis le menu L en attendant les guichets.
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Puis : objets tenus récupérés après combat, descriptions des Concours et du Pokédex en français, Blue / Ash / Lucas / Dawn (sprites à fournir).

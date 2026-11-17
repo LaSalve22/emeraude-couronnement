@@ -553,6 +553,7 @@ Couronnement_EventScript_MenuLRang::
 	dynmultipush Couronnement_Text_MenuLSociete, 10
 	dynmultipush Couronnement_Text_MenuLCommerces, 11
 	dynmultipush Couronnement_Text_MenuLBanques, 12
+	dynmultipush Couronnement_Text_MenuLClubs, 14
 	goto_if_unset FLAG_SYS_GAME_CLEAR, Couronnement_EventScript_MenuLFermer
 	dynmultipush Couronnement_Text_MenuLArenes, 13
 Couronnement_EventScript_MenuLFermer::
@@ -572,6 +573,7 @@ Couronnement_EventScript_MenuLFermer::
 	case 11, Couronnement_EventScript_MenuLCommerces
 	case 12, Couronnement_EventScript_MenuLBanques
 	case 13, Couronnement_EventScript_MenuLArenes
+	case 14, Couronnement_EventScript_MenuLClubs
 	closemessage
 	releaseall
 	end
@@ -613,6 +615,10 @@ Couronnement_EventScript_MenuLEV::
 
 Couronnement_EventScript_MenuLArenes::
 	call Arene_EventScript_MenuL
+	goto Couronnement_EventScript_MenuLBoucle
+
+Couronnement_EventScript_MenuLClubs::
+	call Club_EventScript_Appli
 	goto Couronnement_EventScript_MenuLBoucle
 
 Couronnement_EventScript_MenuLBanques::
@@ -664,6 +670,8 @@ Couronnement_Text_MenuLPC:
 	.string "PC de stockage$"
 Couronnement_Text_MenuLArenes:
 	.string "Mes arènes$"
+Couronnement_Text_MenuLClubs:
+	.string "Ligue des Clubs$"
 Couronnement_Text_MenuLBanques:
 	.string "Banques$"
 Couronnement_Text_MenuLCommerces:

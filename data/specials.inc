@@ -81,6 +81,14 @@ gSpecials::
 	def_special Banque_Fiche
 	def_special Banque_ScriptEmprunter
 	def_special Banque_ScriptRembourser
+	def_special Club_Ouvrir
+	def_special Club_Resume
+	def_special Club_TableauDeBord
+	def_special Club_PreparerMatch
+	def_special Club_DebutMatch
+	def_special Club_FinMatch
+	def_special Club_FicheLicence
+	def_special Club_ScriptSigner
 	def_special Arene_Ouvrir
 	def_special Arene_ScriptAcheter
 	def_special Arene_PreparerChallenger

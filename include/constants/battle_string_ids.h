@@ -1150,6 +1150,7 @@ enum StartingStatusStringID
     B_MSG_SET_STICKY_WEB,
     B_MSG_SET_STEALTH_ROCK,
     B_MSG_SET_SHARP_STEEL,
+    B_MSG_SET_GRAVITY,          // Émeraude Couronnement (v0.42)
     B_MSG_STARTING_STATUS_COUNT,
 };
 

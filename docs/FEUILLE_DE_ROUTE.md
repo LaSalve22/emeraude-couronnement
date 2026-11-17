@@ -52,6 +52,7 @@ et sur GitHub.
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 - v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
 - v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
+- v0.42 - Ligue des Clubs, 1re partie : 10 clubs de villes en 2 poules, saisons de 30 jours, licence (tier C à S), ton duel de Recrue en 6 contre 6 avec l'effet du stade, tableau de bord à 3 onglets (menu L)
 - v0.31 - Feurisson évolue en Typhlosion (Feu / Sol) le jour, en Typhlosion de Hisui la nuit ; lignée d'Arcko Plante / Dragon
 - v0.30.3 - boîtes de texte qui bloquaient corrigées (49 textes), page stats sans chevauchement, menus équipe / PC et types en français, Pokédex en mètres / kilos avec n° national hors Hoenn
 - v0.30 - Pokémon sombres violets avec aura qui pulse dans le résumé, stats « vraie -> avec bonus », Dark Ball plus sombre, boutiques et arbres à Baies en français

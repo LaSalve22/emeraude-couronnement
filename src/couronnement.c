@@ -2,6 +2,7 @@
 #include "calendrier.h"
 #include "couronnement.h"
 #include "arenes.h"
+#include "league_club.h"
 #include "battle.h"
 #include "battle_util.h"
 #include "data.h"
@@ -307,6 +308,8 @@ const struct Trainer *GetCouronnementTrainer(void)
 {
     if (Arene_CombatEnCours()) // v0.40 : challenger d'une arène du joueur
         return Arene_Challenger();
+    if (Club_CombatEnCours()) // v0.42 : duel de la Ligue des Clubs
+        return Club_Adversaire();
     return sAdversairePret ? &sAdversaire : AdversaireDeBase();
 }
 

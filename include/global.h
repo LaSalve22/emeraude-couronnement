@@ -312,6 +312,26 @@ struct AreneSave
     u16 magie;
 };
 
+// Émeraude Couronnement : Ligue des Clubs (v0.42), src/league_club.c. Constantes dans include/league_club.h.
+#define CLUB_LIGUE_NB_FORME 40   // CLUB_NB x CLUB_DRESSEURS
+#define CLUB_LIGUE_NB_DUELS 41   // 40 matchs de poule + la finale
+struct ClubLigueSave
+{
+    u16 magie;
+    u16 jourDebut;                    // jour (RtcGetLocalDayCount) du jour 1 de la saison 0
+    u16 saison;                       // saison en cours (0 = la première)
+    u16 jourTraite;                   // dernier jour traité
+    u8 club;                          // club du joueur + 1 (0 = pas de licence)
+    u8 drapeaux;                      // CLUB_DRAP_* (src/league_club.c)
+    u8 titres;                        // finales gagnées par le club du joueur
+    u8 finales;                       // finales jouées par le club du joueur
+    u8 mortSubite;                    // finale à égalité : 0 = pas encore, 1 = domicile, 2 = extérieur
+    u8 rapport;                       // événements à annoncer à la prochaine ouverture (bits)
+    u8 forme[CLUB_LIGUE_NB_FORME];    // par dresseur : bits 0-1 victoires (mod 3), bits 2-5 bonus de forme
+    u16 duels[CLUB_LIGUE_NB_DUELS];   // 4 duels par match, 4 bits chacun
+    u32 rapportArgent;                // primes / licences à annoncer
+};
+
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
@@ -331,6 +351,7 @@ struct SaveBlock3
     struct CouronnementSaison couronnementSaison; // Émeraude Couronnement (v0.39), src/couronnement.c
     struct AreneSave arenes; // Émeraude Couronnement (v0.40), src/arenes.c
     struct BourseOr bourseOr; // Émeraude Couronnement (v0.41), src/bourse.c
+    struct ClubLigueSave ligueClubs; // Émeraude Couronnement (v0.42), src/league_club.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

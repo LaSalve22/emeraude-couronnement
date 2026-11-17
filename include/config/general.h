@@ -84,6 +84,12 @@
 #define UNITS                        UNITS_METRIC // Couronnement : mètres et kilos
 #define CHAR_DEC_SEPARATOR           CHAR_PERIOD // CHAR_PERIOD is used as a decimal separator only in the UK and the US. The rest of the world uses CHAR_COMMA.
 
+// Émeraude Couronnement (v0.42) : double édition dans le même dépôt.
+// FALSE : aventure classique à 8 badges, avec la Ligue des Clubs (src/league_club.c).
+// TRUE  : édition « Carrière & Business » (joueur adulte, pas d'arènes, clubs dans les anciens bâtiments d'arène,
+//         taxis dès le jour 1, Pokémon de prêt, niveaux adaptés au tier du club). Pas encore codée : la compilation refuse.
+#define EDITION_TYCOON_SIM           FALSE
+
 // Naming Screen
 #define AUTO_LOWERCASE_KEYBOARD      GEN_LATEST  // Starting in GEN_6, after entering the first uppercase character, the keyboard switches to lowercase letters.
 

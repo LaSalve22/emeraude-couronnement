@@ -718,6 +718,8 @@ enum FaintedActions
     F(STARTING_STATUS_WEATHER_SNOW_TEMPORARY,         weatherSnowTemporary,       (u32, 1)) /* Temporary Snow */                           \
     F(STARTING_STATUS_WEATHER_FOG,                    weatherFog,                 (u32, 1)) /* Permanent Fog */                            \
     F(STARTING_STATUS_WEATHER_FOG_TEMPORARY,          weatherFogTemporary,        (u32, 1)) /* Temporary Fog */                            \
+    /* Émeraude Couronnement (v0.42) : stade d'Autéquia de la Ligue des Clubs */                                                           \
+    F(STARTING_STATUS_GRAVITY_TEMPORARY,              gravityTemporary,           (u32, 1)) /* Gravity Temporary (5 turns) */              \
 
 #define UNPACK_STARTING_STATUS_ENUMS(_enum, ...) _enum,
 

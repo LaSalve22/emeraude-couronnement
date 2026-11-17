@@ -53,6 +53,7 @@
 #include "constants/species.h"
 #include "constants/trainers.h"
 #include "constants/weather.h"
+#include "league_club.h"
 #include "constants/pokemon.h"
 #include "test/battle.h"
 
@@ -2636,6 +2637,16 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                         B_ANIM_TRICK_ROOM,
                         &gFieldTimers.trickRoomTimer, gStartingStatuses.trickRoom ? 0 : 5);
             gStartingStatuses.trickRoomTemporary = gStartingStatuses.trickRoom = FALSE;
+            return effect;
+        }
+        else if (gStartingStatuses.gravityTemporary) // Émeraude Couronnement (v0.42) : stade d'Autéquia
+        {
+            effect = SetStartingFieldStatus(
+                        STATUS_FIELD_GRAVITY,
+                        B_MSG_SET_GRAVITY,
+                        B_ANIM_GRAVITY,
+                        &gFieldTimers.gravityTimer, 5);
+            gStartingStatuses.gravityTemporary = FALSE;
             return effect;
         }
         else if (gStartingStatuses.magicRoom || gStartingStatuses.magicRoomTemporary)
@@ -10888,6 +10899,8 @@ bool32 IsBattlerInvalidForSpreadMove(enum BattlerId battlerAtk, enum BattlerId b
 
 bool32 IsAllowedToUseBag(void)
 {
+    if (Club_CombatEnCours()) // Émeraude Couronnement (v0.42) : pas d'objets du sac en Ligue des Clubs
+        return FALSE;
     switch (VarGet(B_VAR_NO_BAG_USE))
     {
     case NO_BAG_RESTRICTION:

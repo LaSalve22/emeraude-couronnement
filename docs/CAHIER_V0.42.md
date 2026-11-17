@@ -108,7 +108,7 @@ Lire d'abord `CLAUDE.md` (état v0.41.1, méthode de travail). Langue du jeu et 
    classement / Elo, salle intérieure avec ring où se jouent les matchs (remplace l'hôtesse du Centre Pokémon).
 2. **Niveaux** : décision finale d'Adrien (cahier du 16/11) : PAS d'égalisation automatique des niveaux ; le joueur se prépare
    avec les Bonbons XP et l'entraînement.
-3. **Ligue des clubs** (proposition d'Adrien du 16/11, à concevoir avec lui avant de coder) : 10 clubs de villes en 2 poules de 5,
+3. **Ligue des clubs** (spec complète d'Adrien le 17/11 ; 1re partie livrée en v0.42, voir `CLAUDE.md`) : 10 clubs de villes en 2 poules de 5,
    4 dresseurs par club, duels en 6 contre 6 ; le joueur peut être licencié (1 place) ou président (4 places). Esquisse fournie :
 
 ```c
