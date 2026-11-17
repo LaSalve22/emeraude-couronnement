@@ -516,7 +516,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Prochaines étapes, dans l'ordre
 
-0. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
+0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
+0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Puis : objets tenus récupérés après combat, descriptions des Concours et du Pokédex en français, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
