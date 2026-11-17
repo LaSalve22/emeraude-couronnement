@@ -89,6 +89,17 @@ gSpecials::
 	def_special Club_FinMatch
 	def_special Club_FicheLicence
 	def_special Club_ScriptSigner
+	def_special Club_ScriptPropriete
+	def_special Club_FicheRachat
+	def_special Club_ScriptRacheter
+	def_special Club_ResumeProprio
+	def_special Club_PreparerVivier
+	def_special Club_ScriptRecruter
+	def_special Club_ScriptCoacher
+	def_special Club_DevisStade
+	def_special Club_ScriptAgrandir
+	def_special Club_ScriptBoutique
+	def_special Club_ScriptRevendre
 	def_special Arene_Ouvrir
 	def_special Arene_ScriptAcheter
 	def_special Arene_PreparerChallenger

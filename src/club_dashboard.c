@@ -59,12 +59,19 @@ static const u8 sTexteBandeauGris[] = {TEXT_COLOR_TRANSPARENT, COUL_GRIS, COUL_O
 
 #define LIGNE 11
 
-enum { ONGLET_CLASSEMENT, ONGLET_MATCH, ONGLET_EFFECTIF, NB_ONGLETS };
+// Licencié : 3 onglets ; propriétaire : 5 (Mercato et Finances en plus).
+enum { ONGLET_CLASSEMENT, ONGLET_MATCH, ONGLET_EFFECTIF, ONGLET_MERCATO, ONGLET_FINANCES, NB_ONGLETS };
 
 static const u8 *const sOnglets[NB_ONGLETS] =
 {
     COMPOUND_STRING("Classement"), COMPOUND_STRING("Match"), COMPOUND_STRING("Effectif"),
+    COMPOUND_STRING("Mercato"), COMPOUND_STRING("Finances"),
 };
+
+static u32 NbOnglets(void)
+{
+    return Club_Proprio() != CLUB_AUCUN ? NB_ONGLETS : ONGLET_MERCATO;
+}
 
 enum { T_FENETRE, T_ONGLET, T_POULE, T_JOURNEE, T_MATCH, T_CLUB };
 
@@ -113,13 +120,15 @@ static void Bandeau(u8 fen, u32 onglet, u32 clubCouleur)
 
     ChargerCouleurClub(clubCouleur);
     FillWindowPixelRect(fen, COUL_CLUB, 0, 0, DASH_LARGEUR * 8, 13);
-    for (i = 0; i < NB_ONGLETS; i++)
+    for (i = 0; i < NbOnglets(); i++)
     {
         Texte(fen, i == onglet ? sTexteBandeau : sTexteBandeauGris, x, 1, sOnglets[i]);
         if (i == onglet)
             FillWindowPixelRect(fen, COUL_OR, x, 11, GetStringWidth(FONT_SMALL, sOnglets[i], 0), 1);
         x += GetStringWidth(FONT_SMALL, sOnglets[i], 0) + 10;
     }
+    if (NbOnglets() == NB_ONGLETS)
+        return; // pas la place pour la saison avec 5 onglets
     fin = StringCopy(txt, sText_Saison);
     fin = Nombre(fin, Club_Saison() + 1, FALSE);
     fin = StringCopy(fin, sText_Jour);
@@ -423,6 +432,113 @@ static void DessinerEffectif(u8 fen, u32 club)
 
 // ---------------------------------------------------------------- tâche
 
+// ---------------------------------------------------------------- onglet Mercato (propriétaire)
+
+static const u8 sText_ColSalaire[] = _("Salaire/saison");
+static const u8 sText_Origine[] = _("origine");
+static const u8 sText_Recrue[] = _("recrue");
+static const u8 sText_Coach[] = _(" +");
+static const u8 sText_Vivier[] = _("Vivier : ");
+static const u8 sText_Dispo[] = _(" dresseurs battus à recruter.");
+static const u8 sText_YenK[] = _(" ¥");
+
+static void DessinerMercato(u8 fen)
+{
+    u8 txt[40], *fin;
+    u32 club = Club_Proprio(), s, dispo = 0, i;
+
+    Texte(fen, sTexteOr, 4, 15, Club_Nom(club));
+    TexteDroite(fen, sTexteGris, 236, 15, sText_ColSalaire);
+    FillWindowPixelRect(fen, COUL_GRILLE, 4, 26, 232, 1);
+    for (s = 0; s < CLUB_DRESSEURS; s++)
+    {
+        u32 y = 28 + s * LIGNE;
+        bool32 toi = (s == CLUB_SLOT_JOUEUR);
+        Texte(fen, sTexteGris, 4, y, Club_NomSlot(s));
+        Texte(fen, toi ? sTexteOr : sTexte, 56, y, Club_NomDresseur(club, s));
+        if (toi)
+        {
+            TexteDroite(fen, sTexteOr, 236, y, sText_Toi);
+            continue;
+        }
+        fin = Nombre(txt, Club_Rating(club, s), FALSE);
+        if (gSaveBlock3Ptr->ligueClubs.coaching[s])
+        {
+            fin = StringCopy(fin, sText_Coach);
+            Nombre(fin, gSaveBlock3Ptr->ligueClubs.coaching[s], FALSE);
+        }
+        Texte(fen, sTexte, 112, y, txt);
+        Texte(fen, sTexteGris, 150, y, gSaveBlock3Ptr->ligueClubs.effectif[s] ? sText_Recrue : sText_Origine);
+        fin = Nombre(txt, Club_Salaire(club, s), FALSE);
+        StringCopy(fin, sText_YenK);
+        TexteDroite(fen, sTexte, 236, y, txt);
+    }
+    for (i = 0; i < CLUB_NB_RECRUES; i++)
+        dispo += Club_RecrueDisponible(i);
+    fin = StringCopy(txt, sText_Vivier);
+    fin = Nombre(fin, dispo, FALSE);
+    StringCopy(fin, sText_Dispo);
+    Texte(fen, sTexteGris, 4, 28 + CLUB_DRESSEURS * LIGNE + 1, txt);
+    Texte(fen, sTexteGris, 4, 28 + (CLUB_DRESSEURS + 1) * LIGNE + 1, COMPOUND_STRING("Recruter et coacher : menu Propriété."));
+}
+
+// ---------------------------------------------------------------- onglet Finances (propriétaire)
+
+static const u8 *const sLignesBilan[6] =
+{
+    COMPOUND_STRING("Billetterie (4 matchs)"), COMPOUND_STRING("Droits TV et sponsors"), COMPOUND_STRING("Boutique"),
+    COMPOUND_STRING("Salaires et entretien"), COMPOUND_STRING("Impôt (20 %)"), COMPOUND_STRING("Résultat net prévu"),
+};
+static const u8 sText_Places[] = _(" places");
+static const u8 sText_Start[] = _("START : agrandir (");
+static const u8 sText_StartMax[] = _("Stade au niveau maximum.");
+static const u8 sText_Dernier[] = _("Saison passée ");
+
+static void DessinerFinances(u8 fen)
+{
+    u32 lignes[6], club = Club_Proprio(), i;
+    u8 txt[40], *fin;
+
+    Club_Previsionnel(Club_Points(club), FALSE, lignes);
+    fin = StringCopy(txt, Club_NomNiveauStade());
+    *fin++ = CHAR_COMMA;
+    *fin++ = CHAR_SPACE;
+    fin = Nombre(fin, Club_Places(), FALSE);
+    StringCopy(fin, sText_Places);
+    Texte(fen, sTexteOr, 4, 15, txt);
+    fin = StringCopy(txt, sText_Dernier);
+    fin = Nombre(fin, (s32)gSaveBlock3Ptr->ligueClubs.bilan[CLUB_BILAN_NET], TRUE);
+    StringCopy(fin, sText_YenK);
+    TexteDroite(fen, sTexteGris, 236, 15, txt);
+    FillWindowPixelRect(fen, COUL_GRILLE, 4, 27, 232, 1);
+    for (i = 0; i < 6; i++)
+    {
+        u32 y = 29 + i * 10;
+        bool32 depense = (i == CLUB_BILAN_CHARGES || i == CLUB_BILAN_IMPOT);
+        const u8 *coul = i == CLUB_BILAN_NET ? ((s32)lignes[i] >= 0 ? sTexteVert : sTexteRouge) : (depense ? sTexteRouge : sTexte);
+        Texte(fen, i == CLUB_BILAN_NET ? sTexteOr : sTexteGris, 4, y, sLignesBilan[i]);
+        if (i == CLUB_BILAN_NET)
+            fin = Nombre(txt, (s32)lignes[i], TRUE);
+        else
+            fin = Nombre(txt, depense ? -(s32)lignes[i] : (s32)lignes[i], depense ? FALSE : TRUE);
+        StringCopy(fin, sText_YenK);
+        TexteDroite(fen, coul, 236, y, txt);
+    }
+    if (Club_CoutTravaux())
+    {
+        fin = StringCopy(txt, sText_Start);
+        fin = Nombre(fin, Club_CoutTravaux(), FALSE);
+        fin = StringCopy(fin, sText_YenK);
+        *fin++ = CHAR_RIGHT_PAREN;
+        *fin = EOS;
+        Texte(fen, sTexteGris, 4, 92, txt);
+    }
+    else
+    {
+        Texte(fen, sTexteGris, 4, 92, sText_StartMax);
+    }
+}
+
 // Dessine un onglet dans la fenêtre (aussi utilisé par le test d'aperçu, TESTS="Clubs").
 void Club_TableauDessiner(u8 fen, u32 onglet, u32 poule, u32 journee, u32 match, u32 club)
 {
@@ -438,6 +554,14 @@ void Club_TableauDessiner(u8 fen, u32 onglet, u32 poule, u32 journee, u32 match,
     case ONGLET_MATCH:
         Bandeau(fen, onglet, joueur);
         DessinerMatch(fen, journee, match);
+        break;
+    case ONGLET_MERCATO:
+        Bandeau(fen, onglet, Club_Proprio());
+        DessinerMercato(fen);
+        break;
+    case ONGLET_FINANCES:
+        Bandeau(fen, onglet, Club_Proprio());
+        DessinerFinances(fen);
         break;
     default:
         Bandeau(fen, onglet, club);
@@ -459,9 +583,12 @@ static void Task_TableauDeBord(u8 taskId)
     s16 *data = gTasks[taskId].data;
     bool32 redessiner = TRUE;
 
-    if (JOY_NEW(B_BUTTON))
+    bool32 agrandir = (data[T_ONGLET] == ONGLET_FINANCES && JOY_NEW(START_BUTTON) && Club_CoutTravaux());
+
+    if (JOY_NEW(B_BUTTON) || agrandir)
     {
         u8 fen = data[T_FENETRE];
+        gSpecialVar_Result = agrandir; // 1 : le script enchaîne sur le devis des travaux
         PlaySE(SE_SELECT);
         ClearWindowTilemap(fen);
         CopyWindowToVram(fen, COPYWIN_MAP);
@@ -472,9 +599,9 @@ static void Task_TableauDeBord(u8 taskId)
         return;
     }
     if (JOY_NEW(R_BUTTON))
-        data[T_ONGLET] = (data[T_ONGLET] + 1) % NB_ONGLETS;
+        data[T_ONGLET] = (data[T_ONGLET] + 1) % NbOnglets();
     else if (JOY_NEW(L_BUTTON))
-        data[T_ONGLET] = (data[T_ONGLET] + NB_ONGLETS - 1) % NB_ONGLETS;
+        data[T_ONGLET] = (data[T_ONGLET] + NbOnglets() - 1) % NbOnglets();
     else if (data[T_ONGLET] == ONGLET_CLASSEMENT && JOY_NEW(SELECT_BUTTON))
         data[T_POULE] ^= 1;
     else if (data[T_ONGLET] == ONGLET_MATCH && JOY_NEW(DPAD_RIGHT))

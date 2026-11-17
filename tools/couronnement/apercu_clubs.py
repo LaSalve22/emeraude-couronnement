@@ -27,12 +27,12 @@ def png(chemin, larg, haut, rgb):
 
 def main():
     journal, prefixe = sys.argv[1], sys.argv[2]
-    donnees = {0: "", 1: "", 2: "", 3: ""}
+    donnees = {i: "" for i in range(6)}
     for ligne in open(journal, errors="replace"):
         m = re.search(r"CLUB (\d):([0-9a-f]+)", ligne)
         if m:
             donnees[int(m.group(1))] += m.group(2)
-    for mode, nom in ((0, "classement"), (1, "match"), (2, "match2"), (3, "effectif")):
+    for mode, nom in ((0, "classement"), (1, "match"), (2, "match2"), (3, "effectif"), (4, "mercato"), (5, "finances")):
         if not donnees[mode]:
             continue
         octets = bytes.fromhex(donnees[mode])

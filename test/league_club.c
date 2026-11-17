@@ -8,6 +8,7 @@
 #include "window.h"
 #include "test/test.h"
 #include "constants/items.h"
+#include "constants/flags.h"
 
 // Émeraude Couronnement (v0.42) : Ligue des Clubs.
 
@@ -205,10 +206,23 @@ TEST("Clubs: dashboard preview")
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, &sBg, 1);
     InitWindows(sFen);
-    for (vue = 0; vue < 4; vue++)
+    for (vue = 0; vue < 6; vue++)
     {
         m = Club_MatchDuJoueur();
-        if (vue == 0)
+        if (vue == 4) // le joueur rachète son club : onglets Mercato et Finances
+        {
+            gSaveBlock2Ptr->pokedex.societe.etat = 1;
+            gSaveBlock2Ptr->pokedex.societe.tresorerie = 2000000;
+            LC.titres = 1;
+            FlagSet(FLAG_BADGE01_GET);
+            EXPECT(Club_Racheter(6));
+            EXPECT(Club_Recruter(0, 8));
+            EXPECT(Club_Coacher(0, 2));
+            FlagClear(FLAG_BADGE01_GET);
+        }
+        if (vue >= 4)
+            Club_TableauDessiner(0, vue - 1, 0, 0, 0, 6);
+        else if (vue == 0)
             Club_TableauDessiner(0, 0, Club_Poule(6), 0, 0, 6);
         else if (vue == 1)
             Club_TableauDessiner(0, 1, 0, m / CLUB_MATCHS_PAR_JOURNEE, m % CLUB_MATCHS_PAR_JOURNEE, 6);
@@ -230,4 +244,75 @@ TEST("Clubs: dashboard preview")
         }
     }
     FreeAllWindowBuffers();
+}
+
+// ---------------------------------------------------------------- phase 2 : propriétaire
+
+#define SOC (gSaveBlock2Ptr->pokedex.societe)
+
+static void PreparerProprio(u32 tresorerie)
+{
+    Preparer(0);
+    memset(&SOC, 0, sizeof(SOC));
+    SOC.etat = 1; // société créée
+    SOC.tresorerie = tresorerie;
+    LC.titres = 1;
+}
+
+TEST("Clubs: buying a club needs a title and a company")
+{
+    Preparer(1000000);
+    memset(&SOC, 0, sizeof(SOC));
+    EXPECT(!Club_Racheter(0));             // pas de titre
+    LC.titres = 1;
+    EXPECT(!Club_Racheter(0));             // pas de société
+    SOC.etat = 1;
+    SOC.tresorerie = 300000;
+    SetMoney(&gSaveBlock1Ptr->money, 0);
+    EXPECT(Club_Racheter(0));              // AC Clémenti, tier C : 250 000
+    EXPECT_EQ(SOC.tresorerie, 50000);
+    EXPECT_EQ(Club_Proprio(), 0);
+    EXPECT_EQ(Club_DuJoueur(), 0);
+    EXPECT_EQ(Club_Valeur(), 250000);
+    EXPECT(!Club_Signer(2));               // un propriétaire joue dans son club
+}
+
+TEST("Clubs: the season balance is paid to the company")
+{
+    u32 avant, lignes[6];
+    PreparerProprio(250000);
+    EXPECT(Club_Racheter(0));
+    Club_Previsionnel(0, FALSE, lignes);
+    EXPECT_EQ(lignes[CLUB_BILAN_BILLETTERIE], 4 * 1000 * 50 / 100 * 50); // remplissage 50 % à 0 point
+    EXPECT_EQ(lignes[CLUB_BILAN_TV], 20000);
+    EXPECT_EQ(lignes[CLUB_BILAN_BOUTIQUE], lignes[CLUB_BILAN_BILLETTERIE] / 10);
+    avant = SOC.tresorerie;
+    Club_MettreAJourJusqua(DEBUT + 30); // fin de la saison 0
+    EXPECT_NE(LC.bilan[CLUB_BILAN_BILLETTERIE], 0);
+    EXPECT_EQ(LC.bilan[CLUB_BILAN_IMPOT], ((s32)LC.bilan[CLUB_BILAN_NET] + LC.bilan[CLUB_BILAN_IMPOT]) / 5);
+    EXPECT_EQ(SOC.tresorerie, avant + LC.bilan[CLUB_BILAN_NET]);
+    EXPECT_EQ(Club_DuJoueur(), 0); // pas de licence à payer
+}
+
+TEST("Clubs: recruits, coaching, stadium and resale")
+{
+    PreparerProprio(2000000);
+    EXPECT(Club_Racheter(0));
+    FlagClear(FLAG_BADGE01_GET);
+    EXPECT(!Club_Recruter(0, 8));          // Roxanne : il faut l'avoir battue
+    FlagSet(FLAG_BADGE01_GET);
+    EXPECT(Club_Recruter(0, 8));
+    EXPECT_EQ(SOC.tresorerie, 2000000 - 250000 - 80 * 80 * 5);
+    EXPECT_EQ(Club_Rating(0, 0), 80);
+    EXPECT(!Club_Recruter(1, 8));          // déjà au club
+    EXPECT(Club_Coacher(0, 2));
+    EXPECT_EQ(Club_Rating(0, 0), 82);
+    EXPECT(Club_Recruter(0, CLUB_NB_RECRUES)); // retour du Capitaine d'origine
+    EXPECT_EQ(Club_Rating(0, 0), 58);
+    EXPECT(Club_AgrandirStade());
+    EXPECT_EQ(Club_Places(), 4000);
+    EXPECT_EQ(Club_Valeur(), 250000 + 150000);
+    EXPECT_EQ(Club_Revendre(), (250000 + 150000) * 80 / 100);
+    EXPECT_EQ(Club_Proprio(), CLUB_AUCUN);
+    FlagClear(FLAG_BADGE01_GET);
 }

@@ -52,6 +52,53 @@ enum ClubStade
 #define CLUB_PRIME_VAINQUEUR    30000   // + Patch Talent
 #define CLUB_CLAUSE_POURCENT    50      // hors mercato : +50 % de l'ancienne licence
 
+struct ClubDresseur
+{
+    const u8 *nom;
+    u8 classe;
+    u16 pic;
+    bool8 fille;
+    u8 rating;
+    u16 especes[CLUB_TAILLE_EQUIPE]; // premier stade : l'équipe évolue avec le niveau
+};
+
+// Phase 2 : propriétaire (src/league_club_finances.c). Par tier C / B / A / S, puis par niveau de stade 1 à 4.
+#define CLUB_TITRES_REQUIS      1       // titres de la Ligue des Clubs pour racheter un club
+#define CLUB_NB_RECRUES         20
+#define CLUB_PLACES_RECRUTEMENT 3       // Capitaine et Titulaires ; le joueur reste la Recrue
+#define CLUB_NB_STADES          4
+#define CLUB_IMPOT_POURCENT     20
+#define CLUB_PRIX_BOUTIQUE      120000  // tenues officielles + Poké Balls Devon : boutique 25 % au lieu de 10 %
+#define CLUB_REVENTE_POURCENT   80
+#define CLUB_COACHING_MAX       20
+#define CLUB_DRAP_BOUTIQUE      (1 << 1)  // LC.drapeaux : boutique officielle ouverte
+#define CLUB_RAPPORT_BILAN      (1 << 6)  // LC.rapport : bilan de fin de saison à annoncer
+enum { CLUB_BILAN_BILLETTERIE, CLUB_BILAN_TV, CLUB_BILAN_BOUTIQUE, CLUB_BILAN_CHARGES, CLUB_BILAN_IMPOT, CLUB_BILAN_NET };
+
+const struct ClubDresseur *Club_Dresseur(u32 club, u32 slot); // tient compte des recrues du club possédé
+const struct ClubDresseur *Club_Recrue(u32 recrue);
+bool32 Club_RecrueDisponible(u32 recrue);                    // débloquée (badges, Ligue)
+u32 Club_Proprio(void);                                       // club possédé (CLUB_AUCUN sinon)
+u32 Club_PrixRachat(u32 club);
+bool32 Club_PeutRacheter(void);                               // titre + société créée
+bool32 Club_Racheter(u32 club);
+u32 Club_Revendre(void);                                      // montant versé à la société
+u32 Club_Salaire(u32 club, u32 slot);                         // par saison (0 pour le joueur)
+u32 Club_Places(void);
+u32 Club_PrixBillet(void);
+u32 Club_Entretien(void);
+u32 Club_CoutTravaux(void);                                   // prochain niveau (0 si maximum)
+bool32 Club_AgrandirStade(void);
+bool32 Club_AcheterBoutique(void);
+bool32 Club_Recruter(u32 place, u32 recrue);                  // recrue = CLUB_NB_RECRUES : rend la place au dresseur d'origine
+bool32 Club_Coacher(u32 place, u32 bonus);
+void Club_Previsionnel(u32 points, bool32 finale, u32 *lignes); // 6 lignes comme le bilan
+void Club_Bilan(void);                                        // fin de saison : encaisse le résultat
+u32 Club_Valeur(void);                                        // comptée dans la valeur de la société
+const u8 *Club_NomNiveauStade(void);
+u8 *Club_TexteBilan(u8 *fin);
+void Club_QuitterClub(void);                                  // libère la place (duel en attente joué par la Recrue)
+
 struct ClubDuel { u8 domicile, exterieur; }; // points d'un duel
 
 // Moteur (testable)

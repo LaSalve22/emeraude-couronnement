@@ -330,6 +330,13 @@ struct ClubLigueSave
     u8 forme[CLUB_LIGUE_NB_FORME];    // par dresseur : bits 0-1 victoires (mod 3), bits 2-5 bonus de forme
     u16 duels[CLUB_LIGUE_NB_DUELS];   // 4 duels par match, 4 bits chacun
     u32 rapportArgent;                // primes / licences à annoncer
+    // v0.42 phase 2 : propriétaire (zéros sur les sauvegardes v0.42 = pas de club possédé)
+    u8 proprio;                       // club possédé + 1 (0 = aucun)
+    u8 stade;                         // niveau du stade - 1 (0 à 3)
+    u8 effectif[3];                   // Capitaine, Titulaires : recrue + 1 (0 = dresseur d'origine)
+    u8 coaching[3];                   // bonus de rating permanent de ces trois places
+    u32 investi;                      // rachat + travaux + boutique officielle (valeur comptable)
+    u32 bilan[6];                     // dernier bilan : billetterie, TV, boutique, charges, impôt, résultat (s32)
 };
 
 struct SaveBlock3

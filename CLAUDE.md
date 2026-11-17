@@ -550,6 +550,29 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   onglets Mercato et Finances), PokéNav, blasons 16 x 16, édition Carrière & Business (intro adulte, sièges dans les arènes,
   taxis, `league_loan_party.c`, `tycoon_scaling.c`).
 
+## Fait (v0.43) - Ligue des Clubs, phase 2 (propriétaire)
+
+- `src/league_club_finances.c` (+ `struct ClubDresseur` et constantes `CLUB_*` dans `include/league_club.h`). Tests : `TESTS="Clubs"` (14).
+- Rachat (menu L > Ligue des Clubs > Propriété du club) : il faut `CLUB_TITRES_REQUIS` (1) titre de la Ligue des Clubs et une
+  société créée (sa trésorerie = le « compte pro » ; paiement trésorerie d'abord, puis argent du joueur, comme les arènes).
+  Prix C / B / A / S : 250 000 / 450 000 / 750 000 / 1 200 000 ¥. Le propriétaire joue la Recrue de son club sans licence
+  (transfert impossible). `Club_Valeur` (rachat + travaux + boutique) compte dans la valeur de la société. Revente : 80 %.
+- Bilan à la clôture de la saison (`Club_Bilan` dans `FinSaison`) : billetterie 4 matchs x places x remplissage (50 % + pts x 50 / 120,
+  max 100 %) x billet ; TV + sponsors 20 / 40 / 60 / 80k + 1 500 x pts + 50 000 si finale ; boutique 10 % de la billetterie
+  (25 % avec la boutique officielle, 120 000 ¥) ; charges = salaires (rating² x 5 par saison pour Capitaine et Titulaires,
+  0 pour le joueur) + entretien ; impôt 20 % du bénéfice ; résultat versé à la société (perte prise sur elle, puis sur le joueur).
+  Rapport à l'ouverture suivante. Stade 1-4 : 1 000 / 4 000 / 10 000 / 25 000 places, billet 50 / 80 / 110 / 150, entretien
+  8 / 15 / 25 / 40k, travaux 150 000 / 400 000 / 900 000. Attention : au niveau 4, la billetterie seule rapporte ~11 M¥ par saison
+  (chiffres de la spec), à rééquilibrer si Adrien le souhaite.
+- Recrutement : vivier de 20 (`sRecrues`) : 4 Espoirs (58-67, 2e badge), 4 Vétérans (70-78, 5e badge), 7 Champions d'Arène
+  (80-89, leur badge ; pas Lévy & Tatia), Conseil 4 + Marc (90-96, après la Ligue). Prime de signature = 1 saison de salaire.
+  Places Capitaine / Titulaires uniquement (`Club_Dresseur` remplace le dresseur d'origine partout : simulation, noms, rating).
+  Coaching : Bonbon Exp. L +1, XL +2 de rating permanent (max +20, rating 100).
+- Tableau de bord propriétaire : 5 onglets (+ Mercato : effectif, rating, salaires ; + Finances : prévisionnel, START = devis des
+  travaux, le script enchaîne via VAR_RESULT = 1). La saison n'est plus affichée dans le bandeau à 5 onglets.
+- Sauvegarde : `ClubLigueSave` passe à 180 octets (champs ajoutés à la fin, zéros sur une sauvegarde v0.42 = pas de club possédé) ;
+  SaveBlock3 = 944 / 1 624 octets.
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -561,10 +584,9 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Prochaines étapes, dans l'ordre
 
-00. **Ligue des Clubs, suite** (spec du 17/11, voir « Fait (v0.42) ») : v0.43 phase 2 propriétaire (compte pro à la banque,
-    rachat, bilan du jour 30, stade, mercato / coaching) et onglets Mercato / Finances ; puis guichets dans les villes et finale à
-    la Tour de Combat ; puis l'édition Carrière & Business. À valider avec Adrien : 10 journées au lieu de 9, licence renouvelée
-    d'office, jeu depuis le menu L en attendant les guichets.
+00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2 faites (v0.42, v0.43). Reste : guichets dans les villes et finale
+    à la Tour de Combat, PokéNav, blasons, objets compétitifs en coaching ; puis l'édition Carrière & Business. À valider avec
+    Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
 1. Puis : objets tenus récupérés après combat, descriptions des Concours et du Pokédex en français, Blue / Ash / Lucas / Dawn (sprites à fournir).

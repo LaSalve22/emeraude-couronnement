@@ -47,16 +47,6 @@ enum
     CLUB_RAPPORT_SAISON     = 1 << 5,
 };
 
-struct ClubDresseur
-{
-    const u8 *nom;
-    u8 classe;
-    u16 pic;
-    bool8 fille;
-    u8 rating;
-    u16 especes[CLUB_TAILLE_EQUIPE]; // premier stade : l'équipe évolue avec le niveau
-};
-
 struct ClubInfo
 {
     const u8 *nom;
@@ -597,11 +587,27 @@ const u8 *Club_NomStade(u32 club)
     return sClubs[club % CLUB_NB].stade;
 }
 
+u32 Club_Proprio(void)
+{
+    if (LC.magie != CLUB_MAGIE || LC.proprio == 0 || LC.proprio > CLUB_NB)
+        return CLUB_AUCUN;
+    return LC.proprio - 1;
+}
+
+const struct ClubDresseur *Club_Dresseur(u32 club, u32 slot)
+{
+    club %= CLUB_NB;
+    slot %= CLUB_DRESSEURS;
+    if (club == Club_Proprio() && slot < CLUB_PLACES_RECRUTEMENT && LC.effectif[slot] != 0)
+        return Club_Recrue(LC.effectif[slot] - 1);
+    return &sClubs[club].d[slot];
+}
+
 const u8 *Club_NomDresseur(u32 club, u32 slot)
 {
     if (club == ClubJoueur() && slot == CLUB_SLOT_JOUEUR)
         return gSaveBlock2Ptr->playerName;
-    return sClubs[club % CLUB_NB].d[slot % CLUB_DRESSEURS].nom;
+    return Club_Dresseur(club, slot)->nom;
 }
 
 u32 Club_CouleurClub(u32 club)
@@ -617,7 +623,10 @@ u32 Club_Titres(void)
 u32 Club_Rating(u32 club, u32 slot)
 {
     u32 i = (club % CLUB_NB) * CLUB_DRESSEURS + (slot % CLUB_DRESSEURS);
-    return sClubs[club % CLUB_NB].d[slot % CLUB_DRESSEURS].rating + (LC.forme[i] >> 2);
+    u32 r = Club_Dresseur(club, slot)->rating + (LC.forme[i] >> 2);
+    if (club == Club_Proprio() && slot < CLUB_PLACES_RECRUTEMENT)
+        r += LC.coaching[slot];
+    return r;
 }
 
 // Espèce évoluée pour un niveau : évolutions par niveau à leur niveau, les autres (pierre, échange, amitié) au N.36.
@@ -681,7 +690,7 @@ static bool32 ProfiteDuStade(u32 species, u32 stade)
 
 u32 Club_RatingEffectif(u32 club, u32 slot, u32 stade, bool32 domicile)
 {
-    const struct ClubDresseur *d = &sClubs[club % CLUB_NB].d[slot % CLUB_DRESSEURS];
+    const struct ClubDresseur *d = Club_Dresseur(club, slot);
     u32 i, niveau = NiveauDresseur(club, slot), profitent = 0, r = Club_Rating(club, slot);
 
     for (i = 0; i < CLUB_TAILLE_EQUIPE; i++)
@@ -925,13 +934,19 @@ static void FinSaison(u32 nouvelleSaison)
 
     ForfaitsAvant(CLUB_MATCH_FINALE + 1);
     ConclureFinale();
+    if (Club_Proprio() != CLUB_AUCUN)
+        Club_Bilan(); // billetterie, droits TV, boutique, salaires, entretien, impôt : avant la remise à zéro
     LC.saison = nouvelleSaison;
     memset(LC.duels, 0, sizeof(LC.duels));
     memset(LC.forme, 0, sizeof(LC.forme));
     LC.mortSubite = 0;
     LC.drapeaux &= ~CLUB_DRAP_FINALE_CONCLUE;
     LC.rapport |= CLUB_RAPPORT_SAISON;
-    if (club != CLUB_AUCUN)
+    if (club != CLUB_AUCUN && club == Club_Proprio())
+    {
+        LC.rapport |= CLUB_RAPPORT_RENOUVELEE; // le propriétaire joue sans licence
+    }
+    else if (club != CLUB_AUCUN)
     {
         u32 prix = Club_PrixLicence(club);
         if (IsEnoughMoney(&gSaveBlock1Ptr->money, prix))
@@ -992,21 +1007,26 @@ u32 Club_CoutSignature(u32 club)
 
 bool32 Club_Signer(u32 club)
 {
-    u32 cout, m;
+    u32 cout;
 
-    if (club >= CLUB_NB || club == ClubJoueur())
-        return FALSE;
+    if (club >= CLUB_NB || club == ClubJoueur() || Club_Proprio() != CLUB_AUCUN)
+        return FALSE; // un propriétaire joue dans son club
     cout = Club_CoutSignature(club);
     if (!IsEnoughMoney(&gSaveBlock1Ptr->money, cout))
         return FALSE;
     RemoveMoney(&gSaveBlock1Ptr->money, cout);
-    // Un duel en attente dans l'ancien club est joué par la Recrue qui reprend sa place.
-    m = Club_MatchDuJoueur();
+    Club_QuitterClub();
+    LC.club = club + 1;
+    return TRUE;
+}
+
+// Un duel en attente dans l'ancien club est joué par la Recrue qui reprend sa place.
+void Club_QuitterClub(void)
+{
+    u32 m = Club_MatchDuJoueur();
     LC.club = 0;
     if (m != 0xFF)
         AppliquerDuel(m, CLUB_SLOT_JOUEUR, Club_SimulerDuel(m, CLUB_SLOT_JOUEUR));
-    LC.club = club + 1;
-    return TRUE;
 }
 
 // Prime du match pour le joueur : base + par point marqué par son club dans la rencontre.
@@ -1351,6 +1371,8 @@ void Club_Ouvrir(void)
         fin = AjouterYens(fin, LC.rapportArgent);
         fin = StringCopy(fin, sText_Point);
     }
+    if (r & CLUB_RAPPORT_BILAN)
+        fin = Club_TexteBilan(fin);
     if (gStringVar4[0] == CHAR_PROMPT_SCROLL || gStringVar4[0] == CHAR_PROMPT_CLEAR)
         memmove(gStringVar4, gStringVar4 + 1, StringLength(gStringVar4)); // pas de saut de page en tête
     LC.rapport = 0;
