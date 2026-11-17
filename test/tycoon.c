@@ -40,3 +40,17 @@ TEST("Carriere: the starting profile sets the money")
     EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 6000);
     EXPECT_EQ(Tycoon_Profil(), 2);
 }
+
+TEST("Carriere: the target level follows the club tier")
+{
+    memset(&gSaveBlock3Ptr->ligueClubs, 0, sizeof(gSaveBlock3Ptr->ligueClubs));
+    SetMoney(&gSaveBlock1Ptr->money, 100000);
+    Club_MettreAJourJusqua(1000);
+    EXPECT_EQ(Tycoon_NiveauCible(), TYCOON_NIVEAU_DEPART);   // sans club
+    EXPECT(Club_Signer(0));
+    EXPECT_EQ(Tycoon_NiveauCible(), TYCOON_NIVEAU_DEPART);   // tier C, 1re saison
+    Club_MettreAJourJusqua(1030);
+    EXPECT_EQ(Tycoon_NiveauCible(), TYCOON_NIVEAU_C);        // tier C, saison suivante
+    EXPECT(Club_Signer(9));
+    EXPECT_EQ(Tycoon_NiveauCible(), TYCOON_NIVEAU_S);
+}

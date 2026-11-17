@@ -15,6 +15,16 @@ bool32 Tycoon_CapaciteDebloquee(u32 fieldMove);   // règle de l'édition Carri�
 bool32 Tycoon_CapaciteSansPokemon(u32 fieldMove); // Carrière : pas besoin qu'un Pokémon connaisse la capacité
 u32 Tycoon_TierRequis(u32 fieldMove);             // CLUB_TIER_* ; 0xFF = toujours (taxis)
 bool32 Couronnement_ChampionsAtteint(void);
+// Niveaux par tier (v0.50) : N.10 sans club ou tier C 1re saison, 18 en C ensuite, 30 en B, 44 en A, 60 en S ou propriétaire.
+#define TYCOON_NIVEAU_DEPART 10
+#define TYCOON_NIVEAU_C      18
+#define TYCOON_NIVEAU_B      30
+#define TYCOON_NIVEAU_A      44
+#define TYCOON_NIVEAU_S      60
+struct Trainer;
+u32 Tycoon_NiveauCible(void);
+void Tycoon_AjusterSauvage(u16 *species, u8 *niveau);
+const struct Trainer *Tycoon_AjusterDresseur(const struct Trainer *dresseur);
 void Tycoon_ChoisirProfil(void);                  // VAR_0x8004 = profil (intro adulte)
 u32 Tycoon_Profil(void);
 

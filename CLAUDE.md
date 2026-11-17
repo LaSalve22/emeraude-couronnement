@@ -650,6 +650,20 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Pokémon du joueur tel qu'il sort du combat (repéré par sa personnalité : XP, évolution) ; les prêtés repartent.
   Édition classique : il faut toujours 6 Pokémon. Test : `TESTS="Clubs"` (15).
 
+## Fait (v0.50) - édition Carrière : niveaux selon le tier du club
+
+- `Tycoon_NiveauCible` (`src/tycoon.c`, `TYCOON_NIVEAU_*` dans `include/tycoon.h`) : N.10 sans club ou en tier C la 1re saison,
+  N.18 en tier C ensuite, N.30 en B, N.44 en A, N.60 en S ou propriétaire.
+- Sauvages : `CreateWildMon` (`src/wild_encounter.c`) appelle `Tycoon_AjusterSauvage` (cible ±2, espèce évoluée).
+  Les rencontres scriptées (légendaires) ne changent pas.
+- Dresseurs : `CreateNPCTrainerParty` (`src/battle_setup.c`) passe par `Tycoon_AjusterDresseur` (copie en EWRAM) : le meilleur Pokémon
+  au niveau cible (+3 chefs : champions, rival, Aqua / Magma ; +5 Conseil 4 et Maître), les autres gardent leur écart (5 au plus),
+  espèces évoluées ; attaques par défaut recalculées au nouveau niveau, attaques écrites à la main conservées.
+  Exclus : `TRAINER_COURONNEMENT` (ligue, tournois, arènes du joueur) et les partenaires. Édition classique inchangée.
+  Tests : `TESTS="Carriere"` (4).
+- L'édition Carrière couvre maintenant toute la spec du 17/11 sauf la vente à découverte du profil Trader et le +4 de rating
+  de l'Espoir Sportif. Rien n'a été vérifié dans un émulateur depuis la v0.46.
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -664,8 +678,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
     Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
-    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain, v0.47 : intro adulte, v0.48 : sièges des clubs, v0.49 : Pokémon de prêt ;
-    ensuite niveaux par tier (sauvages et dresseurs). À valider avec
+    lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain, v0.47 : intro adulte, v0.48 : sièges des clubs, v0.49 : Pokémon de prêt, v0.50 : niveaux par tier.
+    Reste : tests en émulateur, PokéNav, vente à découvert (profil Trader). À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

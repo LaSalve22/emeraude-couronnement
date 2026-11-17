@@ -1,4 +1,5 @@
 #include "global.h"
+#include "tycoon.h"
 #include "data.h"
 #include "main.h"
 #include "battle.h"
@@ -2220,7 +2221,11 @@ static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
-        CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));
+        // Émeraude Couronnement, édition Carrière : niveaux selon le tier du club (pas pour les adversaires de ligue / tournoi)
+        if (trainerNum != TRAINER_COURONNEMENT && !IsPartnerTrainerId(trainerNum))
+            CreateNPCTrainerPartyFromTrainer(party, Tycoon_AjusterDresseur(GetTrainerStructFromId(trainerNum)));
+        else
+            CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));
         return;
     }
 

@@ -16,6 +16,9 @@
 #include "script.h"
 #include "string_util.h"
 #include "task.h"
+#include "data.h"
+#include "random.h"
+#include "constants/trainers.h"
 #include "battle_setup.h"
 #include "constants/flags.h"
 #include "constants/rgb.h"
@@ -266,4 +269,82 @@ void Tycoon_Accreditation(void)
         return;
     SetTrainerFlag(gSpecialVar_0x8004);
     gSpecialVar_Result = TRUE;
+}
+
+// ---------------------------------------------------------------- niveaux par tier (v0.50)
+
+// Édition Carrière : pas de badges ni de level cap, ce sont les Pokémon sauvages et les dresseurs qui suivent la carrière du
+// joueur : N.10 sans club ou en tier C la 1re saison, N.18 en tier C ensuite, N.30 en B, N.44 en A, N.60 en S ou propriétaire.
+// Les espèces évoluent au besoin (Club_EvoluerPourNiveau).
+u32 Tycoon_NiveauCible(void)
+{
+    u32 club = Club_DuJoueur();
+    if (Club_Proprio() != CLUB_AUCUN)
+        return TYCOON_NIVEAU_S;
+    if (club == CLUB_AUCUN)
+        return TYCOON_NIVEAU_DEPART;
+    switch (Club_Tier(club))
+    {
+    case CLUB_TIER_C: return Club_Saison() == 0 ? TYCOON_NIVEAU_DEPART : TYCOON_NIVEAU_C;
+    case CLUB_TIER_B: return TYCOON_NIVEAU_B;
+    case CLUB_TIER_A: return TYCOON_NIVEAU_A;
+    default:          return TYCOON_NIVEAU_S;
+    }
+}
+
+// Pokémon sauvage : niveau cible ±2, espèce évoluée en conséquence.
+void Tycoon_AjusterSauvage(u16 *species, u8 *niveau)
+{
+    s32 n;
+    if (!EDITION_TYCOON_SIM)
+        return;
+    n = (s32)Tycoon_NiveauCible() - 2 + (s32)(Random() % 5);
+    *niveau = n < 2 ? 2 : (n > MAX_LEVEL ? MAX_LEVEL : n);
+    *species = Club_EvoluerPourNiveau(*species, *niveau);
+}
+
+#define TYCOON_MAX_MONS 32
+static EWRAM_DATA struct Trainer sDresseurAjuste = {0};
+static EWRAM_DATA struct TrainerMon sEquipeAjustee[TYCOON_MAX_MONS] = {0};
+
+static u32 BonusDeClasse(u32 classe)
+{
+    switch (classe)
+    {
+    case TRAINER_CLASS_ELITE_FOUR:
+    case TRAINER_CLASS_CHAMPION:     return 5;
+    case TRAINER_CLASS_LEADER:
+    case TRAINER_CLASS_AQUA_LEADER:
+    case TRAINER_CLASS_MAGMA_LEADER:
+    case TRAINER_CLASS_RIVAL:
+    case TRAINER_CLASS_AQUA_ADMIN:
+    case TRAINER_CLASS_MAGMA_ADMIN:  return 3;
+    default:                         return 0;
+    }
+}
+
+// Dresseur : son meilleur Pokémon passe au niveau cible (+3 pour les chefs, +5 pour le Conseil 4 et le Maître), les autres
+// gardent leur écart avec lui (5 niveaux au plus). Renvoie une copie ajustée, ou le dresseur tel quel hors édition Carrière.
+const struct Trainer *Tycoon_AjusterDresseur(const struct Trainer *dresseur)
+{
+    u32 i, n, maxi = 0, cible;
+    if (!EDITION_TYCOON_SIM || dresseur->party == NULL)
+        return dresseur;
+    n = max(dresseur->partySize, dresseur->poolSize);
+    if (n == 0 || n > TYCOON_MAX_MONS)
+        return dresseur;
+    sDresseurAjuste = *dresseur;
+    memcpy(sEquipeAjustee, dresseur->party, n * sizeof(struct TrainerMon));
+    for (i = 0; i < n; i++)
+        maxi = max(maxi, sEquipeAjustee[i].lvl);
+    cible = Tycoon_NiveauCible() + BonusDeClasse(dresseur->trainerClass);
+    for (i = 0; i < n; i++)
+    {
+        s32 lvl = (s32)cible - (s32)min(maxi - sEquipeAjustee[i].lvl, 5);
+        lvl = lvl < 2 ? 2 : (lvl > MAX_LEVEL ? MAX_LEVEL : lvl);
+        sEquipeAjustee[i].lvl = lvl;
+        sEquipeAjustee[i].species = Club_EvoluerPourNiveau(sEquipeAjustee[i].species, lvl);
+    }
+    sDresseurAjuste.party = sEquipeAjustee;
+    return &sDresseurAjuste;
 }
