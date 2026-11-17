@@ -1164,6 +1164,7 @@ const u8 *Club_NomEffet(u32 stade)
 static const u8 sText_PasDeLicence[] = _("Tu n'as pas de licence. Signe\ndans un club pour jouer.");
 static const u8 sText_PasDeMatch[] = _("Pas de duel à jouer pour l'instant.\nProchaine journée : jour ");
 static const u8 sText_Point[] = _(".");
+static const u8 sText_FinaleTour[] = _("La finale se joue à la Tour de\nCombat. Rendez-vous là-bas !");
 static const u8 sText_Tournoi[] = _("Termine d'abord ton tournoi du\nCouronnement Mondial.");
 static const u8 sText_SixPokemon[] = _("C'est du 6 contre 6 : il te faut\n6 Pokémon dans ton équipe.");
 static const u8 sText_Prepa1[] = _("Ton duel : contre ");
@@ -1205,6 +1206,14 @@ void Club_PreparerMatch(void)
         fin = StringCopy(gStringVar4, sText_PasDeMatch);
         fin = AjouterNombre(fin, ProchaineJournee());
         StringCopy(fin, sText_Point);
+        return;
+    }
+    // Après la Ligue, la Grande Finale se joue sur place, au guichet de la Tour de Combat (avant : n'importe quel guichet).
+    if (m == CLUB_MATCH_FINALE && FlagGet(FLAG_SYS_GAME_CLEAR)
+     && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY)
+      || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY)))
+    {
+        StringCopy(gStringVar4, sText_FinaleTour);
         return;
     }
     if (FlagGet(FLAG_COURONNEMENT_EN_COURS))

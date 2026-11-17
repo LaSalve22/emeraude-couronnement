@@ -573,6 +573,17 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Sauvegarde : `ClubLigueSave` passe à 176 octets (champs ajoutés à la fin, zéros sur une sauvegarde v0.42 = pas de club possédé) ;
   SaveBlock3 = 940 / 1 624 octets.
 
+## Fait (v0.44) - Ligue des Clubs : guichets, finale à la Tour de Combat, blasons
+
+- Guichets de ligue (Topdresseur, `Club_EventScript_Guichet`) dans les Centres Pokémon des 10 villes de club et à la Tour de Combat :
+  `tools/couronnement/clubs_placer.py` (relançable). On y joue son duel, signe, gère son club (`Club_EventScript_AppliGuichet`).
+  Le menu L ne sert plus qu'à consulter (`Club_EventScript_Consultation` : tableau de bord, règlement ; START des Finances renvoie au guichet).
+- Grande Finale : après la Ligue (`FLAG_SYS_GAME_CLEAR`), seulement au guichet de la Tour de Combat ; avant, à n'importe quel guichet.
+- Coaching par objet de combat (Restes, Orbe Vie, Choix, Ceinture Force, Veste de Combat, Casque Brut, Vulné-Assurance, Ceinture Pro,
+  Bandeau Muscle, Lunettes Sages ; le premier trouvé dans le sac) : +3 de rating (`Club_ScriptCoacherObjet`).
+- Blasons : écu 9 x 10 aux couleurs du club (entrées 11-15 de la palette 13), liseré doré pour les tiers A / S, dans Classement,
+  Feuille de match, Effectif et Mercato. Colonnes du classement décalées (« Diff »).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
@@ -584,8 +595,9 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Prochaines étapes, dans l'ordre
 
-00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2 faites (v0.42, v0.43). Reste : guichets dans les villes et finale
-    à la Tour de Combat, PokéNav, blasons, objets compétitifs en coaching ; puis l'édition Carrière & Business. À valider avec
+00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
+    Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
+    Pokémon de prêt, niveaux par tier). À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

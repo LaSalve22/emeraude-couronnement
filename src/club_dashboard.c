@@ -109,6 +109,21 @@ static void ChargerCouleurClub(u32 club)
     LoadPalette(&c, BG_PLTT_ID(DASH_PAL) + COUL_CLUB, PLTT_SIZEOF(1));
 }
 
+// Blason 9 x 10 : écu aux couleurs du club (couleur chargée dans l'entrée 11 à 15 de la palette), liseré doré pour les tiers A et S.
+#define COUL_BLASON 11
+static void Blason(u8 fen, u32 x, u32 y, u32 club, u32 entree)
+{
+    static const u8 sLargeurs[10] = {9, 9, 9, 9, 9, 9, 7, 5, 3, 1};
+    u16 c = Club_CouleurClub(club);
+    u32 i;
+    LoadPalette(&c, BG_PLTT_ID(DASH_PAL) + COUL_BLASON + entree, PLTT_SIZEOF(1));
+    for (i = 0; i < 10; i++)
+        FillWindowPixelRect(fen, COUL_BLASON + entree, x + (9 - sLargeurs[i]) / 2, y + i, sLargeurs[i], 1);
+    FillWindowPixelRect(fen, COUL_TEXTE, x + 4, y + 1, 1, 6);          // pal blanc
+    if (Club_Tier(club) >= CLUB_TIER_A)
+        FillWindowPixelRect(fen, COUL_OR, x, y, 9, 1);
+}
+
 static const u8 sText_Saison[] = _("S");
 static const u8 sText_Jour[] = _(" J");
 static const u8 sText_Sur30[] = _("/30");
@@ -142,7 +157,7 @@ static void Bandeau(u8 fen, u32 onglet, u32 clubCouleur)
 static const u8 sText_Poule[] = _("Poule ");
 static const u8 sText_ColJ[] = _("J");
 static const u8 sText_ColPts[] = _("Pts");
-static const u8 sText_ColDiff[] = _("Diff K.O.");
+static const u8 sText_ColDiff[] = _("Diff");
 static const u8 sText_ColBO[] = _("BO");
 static const u8 sText_AideClassement[] = _("Le 1er joue la finale du jour 30.");
 static const u8 sText_AideSelect[] = _("SELECT : poule ");
@@ -157,8 +172,8 @@ static void DessinerClassement(u8 fen, u32 poule)
     *fin++ = poule ? CHAR_B : CHAR_A;
     *fin = EOS;
     Texte(fen, sTexteOr, 4, 15, txt);
-    TexteDroite(fen, sTexteGris, 132, 15, sText_ColJ);
-    TexteDroite(fen, sTexteGris, 160, 15, sText_ColPts);
+    TexteDroite(fen, sTexteGris, 150, 15, sText_ColJ);
+    TexteDroite(fen, sTexteGris, 178, 15, sText_ColPts);
     TexteDroite(fen, sTexteGris, 208, 15, sText_ColDiff);
     TexteDroite(fen, sTexteGris, 234, 15, sText_ColBO);
     FillWindowPixelRect(fen, COUL_GRILLE, 4, 26, 232, 1);
@@ -170,11 +185,12 @@ static void DessinerClassement(u8 fen, u32 poule)
             FillWindowPixelRect(fen, COUL_LIGNE, 2, y, 236, LIGNE);
         Nombre(txt, i + 1, FALSE);
         Texte(fen, i == 0 ? sTexteOr : sTexteGris, 6, y, txt);
-        Texte(fen, coul, 18, y, Club_Nom(c));
+        Blason(fen, 16, y + 1, c, i);
+        Texte(fen, coul, 29, y, Club_Nom(c));
         Nombre(txt, Club_MatchsJoues(c), FALSE);
-        TexteDroite(fen, coul, 132, y, txt);
+        TexteDroite(fen, coul, 150, y, txt);
         Nombre(txt, Club_Points(c), FALSE);
-        TexteDroite(fen, coul, 160, y, txt);
+        TexteDroite(fen, coul, 178, y, txt);
         Nombre(txt, Club_DiffKO(c), TRUE);
         TexteDroite(fen, coul, 208, y, txt);
         Nombre(txt, Club_BonusOffensifs(c), FALSE);
@@ -263,8 +279,10 @@ static void DessinerMatch(u8 fen, u32 journee, u32 selection)
         pe += Club_PointsDuel(code, FALSE);
     }
     FillWindowPixelRect(fen, COUL_LIGNE, 2, 26, 236, LIGNE + 1);
-    TexteDroite(fen, dom == joueur ? sTexteOr : sTexte, X_DOM, 26, Club_NomCourt(dom));
-    Texte(fen, ext == joueur ? sTexteOr : sTexte, X_EXT, 26, Club_NomCourt(ext));
+    TexteDroite(fen, dom == joueur ? sTexteOr : sTexte, X_DOM - 12, 26, Club_NomCourt(dom));
+    Blason(fen, X_DOM - 9, 27, dom, 0);
+    Blason(fen, X_EXT, 27, ext, 1);
+    Texte(fen, ext == joueur ? sTexteOr : sTexte, X_EXT + 12, 26, Club_NomCourt(ext));
     if (joue)
     {
         fin = Nombre(txt, pd, FALSE);
@@ -363,7 +381,8 @@ static void DessinerEffectif(u8 fen, u32 club)
     fin = StringCopy(fin, sText_Tier);
     *fin++ = sText_Tiers[Club_Tier(club)];
     *fin = EOS;
-    Texte(fen, club == joueur ? sTexteOr : sTexte, 4, 15, txt);
+    Blason(fen, 4, 16, club, 0);
+    Texte(fen, club == joueur ? sTexteOr : sTexte, 16, 15, txt);
     TexteDroite(fen, sTexteGris, 236, 15, sText_AideEffectif);
     fin = StringCopy(txt, Club_NomStade(club));
     fin = StringCopy(fin, sText_Effet);
@@ -447,7 +466,8 @@ static void DessinerMercato(u8 fen)
     u8 txt[40], *fin;
     u32 club = Club_Proprio(), s, dispo = 0, i;
 
-    Texte(fen, sTexteOr, 4, 15, Club_Nom(club));
+    Blason(fen, 4, 16, club, 0);
+    Texte(fen, sTexteOr, 16, 15, Club_Nom(club));
     TexteDroite(fen, sTexteGris, 236, 15, sText_ColSalaire);
     FillWindowPixelRect(fen, COUL_GRILLE, 4, 26, 232, 1);
     for (s = 0; s < CLUB_DRESSEURS; s++)

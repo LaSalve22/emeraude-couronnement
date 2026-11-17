@@ -52,6 +52,7 @@ et sur GitHub.
 - v0.23.1 - Juan, Arthur, Lévy & Tatia et les dresseurs des chapitres 6-7 remis au level cap
 - v0.24 - Coach EV à Clémenti après la Ligue (EV réglés stat par stat, gratuit)
 - v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
+- v0.44 - Ligue des Clubs : guichets dans les Centres Pokémon des 10 villes, Grande Finale à la Tour de Combat après la Ligue, coaching avec les objets de combat, blasons des clubs
 - v0.43 - Ligue des Clubs, phase 2 : rachète un club avec ta société, billetterie / droits TV / boutique, salaires et impôt, stade en 4 niveaux, recrutement de 20 dresseurs battus (Champions, Conseil 4), coaching aux Bonbons Exp., onglets Mercato et Finances
 - v0.42 - Ligue des Clubs, 1re partie : 10 clubs de villes en 2 poules, saisons de 30 jours, licence (tier C à S), ton duel de Recrue en 6 contre 6 avec l'effet du stade, tableau de bord à 3 onglets (menu L)
 - v0.31 - Feurisson évolue en Typhlosion (Feu / Sol) le jour, en Typhlosion de Hisui la nuit ; lignée d'Arcko Plante / Dragon

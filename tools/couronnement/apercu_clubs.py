@@ -12,7 +12,7 @@ import struct
 LARG_TUILES, HAUT_TUILES = 30, 13
 # Palette de src/club_dashboard.c (indice 4 = couleur du club, ici FC Poivressel).
 PAL = [(0, 0, 0), (2, 3, 6), (31, 31, 31), (8, 9, 12), (4, 12, 28), (31, 25, 6), (7, 8, 12), (17, 18, 21),
-       (8, 27, 10), (30, 9, 7), (5, 6, 11)] + [(31, 0, 31)] * 5
+       (8, 27, 10), (30, 9, 7), (5, 6, 11)] + [(4, 12, 28), (26, 8, 4), (14, 10, 20), (6, 20, 6), (28, 24, 2)]  # 11-15 : blasons (couleurs indicatives)
 ECHELLE = 3
 
 

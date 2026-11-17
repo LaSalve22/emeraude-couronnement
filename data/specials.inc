@@ -96,6 +96,7 @@ gSpecials::
 	def_special Club_PreparerVivier
 	def_special Club_ScriptRecruter
 	def_special Club_ScriptCoacher
+	def_special Club_ScriptCoacherObjet
 	def_special Club_DevisStade
 	def_special Club_ScriptAgrandir
 	def_special Club_ScriptBoutique

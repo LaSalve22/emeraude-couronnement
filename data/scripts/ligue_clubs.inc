@@ -1,6 +1,40 @@
 @ Émeraude Couronnement : Ligue des Clubs (v0.42). Appli « Ligue des Clubs » du menu L (avec le pass), src/league_club.c,
 @ tableau de bord src/club_dashboard.c. Le duel du joueur utilise l'emplacement TRAINER_COURONNEMENT.
+@ v0.44 : le menu L ne sert plus qu'à consulter ; on joue, signe et gère son club aux guichets de ligue
+@ (Centres Pokémon des 10 villes de club, Tour de Combat ; tools/couronnement/clubs_placer.py).
 Club_EventScript_Appli::
+	special Club_Ouvrir
+	goto_if_eq VAR_RESULT, FALSE, Club_EventScript_Consultation
+	playse SE_PC_LOGIN
+	msgbox gStringVar4, MSGBOX_DEFAULT
+Club_EventScript_Consultation::
+	special Club_Resume
+	message gStringVar4
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Club_Text_Tableau, Club_Text_Regles, Club_Text_Fermer
+	goto_if_eq VAR_RESULT, 0, Club_EventScript_TableauConsultation
+	goto_if_eq VAR_RESULT, 1, Club_EventScript_ReglesConsultation
+	goto Club_EventScript_Fin
+Club_EventScript_TableauConsultation::
+	closemessage
+	special Club_TableauDeBord
+	waitstate
+	goto_if_ne VAR_RESULT, 1, Club_EventScript_Consultation
+	msgbox Club_Text_AllerAuGuichet, MSGBOX_DEFAULT
+	goto Club_EventScript_Consultation
+Club_EventScript_ReglesConsultation::
+	msgbox Club_Text_ReglesTexte, MSGBOX_DEFAULT
+	goto Club_EventScript_Consultation
+
+Club_EventScript_Guichet::
+	lock
+	faceplayer
+	msgbox Club_Text_Bienvenue, MSGBOX_DEFAULT
+	call Club_EventScript_AppliGuichet
+	release
+	end
+
+Club_EventScript_AppliGuichet::
 	special Club_Ouvrir
 	goto_if_eq VAR_RESULT, FALSE, Club_EventScript_Accueil
 	playse SE_PC_LOGIN
@@ -157,11 +191,16 @@ Club_EventScript_Coaching::
 	copyvar VAR_0x8005, VAR_RESULT
 	message Club_Text_QuelBonbon
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, Club_Text_BonbonL, Club_Text_BonbonXL, Club_Text_Retour
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Club_Text_BonbonL, Club_Text_BonbonXL, Club_Text_ObjetCombat, Club_Text_Retour
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Club_EventScript_Gestion
-	goto_if_eq VAR_RESULT, 2, Club_EventScript_Gestion
+	goto_if_eq VAR_RESULT, 3, Club_EventScript_Gestion
+	goto_if_eq VAR_RESULT, 2, Club_EventScript_CoachingObjet
 	copyvar VAR_0x8006, VAR_RESULT
 	special Club_ScriptCoacher
+	goto Club_EventScript_ResultatGestion
+
+Club_EventScript_CoachingObjet::
+	special Club_ScriptCoacherObjet
 	goto Club_EventScript_ResultatGestion
 
 Club_EventScript_Agrandir::
@@ -223,6 +262,8 @@ Club_Text_BonbonL:
 	.string "Bonbon Exp. L (+1)$"
 Club_Text_BonbonXL:
 	.string "Bonbon Exp. XL (+2)$"
+Club_Text_ObjetCombat:
+	.string "Objet de combat (+3)$"
 Club_Text_QuelRachat:
 	.string "Quel club veux-tu racheter ?$"
 Club_Text_QuellePlace:
@@ -240,6 +281,14 @@ Club_Text_BoutiqueDevis:
 Club_Text_RevendreConfirme:
 	.string "Revendre le club ? Ta société\n"
 	.string "récupère 80 % de ton investissement.$"
+
+Club_Text_Bienvenue:
+	.string "Guichet de la Ligue des Clubs !\n"
+	.string "Matchs, licences et propriété.$"
+
+Club_Text_AllerAuGuichet:
+	.string "Les travaux se commandent à un\n"
+	.string "guichet de ligue (Centre Pokémon).$"
 
 Club_Text_Tableau:
 	.string "Tableau de bord$"
@@ -297,6 +346,10 @@ Club_Text_ReglesTexte:
 	.string "Gagner 6-0 : +1. Perdre 5-6 : +1.\p"
 	.string "Toi, tu joues le duel des Recrues.\n"
 	.string "Tu as jusqu'à la journée suivante.\p"
+	.string "On joue, signe et gère son club\n"
+	.string "aux guichets des Centres Pokémon.\p"
+	.string "Après la Ligue, la finale se joue\n"
+	.string "à la Tour de Combat.\p"
 	.string "Sinon : forfait, défaite 0-6. Les\n"
 	.string "autres duels se jouent sans toi.\p"
 	.string "Le stade qui reçoit lance son\n"

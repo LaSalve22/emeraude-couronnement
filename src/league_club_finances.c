@@ -512,6 +512,7 @@ void Club_ScriptRecruter(void)
 static const u8 sText_CoachOK[] = _("Séance réussie !\nRating de ");
 static const u8 sText_CoachOK2[] = _(" : ");
 static const u8 sText_CoachPasBonbon[] = _("Il te faut ce Bonbon Exp. dans\nton sac.");
+static const u8 sText_Plus3[] = _("+3 de rating.");
 static const u8 sText_CoachMax[] = _("Ce dresseur a atteint son maximum\nde coaching.");
 
 // VAR_0x8005 = place, VAR_0x8006 = 0 : Bonbon Exp. L (+1), 1 : Bonbon Exp. XL (+2).
@@ -536,6 +537,43 @@ void Club_ScriptCoacher(void)
     fin = StringCopy(fin, sText_CoachOK2);
     fin = Nombre(fin, Club_Rating(Club_Proprio(), place));
     StringCopy(fin, sText_Point);
+    gSpecialVar_Result = TRUE;
+}
+
+// Objets compétitifs : le premier de la liste présent dans le sac est donné (+3 de rating de coaching).
+static const u16 sObjetsCoaching[] =
+{
+    ITEM_LEFTOVERS, ITEM_LIFE_ORB, ITEM_CHOICE_SCARF, ITEM_CHOICE_BAND, ITEM_CHOICE_SPECS, ITEM_FOCUS_SASH,
+    ITEM_ASSAULT_VEST, ITEM_ROCKY_HELMET, ITEM_WEAKNESS_POLICY, ITEM_EXPERT_BELT, ITEM_MUSCLE_BAND, ITEM_WISE_GLASSES,
+};
+static const u8 sText_ObjetOK[] = _(" reçoit l'objet :\n");
+static const u8 sText_ObjetAucun[] = _("Aucun objet de combat dans ton sac\n(Restes, Orbe Vie, Choix...).");
+
+// VAR_0x8005 = place.
+void Club_ScriptCoacherObjet(void)
+{
+    u32 i, place = gSpecialVar_0x8005 % CLUB_PLACES_RECRUTEMENT;
+    u8 *fin;
+    gSpecialVar_Result = FALSE;
+    for (i = 0; i < ARRAY_COUNT(sObjetsCoaching); i++)
+        if (CheckBagHasItem(sObjetsCoaching[i], 1))
+            break;
+    if (i == ARRAY_COUNT(sObjetsCoaching))
+    {
+        StringCopy(gStringVar4, sText_ObjetAucun);
+        return;
+    }
+    if (!Club_Coacher(place, 3))
+    {
+        StringCopy(gStringVar4, sText_CoachMax);
+        return;
+    }
+    RemoveBagItem(sObjetsCoaching[i], 1);
+    fin = StringCopy(gStringVar4, Club_NomDresseur(Club_Proprio(), place));
+    fin = StringCopy(fin, sText_ObjetOK);
+    fin = CopyItemName(sObjetsCoaching[i], fin);
+    fin = StringCopy(fin, sText_CoachOK2);
+    fin = StringCopy(fin, sText_Plus3);
     gSpecialVar_Result = TRUE;
 }
 
