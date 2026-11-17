@@ -1,4 +1,5 @@
 #include "global.h"
+#include "calendrier.h"
 #include "arenes.h"
 #include "societe.h"
 #include "bourse.h"
@@ -43,7 +44,7 @@ static u32 Alea(u32 jour, u32 tirage)
 
 static u32 Aujourdhui(void)
 {
-    return RtcGetLocalDayCount();
+    return Calendrier_Aujourdhui(); // jamais avant le dernier jour traité (horloge reculée)
 }
 
 static u32 Borner(u64 v, u32 min, u32 max)
@@ -69,8 +70,8 @@ void Societe_MettreAJourJusqua(u32 aujourdhui)
         return;
     if (SOC.sentiment == 0)
         SOC.sentiment = 1000;
-    if (aujourdhui < SOC.jour)
-        SOC.jour = aujourdhui;
+    if (aujourdhui < SOC.jour) // horloge reculée : on ne rejoue jamais un jour déjà traité
+        aujourdhui = SOC.jour;
     if (aujourdhui - SOC.jour > BOURSE_RATTRAPAGE_MAX)
         SOC.jour = aujourdhui - BOURSE_RATTRAPAGE_MAX;
     while (SOC.jour < aujourdhui)

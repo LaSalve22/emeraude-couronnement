@@ -5,10 +5,13 @@ Reprend les formules exactes de la v0.41.1 (src/bourse.c, immobilier.c, societe.
 couronnement.c, calendrier.c), y compris le hasard déterministe (Melanger / Alea, graine = n° de Dresseur) et l'arithmétique
 entière du C. Simule 100 jours pour 3 profils de joueur, puis rejoue les failles repérées.
 
-Usage : python3 tools/sim_economy.py [--jours 100] [--graine 0x12345678] [--md rapport.md]
+Correctifs v0.42 (horloge gelée, échéances prises partout, sanctions graduelles) appliqués ; --v041 rejoue les anciennes règles.
+Usage : python3 tools/sim_economy.py [--jours 100] [--graine 0x12345678] [--md rapport.md] [--v041]
 Aucune dépendance (Python 3.8+).
 """
 import argparse
+
+V041 = False  # anciennes règles (avant les correctifs du lot 0)
 
 M32 = 0xFFFFFFFF
 MAX_MONEY = 999_999_999
@@ -386,6 +389,8 @@ class Banques:
         return 200000 + 50000 * self.m.badges
 
     def emprunter(self, sim, b, montant, jour):
+        if self.interdit():
+            return 0
         p = self.plafond(b, sim, jour)
         montant = min(montant, max(0, p - self.dette[b]), MAX_MONEY - sim.joueur.argent)
         self.dette[b] += montant
@@ -402,12 +407,58 @@ class Banques:
                 ech = self.dette[b] * 5 // 100
                 if ech < 500:
                     ech = min(self.dette[b], 500)
-                if j.argent >= ech:
-                    j.argent -= ech
+                if self.prelever(sim, ech):
                     self.dette[b] -= ech
                     self.paye += ech
+                    if self.dette[b] == 0:
+                        self.defauts[b] = 0
                 else:
                     self.defaut(b, jour, sim)
+
+    def prelever(self, sim, montant):
+        j, soc, bo = sim.joueur, sim.societe, sim.bourse
+        if V041:
+            if j.argent >= montant:
+                j.argent -= montant
+                return True
+            return False
+        dispo = j.argent + (soc.tresorerie if soc.etat else 0) + bo.valeur() * 97 // 100
+        if dispo < montant:
+            return False
+        pris = min(montant, j.argent)
+        j.argent -= pris
+        montant -= pris
+        if soc.etat:
+            pris = min(montant, soc.tresorerie)
+            soc.tresorerie -= pris
+            montant -= pris
+        for a in range(9, -1, -1):
+            if montant <= 0:
+                break
+            c = bo.cours_actif(a)
+            if not bo.parts[a]:
+                continue
+            bo.vendre(j, a, (montant * 100 + c * 97 - 1) // (c * 97))
+            pris = min(montant, j.argent)
+            j.argent -= pris
+            montant -= pris
+        return montant == 0
+
+    def interdit(self):
+        return not V041 and any(self.dette[b] and self.defauts[b] >= 2 for b in range(3))
+
+    def saisir_maison(self, b, jour, sim):
+        if not sim.immo.possede:
+            return False
+        moins = min(sim.immo.possede, key=lambda x: sim.immo.prix(x, jour))
+        produit = sim.immo.prix(moins, jour) * 80 // 100
+        sim.immo.possede.discard(moins)
+        if produit >= self.dette[b]:
+            sim.joueur.argent += produit - self.dette[b]
+            self.dette[b] = 0
+        else:
+            self.dette[b] -= produit
+        return True
 
     def defaut(self, b, jour, sim):
         self.defauts[b] += 1
@@ -432,6 +483,16 @@ class Banques:
             self.dette[b] -= pris
             self.paye += pris
             self.dette[b] = borner(self.dette[b] * 120 // 100, 0, CALC_MAX)
+        if V041:
+            return
+        n = self.defauts[b]
+        if n >= 4:
+            while self.dette[b] and self.saisir_maison(b, jour, sim):
+                pass
+        elif n >= 2 and b != B_FONCIER:
+            self.saisir_maison(b, jour, sim)
+        if self.dette[b] == 0:
+            self.defauts[b] = 0
 
 
 # ---------------------------------------------------------------- arènes (src/arenes.c), joueur supposé gagner chaque défi
@@ -488,7 +549,7 @@ class Joueur:
 # ---------------------------------------------------------------- simulation
 class Sim:
     def __init__(self, graine, monde, argent, jour0=1000):
-        self.monde, self.jour = monde, jour0
+        self.monde, self.jour, self.jour_max = monde, jour0, jour0
         self.joueur = Joueur(argent, self)
         self.bourse, self.immo = Bourse(graine, monde), Immo(graine, monde)
         self.societe, self.commerce = Societe(graine), Commerce(graine)
@@ -497,6 +558,10 @@ class Sim:
     def passer_jour(self):
         self.jour += 1
         j = self.jour
+        if not V041:  # v0.42 : un jour déjà traité n'est jamais rejoué (horloge reculée)
+            if j <= self.jour_max:
+                return
+            self.jour_max = j
         self.bourse.passer_jour(j, self.joueur)
         self.immo.passer_jour(j, self.joueur)
         self.commerce.passer_jour(j, self.joueur)
@@ -706,11 +771,13 @@ def faille_defaut_bancaire(graine):
     monde = Monde(badges=8, ligue=True, aqua_faillite=True, magma_faillite=True)
     sim = Sim(graine, monde, 0)
     recu = sim.banques.emprunter(sim, B_DEVON, 10**9, sim.jour) + sim.banques.emprunter(sim, B_CASINO, 10**9, sim.jour)
-    cache = sim.joueur.argent
-    sim.joueur.argent = 0  # tout est placé en Bourse / trésorerie le dimanche soir
+    for a in (MAGASINS, DEVON, PENSION, SAFARI, TELE):  # tout est placé en Bourse : plus de liquide le lundi
+        sim.bourse.acheter(sim.joueur, a, 9999)
     for _ in range(100):
         sim.passer_jour()
-    return dict(recu=recu, garde=cache, dettes=sum(sim.banques.dette), defauts=list(sim.banques.defauts))
+    garde = sim.joueur.argent + sim.bourse.valeur()
+    return dict(recu=recu, garde=garde, dettes=sum(sim.banques.dette), defauts=list(sim.banques.defauts),
+                interdit=sim.banques.interdit())
 
 
 def primes_couronnement():
@@ -731,7 +798,8 @@ def fmt(n):
 
 
 def rapport(graine, jours):
-    out = [f'# Audit économique v0.41.1 (simulation, graine 0x{graine:08X}, {jours} jours)', '']
+    regles = 'v0.41.1' if V041 else 'v0.42 (correctifs horloge et banques)'
+    out = [f'# Audit économique, règles {regles} (simulation, graine 0x{graine:08X}, {jours} jours)', '']
     profils = [('Prudent (4 badges, 150 000 ¥, sans crédit)', profil_prudent),
                ('Agressif (4 badges, 60 000 ¥, crédits au maximum, tout en Bourse)', profil_agressif),
                ('Levier raisonné (4 badges, 150 000 ¥, Banque Devon)', profil_levier_raisonne),
@@ -763,8 +831,9 @@ def rapport(graine, jours):
     out.append(f'- **Horloge remise en arrière** : patrimoine {fmt(f["normal"])} ¥ après 30 jours normaux, '
                f'{fmt(f["triche"])} ¥ après {f["tours"]} retours en arrière de 30 jours.')
     f = faille_defaut_bancaire(graine)
-    out.append(f'- **Défaut bancaire sans saisie** : {fmt(f["recu"])} ¥ empruntés (Devon + Casino) et gardés à l\'abri ; '
-               f'après 100 jours : dettes {fmt(f["dettes"])} ¥, défauts {f["defauts"]}, et aucune conséquence en jeu.')
+    out.append(f'- **Crédit jamais remboursé** : {fmt(f["recu"])} ¥ empruntés (Devon + Casino), tout placé en Bourse ; '
+               f'après 100 jours : liquide + placements {fmt(f["garde"])} ¥, dettes {fmt(f["dettes"])} ¥, '
+               f'défauts en cours {f["defauts"]}, interdit bancaire : {"oui" if f["interdit"] else "non"}.')
     out += ['', '## Primes du Couronnement par saison', '', '| Saison | Multiplicateur | Paliers | Tournois | Finale gagnée | Total |',
             '|---|---|---|---|---|---|']
     for s, m, p, t, fi, tot in primes_couronnement():
@@ -777,7 +846,9 @@ if __name__ == '__main__':
     ap.add_argument('--jours', type=int, default=100)
     ap.add_argument('--graine', type=lambda s: int(s, 0), default=0x2A5F17C3)
     ap.add_argument('--md')
+    ap.add_argument('--v041', action='store_true', help='anciennes règles (avant les correctifs)')
     a = ap.parse_args()
+    V041 = a.v041
     texte = rapport(a.graine, a.jours)
     if a.md:
         open(a.md, 'w', encoding='utf-8').write(texte)

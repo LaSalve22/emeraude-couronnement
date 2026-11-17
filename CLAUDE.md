@@ -514,6 +514,17 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   humeur de la société sans lien avec les résultats ; aller-retour sur le bien soldé de la semaine ; dividende 2 %/semaine ;
   sponsors des arènes qui écrasent tout après la Ligue. Correctifs proposés dans le rapport, à valider par Adrien. Pas de changement en jeu.
 
+## Fait (v0.42) - correctifs de l'audit : horloge et banques
+
+- Horloge : `Calendrier_Aujourdhui()` (`src/calendrier.c`) = horloge de la cartouche, mais jamais avant le dernier jour traité
+  par la Bourse, la société, l'immobilier, les banques et les arènes ; les `Aujourdhui()` de ces modules passent par elle, et chaque
+  `*_MettreAJourJusqua` gèle au lieu de reculer (avant : reculer l'horloge faisait rejouer loyers, cours, dividendes et sponsors).
+- Banques : échéance du lundi prise sur le liquide, la trésorerie, puis par vente forcée des placements (`Prelever`) ; défaut seulement
+  si rien ne suffit. Compteur de défauts par banque dans les bits 4-15 de `VAR_BANQUE_DEFAUTS` (bits 0-2 = à annoncer). 2e défaut :
+  interdit bancaire (`Banque_InterditBancaire`, bloque aussi le crédit de la Bourse) + une maison saisie ; 4e : maisons saisies jusqu'à
+  solder la dette (`BANQUE_DEFAUTS_*` dans `include/banques.h`). Une dette soldée efface ses défauts. Aucun octet de sauvegarde en plus.
+- Simulateur à jour (`--v041` pour les anciennes règles). Tests : `TESTS="Banques"` (11), `TESTS="Immo"` (7).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp

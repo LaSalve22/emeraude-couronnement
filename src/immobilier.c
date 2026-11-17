@@ -1,4 +1,5 @@
 #include "global.h"
+#include "calendrier.h"
 #include "immobilier.h"
 #include "event_data.h"
 #include "money.h"
@@ -202,8 +203,8 @@ void Immo_MettreAJourJusqua(u32 aujourdhui)
 {
     if (IMMO.magie != IMMO_MAGIE)
         Immo_Initialiser(aujourdhui);
-    if (aujourdhui < IMMO.jour)
-        IMMO.jour = aujourdhui;
+    if (aujourdhui < IMMO.jour) // horloge reculée : on ne rejoue jamais un jour déjà traité
+        aujourdhui = IMMO.jour;
     if (aujourdhui - IMMO.jour > IMMO_RATTRAPAGE_MAX)
         IMMO.jour = aujourdhui - IMMO_RATTRAPAGE_MAX;
     while (IMMO.jour < aujourdhui)
@@ -265,7 +266,7 @@ void Immo_Expulser(u32 bien)
 
 static u32 Aujourdhui(void)
 {
-    return RtcGetLocalDayCount();
+    return Calendrier_Aujourdhui(); // jamais avant le dernier jour traité (horloge reculée)
 }
 
 static u8 *AjouterNombre(u8 *fin, u32 n)

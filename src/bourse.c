@@ -1,5 +1,6 @@
 #include "global.h"
 #include "bourse.h"
+#include "banques.h"
 #include "couronnement.h"
 #include "calendrier.h"
 #include "event_data.h"
@@ -489,11 +490,8 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
         OrInitialiser();
     if (HISTO.magie != BOURSE_HISTO_MAGIE)
         Bourse_HistoriqueInitialiser(BOURSE.jour);
-    if (aujourdhui < BOURSE.jour) // horloge remise à zéro
-    {
-        BOURSE.jour = aujourdhui;
-        BOURSE.jourDividende = aujourdhui;
-    }
+    if (aujourdhui < BOURSE.jour) // horloge reculée : rien ne se passe tant qu'on n'a pas dépassé le dernier jour traité
+        aujourdhui = BOURSE.jour;
     jours = aujourdhui - BOURSE.jour;
     if (jours > BOURSE_RATTRAPAGE_MAX)
         BOURSE.jour = aujourdhui - BOURSE_RATTRAPAGE_MAX;
@@ -564,6 +562,8 @@ u32 Bourse_Emprunter(u32 montant)
 {
     u32 plafond = Bourse_PlafondCredit(), place = MAX_MONEY - GetMoney(&gSaveBlock1Ptr->money);
 
+    if (Banque_InterditBancaire()) // défauts répétés chez une banque (v0.42)
+        return 0;
     if (BOURSE.dette >= plafond)
         return 0;
     if (montant > plafond - BOURSE.dette)
@@ -650,7 +650,7 @@ u8 *Bourse_TexteEntete(u8 *dest, u32 entreprise)
 
 static u32 Aujourdhui(void)
 {
-    return RtcGetLocalDayCount();
+    return Calendrier_Aujourdhui(); // jamais avant le dernier jour traité (horloge reculée)
 }
 
 static const u8 sText_Huissier1[] = _("L'huissier est passé ! Ta dette\ndépassait tes placements.\pIl a tout vendu et saisi ");

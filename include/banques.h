@@ -15,6 +15,8 @@ enum Banque
 #define BANQUE_ECHEANCE_POURCENT 5      // part de la dette prélevée chaque lundi
 #define BANQUE_ECHEANCE_MIN      500
 #define BANQUE_RATTRAPAGE_MAX    30
+#define BANQUE_DEFAUTS_INTERDIT  2      // défauts chez une même banque : interdit bancaire + une maison saisie
+#define BANQUE_DEFAUTS_HUISSIER  4      // défauts : l'huissier saisit les maisons jusqu'à solder la dette
 
 // Moteur (testable)
 void Banque_MettreAJourJusqua(u32 aujourdhui);
@@ -23,6 +25,7 @@ u32 Banque_Dette(u32 banque);
 u32 Banque_Plafond(u32 banque);
 u32 Banque_Emprunter(u32 banque, u32 montant);   // renvoie le montant prêté
 u32 Banque_Rembourser(u32 banque);               // renvoie le montant remboursé
+bool32 Banque_InterditBancaire(void);            // plus aucun crédit (banques et Bourse)
 
 // Specials (data/specials.inc)
 void Banque_Ouvrir(void);

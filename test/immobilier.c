@@ -97,3 +97,18 @@ TEST("Immo: garbage in the old save area triggers a clean init")
     EXPECT_EQ(IMMO.possede, 0);
     EXPECT_EQ(IMMO.indice, 1000);
 }
+
+TEST("Immo: turning the clock back neither replays rents nor changes the week")
+{
+    u32 argent;
+    Preparer(500000);
+    FlagSet(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+    EXPECT(Immo_Acheter(BienPasEnPromo(700), 700));
+    Immo_MettreAJourJusqua(730);
+    argent = GetMoney(&gSaveBlock1Ptr->money);
+    Immo_MettreAJourJusqua(701); // horloge reculée
+    EXPECT_EQ(IMMO.jour, 730);
+    Immo_MettreAJourJusqua(730); // puis ramenée : rien n'est rejoué
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), argent);
+    FlagClear(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+}

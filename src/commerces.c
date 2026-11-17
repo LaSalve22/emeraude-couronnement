@@ -83,7 +83,7 @@ static u32 Alea(u32 jour, u32 tirage)
 
 static u32 Aujourdhui(void)
 {
-    return RtcGetLocalDayCount();
+    return Calendrier_Aujourdhui(); // jamais avant le dernier jour traité (horloge reculée)
 }
 
 static u32 Boutique(void) { return VarGet(VAR_COMMERCE_BOUTIQUE); }
@@ -270,8 +270,10 @@ void Commerce_MettreAJourJusqua(u32 aujourdhui)
 
     if (!Commerce_BoutiqueOuverte() && !Commerce_CentreOuvert())
         return;
-    if (jour == 0 || aujourdhui < jour)
+    if (jour == 0)
         jour = aujourdhui;
+    if (aujourdhui < jour) // horloge reculée : on ne rejoue jamais un jour déjà traité
+        aujourdhui = jour;
     if (aujourdhui - jour > COMMERCE_RATTRAPAGE_MAX)
         jour = aujourdhui - COMMERCE_RATTRAPAGE_MAX;
     while (jour < aujourdhui)

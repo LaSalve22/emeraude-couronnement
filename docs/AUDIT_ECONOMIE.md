@@ -3,7 +3,8 @@
 Simulateur : `python3 tools/sim_economy.py [--jours 100] [--graine 0x...] [--md fichier]`.
 Il reprend les formules exactes du jeu, avec le même hasard déterministe (Melanger / Alea, graine = n° de Dresseur) et
 l'arithmétique entière du C. Les chiffres ci-dessous viennent de la graine 0x2A5F17C3 ; trois autres graines donnent les mêmes conclusions.
-Aucune modification du jeu dans ce lot : c'est un constat, avec des réglages proposés à valider par Adrien.
+Constat fait sur la v0.41.1 ; les failles 1 et 2 sont corrigées en v0.42 (le simulateur applique désormais les nouvelles règles,
+`--v041` rejoue les anciennes).
 
 ## 1. Formules (sources)
 
@@ -39,8 +40,8 @@ Lecture :
 
 | # | Faille | Effet mesuré | Correctif proposé |
 |---|---|---|---|
-| 1 | **Horloge remise en arrière** : si `aujourdhui < jour`, chaque module recale son jour puis **rejoue** les mêmes jours quand l'horloge revient (loyers, recettes, dividendes, sponsors, variations de cours). | 30 jours rejoués 5 fois : 3,2 M -> 5,7 M ¥ (jusqu'à 10,8 M selon la graine). Illimité. | Garder le jour le plus avancé ; si l'horloge recule, **geler** (rien ne se passe tant qu'on n'a pas dépassé ce jour). Un seul helper `Calendrier_JourValide()` pour les 6 modules. |
-| 2 | **Défaut bancaire sans saisie** : l'échéance ne se prend que sur le liquide du lundi ; Devon ne fait qu'ajouter 10 %, le Casino ne prend que le liquide. En gardant tout en Bourse / trésorerie le dimanche, on ne rembourse jamais. | 1,95 M ¥ empruntés et gardés ; la dette monte à 62 M sans aucune conséquence. | Échéance prise aussi sur la trésorerie puis le portefeuille ; au 2e défaut : **interdit bancaire** (plus de crédit nulle part), saisie des actions / or (-10 %) puis des maisons ; au 4e : huissier général. |
+| 1 | ✅ v0.42 — **Horloge remise en arrière** : si `aujourdhui < jour`, chaque module recale son jour puis **rejoue** les mêmes jours quand l'horloge revient (loyers, recettes, dividendes, sponsors, variations de cours). | 30 jours rejoués 5 fois : 3,2 M -> 5,7 M ¥ (jusqu'à 10,8 M selon la graine). Illimité. | Garder le jour le plus avancé ; si l'horloge recule, **geler** (rien ne se passe tant qu'on n'a pas dépassé ce jour). Un seul helper `Calendrier_JourValide()` pour les 6 modules. |
+| 2 | ✅ v0.42 — **Défaut bancaire sans saisie** : l'échéance ne se prend que sur le liquide du lundi ; Devon ne fait qu'ajouter 10 %, le Casino ne prend que le liquide. En gardant tout en Bourse / trésorerie le dimanche, on ne rembourse jamais. | 1,95 M ¥ empruntés et gardés ; la dette monte à 62 M sans aucune conséquence. | Échéance prise aussi sur la trésorerie puis le portefeuille ; au 2e défaut : **interdit bancaire** (plus de crédit nulle part), saisie des actions / or (-10 %) puis des maisons ; au 4e : huissier général. |
 | 3 | **Double comptage maisons / société** : les maisons appartiennent au joueur mais gonflent la valeur de **sa** société. On vend 49 % des actions puis on revend les maisons. | +555 000 ¥ immédiats sur 1,9 M de maisons, la société cotée vaut 0. | Les maisons comptent dans la société seulement si elles y sont **apportées** (apport en capital, lot 2.3) ; un bien apporté ne se revend que par la société. |
 | 4 | **Humeur de la société** sans lien avec les résultats (300 à 3 000 ‰, marche au hasard) : on vend des actions jusqu'à 3× la valeur réelle. | +36 % en 1 an sans rien produire (480 000 -> 652 175 ¥). | Humeur bornée 700-1 500 ‰ et rappelée vers 1 000 ; cours qui baisse quand le joueur vend (impact de 1 % par paquet) ; humeur liée aux bénéfices (recettes - charges). |
 | 5 | **Bien soldé de la semaine** : -25 % à l'achat, puis revente la semaine où l'écart local est à +10 %. | 22 allers-retours rentables en 30 semaines, +450 000 ¥ (en plus des loyers). | Revente au prix d'indice **sans** écart local ni remise, ou impôt sur la plus-value (lot 2.4) de 30 % si détenu moins de 30 jours. |
@@ -60,9 +61,18 @@ Lecture :
   sinon l'argent ne sert plus à rien bien avant.
 - **Plafonds** : tous les calculs internes sont déjà bornés à 2 000 000 000 en 64 bits ; aucun débordement trouvé.
 
-## 5. Ordre de correction proposé
+## 5. Corrigé en v0.42
 
-1. Horloge (faille 1) et défauts bancaires (faille 2) : petits correctifs, gros effet. Aucun octet de sauvegarde en plus
-   (le jour le plus avancé peut réutiliser le champ `jour` existant de chaque module, puisqu'on ne le fait plus reculer).
+- **Horloge** : `Calendrier_Aujourdhui()` ne revient jamais avant le dernier jour traité (Bourse, société, immobilier, banques, arènes) ;
+  chaque `*_MettreAJourJusqua` gèle au lieu de reculer. Les prix de l'immobilier gardent aussi la semaine la plus avancée.
+  Simulation : 5 retours en arrière de 30 jours ne rapportent plus rien (3 214 546 ¥ dans les deux cas).
+- **Banques** : l'échéance du lundi est prise sur le liquide, puis la trésorerie de la société, puis par vente forcée des placements
+  (or d'abord). Défaut seulement si tout cela ne suffit pas. 2e défaut chez une banque : interdit bancaire (plus aucun crédit, Bourse
+  comprise) et une maison saisie ; 4e : maisons saisies jusqu'à solder la dette. Rembourser une dette efface ses défauts.
+  Simulation : 1,95 M ¥ empruntés et placés en Bourse ; il en reste 0,9 M au bout de 100 jours (2,3 M avant le correctif).
+
+## 6. Ordre de correction proposé (suite)
+
+1. ~~Horloge et défauts bancaires~~ (fait en v0.42).
 2. Dividende, sponsors, Foncier (failles 6, 7, 8) : réglages chiffrés dans les en-têtes.
 3. Société et immobilier (failles 3, 4, 5) : à faire avec les comptes séparés et la fiscalité du lot 2 (apport en capital, plus-values).

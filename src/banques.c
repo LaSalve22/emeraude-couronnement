@@ -1,5 +1,6 @@
 #include "global.h"
 #include "banques.h"
+#include "bourse.h"
 #include "calendrier.h"
 #include "commerces.h"
 #include "event_data.h"
@@ -32,7 +33,7 @@ static const struct InfoBanque sBanques[BANQUE_NB] =
     [BANQUE_DEVON] =
     {
         COMPOUND_STRING("Banque Devon"), 30, COMPOUND_STRING("0,3 %"),
-        COMPOUND_STRING("Défaut : +10 % de pénalité."),
+        COMPOUND_STRING("Défaut : +10 %. Au 2e : interdit\lbancaire et une maison saisie."),
     },
     [BANQUE_FONCIER] =
     {
@@ -42,7 +43,7 @@ static const struct InfoBanque sBanques[BANQUE_NB] =
     [BANQUE_CASINO] =
     {
         COMPOUND_STRING("Prêteur du Casino"), 200, COMPOUND_STRING("2 %"),
-        COMPOUND_STRING("Défaut : on te prend tout ton\lliquide, plus 20 % de pénalité."),
+        COMPOUND_STRING("Défaut : tout ton liquide, +20 %.\lAu 2e : interdit et maison saisie."),
     },
 };
 
@@ -102,10 +103,78 @@ static void AjouterPaye(u32 montant)
     VarSet(VAR_BANQUE_PAYE_HAUT, total >> 16);
 }
 
-// Saisie de la maison la moins chère : vendue 20 % sous le prix du marché, le produit rembourse la dette.
-static void SaisirMaison(u32 jour)
+// ---------------------------------------------------------------- défauts (correctifs de l'audit, lot 0 du cahier v0.42)
+// VAR_BANQUE_DEFAUTS : bits 0-2 = défauts à annoncer (un par banque) ; bits 4-15 = nombre de défauts par banque (4 bits chacune),
+// remis à zéro quand la dette de cette banque est soldée.
+
+static u32 NbDefauts(u32 banque)
 {
-    u32 i, choisi = IMMO_NB_BIENS, prix = 0, produit, *dette = Dette(BANQUE_FONCIER);
+    return (VarGet(VAR_BANQUE_DEFAUTS) >> (4 + 4 * banque)) & 0xF;
+}
+
+static void ChangerNbDefauts(u32 banque, u32 n)
+{
+    u32 v = VarGet(VAR_BANQUE_DEFAUTS) & ~(0xF << (4 + 4 * banque));
+    VarSet(VAR_BANQUE_DEFAUTS, v | ((n > 15 ? 15 : n) << (4 + 4 * banque)));
+}
+
+// Interdit bancaire : au moins BANQUE_DEFAUTS_INTERDIT défauts chez une banque encore créancière. Plus aucun crédit
+// (banques et Bourse) tant que cette dette n'est pas soldée.
+bool32 Banque_InterditBancaire(void)
+{
+    u32 b;
+    for (b = 0; b < BANQUE_NB; b++)
+    {
+        if (*Dette(b) != 0 && NbDefauts(b) >= BANQUE_DEFAUTS_INTERDIT)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// Une dette soldée efface les défauts de la banque.
+static void VerifierSolde(u32 banque)
+{
+    if (*Dette(banque) == 0)
+        ChangerNbDefauts(banque, 0);
+}
+
+// Prélève une échéance : liquide, puis trésorerie de la société, puis vente forcée des placements en Bourse (or d'abord).
+// Rien n'est pris si le tout ne suffit pas. Renvoie TRUE si l'échéance est payée.
+static bool32 Prelever(u32 montant)
+{
+    struct SocieteSave *soc = &gSaveBlock2Ptr->pokedex.societe;
+    u32 tresorerie = soc->etat != 0 ? soc->tresorerie : 0, argent = GetMoney(&gSaveBlock1Ptr->money), pris, e;
+    u64 dispo = (u64)argent + tresorerie + (u64)Bourse_ValeurPortefeuille() * (100 - BOURSE_FRAIS_POURCENT) / 100;
+
+    if (dispo < montant)
+        return FALSE;
+    pris = montant < argent ? montant : argent;
+    RemoveMoney(&gSaveBlock1Ptr->money, pris);
+    montant -= pris;
+    pris = montant < tresorerie ? montant : tresorerie;
+    if (soc->etat != 0)
+        soc->tresorerie -= pris;
+    montant -= pris;
+    for (e = BOURSE_NB_ACTIFS; montant > 0 && e-- > 0;) // l'or (dernier actif) en premier
+    {
+        u32 cours = Bourse_Cours(e), net, parts;
+        if (cours == 0 || Bourse_Parts(e) == 0)
+            continue;
+        parts = ((u64)montant * 100 + (u64)cours * 97 - 1) / ((u64)cours * 97); // arrondi au-dessus (frais 3 % au plus)
+        Bourse_Vendre(e, parts);
+        net = GetMoney(&gSaveBlock1Ptr->money);
+        pris = montant < net ? montant : net;
+        RemoveMoney(&gSaveBlock1Ptr->money, pris);
+        montant -= pris;
+    }
+    return montant == 0;
+}
+
+// Saisie de la maison la moins chère : vendue 20 % sous le prix du marché, le produit rembourse la dette de la banque.
+// Renvoie FALSE s'il n'y a plus rien à saisir.
+static bool32 SaisirMaison(u32 banque, u32 jour)
+{
+    u32 i, choisi = IMMO_NB_BIENS, prix = 0, produit, *dette = Dette(banque);
 
     for (i = 0; i < IMMO_NB_BIENS; i++)
     {
@@ -116,10 +185,7 @@ static void SaisirMaison(u32 jour)
         }
     }
     if (choisi == IMMO_NB_BIENS)
-    {
-        *dette = Borner((u64)*dette * 110 / 100); // rien à saisir : pénalité
-        return;
-    }
+        return FALSE;
     gSaveBlock1Ptr->immo.possede &= ~(1u << choisi);
     gSaveBlock1Ptr->immo.squat &= ~(1u << choisi);
     gSaveBlock1Ptr->immo.prixAchat[choisi] = 0;
@@ -133,20 +199,25 @@ static void SaisirMaison(u32 jour)
     {
         *dette -= produit;
     }
+    return TRUE;
 }
 
+// Défaut : sanction propre à la banque, puis sanctions graduelles. 2e défaut : interdit bancaire et une maison saisie ;
+// 4e défaut et suivants : huissier, les maisons sont saisies jusqu'à solder la dette.
 static void Defaut(u32 banque, u32 jour)
 {
-    u32 *dette = Dette(banque), argent;
+    u32 *dette = Dette(banque), argent, n = NbDefauts(banque) + 1;
 
     VarSet(VAR_BANQUE_DEFAUTS, VarGet(VAR_BANQUE_DEFAUTS) | (1 << banque));
+    ChangerNbDefauts(banque, n);
     switch (banque)
     {
     case BANQUE_DEVON:
         *dette = Borner((u64)*dette * 110 / 100);
         break;
     case BANQUE_FONCIER:
-        SaisirMaison(jour);
+        if (!SaisirMaison(banque, jour))
+            *dette = Borner((u64)*dette * 110 / 100); // rien à saisir : pénalité
         break;
     case BANQUE_CASINO:
         argent = GetMoney(&gSaveBlock1Ptr->money);
@@ -158,6 +229,16 @@ static void Defaut(u32 banque, u32 jour)
         *dette = Borner((u64)*dette * 120 / 100);
         break;
     }
+    if (n >= BANQUE_DEFAUTS_HUISSIER)
+    {
+        while (*dette != 0 && SaisirMaison(banque, jour))
+            ;
+    }
+    else if (n >= BANQUE_DEFAUTS_INTERDIT && banque != BANQUE_FONCIER)
+    {
+        SaisirMaison(banque, jour);
+    }
+    VerifierSolde(banque);
 }
 
 void Banque_PasserJour(u32 jour)
@@ -175,11 +256,11 @@ void Banque_PasserJour(u32 jour)
             u32 echeance = (u64)*dette * BANQUE_ECHEANCE_POURCENT / 100;
             if (echeance < BANQUE_ECHEANCE_MIN)
                 echeance = *dette < BANQUE_ECHEANCE_MIN ? *dette : BANQUE_ECHEANCE_MIN;
-            if (IsEnoughMoney(&gSaveBlock1Ptr->money, echeance))
+            if (Prelever(echeance)) // liquide, trésorerie, puis placements
             {
-                RemoveMoney(&gSaveBlock1Ptr->money, echeance);
                 *dette -= echeance;
                 AjouterPaye(echeance);
+                VerifierSolde(b);
             }
             else
             {
@@ -193,8 +274,8 @@ void Banque_MettreAJourJusqua(u32 aujourdhui)
 {
     if (BANQUE.magie != BANQUE_MAGIE)
         Initialiser(aujourdhui);
-    if (aujourdhui < BANQUE.jour)
-        BANQUE.jour = aujourdhui;
+    if (aujourdhui < BANQUE.jour) // horloge reculée : on ne rejoue jamais un jour déjà traité
+        aujourdhui = BANQUE.jour;
     if (aujourdhui - BANQUE.jour > BANQUE_RATTRAPAGE_MAX)
         BANQUE.jour = aujourdhui - BANQUE_RATTRAPAGE_MAX;
     while (BANQUE.jour < aujourdhui)
@@ -208,7 +289,7 @@ u32 Banque_Emprunter(u32 banque, u32 montant)
 {
     u32 *dette, plafond, place;
 
-    if (banque >= BANQUE_NB)
+    if (banque >= BANQUE_NB || Banque_InterditBancaire())
         return 0;
     dette = Dette(banque);
     plafond = Banque_Plafond(banque);
@@ -236,6 +317,7 @@ u32 Banque_Rembourser(u32 banque)
         montant = *dette;
     RemoveMoney(&gSaveBlock1Ptr->money, montant);
     *dette -= montant;
+    VerifierSolde(banque);
     return montant;
 }
 
@@ -265,7 +347,8 @@ static const u8 sText_Rapport1[] = _("Échéances prélevées depuis ta\nderniè
 static const u8 sText_Rapport2[] = _(".");
 static const u8 sText_RapportDefaut[] = _("\pDéfaut de paiement chez :\n");
 static const u8 sText_Virgule[] = _(",\l");
-static const u8 sText_RapportFin[] = _(".\pTu n'avais pas de quoi payer lundi.\nLa sanction est tombée.");
+static const u8 sText_RapportFin[] = _(".\pRien à prendre lundi, ni en poche,\nni en caisse, ni en Bourse.\pLa sanction est tombée.");
+static const u8 sText_Interdit[] = _("\pTu es interdit bancaire : plus\naucun crédit tant que tu n'as pas\lsoldé ta dette.");
 
 // Met à jour. VAR_RESULT = TRUE s'il y a un rapport (gStringVar4).
 void Banque_Ouvrir(void)
@@ -276,7 +359,7 @@ void Banque_Ouvrir(void)
 
     Banque_MettreAJourJusqua(Calendrier_Aujourdhui());
     paye = VarGet(VAR_BANQUE_PAYE_BAS) | (VarGet(VAR_BANQUE_PAYE_HAUT) << 16);
-    defauts = VarGet(VAR_BANQUE_DEFAUTS);
+    defauts = VarGet(VAR_BANQUE_DEFAUTS) & 0xF;
     gSpecialVar_Result = FALSE;
     if (paye == 0 && defauts == 0)
         return;
@@ -299,14 +382,16 @@ void Banque_Ouvrir(void)
     }
     VarSet(VAR_BANQUE_PAYE_BAS, 0);
     VarSet(VAR_BANQUE_PAYE_HAUT, 0);
-    VarSet(VAR_BANQUE_DEFAUTS, 0);
+    VarSet(VAR_BANQUE_DEFAUTS, VarGet(VAR_BANQUE_DEFAUTS) & ~0xF); // les compteurs de défauts restent
+    if (Banque_InterditBancaire())
+        StringAppend(gStringVar4, sText_Interdit);
     gSpecialVar_Result = TRUE;
 }
 
 static const u8 sText_Resume1[] = _("Devon : ");
 static const u8 sText_Resume2[] = _("\nFoncier : ");
 static const u8 sText_Resume3[] = _("\pCasino : ");
-static const u8 sText_Resume4[] = _(".\nÉchéance : 5 % chaque lundi.");
+static const u8 sText_Resume4[] = _(".\nÉchéance : 5 % chaque lundi,\lprise aussi en caisse et en Bourse.");
 
 void Banque_Resume(void)
 {
@@ -349,7 +434,7 @@ void Banque_Fiche(void)
 static const u32 sMontants[] = {10000, 100000, 1000000};
 static const u8 sText_Prete[] = _("Accordé : ");
 static const u8 sText_PreteFin[] = _(".\nLes intérêts courent dès demain.");
-static const u8 sText_PreteRien[] = _("Plafond atteint, ou ton portefeuille\nest plein. Prêt refusé.");
+static const u8 sText_PreteRien[] = _("Plafond atteint, portefeuille plein\nou interdit bancaire. Prêt refusé.");
 static const u8 sText_Rembourse[] = _("Remboursé : ");
 static const u8 sText_RembourseRien[] = _("Rien à rembourser, ou pas un sou\nen poche.");
 

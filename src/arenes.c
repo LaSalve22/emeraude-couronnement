@@ -157,7 +157,7 @@ static void Verifier(u32 jour)
 
 static u32 Aujourdhui(void)
 {
-    return RtcGetLocalDayCount();
+    return Calendrier_Aujourdhui(); // jamais avant le dernier jour traité (horloge reculée)
 }
 
 // Recettes : trésorerie de la société si elle existe, sinon l'argent du joueur.
@@ -344,11 +344,13 @@ void Arene_MettreAJourJusqua(u32 aujourdhui)
     Verifier(aujourdhui);
     for (a = 0; a < ARENE_NB; a++)
         une |= AR.arenes[a].achetee;
-    if (!une || aujourdhui < AR.jour)
+    if (!une)
     {
         AR.jour = aujourdhui;
         return;
     }
+    if (aujourdhui < AR.jour) // horloge reculée : on ne rejoue jamais un jour déjà traité
+        return;
     if (aujourdhui - AR.jour > ARENE_RATTRAPAGE_MAX)
         AR.jour = aujourdhui - ARENE_RATTRAPAGE_MAX;
     if (AR.jour == aujourdhui)

@@ -33,7 +33,25 @@ const u8 *Calendrier_NomJour(enum Weekday jourSemaine)
     return sNomsJours[jourSemaine % WEEKDAY_COUNT];
 }
 
+// Jour de jeu : l'horloge de la cartouche, mais jamais avant le dernier jour déjà traité par l'économie
+// (Bourse, immobilier, banques, société, arènes). Reculer l'horloge ne fait donc ni rejouer les jours (loyers, dividendes,
+// sponsors, cours), ni choisir une semaine plus favorable pour les prix de l'immobilier.
 u32 Calendrier_Aujourdhui(void)
 {
-    return RtcGetLocalDayCount();
+    u32 jour = RtcGetLocalDayCount();
+    const struct SaveBlock2 *sb2 = gSaveBlock2Ptr;
+    const struct SaveBlock1 *sb1 = gSaveBlock1Ptr;
+    const struct SaveBlock3 *sb3 = gSaveBlock3Ptr;
+
+    if (sb2->pokedex.bourse.cours[0] != 0 && sb2->pokedex.bourse.jour > jour)
+        jour = sb2->pokedex.bourse.jour;
+    if (sb2->pokedex.societe.etat != 0 && sb2->pokedex.societe.jour > jour)
+        jour = sb2->pokedex.societe.jour;
+    if (sb1->immo.magie == IMMO_MAGIE && sb1->immo.jour > jour)
+        jour = sb1->immo.jour;
+    if (sb1->banque.magie == BANQUE_MAGIE && sb1->banque.jour > jour)
+        jour = sb1->banque.jour;
+    if (sb3->arenes.jour > jour && sb3->arenes.magie == ARENE_MAGIE)
+        jour = sb3->arenes.jour;
+    return jour;
 }

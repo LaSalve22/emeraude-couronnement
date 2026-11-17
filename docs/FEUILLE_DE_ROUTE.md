@@ -22,6 +22,7 @@ et sur GitHub.
 | 9d | Équipes Hard / Kaizo du chapitre 7 : Max & Tabitha (Centre Spatial, Pierre renforcé), Arlette, Arthur, Juan, 45 dresseurs - v0.22 | ✅ livré |
 | 9e | Équipes Hard / Kaizo du chapitre 8 : Timmy (Route Victoire), Conseil 4 et Marc (cap 85, Méga-évolution en Kaizo), 55 dresseurs (Routes 129-134, Route Victoire) - v0.23 | ✅ livré |
 | 9 | Couronnement Mondial, 2e partie : aperçu des 6 Pokémon adverses et choix à chaque manche, 4 tournois des salles de Concours, finale à 32 à la Tour de Combat (Blue en demi, Red en finale) - v0.19 | ✅ livré |
+| 10 | Cahier v0.42, lot 0 : audit de l'économie (`docs/AUDIT_ECONOMIE.md`, simulateur) ; correctifs horloge reculée et banques (échéances prises en caisse et en Bourse, interdit bancaire, saisies) - v0.42 | ✅ livré |
 
 ## Déjà fait
 
