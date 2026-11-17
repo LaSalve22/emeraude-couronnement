@@ -677,6 +677,14 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Sauvegarde : `struct BourseDecouvert` (48 octets, `BOURSE_DECOUVERT_MAGIE`) dans SaveBlock3. Réglages `BOURSE_DECOUVERT_*`
   (`include/bourse.h`). Tests : `TESTS="Bourse"` (17).
 
+## Fait (v0.52) - Boutique Pro (édition Carrière)
+
+- Menu L « Boutique Pro » (édition Carrière seulement) : Fil de Liaison (3 000 ¥, `COURONNEMENT_PRIX_FIL_LIAISON`) et Bonbons Exp.
+  XS / S / M dès le début, L avec un club de tier B, XL en tier A / S ou propriétaire (`Tycoon_BoutiqueNiveau`, selon `Tycoon_NiveauCible`).
+- Fil de Liaison : déclenche les évolutions par échange (`EVO_TRADE` dans `EVO_MODE_ITEM_USE`, `GetEvolutionTargetSpecies`) ; les objets
+  tenus requis restent exigés (Roche Royale…) ; Carabing / Escargaume évoluent sans partenaire. Le moteur ne le faisait pas.
+- Édition classique : rien n'est vendu (le Fil marcherait, mais il n'est pas obtenable). Test : `TESTS="Carriere"` (5).
+
 ## Idées d'Adrien à concevoir plus tard
 
 

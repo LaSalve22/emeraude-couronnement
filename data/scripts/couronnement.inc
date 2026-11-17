@@ -545,6 +545,7 @@ Couronnement_EventScript_MenuLRepousseCourse::
 	dynmultipush Couronnement_Text_MenuLTaxiVolant, 15
 	dynmultipush Couronnement_Text_MenuLTaxiSurfant, 16
 	dynmultipush Couronnement_Text_MenuLCapacites, 17
+	dynmultipush Couronnement_Text_MenuLBoutiquePro, 18
 Couronnement_EventScript_MenuLApresTaxis::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, Couronnement_EventScript_MenuLTera
 	dynmultipush Couronnement_Text_MenuLEV, 4
@@ -584,6 +585,7 @@ Couronnement_EventScript_MenuLFermer::
 	case 15, Couronnement_EventScript_MenuLTaxiVolant
 	case 16, Couronnement_EventScript_MenuLTaxiSurfant
 	case 17, Couronnement_EventScript_MenuLCapacites
+	case 18, Couronnement_EventScript_MenuLBoutiquePro
 	closemessage
 	releaseall
 	end
@@ -645,6 +647,46 @@ Couronnement_EventScript_MenuLTaxiSurfant::
 Couronnement_EventScript_MenuLPasDeTaxi::
 	msgbox Couronnement_Text_MenuLPasDeTaxi, MSGBOX_DEFAULT
 	goto Couronnement_EventScript_MenuLBoucle
+
+@ v0.52 (édition Carrière) : Bonbons Exp. et Fil de Liaison, gamme selon le tier du club.
+Couronnement_EventScript_MenuLBoutiquePro::
+	special Tycoon_BoutiqueNiveau
+	switch VAR_RESULT
+	case 2, Couronnement_EventScript_MenuLBoutiquePro2
+	case 1, Couronnement_EventScript_MenuLBoutiquePro1
+	pokemart Couronnement_BoutiquePro0
+	goto Couronnement_EventScript_MenuLBoucle
+Couronnement_EventScript_MenuLBoutiquePro1::
+	pokemart Couronnement_BoutiquePro1
+	goto Couronnement_EventScript_MenuLBoucle
+Couronnement_EventScript_MenuLBoutiquePro2::
+	pokemart Couronnement_BoutiquePro2
+	goto Couronnement_EventScript_MenuLBoucle
+
+	.align 2
+Couronnement_BoutiquePro0:
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_NONE
+	.align 2
+Couronnement_BoutiquePro1:
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_NONE
+	.align 2
+Couronnement_BoutiquePro2:
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_XL
+	.2byte ITEM_NONE
 
 Couronnement_EventScript_MenuLCapacites::
 	special Tycoon_TexteCapacites
@@ -710,6 +752,8 @@ Couronnement_Text_MenuLTaxiSurfant:
 	.string "Taxi Surfant$"
 Couronnement_Text_MenuLCapacites:
 	.string "Capacités de terrain$"
+Couronnement_Text_MenuLBoutiquePro:
+	.string "Boutique Pro$"
 Couronnement_Text_MenuLPasDeTaxi:
 	.string "Le taxi ne peut pas venir ici.\n"
 	.string "Volant : dehors. Surfant : face à l'eau.$"

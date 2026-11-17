@@ -15326,7 +15326,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_LINKING_CORD] =
     {
         .name = ITEM_NAME("Fil de Liaison"),
-        .price = 8000,
+        .price = COURONNEMENT_PRIX_FIL_LIAISON,
         .description = COMPOUND_STRING(
             "Un fil chargé\n"
             "d'énergie qu'adorent\n"

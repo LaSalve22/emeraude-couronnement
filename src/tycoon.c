@@ -85,6 +85,13 @@ void Tycoon_EstActif(void)
     gSpecialVar_Result = EDITION_TYCOON_SIM;
 }
 
+// Boutique Pro (v0.52) : 0 = Bonbons Exp. XS / S / M + Fil de Liaison, 1 = + L (tier B), 2 = + XL (tier A, S ou propriétaire).
+void Tycoon_BoutiqueNiveau(void)
+{
+    u32 niveau = Tycoon_NiveauCible();
+    gSpecialVar_Result = niveau >= TYCOON_NIVEAU_A ? 2 : (niveau >= TYCOON_NIVEAU_B ? 1 : 0);
+}
+
 // ---------------------------------------------------------------- taxis
 
 EWRAM_DATA bool8 gTaxiVolant = FALSE; // la carte de vol s'ouvre depuis le menu L : annuler ramène sur le terrain

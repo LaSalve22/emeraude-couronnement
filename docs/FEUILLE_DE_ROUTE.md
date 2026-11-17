@@ -54,6 +54,7 @@ et sur GitHub.
 - v0.25 - 40 Méga-Gemmes cachées dans Hoenn (Route 118 et après), les 52 autres vendues à Clémenti après la Ligue
 - v0.50 - Édition Carrière : Pokémon sauvages et dresseurs au niveau de ta carrière (N.10 au départ, 18 / 30 / 44 / 60 selon le tier de ton club), espèces évoluées
 - v0.51 - Bourse : vente à découvert (parier sur la baisse d'une entreprise, rachat plus tard ; appel de marge si la perte devient trop grosse ; faillite d'Aqua / Magma = gain encaissé). En édition Carrière : dès le début avec le profil Trader, sinon une fois ta société créée
+- v0.52 - Édition Carrière : « Boutique Pro » dans le menu L. Fil de Liaison (fait évoluer les Pokémon qui évoluent par échange) et Bonbons Exp. ; les L avec un club de tier B, les XL en tier A ou S
 - v0.49 - Édition Carrière : Pokémon de prêt du club si tu as moins de 6 Pokémon pour un duel de ligue (offert en tier C la 1re saison, sinon 500 ¥ chacun)
 - v0.48 - Édition Carrière : les arènes deviennent les sièges des clubs, les champions sont présidents et remettent l'accréditation sans combat ; guichets de ligue à l'entrée des arènes
 - v0.47 - Édition Carrière : intro adulte (réveil seul dans un appartement loué 2 500 ¥/mois, profil Épargnant / Trader / Espoir Sportif, pass et PokéNav tout de suite, Seko donne le Pokédex sans passer par le rival)

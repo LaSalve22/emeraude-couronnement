@@ -15,6 +15,7 @@
 #define I_TYPE_BOOST_POWER              GEN_LATEST  // In Gen4+, type-enhancing held items increase the power of moves by 1.2x instead of 1.1x (1.05x in the case of Sea Incense).
 #define I_SELL_VALUE_FRACTION           GEN_LATEST  // In Gen9+, items sell for 1/4 of their value instead of 1/2.
 #define I_PRICE                         GEN_LATEST  // Some items have varied in value across generations. See src/data/items.h for values.
+#define COURONNEMENT_PRIX_FIL_LIAISON   3000        // Émeraude Couronnement : Fil de Liaison (évolution par échange), boutique de l'édition Carrière.
 #define COURONNEMENT_PRIX_AROMATE       5000        // Émeraude Couronnement : prix d'un Aromate (change la nature), vendu à Clémenti après le 5e badge.
 #define COURONNEMENT_DARK_BALL_BONUS    30          // Émeraude Couronnement : Dark Ball, bonus de stats (hors PV) en %.
 #define COURONNEMENT_DARK_BALL_TAUX     260         // Dark Ball : multiplicateur de capture (x100) ; Hyper Ball = 200, donc +30 %.

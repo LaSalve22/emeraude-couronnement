@@ -27,5 +27,6 @@ void Tycoon_AjusterSauvage(u16 *species, u8 *niveau);
 const struct Trainer *Tycoon_AjusterDresseur(const struct Trainer *dresseur);
 void Tycoon_ChoisirProfil(void);                  // VAR_0x8004 = profil (intro adulte)
 u32 Tycoon_Profil(void);
+void Tycoon_BoutiqueNiveau(void);                 // special : 0, 1 (L) ou 2 (XL) selon le tier
 
 #endif // GUARD_TYCOON_H

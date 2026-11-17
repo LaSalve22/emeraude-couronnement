@@ -4532,6 +4532,20 @@ enum Species GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode m
                 if (evolutions[i].param == evolutionItem)
                     conditionsMet = TRUE;
                 break;
+            case EVO_TRADE: // Émeraude Couronnement (v0.52) : le Fil de Liaison remplace l'échange
+                if (evolutionItem == ITEM_LINKING_CORD)
+                {
+                    // Carabing / Escargaume : l'échange avec l'autre espèce ne peut pas être simulé, on l'accepte.
+                    if (evolutions[i].params != NULL && evolutions[i].params[0].condition == IF_TRADE_PARTNER_SPECIES)
+                    {
+                        targetSpecies = evolutions[i].targetSpecies;
+                        if (canStopEvo != NULL)
+                            *canStopEvo = FALSE;
+                        return targetSpecies;
+                    }
+                    conditionsMet = TRUE;
+                }
+                break;
             }
 
             if (conditionsMet && DoesMonMeetAdditionalConditions(mon, evolutions[i].params, NULL, PARTY_SIZE, canStopEvo, evoState))

@@ -54,3 +54,14 @@ TEST("Carriere: the target level follows the club tier")
     EXPECT(Club_Signer(9));
     EXPECT_EQ(Tycoon_NiveauCible(), TYCOON_NIVEAU_S);
 }
+
+TEST("Carriere: the Linking Cord triggers trade evolutions")
+{
+    struct Pokemon mon;
+    bool32 stop;
+    CreateMon(&mon, SPECIES_KADABRA, 30, 0, OTID_STRUCT_PLAYER_ID);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &stop, CHECK_EVO), SPECIES_ALAKAZAM);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_FIRE_STONE, NULL, &stop, CHECK_EVO), SPECIES_NONE);
+    CreateMon(&mon, SPECIES_KARRABLAST, 30, 0, OTID_STRUCT_PLAYER_ID);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &stop, CHECK_EVO), SPECIES_ESCAVALIER);
+}
