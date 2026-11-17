@@ -142,6 +142,17 @@ const u8 *Club_NomEffet(u32 stade);                             // club vainqueu
 // Tableau de bord (src/club_dashboard.c) : onglets 0 Classement, 1 Feuille de match, 2 Effectif
 void Club_TableauDessiner(u8 fen, u32 onglet, u32 poule, u32 journee, u32 match, u32 club);
 
+// Pokémon de prêt (src/league_loan_party.c) : édition Carrière, ou édition classique si CLUB_PRET_CLASSIQUE
+#define CLUB_PRET_CLASSIQUE     FALSE
+#define CLUB_PRET_PRIX          500     // par Pokémon (gratuit en tier C la 1re saison)
+bool32 Club_PretDisponible(void);
+u32 Club_PretManquants(void);
+u32 Club_PretCout(u32 nb);
+void Club_PretPreparer(u32 club, u32 niveau, u32 nb);
+u32 Club_PretNombre(void);
+void Club_PretRendre(void);
+u32 Club_EvoluerPourNiveau(u32 species, u32 niveau);
+
 // Combat
 bool32 Club_CombatEnCours(void);
 const struct Trainer *Club_Adversaire(void);

@@ -217,6 +217,7 @@ static EWRAM_DATA struct Trainer sAdversaire = {0};
 static EWRAM_DATA struct TrainerMon sAdversaireEquipe[CLUB_TAILLE_EQUIPE] = {0};
 static EWRAM_DATA bool8 sCombat = FALSE;
 static EWRAM_DATA u8 sMatchCombat = 0;
+static EWRAM_DATA u8 sPretPrevu = 0;
 
 // ---------------------------------------------------------------- outils
 
@@ -626,7 +627,7 @@ u32 Club_Rating(u32 club, u32 slot)
 }
 
 // Espèce évoluée pour un niveau : évolutions par niveau à leur niveau, les autres (pierre, échange, amitié) au N.36.
-static u32 EvoluerPourNiveau(u32 species, u32 niveau)
+u32 Club_EvoluerPourNiveau(u32 species, u32 niveau)
 {
     u32 n;
     for (n = 0; n < 3; n++)
@@ -690,7 +691,7 @@ u32 Club_RatingEffectif(u32 club, u32 slot, u32 stade, bool32 domicile)
     u32 i, niveau = NiveauDresseur(club, slot), profitent = 0, r = Club_Rating(club, slot);
 
     for (i = 0; i < CLUB_TAILLE_EQUIPE; i++)
-        profitent += ProfiteDuStade(EvoluerPourNiveau(d->especes[i], niveau), stade);
+        profitent += ProfiteDuStade(Club_EvoluerPourNiveau(d->especes[i], niveau), stade);
     if (domicile && stade != CLUB_STADE_NEUTRE)
         r += 6;
     if (profitent >= 3)
@@ -1072,7 +1073,7 @@ static void ConstruireAdversaire(u32 match, u32 club, u32 stade)
     memset(sAdversaireEquipe, 0, sizeof(sAdversaireEquipe));
     for (i = 0; i < CLUB_TAILLE_EQUIPE; i++)
     {
-        sAdversaireEquipe[i].species = EvoluerPourNiveau(d->especes[i], niveau);
+        sAdversaireEquipe[i].species = Club_EvoluerPourNiveau(d->especes[i], niveau);
         sAdversaireEquipe[i].lvl = niveau;
         sAdversaireEquipe[i].iv = TRAINER_PARTY_IVS(iv, iv, iv, iv, iv, iv);
         sAdversaireEquipe[i].ev = sEvsTier[Club_Tier(club)];
@@ -1172,6 +1173,10 @@ static const u8 sText_Prepa7[] = _(".\nEffet : ");
 static const u8 sText_Prepa8[] = _(", 5 tours.");
 static const u8 sText_PrepaFinale[] = _("Grande Finale, Tour de Combat :\nterrain neutre, aucun effet.");
 static const u8 sText_PrepaSac[] = _("\pPas d'objets du sac en ligue.");
+static const u8 sText_Pret1[] = _("\pLe club te prête ");
+static const u8 sText_Pret2[] = _(" Pokémon\npour compléter ton équipe : ");
+static const u8 sText_PretGratuit[] = _("offert");
+static const u8 sText_PretTropCher[] = _("Le club peut te prêter des Pokémon,\nmais il faut ");
 
 static u32 ProchaineJournee(void)
 {
@@ -1217,10 +1222,23 @@ void Club_PreparerMatch(void)
         StringCopy(gStringVar4, sText_Tournoi);
         return;
     }
+    sPretPrevu = 0;
     if (PokemonValides() < CLUB_TAILLE_EQUIPE)
     {
-        StringCopy(gStringVar4, sText_SixPokemon);
-        return;
+        u32 n = Club_PretManquants(), cout = Club_PretCout(n);
+        if (n == 0 || PokemonValides() + n < CLUB_TAILLE_EQUIPE)
+        {
+            StringCopy(gStringVar4, sText_SixPokemon);
+            return;
+        }
+        if (!IsEnoughMoney(&gSaveBlock1Ptr->money, cout))
+        {
+            fin = StringCopy(gStringVar4, sText_PretTropCher);
+            fin = AjouterYens(fin, cout);
+            StringCopy(fin, sText_Point);
+            return;
+        }
+        sPretPrevu = n;
     }
     StadeDuMatch(m, &dom, &ext, &stade);
     adverse = (dom == ClubJoueur()) ? ext : dom;
@@ -1245,12 +1263,30 @@ void Club_PreparerMatch(void)
         fin = StringCopy(fin, Club_NomEffet(stade));
         fin = StringCopy(fin, sText_Prepa8);
     }
-    StringCopy(fin, sText_PrepaSac);
+    fin = StringCopy(fin, sText_PrepaSac);
+    if (sPretPrevu)
+    {
+        u32 cout = Club_PretCout(sPretPrevu);
+        fin = StringCopy(fin, sText_Pret1);
+        fin = AjouterNombre(fin, sPretPrevu);
+        fin = StringCopy(fin, sText_Pret2);
+        if (cout)
+            fin = AjouterYens(fin, cout);
+        else
+            fin = StringCopy(fin, sText_PretGratuit);
+        StringCopy(fin, sText_Point);
+    }
     gSpecialVar_Result = TRUE;
 }
 
 void Club_DebutMatch(void)
 {
+    if (sPretPrevu)
+    {
+        RemoveMoney(&gSaveBlock1Ptr->money, Club_PretCout(sPretPrevu));
+        Club_PretPreparer(ClubJoueur(), sAdversaireEquipe[0].lvl, sPretPrevu);
+        sPretPrevu = 0;
+    }
     HealPlayerParty();
     sCombat = TRUE;
     FlagSet(FLAG_COURONNEMENT_EN_COURS); // pas de blackout
@@ -1279,6 +1315,7 @@ void Club_FinMatch(void)
 
     sCombat = FALSE;
     FlagClear(FLAG_COURONNEMENT_EN_COURS);
+    Club_PretRendre(); // les Pokémon prêtés repartent (les survivants sont déjà comptés)
     HealPlayerParty();
     Club_Affiche(m, &dom, &ext);
     domicile = (dom == club);

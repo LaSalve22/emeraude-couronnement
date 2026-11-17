@@ -316,3 +316,28 @@ TEST("Clubs: recruits, coaching, stadium and resale")
     EXPECT_EQ(Club_Proprio(), CLUB_AUCUN);
     FlagClear(FLAG_BADGE01_GET);
 }
+
+// ---------------------------------------------------------------- Pokémon de prêt (v0.49)
+
+TEST("Clubs: loaned Pokemon fill the team and leave after the match")
+{
+    u32 exp;
+    Preparer(100000);
+    ZeroPlayerPartyMons();
+    CreateMon(&gParties[B_TRAINER_PLAYER][0], SPECIES_TREECKO, 20, 1234, OTID_STRUCT_PLAYER_ID);
+    CreateMon(&gParties[B_TRAINER_PLAYER][1], SPECIES_POOCHYENA, 18, 5678, OTID_STRUCT_PLAYER_ID);
+    CalculatePlayerPartyCount();
+    EXPECT(Club_Signer(0));                      // AC Clémenti, tier C : prêt offert la 1re saison
+    EXPECT_EQ(Club_PretCout(4), 0);
+    Club_PretPreparer(0, 20, 4);
+    EXPECT_EQ(CalculatePlayerPartyCount(), 6);
+    EXPECT_EQ(Club_PretNombre(), 4);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][2], MON_DATA_LEVEL), 20);
+    exp = GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_EXP) + 50;  // XP gagnée pendant le combat
+    SetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_EXP, &exp);
+    Club_PretRendre();
+    EXPECT_EQ(CalculatePlayerPartyCount(), 2);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_EXP), exp);
+    EXPECT(Club_Signer(2));                      // tier B : 500 ¥ par Pokémon
+    EXPECT_EQ(Club_PretCout(3), 1500);
+}
