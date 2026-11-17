@@ -684,6 +684,9 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Fil de Liaison : déclenche les évolutions par échange (`EVO_TRADE` dans `EVO_MODE_ITEM_USE`, `GetEvolutionTargetSpecies`) ; les objets
   tenus requis restent exigés (Roche Royale…) ; Carabing / Escargaume évoluent sans partenaire. Le moteur ne le faisait pas.
 - Édition classique : rien n'est vendu (le Fil marcherait, mais il n'est pas obtenable). Test : `TESTS="Carriere"` (5).
+- v0.52.1 (retour d'Adrien) : au réveil, la séquence du camion tournait encore (`ExecuteTruckSequence` posait la porte du camion
+  en (4,1)-(4,3), sous l'horloge) ; `CB2_NewGame` prend `FieldCB_WarpExitFadeFromBlack` en Carrière. La mère et le frère / la sœur
+  du rival n'étaient pas cachés au 1er étage de sa propre maison (`..._RIVAL_MOM` / `..._RIVAL_SIBLING` dans `Tycoon_EventScript_PoserDecor`).
 
 ## Idées d'Adrien à concevoir plus tard
 
