@@ -39,6 +39,9 @@ gSpecials::
 	def_special Bourse_Fiche
 	def_special Bourse_ScriptAcheter
 	def_special Bourse_ScriptVendre
+	def_special Bourse_DecouvertDispo
+	def_special Bourse_ScriptVendreDecouvert
+	def_special Bourse_ScriptRacheter
 	def_special Bourse_Credit
 	def_special Bourse_ScriptEmprunter
 	def_special Bourse_ScriptRembourser

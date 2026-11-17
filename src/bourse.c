@@ -6,6 +6,8 @@
 #include "money.h"
 #include "rtc.h"
 #include "string_util.h"
+#include "societe.h"
+#include "tycoon.h"
 #include "constants/flags.h"
 #include "constants/vars.h"
 #include "constants/characters.h"
@@ -24,6 +26,7 @@
 static void HistoriqueAjouter(u32 jour);
 static void OrHistoriqueReconstruire(void);
 static void OrInitialiser(void);
+static void FraisEmprunt(void);
 
 STATIC_ASSERT(sizeof(struct BourseSave) <= 0x68, BourseSaveTropGrande);
 
@@ -304,6 +307,8 @@ void Bourse_PasserJour(u32 jour)
         BOURSE.dette += interets ? interets : 1;
     }
     VerserDividende(jour);
+    FraisEmprunt();             // v0.51 : vente à découvert
+    Bourse_VerifierDecouvert();
 }
 
 
@@ -504,6 +509,7 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
         Bourse_VerifierHuissier();
     }
     Bourse_AppliquerChocs();
+    Bourse_VerifierDecouvert(); // v0.51 : faillite d'Aqua / Magma après un choc, appel de marge
     Bourse_VerifierHuissier();
     HistoriqueSynchroniser();
 }
@@ -555,6 +561,178 @@ u32 Bourse_Vendre(u32 entreprise, u32 quantite)
     return quantite;
 }
 
+// ---------------------------------------------------------------- vente à découvert (v0.51)
+// On vend des parts empruntées : le liquide est crédité tout de suite (moins 3 % de frais), on paie 0,1 % par jour de frais
+// d'emprunt sur la valeur de la position, et on rachète plus tard (plus 3 %) : gain si le cours a baissé. Si la perte latente
+// dépasse le liquide + les placements, appel de marge : tout est racheté de force (+10 %), le portefeuille vendu si besoin.
+// Faillite (Aqua / Magma) : la position se clôt d'elle-même, le gain est acquis.
+
+#define DEC (gSaveBlock3Ptr->decouvert)
+STATIC_ASSERT(BOURSE_NB_ENTREPRISES == ARRAY_COUNT(((struct BourseDecouvert *)0)->parts), BourseDecouvertTaille);
+
+static void DecouvertVerifier(void)
+{
+    if (DEC.magie == BOURSE_DECOUVERT_MAGIE)
+        return;
+    memset(&DEC, 0, sizeof(DEC));
+    DEC.magie = BOURSE_DECOUVERT_MAGIE;
+}
+
+// Édition classique : avec le pass. Édition Carrière : profil Trader dès le début, les autres une fois leur société créée.
+bool32 Bourse_DecouvertAutorise(void)
+{
+    if (!EDITION_TYCOON_SIM)
+        return TRUE;
+    return Tycoon_Profil() == 1 || gSaveBlock2Ptr->pokedex.societe.etat != SOCIETE_ETAT_AUCUNE;
+}
+
+u32 Bourse_PartsDecouvert(u32 e)
+{
+    if (DEC.magie != BOURSE_DECOUVERT_MAGIE || e >= BOURSE_NB_ENTREPRISES)
+        return 0;
+    return DEC.parts[e];
+}
+
+u32 Bourse_ValeurDecouvert(void)
+{
+    u64 total = 0;
+    u32 i;
+    for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
+        total += (u64)Bourse_PartsDecouvert(i) * BOURSE.cours[i];
+    return Borner(total, 0, 2000000000);
+}
+
+s32 Bourse_ResultatDecouvert(void)
+{
+    s64 total = 0;
+    u32 i;
+    for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
+        total += (s64)Bourse_PartsDecouvert(i) * ((s32)DEC.prixMoyen[i] - (s32)BOURSE.cours[i]);
+    return total > 2000000000 ? 2000000000 : (total < -2000000000 ? -2000000000 : (s32)total);
+}
+
+u32 Bourse_VendreADecouvert(u32 e, u32 quantite)
+{
+    u32 cours, place;
+    u64 plafond, expo, possible, net;
+
+    if (e >= BOURSE_NB_ENTREPRISES || !Bourse_DecouvertAutorise() || EnFaillite(e) || BOURSE.cours[e] == 0)
+        return 0;
+    DecouvertVerifier();
+    cours = BOURSE.cours[e];
+    plafond = max((u64)BOURSE_DECOUVERT_PLANCHER, (u64)GetMoney(&gSaveBlock1Ptr->money) + Bourse_ValeurPortefeuille());
+    expo = Bourse_ValeurDecouvert();
+    possible = expo >= plafond ? 0 : (plafond - expo) / cours;
+    if (possible > BOURSE_PARTS_MAX - DEC.parts[e])
+        possible = BOURSE_PARTS_MAX - DEC.parts[e];
+    place = MAX_MONEY - GetMoney(&gSaveBlock1Ptr->money);
+    if (possible > (u64)place * 100 / ((u64)cours * (100 - BOURSE_FRAIS_POURCENT)))
+        possible = (u64)place * 100 / ((u64)cours * (100 - BOURSE_FRAIS_POURCENT));
+    if (quantite > possible)
+        quantite = possible;
+    if (quantite == 0)
+        return 0;
+    net = (u64)quantite * cours * (100 - BOURSE_FRAIS_POURCENT) / 100;
+    AddMoney(&gSaveBlock1Ptr->money, net);
+    DEC.prixMoyen[e] = ((u64)DEC.prixMoyen[e] * DEC.parts[e] + (u64)cours * quantite) / (DEC.parts[e] + quantite);
+    DEC.parts[e] += quantite;
+    return quantite;
+}
+
+u32 Bourse_Racheter(u32 e, u32 quantite)
+{
+    u32 cours, possible;
+
+    if (e >= BOURSE_NB_ENTREPRISES || Bourse_PartsDecouvert(e) == 0)
+        return 0;
+    cours = BOURSE.cours[e];
+    if (quantite > DEC.parts[e])
+        quantite = DEC.parts[e];
+    possible = cours ? (u64)GetMoney(&gSaveBlock1Ptr->money) * 100 / ((u64)cours * (100 + BOURSE_FRAIS_POURCENT)) : quantite;
+    if (quantite > possible)
+        quantite = possible;
+    if (quantite == 0)
+        return 0;
+    RemoveMoney(&gSaveBlock1Ptr->money, Borner((u64)quantite * cours * (100 + BOURSE_FRAIS_POURCENT) / 100, 0, 0xFFFFFFFF));
+    DEC.parts[e] -= quantite;
+    if (DEC.parts[e] == 0)
+        DEC.prixMoyen[e] = 0;
+    return quantite;
+}
+
+// Rachat forcé de tout : l'argent d'abord, puis le portefeuille (vendu -10 %), le reste devient une dette de la Bourse.
+static void Liquider(void)
+{
+    u64 cout = (u64)Bourse_ValeurDecouvert() * (100 + BOURSE_DECOUVERT_PENALITE) / 100;
+    u32 argent = GetMoney(&gSaveBlock1Ptr->money), i;
+
+    for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
+        DEC.parts[i] = DEC.prixMoyen[i] = 0;
+    DEC.liquidation = Borner((u64)DEC.liquidation + cout, 0, 2000000000);
+    if (cout <= argent)
+    {
+        RemoveMoney(&gSaveBlock1Ptr->money, cout);
+        return;
+    }
+    RemoveMoney(&gSaveBlock1Ptr->money, argent);
+    cout -= argent;
+    {
+        u64 portefeuille = (u64)Bourse_ValeurPortefeuille() * (100 - BOURSE_HUISSIER_PENALITE) / 100;
+        for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
+            BOURSE.parts[i] = 0;
+        OR.parts = 0;
+        if (portefeuille >= cout)
+        {
+            AddMoney(&gSaveBlock1Ptr->money, portefeuille - cout);
+            return;
+        }
+        cout -= portefeuille;
+    }
+    BOURSE.dette = Borner((u64)BOURSE.dette + cout, 0, 2000000000);
+}
+
+// Faillites (clôture gagnante au cours du jour, sans frais) puis appel de marge.
+void Bourse_VerifierDecouvert(void)
+{
+    u32 i;
+    s32 resultat;
+
+    if (DEC.magie != BOURSE_DECOUVERT_MAGIE)
+        return;
+    for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
+    {
+        if (DEC.parts[i] && EnFaillite(i))
+        {
+            u32 cout = Borner((u64)DEC.parts[i] * BOURSE.cours[i], 0, 2000000000);
+            u32 gain = Borner((u64)DEC.parts[i] * DEC.prixMoyen[i], 0, 2000000000);
+            u32 pris = min(cout, GetMoney(&gSaveBlock1Ptr->money));
+            RemoveMoney(&gSaveBlock1Ptr->money, pris);
+            DEC.faillites = Borner((u64)DEC.faillites + (gain > cout ? gain - cout : 0), 0, 2000000000);
+            DEC.parts[i] = DEC.prixMoyen[i] = 0;
+        }
+    }
+    resultat = Bourse_ResultatDecouvert();
+    if (resultat < 0 && (u64)(-resultat) > (u64)GetMoney(&gSaveBlock1Ptr->money) + Bourse_ValeurPortefeuille())
+        Liquider();
+}
+
+// Frais d'emprunt du jour : 0,1 % de la valeur des positions (1 ¥ au moins). S'il n'y a pas de quoi payer, appel de marge.
+static void FraisEmprunt(void)
+{
+    u32 valeur, frais;
+    if (DEC.magie != BOURSE_DECOUVERT_MAGIE || (valeur = Bourse_ValeurDecouvert()) == 0)
+        return;
+    frais = (u64)valeur * BOURSE_DECOUVERT_EMPRUNT_POURMILLE / 1000;
+    if (frais == 0)
+        frais = 1;
+    if (!IsEnoughMoney(&gSaveBlock1Ptr->money, frais))
+    {
+        Liquider();
+        return;
+    }
+    RemoveMoney(&gSaveBlock1Ptr->money, frais);
+}
+
 u32 Bourse_PlafondCredit(void)
 {
     return Borner((u64)BOURSE_CREDIT_BASE + Bourse_ValeurPortefeuille() / 2, 0, BOURSE_CREDIT_MAX);
@@ -591,6 +769,16 @@ u32 Bourse_Rembourser(void)
 // ---------------------------------------------------------------- textes
 
 static const u8 sText_Yens[] = _(" ¥");
+// v0.51 : vente à découvert
+static const u8 sText_DecFaillite[] = _("Faillite ! Tes positions à découvert\nsont closes. Gain encaissé : ");
+static const u8 sText_DecFaillite2[] = _(".");
+static const u8 sText_DecMarge[] = _("Appel de marge ! Tes pertes à\ndécouvert dépassaient tes avoirs.\p");
+static const u8 sText_DecMargeSuite[] = _("\pAppel de marge ! Tes pertes à\ndécouvert dépassaient tes avoirs.\p");
+static const u8 sText_DecMarge2[] = _(" de rachat forcé, pris\nsur ton argent puis tes placements.");
+static const u8 sText_FicheDec1[] = _("\pÀ découvert : ");
+static const u8 sText_FicheDec2[] = _(" parts\nvendues à ");
+static const u8 sText_FicheDec3[] = _(" en moyenne.");
+static const u8 sText_Fiche3Point[] = _(".");
 
 static u8 *AjouterNombre(u8 *fin, u32 n)
 {
@@ -664,9 +852,35 @@ void Bourse_Ouvrir(void)
 
     Bourse_MettreAJourJusqua(Aujourdhui());
     gSpecialVar_Result = FALSE;
-    if (BOURSE.huissier == 0)
-        return;
-    fin = AjouterTexte(gStringVar4, sText_Huissier1);
+    // v0.51 : rachat forcé des positions à découvert, faillite d'une entreprise vendue à découvert
+    if (DEC.magie == BOURSE_DECOUVERT_MAGIE && (DEC.liquidation || DEC.faillites))
+    {
+        fin = gStringVar4;
+        if (DEC.faillites)
+        {
+            fin = AjouterTexte(fin, sText_DecFaillite);
+            fin = AjouterYens(fin, DEC.faillites);
+            fin = AjouterTexte(fin, sText_DecFaillite2);
+        }
+        if (DEC.liquidation)
+        {
+            fin = AjouterTexte(fin, DEC.faillites ? sText_DecMargeSuite : sText_DecMarge);
+            fin = AjouterYens(fin, DEC.liquidation);
+            fin = AjouterTexte(fin, sText_DecMarge2);
+        }
+        DEC.liquidation = DEC.faillites = 0;
+        gSpecialVar_Result = TRUE;
+        if (BOURSE.huissier == 0)
+            return;
+        *fin++ = CHAR_PROMPT_CLEAR;
+        fin = AjouterTexte(fin, sText_Huissier1);
+    }
+    else
+    {
+        if (BOURSE.huissier == 0)
+            return;
+        fin = AjouterTexte(gStringVar4, sText_Huissier1);
+    }
     fin = AjouterYens(fin, BOURSE.huissier);
     fin = AjouterTexte(fin, sText_Huissier2);
     fin = AjouterYens(fin, BOURSE.dette);
@@ -679,6 +893,11 @@ static const u8 sText_Resume1[] = _("Liquide : ");
 static const u8 sText_Resume2[] = _("\nPlacements : ");
 static const u8 sText_Resume3[] = _("\pDette : ");
 static const u8 sText_Resume4[] = _(". Bourse de Hoenn,\non fait quoi ?");
+static const u8 sText_ResumeDec1[] = _(".\pÀ découvert : ");
+static const u8 sText_ResumeDecGain[] = _("\nGain latent : ");
+static const u8 sText_ResumeDecPerte[] = _("\nPerte latente : ");
+static const u8 sText_Resume5[] = _("Bourse de Hoenn, on fait quoi ?");
+static const u8 sText_Resume5Weekend[] = _("Week-end : cours figés jusqu'à\nlundi. On fait quoi ?");
 static const u8 sText_Resume4Weekend[] = _(". Week-end : cours\nfigés jusqu'à lundi. On fait quoi ?");
 
 void Bourse_Resume(void)
@@ -689,8 +908,21 @@ void Bourse_Resume(void)
     fin = AjouterYens(fin, Bourse_ValeurPortefeuille());
     fin = AjouterTexte(fin, sText_Resume3);
     fin = AjouterYens(fin, BOURSE.dette);
+    if (Bourse_ValeurDecouvert())
+    {
+        s32 r = Bourse_ResultatDecouvert();
+        fin = AjouterTexte(fin, sText_ResumeDec1);
+        fin = AjouterYens(fin, Bourse_ValeurDecouvert());
+        fin = AjouterTexte(fin, r >= 0 ? sText_ResumeDecGain : sText_ResumeDecPerte);
+        fin = AjouterYens(fin, r >= 0 ? r : -r);
+        fin = AjouterTexte(fin, sText_Fiche3Point);
+        *fin++ = CHAR_PROMPT_CLEAR;
+        AjouterTexte(fin, Calendrier_EstWeekend(Aujourdhui()) ? sText_Resume5Weekend : sText_Resume5);
+        return;
+    }
     AjouterTexte(fin, Calendrier_EstWeekend(Aujourdhui()) ? sText_Resume4Weekend : sText_Resume4);
 }
+
 
 // Lignes de la liste du marché : « Devon SA 612 ¥ ↑ ».
 void Bourse_PreparerListe(void)
@@ -748,8 +980,17 @@ void Bourse_Fiche(void)
     fin = AjouterNombre(fin, Bourse_Parts(e));
     fin = AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche4Or : sText_Fiche4);
     fin = AjouterYens(fin, (u64)Bourse_Parts(e) * Bourse_Cours(e));
-    AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche5Or : (EnFaillite(e) ? sText_FicheFaillite : sText_Fiche5));
+    fin = AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche5Or : (EnFaillite(e) ? sText_FicheFaillite : sText_Fiche5));
+    if (Bourse_PartsDecouvert(e))
+    {
+        fin = AjouterTexte(fin, sText_FicheDec1);
+        fin = AjouterNombre(fin, Bourse_PartsDecouvert(e));
+        fin = AjouterTexte(fin, sText_FicheDec2);
+        fin = AjouterYens(fin, DEC.prixMoyen[e]);
+        AjouterTexte(fin, sText_FicheDec3);
+    }
 }
+
 
 static const u16 sQuantites[] = {1, 10, 100, BOURSE_PARTS_MAX};
 
@@ -780,6 +1021,39 @@ void Bourse_ScriptAcheter(void)
         TexteOrdre(sText_Achat1, n, e);
     else
         StringCopy(gStringVar4, sText_AchatRien);
+    gSpecialVar_Result = n != 0;
+}
+
+static const u8 sText_Dec1[] = _("Vendu à découvert : ");
+static const u8 sText_Rachat1[] = _("Racheté : ");
+static const u8 sText_DecRien[] = _("Impossible : entreprise en faillite,\nexposition maximale atteinte.");
+static const u8 sText_RachatRien[] = _("Aucune position à racheter, ou pas\nassez de liquide.");
+
+// VAR_RESULT = la vente à découvert est proposée pour cette entreprise (VAR_0x8004).
+void Bourse_DecouvertDispo(void)
+{
+    gSpecialVar_Result = gSpecialVar_0x8004 < BOURSE_NB_ENTREPRISES && Bourse_DecouvertAutorise();
+}
+
+void Bourse_ScriptVendreDecouvert(void)
+{
+    u32 e = gSpecialVar_0x8004, n;
+    n = Bourse_VendreADecouvert(e, sQuantites[gSpecialVar_0x8005 < ARRAY_COUNT(sQuantites) ? gSpecialVar_0x8005 : 0]);
+    if (n)
+        TexteOrdre(sText_Dec1, n, e);
+    else
+        StringCopy(gStringVar4, sText_DecRien);
+    gSpecialVar_Result = n != 0;
+}
+
+void Bourse_ScriptRacheter(void)
+{
+    u32 e = gSpecialVar_0x8004, n;
+    n = Bourse_Racheter(e, sQuantites[gSpecialVar_0x8005 < ARRAY_COUNT(sQuantites) ? gSpecialVar_0x8005 : 0]);
+    if (n)
+        TexteOrdre(sText_Rachat1, n, e);
+    else
+        StringCopy(gStringVar4, sText_RachatRien);
     gSpecialVar_Result = n != 0;
 }
 

@@ -622,7 +622,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Pokédex (+ Multi Exp), 5 Poké Balls, Dark Ball, combat de la Route 103 marqué comme fait, états du labo / de Bourg-en-Vol finaux.
 - Loyer de l'appartement : 2 500 ¥ tous les 30 jours tant que le joueur n'a aucune maison (immobilier), prélevé à l'ouverture
   du menu L (`Tycoon_Loyer`, 12 mois rattrapés au plus, impayés comptés). `struct TycoonSave` (8 octets) dans SaveBlock3.
-- Pas encore : effets du profil Trader (vente à découvert, à coder) et Espoir Sportif (+4 de rating, quand le joueur aura un rating).
+- Pas encore : Espoir Sportif (+4 de rating, quand le joueur aura un rating).
   Non vérifié dans un émulateur : à tester en priorité (réveil, horloge, sortie de la maison, Route 101, labo).
 
 ## Fait (v0.48) - édition Carrière & Business : sièges des clubs dans les arènes
@@ -661,16 +661,25 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   espèces évoluées ; attaques par défaut recalculées au nouveau niveau, attaques écrites à la main conservées.
   Exclus : `TRAINER_COURONNEMENT` (ligue, tournois, arènes du joueur) et les partenaires. Édition classique inchangée.
   Tests : `TESTS="Carriere"` (4).
-- L'édition Carrière couvre maintenant toute la spec du 17/11 sauf la vente à découverte du profil Trader et le +4 de rating
+- L'édition Carrière couvre maintenant toute la spec du 17/11 sauf le +4 de rating
   de l'Espoir Sportif. Rien n'a été vérifié dans un émulateur depuis la v0.46.
+
+## Fait (v0.51) - vente à découvert
+
+- Fiche d'une entreprise de la Bourse : « Vendre à découvert » (1, 10, 100, max) et « Racheter » (`Bourse_VendreADecouvert` /
+  `Bourse_Racheter`, `src/bourse.c`). Liquide crédité tout de suite moins 3 %, rachat +3 %, prix moyen pondéré ; frais d'emprunt
+  0,1 %/jour sur la valeur des positions (`FraisEmprunt`, jours ouvrés). Exposition max = max(20 000, liquide + portefeuille).
+- Appel de marge (`Bourse_VerifierDecouvert`, chaque jour et après les chocs) : si la perte latente dépasse liquide + portefeuille,
+  ou si les frais ne peuvent pas être payés, tout est racheté +10 % : argent, puis portefeuille vendu -10 %, le reste en dette de la Bourse.
+  Faillite Aqua / Magma : position close d'office au cours du jour, gain acquis, plus de vente à découvert sur elles. Annoncé à l'ouverture.
+- Accès : édition classique avec le pass ; Carrière : profil Trader dès le début, les autres une fois leur société créée
+  (`Bourse_DecouvertAutorise`). Pas d'or ni de société du joueur à découvert. Résumé et fiche montrent positions et gain latent.
+- Sauvegarde : `struct BourseDecouvert` (48 octets, `BOURSE_DECOUVERT_MAGIE`) dans SaveBlock3. Réglages `BOURSE_DECOUVERT_*`
+  (`include/bourse.h`). Tests : `TESTS="Bourse"` (17).
 
 ## Idées d'Adrien à concevoir plus tard
 
-- **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
-  avant de détruire la Team Aqua). Piste : positions courtes dans SaveBlock3 (u16 par actif + prix moyen d'ouverture, ~60 octets),
-  liquide crédité à l'ouverture (frais 3 %), frais d'emprunt ~0,1 %/jour, rachat pour clôturer ; appel de marge / huissier si la perte
-  dépasse le liquide + portefeuille ; faillite (Aqua / Magma) = clôture automatique à ~0 et gain encaissé. Fiche : « Vendre à
-  découvert » / « Racheter », positions courtes affichées dans le portefeuille. L'or et la société du joueur : à décider.
+
 - Courtier louche et quêtes de sabotage de la Bourse ; rumeurs à la télé / chez les PNJ.
 
 ## Prochaines étapes, dans l'ordre
@@ -679,7 +688,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
     Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
     lieux ; la Ligue Pokémon s'ouvre après avoir atteint une fois le rang Champions (Top 32) du Couronnement Mondial. v0.46 : règles de terrain, v0.47 : intro adulte, v0.48 : sièges des clubs, v0.49 : Pokémon de prêt, v0.50 : niveaux par tier.
-    Reste : tests en émulateur, PokéNav, vente à découvert (profil Trader). À valider avec
+    Reste : tests en émulateur, PokéNav, +4 de rating de l'Espoir Sportif. À valider avec
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.

@@ -339,6 +339,18 @@ struct ClubLigueSave
     u32 bilan[6];                     // dernier bilan : billetterie, TV, boutique, charges, impôt, résultat (s32)
 };
 
+// Émeraude Couronnement : vente à découvert à la Bourse (v0.51), src/bourse.c. 9 entreprises (pas l'or).
+#define BOURSE_DECOUVERT_MAGIE 0xDEC0
+struct BourseDecouvert
+{
+    u16 magie;
+    u16 parts[9];        // parts vendues à découvert (à racheter)
+    u16 prixMoyen[9];    // prix moyen de vente (¥ par part)
+    u16 padding;
+    u32 liquidation;     // montant du dernier rachat forcé (appel de marge), à annoncer
+    u32 faillites;       // gains encaissés par la faillite d'une entreprise, à annoncer
+};
+
 // Émeraude Couronnement : édition Carrière & Business (v0.47), src/tycoon.c.
 #define TYCOON_MAGIE 0x7C0E
 struct TycoonSave
@@ -371,6 +383,7 @@ struct SaveBlock3
     struct BourseOr bourseOr; // Émeraude Couronnement (v0.41), src/bourse.c
     struct ClubLigueSave ligueClubs; // Émeraude Couronnement (v0.42), src/league_club.c
     struct TycoonSave tycoon; // Émeraude Couronnement (v0.47), édition Carrière, src/tycoon.c
+    struct BourseDecouvert decouvert; // Émeraude Couronnement (v0.51), vente à découvert, src/bourse.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

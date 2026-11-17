@@ -44,12 +44,57 @@ Bourse_EventScript_Fiche::
 	special Bourse_Fiche
 	message gStringVar4
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Bourse_Text_Acheter, Bourse_Text_Vendre, Bourse_Text_Graphique, Bourse_Text_Retour
+	dynmultipush Bourse_Text_Acheter, 0
+	dynmultipush Bourse_Text_Vendre, 1
+	special Bourse_DecouvertDispo @ v0.51 : vente à découvert
+	goto_if_eq VAR_RESULT, FALSE, Bourse_EventScript_FicheSuite
+	dynmultipush Bourse_Text_Decouvert, 3
+	dynmultipush Bourse_Text_Racheter, 4
+Bourse_EventScript_FicheSuite::
+	dynmultipush Bourse_Text_Graphique, 2
+	dynmultipush Bourse_Text_Retour, 5
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	switch VAR_RESULT
 	case 0, Bourse_EventScript_Acheter
 	case 1, Bourse_EventScript_Vendre
 	case 2, Bourse_EventScript_Graphique
+	case 3, Bourse_EventScript_Decouvert
+	case 4, Bourse_EventScript_Racheter
 	goto Bourse_EventScript_Marche
+
+Bourse_EventScript_Decouvert::
+	message Bourse_Text_CombienDecouvert
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Bourse_Text_1, Bourse_Text_10, Bourse_Text_100, Bourse_Text_Max, Bourse_Text_Retour
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Bourse_EventScript_Fiche
+	goto_if_eq VAR_RESULT, 4, Bourse_EventScript_Fiche
+	copyvar VAR_0x8005, VAR_RESULT
+	special Bourse_ScriptVendreDecouvert
+	call Bourse_EventScript_SonOrdre
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	goto Bourse_EventScript_Fiche
+
+Bourse_EventScript_Racheter::
+	message Bourse_Text_CombienRacheter
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, Bourse_Text_1, Bourse_Text_10, Bourse_Text_100, Bourse_Text_Tout, Bourse_Text_Retour
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Bourse_EventScript_Fiche
+	goto_if_eq VAR_RESULT, 4, Bourse_EventScript_Fiche
+	copyvar VAR_0x8005, VAR_RESULT
+	special Bourse_ScriptRacheter
+	call Bourse_EventScript_SonOrdre
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	goto Bourse_EventScript_Fiche
+
+Bourse_Text_Decouvert:
+	.string "Vendre à découvert$"
+Bourse_Text_Racheter:
+	.string "Racheter (découvert)$"
+Bourse_Text_CombienDecouvert:
+	.string "Combien de parts vendre à découvert ?\n"
+	.string "Frais 3 % + 0,1 % par jour.$"
+Bourse_Text_CombienRacheter:
+	.string "Combien de parts racheter ?$"
 
 @ v0.38 : graphique en chandeliers japonais (SELECT : courbe), src/bourse_graphique.c
 Bourse_EventScript_Graphique::

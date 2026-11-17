@@ -169,3 +169,72 @@ TEST("Bourse: gold moves gently, has a history and shines in a crash")
     }
     EXPECT_GT(n, 900); // légère tendance haussière
 }
+
+// v0.51 : vente à découvert
+#define DEC (gSaveBlock3Ptr->decouvert)
+
+static void PreparerDecouvert(u32 argent)
+{
+    Preparer(argent);
+    memset(&DEC, 0, sizeof(DEC));
+    FlagClear(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+    BOURSE.cours[BOURSE_DEVON] = 1000;
+    BOURSE.cours[BOURSE_AQUA] = 1000;
+}
+
+TEST("Bourse: short selling credits cash minus 3% and buying back gains on a fall")
+{
+    PreparerDecouvert(10000);
+    EXPECT_EQ(Bourse_VendreADecouvert(BOURSE_DEVON, 10), 10);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 10000 + 9700);
+    EXPECT_EQ(Bourse_PartsDecouvert(BOURSE_DEVON), 10);
+    BOURSE.cours[BOURSE_DEVON] = 500;
+    EXPECT_EQ(Bourse_ResultatDecouvert(), 5000);
+    EXPECT_EQ(Bourse_Racheter(BOURSE_DEVON, 10), 10);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 10000 + 9700 - 5150);
+    EXPECT_EQ(Bourse_PartsDecouvert(BOURSE_DEVON), 0);
+}
+
+TEST("Bourse: short exposure is capped by cash and holdings")
+{
+    PreparerDecouvert(30000);
+    // plafond = 30 000 de liquide : 30 parts à 1 000
+    EXPECT_EQ(Bourse_VendreADecouvert(BOURSE_DEVON, 9999), 30);
+    EXPECT_EQ(Bourse_VendreADecouvert(BOURSE_DEVON, 1), 1); // le liquide a augmenté avec la vente
+}
+
+TEST("Bourse: average short price is weighted")
+{
+    PreparerDecouvert(100000);
+    Bourse_VendreADecouvert(BOURSE_DEVON, 10);
+    BOURSE.cours[BOURSE_DEVON] = 2000;
+    Bourse_VendreADecouvert(BOURSE_DEVON, 10);
+    EXPECT_EQ(DEC.prixMoyen[BOURSE_DEVON], 1500);
+}
+
+TEST("Bourse: margin call buys everything back with a 10% penalty")
+{
+    PreparerDecouvert(20000);
+    Bourse_VendreADecouvert(BOURSE_DEVON, 20); // +19 400
+    SetMoney(&gSaveBlock1Ptr->money, 1000);
+    BOURSE.cours[BOURSE_DEVON] = 3000;           // perte 40 000 > 1 000
+    Bourse_VerifierDecouvert();
+    EXPECT_EQ(Bourse_PartsDecouvert(BOURSE_DEVON), 0);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 0);
+    EXPECT_EQ(BOURSE.dette, 66000 - 1000);
+    EXPECT_EQ(DEC.liquidation, 66000);
+}
+
+TEST("Bourse: a bankrupt company closes the short position with the gain kept")
+{
+    PreparerDecouvert(50000);
+    Bourse_VendreADecouvert(BOURSE_AQUA, 10);    // +9 700
+    BOURSE.cours[BOURSE_AQUA] = 10;
+    FlagSet(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+    Bourse_VerifierDecouvert();
+    EXPECT_EQ(Bourse_PartsDecouvert(BOURSE_AQUA), 0);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 50000 + 9700 - 100);
+    EXPECT_EQ(DEC.faillites, 9900);
+    EXPECT_EQ(Bourse_VendreADecouvert(BOURSE_AQUA, 1), 0);
+    FlagClear(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+}

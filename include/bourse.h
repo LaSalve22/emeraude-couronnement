@@ -77,6 +77,18 @@ void Bourse_ScriptEmprunter(void);
 void Bourse_ScriptRembourser(void);
 void Bourse_Tuyau(void);
 
+// Vente à découvert (v0.51) : 9 entreprises, pas l'or ni la société du joueur.
+#define BOURSE_DECOUVERT_EMPRUNT_POURMILLE 1   // frais d'emprunt par jour sur la valeur des positions
+#define BOURSE_DECOUVERT_PENALITE         10   // rachat forcé (appel de marge) : +10 %
+#define BOURSE_DECOUVERT_PLANCHER      20000   // exposition maximale : max(20 000, liquide + placements)
+bool32 Bourse_DecouvertAutorise(void);
+u32 Bourse_PartsDecouvert(u32 entreprise);
+u32 Bourse_ValeurDecouvert(void);              // coût de rachat de toutes les positions au cours du jour
+s32 Bourse_ResultatDecouvert(void);            // gain (+) ou perte (-) latente
+u32 Bourse_VendreADecouvert(u32 entreprise, u32 quantite);
+u32 Bourse_Racheter(u32 entreprise, u32 quantite);
+void Bourse_VerifierDecouvert(void);           // faillites et appel de marge
+
 extern u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 2][32]; // + la société du joueur (v0.35) + l'or (v0.41)
 
 #endif // GUARD_BOURSE_H
