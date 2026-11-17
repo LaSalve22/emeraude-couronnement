@@ -570,8 +570,8 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Coaching : Bonbon Exp. L +1, XL +2 de rating permanent (max +20, rating 100).
 - Tableau de bord propriétaire : 5 onglets (+ Mercato : effectif, rating, salaires ; + Finances : prévisionnel, START = devis des
   travaux, le script enchaîne via VAR_RESULT = 1). La saison n'est plus affichée dans le bandeau à 5 onglets.
-- Sauvegarde : `ClubLigueSave` passe à 180 octets (champs ajoutés à la fin, zéros sur une sauvegarde v0.42 = pas de club possédé) ;
-  SaveBlock3 = 944 / 1 624 octets.
+- Sauvegarde : `ClubLigueSave` passe à 176 octets (champs ajoutés à la fin, zéros sur une sauvegarde v0.42 = pas de club possédé) ;
+  SaveBlock3 = 940 / 1 624 octets.
 
 ## Idées d'Adrien à concevoir plus tard
 
