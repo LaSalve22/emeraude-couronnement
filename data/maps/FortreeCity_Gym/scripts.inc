@@ -1,7 +1,12 @@
 FortreeCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, FortreeCity_Gym_OnFrameCouronnement
 	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, FortreeCity_Gym_OnWarp
 	.byte 0
+
+FortreeCity_Gym_OnFrameCouronnement:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
+	.2byte 0
 
 FortreeCity_Gym_OnTransition:
 	special RotatingGate_InitPuzzle

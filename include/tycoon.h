@@ -28,5 +28,8 @@ const struct Trainer *Tycoon_AjusterDresseur(const struct Trainer *dresseur);
 void Tycoon_ChoisirProfil(void);                  // VAR_0x8004 = profil (intro adulte)
 u32 Tycoon_Profil(void);
 void Tycoon_BoutiqueNiveau(void);                 // special : 0, 1 (L) ou 2 (XL) selon le tier
+void Tycoon_AccreditationsAuto(void);              // Arènes fermées : badges posés selon le scénario (v0.53)
+void Tycoon_AreneFermee(void);                     // special
+void Tycoon_SortirArene(void);                     // special (+ waitstate)
 
 #endif // GUARD_TYCOON_H

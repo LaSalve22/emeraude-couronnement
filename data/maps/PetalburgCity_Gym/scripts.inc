@@ -70,6 +70,7 @@ PetalburgCity_Gym_EventScript_TurnPlayerNorth::
 	end
 
 PetalburgCity_Gym_OnFrame:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
 	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
 

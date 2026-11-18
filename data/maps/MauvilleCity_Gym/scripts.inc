@@ -1,6 +1,11 @@
 MauvilleCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MauvilleCity_Gym_OnFrameCouronnement
 	map_script MAP_SCRIPT_ON_LOAD, MauvilleCity_Gym_OnLoad
 	.byte 0
+
+MauvilleCity_Gym_OnFrameCouronnement:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
+	.2byte 0
 
 MauvilleCity_Gym_OnLoad:
 	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_DeactivatePuzzle

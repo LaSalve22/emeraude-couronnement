@@ -526,6 +526,7 @@ Couronnement_Text_RepousseInfinieExplique:
 Couronnement_EventScript_MenuL::
 	lockall
 	call Tycoon_EventScript_Loyer @ édition Carrière : loyer de l'appartement
+	call Tycoon_EventScript_Courrier @ édition Carrière : objets des champions (Arènes fermées)
 Couronnement_EventScript_MenuLBoucle::
 	special Couronnement_BufferMenuL
 	message Couronnement_Text_MenuL

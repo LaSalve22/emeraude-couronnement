@@ -196,3 +196,102 @@ Tycoon_Text_PresidentNorman:
 	.string "moi qui le dirige. Pas de combat.\p"
 	.string "Tu as fait ton chemin. Voici ton\n"
 	.string "accréditation, et le reste avec.$"
+
+@ ---------------------------------------------------------------- Arènes fermées (v0.53)
+@ Premier image dans une Arène (VAR_TEMP_9 = 0) : en édition Carrière, on ressort aussitôt par la porte.
+Tycoon_EventScript_AreneFermee::
+	setvar VAR_TEMP_9, 1
+	special Tycoon_AreneFermee
+	goto_if_eq VAR_RESULT, FALSE, Tycoon_EventScript_AreneOuverte
+	lockall
+	msgbox Tycoon_Text_AreneFermee, MSGBOX_DEFAULT
+	closemessage
+	playse SE_EXIT
+	special Tycoon_SortirArene
+	waitstate
+	releaseall
+Tycoon_EventScript_AreneOuverte::
+	end
+
+@ Courrier des clubs, à l'ouverture du menu L : objets que les champions donnaient (CT, Orbe Téracristal, Méga-Anneau).
+Tycoon_EventScript_Courrier::
+	special Tycoon_EstActif
+	goto_if_eq VAR_RESULT, FALSE, Tycoon_EventScript_CourrierFin
+	goto_if_unset FLAG_BADGE01_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_ROCK_TOMB, Tycoon_EventScript_Courrier2
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_ROCK_TOMB
+	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+Tycoon_EventScript_Courrier2::
+	goto_if_unset FLAG_BADGE02_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_BULK_UP, Tycoon_EventScript_Courrier3
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_BULK_UP
+	setflag FLAG_RECEIVED_TM_BULK_UP
+	checkitem ITEM_TERA_ORB
+	goto_if_eq VAR_RESULT, TRUE, Tycoon_EventScript_Courrier3
+	giveitem ITEM_TERA_ORB
+	setflag FLAG_TERA_ORB_CHARGED
+	msgbox Tycoon_Text_CourrierTera, MSGBOX_DEFAULT
+Tycoon_EventScript_Courrier3::
+	goto_if_unset FLAG_BADGE03_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_SHOCK_WAVE, Tycoon_EventScript_Courrier4
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_SHOCK_WAVE
+	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
+Tycoon_EventScript_Courrier4::
+	goto_if_unset FLAG_BADGE04_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_OVERHEAT, Tycoon_EventScript_Courrier5
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_OVERHEAT
+	setflag FLAG_RECEIVED_TM_OVERHEAT
+Tycoon_EventScript_Courrier5::
+	goto_if_unset FLAG_BADGE05_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_FACADE, Tycoon_EventScript_Courrier6
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_FACADE
+	setflag FLAG_RECEIVED_TM_FACADE
+	checkitem ITEM_MEGA_RING
+	goto_if_eq VAR_RESULT, TRUE, Tycoon_EventScript_Courrier6
+	giveitem ITEM_MEGA_RING
+	call_if_eq VAR_STARTER_MON, 0, PetalburgCity_Gym_EventScript_GiveSceptilite
+	call_if_eq VAR_STARTER_MON, 2, PetalburgCity_Gym_EventScript_GiveBlastoisinite
+	msgbox Tycoon_Text_CourrierMega, MSGBOX_DEFAULT
+Tycoon_EventScript_Courrier6::
+	goto_if_unset FLAG_BADGE06_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_AERIAL_ACE, Tycoon_EventScript_Courrier7
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_AERIAL_ACE
+	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+Tycoon_EventScript_Courrier7::
+	goto_if_unset FLAG_BADGE07_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_CALM_MIND, Tycoon_EventScript_Courrier8
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_CALM_MIND
+	setflag FLAG_RECEIVED_TM_CALM_MIND
+Tycoon_EventScript_Courrier8::
+	goto_if_unset FLAG_BADGE08_GET, Tycoon_EventScript_CourrierFin
+	goto_if_set FLAG_RECEIVED_TM_WATER_PULSE, Tycoon_EventScript_CourrierFin
+	msgbox Tycoon_Text_Courrier, MSGBOX_DEFAULT
+	giveitem ITEM_TM_WATER_PULSE
+	setflag FLAG_RECEIVED_TM_WATER_PULSE
+Tycoon_EventScript_CourrierFin::
+	return
+
+Tycoon_Text_AreneFermee:
+	.string "Arène fermée. C'est le siège du club :\n"
+	.string "entraînement privé, pas de visites.\p"
+	.string "Les guichets de la ligue sont au\n"
+	.string "Centre Pokémon.$"
+
+Tycoon_Text_Courrier:
+	.string "Courrier de la Ligue des Clubs : un\n"
+	.string "colis du club, pour tes progrès.$"
+
+Tycoon_Text_CourrierTera:
+	.string "L'Orbe Téracristal se recharge dans\n"
+	.string "chaque Centre Pokémon.$"
+
+Tycoon_Text_CourrierMega:
+	.string "Avec le Méga-Anneau, tes Pokémon\n"
+	.string "peuvent méga-évoluer en combat.$"

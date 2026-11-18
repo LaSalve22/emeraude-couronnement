@@ -1,5 +1,10 @@
 RustboroCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, RustboroCity_Gym_OnFrameCouronnement
 	.byte 0
+
+RustboroCity_Gym_OnFrameCouronnement:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
+	.2byte 0
 
 RustboroCity_Gym_EventScript_Roxanne::
 	setvar VAR_0x8004, TRAINER_ROXANNE_1 @ Couronnement, édition Carrière : président du club, accréditation sans combat

@@ -1,6 +1,11 @@
 LavaridgeTown_Gym_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LavaridgeTown_Gym_1F_OnFrameCouronnement
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
 	.byte 0
+
+LavaridgeTown_Gym_1F_OnFrameCouronnement:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
+	.2byte 0
 
 LavaridgeTown_Gym_1F_OnTransition:
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars

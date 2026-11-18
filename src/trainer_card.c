@@ -853,7 +853,8 @@ static void SetDataFromTrainerCard(void)
     if (sData->trainerCard.battleTowerWins || sData->trainerCard.battleTowerStraightWins)
         sData->hasBattleTowerWins++;
 
-    for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
+    // Couronnement, édition Carrière : Arènes fermées, les badges sont des accréditations internes, pas affichés
+    for (i = 0, badgeFlag = FLAG_BADGE01_GET; !EDITION_TYCOON_SIM && badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
     {
         if (FlagGet(badgeFlag))
             sData->badgeCount[i]++;

@@ -21,6 +21,7 @@
 #include "constants/trainers.h"
 #include "battle_setup.h"
 #include "constants/flags.h"
+#include "constants/maps.h"
 #include "constants/rgb.h"
 
 // Émeraude Couronnement : édition « Carrière & Business » (v0.46), règles de terrain. Voir include/tycoon.h.
@@ -354,4 +355,169 @@ const struct Trainer *Tycoon_AjusterDresseur(const struct Trainer *dresseur)
     }
     sDresseurAjuste.party = sEquipeAjustee;
     return &sDresseurAjuste;
+}
+
+// ---------------------------------------------------------------- Arènes fermées (v0.53, choix d'Adrien)
+// Édition Carrière : les Arènes sont fermées (sièges des clubs), on ne combat plus les champions. Les badges restent des drapeaux
+// internes (« accréditations ») posés automatiquement, sans message, dans l'ordre et aux moments où le scénario d'origine les
+// donnerait : les systèmes qui comptent les badges et les suites du scénario (Centre Spatial, Atalanopolis…) continuent de marcher.
+// Les objets des champions arrivent par courrier à l'ouverture du menu L (Tycoon_EventScript_Courrier).
+static bool32 AccreditationDue(u32 n)
+{
+    if (VarGet(VAR_PETALBURG_GYM_STATE) < 2) // tutoriel de Timmy pas encore fait
+        return FALSE;
+    if (n > 1 && !FlagGet(FLAG_BADGE01_GET + n - 2))
+        return FALSE;
+    switch (n)
+    {
+    case 1: return FlagGet(FLAG_VISITED_RUSTBORO_CITY);
+    case 2: return FlagGet(FLAG_VISITED_DEWFORD_TOWN);
+    case 3: return FlagGet(FLAG_VISITED_MAUVILLE_CITY);
+    case 4: return FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) && FlagGet(FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY);
+    case 5: return VarGet(VAR_PETALBURG_GYM_STATE) >= 6;
+    case 6: return FlagGet(FLAG_VISITED_FORTREE_CITY) && VarGet(VAR_WEATHER_INSTITUTE_STATE) != 0;
+    case 7: return FlagGet(FLAG_VISITED_MOSSDEEP_CITY) && FlagGet(FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE);
+    case 8: return VarGet(VAR_SOOTOPOLIS_CITY_STATE) >= 5;
+    }
+    return FALSE;
+}
+
+static void PetalburgUnBadgeDePlus(void)
+{
+    u32 etat = VarGet(VAR_PETALBURG_GYM_STATE);
+    if (etat >= 2 && etat < 6)
+        VarSet(VAR_PETALBURG_GYM_STATE, ++etat);
+    if (etat == 6)
+    {
+        FlagClear(FLAG_HIDE_PETALBURG_GYM_GREETER);
+        FlagSet(FLAG_PETALBURG_MART_EXPANDED_ITEMS);
+    }
+}
+
+static void Accrediter(u32 n)
+{
+    FlagSet(FLAG_BADGE01_GET + n - 1);
+    switch (n)
+    {
+    case 1:
+        FlagSet(FLAG_DEFEATED_RUSTBORO_GYM);
+        if (VarGet(VAR_RUSTBORO_CITY_STATE) == 0)
+            VarSet(VAR_RUSTBORO_CITY_STATE, 1);
+        PetalburgUnBadgeDePlus();
+        break;
+    case 2:
+        FlagSet(FLAG_DEFEATED_DEWFORD_GYM);
+        PetalburgUnBadgeDePlus();
+        FlagSet(FLAG_ENABLE_BRAWLY_MATCH_CALL);
+        break;
+    case 3:
+        if (VarGet(VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE) < 3)
+            VarSet(VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3);
+        FlagClear(FLAG_HIDE_VERDANTURF_TOWN_SCOTT);
+        FlagSet(FLAG_DEFEATED_MAUVILLE_GYM);
+        PetalburgUnBadgeDePlus();
+        FlagSet(FLAG_ENABLE_WATTSON_MATCH_CALL);
+        break;
+    case 4:
+        FlagSet(FLAG_DEFEATED_LAVARIDGE_GYM);
+        PetalburgUnBadgeDePlus();
+        FlagSet(FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY);
+        if (VarGet(VAR_LAVARIDGE_TOWN_STATE) == 0)
+            VarSet(VAR_LAVARIDGE_TOWN_STATE, 1);
+        FlagSet(FLAG_ENABLE_FLANNERY_MATCH_CALL);
+        break;
+    case 5: // Norman, puis la scène du père de Timmy (Timmy part pour Vergazon)
+        FlagSet(FLAG_DEFEATED_PETALBURG_GYM);
+        VarSet(VAR_PETALBURG_GYM_STATE, 7);
+        FlagSet(FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN);
+        FlagSet(FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN);
+        FlagSet(FLAG_HIDE_ROUTE_109_MR_BRINEY);
+        FlagSet(FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT);
+        FlagSet(FLAG_HIDE_ROUTE_104_MR_BRINEY);
+        FlagSet(FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT);
+        FlagSet(FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY);
+        FlagSet(FLAG_HIDE_BRINEYS_HOUSE_PEEKO);
+        VarSet(VAR_BRINEY_LOCATION, 0);
+        FlagSet(FLAG_HIDE_MAUVILLE_GYM_WATTSON);
+        FlagClear(FLAG_HIDE_MAUVILLE_CITY_WATTSON);
+        FlagClear(FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN);
+        if (VarGet(VAR_PETALBURG_CITY_STATE) < 4)
+            VarSet(VAR_PETALBURG_CITY_STATE, 4);
+        FlagClear(FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD);
+        break;
+    case 6:
+        FlagSet(FLAG_DEFEATED_FORTREE_GYM);
+        FlagSet(FLAG_ENABLE_WINONA_MATCH_CALL);
+        VarSet(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0);
+        FlagSet(FLAG_SCOTT_CALL_FORTREE_GYM);
+        break;
+    case 7:
+        FlagSet(FLAG_DEFEATED_MOSSDEEP_GYM);
+        FlagSet(FLAG_HIDE_AQUA_HIDEOUT_GRUNTS);
+        FlagClear(FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY);
+        FlagClear(FLAG_UNKNOWN_0x393);
+        FlagClear(FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS);
+        FlagClear(FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA);
+        FlagClear(FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA);
+        FlagClear(FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA);
+        FlagClear(FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN);
+        VarSet(VAR_MOSSDEEP_CITY_STATE, 1);
+        FlagSet(FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN);
+        VarSet(VAR_MOSSDEEP_SPACE_CENTER_STATE, 1);
+        FlagSet(FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL);
+        break;
+    case 8:
+        FlagSet(FLAG_DEFEATED_SOOTOPOLIS_GYM);
+        FlagSet(FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS);
+        FlagSet(FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN);
+        FlagSet(FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE);
+        VarSet(VAR_SOOTOPOLIS_CITY_STATE, 6);
+        FlagClear(FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1);
+        FlagSet(FLAG_ENABLE_JUAN_MATCH_CALL);
+        break;
+    }
+}
+
+// Appelé à chaque changement de carte (src/overworld.c), avant les scripts de transition de la carte.
+void Tycoon_AccreditationsAuto(void)
+{
+    u32 n;
+    if (!EDITION_TYCOON_SIM)
+        return;
+    for (n = 1; n <= 8; n++)
+    {
+        if (FlagGet(FLAG_BADGE01_GET + n - 1))
+            continue;
+        if (!AccreditationDue(n))
+            break;
+        Accrediter(n);
+    }
+}
+
+// Special : 1 si l'Arène de la carte actuelle est fermée (édition Carrière ; Clémenti reste ouverte pour le tutoriel de Timmy).
+void Tycoon_AreneFermee(void)
+{
+    gSpecialVar_Result = EDITION_TYCOON_SIM
+        && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PETALBURG_CITY_GYM)
+             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_PETALBURG_CITY_GYM)
+             && VarGet(VAR_PETALBURG_GYM_STATE) < 2);
+}
+
+// Special : ressort de l'Arène par le passage sur lequel le joueur vient d'arriver (la porte de la ville). Suivi de waitstate.
+void Tycoon_SortirArene(void)
+{
+    const struct MapEvents *ev = gMapHeader.events;
+    s16 x = gSaveBlock1Ptr->pos.x, y = gSaveBlock1Ptr->pos.y;
+    u32 i;
+    for (i = 0; i < ev->warpCount; i++)
+    {
+        if (ev->warps[i].x == x && ev->warps[i].y == y)
+        {
+            SetWarpDestinationToMapWarp(ev->warps[i].mapGroup, ev->warps[i].mapNum, ev->warps[i].warpId);
+            DoWarp();
+            ResetInitialPlayerAvatarState();
+            return;
+        }
+    }
+    ScriptContext_Enable(); // pas de passage trouvé : on laisse le joueur sur place
 }

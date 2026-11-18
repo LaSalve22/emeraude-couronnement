@@ -1,7 +1,12 @@
 MossdeepCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MossdeepCity_Gym_OnFrameCouronnement
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_OnLoad
 	.byte 0
+
+MossdeepCity_Gym_OnFrameCouronnement:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
+	.2byte 0
 
 @ NOTE: Mossdeep Gym was redesigned between R/S and E. Leftover (and now functionally unused) scripts are commented below
 

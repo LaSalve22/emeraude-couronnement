@@ -699,6 +699,22 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Outils de test sans écran : `tools/couronnement/emu/` (mGBA en bibliothèque, captures, trace d'un redémarrage) et
   `make DEPART=1` (partie qui démarre devant l'herboriste, `COURONNEMENT_DEBUG_DEPART`).
 
+## Fait (v0.53) - édition Carrière : Arènes fermées (choix d'Adrien du 18/11)
+
+- Les 8 Arènes sont fermées : à la première image dans l'Arène (`map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee`
+  en tête de la table ON_FRAME de chaque Arène), message puis sortie par la porte (`Tycoon_SortirArene` : passage sous le joueur).
+  Exception : l'Arène de Clémenti reste ouverte tant que le tutoriel de Timmy n'est pas fait (`VAR_PETALBURG_GYM_STATE` < 2).
+  Les guichets de ligue des Arènes ne sont donc plus accessibles en Carrière (ceux des Centres Pokémon restent).
+- Plus de champion qui donne son badge : les badges deviennent des accréditations internes posées sans message
+  (`Tycoon_AccreditationsAuto`, appelé après chaque `RunOnTransitionMapScript` de `src/overworld.c`), dans l'ordre et aux étapes
+  du scénario d'origine : 1 Mérouville visitée, 2 Myokara, 3 Lavandia, 4 Vermilava + Mont Chimnée, 5 dès que l'état de l'Arène
+  de Clémenti atteint 6, 6 Cimetronelle + Institut Météo, 7 Algatia + Repaire Aqua vidé, 8 Atalanopolis après la crise
+  (`VAR_SOOTOPOLIS_CITY_STATE` >= 5) ; tutoriel de Timmy exigé avant tout. Chaque accréditation reprend les effets du script
+  « Defeated » du champion (drapeaux et variables du scénario : vol des pièces Devon, Centre Spatial, Atalanopolis…), sans les
+  dresseurs d'Arène. Les badges ne sont plus affichés sur la carte Dresseur en Carrière (`SetDataFromTrainerCard`).
+- Objets des champions : « Courrier de la Ligue des Clubs » à l'ouverture du menu L (`Tycoon_EventScript_Courrier`) : CT de
+  chaque champion, Orbe Téracristal (2e), Méga-Anneau + Jungkite / Tortankite (5e). Testé dans mGBA (sortie de l'Arène de Mérouville).
+
 ## Idées d'Adrien à concevoir plus tard
 
 

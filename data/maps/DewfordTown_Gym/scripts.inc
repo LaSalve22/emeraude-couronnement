@@ -1,6 +1,11 @@
 DewfordTown_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DewfordTown_Gym_OnFrameCouronnement
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_Gym_OnTransition
 	.byte 0
+
+DewfordTown_Gym_OnFrameCouronnement:
+	map_script_2 VAR_TEMP_9, 0, Tycoon_EventScript_AreneFermee @ Couronnement, édition Carrière : Arène fermée
+	.2byte 0
 
 DewfordTown_Gym_OnTransition:
 	call DewfordTown_Gym_EventScript_SetFlashLevel

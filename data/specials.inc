@@ -95,6 +95,8 @@ gSpecials::
 	def_special Tycoon_Loyer
 	def_special Tycoon_Accreditation
 	def_special Tycoon_BoutiqueNiveau
+	def_special Tycoon_AreneFermee
+	def_special Tycoon_SortirArene
 	def_special Club_Resume
 	def_special Club_TableauDeBord
 	def_special Club_PreparerMatch
