@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 VILLES = ['LittlerootTown', 'OldaleTown', 'SlateportCity', 'VerdanturfTown', 'FallarborTown', 'LilycoveCity']
-SPRITE = 'OBJ_EVENT_GFX_COOLTRAINER_M'
+SPRITE = 'OBJ_EVENT_GFX_MAN_3'  # COOLTRAINER_M n'existe que dans Rouge Feu (invisible et plantage des boutiques)
 
 
 def charger_layout(nom):

@@ -688,6 +688,17 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   en (4,1)-(4,3), sous l'horloge) ; `CB2_NewGame` prend `FieldCB_WarpExitFadeFromBlack` en Carrière. La mère et le frère / la sœur
   du rival n'étaient pas cachés au 1er étage de sa propre maison (`..._RIVAL_MOM` / `..._RIVAL_SIBLING` dans `Tycoon_EventScript_PoserDecor`).
 
+## Fait (v0.52.2) - plantage des boutiques, guichets invisibles
+
+- Cause (trouvée dans mGBA) : les guichets de la Ligue des Clubs et des arènes du joueur utilisaient `OBJ_EVENT_GFX_COOLTRAINER_M`,
+  et les panneaux « À vendre » `OBJ_EVENT_GFX_SIGN` : ces sprites n'existent que dans Rouge Feu (pointeur nul dans Émeraude).
+  Résultat : personnages / panneaux invisibles, et toute boutique ouverte à côté d'eux (herboriste de Clémenti…) redémarrait le jeu
+  (`BuyMenuDrawObjectEvents` dessine les PNJ voisins). Guichets -> `OBJ_EVENT_GFX_MAN_3` (Topdresseur d'Émeraude, `clubs_placer.py`
+  et `arenes_placer.py` corrigés) ; panneau de Rouge Feu et palette `NpcWhite` compilés aussi pour Émeraude.
+  Règle : ne jamais utiliser un graphisme de la partie `#if IS_FRLG` de `object_event_graphics_info_pointers.h` sans le sortir de la garde.
+- Outils de test sans écran : `tools/couronnement/emu/` (mGBA en bibliothèque, captures, trace d'un redémarrage) et
+  `make DEPART=1` (partie qui démarre devant l'herboriste, `COURONNEMENT_DEBUG_DEPART`).
+
 ## Idées d'Adrien à concevoir plus tard
 
 

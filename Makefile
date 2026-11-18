@@ -158,6 +158,10 @@ O_LEVEL ?= 2
 endif
 CPPFLAGS := $(INCLUDE_CPP_ARGS) -Wno-trigraphs -DMODERN=1 -DTESTING=$(TEST) -D$(GAME_VERSION) -std=gnu17
 # Émeraude Couronnement : édition Carrière & Business (make EDITION=carriere) ; tout recompiler en changeant d'édition.
+# Débogage sans émulateur (tools/couronnement/emu) : make DEPART=1 démarre la partie devant l'herboriste de Clémenti.
+ifeq ($(DEPART),1)
+override CPPFLAGS += -DCOURONNEMENT_DEBUG_DEPART=1
+endif
 ifeq ($(EDITION),carriere)
 override CPPFLAGS += -DEDITION_TYCOON_SIM=TRUE
 endif

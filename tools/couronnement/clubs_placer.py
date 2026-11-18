@@ -19,7 +19,7 @@ CARTES = ['PetalburgCity_PokemonCenter_1F', 'FallarborTown_PokemonCenter_1F', 'L
           # v0.48 : sièges des clubs, à l'entrée des arènes des villes de club
           'PetalburgCity_Gym', 'RustboroCity_Gym', 'MauvilleCity_Gym', 'LavaridgeTown_Gym_1F', 'FortreeCity_Gym',
           'MossdeepCity_Gym', 'SootopolisCity_Gym_1F']
-SPRITE = 'OBJ_EVENT_GFX_COOLTRAINER_M'
+SPRITE = 'OBJ_EVENT_GFX_MAN_3'  # COOLTRAINER_M n'existe que dans Rouge Feu (invisible et plantage des boutiques)
 SCRIPT = 'Club_EventScript_Guichet'
 
 

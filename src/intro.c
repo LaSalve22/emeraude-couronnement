@@ -1,5 +1,6 @@
 #include "global.h"
 #include "main.h"
+#include "string_util.h"
 #include "palette.h"
 #include "scanline_effect.h"
 #include "task.h"
@@ -1136,6 +1137,11 @@ static u8 SetUpCopyrightScreen(void)
     return 1;
 }
 
+#ifdef COURONNEMENT_DEBUG_DEPART
+static const u8 gText_DebugDepartNom[] = _("TEST");
+void CB2_NewGame(void);
+#endif
+
 void CB2_InitCopyrightScreenAfterBootup(void)
 {
     if (!SetUpCopyrightScreen())
@@ -1148,6 +1154,11 @@ void CB2_InitCopyrightScreenAfterBootup(void)
             Sav2_ClearSetDefault();
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
+#ifdef COURONNEMENT_DEBUG_DEPART
+        gSaveBlock2Ptr->playerGender = MALE;
+        StringCopy(gSaveBlock2Ptr->playerName, gText_DebugDepartNom);
+        SetMainCallback2(CB2_NewGame);
+#endif
     }
 }
 

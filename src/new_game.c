@@ -136,6 +136,15 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
+#ifdef COURONNEMENT_DEBUG_DEPART
+    FlagSet(FLAG_BADGE05_GET);
+    FlagSet(FLAG_COURONNEMENT_PASS);
+    FlagSet(FLAG_SYS_POKEMON_GET);
+    VarSet(VAR_LITTLEROOT_INTRO_STATE, 7);
+    SetWarpDestination(MAP_GROUP(MAP_PETALBURG_CITY_POKEMON_CENTER_1F), MAP_NUM(MAP_PETALBURG_CITY_POKEMON_CENTER_1F), WARP_ID_NONE, 3, 7);
+    WarpIntoMap();
+    return;
+#endif
     if (IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
     else if (EDITION_TYCOON_SIM) // Émeraude Couronnement, édition Carrière : réveil seul dans sa chambre (Tycoon_EventScript_Reveil)
