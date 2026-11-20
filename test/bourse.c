@@ -13,7 +13,9 @@ static void Preparer(u32 argent)
 {
     memset(&BOURSE, 0, sizeof(BOURSE));
     memset(&gSaveBlock3Ptr->bourseOr, 0, sizeof(gSaveBlock3Ptr->bourseOr));
+    memset(&gSaveBlock3Ptr->bourseCourt, 0, sizeof(gSaveBlock3Ptr->bourseCourt));
     FlagClear(FLAG_RECOVERED_DEVON_GOODS);
+    FlagClear(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
     FlagClear(FLAG_BADGE01_GET);
     SetMoney(&gSaveBlock1Ptr->money, argent);
     Bourse_MettreAJourJusqua(100);
@@ -168,4 +170,57 @@ TEST("Bourse: gold moves gently, has a history and shines in a crash")
             n++;
     }
     EXPECT_GT(n, 900); // légère tendance haussière
+}
+
+// v0.44 : vente à découvert
+
+#define CT (gSaveBlock3Ptr->bourseCourt)
+
+TEST("Bourse: short selling blocks a 50% deposit plus 3% fees and pays on a fall")
+{
+    Preparer(100000);
+    EXPECT_EQ(Bourse_OuvrirCourt(BOURSE_DEVON, 100), 100); // 60 000 vendus : 30 000 bloqués + 1 800 de frais
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 100000 - 31800);
+    EXPECT_EQ(CT.garantie[BOURSE_DEVON], 30000);
+    EXPECT_EQ(CT.prixMoyen[BOURSE_DEVON], 600);
+    BOURSE.cours[BOURSE_DEVON] = 500; // le cours baisse de 100
+    EXPECT_EQ(Bourse_ResultatCourt(BOURSE_DEVON), 10000);
+    EXPECT_EQ(Bourse_RacheterCourt(BOURSE_DEVON, 100), 100); // garantie + 10 000 - 1 500 de frais
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 100000 - 31800 + 30000 + 10000 - 1500);
+    EXPECT_EQ(Bourse_PartsCourtes(BOURSE_DEVON), 0);
+}
+
+TEST("Bourse: a short is bought back automatically when the loss reaches 80% of the deposit")
+{
+    Preparer(100000);
+    Bourse_OuvrirCourt(BOURSE_DEVON, 100);
+    BOURSE.cours[BOURSE_DEVON] = 830; // perte 23 000 < 24 000
+    Bourse_VerifierCourts();
+    EXPECT_EQ(Bourse_PartsCourtes(BOURSE_DEVON), 100);
+    BOURSE.cours[BOURSE_DEVON] = 840; // perte 24 000 = 80 % de 30 000
+    Bourse_VerifierCourts();
+    EXPECT_EQ(Bourse_PartsCourtes(BOURSE_DEVON), 0);
+    EXPECT_NE(CT.forces & (1 << BOURSE_DEVON), 0);
+}
+
+TEST("Bourse: a bankruptcy closes the short at zero for the maximum gain")
+{
+    Preparer(100000);
+    Bourse_OuvrirCourt(BOURSE_AQUA, 10); // 8 000 vendus : 4 000 bloqués + 240 de frais
+    FlagSet(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+    Bourse_VerifierCourts();
+    EXPECT_EQ(Bourse_PartsCourtes(BOURSE_AQUA), 0);
+    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), 100000 - 4240 + 4000 + 8000);
+    EXPECT_EQ(Bourse_OuvrirCourt(BOURSE_AQUA, 10), 0); // plus de vente à découvert sur une boîte coulée
+    FlagClear(FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE);
+}
+
+TEST("Bourse: borrowing fees of 0.1% a day are charged on open shorts")
+{
+    Preparer(100000);
+    Bourse_OuvrirCourt(BOURSE_DEVON, 100);
+    SetMoney(&gSaveBlock1Ptr->money, 1000);
+    Bourse_PasserJour(101);
+    EXPECT_LE(GetMoney(&gSaveBlock1Ptr->money), 1000 - 50); // ~60 sur 60 000 de parts empruntées
+    EXPECT_GT(CT.fraisCumules, 0);
 }

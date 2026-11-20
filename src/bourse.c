@@ -21,10 +21,13 @@
 #define BOURSE (gSaveBlock2Ptr->pokedex.bourse)
 #define HISTO (gSaveBlock3Ptr->bourseHisto)
 #define OR (gSaveBlock3Ptr->bourseOr)
+#define CT (gSaveBlock3Ptr->bourseCourt)
 
 static void HistoriqueAjouter(u32 jour);
 static void OrHistoriqueReconstruire(void);
 static void OrInitialiser(void);
+static void CourtFraisDuJour(void);
+static s64 Racheter(u32 e, u32 quantite, u32 cours, bool32 frais);
 
 STATIC_ASSERT(sizeof(struct BourseSave) <= 0x68, BourseSaveTropGrande);
 
@@ -305,6 +308,8 @@ void Bourse_PasserJour(u32 jour)
         BOURSE.dette += interets ? interets : 1;
     }
     VerserDividende(jour);
+    CourtFraisDuJour();   // v0.44 : vente à découvert
+    Bourse_VerifierCourts();
 }
 
 
@@ -455,8 +460,13 @@ void Bourse_VerifierHuissier(void)
 {
     u32 valeur = Bourse_ValeurPortefeuille(), recupere, argent, i;
 
-    if (BOURSE.dette == 0 || BOURSE.dette <= (u64)valeur + BOURSE_HUISSIER_MARGE)
+    if (BOURSE.dette == 0 || BOURSE.dette <= (u64)valeur + Bourse_ValeurCourts() + BOURSE_HUISSIER_MARGE)
         return;
+    for (i = 0; i <= BOURSE_OR; i++) // v0.44 : les positions courtes sont rachetées d'abord (le résultat va au liquide)
+    {
+        if (Bourse_PartsCourtes(i))
+            Racheter(i, CT.parts[i], Bourse_Cours(i), TRUE);
+    }
     recupere = (u64)valeur * (100 - BOURSE_HUISSIER_PENALITE) / 100;
     for (i = 0; i < BOURSE_NB_ENTREPRISES; i++)
         BOURSE.parts[i] = 0;
@@ -502,8 +512,178 @@ void Bourse_MettreAJourJusqua(u32 aujourdhui)
         Bourse_VerifierHuissier();
     }
     Bourse_AppliquerChocs();
+    Bourse_VerifierCourts(); // faillites et appels de marge après les chocs du scénario
     Bourse_VerifierHuissier();
     HistoriqueSynchroniser();
+}
+
+// ---------------------------------------------------------------- vente à découvert (v0.44, lot 2 du cahier v0.42)
+// On vend des parts empruntées : frais de transaction payés tout de suite, dépôt de garantie (50 %) bloqué. Chaque jour,
+// 0,1 % de frais d'emprunt. Au rachat : garantie rendue + (prix de vente moyen - cours) x parts - frais. Rachat d'office si la
+// perte atteint 80 % du dépôt ; faillite d'Aqua / Magma = rachat à 0 (gain maximal). Une perte plus grande que tout ce qu'on a
+// passe dans la dette de la Bourse (l'huissier s'en occupe).
+
+static void CourtVerifier(void)
+{
+    if (CT.magie != BOURSE_COURT_MAGIE)
+    {
+        memset(&CT, 0, sizeof(CT));
+        CT.magie = BOURSE_COURT_MAGIE;
+    }
+}
+
+u32 Bourse_PartsCourtes(u32 e)
+{
+    CourtVerifier();
+    return e <= BOURSE_OR ? CT.parts[e] : 0;
+}
+
+s32 Bourse_ResultatCourt(u32 e)
+{
+    s64 r;
+    if (Bourse_PartsCourtes(e) == 0)
+        return 0;
+    r = ((s64)CT.prixMoyen[e] - (s64)Bourse_Cours(e)) * CT.parts[e];
+    return r > 2000000000 ? 2000000000 : (r < -2000000000 ? -2000000000 : r);
+}
+
+u32 Bourse_ValeurCourts(void)
+{
+    s64 total = 0;
+    u32 e;
+    for (e = 0; e <= BOURSE_OR; e++)
+    {
+        if (Bourse_PartsCourtes(e))
+        {
+            s64 v = (s64)CT.garantie[e] + Bourse_ResultatCourt(e);
+            total += v > 0 ? v : 0;
+        }
+    }
+    return total > 2000000000 ? 2000000000 : total;
+}
+
+u32 Bourse_OuvrirCourt(u32 e, u32 quantite)
+{
+    u32 cours, argent = GetMoney(&gSaveBlock1Ptr->money), possible;
+    u64 valeur, cout;
+
+    CourtVerifier();
+    if (e > BOURSE_OR || (cours = Bourse_Cours(e)) == 0 || (e < BOURSE_NB_ENTREPRISES && EnFaillite(e)))
+        return 0;
+    possible = (u64)argent * 100 / ((u64)cours * (BOURSE_COURT_GARANTIE + Frais(e)));
+    if (possible > BOURSE_PARTS_MAX - CT.parts[e])
+        possible = BOURSE_PARTS_MAX - CT.parts[e];
+    if (quantite > possible)
+        quantite = possible;
+    if (quantite == 0)
+        return 0;
+    valeur = (u64)quantite * cours;
+    cout = valeur * (BOURSE_COURT_GARANTIE + Frais(e)) / 100;
+    RemoveMoney(&gSaveBlock1Ptr->money, cout);
+    CT.prixMoyen[e] = ((u64)CT.prixMoyen[e] * CT.parts[e] + valeur) / (CT.parts[e] + quantite);
+    CT.garantie[e] += valeur * BOURSE_COURT_GARANTIE / 100;
+    CT.parts[e] += quantite;
+    return quantite;
+}
+
+// Rachat au cours donné (cours = 0 : faillite). Renvoie le résultat net encaissé (négatif = payé).
+static s64 Racheter(u32 e, u32 quantite, u32 cours, bool32 frais)
+{
+    u64 garantie = (u64)CT.garantie[e] * quantite / CT.parts[e];
+    s64 net = (s64)garantie + ((s64)CT.prixMoyen[e] - (s64)cours) * quantite;
+    u32 argent;
+
+    if (frais)
+        net -= (s64)((u64)quantite * cours * Frais(e) / 100);
+    CT.garantie[e] -= garantie;
+    CT.parts[e] -= quantite;
+    if (CT.parts[e] == 0)
+    {
+        CT.garantie[e] = 0;
+        CT.prixMoyen[e] = 0;
+    }
+    if (net >= 0)
+    {
+        u64 place = MAX_MONEY - GetMoney(&gSaveBlock1Ptr->money);
+        AddMoney(&gSaveBlock1Ptr->money, (u64)net > place ? place : (u32)net);
+    }
+    else
+    {
+        u64 perte = -net;
+        argent = GetMoney(&gSaveBlock1Ptr->money);
+        if (perte <= argent)
+            RemoveMoney(&gSaveBlock1Ptr->money, perte);
+        else
+        {
+            RemoveMoney(&gSaveBlock1Ptr->money, argent);
+            BOURSE.dette = Borner((u64)BOURSE.dette + perte - argent, 0, 2000000000); // le reste devient une dette
+        }
+    }
+    return net;
+}
+
+u32 Bourse_RacheterCourt(u32 e, u32 quantite)
+{
+    CourtVerifier();
+    if (e > BOURSE_OR || CT.parts[e] == 0)
+        return 0;
+    if (quantite > CT.parts[e])
+        quantite = CT.parts[e];
+    Racheter(e, quantite, Bourse_Cours(e), TRUE);
+    return quantite;
+}
+
+static void AjouterResultatForce(s64 net)
+{
+    s64 r = (s64)CT.resultatForce + net;
+    CT.resultatForce = r > 2000000000 ? 2000000000 : (r < -2000000000 ? -2000000000 : r);
+}
+
+// Faillites (rachat à 0) et appels de marge (perte >= 80 % du dépôt : tout est racheté d'office).
+void Bourse_VerifierCourts(void)
+{
+    u32 e;
+    CourtVerifier();
+    for (e = 0; e <= BOURSE_OR; e++)
+    {
+        if (CT.parts[e] == 0)
+            continue;
+        if (e < BOURSE_NB_ENTREPRISES && EnFaillite(e))
+        {
+            AjouterResultatForce(Racheter(e, CT.parts[e], 0, FALSE));
+            CT.forces |= 1 << 15;
+        }
+        else if (-(s64)Bourse_ResultatCourt(e) * 100 >= (s64)CT.garantie[e] * BOURSE_COURT_APPEL)
+        {
+            AjouterResultatForce(Racheter(e, CT.parts[e], Bourse_Cours(e), TRUE));
+            CT.forces |= 1 << e;
+        }
+    }
+}
+
+// Frais d'emprunt du jour : 0,1 % de la valeur des parts empruntées, pris sur le liquide, sinon sur la garantie.
+static void CourtFraisDuJour(void)
+{
+    u32 e;
+    CourtVerifier();
+    for (e = 0; e <= BOURSE_OR; e++)
+    {
+        u32 frais, argent;
+        if (CT.parts[e] == 0)
+            continue;
+        frais = (u64)CT.parts[e] * Bourse_Cours(e) * BOURSE_COURT_FRAIS_POURDIXMILLE / 10000;
+        if (frais == 0)
+            frais = 1;
+        argent = GetMoney(&gSaveBlock1Ptr->money);
+        if (argent >= frais)
+            RemoveMoney(&gSaveBlock1Ptr->money, frais);
+        else
+        {
+            RemoveMoney(&gSaveBlock1Ptr->money, argent);
+            CT.garantie[e] = CT.garantie[e] > frais - argent ? CT.garantie[e] - (frais - argent) : 0;
+        }
+        CT.fraisCumules = Borner((u64)CT.fraisCumules + frais, 0, 2000000000);
+    }
 }
 
 static u32 PrixAvecFrais(u32 entreprise, u32 quantite)
@@ -657,6 +837,14 @@ static const u8 sText_Huissier1[] = _("L'huissier est passé ! Ta dette\ndépass
 static const u8 sText_Huissier2[] = _(".\nIl reste ");
 static const u8 sText_Huissier3[] = _(" de dette.");
 
+static const u8 sText_Saut[] = _("\p");
+static const u8 sText_Point[] = _(".");
+static const u8 sText_CourtFaillite[] = _("Faillite ! Tes ventes à découvert\nsur la boîte coulée sont soldées.\p");
+static const u8 sText_CourtAppel[] = _("Appel de marge : le cours a trop\nmonté, tes parts ont été rachetées\ld'office.\p");
+static const u8 sText_CourtGain[] = _("Résultat des positions soldées :\n+");
+static const u8 sText_CourtPerte[] = _("Résultat des positions soldées :\n-");
+static const u8 sText_CourtFrais[] = _("Frais d'emprunt des parts depuis\nta dernière visite : ");
+
 // Ouverture de l'appli : met les cours à jour. VAR_RESULT = TRUE si l'huissier est passé (texte dans gStringVar4).
 void Bourse_Ouvrir(void)
 {
@@ -664,15 +852,47 @@ void Bourse_Ouvrir(void)
 
     Bourse_MettreAJourJusqua(Aujourdhui());
     gSpecialVar_Result = FALSE;
-    if (BOURSE.huissier == 0)
-        return;
-    fin = AjouterTexte(gStringVar4, sText_Huissier1);
-    fin = AjouterYens(fin, BOURSE.huissier);
-    fin = AjouterTexte(fin, sText_Huissier2);
-    fin = AjouterYens(fin, BOURSE.dette);
-    AjouterTexte(fin, sText_Huissier3);
-    BOURSE.huissier = 0;
-    gSpecialVar_Result = TRUE;
+    fin = gStringVar4;
+    *fin = EOS;
+    if (BOURSE.huissier != 0)
+    {
+        fin = AjouterTexte(fin, sText_Huissier1);
+        fin = AjouterYens(fin, BOURSE.huissier);
+        fin = AjouterTexte(fin, sText_Huissier2);
+        fin = AjouterYens(fin, BOURSE.dette);
+        fin = AjouterTexte(fin, sText_Huissier3);
+        BOURSE.huissier = 0;
+        gSpecialVar_Result = TRUE;
+    }
+    // v0.44 : vente à découvert (rachats d'office, faillites, frais d'emprunt)
+    CourtVerifier();
+    if (CT.forces != 0 || CT.fraisCumules != 0)
+    {
+        if (gSpecialVar_Result)
+            fin = AjouterTexte(fin, sText_Saut);
+        if (CT.forces & (1 << 15))
+            fin = AjouterTexte(fin, sText_CourtFaillite);
+        if (CT.forces & 0x7FFF)
+            fin = AjouterTexte(fin, sText_CourtAppel);
+        if (CT.forces != 0)
+        {
+            fin = AjouterTexte(fin, CT.resultatForce >= 0 ? sText_CourtGain : sText_CourtPerte);
+            fin = AjouterYens(fin, CT.resultatForce >= 0 ? CT.resultatForce : -CT.resultatForce);
+            fin = AjouterTexte(fin, sText_Point);
+            if (CT.fraisCumules)
+                fin = AjouterTexte(fin, sText_Saut);
+        }
+        if (CT.fraisCumules != 0)
+        {
+            fin = AjouterTexte(fin, sText_CourtFrais);
+            fin = AjouterYens(fin, CT.fraisCumules);
+            fin = AjouterTexte(fin, sText_Point);
+        }
+        CT.forces = 0;
+        CT.resultatForce = 0;
+        CT.fraisCumules = 0;
+        gSpecialVar_Result = TRUE;
+    }
 }
 
 static const u8 sText_Resume1[] = _("Liquide : ");
@@ -686,7 +906,7 @@ void Bourse_Resume(void)
     u8 *fin = AjouterTexte(gStringVar4, sText_Resume1);
     fin = AjouterYens(fin, GetMoney(&gSaveBlock1Ptr->money));
     fin = AjouterTexte(fin, sText_Resume2);
-    fin = AjouterYens(fin, Bourse_ValeurPortefeuille());
+    fin = AjouterYens(fin, Bourse_ValeurPortefeuille() + Bourse_ValeurCourts()); // v0.44 : positions courtes comprises
     fin = AjouterTexte(fin, sText_Resume3);
     fin = AjouterYens(fin, BOURSE.dette);
     AjouterTexte(fin, Calendrier_EstWeekend(Aujourdhui()) ? sText_Resume4Weekend : sText_Resume4);
@@ -729,6 +949,11 @@ static const u8 sText_Fiche4[] = _(" parts.\pValeur : ");
 static const u8 sText_Fiche5[] = _(". Frais : 3 %.\nOn fait quoi ?");
 static const u8 sText_Fiche4Or[] = _(" onces.\pValeur : ");
 static const u8 sText_Fiche5Or[] = _(". Frais : 1 %.\nValeur refuge. On fait quoi ?");
+static const u8 sText_FicheCourt1[] = _(".\pÀ découvert : ");
+static const u8 sText_FicheCourt2[] = _(" à ");
+static const u8 sText_FicheCourt3Gain[] = _(".\nGain latent : +");
+static const u8 sText_FicheCourt3Perte[] = _(".\nPerte latente : -");
+static const u8 sText_FicheCourtFin[] = _(".\pOn fait quoi ?");
 static const u8 sText_FicheFaillite[] = _(". En faillite, ça ne\nvaut plus rien. On fait quoi ?");
 
 // VAR_0x8004 : entreprise.
@@ -748,8 +973,23 @@ void Bourse_Fiche(void)
     fin = AjouterNombre(fin, Bourse_Parts(e));
     fin = AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche4Or : sText_Fiche4);
     fin = AjouterYens(fin, (u64)Bourse_Parts(e) * Bourse_Cours(e));
+    // v0.44 : position courte
+    gSpecialVar_Result = Bourse_PartsCourtes(e) != 0;
+    if (gSpecialVar_Result)
+    {
+        s32 r = Bourse_ResultatCourt(e);
+        fin = AjouterTexte(fin, sText_FicheCourt1);
+        fin = AjouterNombre(fin, CT.parts[e]);
+        fin = AjouterTexte(fin, sText_FicheCourt2);
+        fin = AjouterYens(fin, CT.prixMoyen[e]);
+        fin = AjouterTexte(fin, r >= 0 ? sText_FicheCourt3Gain : sText_FicheCourt3Perte);
+        fin = AjouterYens(fin, r >= 0 ? r : -r);
+        AjouterTexte(fin, sText_FicheCourtFin); // la boîte est pleine : la question passe dans une nouvelle boîte
+        return;
+    }
     AjouterTexte(fin, e == BOURSE_OR ? sText_Fiche5Or : (EnFaillite(e) ? sText_FicheFaillite : sText_Fiche5));
 }
+
 
 static const u16 sQuantites[] = {1, 10, 100, BOURSE_PARTS_MAX};
 
@@ -875,4 +1115,34 @@ void Bourse_Tuyau(void)
     fin = AjouterTexte(fin, seance == jour + 1 ? sText_Demain : sText_Lundi);
     fin = AjouterTexte(fin, hausse ? sText_TuyauHausse3 : sText_TuyauBaisse3);
     AjouterTexte(fin, sText_TuyauFin);
+}
+
+// v0.44 : vente à découvert. VAR_0x8004 : actif, VAR_0x8005 : 0 = 1, 1 = 10, 2 = 100, 3 = le maximum.
+static const u8 sText_CourtOuvert[] = _("Vendu à découvert : ");
+static const u8 sText_CourtRachat[] = _("Racheté : ");
+static const u8 sText_CourtRien[] = _("Pas assez de liquide pour la\ngarantie, ou boîte en faillite.");
+static const u8 sText_RachatRien[] = _("Rien à racheter, ou ton portefeuille\nest plein.");
+
+void Bourse_ScriptOuvrirCourt(void)
+{
+    u32 e = gSpecialVar_0x8004, n;
+
+    n = Bourse_OuvrirCourt(e, sQuantites[gSpecialVar_0x8005 < ARRAY_COUNT(sQuantites) ? gSpecialVar_0x8005 : 0]);
+    if (n)
+        TexteOrdre(sText_CourtOuvert, n, e);
+    else
+        StringCopy(gStringVar4, sText_CourtRien);
+    gSpecialVar_Result = n != 0;
+}
+
+void Bourse_ScriptRacheterCourt(void)
+{
+    u32 e = gSpecialVar_0x8004, n;
+
+    n = Bourse_RacheterCourt(e, sQuantites[gSpecialVar_0x8005 < ARRAY_COUNT(sQuantites) ? gSpecialVar_0x8005 : 0]);
+    if (n)
+        TexteOrdre(sText_CourtRachat, n, e);
+    else
+        StringCopy(gStringVar4, sText_RachatRien);
+    gSpecialVar_Result = n != 0;
 }

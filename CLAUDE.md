@@ -554,9 +554,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   en vaut 3 pour tout le jeu (heure, jour / nuit, jours de la semaine, économie). Avant cette date (cartouche à l'horloge remise à 2000),
   temps réel. Valable jusqu'à ~2050. Tests : `TESTS="Lot 1"` (4).
 
+## Fait (v0.44) - vente à découvert (lot 2.1 du cahier v0.42)
+
+- Fiche d'un actif (9 entreprises + l'or, pas la société du joueur) : « Vendre à découvert » (1 / 10 / 100 / max) et « Racheter »
+  si une position est ouverte. Ouverture : frais de transaction (3 %, 1 % pour l'or) + dépôt de garantie de 50 % bloqué ; prix moyen
+  pondéré si on renforce. Rachat : garantie rendue + (prix moyen - cours) x parts - frais. Frais d'emprunt 0,1 % de la valeur par jour
+  (liquide, sinon garantie). Appel de marge : rachat d'office quand la perte atteint 80 % du dépôt. Faillite d'Aqua / Magma : rachat
+  à 0 (gain maximal), plus de vente à découvert ensuite. Une perte au-delà de tout ce qu'on a passe dans la dette de la Bourse ;
+  l'huissier rachète d'abord les positions courtes. Rapport à l'ouverture (rachats forcés, faillite, frais) ; fiche et accueil
+  affichent la position et sa valeur. Réglages `BOURSE_COURT_*` (`include/bourse.h`).
+- Sauvegarde : `struct BourseCourt` (106 octets) dans SaveBlock3, nombre magique (SaveBlock3 : ~870 / 1 624 octets utilisés).
+  Tests : `TESTS="Bourse"` (16).
+
 ## Idées d'Adrien à concevoir plus tard
 
-- **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp
+- ~~Vente à découvert~~ (fait en v0.44). Ancienne note : pouvoir vendre une action sans la détenir (ex. Aqua Corp
   avant de détruire la Team Aqua). Piste : positions courtes dans SaveBlock3 (u16 par actif + prix moyen d'ouverture, ~60 octets),
   liquide crédité à l'ouverture (frais 3 %), frais d'emprunt ~0,1 %/jour, rachat pour clôturer ; appel de marge / huissier si la perte
   dépasse le liquide + portefeuille ; faillite (Aqua / Magma) = clôture automatique à ~0 et gain encaissé. Fiche : « Vendre à

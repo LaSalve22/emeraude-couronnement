@@ -278,6 +278,19 @@ struct BourseOr
     u16 magie;
 };
 
+// Émeraude Couronnement : vente à découvert (v0.44, lot 2 du cahier v0.42), src/bourse.c. 9 entreprises + l'or.
+#define BOURSE_COURT_MAGIE 0xC0D7
+struct BourseCourt
+{
+    u32 prixMoyen[BOURSE_NB_ENTREPRISES + 1]; // prix moyen de vente à l'ouverture (¥ par part)
+    u32 garantie[BOURSE_NB_ENTREPRISES + 1];  // dépôt de garantie bloqué
+    u16 parts[BOURSE_NB_ENTREPRISES + 1];     // parts vendues à découvert
+    u32 fraisCumules;                         // frais d'emprunt depuis la dernière ouverture (rapport)
+    s32 resultatForce;                        // résultat des rachats forcés / faillites depuis la dernière ouverture
+    u16 forces;                               // bits : actifs rachetés d'office (appel de marge) ; bit 15 = faillite
+    u16 magie;
+};
+
 // Émeraude Couronnement : saisons du Couronnement Mondial (v0.39), src/couronnement.c.
 #define COURONNEMENT_SAISON_MAGIE 0xC5A1
 struct CouronnementSaison
@@ -331,6 +344,7 @@ struct SaveBlock3
     struct CouronnementSaison couronnementSaison; // Émeraude Couronnement (v0.39), src/couronnement.c
     struct AreneSave arenes; // Émeraude Couronnement (v0.40), src/arenes.c
     struct BourseOr bourseOr; // Émeraude Couronnement (v0.41), src/bourse.c
+    struct BourseCourt bourseCourt; // Émeraude Couronnement (v0.44), vente à découvert, src/bourse.c
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

@@ -46,6 +46,8 @@ gSpecials::
 	def_special Bourse_ScriptEmprunter
 	def_special Bourse_ScriptRembourser
 	def_special Bourse_Tuyau
+	def_special Bourse_ScriptOuvrirCourt
+	def_special Bourse_ScriptRacheterCourt
 	def_special Bourse_Graphique
 	def_special Immo_Ouvrir
 	def_special Immo_Resume

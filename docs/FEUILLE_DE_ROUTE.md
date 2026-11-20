@@ -25,6 +25,7 @@ et sur GitHub.
 | 10 | Cahier v0.42, lot 0 : audit de l'économie (`docs/AUDIT_ECONOMIE.md`, simulateur) ; correctifs horloge reculée et banques (échéances prises en caisse et en Bourse, interdit bancaire, saisies) - v0.42 | ✅ livré |
 | 11 | Réglages de l'audit : dividende des Grands Magasins 0,2 %/semaine, sponsors des arènes 50 ¥ par point, maisons hypothéquées invendables - v0.42.1 | ✅ livré |
 | 12 | Lot 1 : Câble Link, CS sans capacité (Vol / Flash au menu L), shiny 1/128 à +10 %, Bonbons Exp. XS à XXL en Poké Mart, récompenses des champions ; temps du jeu x3 - v0.43 | ✅ livré |
+| 13 | Lot 2.1 : vente à découvert (garantie 50 %, frais d'emprunt 0,1 %/jour, appel de marge, faillite = gain maximal) - v0.44 | ✅ livré |
 
 ## Déjà fait
 

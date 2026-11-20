@@ -35,6 +35,9 @@ enum BourseEntreprise
 #define BOURSE_HUISSIER_PENALITE  10      // % retenu sur les parts vendues de force
 #define BOURSE_DIVIDENDE_POURMILLE 2      // Grands Magasins : 0,2 % du cours par part et par semaine (~10 %/an ; 2 % avant la v0.42.1)
 #define BOURSE_TUYAU_FIABLE       70      // % de rumeurs vraies
+#define BOURSE_COURT_GARANTIE     50      // v0.44 : dépôt de garantie bloqué, en % de la valeur vendue à découvert
+#define BOURSE_COURT_APPEL        80      // rachat d'office quand la perte atteint 80 % du dépôt
+#define BOURSE_COURT_FRAIS_POURDIXMILLE 10 // frais d'emprunt des parts : 0,1 % de la valeur par jour
 
 // Moteur (testable)
 void Bourse_Initialiser(u32 jour);
@@ -52,6 +55,14 @@ u32 Bourse_Acheter(u32 entreprise, u32 quantite); // renvoie le nombre de parts 
 u32 Bourse_Vendre(u32 entreprise, u32 quantite);  // renvoie le nombre de parts vendues
 u32 Bourse_Emprunter(u32 montant);                // renvoie le montant emprunté
 u32 Bourse_Rembourser(void);                      // renvoie le montant remboursé
+
+// Vente à découvert (v0.44)
+u32 Bourse_PartsCourtes(u32 actif);
+u32 Bourse_OuvrirCourt(u32 actif, u32 quantite);  // renvoie le nombre de parts vendues à découvert
+u32 Bourse_RacheterCourt(u32 actif, u32 quantite); // renvoie le nombre de parts rachetées
+s32 Bourse_ResultatCourt(u32 actif);              // gain (+) ou perte (-) latente, sans les frais
+u32 Bourse_ValeurCourts(void);                    // garanties + résultats latents (0 au minimum)
+void Bourse_VerifierCourts(void);                 // faillites et appels de marge
 
 // Historique et graphique (v0.38)
 struct BourseBougie
@@ -76,6 +87,8 @@ void Bourse_Credit(void);
 void Bourse_ScriptEmprunter(void);
 void Bourse_ScriptRembourser(void);
 void Bourse_Tuyau(void);
+void Bourse_ScriptOuvrirCourt(void);
+void Bourse_ScriptRacheterCourt(void);
 
 extern u8 gBourseLignes[BOURSE_NB_ENTREPRISES + 2][32]; // + la société du joueur (v0.35) + l'or (v0.41)
 
