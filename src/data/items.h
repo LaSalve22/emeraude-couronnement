@@ -1933,7 +1933,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Bonbon Exp. XS"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XS"),
-        .price = 20,
+        .price = 100, // Couronnement : très abordable (lot 1 du cahier v0.42)
         .holdEffectParam = EXP_100,
         .description = COMPOUND_STRING(
             "Donne très peu\n"
@@ -1952,7 +1952,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Bonbon Exp. S"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies S"),
-        .price = 240,
+        .price = 500, // Couronnement : très abordable (lot 1 du cahier v0.42)
         .holdEffectParam = EXP_800,
         .description = COMPOUND_STRING(
             "Donne un peu d'Exp. à\n"
@@ -1971,7 +1971,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Bonbon Exp. M"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies M"),
-        .price = 1000,
+        .price = 1500, // Couronnement : très abordable (lot 1 du cahier v0.42)
         .holdEffectParam = EXP_3000,
         .description = COMPOUND_STRING(
             "Donne pas mal d'Exp.\n"
@@ -1990,7 +1990,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Bonbon Exp. L"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies L"),
-        .price = 3000,
+        .price = 4000, // Couronnement : très abordable (lot 1 du cahier v0.42)
         .holdEffectParam = EXP_10000,
         .description = COMPOUND_STRING(
             "Donne beaucoup\n"
@@ -2009,7 +2009,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Bonbon Exp. XL"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XL"),
-        .price = 10000,
+        .price = 10000, // Couronnement : très abordable (lot 1 du cahier v0.42)
         .holdEffectParam = EXP_30000,
         .description = COMPOUND_STRING(
             "Donne énormément\n"
@@ -15323,20 +15323,20 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_BlackAugurite,
     },
 
-    [ITEM_LINKING_CORD] =
+    [ITEM_LINKING_CORD] = // Émeraude Couronnement : Câble Link, objet clé réutilisable (lot 1 du cahier v0.42)
     {
-        .name = ITEM_NAME("Fil de Liaison"),
-        .price = 8000,
+        .name = ITEM_NAME("Câble Link"),
+        .price = 0,
+        .importance = 1,
         .description = COMPOUND_STRING(
-            "Un fil chargé\n"
-            "d'énergie qu'adorent\n"
-            "certains Pokémon."),
-        .pocket = POCKET_ITEMS,
+            "Fait évoluer un\n"
+            "Pokémon qui évolue\n"
+            "par échange."),
+        .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_EVOLUTION_ITEM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
-        .flingPower = 30,
         .iconPic = gItemIcon_LinkingCord,
         .iconPalette = gItemIconPalette_LinkingCord,
     },
@@ -15903,6 +15903,25 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_RepousseInfinie,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_MaxRepel,
+    },
+
+    [ITEM_EXP_CANDY_XXL] = // Émeraude Couronnement (lot 1 du cahier v0.42) : 100 000 points d'Exp., level cap respecté
+    {
+        .name = ITEM_NAME("Bonbon Exp. XXL"),
+        .pluralName = ITEM_PLURAL_NAME("Bonbons Exp. XXL"),
+        .price = 30000,
+        .holdEffectParam = EXP_100000,
+        .description = COMPOUND_STRING(
+            "Donne une montagne\n"
+            "d'Exp. à un Pokémon."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
+        .flingPower = 30,
+        .iconPic = gItemIcon_ExpCandyXL,
+        .iconPalette = gItemIconPalette_ExpCandies,
     },
 };
 

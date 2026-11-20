@@ -1054,6 +1054,7 @@ enum __attribute__((packed)) Item
 
     // Émeraude Couronnement
     ITEM_REPOUSSE_INFINIE = 874,
+    ITEM_EXP_CANDY_XXL = 875,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
@@ -1112,6 +1113,7 @@ enum BerryId
 #define EXP_3000  3
 #define EXP_10000 4
 #define EXP_30000 5
+#define EXP_100000 6 // Couronnement : Bonbon Exp. XXL (lot 1 du cahier v0.42)
 
 // Item type IDs (used to determine the exit callback)
 enum ItemType

@@ -103,6 +103,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
+	call Couronnement_EventScript_RecompenseChampion @ Bonbons Exp. + objet fétiche (lot 1 du cahier v0.42)
 	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
 	closemessage
 	delay 30

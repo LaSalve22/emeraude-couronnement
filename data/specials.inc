@@ -23,6 +23,9 @@ gSpecials::
 	def_special Couronnement_AfficherBallePalier
 	def_special Couronnement_CacherBallePalier
 	def_special Couronnement_ChangerTypeTera
+	def_special Couronnement_VolPossible
+	def_special Couronnement_FlashPossible
+	def_special Couronnement_Vol
 	def_special Couronnement_RecompensePalier
 	def_special Couronnement_EtaitFinale
 	def_special Couronnement_FinSaison

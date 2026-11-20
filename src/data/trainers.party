@@ -18074,6 +18074,7 @@ EVs: 128 Atk / 128 HP
 - Bulldoze
 
 Nosepass @ Sitrus Berry
+Shiny: Yes
 Relaxed Nature
 Level: 16
 Ability: Sturdy
@@ -18147,6 +18148,7 @@ EVs: 252 Atk / 252 Spe
 - Bind
 
 Nosepass @ Sitrus Berry
+Shiny: Yes
 Relaxed Nature
 Level: 18
 Ability: Sturdy
@@ -18804,6 +18806,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Cyndaquil
+Shiny: Yes
 Hardy Nature
 Level: 6
 Ability: Blaze
@@ -18835,6 +18838,7 @@ EVs: 252 Spe / 252 HP
 - Flame Charge
 
 Zigzagoon
+Shiny: Yes
 Jolly Nature
 Level: 6
 Ability: Pickup
@@ -18873,6 +18877,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Water Gun
 
 Quilava @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 18
 Ability: Blaze
@@ -18926,6 +18931,7 @@ EVs: 252 Atk / 252 Spe
 - Feint
 
 Quilava @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 21
 Ability: Flash Fire
@@ -18946,6 +18952,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Squirtle
+Shiny: Yes
 Hardy Nature
 Level: 6
 Ability: Torrent
@@ -18977,6 +18984,7 @@ EVs: 252 Spe / 252 HP
 - Rapid Spin
 
 Zigzagoon
+Shiny: Yes
 Jolly Nature
 Level: 6
 Ability: Pickup
@@ -19015,6 +19023,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Water Gun
 
 Wartortle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 18
 Ability: Torrent
@@ -19069,6 +19078,7 @@ EVs: 252 Atk / 252 Spe
 - Feint
 
 Wartortle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 21
 Ability: Rain Dish
@@ -19090,6 +19100,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Treecko
+Shiny: Yes
 Hardy Nature
 Level: 6
 Ability: Overgrow
@@ -19121,6 +19132,7 @@ EVs: 252 Spe / 252 HP
 - Bullet Seed
 
 Zigzagoon
+Shiny: Yes
 Jolly Nature
 Level: 6
 Ability: Pickup
@@ -19159,6 +19171,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Water Gun
 
 Grovyle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 18
 Ability: Overgrow
@@ -19213,6 +19226,7 @@ EVs: 252 Atk / 252 Spe
 - Feint
 
 Grovyle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 21
 Ability: Unburden
@@ -19234,6 +19248,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Cyndaquil
+Shiny: Yes
 Hardy Nature
 Level: 6
 Ability: Blaze
@@ -19265,6 +19280,7 @@ EVs: 252 Spe / 252 HP
 - Flame Charge
 
 Zigzagoon
+Shiny: Yes
 Jolly Nature
 Level: 6
 Ability: Pickup
@@ -19303,6 +19319,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Water Gun
 
 Quilava @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 18
 Ability: Blaze
@@ -19356,6 +19373,7 @@ EVs: 252 Atk / 252 Spe
 - Feint
 
 Quilava @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 21
 Ability: Flash Fire
@@ -19376,6 +19394,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Squirtle
+Shiny: Yes
 Hardy Nature
 Level: 6
 Ability: Torrent
@@ -19407,6 +19426,7 @@ EVs: 252 Spe / 252 HP
 - Rapid Spin
 
 Zigzagoon
+Shiny: Yes
 Jolly Nature
 Level: 6
 Ability: Pickup
@@ -19445,6 +19465,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Water Gun
 
 Wartortle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 18
 Ability: Torrent
@@ -19499,6 +19520,7 @@ EVs: 252 Atk / 252 Spe
 - Feint
 
 Wartortle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 21
 Ability: Rain Dish
@@ -19520,6 +19542,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Treecko
+Shiny: Yes
 Hardy Nature
 Level: 6
 Ability: Overgrow
@@ -19551,6 +19574,7 @@ EVs: 252 Spe / 252 HP
 - Bullet Seed
 
 Zigzagoon
+Shiny: Yes
 Jolly Nature
 Level: 6
 Ability: Pickup
@@ -19589,6 +19613,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Water Gun
 
 Grovyle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 18
 Ability: Overgrow
@@ -19643,6 +19668,7 @@ EVs: 252 Atk / 252 Spe
 - Feint
 
 Grovyle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 21
 Ability: Unburden
@@ -19708,6 +19734,7 @@ EVs: 128 Atk / 128 HP
 - Swagger
 
 Makuhita @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 24
 Ability: Thick Fat
@@ -19784,6 +19811,7 @@ EVs: 252 Atk / 252 HP
 - Knock Off
 
 Makuhita @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 27
 Ability: Thick Fat
@@ -19849,6 +19877,7 @@ EVs: 128 Atk / 128 Spe
 - Roar
 
 Manectric @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 32
 Ability: Static
@@ -19925,6 +19954,7 @@ EVs: 252 SpA / 252 Spe
 - Explosion
 
 Manectric @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 35
 Ability: Lightning Rod
@@ -19946,6 +19976,7 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Ralts
+Shiny: Yes
 Modest Nature
 Level: 19
 Ability: Synchronize
@@ -19966,6 +19997,7 @@ AI: Smart Trainer
 Difficulty: Kaizo
 
 Kirlia @ Oran Berry
+Shiny: Yes
 Timid Nature
 Level: 22
 Ability: Trace
@@ -20169,6 +20201,7 @@ EVs: 128 SpA / 128 HP
 - Take Down
 
 Quilava @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 24
 Ability: Blaze
@@ -20233,6 +20266,7 @@ EVs: 252 SpA / 252 HP
 - Amnesia
 
 Quilava @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 28
 Ability: Flash Fire
@@ -20286,6 +20320,7 @@ EVs: 128 SpA / 128 HP
 - Take Down
 
 Wartortle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 24
 Ability: Torrent
@@ -20351,6 +20386,7 @@ EVs: 252 SpA / 252 HP
 - Amnesia
 
 Wartortle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 28
 Ability: Rain Dish
@@ -20405,6 +20441,7 @@ EVs: 128 SpA / 128 HP
 - Take Down
 
 Grovyle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 24
 Ability: Overgrow
@@ -20470,6 +20507,7 @@ EVs: 252 SpA / 252 HP
 - Amnesia
 
 Grovyle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 28
 Ability: Unburden
@@ -20524,6 +20562,7 @@ EVs: 128 SpA / 128 HP
 - Take Down
 
 Quilava @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 24
 Ability: Blaze
@@ -20588,6 +20627,7 @@ EVs: 252 SpA / 252 HP
 - Amnesia
 
 Quilava @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 28
 Ability: Flash Fire
@@ -20641,6 +20681,7 @@ EVs: 128 SpA / 128 HP
 - Take Down
 
 Wartortle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 24
 Ability: Torrent
@@ -20706,6 +20747,7 @@ EVs: 252 SpA / 252 HP
 - Amnesia
 
 Wartortle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 28
 Ability: Rain Dish
@@ -20760,6 +20802,7 @@ EVs: 128 SpA / 128 HP
 - Take Down
 
 Grovyle @ Oran Berry
+Shiny: Yes
 Hardy Nature
 Level: 24
 Ability: Overgrow
@@ -20825,6 +20868,7 @@ EVs: 252 SpA / 252 HP
 - Amnesia
 
 Grovyle @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 28
 Ability: Unburden
@@ -21145,6 +21189,7 @@ EVs: 128 HP / 128 Def
 - Pain Split
 
 Camerupt @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 38
 Ability: Solid Rock
@@ -21221,6 +21266,7 @@ EVs: 252 SpA / 252 Spe
 - Nasty Plot
 
 Camerupt @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 42
 Ability: Solid Rock
@@ -21360,6 +21406,7 @@ EVs: 128 SpA / 128 HP
 - Yawn
 
 Torkoal @ Sitrus Berry
+Shiny: Yes
 Quiet Nature
 Level: 42
 Ability: Drought
@@ -21436,6 +21483,7 @@ EVs: 252 SpA / 252 HP
 - Ancient Power
 
 Camerupt @ Sitrus Berry
+Shiny: Yes
 Quiet Nature
 Level: 45
 Ability: Solid Rock
@@ -21500,6 +21548,7 @@ EVs: 128 Atk / 128 HP
 - Slash
 
 Slaking @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 50
 Ability: Truant
@@ -21576,6 +21625,7 @@ EVs: 252 HP / 252 Def
 - Body Slam
 
 Slaking @ Life Orb
+Shiny: Yes
 Adamant Nature
 Level: 54
 Ability: Truant
@@ -22146,6 +22196,7 @@ EVs: 128 HP / 128 Def
 - Roost
 
 Altaria @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 62
 Ability: Natural Cure
@@ -22222,6 +22273,7 @@ EVs: 252 Atk / 252 Spe
 - Bounce
 
 Altaria @ Lum Berry
+Shiny: Yes
 Adamant Nature
 Level: 63
 Ability: Natural Cure
@@ -22276,6 +22328,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 58
 Ability: Blaze
@@ -22352,6 +22405,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 61
 Ability: Flash Fire
@@ -22406,6 +22460,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 58
 Ability: Torrent
@@ -22482,6 +22537,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 61
 Ability: Rain Dish
@@ -22536,6 +22592,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 58
 Ability: Overgrow
@@ -22612,6 +22669,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 61
 Ability: Unburden
@@ -22666,6 +22724,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 58
 Ability: Blaze
@@ -22742,6 +22801,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 61
 Ability: Flash Fire
@@ -22796,6 +22856,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 58
 Ability: Torrent
@@ -22872,6 +22933,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 61
 Ability: Rain Dish
@@ -22926,6 +22988,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 58
 Ability: Overgrow
@@ -23002,6 +23065,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 61
 Ability: Unburden
@@ -23186,6 +23250,7 @@ EVs: 252 SpA / 252 HP
 - Calm Mind
 
 Solrock @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 70
 Ability: Levitate
@@ -23262,6 +23327,7 @@ EVs: 252 Atk / 252 HP
 - Bullet Punch
 
 Gardevoir @ Choice Specs
+Shiny: Yes
 Modest Nature
 Level: 71
 Ability: Trace
@@ -23327,6 +23393,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 64
 Ability: Blaze
@@ -23403,6 +23470,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 66
 Ability: Flash Fire
@@ -23468,6 +23536,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 64
 Ability: Torrent
@@ -23544,6 +23613,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 66
 Ability: Rain Dish
@@ -23609,6 +23679,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 64
 Ability: Overgrow
@@ -23685,6 +23756,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 66
 Ability: Unburden
@@ -23750,6 +23822,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 64
 Ability: Blaze
@@ -23826,6 +23899,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Typhlosion @ Sitrus Berry
+Shiny: Yes
 Timid Nature
 Level: 66
 Ability: Flash Fire
@@ -23891,6 +23965,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 64
 Ability: Torrent
@@ -23967,6 +24042,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Blastoise @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 66
 Ability: Rain Dish
@@ -24032,6 +24108,7 @@ EVs: 128 Atk / 128 Spe
 - Bullet Punch
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 64
 Ability: Overgrow
@@ -24108,6 +24185,7 @@ EVs: 252 SpA / 252 Spe
 - Thunderbolt
 
 Sceptile @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 66
 Ability: Unburden
@@ -24240,6 +24318,7 @@ EVs: 128 HP / 128 Def
 - Pain Split
 
 Camerupt @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 74
 Ability: Solid Rock
@@ -24284,6 +24363,7 @@ EVs: 252 HP / 252 Def
 - Protect
 
 Camerupt @ Choice Specs
+Shiny: Yes
 Quiet Nature
 Level: 77
 Ability: Solid Rock
@@ -24446,6 +24526,7 @@ EVs: 128 Atk / 128 HP
 - Shadow Sneak
 
 Sharpedo @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 77
 Ability: Rough Skin
@@ -24522,6 +24603,7 @@ EVs: 252 HP / 252 Atk
 - Stealth Rock
 
 Sharpedo @ Life Orb
+Shiny: Yes
 Adamant Nature
 Level: 78
 Ability: Speed Boost
@@ -24587,6 +24669,7 @@ EVs: 128 HP / 128 Def
 - Dragon Tail
 
 Kingdra @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 78
 Ability: Swift Swim
@@ -24663,6 +24746,7 @@ EVs: 252 HP / 252 SpA
 - Substitute
 
 Milotic @ Flame Orb
+Shiny: Yes
 Bold Nature
 Level: 78
 Ability: Marvel Scale
@@ -24728,6 +24812,7 @@ EVs: 128 SpA / 128 HP
 - Protect
 
 Gardevoir @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 82
 Ability: Trace
@@ -24804,6 +24889,7 @@ EVs: 252 Atk / 252 Spe
 - Wild Charge
 
 Gardevoir @ Gardevoirite
+Shiny: Yes
 Timid Nature
 Level: 84
 Ability: Trace
@@ -24869,6 +24955,7 @@ EVs: 128 SpA / 128 HP
 - Protect
 
 Gardevoir @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 88
 Ability: Trace
@@ -24945,6 +25032,7 @@ EVs: 252 Atk / 252 Spe
 - Wild Charge
 
 Gardevoir @ Gardevoirite
+Shiny: Yes
 Timid Nature
 Level: 90
 Ability: Trace
@@ -25011,6 +25099,7 @@ EVs: 128 Atk / 128 Spe
 - Swords Dance
 
 Absol @ Sitrus Berry
+Shiny: Yes
 Jolly Nature
 Level: 83
 Ability: Super Luck
@@ -25088,6 +25177,7 @@ EVs: 252 HP / 252 Atk
 - Stealth Rock
 
 Absol @ Absolite
+Shiny: Yes
 Jolly Nature
 Level: 84
 Ability: Justified
@@ -25154,6 +25244,7 @@ EVs: 128 SpA / 128 Spe
 - Nasty Plot
 
 Dusknoir @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 84
 Ability: Pressure
@@ -25231,6 +25322,7 @@ EVs: 252 SpA / 252 Spe
 - Nasty Plot
 
 Banette @ Banettite
+Shiny: Yes
 Adamant Nature
 Level: 85
 Ability: Frisk
@@ -25297,6 +25389,7 @@ EVs: 128 Atk / 128 Spe
 - Shell Smash
 
 Walrein @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 84
 Ability: Thick Fat
@@ -25374,6 +25467,7 @@ EVs: 252 HP / 252 SpA
 - Protect
 
 Glalie @ Glalitite
+Shiny: Yes
 Jolly Nature
 Level: 85
 Ability: Inner Focus
@@ -25440,6 +25534,7 @@ EVs: 128 Atk / 128 Spe
 - Dragon Dance
 
 Salamence @ Sitrus Berry
+Shiny: Yes
 Adamant Nature
 Level: 85
 Ability: Intimidate
@@ -25517,6 +25612,7 @@ EVs: 252 Atk / 252 Spe
 - Dragon Dance
 
 Salamence @ Salamencite
+Shiny: Yes
 Adamant Nature
 Level: 85
 Ability: Intimidate
@@ -25594,6 +25690,7 @@ EVs: 128 Atk / 128 Spe
 - Dragon Dance
 
 Milotic @ Sitrus Berry
+Shiny: Yes
 Modest Nature
 Level: 85
 Ability: Competitive
@@ -25671,6 +25768,7 @@ EVs: 252 Atk / 252 Spe
 - Dragon Dance
 
 Milotic @ Leftovers
+Shiny: Yes
 Bold Nature
 Level: 85
 Ability: Competitive

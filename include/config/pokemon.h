@@ -72,6 +72,7 @@
 #define P_FLAG_FORCE_NO_SHINY            0  // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 
 // Émeraude Couronnement : starters du joueur
+#define P_SHINY_STAT_BONUS               10    // Couronnement (lot 1 du cahier v0.42) : un shiny a +10 % sur toutes ses stats (PV compris), cumulé avec la Dark Ball.
 #define P_PLAYER_STARTER_STAT_BONUS      20    // Bonus en % sur toutes les stats de base des Pokémon marqués MON_DATA_PLAYER_STARTER (toute la lignée).
 #define P_PLAYER_STARTER_HIDDEN_ABILITY  TRUE  // Si TRUE, le starter reçu du Prof. Seko a son talent caché.
 

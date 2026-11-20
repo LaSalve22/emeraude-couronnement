@@ -104,7 +104,7 @@ enum __attribute__((packed)) Stat
 #define MAX_STAT_STAGE    12
 
 // Shiny odds
-#define SHINY_ODDS 256 // Couronnement : 1/256 — Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 512 // Couronnement : 1/128 (lot 1 du cahier v0.42 ; 1/256 avant) — Actual probability is SHINY_ODDS/65536
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0

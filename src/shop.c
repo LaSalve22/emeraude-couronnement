@@ -1,4 +1,5 @@
 #include "global.h"
+#include "event_data.h"
 #include "bg.h"
 #include "data.h"
 #include "decompress.h"
@@ -1313,10 +1314,49 @@ static void RecordItemPurchase(u8 taskId)
 #undef tCallbackHi
 #undef tCallbackLo
 
+// Émeraude Couronnement (lot 1 du cahier v0.42) : les Poké Marts (listes qui vendent des Poké Balls ou des Potions)
+// vendent aussi les Bonbons Exp. : XS / S / M dès le 1er badge, L au 3e, XL au 5e, XXL au 7e.
+static EWRAM_DATA u16 sListeAvecBonbons[64] = {0};
+
+static const u16 sBonbons[][2] =
+{
+    {ITEM_EXP_CANDY_XS,  FLAG_BADGE01_GET},
+    {ITEM_EXP_CANDY_S,   FLAG_BADGE01_GET},
+    {ITEM_EXP_CANDY_M,   FLAG_BADGE01_GET},
+    {ITEM_EXP_CANDY_L,   FLAG_BADGE03_GET},
+    {ITEM_EXP_CANDY_XL,  FLAG_BADGE05_GET},
+    {ITEM_EXP_CANDY_XXL, FLAG_BADGE07_GET},
+};
+
+static const u16 *AjouterBonbons(const u16 *items)
+{
+    u32 n = 0, i;
+    bool32 pokeMart = FALSE;
+
+    while (items[n] != ITEM_NONE)
+    {
+        if (items[n] == ITEM_POKE_BALL || items[n] == ITEM_POTION)
+            pokeMart = TRUE;
+        if (items[n] >= ITEM_EXP_CANDY_XS && items[n] <= ITEM_EXP_CANDY_XL)
+            return items; // la liste en vend déjà
+        n++;
+    }
+    if (!pokeMart || n + ARRAY_COUNT(sBonbons) >= ARRAY_COUNT(sListeAvecBonbons))
+        return items;
+    memcpy(sListeAvecBonbons, items, n * sizeof(u16));
+    for (i = 0; i < ARRAY_COUNT(sBonbons); i++)
+    {
+        if (FlagGet(sBonbons[i][1]))
+            sListeAvecBonbons[n++] = sBonbons[i][0];
+    }
+    sListeAvecBonbons[n] = ITEM_NONE;
+    return sListeAvecBonbons;
+}
+
 void CreatePokemartMenu(const u16 *itemsForSale)
 {
     CreateShopMenu(MART_TYPE_NORMAL);
-    SetShopItemsForSale(itemsForSale);
+    SetShopItemsForSale(AjouterBonbons(itemsForSale));
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);
 }

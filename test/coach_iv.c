@@ -60,6 +60,7 @@ TEST("Capsules: a Dark Ball Pokemon keeps its +30% bonus")
     u32 atk;
 
     CreateMon(&mon, SPECIES_ZIGZAGOON, 50, 0, OTID_STRUCT_PRESET(0));
+    SetMonData(&mon, MON_DATA_IS_SHINY, &(bool8){FALSE}); // personnalité 0 = shiny : pas de bonus shiny ici (lot 1)
     MettreIv(&mon, 31);
     atk = GetMonData(&mon, MON_DATA_ATK);
     MettreIv(&mon, 0);

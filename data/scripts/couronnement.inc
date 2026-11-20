@@ -43,6 +43,13 @@ Couronnement_EventScript_DonnerRepousseInfinie::
 	giveitem ITEM_REPOUSSE_INFINIE
 	msgbox Couronnement_Text_RepousseInfinieExplique, MSGBOX_DEFAULT
 Couronnement_EventScript_DonnerRepousseInfinieFin::
+	@ Câble Link (lot 1 du cahier v0.42), même chemin : avec le pass, ou chez l'herboriste pour les vieilles sauvegardes.
+	checkitem ITEM_LINKING_CORD
+	goto_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_DonnerCableLinkFin
+	msgbox Couronnement_Text_CableLink, MSGBOX_DEFAULT
+	giveitem ITEM_LINKING_CORD
+	msgbox Couronnement_Text_CableLinkExplique, MSGBOX_DEFAULT
+Couronnement_EventScript_DonnerCableLinkFin::
 	return
 
 @ ------------------------------------------------------------------ Hôtesse des tournois (villes et salles de Concours)
@@ -515,6 +522,16 @@ Couronnement_Text_RepousseInfinie:
 	.string "sauvages qui te sautent dessus tous\l"
 	.string "les trois pas, ça va cinq minutes.$"
 
+Couronnement_Text_CableLink:
+	.string "Et ce vieux Câble Link. Personne\n"
+	.string "n'échange plus rien depuis des\l"
+	.string "années, alors autant qu'il serve.$"
+
+Couronnement_Text_CableLinkExplique:
+	.string "Branche-le sur un Pokémon qui\n"
+	.string "évolue par échange : il évolue\l"
+	.string "sur place. Il ne s'use pas.$"
+
 Couronnement_Text_RepousseInfinieExplique:
 	.string "La Repousse Infinie coupe les\n"
 	.string "rencontres, et les remet quand tu\l"
@@ -543,8 +560,17 @@ Couronnement_EventScript_MenuLRepousseCourse::
 	dynmultipush Couronnement_Text_MenuLEV, 4
 Couronnement_EventScript_MenuLTera::
 	checkitem ITEM_TERA_ORB
-	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLRang
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLVolFlash
 	dynmultipush Couronnement_Text_MenuLTera, 5
+@ Vol et Flash avec la CS dans le sac et le badge (lot 1 du cahier v0.42)
+Couronnement_EventScript_MenuLVolFlash::
+	specialvar VAR_RESULT, Couronnement_VolPossible
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLFlashTest
+	dynmultipush Couronnement_Text_MenuLVol, 14
+Couronnement_EventScript_MenuLFlashTest::
+	specialvar VAR_RESULT, Couronnement_FlashPossible
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_MenuLRang
+	dynmultipush Couronnement_Text_MenuLFlash, 15
 Couronnement_EventScript_MenuLRang::
 	goto_if_unset FLAG_COURONNEMENT_PASS, Couronnement_EventScript_MenuLFermer
 	dynmultipush Couronnement_Text_MenuLRang, 6
@@ -572,7 +598,24 @@ Couronnement_EventScript_MenuLFermer::
 	case 11, Couronnement_EventScript_MenuLCommerces
 	case 12, Couronnement_EventScript_MenuLBanques
 	case 13, Couronnement_EventScript_MenuLArenes
+	case 14, Couronnement_EventScript_MenuLVol
+	case 15, Couronnement_EventScript_MenuLFlash
 	closemessage
+	releaseall
+	end
+
+Couronnement_EventScript_MenuLVol::
+	closemessage
+	releaseall
+	special Couronnement_Vol
+	end
+
+Couronnement_EventScript_MenuLFlash::
+	closemessage
+	playse SE_M_REFLECT
+	setflag FLAG_SYS_USE_FLASH
+	animateflash 1
+	setflashlevel 1
 	releaseall
 	end
 
@@ -678,6 +721,10 @@ Couronnement_Text_MenuLEV:
 	.string "Coach EV / IV$"
 Couronnement_Text_MenuLTera:
 	.string "Type Téra$"
+Couronnement_Text_MenuLVol:
+	.string "Vol$"
+Couronnement_Text_MenuLFlash:
+	.string "Flash$"
 Couronnement_Text_MenuLRang:
 	.string "Rang mondial$"
 Couronnement_Text_MenuLFermer:
@@ -727,3 +774,64 @@ Couronnement_Text_TypeAcier:
 Couronnement_Text_TypeFee:
 	.string "Fée$"
 
+
+@ ------------------------------------------------------------------ Récompense des champions d'arène (lot 1 du cahier v0.42)
+@ Après le badge (VAR_0x8008 = n° de l'arène) : une grosse quantité de Bonbons Exp. pour le palier suivant, puis l'objet
+@ que tient un Pokémon clé de l'équipe Kaizo du champion (tools/trainers/equipes_couronnement.py).
+Couronnement_EventScript_RecompenseChampion::
+	msgbox Couronnement_Text_ChampionBonbons, MSGBOX_DEFAULT
+	switch VAR_0x8008
+	case 1, Couronnement_EventScript_RecompenseChampion1
+	case 2, Couronnement_EventScript_RecompenseChampion2
+	case 3, Couronnement_EventScript_RecompenseChampion3
+	case 4, Couronnement_EventScript_RecompenseChampion4
+	case 5, Couronnement_EventScript_RecompenseChampion5
+	case 6, Couronnement_EventScript_RecompenseChampion6
+	case 7, Couronnement_EventScript_RecompenseChampion7
+	case 8, Couronnement_EventScript_RecompenseChampion8
+	return
+Couronnement_EventScript_RecompenseChampion1::
+	giveitem ITEM_EXP_CANDY_M, 10
+	setvar VAR_0x8009, ITEM_EVIOLITE
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion2::
+	giveitem ITEM_EXP_CANDY_L, 10
+	setvar VAR_0x8009, ITEM_BLACK_SLUDGE
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion3::
+	giveitem ITEM_EXP_CANDY_XL, 7
+	setvar VAR_0x8009, ITEM_MAGNET
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion4::
+	giveitem ITEM_EXP_CANDY_XL, 10
+	setvar VAR_0x8009, ITEM_HEAT_ROCK
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion5::
+	giveitem ITEM_EXP_CANDY_XXL, 4
+	setvar VAR_0x8009, ITEM_SILK_SCARF
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion6::
+	giveitem ITEM_EXP_CANDY_XXL, 5
+	setvar VAR_0x8009, ITEM_ROCKY_HELMET
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion7::
+	giveitem ITEM_EXP_CANDY_XXL, 5
+	setvar VAR_0x8009, ITEM_WEAKNESS_POLICY
+	goto Couronnement_EventScript_RecompenseChampionObjet
+Couronnement_EventScript_RecompenseChampion8::
+	giveitem ITEM_EXP_CANDY_XXL, 6
+	setvar VAR_0x8009, ITEM_LEFTOVERS
+Couronnement_EventScript_RecompenseChampionObjet::
+	msgbox Couronnement_Text_ChampionObjet, MSGBOX_DEFAULT
+	giveitem VAR_0x8009
+	return
+
+Couronnement_Text_ChampionBonbons:
+	.string "Et ce n'est pas fini. Tiens, des\n"
+	.string "Bonbons Exp. La suite va piquer :\l"
+	.string "ton équipe en aura besoin.$"
+
+Couronnement_Text_ChampionObjet:
+	.string "Prends aussi l'objet fétiche de\n"
+	.string "l'arène. Il t'a donné assez de fil\l"
+	.string "à retordre pour mériter le voyage.$"

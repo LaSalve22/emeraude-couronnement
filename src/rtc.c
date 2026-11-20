@@ -139,6 +139,45 @@ u16 RtcGetErrorStatus(void)
     return (OW_USE_FAKE_RTC) ? 0 : sErrorStatus;
 }
 
+static u8 ConvertBinaryToBcd(u32 n)
+{
+    return OW_USE_FAKE_RTC ? n : (((n / 10) % 10) << 4) | (n % 10);
+}
+
+// Émeraude Couronnement : le temps du jeu passe COURONNEMENT_VITESSE_TEMPS fois plus vite que l'horloge réelle.
+// Avant la date de référence (20/11/2026), le temps est inchangé ; après, chaque seconde réelle en vaut 3.
+// Tout le reste (heure du jour, jour de la semaine, jours de l'économie, Baies…) lit cette horloge accélérée.
+// Avec un facteur 3, l'année reste sous 2100 jusqu'à ~2050 en temps réel.
+#define RTC_REF_JOUR 9821 // ConvertDateToDayCount(26, MONTH_NOV, 20)
+
+static void RtcAccelerer(struct SiiRtcInfo *rtc)
+{
+    u64 secondes, ref = (u64)RTC_REF_JOUR * 86400;
+    u32 jours, annee = 0, mois = 0, reste;
+
+    if (COURONNEMENT_VITESSE_TEMPS <= 1)
+        return;
+    secondes = (u64)RtcGetDayCount(rtc) * 86400 + ConvertBcdToBinary(rtc->hour) * 3600
+             + ConvertBcdToBinary(rtc->minute) * 60 + ConvertBcdToBinary(rtc->second);
+    if (secondes <= ref)
+        return;
+    secondes = ref + (secondes - ref) * COURONNEMENT_VITESSE_TEMPS;
+    jours = secondes / 86400;
+    reste = secondes % 86400;
+    // jours = numéro du jour depuis le 1er janvier 2000 (= 1) : on refait l'année, le mois et le jour
+    while (annee < 99 && jours > 365u + IsLeapYear(annee))
+        jours -= 365 + IsLeapYear(annee++);
+    while (mois < MONTH_COUNT - 1 && jours > (u32)sNumDaysInMonths[mois] + (mois == MONTH_FEB - 1 && IsLeapYear(annee)))
+        jours -= sNumDaysInMonths[mois] + (mois == MONTH_FEB - 1 && IsLeapYear(annee)), mois++;
+    rtc->year = ConvertBinaryToBcd(annee);
+    rtc->month = ConvertBinaryToBcd(mois + 1);
+    rtc->day = ConvertBinaryToBcd(jours);
+    rtc->dayOfWeek = ConvertBinaryToBcd((RtcGetDayCount(rtc) + 5) % 7); // jour 1 = samedi 1er janvier 2000
+    rtc->hour = ConvertBinaryToBcd(reste / 3600);
+    rtc->minute = ConvertBinaryToBcd((reste / 60) % 60);
+    rtc->second = ConvertBinaryToBcd(reste % 60);
+}
+
 void RtcGetInfo(struct SiiRtcInfo *rtc)
 {
     if (OW_USE_FAKE_RTC)
@@ -146,7 +185,10 @@ void RtcGetInfo(struct SiiRtcInfo *rtc)
     else if (sErrorStatus & RTC_ERR_FLAG_MASK)
         *rtc = sRtcDummy;
     else
+    {
         RtcGetRawInfo(rtc);
+        RtcAccelerer(rtc);
+    }
 }
 
 void RtcGetDateTime(struct SiiRtcInfo *rtc)

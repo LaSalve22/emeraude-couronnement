@@ -10,6 +10,7 @@ TEST("Dark Ball: +30% stats except HP and no friendship")
     u8 friendship = 200, dark = TRUE;
 
     CreateMon(&mon, SPECIES_ZIGZAGOON, 50, 0, OTID_STRUCT_PRESET(0));
+    SetMonData(&mon, MON_DATA_IS_SHINY, &(bool8){FALSE}); // personnalité 0 = shiny : pas de bonus shiny ici (lot 1)
     CalculateMonStats(&mon);
     hp = GetMonData(&mon, MON_DATA_MAX_HP);
     atk = GetMonData(&mon, MON_DATA_ATK);

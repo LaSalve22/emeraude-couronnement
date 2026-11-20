@@ -532,6 +532,28 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (+ commerces) ne couvrent plus 60 % de la dette du Crédit Foncier. Restent (lot 2) : double comptage maisons / société,
   humeur de la société, aller-retour sur le bien soldé. Tests : `TESTS="Immo"` (8).
 
+## Fait (v0.43) - lot 1 du cahier v0.42 (gameplay et confort) + temps x3
+
+- Câble Link = ex-Fil de Liaison (`ITEM_LINKING_CORD`), objet clé réutilisable donné avec la Repousse Infinie (pass, ou herboriste
+  de Clémenti pour les vieilles sauvegardes) : fait évoluer toute évolution par échange (`EVO_TRADE` accepté en `EVO_MODE_ITEM_USE`,
+  objet tenu requis s'il y en a un ; Carabing / Escargaume exclus, ils exigent le partenaire d'échange).
+- CS sans capacité (`src/couronnement_cs.c`) : CS dans le sac + badge = Coupe, Éclate-Roc, Force, Surf, Cascade, Plongée sans Pokémon
+  qui connaît l'attaque (`checkfieldmove` dans `src/scrcmd.c`, `PartyHasMonWithSurf` ; le 1er Pokémon fait l'animation).
+  Vol et Flash : entrées du menu L (`Couronnement_VolPossible` / `FlashPossible`, carte de vol avec retour au terrain si on annule,
+  `gVolDepuisMenuL` dans `src/region_map.c`).
+- Shiny 1/128 (`SHINY_ODDS` 512) et +10 % sur toutes les stats, PV compris (`P_SHINY_STAT_BONUS`), additionné au bonus Dark Ball
+  (« SOMBRE +40 % ») ; page stats « vraie -> avec bonus » aussi pour les shiny. L'as des rivaux, champions, Conseil 4, Marc, Timmy,
+  Arthur et Max est shiny en Hard / Kaizo (`MAJEURS` dans `tools/trainers/equipes_couronnement.py`, 98 Pokémon).
+  Attention : les vieilles sauvegardes gagnent quelques shiny (valeur shiny entre 256 et 511).
+- Bonbons Exp. : nouveau XXL (`ITEM_EXP_CANDY_XXL` 875, 100 000 Exp.), prix 100 / 500 / 1 500 / 4 000 / 10 000 / 30 000 ¥ ; vendus dans
+  tous les Poké Marts (listes avec Poké Ball ou Potion, `AjouterBonbons` dans `src/shop.c`) : XS / S / M au 1er badge, L au 3e, XL au 5e,
+  XXL au 7e. Le moteur bloque déjà l'Exp. au level cap.
+- Champions d'arène : après le badge, `Couronnement_EventScript_RecompenseChampion` (Bonbons : 10 M, 10 L, 7 XL, 10 XL, 4 / 5 / 5 / 6 XXL)
+  + objet fétiche de leur équipe Kaizo (Évoluroc, Boue Noire, Aimant, Roche Chaude, Mouchoir Soie, Casque Brut, Vulné-Assurance, Restes).
+- Temps x3 (`COURONNEMENT_VITESSE_TEMPS`, `RtcAccelerer` dans `src/rtc.c`) : à partir du 20/11/2026 (jour 9821), chaque seconde réelle
+  en vaut 3 pour tout le jeu (heure, jour / nuit, jours de la semaine, économie). Avant cette date (cartouche à l'horloge remise à 2000),
+  temps réel. Valable jusqu'à ~2050. Tests : `TESTS="Lot 1"` (4).
+
 ## Idées d'Adrien à concevoir plus tard
 
 - **Vente à découvert (demande d'Adrien, 14/11, prochaine étape)** : pouvoir vendre une action sans la détenir (ex. Aqua Corp

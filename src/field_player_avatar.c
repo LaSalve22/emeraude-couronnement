@@ -1,4 +1,5 @@
 #include "global.h"
+#include "couronnement_cs.h"
 #include "player_character.h"
 #include "main.h"
 #include "bike.h"
@@ -1644,6 +1645,8 @@ bool8 PartyHasMonWithSurf(void)
             if (MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], MOVE_SURF))
                 return TRUE;
         }
+        if (Couronnement_CSDisponible(FIELD_MOVE_SURF)) // Couronnement : CS Surf dans le sac + badge
+            return TRUE;
     }
     return FALSE;
 }

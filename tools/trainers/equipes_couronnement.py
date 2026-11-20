@@ -720,10 +720,12 @@ def filter_moves(moves):
     return ', '.join(kept) if len(kept) >= 2 else moves
 
 
-def mon_block(spec, iv):
+def mon_block(spec, iv, shiny=False):
     parts = [p.strip() for p in spec.split('|')] + [''] * 6
     species, nature, ability, level, evs, moves = parts[:6]
     lines = [species]
+    if shiny:
+        lines.append('Shiny: Yes')
     if nature:
         lines.append(f'{nature} Nature')
     lines.append(f'Level: {level}')
@@ -945,6 +947,16 @@ def _auto_teams(tid, block, cap, floors, pool_name=None):
     return teams
 
 
+# Lot 1 du cahier v0.42 : l'as (dernier Pokémon) des rivaux et des dresseurs majeurs est shiny en Hard et Kaizo
+# (un shiny a +10 % sur toutes ses stats, P_SHINY_STAT_BONUS).
+MAJEURS = re.compile(r'^(MAY_|BRENDAN_|WALLY_|ROXANNE_1|BRAWLY_1|WATTSON_1|FLANNERY_1|NORMAN_1|WINONA_1|TATE_AND_LIZA_1|'
+                     r'JUAN_1|SIDNEY|PHOEBE|GLACIA|DRAKE|WALLACE|ARCHIE|MAXIE_)')
+
+
+def est_majeur(tid):
+    return bool(MAJEURS.match(tid))
+
+
 def main():
     text = PARTY.read_text(encoding='utf-8')
     if BEGIN in text:
@@ -966,7 +978,8 @@ def main():
             ai = {'Hard': 'AI: Basic Trainer', 'Kaizo': 'AI: Smart Trainer'}[diff]  # IA : au moins « Basic » en Hard, « Smart » en Kaizo
             hdr = [(ai if l.startswith('AI:') else l) for l in header]
             out += hdr + [f'Difficulty: {diff}', '']
-            out += [mon_block(s, IV[diff]) + '\n' for s in mons]
+            ace = len(mons) - 1 if est_majeur(tid) else -1
+            out += [mon_block(s, IV[diff], i == ace) + '\n' for i, s in enumerate(mons)]
     out.append(END)
     PARTY.write_text(text.rstrip('\n') + '\n\n' + '\n'.join(out) + '\n', encoding='utf-8')
     print(f'{len(all_teams)} dresseurs : blocs Hard et Kaizo écrits.')

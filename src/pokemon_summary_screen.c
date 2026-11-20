@@ -3832,7 +3832,9 @@ static void PrintRibbonCount(void)
 
     if (GetMonData(mon, MON_DATA_IS_SHADOW)) // Dark Ball : aucun lien possible, on affiche l'état Sombre
     {
-        ConvertIntToDecimalStringN(gStringVar1, COURONNEMENT_DARK_BALL_BONUS, STR_CONV_MODE_LEFT_ALIGN, 2);
+        // shiny en plus : les deux bonus s'additionnent (lot 1 du cahier v0.42)
+        ConvertIntToDecimalStringN(gStringVar1, COURONNEMENT_DARK_BALL_BONUS + (GetMonData(mon, MON_DATA_IS_SHINY) ? P_SHINY_STAT_BONUS : 0),
+                                   STR_CONV_MODE_LEFT_ALIGN, 2);
         StringExpandPlaceholders(gStringVar4, sText_Sombre);
         x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 70) + 6;
         PrintTextOnWindowToFit(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gStringVar4, x, 1, 0, 0);
@@ -3970,11 +3972,13 @@ static bool32 PrintDarkStats(bool32 left)
     u8 windowId, *txt;
     bool8 faux = FALSE;
 
-    if (sMonSummaryScreen->skillsPageMode != SUMMARY_SKILLS_MODE_STATS || !GetMonData(mon, MON_DATA_IS_SHADOW))
+    if (sMonSummaryScreen->skillsPageMode != SUMMARY_SKILLS_MODE_STATS
+     || (!GetMonData(mon, MON_DATA_IS_SHADOW) && !GetMonData(mon, MON_DATA_IS_SHINY))) // Dark Ball ou shiny (lot 1)
         return FALSE;
     sans = Alloc(sizeof(struct Pokemon));
     *sans = *mon;
     SetMonData(sans, MON_DATA_IS_SHADOW, &faux);
+    SetMonData(sans, MON_DATA_IS_SHINY, &faux);
     CalculateMonStats(sans);
     windowId = AddWindowFromTemplateList(sPageSkillsTemplate, left ? PSS_DATA_WINDOW_SKILLS_STATS_LEFT : PSS_DATA_WINDOW_SKILLS_STATS_RIGHT);
     if (left) // PV : pas de bonus, ligne normale

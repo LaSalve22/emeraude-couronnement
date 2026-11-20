@@ -96,6 +96,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	setvar VAR_0x8008, 3
 	call Common_EventScript_SetGymTrainers
+	call Couronnement_EventScript_RecompenseChampion @ Bonbons Exp. + objet fétiche (lot 1 du cahier v0.42)
 	special MauvilleGymDeactivatePuzzle
 	special DrawWholeMapView
 	playse SE_UNLOCK

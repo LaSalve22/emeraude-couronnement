@@ -153,6 +153,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	setvar VAR_0x8008, 2
 	call Common_EventScript_SetGymTrainers
+	call Couronnement_EventScript_RecompenseChampion @ Bonbons Exp. + objet fétiche (lot 1 du cahier v0.42)
 	call DewfordTown_Gym_EventScript_GiveBulkUp
 	call DewfordTown_Gym_EventScript_GiveTeraOrb
 	closemessage

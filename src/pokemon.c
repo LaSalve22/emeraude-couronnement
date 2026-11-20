@@ -1392,6 +1392,7 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
     bool32 isPlayerStarter = GetMonData(mon, MON_DATA_PLAYER_STARTER);
     bool32 isDarkBall = GetMonData(mon, MON_DATA_IS_SHADOW);
+    u32 bonusShiny = GetMonData(mon, MON_DATA_IS_SHINY) ? P_SHINY_STAT_BONUS : 0;
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -1421,8 +1422,9 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
             baseStat = baseStat * (100 + P_PLAYER_STARTER_STAT_BONUS) / 100;
         s32 n = (((2 * baseStat + iv[i] + ev[i] / 4) * level) / 100) + 5;
         n = ModifyStatByNature(nature, n, i);
-        if (isDarkBall) // Couronnement : Dark Ball, +20 % hors PV
-            n = n * (100 + COURONNEMENT_DARK_BALL_BONUS) / 100;
+        // Couronnement : Dark Ball (+30 % hors PV) et shiny (+10 %), bonus additionnés
+        if (isDarkBall || bonusShiny)
+            n = n * (100 + (isDarkBall ? COURONNEMENT_DARK_BALL_BONUS : 0) + bonusShiny) / 100;
         if (B_FRIENDSHIP_BOOST == TRUE)
             n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));
         SetMonData(mon, MON_DATA_MAX_HP + i, &n);
@@ -1444,6 +1446,7 @@ void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
             baseHP = baseHP * (100 + P_PLAYER_STARTER_STAT_BONUS) / 100;
         s32 n = 2 * baseHP + iv[STAT_HP];
         newMaxHP = (((n + ev[STAT_HP] / 4) * level) / 100) + level + 10;
+        newMaxHP = newMaxHP * (100 + bonusShiny) / 100; // Couronnement : shiny +10 % de PV
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;
@@ -3479,6 +3482,7 @@ const u32 sExpCandyExperienceTable[] = {
     [EXP_3000 - 1] = 3000,
     [EXP_10000 - 1] = 10000,
     [EXP_30000 - 1] = 30000,
+    [EXP_100000 - 1] = 100000, // Couronnement : Bonbon Exp. XXL
 };
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
@@ -4530,6 +4534,10 @@ enum Species GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode m
             {
             case EVO_ITEM:
                 if (evolutions[i].param == evolutionItem)
+                    conditionsMet = TRUE;
+                break;
+            case EVO_TRADE: // Couronnement : le Câble Link remplace l'échange (objet tenu requis s'il y en a un)
+                if (evolutionItem == ITEM_LINKING_CORD)
                     conditionsMet = TRUE;
                 break;
             }

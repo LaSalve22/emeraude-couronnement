@@ -24,6 +24,7 @@ et sur GitHub.
 | 9 | Couronnement Mondial, 2e partie : aperçu des 6 Pokémon adverses et choix à chaque manche, 4 tournois des salles de Concours, finale à 32 à la Tour de Combat (Blue en demi, Red en finale) - v0.19 | ✅ livré |
 | 10 | Cahier v0.42, lot 0 : audit de l'économie (`docs/AUDIT_ECONOMIE.md`, simulateur) ; correctifs horloge reculée et banques (échéances prises en caisse et en Bourse, interdit bancaire, saisies) - v0.42 | ✅ livré |
 | 11 | Réglages de l'audit : dividende des Grands Magasins 0,2 %/semaine, sponsors des arènes 50 ¥ par point, maisons hypothéquées invendables - v0.42.1 | ✅ livré |
+| 12 | Lot 1 : Câble Link, CS sans capacité (Vol / Flash au menu L), shiny 1/128 à +10 %, Bonbons Exp. XS à XXL en Poké Mart, récompenses des champions ; temps du jeu x3 - v0.43 | ✅ livré |
 
 ## Déjà fait
 

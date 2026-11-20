@@ -35,6 +35,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setflag FLAG_BADGE06_GET
 	setvar VAR_0x8008, 6
 	call Common_EventScript_SetGymTrainers
+	call Couronnement_EventScript_RecompenseChampion @ Bonbons Exp. + objet fétiche (lot 1 du cahier v0.42)
 	call FortreeCity_Gym_EventScript_GiveAerialAce
 	closemessage
 	delay 30
