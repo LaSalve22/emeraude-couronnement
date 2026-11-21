@@ -439,6 +439,13 @@
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 45,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ARENE_JOUEUR",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
@@ -546,6 +553,14 @@
       "elevation": 0,
       "item": "ITEM_POKE_BALL",
       "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
+    },
+    {
+      "type": "sign",
+      "x": 46,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Arene_EventScript_PanneauBatiment"
     }
   ]
 }

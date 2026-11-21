@@ -7,6 +7,10 @@
 #include "data.h"
 #include "event_data.h"
 #include "money.h"
+#include "tycoon.h"
+#include "main.h"
+#include "overworld.h"
+#include "pokemon_summary_screen.h"
 #include "league_club.h"
 #include "party_menu.h"
 #include "pokemon.h"
@@ -456,6 +460,9 @@ static void CreerRattaches(u32 arene)
         bool32 range = FALSE;
 
         CreateMon(&sMon, espece, niveau, Random32(), OTID_STRUCT_PLAYER_ID);
+        GiveMonInitialMoveset(&sMon); // CreateMon ne donne aucune attaque dans cette version du moteur
+        valeur = EDITION_TYCOON_SIM ? Tycoon_SectionIci() : gMapHeader.regionMapSectionId;
+        SetMonData(&sMon, MON_DATA_MET_LOCATION, &valeur);
         valeur = arene + 1;
         SetMonData(&sMon, MON_DATA_ARENE, &valeur);
         valeur = k;
@@ -1059,6 +1066,8 @@ void Arene_PreparerSelection(void)
     {
         if (places[i] == NULL)
             continue;
+        if (GetBoxMonData(places[i], MON_DATA_MOVE1) == MOVE_NONE) // Pokémon créés en v0.57, sans attaque
+            GiveBoxMonInitialMoveset(places[i]);
         BoxMonToMon(places[i], &gPlayerParty[j]);
         sPlaceDuSlot[j++] = i;
     }
@@ -1189,9 +1198,8 @@ void Arene_ListeRattaches(void)
         if (places[i] == NULL)
             continue;
         if (n)
-            fin = StringCopy(fin, (n % 2 == 0) ? (n == 2 ? sText_VirguleN : sText_VirguleLigne) : sText_Virgule);
-        GetBoxMonData(places[i], MON_DATA_NICKNAME, nom);
-        fin = StringCopy(fin, StringGet_Nickname(nom));
+            fin = StringCopy(fin, (n % 2 == 0) ? sText_VirguleLigne : sText_Virgule);
+        fin = StringCopy(fin, GetSpeciesName(GetBoxMonData(places[i], MON_DATA_SPECIES)));
         *fin++ = CHAR_SPACE;
         *fin++ = CHAR_N;
         *fin++ = CHAR_PERIOD;
@@ -1199,4 +1207,54 @@ void Arene_ListeRattaches(void)
         n++;
     }
     StringCopy(fin, sText_Point);
+    (void)nom;
+}
+
+// ---------------------------------------------------------------- résumé et panneau (v0.57.1, édition Carrière)
+
+static void CB2_RetourResume(void)
+{
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+// VAR_0x8008 = arène : écran de résumé des Pokémon de l'arène (haut / bas pour passer de l'un à l'autre).
+void Arene_VoirResume(void)
+{
+    u32 n;
+    gSpecialVar_0x8005 = PARTY_SIZE;
+    Arene_PreparerSelection();
+    n = CalculatePlayerPartyCount();
+    sNbCombattants = n;
+    memcpy(sCombattants, sPlaceDuSlot, sizeof(sPlaceDuSlot));
+    ShowPokemonSummaryScreen(SUMMARY_MODE_NORMAL, gPlayerParty, 0, n ? n - 1 : 0, CB2_RetourResume);
+}
+
+// Les Pokémon rentrent à l'arène (ordre des attaques changé dans le résumé conservé), l'équipe du joueur revient.
+void Arene_FinVoirResume(void)
+{
+    Arene_RendreEquipe();
+}
+
+static const u8 sText_Panneau1[] = _("ARÈNE DE ");
+static const u8 sText_PanneauAVendre[] = _("\nÀ vendre : parle au responsable.");
+static const u8 sText_Panneau2[] = _("\nChampion : ");
+static const u8 sText_Panneau3[] = _(" (type ");
+static const u8 sText_Panneau4[] = _(").");
+
+// VAR_0x8008 = arène : texte du panneau dans gStringVar4.
+void Arene_TextePanneau(void)
+{
+    u32 a = gSpecialVar_0x8008 % ARENE_NB;
+    u8 *fin = StringCopy(gStringVar4, sText_Panneau1);
+    fin = StringCopy(fin, sVilles[a]);
+    if (!Arene_Achetee(a))
+    {
+        StringCopy(fin, sText_PanneauAVendre);
+        return;
+    }
+    fin = StringCopy(fin, sText_Panneau2);
+    fin = StringCopy(fin, gSaveBlock2Ptr->playerName);
+    fin = StringCopy(fin, sText_Panneau3);
+    fin = StringCopy(fin, gTypesInfo[Arene_Type(a)].name);
+    StringCopy(fin, sText_Panneau4);
 }

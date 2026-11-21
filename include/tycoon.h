@@ -37,7 +37,11 @@ void Tycoon_RecompenseDex(void);                   // special
 void Tycoon_RecompenseDexDonnee(void);
 const struct MapLayout *Tycoon_Layout(const struct MapLayout *layout); // halls du Couronnement (v0.56.1)
 void Tycoon_RedirigerArene(struct WarpData *dest);
-void Tycoon_HallEntree(void);                     // special
+void Tycoon_HallEntree(void);
+s32 Tycoon_AreneDeLaVille(u32 group, u32 num);       // v0.57.1 : bâtiments des arènes du joueur
+void Tycoon_AreneEntree(void);
+void Arene_IndexIci(void);
+u32 Tycoon_SectionIci(void);                     // special
 void Tycoon_HallTournoi(void);                    // special             // special                     // special (+ waitstate)
 
 #endif // GUARD_TYCOON_H

@@ -44,7 +44,10 @@ void Arene_PreparerEntrainement(void);
 void Arene_ApresEntrainement(void);
 void Arene_FinEntrainement(void);
 void Arene_ListeRattaches(void);
-bool32 Arene_SansXP(void);                          // prix de la prochaine arène (Carrière : 50 000 puis le double)
+bool32 Arene_SansXP(void);
+void Arene_VoirResume(void);
+void Arene_FinVoirResume(void);
+void Arene_TextePanneau(void);                          // prix de la prochaine arène (Carrière : 50 000 puis le double)
 u32 Arene_BadgesChallenger(u32 arene);          // badges du prochain challenger (0 si personne)
 bool32 Arene_EstBloque(struct BoxPokemon *boxMon); // PC : Pokémon déposé dans une arène
 bool32 Arene_PokemonDansLePC(void);

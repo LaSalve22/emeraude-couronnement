@@ -578,6 +578,7 @@ struct TycoonHall
 };
 
 #include "data/couronnement_halls.h"
+#include "data/couronnement_arenes.h"
 
 static const struct TycoonHall *HallDeLaCarte(u32 group, u32 num)
 {
@@ -592,6 +593,7 @@ static const struct TycoonHall *HallDeLaCarte(u32 group, u32 num)
 // src/fieldmap.c) ; copie de la structure de layout en EWRAM avec les données de la carte Carrière.
 extern const struct MapLayout *const gMapLayouts[];
 static EWRAM_DATA struct MapLayout sLayoutsCarriere[8] = {0};
+static EWRAM_DATA struct MapLayout sLayoutsArenes[ARRAY_COUNT(sArenesBatiments)] = {0};
 
 const struct MapLayout *Tycoon_Layout(const struct MapLayout *layout)
 {
@@ -609,7 +611,68 @@ const struct MapLayout *Tycoon_Layout(const struct MapLayout *layout)
         }
         return &sLayoutsCarriere[i];
     }
+    for (i = 0; i < ARRAY_COUNT(sArenesBatiments); i++) // v0.57.1 : bâtiments des arènes du joueur
+    {
+        if (layout != gMapLayouts[sArenesBatiments[i].layout - 1])
+            continue;
+        if (sLayoutsArenes[i].map != sArenesBatiments[i].carte)
+        {
+            sLayoutsArenes[i] = *layout;
+            sLayoutsArenes[i].map = sArenesBatiments[i].carte;
+        }
+        return &sLayoutsArenes[i];
+    }
     return layout;
+}
+
+// ---------------------------------------------------------------- arènes du joueur (v0.57.1, édition Carrière)
+
+// N° d'arène (src/arenes.c) de la ville, ou -1.
+s32 Tycoon_AreneDeLaVille(u32 group, u32 num)
+{
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sArenesBatiments); i++)
+        if (sArenesBatiments[i].mapGroup == group && sArenesBatiments[i].mapNum == num)
+            return sArenesBatiments[i].tournoi;
+    return -1;
+}
+
+// Entrée dans le bâtiment : la sortie ramène devant la porte de la ville d'où l'on vient.
+void Tycoon_AreneEntree(void)
+{
+    const struct MapHeader *ville;
+    u32 i;
+    if (Tycoon_AreneDeLaVille(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum) < 0)
+        return; // retour de combat, sauvegarde rechargée… : on garde la sortie déjà notée
+    ville = Overworld_GetMapHeaderByGroupAndId(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum);
+    for (i = 0; i < ville->events->warpCount; i++)
+    {
+        const struct WarpEvent *w = &ville->events->warps[i];
+        if (w->mapGroup == MAP_GROUP(MAP_ARENE_JOUEUR) && w->mapNum == MAP_NUM(MAP_ARENE_JOUEUR))
+        {
+            SetDynamicWarp(0, gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum, i);
+            return;
+        }
+    }
+}
+
+// Section de carte de la ville de l'arène où l'on est (lieu de rencontre des Pokémon rattachés).
+u32 Tycoon_SectionIci(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ARENE_JOUEUR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARENE_JOUEUR))
+        return Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->dynamicWarp.mapGroup, gSaveBlock1Ptr->dynamicWarp.mapNum)->regionMapSectionId;
+    return gMapHeader.regionMapSectionId;
+}
+
+// VAR_0x8008 = arène de l'endroit où l'on est (dans le bâtiment : celle de la ville de la sortie).
+void Arene_IndexIci(void)
+{
+    s32 a;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ARENE_JOUEUR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARENE_JOUEUR))
+        a = Tycoon_AreneDeLaVille(gSaveBlock1Ptr->dynamicWarp.mapGroup, gSaveBlock1Ptr->dynamicWarp.mapNum);
+    else
+        a = Tycoon_AreneDeLaVille(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+    gSpecialVar_0x8008 = a < 0 ? 0 : a;
 }
 
 // Édition Carrière : passer la porte d'une Arène qui sert de hall mène au hall (src/overworld.c, ApplyCurrentWarp).

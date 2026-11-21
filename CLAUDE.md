@@ -794,6 +794,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Tests : `make check EDITION=carriere TESTS="Arenes Carriere"` (3). Vérifié dans mGBA : achat, choix du type, 6 Pokémon, sélection,
   annulation, début d'un combat d'entraînement.
 
+## Fait (v0.57.1) - arènes du joueur : bâtiments, attaques, résumé (retour d'Adrien)
+
+- Bâtiments (Carrière) : la façade d'Arène d'Émeraude (6 x 5, métatuiles 0x1AA-0x1CD du tileset commun) dans les 6 villes
+  (Bourg-en-Vol, Rosyères, Poivressel, Vergazon, Autéquia, Nénucrique), placée par `hall_placer.py` (`ARENES`, près du responsable
+  posé en v0.40 ; herbe rase permise pour Autéquia ; Rosyères forcée sur le carré fleuri du centre) -> `map_carriere.bin` et
+  `src/data/couronnement_arenes.h` (`sArenesBatiments`, substitués dans `Tycoon_Layout`). Panneau devant la porte
+  (`Arene_EventScript_PanneauBatiment`, inerte en classique comme le passage).
+- Intérieur : une carte `MAP_ARENE_JOUEUR` (plan de l'Arène de Mérouville, `data/maps/AreneJoueur`), sortie dynamique
+  (`Tycoon_AreneEntree`), arène retrouvée par la sortie (`Arene_IndexIci`). Responsable à l'entrée (5, 16), membre du club au fond.
+  En Carrière, le responsable de dehors renvoie au bâtiment.
+- Attaques : `CreateMon` n'en donne aucune dans ce moteur -> `GiveMonInitialMoveset` à la création ; les Pokémon déjà créés en v0.57
+  reçoivent les leurs à la première sélection / au premier résumé. Lieu de rencontre = ville de l'arène (`Tycoon_SectionIci`).
+- « Voir l'équipe » : liste puis écran de résumé des 6 (`Arene_VoirResume` / `Arene_FinVoirResume` ; renommage et ordre des attaques gardés).
+- Vérifié dans mGBA : bâtiment à Rosyères, entrée, responsable, achat, liste, résumé (attaques), retour. Tests `TESTS="Arenes Carriere"` (3).
+
 ## Idées d'Adrien à concevoir plus tard
 
 

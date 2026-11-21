@@ -136,6 +136,11 @@ gSpecials::
 	def_special Arene_ApresEntrainement
 	def_special Arene_FinEntrainement
 	def_special Arene_ListeRattaches
+	def_special Arene_VoirResume
+	def_special Arene_FinVoirResume
+	def_special Arene_IndexIci
+	def_special Arene_TextePanneau
+	def_special Tycoon_AreneEntree
 	def_special ChooseAreneParty, waitstate=1
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi

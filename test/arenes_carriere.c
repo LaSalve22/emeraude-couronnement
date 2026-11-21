@@ -41,6 +41,7 @@ TEST("Arenes Carriere: buying gives 6 locked Pokemon of the type, N.10 to N.20")
         EXPECT(Arene_EstBloque(places[i]));
         EXPECT(GetSpeciesType(s, 0) == TYPE_GHOST || GetSpeciesType(s, 1) == TYPE_GHOST);
         EXPECT_EQ(lvl, 10 + 2 * i);
+        EXPECT(GetBoxMonData(places[i], MON_DATA_MOVE1) != MOVE_NONE);
     }
 }
 

@@ -246,6 +246,7 @@ gStdScripts_End::
 	.include "data/maps/SlateportCity_SternsShipyard_2F/scripts.inc"
 	.include "data/maps/SlateportCity_BattleTentLobby/scripts.inc"
 	.include "data/maps/CouronnementHall/scripts.inc"
+	.include "data/maps/AreneJoueur/scripts.inc"
 	.include "data/maps/SlateportCity_BattleTentCorridor/scripts.inc"
 	.include "data/maps/SlateportCity_BattleTentBattleRoom/scripts.inc"
 	.include "data/maps/SlateportCity_NameRatersHouse/scripts.inc"

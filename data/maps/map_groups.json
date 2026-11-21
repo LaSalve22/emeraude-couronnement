@@ -220,7 +220,8 @@
     "SlateportCity_PokemonCenter_1F",
     "SlateportCity_PokemonCenter_2F",
     "SlateportCity_Mart",
-    "CouronnementHall"
+    "CouronnementHall",
+    "AreneJoueur"
   ],
   "gMapGroup_IndoorMauville": [
     "MauvilleCity_Gym",

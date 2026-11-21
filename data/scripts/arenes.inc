@@ -37,6 +37,9 @@ Arene_EventScript_Guichet5::
 	goto Arene_EventScript_Guichet
 
 Arene_EventScript_Guichet::
+	special Tycoon_EstActif
+	goto_if_eq VAR_RESULT, TRUE, Arene_EventScript_VaALArene
+Arene_EventScript_GuichetSuite::
 	special Arene_Ouvrir
 	goto_if_eq VAR_RESULT, 0, Arene_EventScript_PasLigue
 	goto_if_eq VAR_RESULT, 1, Arene_EventScript_AVendre
@@ -98,6 +101,12 @@ Arene_EventScript_FicheCarriere::
 Arene_EventScript_VoirEquipe::
 	special Arene_ListeRattaches
 	msgbox gStringVar4, MSGBOX_DEFAULT
+	msgbox Arene_Text_VoirResume, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Arene_EventScript_FicheCarriere
+	fadescreen FADE_TO_BLACK
+	special Arene_VoirResume
+	waitstate
+	special Arene_FinVoirResume
 	goto Arene_EventScript_FicheCarriere
 
 Arene_EventScript_AffronterCarriere::
@@ -227,6 +236,21 @@ Arene_EventScript_PasLigue::
 	msgbox Arene_Text_PasLigue, MSGBOX_DEFAULT
 	goto Arene_EventScript_Fin
 
+@ v0.57.1 (Carrière) : le responsable est dans le bâtiment de l'arène.
+Arene_EventScript_VaALArene::
+	msgbox Arene_Text_VaALArene, MSGBOX_DEFAULT
+	goto Arene_EventScript_Fin
+
+@ Panneau devant la porte du bâtiment (inerte en édition classique : la case reste un sol ordinaire).
+Arene_EventScript_PanneauBatiment::
+	special Tycoon_EstActif
+	goto_if_eq VAR_RESULT, FALSE, Arene_EventScript_PanneauRien
+	special Arene_IndexIci
+	special Arene_TextePanneau
+	msgbox gStringVar4, MSGBOX_SIGN
+Arene_EventScript_PanneauRien::
+	end
+
 @ Menu L : résumé de toutes les arènes.
 Arene_EventScript_MenuL::
 	special Arene_Resume
@@ -285,6 +309,14 @@ Arene_Text_Entrainement:
 
 Arene_Text_MembreBattu:
 	.string "Bien joué, Champion !$"
+
+Arene_Text_VaALArene:
+	.string "Responsable : Je t'attends dans le\n"
+	.string "bâtiment de l'arène, juste à côté.$"
+
+Arene_Text_VoirResume:
+	.string "Voir leur résumé (stats, attaques,\n"
+	.string "talents) ?$"
 
 Arene_Text_OnYVa:
 	.string "Le challenger t'attend sur le\n"
