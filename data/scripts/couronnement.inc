@@ -850,4 +850,6 @@ Couronnement_Text_TypeFee:
 Couronnement_Text_HotesseDemenagee:
 	.string "Le tournoi du Couronnement Mondial\n"
 	.string "a déménagé : il se joue au hall\l"
-	.string "au toit doré, ici, en ville.$"
+	.string "de la ville, le bâtiment au toit doré.\p"
+	.string "À Clémenti, Cimetronelle et\n"
+	.string "Atalanopolis, c'est dans l'Arène.$"

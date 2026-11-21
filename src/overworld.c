@@ -614,12 +614,13 @@ static void InitMapView(void)
 
 const struct MapLayout *GetMapLayout(u16 mapLayoutId)
 {
-    return gMapLayouts[mapLayoutId - 1];
+    return Tycoon_Layout(gMapLayouts[mapLayoutId - 1]); // Couronnement, édition Carrière : villes avec un hall
 }
 
 void ApplyCurrentWarp(void)
 {
     gLastUsedWarp = gSaveBlock1Ptr->location;
+    Tycoon_RedirigerArene(&sWarpDestination); // Couronnement, édition Carrière : Arène qui sert de hall
     gSaveBlock1Ptr->location = sWarpDestination;
     sFixedDiveWarp = sDummyWarpData;
     sFixedHoleWarp = sDummyWarpData;

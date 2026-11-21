@@ -763,6 +763,20 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (`Tycoon_HallTournoi`). En Carrière, les hôtesses des Centres Pokémon renvoient au hall. Testé dans mGBA (Mérouville : entrée,
   hôtesse, sortie). Les tournois des Tentes de Combat et de Nénucrique ne changent pas.
 
+## Fait (v0.56.1) - halls du Couronnement corrigés, arène à 5 000 ¥ (retour d'Adrien)
+
+- Le bâtiment n'apparaît plus d'un coup : en Carrière, les 5 villes à bâtiment ont leur propre carte avec le hall
+  (`data/layouts/<Ville>/map_carriere.bin`, écrite par `hall_placer.py`), substituée partout, y compris pour les connexions vues
+  depuis une route (`Tycoon_Layout` dans `GetMapLayout` de `src/overworld.c` et dans `src/fieldmap.c`). Plus de dessin au chargement.
+- Toit complet : bâtiment 4 x 4 (rangée haute 0x48-0x4B recolorée, 15 métatuiles dans `hall_gfx.py`).
+- Placement : sur le sol principal de la ville plutôt que sur un chemin (score `nchemin`), forêt d'une case recouvrable
+  (`REMPLACABLES`), arbres 2 x 2 jamais coupés (`ARBRES`) ; vérifié au rendu (`tools/couronnement/apercu_carte.py`).
+  Bâtiments neufs : Mérouville, Myokara, Lavandia, Vermilava, Algatia. Pas de place propre à Clémenti, Cimetronelle et
+  Atalanopolis : l'Arène fermée y sert de hall (`HALL_DANS_ARENE`, redirection du passage dans `ApplyCurrentWarp` via
+  `Tycoon_RedirigerArene` ; Clémenti reste l'Arène de Norman jusqu'au tutoriel de Timmy). Testé dans mGBA (Route 117 -> Lavandia,
+  Arène de Clémenti -> hall -> retour devant l'Arène).
+- Arènes du joueur (Carrière) : 1re à 5 000 ¥ (`ARENE_PRIX_CARRIERE`), puis le double ; vérifié au guichet de Rosyères.
+
 ## Idées d'Adrien à concevoir plus tard
 
 

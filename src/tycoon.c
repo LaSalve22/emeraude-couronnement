@@ -3,6 +3,7 @@
 #include "constants/items.h"
 #include "tycoon.h"
 #include "constants/couronnement.h"
+#include "constants/layouts.h"
 #include "fieldmap.h"
 #include "league_club.h"
 #include "event_data.h"
@@ -569,20 +570,14 @@ void Tycoon_RecompenseDexDonnee(void)
 // tools/couronnement/hall_placer.py ; une seule carte de hall (MAP_COURONNEMENT_HALL), sortie dynamique vers la ville d'origine.
 struct TycoonHall
 {
-    u8 mapGroup, mapNum, x, y, tournoi;
+    u8 mapGroup, mapNum;
+    u16 layout;
+    u8 x, y, tournoi;             // x = 0xFF : pas de bâtiment, le hall est dans l'Arène fermée
+    const u16 *carte;             // carte de la ville avec le bâtiment (data/layouts/<Ville>/map_carriere.bin)
+    u8 areneGroup, areneNum;
 };
 
-static const struct TycoonHall sHalls[] =
-{
 #include "data/couronnement_halls.h"
-};
-
-static const u16 sHallMetatiles[3][4] =
-{
-    {0x2A, 0x5C, 0x135, 0x13F},
-    {0x1A2, 0x1B6, 0x1E3, 0xDB},
-    {0xDC, 0x61, 0xDD, 0xDE},
-};
 
 static const struct TycoonHall *HallDeLaCarte(u32 group, u32 num)
 {
@@ -593,19 +588,50 @@ static const struct TycoonHall *HallDeLaCarte(u32 group, u32 num)
     return NULL;
 }
 
-// Au chargement de la carte (src/fieldmap.c) : dessine la façade si la ville a un hall.
-void Tycoon_DessinerHall(void)
+// Édition Carrière : la ville a sa propre carte avec le bâtiment, aussi quand on la voit depuis une route (connexions de
+// src/fieldmap.c) ; copie de la structure de layout en EWRAM avec les données de la carte Carrière.
+extern const struct MapLayout *const gMapLayouts[];
+static EWRAM_DATA struct MapLayout sLayoutsCarriere[8] = {0};
+
+const struct MapLayout *Tycoon_Layout(const struct MapLayout *layout)
 {
-    const struct TycoonHall *hall;
-    u32 i, j;
+    u32 i;
+    if (!EDITION_TYCOON_SIM || layout == NULL)
+        return layout;
+    for (i = 0; i < ARRAY_COUNT(sHalls) && i < ARRAY_COUNT(sLayoutsCarriere); i++)
+    {
+        if (sHalls[i].carte == NULL || layout != gMapLayouts[sHalls[i].layout - 1])
+            continue;
+        if (sLayoutsCarriere[i].map != sHalls[i].carte)
+        {
+            sLayoutsCarriere[i] = *layout;
+            sLayoutsCarriere[i].map = sHalls[i].carte;
+        }
+        return &sLayoutsCarriere[i];
+    }
+    return layout;
+}
+
+// Édition Carrière : passer la porte d'une Arène qui sert de hall mène au hall (src/overworld.c, ApplyCurrentWarp).
+void Tycoon_RedirigerArene(struct WarpData *dest)
+{
+    u32 i;
     if (!EDITION_TYCOON_SIM)
         return;
-    hall = HallDeLaCarte(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
-    if (hall == NULL)
+    for (i = 0; i < ARRAY_COUNT(sHalls); i++)
+    {
+        if (sHalls[i].x != 0xFF || dest->mapGroup != sHalls[i].areneGroup || dest->mapNum != sHalls[i].areneNum)
+            continue;
+        if (dest->mapGroup == MAP_GROUP(MAP_PETALBURG_CITY_GYM) && dest->mapNum == MAP_NUM(MAP_PETALBURG_CITY_GYM)
+         && VarGet(VAR_PETALBURG_GYM_STATE) < 2)
+            return; // Clémenti : l'Arène reste celle de Norman jusqu'au tutoriel de Timmy
+        dest->mapGroup = MAP_GROUP(MAP_COURONNEMENT_HALL);
+        dest->mapNum = MAP_NUM(MAP_COURONNEMENT_HALL);
+        dest->warpId = 0;
+        dest->x = -1;
+        dest->y = -1;
         return;
-    for (j = 0; j < 3; j++)
-        for (i = 0; i < 4; i++)
-            MapGridSetMetatileIdAt(hall->x + i + MAP_OFFSET, hall->y + j + MAP_OFFSET, sHallMetatiles[j][i] | MAPGRID_COLLISION_MASK);
+    }
 }
 
 // Entrée dans le hall : la sortie ramène devant la porte de la ville d'où l'on vient.
@@ -619,7 +645,10 @@ void Tycoon_HallEntree(void)
     for (i = 0; i < ville->events->warpCount; i++)
     {
         const struct WarpEvent *w = &ville->events->warps[i];
-        if (w->mapGroup == MAP_GROUP(MAP_COURONNEMENT_HALL) && w->mapNum == MAP_NUM(MAP_COURONNEMENT_HALL))
+        const struct TycoonHall *hall = HallDeLaCarte(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum);
+        u32 g = hall->x == 0xFF ? hall->areneGroup : MAP_GROUP(MAP_COURONNEMENT_HALL);
+        u32 n = hall->x == 0xFF ? hall->areneNum : MAP_NUM(MAP_COURONNEMENT_HALL);
+        if (w->mapGroup == g && w->mapNum == n)
         {
             SetDynamicWarp(0, gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum, i);
             return;

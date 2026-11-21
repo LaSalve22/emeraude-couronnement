@@ -7,7 +7,7 @@
 
 #define ARENE_NB_TYPES        10
 #define ARENE_PRIX            500000
-#define ARENE_PRIX_CARRIERE   50000   // édition Carrière : 1re arène, puis le double à chaque nouvelle
+#define ARENE_PRIX_CARRIERE   5000    // édition Carrière : 1re arène (achetable dès le début), puis le double à chaque nouvelle
 #define ARENE_TITULAIRES      6
 #define ARENE_REMPLACANTS     3
 #define ARENE_PLACES          (ARENE_TITULAIRES + ARENE_REMPLACANTS)

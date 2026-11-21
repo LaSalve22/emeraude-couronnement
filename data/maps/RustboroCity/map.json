@@ -345,8 +345,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
-      "y": 42,
+      "x": 21,
+      "y": 52,
       "elevation": 0,
       "dest_map": "MAP_COURONNEMENT_HALL",
       "dest_warp_id": "0"

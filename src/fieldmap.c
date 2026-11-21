@@ -137,7 +137,6 @@ void InitMap(void)
 {
     InitMapLayoutData(&gMapHeader);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
-    Tycoon_DessinerHall(); // Couronnement, édition Carrière : façade du hall du Couronnement Mondial
     RunOnLoadMapScript();
 }
 
@@ -147,7 +146,6 @@ void InitMapFromSavedGame(void)
     InitSecretBaseAppearance(FALSE);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     LoadSavedMapView();
-    Tycoon_DessinerHall();
     RunOnLoadMapScript();
     UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
 }
@@ -239,8 +237,8 @@ static void FillConnection(s32 x, s32 y, const struct MapHeader *connectedMapHea
     u16 *dest;
     s32 mapWidth;
 
-    mapWidth = connectedMapHeader->mapLayout->width;
-    src = &connectedMapHeader->mapLayout->map[mapWidth * y2 + x2];
+    mapWidth = Tycoon_Layout(connectedMapHeader->mapLayout)->width;
+    src = &Tycoon_Layout(connectedMapHeader->mapLayout)->map[mapWidth * y2 + x2];
     dest = &gBackupMapLayout.map[gBackupMapLayout.width * y + x];
 
     for (i = 0; i < height; i++)
@@ -261,7 +259,7 @@ static void FillSouthConnection(const struct MapHeader *mapHeader, const struct 
     if (!connectedMapHeader)
         return;
 
-    cWidth = connectedMapHeader->mapLayout->width;
+    cWidth = Tycoon_Layout(connectedMapHeader->mapLayout)->width;
     x = offset + MAP_OFFSET;
     y = mapHeader->mapLayout->height + MAP_OFFSET;
     if (x < 0)
@@ -296,8 +294,8 @@ static void FillNorthConnection(const struct MapHeader *mapHeader, const struct 
     if (!connectedMapHeader)
         return;
 
-    cWidth = connectedMapHeader->mapLayout->width;
-    cHeight = connectedMapHeader->mapLayout->height;
+    cWidth = Tycoon_Layout(connectedMapHeader->mapLayout)->width;
+    cHeight = Tycoon_Layout(connectedMapHeader->mapLayout)->height;
     x = offset + MAP_OFFSET;
     y2 = cHeight - MAP_OFFSET;
     if (x < 0)
@@ -332,8 +330,8 @@ static void FillWestConnection(const struct MapHeader *mapHeader, const struct M
     if (!connectedMapHeader)
         return;
 
-    cWidth = connectedMapHeader->mapLayout->width;
-    cHeight = connectedMapHeader->mapLayout->height;
+    cWidth = Tycoon_Layout(connectedMapHeader->mapLayout)->width;
+    cHeight = Tycoon_Layout(connectedMapHeader->mapLayout)->height;
     y = offset + MAP_OFFSET;
     x2 = cWidth - MAP_OFFSET;
     if (y < 0)
@@ -366,7 +364,7 @@ static void FillEastConnection(const struct MapHeader *mapHeader, const struct M
     if (!connectedMapHeader)
         return;
 
-    cHeight = connectedMapHeader->mapLayout->height;
+    cHeight = Tycoon_Layout(connectedMapHeader->mapLayout)->height;
     x = mapHeader->mapLayout->width + MAP_OFFSET;
     y = offset + MAP_OFFSET;
     if (y < 0)

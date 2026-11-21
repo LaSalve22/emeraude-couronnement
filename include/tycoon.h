@@ -35,7 +35,8 @@ void Tycoon_SortirArene(void);
 u32 Tycoon_PaliersDexAtteints(u32 captures);
 void Tycoon_RecompenseDex(void);                   // special
 void Tycoon_RecompenseDexDonnee(void);
-void Tycoon_DessinerHall(void);                   // halls du Couronnement Mondial (v0.56)
+const struct MapLayout *Tycoon_Layout(const struct MapLayout *layout); // halls du Couronnement (v0.56.1)
+void Tycoon_RedirigerArene(struct WarpData *dest);
 void Tycoon_HallEntree(void);                     // special
 void Tycoon_HallTournoi(void);                    // special             // special                     // special (+ waitstate)
 
