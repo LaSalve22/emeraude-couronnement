@@ -42,6 +42,9 @@ Arene_EventScript_Guichet::
 	goto_if_eq VAR_RESULT, 1, Arene_EventScript_AVendre
 Arene_EventScript_Fiche::
 	special Arene_Ouvrir
+	special Tycoon_EstActif
+	goto_if_eq VAR_RESULT, TRUE, Arene_EventScript_FicheCarriere
+	special Arene_Ouvrir
 	message gStringVar4
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Arene_Text_Affronter, Arene_Text_Deposer, Arene_Text_Retirer, Arene_Text_Partir
@@ -79,6 +82,89 @@ Arene_EventScript_Defaite::
 Arene_EventScript_Info::
 	msgbox gStringVar4, MSGBOX_DEFAULT
 	goto Arene_EventScript_Fiche
+
+@ v0.57 (édition Carrière) : 6 Pokémon rattachés à l'arène, choisis façon Tente de Combat.
+Arene_EventScript_FicheCarriere::
+	special Arene_Ouvrir
+	message gStringVar4
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, Arene_Text_Affronter, Arene_Text_Entrainer, Arene_Text_VoirEquipe, Arene_Text_Partir
+	switch VAR_RESULT
+	case 0, Arene_EventScript_AffronterCarriere
+	case 1, Arene_EventScript_Entrainer
+	case 2, Arene_EventScript_VoirEquipe
+	goto Arene_EventScript_Fin
+
+Arene_EventScript_VoirEquipe::
+	special Arene_ListeRattaches
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	goto Arene_EventScript_FicheCarriere
+
+Arene_EventScript_AffronterCarriere::
+	special Arene_PreparerChallenger
+	goto_if_eq VAR_RESULT, FALSE, Arene_EventScript_InfoCarriere
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	msgbox Arene_Text_OnYVa, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Arene_EventScript_FicheCarriere
+	call Arene_EventScript_Choisir
+	goto_if_eq VAR_RESULT, FALSE, Arene_EventScript_FicheCarriere
+	closemessage
+	special Arene_DebutCombat
+	trainerbattle_no_intro TRAINER_COURONNEMENT, Arene_Text_ChallengerBattu
+	cleartrainerflag TRAINER_COURONNEMENT
+	special Arene_FinCombat
+	goto_if_eq VAR_RESULT, FALSE, Arene_EventScript_DefaiteCarriere
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	waitfanfare
+	goto Arene_EventScript_FicheCarriere
+
+Arene_EventScript_DefaiteCarriere::
+	playse SE_BOO
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	goto Arene_EventScript_FicheCarriere
+
+Arene_EventScript_InfoCarriere::
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	goto Arene_EventScript_FicheCarriere
+
+@ VAR_0x8005 = nombre à choisir. VAR_RESULT = TRUE si le choix est fait (équipe = Pokémon choisis).
+Arene_EventScript_Choisir::
+	special Arene_PreparerSelection
+	msgbox Arene_Text_Choisis, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	special ChooseAreneParty
+	waitstate
+	goto_if_eq VAR_RESULT, 0, Arene_EventScript_ChoixAnnule
+	special Arene_GarderSelection
+	setvar VAR_RESULT, TRUE
+	return
+
+Arene_EventScript_ChoixAnnule::
+	special Arene_AnnulerSelection
+	setvar VAR_RESULT, FALSE
+	return
+
+Arene_EventScript_Entrainer::
+	msgbox Arene_Text_Entrainement, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Arene_EventScript_FicheCarriere
+	setvar VAR_0x8005, 3
+	call Arene_EventScript_Choisir
+	goto_if_eq VAR_RESULT, FALSE, Arene_EventScript_FicheCarriere
+	setvar VAR_0x8004, 0
+Arene_EventScript_Manche::
+	special Arene_PreparerEntrainement
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_COURONNEMENT, Arene_Text_MembreBattu
+	cleartrainerflag TRAINER_COURONNEMENT
+	special Arene_ApresEntrainement
+	goto_if_eq VAR_RESULT, FALSE, Arene_EventScript_FinEntrainement
+	goto_if_lt VAR_0x8004, 3, Arene_EventScript_Manche
+Arene_EventScript_FinEntrainement::
+	special Arene_FinEntrainement
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	goto Arene_EventScript_FicheCarriere
 
 Arene_EventScript_Deposer::
 	msgbox Arene_Text_QuiDeposer, MSGBOX_DEFAULT
@@ -153,6 +239,10 @@ Arene_Text_Deposer:
 	.string "Déposer un Pokémon$"
 Arene_Text_Retirer:
 	.string "Retirer un Pokémon$"
+Arene_Text_Entrainer:
+	.string "S'entraîner$"
+Arene_Text_VoirEquipe:
+	.string "Voir l'équipe$"
 Arene_Text_Partir:
 	.string "Partir$"
 Arene_Text_Retour:
@@ -181,6 +271,20 @@ Arene_Text_Acier:
 	.string "Acier$"
 Arene_Text_Fee:
 	.string "Fée$"
+
+Arene_Text_Choisis:
+	.string "Choisis les Pokémon de l'arène\n"
+	.string "qui vont combattre.$"
+
+Arene_Text_Entrainement:
+	.string "Entraînement : 3 Pokémon de\n"
+	.string "l'arène, 3 manches contre les\l"
+	.string "membres du club, soin entre\l"
+	.string "chaque. Ils gagnent de l'XP et\l"
+	.string "ton lien grandit. On y va ?$"
+
+Arene_Text_MembreBattu:
+	.string "Bien joué, Champion !$"
 
 Arene_Text_OnYVa:
 	.string "Le challenger t'attend sur le\n"
@@ -216,14 +320,28 @@ Arene_Text_QuelType:
 Arene_Text_Achetee:
 	.string "{PLAYER} est Champion de l'arène\n"
 	.string "de {STR_VAR_1} !\p"
+.if EDITION_TYCOON_SIM == TRUE
+	.string "6 Pokémon du type t'attendent\n"
+	.string "dans l'arène. Entraîne-toi avec eux\l"
+	.string "pour créer un lien. Ils ne quittent\l"
+	.string "jamais l'arène.$"
+.else
 	.string "Dépose au moins 4 titulaires du\n"
 	.string "type choisi pour ouvrir les portes\l"
 	.string "aux challengers.$"
+.endif
 
 Arene_Text_PasAssez:
+.if EDITION_TYCOON_SIM == TRUE
+	.string "Il te manque de l'argent (la\n"
+	.string "trésorerie de ta société compte\l"
+	.string "aussi), ou 6 places libres dans\l"
+	.string "ton PC pour les Pokémon de l'arène.$"
+.else
 	.string "Il te manque de l'argent. La\n"
 	.string "trésorerie de ta société compte\l"
 	.string "aussi.$"
+.endif
 
 Arene_Text_PasLigue:
 	.string "Responsable : Une arène sera à\n"

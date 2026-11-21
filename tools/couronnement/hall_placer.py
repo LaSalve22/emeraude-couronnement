@@ -12,6 +12,7 @@ Préférence : un sol uniforme (même métatuile que le sol le plus courant de l
 Relançable. Usage : python3 tools/couronnement/hall_placer.py
 """
 import json
+import struct
 import sys
 from collections import deque
 from pathlib import Path
@@ -145,9 +146,72 @@ def placer(nom):
             k = ((y + j) * w + (x + i)) * 2
             orig = int.from_bytes(data[k:k + 2], 'little')
             data[k:k + 2] = (METATUILES[j][i] | 0x0C00 | (cases[y + HAUTEUR][x + PORTE] & 0xF000)).to_bytes(2, 'little')
+    sous_sol(nom, lay, x, y, cases, data, w)
     dst = src.with_name('map_carriere.bin')
     dst.write_bytes(bytes(data))
     return x, y, m['layout'], dst.relative_to(ROOT)
+
+
+def dossier(nom_ts):
+    n = nom_ts.replace('gTileset_', '').lower()
+    for base in ('primary', 'secondary'):
+        for d in (ROOT / 'data/tilesets' / base).iterdir():
+            if d.name.replace('_', '').lower() == n:
+                return d
+
+
+REGISTRE = ROOT / 'tools/couronnement/hall_tuiles.json'  # nombre de métatuiles d'origine de chaque tileset secondaire
+
+
+def sous_sol(nom, lay, x, y, cases, data, w):
+    """Remplace l'herbe intégrée aux métatuiles du bâtiment par le sol d'origine de chaque case : métatuiles propres à la
+    ville, ajoutées à la fin de son tileset secondaire (relançable grâce au registre du nombre de métatuiles d'origine)."""
+    prim = dossier(lay['primary_tileset'])
+    sec = dossier(lay['secondary_tileset'])
+    pmt = (prim / 'metatiles.bin').read_bytes()
+    pat = (prim / 'metatile_attributes.bin').read_bytes()
+    registre = json.loads(REGISTRE.read_text()) if REGISTRE.exists() else {}
+    cle = sec.name
+    smt = bytearray((sec / 'metatiles.bin').read_bytes())
+    sat = bytearray((sec / 'metatile_attributes.bin').read_bytes())
+    if cle not in registre:
+        registre[cle] = len(smt) // 16
+    base = registre[cle]
+    del smt[base * 16:]
+    del sat[base * 2:]
+
+    def entrees(mid):
+        src, i = (pmt, mid) if mid < 512 else (smt, mid - 512)
+        return [struct.unpack_from('<H', src, i * 16 + 2 * k)[0] for k in range(8)]
+
+    ajoutees = 0
+    for j in range(HAUTEUR):
+        for i in range(LARGEUR):
+            m = METATUILES[j][i]
+            e = entrees(m)
+            herbe = [k for k in range(4) if e[k] >> 12 == 2 and e[k] & 0x3FF in (2, 3)]
+            orig = cases[y + j][x + i] & 0x3FF
+            if not herbe or orig == 0x001:
+                continue
+            eo = entrees(orig)
+            if all(eo[k] >> 12 == 2 and eo[k] & 0x3FF in (2, 3) for k in herbe):
+                continue  # la case d'origine est déjà de l'herbe
+            if base + ajoutees >= 512:
+                print(f'  {nom} : plus de place dans {cle}, herbe gardée en ({x + i}, {y + j})')
+                continue
+            for k in herbe:
+                e[k] = eo[k]
+            smt += b''.join(struct.pack('<H', t) for t in e)
+            sat += pat[2 * m:2 * m + 2]
+            nouveau = 512 + base + ajoutees
+            ajoutees += 1
+            kk = ((y + j) * w + (x + i)) * 2
+            ancien = int.from_bytes(data[kk:kk + 2], 'little')
+            data[kk:kk + 2] = ((ancien & ~0x3FF) | nouveau).to_bytes(2, 'little')
+    (sec / 'metatiles.bin').write_bytes(bytes(smt))
+    (sec / 'metatile_attributes.bin').write_bytes(bytes(sat))
+    REGISTRE.write_text(json.dumps(registre, indent=2) + '\n')
+    print(f'  {nom} : {ajoutees} métatuiles sans herbe dans {cle}')
 
 
 def main():

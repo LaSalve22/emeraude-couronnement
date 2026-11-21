@@ -57,6 +57,7 @@
 
 // Valeur de VAR_FRONTIER_FACILITY pendant le choix des 4 Pokémon.
 #define FACILITY_COURONNEMENT 10
+#define FACILITY_ARENE        11 // v0.57 : choix des Pokémon rattachés à une arène du joueur
 
 // Coach EV (src/coach_ev.c) : stats 0 PV, 1 Attaque, 2 Défense, 3 Atq. Spé., 4 Déf. Spé., 5 Vitesse ; 6 = tout à 0.
 #define COACH_EV_TOUT_A_ZERO 6

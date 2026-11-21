@@ -33,7 +33,18 @@ bool32 Arene_Acheter(u32 arene, u32 typeIndex);
 bool32 Arene_Deposer(u32 arene, u32 partySlot, bool32 titulaire);
 bool32 Arene_Retirer(u32 arene, u32 place);
 u32 Arene_Valeur(void);
-u32 Arene_PrixProchaine(void);                          // prix de la prochaine arène (Carrière : 50 000 puis le double)
+u32 Arene_PrixProchaine(void);
+#define ARENE_RATTACHES       6       // édition Carrière : Pokémon rattachés à chaque arène (v0.57)
+extern u8 gAreneNbChoix;
+void Arene_PreparerSelection(void);
+void Arene_GarderSelection(void);
+void Arene_AnnulerSelection(void);
+void Arene_RendreEquipe(void);
+void Arene_PreparerEntrainement(void);
+void Arene_ApresEntrainement(void);
+void Arene_FinEntrainement(void);
+void Arene_ListeRattaches(void);
+bool32 Arene_SansXP(void);                          // prix de la prochaine arène (Carrière : 50 000 puis le double)
 u32 Arene_BadgesChallenger(u32 arene);          // badges du prochain challenger (0 si personne)
 bool32 Arene_EstBloque(struct BoxPokemon *boxMon); // PC : Pokémon déposé dans une arène
 bool32 Arene_PokemonDansLePC(void);

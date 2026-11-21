@@ -7,6 +7,8 @@
 #include "data.h"
 #include "event_data.h"
 #include "money.h"
+#include "league_club.h"
+#include "party_menu.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "rtc.h"
@@ -37,6 +39,11 @@ static EWRAM_DATA u8 sCombattants[PARTY_SIZE] = {0};
 static EWRAM_DATA u8 sNbCombattants = 0;
 static EWRAM_DATA u8 sBadgesChallenger = 0;
 static EWRAM_DATA bool8 sCombat = FALSE;
+// v0.57 (Carrière) : Pokémon rattachés à l'arène, choisis façon Tente de Combat
+EWRAM_DATA u8 gAreneNbChoix = 0;
+static EWRAM_DATA u8 sPlaceDuSlot[PARTY_SIZE] = {0};
+static EWRAM_DATA u8 sNiveauCombat = 0;
+static EWRAM_DATA bool8 sEntrainement = FALSE;
 
 static const u8 sTypes[ARENE_NB_TYPES] =
 {
@@ -277,6 +284,8 @@ bool32 Arene_Valide(u32 arene)
 
     if (!Arene_Achetee(arene))
         return FALSE;
+    if (EDITION_TYCOON_SIM) // Pokémon rattachés : tous du type
+        return Arene_Pokemon(arene, places) > 0;
     Arene_Pokemon(arene, places);
     return TitulairesDuType(arene, places) >= ARENE_MIN_DU_TYPE;
 }
@@ -335,10 +344,10 @@ static void PasserJour(struct BoxPokemon *places[ARENE_NB][ARENE_PLACES])
         struct AreneEtat *e = &AR.arenes[a];
         if (!e->achetee)
             continue;
-        for (i = 0; i < ARENE_PLACES; i++)
+        for (i = 0; i < ARENE_PLACES && !EDITION_TYCOON_SIM; i++) // Carrière : ils progressent en s'entraînant avec toi
             if (places[a][i])
                 DonnerXP(places[a][i], 20 + e->reputation / 5);
-        if (TitulairesDuType(a, places[a]) < ARENE_MIN_DU_TYPE)
+        if (!EDITION_TYCOON_SIM && TitulairesDuType(a, places[a]) < ARENE_MIN_DU_TYPE)
             continue;
         Encaisser(ARENE_SPONSORS_PAR_POINT * e->reputation);
         if (e->repos)
@@ -382,6 +391,85 @@ void Arene_MettreAJourJusqua(u32 aujourdhui)
     }
 }
 
+// ---------------------------------------------------------------- Pokémon rattachés (v0.57, édition Carrière)
+
+static u32 PlacesLibresPC(void)
+{
+    u32 b, p, n = 0;
+    for (b = 0; b < TOTAL_BOXES_COUNT; b++)
+        for (p = 0; p < IN_BOX_COUNT; p++)
+            n += !GetBoxedMonPtr(b, p)->hasSpecies;
+    return n;
+}
+
+static bool32 EstUneEvolution(u32 species)
+{
+    u32 t, k;
+    for (t = 1; t < NUM_SPECIES; t++)
+    {
+        const struct Evolution *evo;
+        if (!IsSpeciesEnabled(t))
+            continue;
+        evo = GetSpeciesEvolutions(t);
+        for (k = 0; evo != NULL && evo[k].method != EVOLUTIONS_END; k++)
+            if (evo[k].targetSpecies == species)
+                return TRUE;
+    }
+    return FALSE;
+}
+
+static bool32 Candidat(u32 s, u32 type)
+{
+    const struct SpeciesInfo *info = &gSpeciesInfo[s];
+    return IsSpeciesEnabled(s) && s == GET_BASE_SPECIES_ID(s) && EstDuType(s, type) && !info->isRestrictedLegendary
+        && !info->isSubLegendary && !info->isMythical && !info->isUltraBeast && !info->isParadox && !info->isMegaEvolution
+        && !info->isPrimalReversion;
+}
+
+// 6 Pokémon du type, premiers stades tirés au hasard fixe, évolués à leur niveau (N.10 à N.20), rangés dans le PC.
+static void CreerRattaches(u32 arene)
+{
+    static EWRAM_DATA u16 sCandidats[400] = {0};
+    u32 type = Arene_Type(arene), n = 0, s, k, tirage = 0;
+    u16 choisis[ARENE_RATTACHES];
+
+    for (s = 1; s < NUM_SPECIES && n < ARRAY_COUNT(sCandidats); s++)
+        if (Candidat(s, type))
+            sCandidats[n++] = s;
+    for (k = 0; k < ARENE_RATTACHES && n > 0; k++)
+    {
+        u32 c, j;
+        do
+        {
+            c = sCandidats[Alea(arene, 900 + AR.arenes[arene].arrivees, tirage++) % n];
+            for (j = 0; j < k && choisis[j] != c; j++)
+                ;
+        } while ((j < k || EstUneEvolution(c)) && tirage < 400);
+        choisis[k] = c;
+    }
+    for (k = 0; k < ARENE_RATTACHES && n > 0; k++)
+    {
+        static EWRAM_DATA struct Pokemon sMon = {0};
+        u32 niveau = 10 + 2 * k, b, p;
+        u8 valeur;
+        u16 espece = Club_EvoluerPourNiveau(choisis[k], niveau);
+        bool32 range = FALSE;
+
+        CreateMon(&sMon, espece, niveau, Random32(), OTID_STRUCT_PLAYER_ID);
+        valeur = arene + 1;
+        SetMonData(&sMon, MON_DATA_ARENE, &valeur);
+        valeur = k;
+        SetMonData(&sMon, MON_DATA_ARENE_PLACE, &valeur);
+        for (b = TOTAL_BOXES_COUNT; b-- > 0 && !range;)
+            for (p = 0; p < IN_BOX_COUNT && !range; p++)
+                if (!GetBoxedMonPtr(b, p)->hasSpecies)
+                {
+                    *GetBoxedMonPtr(b, p) = sMon.box;
+                    range = TRUE;
+                }
+    }
+}
+
 bool32 Arene_Acheter(u32 arene, u32 typeIndex)
 {
     struct AreneEtat *e;
@@ -389,7 +477,7 @@ bool32 Arene_Acheter(u32 arene, u32 typeIndex)
 
     Verifier(Aujourdhui());
     if (arene >= ARENE_NB || typeIndex >= ARENE_NB_TYPES || AR.arenes[arene].achetee || !ArenesOuvertes()
-     || Disponible() < prix)
+     || Disponible() < prix || (EDITION_TYCOON_SIM && PlacesLibresPC() < ARENE_RATTACHES))
         return FALSE;
     Prendre(prix);
     e = &AR.arenes[arene];
@@ -397,6 +485,8 @@ bool32 Arene_Acheter(u32 arene, u32 typeIndex)
     e->achetee = TRUE;
     e->type = typeIndex;
     e->reputation = ARENE_REPUTATION_DEPART;
+    if (EDITION_TYCOON_SIM)
+        CreerRattaches(arene);
     return TRUE;
 }
 
@@ -492,13 +582,19 @@ u32 Arene_BadgesChallenger(u32 arene)
     return 1 + Alea(arene, IndexChallenger(arene), 1) % max;
 }
 
+static void ConstruireChallengerAvec(u32 arene, u32 n, u32 badges, u32 nb, u32 niveau);
+
 static void ConstruireChallenger(u32 arene, u32 badges)
 {
-    u32 n = IndexChallenger(arene), i, k, tirage = 10;
+    ConstruireChallengerAvec(arene, IndexChallenger(arene), badges, sNbPokemon[badges - 1], sNiveaux[badges - 1]);
+}
+
+static void ConstruireChallengerAvec(u32 arene, u32 n, u32 badges, u32 nb, u32 niveau)
+{
+    u32 i, k, tirage = 10;
     const struct Classe *c = &sClasses[Alea(arene, n, 2) % ARRAY_COUNT(sClasses)];
     const u8 *nom = c->fille ? sNomsFilles[Alea(arene, n, 3) % ARRAY_COUNT(sNomsFilles)]
                              : sNomsGarcons[Alea(arene, n, 3) % ARRAY_COUNT(sNomsGarcons)];
-    u32 nb = sNbPokemon[badges - 1];
 
     memset(&sChallenger, 0, sizeof(sChallenger));
     memset(sChallengerEquipe, 0, sizeof(sChallengerEquipe));
@@ -512,9 +608,10 @@ static void ConstruireChallenger(u32 arene, u32 badges)
                 ;
         } while (k < i && tirage < 60);
         sChallengerEquipe[i].species = espece;
-        sChallengerEquipe[i].lvl = sNiveaux[badges - 1];
+        sChallengerEquipe[i].lvl = niveau;
         sChallengerEquipe[i].iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20);
         sChallengerEquipe[i].nature = Alea(arene, n, 70 + i) % NUM_NATURES;
+        sChallengerEquipe[i].gender = TRAINER_MON_RANDOM_GENDER;
     }
     sChallenger.aiFlags = AI_FLAG_BASIC_TRAINER;
     sChallenger.party = sChallengerEquipe;
@@ -569,6 +666,8 @@ static const u8 sText_VirguleLigne[] = _(",\l");
 static const u8 sText_Point[] = _(".");
 static const u8 sText_Para[] = _("\p");
 static const u8 sText_VirguleN[] = _(",\n");
+static const u8 sText_DefieChoix1[] = _(".\pChoisis ");
+static const u8 sText_DefieChoix2[] = _(" Pokémon de ton arène.");
 static const u8 sText_PasDeChallenger[] = _("Personne n'attend pour l'instant.\nReviens demain.");
 static const u8 sText_ArenePasPrete[] = _("Il faut 4 titulaires du type de\nl'arène pour recevoir des\lchallengers.");
 
@@ -594,8 +693,36 @@ void Arene_PreparerChallenger(void)
         StringCopy(gStringVar4, sText_PasDeChallenger);
         return;
     }
-    ConstruireChallenger(a, badges);
     sBadgesChallenger = badges;
+    if (EDITION_TYCOON_SIM)
+    {
+        u32 total = 0, k, niveau;
+        n = Arene_Pokemon(a, places);
+        for (k = 0; k < ARENE_PLACES; k++)
+            if (places[k])
+                total += GetLevelFromBoxMonExp(places[k]);
+        niveau = n ? total / n : 10;
+        niveau = niveau + AR.arenes[a].reputation / 25 > 1 + 2 ? niveau + AR.arenes[a].reputation / 25 - 1 : 2;
+        if (niveau > MAX_LEVEL)
+            niveau = MAX_LEVEL;
+        nb = sNbPokemon[badges - 1] < n ? sNbPokemon[badges - 1] : n;
+        ConstruireChallengerAvec(a, IndexChallenger(a), badges, nb, niveau);
+        sNiveauCombat = niveau;
+        gSpecialVar_0x8005 = nb;
+        fin = StringCopy(gStringVar4, sChallenger.trainerName);
+        fin = StringCopy(fin, sText_Defie1);
+        fin = AjouterNombre(fin, badges);
+        fin = StringCopy(fin, sText_Defie2);
+        fin = AjouterNombre(fin, nb);
+        fin = StringCopy(fin, sText_Defie3);
+        fin = AjouterNombre(fin, niveau);
+        fin = StringCopy(fin, sText_DefieChoix1);
+        fin = AjouterNombre(fin, nb);
+        StringCopy(fin, sText_DefieChoix2);
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    ConstruireChallenger(a, badges);
     nb = sChallenger.partySize;
 
     // Les meilleurs Pokémon de l'arène face à ce challenger.
@@ -640,6 +767,13 @@ void Arene_DebutCombat(void)
     struct BoxPokemon *places[ARENE_PLACES];
     u32 i, niveau = sNiveaux[(sBadgesChallenger ? sBadgesChallenger : 1) - 1];
 
+    if (EDITION_TYCOON_SIM) // l'équipe est déjà celle choisie (Arene_PreparerSelection / Arene_GarderSelection)
+    {
+        HealPlayerParty();
+        sCombat = TRUE;
+        FlagSet(FLAG_COURONNEMENT_EN_COURS);
+        return;
+    }
     Arene_Pokemon(gSpecialVar_0x8008, places);
     memcpy(sPartieSauvee, gPlayerParty, sizeof(sPartieSauvee));
     for (i = 0; i < PARTY_SIZE; i++)
@@ -681,7 +815,10 @@ void Arene_FinCombat(void)
     struct AreneEtat *e = &AR.arenes[a % ARENE_NB];
     u8 *fin;
 
-    memcpy(gPlayerParty, sPartieSauvee, sizeof(sPartieSauvee));
+    if (EDITION_TYCOON_SIM)
+        Arene_RendreEquipe();
+    else
+        memcpy(gPlayerParty, sPartieSauvee, sizeof(sPartieSauvee));
     CalculatePlayerPartyCount();
     sCombat = FALSE;
     FlagClear(FLAG_COURONNEMENT_EN_COURS);
@@ -904,4 +1041,162 @@ void Arene_Resume(void)
         StringCopy(fin, sText_Point);
         AR.sponsors = 0;
     }
+}
+
+// ---------------------------------------------------------------- sélection façon Tente (v0.57, édition Carrière)
+
+// VAR_0x8008 = arène, VAR_0x8005 = nombre à choisir. L'équipe du joueur est mise de côté, les Pokémon de l'arène la remplacent.
+void Arene_PreparerSelection(void)
+{
+    struct BoxPokemon *places[ARENE_PLACES];
+    u32 i, j = 0;
+
+    memcpy(sPartieSauvee, gPlayerParty, sizeof(sPartieSauvee));
+    for (i = 0; i < PARTY_SIZE; i++)
+        ZeroMonData(&gPlayerParty[i]);
+    Arene_Pokemon(gSpecialVar_0x8008, places);
+    for (i = 0; i < ARENE_PLACES && j < PARTY_SIZE; i++)
+    {
+        if (places[i] == NULL)
+            continue;
+        BoxMonToMon(places[i], &gPlayerParty[j]);
+        sPlaceDuSlot[j++] = i;
+    }
+    CalculatePlayerPartyCount();
+    HealPlayerParty();
+    gAreneNbChoix = gSpecialVar_0x8005 < j ? gSpecialVar_0x8005 : j;
+    if (gAreneNbChoix == 0)
+        gAreneNbChoix = 1;
+}
+
+// Choix fait : l'équipe ne garde que les Pokémon choisis, dans l'ordre.
+void Arene_GarderSelection(void)
+{
+    static EWRAM_DATA struct Pokemon sTmp[PARTY_SIZE] = {0};
+    u32 i, n = 0;
+
+    for (i = 0; i < gAreneNbChoix && i < PARTY_SIZE; i++)
+    {
+        u32 s = gSelectedOrderFromParty[i];
+        if (s == 0 || s > PARTY_SIZE)
+            break;
+        sTmp[n] = gPlayerParty[s - 1];
+        sCombattants[n] = sPlaceDuSlot[s - 1];
+        n++;
+    }
+    for (i = 0; i < PARTY_SIZE; i++)
+        ZeroMonData(&gPlayerParty[i]);
+    memcpy(gPlayerParty, sTmp, sizeof(struct Pokemon) * n);
+    sNbCombattants = n;
+    CalculatePlayerPartyCount();
+}
+
+// Choix annulé : l'équipe du joueur revient, rien n'a changé dans l'arène.
+void Arene_AnnulerSelection(void)
+{
+    memcpy(gPlayerParty, sPartieSauvee, sizeof(sPartieSauvee));
+    CalculatePlayerPartyCount();
+    sNbCombattants = 0;
+}
+
+// Les Pokémon choisis rentrent à l'arène tels qu'ils sortent du combat (XP, amitié, évolution), l'équipe du joueur revient.
+void Arene_RendreEquipe(void)
+{
+    struct BoxPokemon *places[ARENE_PLACES];
+    u32 i;
+
+    HealPlayerParty();
+    Arene_Pokemon(gSpecialVar_0x8008, places);
+    for (i = 0; i < sNbCombattants; i++)
+        if (places[sCombattants[i] % ARENE_PLACES] && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
+            *places[sCombattants[i] % ARENE_PLACES] = gPlayerParty[i].box;
+    memcpy(gPlayerParty, sPartieSauvee, sizeof(sPartieSauvee));
+    CalculatePlayerPartyCount();
+    sNbCombattants = 0;
+}
+
+static const u8 sText_Manche1[] = _("Entraînement, manche ");
+static const u8 sText_Manche2[] = _("/3 :\n");
+static const u8 sText_Manche3[] = _(", membre du club.");
+
+// VAR_0x8008 = arène, VAR_0x8004 = manche (0-2) : adversaire au niveau moyen des Pokémon choisis.
+void Arene_PreparerEntrainement(void)
+{
+    u32 i, total = 0, niveau;
+    u8 *fin;
+
+    for (i = 0; i < sNbCombattants; i++)
+        total += GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+    niveau = sNbCombattants ? total / sNbCombattants : 10;
+    ConstruireChallengerAvec(gSpecialVar_0x8008, 5000 + AR.arenes[gSpecialVar_0x8008 % ARENE_NB].victoires * 3 + gSpecialVar_0x8004
+                             + AR.jour, 3, 3, niveau);
+    sNiveauCombat = niveau;
+    HealPlayerParty();
+    sCombat = TRUE;
+    sEntrainement = TRUE;
+    FlagSet(FLAG_COURONNEMENT_EN_COURS);
+    fin = StringCopy(gStringVar4, sText_Manche1);
+    fin = AjouterNombre(fin, gSpecialVar_0x8004 + 1);
+    fin = StringCopy(fin, sText_Manche2);
+    fin = StringCopy(fin, sChallenger.trainerName);
+    StringCopy(fin, sText_Manche3);
+}
+
+// Après une manche : VAR_RESULT = victoire, VAR_0x8004 = manche suivante.
+void Arene_ApresEntrainement(void)
+{
+    gSpecialVar_Result = (gBattleOutcome == B_OUTCOME_WON);
+    gSpecialVar_0x8004++;
+    HealPlayerParty();
+}
+
+static const u8 sText_FinEntrainement1[] = _("Fin de l'entraînement : ");
+static const u8 sText_FinEntrainement2[] = _(" manche(s)\ngagnée(s). Tes Pokémon rentrent à l'arène.");
+
+void Arene_FinEntrainement(void)
+{
+    u32 gagnees = gSpecialVar_0x8004 - (gSpecialVar_Result ? 0 : 1);
+    u8 *fin;
+
+    sCombat = FALSE;
+    sEntrainement = FALSE;
+    FlagClear(FLAG_COURONNEMENT_EN_COURS);
+    Arene_RendreEquipe();
+    fin = StringCopy(gStringVar4, sText_FinEntrainement1);
+    fin = AjouterNombre(fin, gagnees);
+    StringCopy(fin, sText_FinEntrainement2);
+}
+
+// Pas d'XP de combat pour les Pokémon prêtés (édition classique) ; en Carrière, les Pokémon rattachés en gagnent.
+bool32 Arene_SansXP(void)
+{
+    return sCombat && !EDITION_TYCOON_SIM;
+}
+
+static const u8 sText_EquipeArene[] = _("Pokémon de l'arène :\n");
+
+// VAR_0x8008 = arène : liste des Pokémon rattachés dans gStringVar4.
+void Arene_ListeRattaches(void)
+{
+    struct BoxPokemon *places[ARENE_PLACES];
+    u8 nom[POKEMON_NAME_LENGTH + 1];
+    u32 i, n = 0;
+    u8 *fin = StringCopy(gStringVar4, sText_EquipeArene);
+
+    Arene_Pokemon(gSpecialVar_0x8008, places);
+    for (i = 0; i < ARENE_PLACES; i++)
+    {
+        if (places[i] == NULL)
+            continue;
+        if (n)
+            fin = StringCopy(fin, (n % 2 == 0) ? (n == 2 ? sText_VirguleN : sText_VirguleLigne) : sText_Virgule);
+        GetBoxMonData(places[i], MON_DATA_NICKNAME, nom);
+        fin = StringCopy(fin, StringGet_Nickname(nom));
+        *fin++ = CHAR_SPACE;
+        *fin++ = CHAR_N;
+        *fin++ = CHAR_PERIOD;
+        fin = AjouterNombre(fin, GetLevelFromBoxMonExp(places[i]));
+        n++;
+    }
+    StringCopy(fin, sText_Point);
 }

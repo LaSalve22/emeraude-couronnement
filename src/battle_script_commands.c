@@ -2100,7 +2100,7 @@ FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag)
 
 static bool32 BattleTypeAllowsExp(void)
 {
-    if (Arene_CombatEnCours()) // Émeraude Couronnement (v0.40) : Pokémon d'arène prêtés, pas d'XP
+    if (Arene_SansXP()) // Émeraude Couronnement (v0.40) : Pokémon d'arène prêtés, pas d'XP (v0.57 : en Carrière, XP)
         return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;

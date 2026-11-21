@@ -47,6 +47,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "arenes.h"
 #include "player_pc.h"
 #include "pokemon.h"
 #include "pokemon_icon.h"
@@ -7327,6 +7328,7 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
         return FALSE;
     case FACILITY_UNION_ROOM:
     case FACILITY_COURONNEMENT:
+    case FACILITY_ARENE:
         return TRUE;
     default: // Battle Frontier
         species = GetMonData(mon, MON_DATA_SPECIES);
@@ -7354,7 +7356,7 @@ static u8 CheckBattleEntriesAndGetMessage(void)
     }
 
     facility = VarGet(VAR_FRONTIER_FACILITY);
-    if (facility == FACILITY_UNION_ROOM || facility == FACILITY_MULTI_OR_EREADER)
+    if (facility == FACILITY_UNION_ROOM || facility == FACILITY_MULTI_OR_EREADER || facility == FACILITY_ARENE)
         return 0xFF;
     if (facility == FACILITY_COURONNEMENT)
     {
@@ -7431,6 +7433,8 @@ static u8 GetMaxBattleEntries(void)
         return UNION_ROOM_PARTY_SIZE;
     case FACILITY_COURONNEMENT:
         return COURONNEMENT_TAILLE_EQUIPE;
+    case FACILITY_ARENE:
+        return gAreneNbChoix;
     default: // Battle Frontier
         return gSpecialVar_0x8005;
     }
@@ -7446,6 +7450,8 @@ static u8 GetMinBattleEntries(void)
         return UNION_ROOM_PARTY_SIZE;
     case FACILITY_COURONNEMENT:
         return COURONNEMENT_TAILLE_EQUIPE;
+    case FACILITY_ARENE:
+        return gAreneNbChoix;
     default: // Battle Frontier
         return gSpecialVar_0x8005;
     }
@@ -7457,6 +7463,7 @@ static u8 GetBattleEntryLevelCap(void)
     {
     case FACILITY_MULTI_OR_EREADER:
     case FACILITY_COURONNEMENT:
+    case FACILITY_ARENE:
         return MAX_LEVEL;
     case FACILITY_UNION_ROOM:
         return UNION_ROOM_MAX_LEVEL;

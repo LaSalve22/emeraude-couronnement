@@ -777,6 +777,23 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   Arène de Clémenti -> hall -> retour devant l'Arène).
 - Arènes du joueur (Carrière) : 1re à 5 000 ¥ (`ARENE_PRIX_CARRIERE`), puis le double ; vérifié au guichet de Rosyères.
 
+## Fait (v0.57) - noms en français, toits, Pokémon rattachés aux arènes (demande d'Adrien du 21/11)
+
+- Carte de la région : 61 noms de lieux de Hoenn en français (`region_map_sections.json` : MYOKARA, VERMILAVA, ROUTE VICTOIRE…).
+- Toits des halls : `sous_sol()` de `hall_placer.py` remplace le gazon des métatuiles du bâtiment par le sol d'origine de chaque case
+  (métatuiles ajoutées au tileset secondaire de la ville, registre `tools/couronnement/hall_tuiles.json`).
+- Arènes du joueur (Carrière) : l'achat (6 places libres dans le PC exigées) crée 6 Pokémon du type (`CreerRattaches` : premiers stades,
+  hors légendaires / fabuleux / Ultra-Chimères / Paradoxes, N.10, 12… 20, évolués à leur niveau), rangés dans le PC et marqués
+  `MON_DATA_ARENE` / `MON_DATA_ARENE_PLACE` 0-5 : bloqués comme avant. Plus de dépôt / retrait, plus d'XP quotidienne passive.
+- Choix façon Tente (`FACILITY_ARENE` 11 dans `party_menu.c`, `ChooseAreneParty`) : `Arene_PreparerSelection` met l'équipe du joueur
+  de côté et la remplace par les 6, `Arene_GarderSelection` garde les choisis, `Arene_RendreEquipe` les range à leur place tels qu'ils
+  sortent du combat (XP, amitié, évolution), `Arene_AnnulerSelection`. XP de combat permise en Carrière (`Arene_SansXP`).
+- Guichet (Carrière) : Affronter un challenger (autant de Pokémon que lui ; challenger au niveau moyen des 6 + réputation / 25 - 1),
+  S'entraîner (3 Pokémon, 3 manches contre des membres du club au niveau moyen des choisis, soin entre chaque, arrêt à la 1re défaite),
+  Voir l'équipe. Corrigé au passage : le sexe des Pokémon des challengers n'était pas renseigné (erreur dans `GenerateMonFromTrainerMon`).
+- Tests : `make check EDITION=carriere TESTS="Arenes Carriere"` (3). Vérifié dans mGBA : achat, choix du type, 6 Pokémon, sélection,
+  annulation, début d'un combat d'entraînement.
+
 ## Idées d'Adrien à concevoir plus tard
 
 

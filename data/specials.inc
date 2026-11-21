@@ -129,6 +129,14 @@ gSpecials::
 	def_special Arene_PreparerListe
 	def_special Arene_ScriptRetirer
 	def_special Arene_Resume
+	def_special Arene_PreparerSelection
+	def_special Arene_GarderSelection
+	def_special Arene_AnnulerSelection
+	def_special Arene_PreparerEntrainement
+	def_special Arene_ApresEntrainement
+	def_special Arene_FinEntrainement
+	def_special Arene_ListeRattaches
+	def_special ChooseAreneParty, waitstate=1
 	def_special Couronnement_BufferStatut
 	def_special Couronnement_EtatTournoi
 	def_special Couronnement_CompterPokemonAptes

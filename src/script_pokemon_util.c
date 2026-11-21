@@ -217,6 +217,13 @@ void ChooseCouronnementParty(void)
     InitChooseHalfPartyForBattle(0);
 }
 
+void ChooseAreneParty(void)
+{
+    gMain.savedCallback = CB2_ReturnFromChooseHalfParty;
+    VarSet(VAR_FRONTIER_FACILITY, FACILITY_ARENE);
+    InitChooseHalfPartyForBattle(0);
+}
+
 void ChoosePartyForBattleFrontier(void)
 {
     gMain.savedCallback = CB2_ReturnFromChooseBattleFrontierParty;
