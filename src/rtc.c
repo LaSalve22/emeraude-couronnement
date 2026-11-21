@@ -287,28 +287,13 @@ static void UNUSED FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
     *dest = EOS;
 }
 
-// Émeraude Couronnement, édition Carrière : le temps du jeu passe 4 fois plus vite que l'horloge réelle à partir du
-// 1er janvier 2026 (une journée de jeu = 6 h réelles). Le compte reste petit (s16 de struct Time) jusqu'en 2041 environ.
-#define COURONNEMENT_TEMPS_FACTEUR 4
+// Émeraude Couronnement : jours / heures de l'horloge (en édition Carrière, l'horloge de jeu du moteur, OW_USE_FAKE_RTC).
 static void RtcTempsDuJeu(struct SiiRtcInfo *rtc, u32 *days, s32 *hours, s32 *minutes, s32 *seconds)
 {
     *days = RtcGetDayCount(rtc);
     *hours = ConvertBcdToBinary(rtc->hour);
     *minutes = ConvertBcdToBinary(rtc->minute);
     *seconds = ConvertBcdToBinary(rtc->second);
-    if (EDITION_TYCOON_SIM)
-    {
-        u32 debut = ConvertDateToDayCount(26, MONTH_JAN, 1);
-        if (*days >= debut)
-        {
-            u64 total = ((u64)(*days - debut) * 86400 + *hours * 3600 + *minutes * 60 + *seconds) * COURONNEMENT_TEMPS_FACTEUR;
-            *days = debut + (u32)(total / 86400);
-            total %= 86400;
-            *hours = total / 3600;
-            *minutes = (total / 60) % 60;
-            *seconds = total % 60;
-        }
-    }
 }
 
 void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct Time *t)

@@ -717,7 +717,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Fait (v0.54) - édition Carrière : temps x4, saisons de 9 mois, arènes tôt, récompenses du Pokédex (demande d'Adrien du 21/11)
 
-- Temps x4 (Carrière) : `RtcTempsDuJeu` (`src/rtc.c`) accélère l'horloge réelle d'un facteur 4 à partir du 1er janvier 2026
+- (Remplacé en v0.55 par l'horloge de jeu.) Temps x4 (Carrière) : `RtcTempsDuJeu` (`src/rtc.c`) accélère l'horloge réelle d'un facteur 4 à partir du 1er janvier 2026
   (une journée de jeu = 6 h réelles) ; s'applique à l'heure locale (`RtcCalcTimeDifference`, jour / nuit, réglage de l'horloge)
   et à `RtcGetLocalDayCount`, donc à tout ce qui compte les jours (Bourse, loyers, banques, arènes, ligue, calendrier).
   Les sauvegardes Carrière d'avant la v0.54 sautent dans le temps : nouvelle partie conseillée.
@@ -730,6 +730,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
   (`Tycoon_RecompenseDex`) : Restes, Orbe Vie, Mouchoir Choix, Ceinture Force, Bandeau Choix, Lunettes Choix, Veste de Combat,
   Patch Talent, Casque Brut, Vulné-Assurance, Grosses Bottes, Évoluroc, Dé Pipé, Cape Discrétion, Amulette Garde, Master Ball (400).
   Palier mémorisé dans `TycoonSave.paliersDex` (ancien padding). Sac plein : le colis attend. Tests : `TESTS="Carriere"` (6).
+
+## Fait (v0.55) - édition Carrière : horloge de jeu façon GTA (demande d'Adrien du 21/11)
+
+- Le x4 sur l'horloge réelle (v0.54) est remplacé par l'horloge de jeu du moteur : `OW_USE_FAKE_RTC` = `EDITION_TYCOON_SIM`
+  (`include/config/overworld.h`), qui n'avance que pendant qu'on joue (`FakeRtc_TickTimeForward`, `src/play_time.c`) et s'arrête
+  quand la console est éteinte. Vitesse : `COURONNEMENT_SECONDES_DE_JEU` = 144 (une journée de jeu = 10 min jouées ;
+  `FakeRtc_GetSecondsRatio`). Le réglage de l'horloge au réveil règle directement l'heure de jeu. `fakeRTC` entre dans SaveBlock3
+  (Carrière seulement) : sauvegardes Carrière précédentes incompatibles, nouvelle partie.
+- Ordres de grandeur : saison de la Ligue des Clubs (270 jours) = 45 h de jeu, une journée de match toutes les ~4 h 30,
+  mercato 3 h, loyer de l'appartement toutes les 5 h ; Bourse / immobilier / arènes avancent d'un jour toutes les 10 min.
+- Niveaux (Carrière) : N.10 seulement jusqu'à la 1re journée de la 1re saison (jour 27, ~4 h 30 de jeu), puis N.18 en tier C
+  (`Tycoon_NiveauCible`). Édition classique inchangée (horloge réelle).
 
 ## Idées d'Adrien à concevoir plus tard
 

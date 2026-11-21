@@ -295,7 +295,8 @@ u32 Tycoon_NiveauCible(void)
         return TYCOON_NIVEAU_DEPART;
     switch (Club_Tier(club))
     {
-    case CLUB_TIER_C: return Club_Saison() == 0 ? TYCOON_NIVEAU_DEPART : TYCOON_NIVEAU_C;
+    case CLUB_TIER_C: // v0.55 : N.10 seulement jusqu'à la 1re journée de la 1re saison
+        return (Club_Saison() == 0 && Club_JourDeSaison() < Club_JourDeJournee(0)) ? TYCOON_NIVEAU_DEPART : TYCOON_NIVEAU_C;
     case CLUB_TIER_B: return TYCOON_NIVEAU_B;
     case CLUB_TIER_A: return TYCOON_NIVEAU_A;
     default:          return TYCOON_NIVEAU_S;
