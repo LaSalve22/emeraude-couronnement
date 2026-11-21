@@ -359,7 +359,8 @@ struct TycoonSave
     u16 jourLoyer;    // dernier jour où le loyer a été payé (RtcGetLocalDayCount)
     u8 profil;        // 0 Épargnant, 1 Trader, 2 Espoir Sportif
     u8 impayes;       // loyers impayés (rapport)
-    u16 padding;
+    u8 paliersDex;    // v0.54 : récompenses du Pokédex déjà données (un palier = 25 espèces capturées)
+    u8 padding;
 };
 
 struct SaveBlock3

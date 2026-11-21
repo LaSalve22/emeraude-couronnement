@@ -97,6 +97,8 @@ gSpecials::
 	def_special Tycoon_BoutiqueNiveau
 	def_special Tycoon_AreneFermee
 	def_special Tycoon_SortirArene
+	def_special Tycoon_RecompenseDex
+	def_special Tycoon_RecompenseDexDonnee
 	def_special Club_Resume
 	def_special Club_TableauDeBord
 	def_special Club_PreparerMatch

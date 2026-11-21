@@ -1,4 +1,6 @@
 #include "global.h"
+#include "pokedex.h"
+#include "constants/items.h"
 #include "tycoon.h"
 #include "league_club.h"
 #include "event_data.h"
@@ -520,4 +522,41 @@ void Tycoon_SortirArene(void)
         }
     }
     ScriptContext_Enable(); // pas de passage trouvé : on laisse le joueur sur place
+}
+
+// ---------------------------------------------------------------- récompenses du Pokédex (v0.54, édition Carrière)
+// Tous les 25 Pokémon capturés (Pokédex national), le Prof. Seko envoie un objet rare de combat, par courrier (menu L).
+static const u16 sRecompensesDex[] =
+{
+    ITEM_LEFTOVERS, ITEM_LIFE_ORB, ITEM_CHOICE_SCARF, ITEM_FOCUS_SASH, ITEM_CHOICE_BAND, ITEM_CHOICE_SPECS,
+    ITEM_ASSAULT_VEST, ITEM_ABILITY_PATCH, ITEM_ROCKY_HELMET, ITEM_WEAKNESS_POLICY, ITEM_HEAVY_DUTY_BOOTS,
+    ITEM_EVIOLITE, ITEM_LOADED_DICE, ITEM_COVERT_CLOAK, ITEM_CLEAR_AMULET, ITEM_MASTER_BALL,
+};
+
+u32 Tycoon_PaliersDexAtteints(u32 captures)
+{
+    u32 n = captures / TYCOON_DEX_PALIER;
+    return n > ARRAY_COUNT(sRecompensesDex) ? ARRAY_COUNT(sRecompensesDex) : n;
+}
+
+// Special : VAR_RESULT = TRUE s'il y a une récompense à donner ; VAR_0x8004 = objet, VAR_0x8005 = captures du palier.
+void Tycoon_RecompenseDex(void)
+{
+    u32 palier;
+    gSpecialVar_Result = FALSE;
+    if (!EDITION_TYCOON_SIM || TY.magie != TYCOON_MAGIE)
+        return;
+    palier = TY.paliersDex;
+    if (palier >= Tycoon_PaliersDexAtteints(GetNationalPokedexCount(FLAG_GET_CAUGHT)))
+        return;
+    gSpecialVar_0x8004 = sRecompensesDex[palier];
+    gSpecialVar_0x8005 = (palier + 1) * TYCOON_DEX_PALIER;
+    gSpecialVar_Result = TRUE;
+}
+
+// Special : la récompense a bien été rangée dans le sac.
+void Tycoon_RecompenseDexDonnee(void)
+{
+    if (TY.magie == TYCOON_MAGIE && TY.paliersDex < ARRAY_COUNT(sRecompensesDex))
+        TY.paliersDex++;
 }

@@ -281,11 +281,32 @@ bool32 Arene_Valide(u32 arene)
     return TitulairesDuType(arene, places) >= ARENE_MIN_DU_TYPE;
 }
 
-u32 Arene_Valeur(void)
+// Édition Carrière (v0.54) : arènes ouvertes dès le début, 50 000 ¥ la 1re puis le double à chaque nouvelle.
+static bool32 ArenesOuvertes(void)
+{
+    return EDITION_TYCOON_SIM || FlagGet(FLAG_SYS_GAME_CLEAR);
+}
+
+static u32 NbAchetees(void)
 {
     u32 a, n = 0;
     for (a = 0; a < ARENE_NB; a++)
         n += Arene_Achetee(a);
+    return n;
+}
+
+u32 Arene_PrixProchaine(void)
+{
+    if (!EDITION_TYCOON_SIM)
+        return ARENE_PRIX;
+    return ARENE_PRIX_CARRIERE << NbAchetees();
+}
+
+u32 Arene_Valeur(void)
+{
+    u32 n = NbAchetees();
+    if (EDITION_TYCOON_SIM)
+        return ARENE_PRIX_CARRIERE * ((1u << n) - 1);
     return n * ARENE_PRIX;
 }
 
@@ -364,12 +385,13 @@ void Arene_MettreAJourJusqua(u32 aujourdhui)
 bool32 Arene_Acheter(u32 arene, u32 typeIndex)
 {
     struct AreneEtat *e;
+    u32 prix = Arene_PrixProchaine();
 
     Verifier(Aujourdhui());
-    if (arene >= ARENE_NB || typeIndex >= ARENE_NB_TYPES || AR.arenes[arene].achetee || !FlagGet(FLAG_SYS_GAME_CLEAR)
-     || Disponible() < ARENE_PRIX)
+    if (arene >= ARENE_NB || typeIndex >= ARENE_NB_TYPES || AR.arenes[arene].achetee || !ArenesOuvertes()
+     || Disponible() < prix)
         return FALSE;
-    Prendre(ARENE_PRIX);
+    Prendre(prix);
     e = &AR.arenes[arene];
     memset(e, 0, sizeof(*e));
     e->achetee = TRUE;
@@ -724,7 +746,8 @@ void Arene_Ouvrir(void)
     StringCopy(gStringVar1, sVilles[a]);
     if (!Arene_Achetee(a))
     {
-        gSpecialVar_Result = FlagGet(FLAG_SYS_GAME_CLEAR) ? 1 : 0;
+        AjouterYens(gStringVar2, Arene_PrixProchaine());
+        gSpecialVar_Result = ArenesOuvertes() ? 1 : 0;
         return;
     }
     e = &AR.arenes[a];

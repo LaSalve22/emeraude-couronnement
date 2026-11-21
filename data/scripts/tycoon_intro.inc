@@ -276,6 +276,22 @@ Tycoon_EventScript_Courrier8::
 	giveitem ITEM_TM_WATER_PULSE
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
 Tycoon_EventScript_CourrierFin::
+	goto Tycoon_EventScript_CourrierDex
+
+@ v0.54 : récompenses du Pokédex, une par palier de 25 espèces capturées.
+Tycoon_EventScript_CourrierDex::
+	special Tycoon_RecompenseDex
+	goto_if_eq VAR_RESULT, FALSE, Tycoon_EventScript_CourrierDexFin
+	checkitemspace VAR_0x8004
+	goto_if_eq VAR_RESULT, FALSE, Tycoon_EventScript_CourrierDexPlein
+	buffernumberstring STR_VAR_1, VAR_0x8005
+	msgbox Tycoon_Text_CourrierDex, MSGBOX_DEFAULT
+	giveitem VAR_0x8004
+	special Tycoon_RecompenseDexDonnee
+	goto Tycoon_EventScript_CourrierDex
+Tycoon_EventScript_CourrierDexPlein::
+	msgbox Tycoon_Text_CourrierDexPlein, MSGBOX_DEFAULT
+Tycoon_EventScript_CourrierDexFin::
 	return
 
 Tycoon_Text_AreneFermee:
@@ -287,6 +303,14 @@ Tycoon_Text_AreneFermee:
 Tycoon_Text_Courrier:
 	.string "Courrier de la Ligue des Clubs : un\n"
 	.string "colis du club, pour tes progrès.$"
+
+Tycoon_Text_CourrierDex:
+	.string "Colis du Prof. Seko : “{STR_VAR_1}\n"
+	.string "espèces capturées, beau travail.”$"
+
+Tycoon_Text_CourrierDexPlein:
+	.string "Un colis du Prof. Seko attend, mais\n"
+	.string "ton sac est plein.$"
 
 Tycoon_Text_CourrierTera:
 	.string "L'Orbe Téracristal se recharge dans\n"

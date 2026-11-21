@@ -7,6 +7,7 @@
 
 #define ARENE_NB_TYPES        10
 #define ARENE_PRIX            500000
+#define ARENE_PRIX_CARRIERE   50000   // édition Carrière : 1re arène, puis le double à chaque nouvelle
 #define ARENE_TITULAIRES      6
 #define ARENE_REMPLACANTS     3
 #define ARENE_PLACES          (ARENE_TITULAIRES + ARENE_REMPLACANTS)
@@ -31,7 +32,8 @@ bool32 Arene_Valide(u32 arene);                  // assez de titulaires du type
 bool32 Arene_Acheter(u32 arene, u32 typeIndex);
 bool32 Arene_Deposer(u32 arene, u32 partySlot, bool32 titulaire);
 bool32 Arene_Retirer(u32 arene, u32 place);
-u32 Arene_Valeur(void);                          // compté dans la valeur de la société
+u32 Arene_Valeur(void);
+u32 Arene_PrixProchaine(void);                          // prix de la prochaine arène (Carrière : 50 000 puis le double)
 u32 Arene_BadgesChallenger(u32 arene);          // badges du prochain challenger (0 si personne)
 bool32 Arene_EstBloque(struct BoxPokemon *boxMon); // PC : Pokémon déposé dans une arène
 bool32 Arene_PokemonDansLePC(void);

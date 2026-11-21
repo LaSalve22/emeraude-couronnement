@@ -563,7 +563,10 @@ Couronnement_EventScript_MenuLRang::
 	dynmultipush Couronnement_Text_MenuLCommerces, 11
 	dynmultipush Couronnement_Text_MenuLBanques, 12
 	dynmultipush Couronnement_Text_MenuLClubs, 14
+	special Tycoon_EstActif @ édition Carrière : arènes du joueur dès le début (v0.54)
+	goto_if_eq VAR_RESULT, TRUE, Couronnement_EventScript_MenuLArenesOuvertes
 	goto_if_unset FLAG_SYS_GAME_CLEAR, Couronnement_EventScript_MenuLFermer
+Couronnement_EventScript_MenuLArenesOuvertes::
 	dynmultipush Couronnement_Text_MenuLArenes, 13
 Couronnement_EventScript_MenuLFermer::
 	dynmultipush Couronnement_Text_MenuLFermer, 7

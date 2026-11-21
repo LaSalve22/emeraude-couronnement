@@ -346,7 +346,7 @@ u32 Club_JourDeSaison(void)
 
 u32 Club_JourDeJournee(u32 journee)
 {
-    return sJoursJournees[journee % CLUB_NB_JOURNEES];
+    return sJoursJournees[journee % CLUB_NB_JOURNEES] * CLUB_ECHELLE;
 }
 
 void Club_Tirage(u32 saison, u8 *clubs)
@@ -908,7 +908,7 @@ static void TraiterJour(u32 jourSaison)
     u32 j;
     for (j = 0; j < CLUB_NB_JOURNEES; j++)
     {
-        if (sJoursJournees[j] == jourSaison)
+        if (sJoursJournees[j] * CLUB_ECHELLE == jourSaison)
         {
             u32 k;
             ForfaitsAvant(j * CLUB_MATCHS_PAR_JOURNEE);
@@ -1182,8 +1182,8 @@ static u32 ProchaineJournee(void)
 {
     u32 j, jour = Club_JourDeSaison();
     for (j = 0; j < CLUB_NB_JOURNEES; j++)
-        if (sJoursJournees[j] > jour)
-            return sJoursJournees[j];
+        if (sJoursJournees[j] * CLUB_ECHELLE > jour)
+            return sJoursJournees[j] * CLUB_ECHELLE;
     return CLUB_JOUR_FINALE;
 }
 
@@ -1423,7 +1423,11 @@ void Club_Ouvrir(void)
 
 static const u8 sText_A1[] = _("Saison ");
 static const u8 sText_A2[] = _(", jour ");
+#if EDITION_TYCOON_SIM
+static const u8 sText_A3[] = _("/270");
+#else
 static const u8 sText_A3[] = _("/30");
+#endif
 static const u8 sText_AMercato[] = _(" (mercato)");
 static const u8 sText_AFinale[] = _(".\nGrande Finale aujourd'hui !\p");
 static const u8 sText_A4[] = _(".\nProchaine journée : jour ");

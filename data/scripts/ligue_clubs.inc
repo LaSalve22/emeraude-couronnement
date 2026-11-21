@@ -336,10 +336,17 @@ Club_Text_AdversaireBattu:
 
 Club_Text_ReglesTexte:
 	.string "10 clubs, 2 poules de 5 tirées au\n"
+.if EDITION_TYCOON_SIM == TRUE
+	.string "sort à chaque saison de 9 mois.\p"
+	.string "Mercato les jours 1 à 18. Dix\n"
+	.string "journées en aller-retour, finale\l"
+	.string "le jour 270 entre les deux premiers.\p"
+.else
 	.string "sort à chaque saison de 30 jours.\p"
 	.string "Mercato les jours 1 et 2. Dix\n"
 	.string "journées en aller-retour, finale\l"
 	.string "le jour 30 entre les deux premiers.\p"
+.endif
 	.string "Chaque rencontre : 4 duels en 6\n"
 	.string "contre 6, sans objets du sac.\p"
 	.string "Victoire 4 pts, nul 2, défaite 0.\n"

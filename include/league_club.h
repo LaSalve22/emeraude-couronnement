@@ -12,13 +12,14 @@
 #define CLUB_DRESSEURS          4       // par club
 #define CLUB_SLOT_JOUEUR        3       // le joueur licencié remplace la Recrue (4e place)
 #define CLUB_TAILLE_EQUIPE      6
-#define CLUB_JOURS_SAISON       30
+#define CLUB_ECHELLE            (EDITION_TYCOON_SIM ? 9 : 1) // Carrière : saison de 9 mois (270 jours de jeu, temps x4)
+#define CLUB_JOURS_SAISON       (30 * CLUB_ECHELLE)
 #define CLUB_NB_JOURNEES        10      // 5 clubs en aller-retour : 10 journées, chaque club exempt 2 fois
 #define CLUB_MATCHS_PAR_JOURNEE 4       // 2 par poule
 #define CLUB_NB_MATCHS          (CLUB_NB_JOURNEES * CLUB_MATCHS_PAR_JOURNEE) // 40 matchs de poule
 #define CLUB_MATCH_FINALE       CLUB_NB_MATCHS                                 // 41e : la Grande Finale
-#define CLUB_JOUR_FINALE        30
-#define CLUB_JOURS_MERCATO      2       // jours 1 et 2
+#define CLUB_JOUR_FINALE        CLUB_JOURS_SAISON
+#define CLUB_JOURS_MERCATO      (2 * CLUB_ECHELLE) // jours 1 et 2 (1 à 18 en Carrière)
 #define CLUB_AUCUN              0xFF
 #define CLUB_MAGIE              0xC1B5
 

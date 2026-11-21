@@ -204,7 +204,7 @@ Arene_Text_QuiRetirer:
 
 Arene_Text_AVendre:
 	.string "Responsable : L'arène de {STR_VAR_1}\n"
-	.string "est à vendre, 500 000 ¥.\p"
+	.string "est à vendre, {STR_VAR_2}.\p"
 	.string "Le type est à toi de choisir. Les\n"
 	.string "challengers viennent te défier, tu\l"
 	.string "touches les sponsors.\p"

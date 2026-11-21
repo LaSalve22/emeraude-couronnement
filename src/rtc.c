@@ -287,12 +287,38 @@ static void UNUSED FormatHexDate(u8 *dest, s32 year, s32 month, s32 day)
     *dest = EOS;
 }
 
+// Émeraude Couronnement, édition Carrière : le temps du jeu passe 4 fois plus vite que l'horloge réelle à partir du
+// 1er janvier 2026 (une journée de jeu = 6 h réelles). Le compte reste petit (s16 de struct Time) jusqu'en 2041 environ.
+#define COURONNEMENT_TEMPS_FACTEUR 4
+static void RtcTempsDuJeu(struct SiiRtcInfo *rtc, u32 *days, s32 *hours, s32 *minutes, s32 *seconds)
+{
+    *days = RtcGetDayCount(rtc);
+    *hours = ConvertBcdToBinary(rtc->hour);
+    *minutes = ConvertBcdToBinary(rtc->minute);
+    *seconds = ConvertBcdToBinary(rtc->second);
+    if (EDITION_TYCOON_SIM)
+    {
+        u32 debut = ConvertDateToDayCount(26, MONTH_JAN, 1);
+        if (*days >= debut)
+        {
+            u64 total = ((u64)(*days - debut) * 86400 + *hours * 3600 + *minutes * 60 + *seconds) * COURONNEMENT_TEMPS_FACTEUR;
+            *days = debut + (u32)(total / 86400);
+            total %= 86400;
+            *hours = total / 3600;
+            *minutes = (total / 60) % 60;
+            *seconds = total % 60;
+        }
+    }
+}
+
 void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct Time *t)
 {
-    u16 days = RtcGetDayCount(rtc);
-    result->seconds = ConvertBcdToBinary(rtc->second) - t->seconds;
-    result->minutes = ConvertBcdToBinary(rtc->minute) - t->minutes;
-    result->hours = ConvertBcdToBinary(rtc->hour) - t->hours;
+    u32 days;
+    s32 hours, minutes, seconds;
+    RtcTempsDuJeu(rtc, &days, &hours, &minutes, &seconds);
+    result->seconds = seconds - t->seconds;
+    result->minutes = minutes - t->minutes;
+    result->hours = hours - t->hours;
     result->days = days - t->days;
 
     if (result->seconds < 0)
@@ -385,7 +411,10 @@ void CalcTimeDifference(struct Time *result, struct Time *t1, struct Time *t2)
 
 u32 RtcGetLocalDayCount(void)
 {
-    return RtcGetDayCount(&sRtc);
+    u32 days;
+    s32 h, m, sec;
+    RtcTempsDuJeu(&sRtc, &days, &h, &m, &sec); // Carrière : jours de jeu (temps x4)
+    return days;
 }
 
 void FormatDecimalTimeWithoutSeconds(u8 *txtPtr, s8 hour, s8 minute, bool32 is24Hour)

@@ -30,6 +30,10 @@ u32 Tycoon_Profil(void);
 void Tycoon_BoutiqueNiveau(void);                 // special : 0, 1 (L) ou 2 (XL) selon le tier
 void Tycoon_AccreditationsAuto(void);              // Arènes fermées : badges posés selon le scénario (v0.53)
 void Tycoon_AreneFermee(void);                     // special
-void Tycoon_SortirArene(void);                     // special (+ waitstate)
+void Tycoon_SortirArene(void);
+#define TYCOON_DEX_PALIER 25                           // récompense du Pokédex toutes les 25 espèces capturées
+u32 Tycoon_PaliersDexAtteints(u32 captures);
+void Tycoon_RecompenseDex(void);                   // special
+void Tycoon_RecompenseDexDonnee(void);             // special                     // special (+ waitstate)
 
 #endif // GUARD_TYCOON_H

@@ -65,3 +65,11 @@ TEST("Carriere: the Linking Cord triggers trade evolutions")
     CreateMon(&mon, SPECIES_KARRABLAST, 30, 0, OTID_STRUCT_PLAYER_ID);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &stop, CHECK_EVO), SPECIES_ESCAVALIER);
 }
+
+TEST("Carriere: Pokedex rewards every 25 species caught, 16 at most")
+{
+    EXPECT_EQ(Tycoon_PaliersDexAtteints(24), 0);
+    EXPECT_EQ(Tycoon_PaliersDexAtteints(25), 1);
+    EXPECT_EQ(Tycoon_PaliersDexAtteints(399), 15);
+    EXPECT_EQ(Tycoon_PaliersDexAtteints(1000), 16);
+}

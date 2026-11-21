@@ -210,7 +210,11 @@ static void Blason(u8 fen, u32 x, u32 y, u32 club, u32 entree)
 
 static const u8 sText_Saison[] = _("S");
 static const u8 sText_Jour[] = _(" J");
+#if EDITION_TYCOON_SIM
+static const u8 sText_Sur30[] = _("/270");
+#else
 static const u8 sText_Sur30[] = _("/30");
+#endif
 
 static void Bandeau(u8 fen, u32 onglet, u32 clubCouleur)
 {
@@ -243,7 +247,11 @@ static const u8 sText_ColJ[] = _("J");
 static const u8 sText_ColPts[] = _("Pts");
 static const u8 sText_ColDiff[] = _("Diff");
 static const u8 sText_ColBO[] = _("BO");
+#if EDITION_TYCOON_SIM
+static const u8 sText_AideClassement[] = _("Le 1er joue la finale du jour 270.");
+#else
 static const u8 sText_AideClassement[] = _("Le 1er joue la finale du jour 30.");
+#endif
 static const u8 sText_AideSelect[] = _("SELECT : poule ");
 
 static void DessinerClassement(u8 fen, u32 poule)
@@ -291,7 +299,11 @@ static void DessinerClassement(u8 fen, u32 poule)
 
 static const u8 sText_Journee[] = _("Journée ");
 static const u8 sText_JourParen[] = _(" (jour ");
+#if EDITION_TYCOON_SIM
+static const u8 sText_Finale[] = _("Grande Finale (jour 270)");
+#else
 static const u8 sText_Finale[] = _("Grande Finale (jour 30)");
+#endif
 static const u8 sText_Provisoire[] = _(" provisoire");
 static const u8 sText_Paren[] = _(")");
 static const u8 sText_MatchN[] = _("  match ");

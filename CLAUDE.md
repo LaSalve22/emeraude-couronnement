@@ -715,6 +715,22 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Objets des champions : « Courrier de la Ligue des Clubs » à l'ouverture du menu L (`Tycoon_EventScript_Courrier`) : CT de
   chaque champion, Orbe Téracristal (2e), Méga-Anneau + Jungkite / Tortankite (5e). Testé dans mGBA (sortie de l'Arène de Mérouville).
 
+## Fait (v0.54) - édition Carrière : temps x4, saisons de 9 mois, arènes tôt, récompenses du Pokédex (demande d'Adrien du 21/11)
+
+- Temps x4 (Carrière) : `RtcTempsDuJeu` (`src/rtc.c`) accélère l'horloge réelle d'un facteur 4 à partir du 1er janvier 2026
+  (une journée de jeu = 6 h réelles) ; s'applique à l'heure locale (`RtcCalcTimeDifference`, jour / nuit, réglage de l'horloge)
+  et à `RtcGetLocalDayCount`, donc à tout ce qui compte les jours (Bourse, loyers, banques, arènes, ligue, calendrier).
+  Les sauvegardes Carrière d'avant la v0.54 sautent dans le temps : nouvelle partie conseillée.
+- Saison de la Ligue des Clubs = 9 mois (`CLUB_ECHELLE` = 9 en Carrière, 1 en classique, `include/league_club.h`) : 270 jours,
+  mercato jours 1-18, journées aux jours 27, 45, 72… 243, finale jour 270 (~68 jours réels, une journée par semaine réelle environ).
+  Textes « /270 » et règlement adaptés (`.if EDITION_TYCOON_SIM == TRUE` dans `ligue_clubs.inc`).
+- Arènes du joueur (Carrière) : dès le début (menu L « Mes arènes », guichets des 6 villes), 50 000 ¥ la 1re puis le double
+  (`Arene_PrixProchaine`, `ARENE_PRIX_CARRIERE`) ; valeur comptée = prix payés. Classique inchangé (après la Ligue, 500 000 ¥).
+- Pokédex (Carrière) : tous les 25 Pokémon capturés (Pokédex national), colis du Prof. Seko au courrier du menu L
+  (`Tycoon_RecompenseDex`) : Restes, Orbe Vie, Mouchoir Choix, Ceinture Force, Bandeau Choix, Lunettes Choix, Veste de Combat,
+  Patch Talent, Casque Brut, Vulné-Assurance, Grosses Bottes, Évoluroc, Dé Pipé, Cape Discrétion, Amulette Garde, Master Ball (400).
+  Palier mémorisé dans `TycoonSave.paliersDex` (ancien padding). Sac plein : le colis attend. Tests : `TESTS="Carriere"` (6).
+
 ## Idées d'Adrien à concevoir plus tard
 
 
