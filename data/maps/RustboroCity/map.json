@@ -343,6 +343,13 @@
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_HOUSE3",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_COURONNEMENT_HALL",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

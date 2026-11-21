@@ -8,17 +8,24 @@
 // duel en vrai ; tous les autres duels sont simulés (rating 1-100, +6 à domicile, +4 si 3 Pokémon profitent du stade).
 
 #define CLUB_NB                 10
-#define CLUB_PAR_POULE          5
+// Édition Carrière (v0.56) : NPHL (National Pokémon Hoenn Ligue), une seule poule de 10 en aller-retour (18 journées
+// de 5 rencontres), puis play-offs à 4 (demi-finales 1er-4e et 2e-3e chez le mieux classé, finale à la Tour de Combat).
+#define CLUB_NPHL               EDITION_TYCOON_SIM
+#define CLUB_PAR_POULE          (CLUB_NPHL ? 10 : 5)
 #define CLUB_DRESSEURS          4       // par club
 #define CLUB_SLOT_JOUEUR        3       // le joueur licencié remplace la Recrue (4e place)
 #define CLUB_TAILLE_EQUIPE      6
-#define CLUB_ECHELLE            (EDITION_TYCOON_SIM ? 9 : 1) // Carrière : saison de 9 mois (270 jours de jeu, temps x4)
+#define CLUB_ECHELLE            (EDITION_TYCOON_SIM ? 9 : 1) // Carrière : saison de 9 mois (270 jours de jeu)
 #define CLUB_JOURS_SAISON       (30 * CLUB_ECHELLE)
-#define CLUB_NB_JOURNEES        10      // 5 clubs en aller-retour : 10 journées, chaque club exempt 2 fois
-#define CLUB_MATCHS_PAR_JOURNEE 4       // 2 par poule
-#define CLUB_NB_MATCHS          (CLUB_NB_JOURNEES * CLUB_MATCHS_PAR_JOURNEE) // 40 matchs de poule
-#define CLUB_MATCH_FINALE       CLUB_NB_MATCHS                                 // 41e : la Grande Finale
-#define CLUB_JOUR_FINALE        CLUB_JOURS_SAISON
+#define CLUB_NB_JOURNEES        (CLUB_NPHL ? 18 : 10) // classique : 5 clubs par poule en aller-retour, chaque club exempt 2 fois
+#define CLUB_MATCHS_PAR_JOURNEE (CLUB_NPHL ? 5 : 4)    // classique : 2 par poule
+#define CLUB_NB_MATCHS          (CLUB_NB_JOURNEES * CLUB_MATCHS_PAR_JOURNEE) // 90 (NPHL) ou 40 matchs de saison régulière
+#define CLUB_NB_PLAYOFFS        (CLUB_NPHL ? 3 : 1)    // demi-finales + finale, ou la Grande Finale seule
+#define CLUB_MATCH_DEMI1        CLUB_NB_MATCHS         // NPHL : 1er contre 4e
+#define CLUB_MATCH_DEMI2        (CLUB_NB_MATCHS + 1)   // NPHL : 2e contre 3e
+#define CLUB_MATCH_FINALE       (CLUB_NB_MATCHS + CLUB_NB_PLAYOFFS - 1)
+#define CLUB_JOUR_DEMIS         (CLUB_NPHL ? 255 : 0)
+#define CLUB_JOUR_FINALE        (CLUB_NPHL ? 265 : CLUB_JOURS_SAISON)
 #define CLUB_JOURS_MERCATO      (2 * CLUB_ECHELLE) // jours 1 et 2 (1 à 18 en Carrière)
 #define CLUB_AUCUN              0xFF
 #define CLUB_MAGIE              0xC1B5

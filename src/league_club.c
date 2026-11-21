@@ -26,7 +26,7 @@
 #define LC (gSaveBlock3Ptr->ligueClubs)
 
 STATIC_ASSERT(CLUB_LIGUE_NB_FORME == CLUB_NB * CLUB_DRESSEURS, ClubLigueForme);
-STATIC_ASSERT(CLUB_LIGUE_NB_DUELS == CLUB_NB_MATCHS + 1, ClubLigueDuels);
+STATIC_ASSERT(CLUB_LIGUE_NB_DUELS == CLUB_NB_MATCHS + CLUB_NB_PLAYOFFS, ClubLigueDuels);
 
 enum
 {
@@ -211,7 +211,7 @@ static const u8 sEvsTier[CLUB_NB_TIERS][NUM_STATS] =
 };
 
 // Jours de la saison où se jouent les 10 journées (tous les 2 ou 3 jours) ; finale le jour 30.
-static const u8 sJoursJournees[CLUB_NB_JOURNEES] = {3, 5, 8, 11, 13, 16, 19, 21, 24, 27};
+static const u8 sJoursJournees[10] = {3, 5, 8, 11, 13, 16, 19, 21, 24, 27};
 
 static EWRAM_DATA struct Trainer sAdversaire = {0};
 static EWRAM_DATA struct TrainerMon sAdversaireEquipe[CLUB_TAILLE_EQUIPE] = {0};
@@ -346,7 +346,9 @@ u32 Club_JourDeSaison(void)
 
 u32 Club_JourDeJournee(u32 journee)
 {
-    return sJoursJournees[journee % CLUB_NB_JOURNEES] * CLUB_ECHELLE;
+    if (CLUB_NPHL) // NPHL : jours 20, 33, 46… 241 (une journée tous les 13 jours, après le mercato)
+        return 20 + 13 * (journee % CLUB_NB_JOURNEES);
+    return sJoursJournees[journee % 10] * CLUB_ECHELLE;
 }
 
 void Club_Tirage(u32 saison, u8 *clubs)
@@ -379,6 +381,40 @@ u32 Club_Poule(u32 club)
 static void AfficheDePoule(u32 match, u8 *domicile, u8 *exterieur)
 {
     u8 clubs[CLUB_NB];
+#if CLUB_NPHL
+    // NPHL : méthode du cercle à 10 (la position 9 reste fixe), 9 rondes aller puis 9 rondes retour (domicile inversé).
+    {
+        u32 journee = match / CLUB_MATCHS_PAR_JOURNEE, k = match % CLUB_MATCHS_PAR_JOURNEE, r = journee % 9, a, b;
+        Club_Tirage(LC.saison, clubs);
+        if (k == 0)
+        {
+            a = 9;
+            b = r;
+            if (r % 2)
+                a = r, b = 9;
+        }
+        else
+        {
+            a = (r + k) % 9;
+            b = (r + 9 - k) % 9;
+            if (k % 2)
+            {
+                u32 t = a;
+                a = b;
+                b = t;
+            }
+        }
+        if (journee >= 9)
+        {
+            u32 t = a;
+            a = b;
+            b = t;
+        }
+        *domicile = clubs[a];
+        *exterieur = clubs[b];
+        return;
+    }
+#endif
     u32 journee = match / CLUB_MATCHS_PAR_JOURNEE, poule = (match % CLUB_MATCHS_PAR_JOURNEE) / 2, k = match % 2;
     u32 r = journee % CLUB_PAR_POULE, a, b;
 
@@ -413,7 +449,7 @@ static u32 PointsMatch(u32 match, u32 club, s32 *diff, u32 *bo, bool32 *joue)
     u32 slot, pts = 0;
     bool32 domicile;
 
-    if (match == CLUB_MATCH_FINALE)
+    if (match >= CLUB_NB_MATCHS)
         Club_Affiche(match, &dom, &ext);
     else
         AfficheDePoule(match, &dom, &ext);
@@ -517,6 +553,57 @@ u32 Club_Classement(u32 poule, u8 *ordre)
     u32 i, j, joues = 0;
 
     Club_Tirage(LC.saison, clubs);
+#if CLUB_NPHL
+    {
+        // Une seule poule de 10 : points / diff. K.O. / bonus offensifs calculés en un passage, confrontation directe si égalité.
+        u16 pts[CLUB_NB] = {0}, bo[CLUB_NB] = {0}, nb[CLUB_NB] = {0};
+        s16 diff[CLUB_NB] = {0};
+        u32 m;
+        for (m = 0; m < CLUB_NB_MATCHS; m++)
+        {
+            u8 dom, ext;
+            s32 dd = 0, de = 0;
+            u32 bd = 0, be = 0;
+            bool32 joue;
+            AfficheDePoule(m, &dom, &ext);
+            pts[dom] += PointsMatch(m, dom, &dd, &bd, &joue);
+            pts[ext] += PointsMatch(m, ext, &de, &be, NULL);
+            diff[dom] += dd;
+            diff[ext] += de;
+            bo[dom] += bd;
+            bo[ext] += be;
+            if (joue)
+                nb[dom]++, nb[ext]++, joues++;
+        }
+        for (i = 0; i < CLUB_NB; i++)
+            ordre[i] = clubs[i];
+        for (i = 1; i < CLUB_NB; i++)
+        {
+            u8 c = ordre[i];
+            for (j = i; j > 0; j--)
+            {
+                u8 p = ordre[j - 1];
+                bool32 devant;
+                if (pts[c] != pts[p])
+                    devant = pts[c] > pts[p];
+                else if (diff[c] != diff[p])
+                    devant = diff[c] > diff[p];
+                else if (PointsContre(c, p) != PointsContre(p, c))
+                    devant = PointsContre(c, p) > PointsContre(p, c);
+                else if (bo[c] != bo[p])
+                    devant = bo[c] > bo[p];
+                else
+                    devant = c < p;
+                if (!devant)
+                    break;
+                ordre[j] = p;
+            }
+            ordre[j] = c;
+        }
+        (void)poule;
+        return joues;
+    }
+#endif
     for (i = 0; i < CLUB_PAR_POULE; i++)
         ordre[i] = clubs[(poule % 2) * CLUB_PAR_POULE + i];
     for (i = 1; i < CLUB_PAR_POULE; i++) // tri par insertion (5 clubs)
@@ -531,8 +618,28 @@ u32 Club_Classement(u32 poule, u8 *ordre)
     return joues / 2;
 }
 
+static u32 VainqueurDemi(u32 match);
+
 void Club_Affiche(u32 match, u8 *domicile, u8 *exterieur)
 {
+#if CLUB_NPHL
+    if (match >= CLUB_NB_MATCHS)
+    {
+        u8 ordre[CLUB_NB];
+        if (match == CLUB_MATCH_FINALE)
+        {
+            *domicile = VainqueurDemi(CLUB_MATCH_DEMI1);
+            *exterieur = VainqueurDemi(CLUB_MATCH_DEMI2);
+            return;
+        }
+        Club_Classement(0, ordre);
+        if (match == CLUB_MATCH_DEMI1)
+            *domicile = ordre[0], *exterieur = ordre[3];
+        else
+            *domicile = ordre[1], *exterieur = ordre[2];
+        return;
+    }
+#endif
     if (match >= CLUB_MATCH_FINALE)
     {
         u8 a[CLUB_PAR_POULE], b[CLUB_PAR_POULE];
@@ -829,6 +936,17 @@ u32 Club_MatchDuJoueur(void)
 
 // ---------------------------------------------------------------- finale
 
+// NPHL : vainqueur d'une demi-finale (aux points ; égalité : le mieux classé, qui reçoit). Avant les demies : le mieux classé.
+static u32 VainqueurDemi(u32 match)
+{
+    u8 dom, ext;
+    u32 pd, pe;
+    Club_Affiche(match, &dom, &ext);
+    pd = PointsMatch(match, dom, NULL, NULL, NULL);
+    pe = PointsMatch(match, ext, NULL, NULL, NULL);
+    return pe > pd ? ext : dom;
+}
+
 static bool32 FinaleComplete(void)
 {
     u32 slot;
@@ -908,13 +1026,19 @@ static void TraiterJour(u32 jourSaison)
     u32 j;
     for (j = 0; j < CLUB_NB_JOURNEES; j++)
     {
-        if (sJoursJournees[j] * CLUB_ECHELLE == jourSaison)
+        if (Club_JourDeJournee(j) == jourSaison)
         {
             u32 k;
             ForfaitsAvant(j * CLUB_MATCHS_PAR_JOURNEE);
             for (k = 0; k < CLUB_MATCHS_PAR_JOURNEE; k++)
                 ResoudreMatch(j * CLUB_MATCHS_PAR_JOURNEE + k);
         }
+    }
+    if (CLUB_NPHL && jourSaison == CLUB_JOUR_DEMIS)
+    {
+        ForfaitsAvant(CLUB_MATCH_DEMI1);
+        ResoudreMatch(CLUB_MATCH_DEMI1);
+        ResoudreMatch(CLUB_MATCH_DEMI2);
     }
     if (jourSaison == CLUB_JOUR_FINALE)
     {
@@ -1182,8 +1306,10 @@ static u32 ProchaineJournee(void)
 {
     u32 j, jour = Club_JourDeSaison();
     for (j = 0; j < CLUB_NB_JOURNEES; j++)
-        if (sJoursJournees[j] * CLUB_ECHELLE > jour)
-            return sJoursJournees[j] * CLUB_ECHELLE;
+        if (Club_JourDeJournee(j) > jour)
+            return Club_JourDeJournee(j);
+    if (CLUB_NPHL && jour < CLUB_JOUR_DEMIS)
+        return CLUB_JOUR_DEMIS;
     return CLUB_JOUR_FINALE;
 }
 
@@ -1301,7 +1427,11 @@ static const u8 sText_BO[] = _(" Bonus offensif !");
 static const u8 sText_BD[] = _(" Bonus défensif !");
 static const u8 sText_Score1[] = _("\pScore de la rencontre : ");
 static const u8 sText_Score3[] = _(".\nPrime du match : ");
+#if CLUB_NPHL
+static const u8 sText_Champion[] = _("\p{PLAYER} et son club sont\nchampions de la NPHL !");
+#else
 static const u8 sText_Champion[] = _("\p{PLAYER} et son club sont\nchampions de la Ligue !");
+#endif
 static const u8 sText_Finaliste[] = _("\pLa coupe s'envole. Prime de\nfinaliste versée.");
 
 // Après le combat : résultat enregistré (survivants), prime versée. VAR_RESULT = victoire ; bilan dans gStringVar4.
@@ -1373,7 +1503,11 @@ void Club_FinMatch(void)
 
 // ---------------------------------------------------------------- specials de l'appli
 
+#if CLUB_NPHL
+static const u8 sText_R_Saison[] = _("Nouvelle saison de la NPHL :\ncalendrier tiré, 18 journées.");
+#else
 static const u8 sText_R_Saison[] = _("Nouvelle saison de la Ligue des\nClubs : tirage des poules fait.");
+#endif
 static const u8 sText_R_Renouvelee[] = _("\pTa licence est renouvelée.");
 static const u8 sText_R_Perdue[] = _("\pPas assez d'argent : ta licence\nn'est pas renouvelée.");
 static const u8 sText_R_Forfait[] = _("\pTu n'as pas joué un duel à temps :\nforfait, défaite 0-6.");
@@ -1430,10 +1564,12 @@ static const u8 sText_A3[] = _("/30");
 #endif
 static const u8 sText_AMercato[] = _(" (mercato)");
 static const u8 sText_AFinale[] = _(".\nGrande Finale aujourd'hui !\p");
+static const u8 sText_ADemis[] = _(".\nDemi-finales aujourd'hui !\p");
 static const u8 sText_A4[] = _(".\nProchaine journée : jour ");
 static const u8 sText_A5[] = _("Sans club.");
 static const u8 sText_A6[] = _(" : ");
 static const u8 sText_A7[] = _("e poule ");
+static const u8 sText_A7Nphl[] = _("e de la NPHL");
 static const u8 sText_A8[] = _(", ");
 static const u8 sText_A9[] = _(" pts.");
 static const u8 sText_A10[] = _("\nUn duel t'attend !");
@@ -1457,6 +1593,10 @@ void Club_Resume(void)
     {
         fin = StringCopy(fin, sText_AFinale);
     }
+    else if (CLUB_NPHL && jour == CLUB_JOUR_DEMIS)
+    {
+        fin = StringCopy(fin, sText_ADemis);
+    }
     else
     {
         fin = StringCopy(fin, sText_A4);
@@ -1479,8 +1619,13 @@ void Club_Resume(void)
         fin = StringCopy(fin, Club_NomCourt(club));
         fin = StringCopy(fin, sText_A6);
         fin = AjouterNombre(fin, rang);
-        fin = StringCopy(fin, sText_A7);
-        *fin++ = poule ? CHAR_B : CHAR_A;
+        if (CLUB_NPHL)
+            fin = StringCopy(fin, sText_A7Nphl);
+        else
+        {
+            fin = StringCopy(fin, sText_A7);
+            *fin++ = poule ? CHAR_B : CHAR_A;
+        }
         fin = StringCopy(fin, sText_A8);
         fin = AjouterNombre(fin, Club_Points(club));
         fin = StringCopy(fin, sText_A9);

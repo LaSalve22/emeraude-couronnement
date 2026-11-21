@@ -743,6 +743,26 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Niveaux (Carrière) : N.10 seulement jusqu'à la 1re journée de la 1re saison (jour 27, ~4 h 30 de jeu), puis N.18 en tier C
   (`Tycoon_NiveauCible`). Édition classique inchangée (horloge réelle).
 
+## Fait (v0.56) - édition Carrière : NPHL et halls du Couronnement Mondial (demande d'Adrien du 21/11)
+
+- NPHL (National Pokémon Hoenn Ligue), Carrière seulement (`CLUB_NPHL` = `EDITION_TYCOON_SIM`, `include/league_club.h`) :
+  une seule poule de 10 en aller-retour, 18 journées de 5 rencontres (méthode du cercle à 10 dans `AfficheDePoule`, 9 réceptions
+  par club), jours 20, 33… 241 (`Club_JourDeJournee`) ; classement calculé en un passage (`Club_Classement`, poule ignorée).
+  Play-offs : demi-finales jour 255 (1er-4e, 2e-3e, chez le mieux classé, égalité = le mieux classé passe, `VainqueurDemi`),
+  finale jour 265 à la Tour de Combat (mort subite comme avant). Matchs 90-92 = `CLUB_MATCH_DEMI1` / `DEMI2` / `FINALE` ;
+  `CLUB_LIGUE_NB_DUELS` = 93 en Carrière (SaveBlock3 +104 octets). Tableau de bord : classement en 2 pages (SELECT : places 1-5 /
+  6-10, les 4 premiers en or), Feuille de match : journée « 19 » = play-offs (2 demies + finale). Textes « NPHL » (menu L,
+  guichets, règlement, résumé). Tests : `make check EDITION=carriere TESTS="NPHL"` (2) ; classique inchangé (`TESTS="Clubs"`, 15).
+- Halls du Couronnement Mondial (Carrière) : un bâtiment neuf dans chacune des 8 villes d'Arène, façade de Centre Pokémon au toit
+  doré sans enseigne (11 métatuiles neuves dans des emplacements inutilisés de `gTileset_General`, `tools/couronnement/hall_gfx.py`,
+  palette 5), posée au chargement de la carte (`Tycoon_DessinerHall`, appelé dans `InitMap` / `InitMapFromSavedGame` de
+  `src/fieldmap.c`) ; emplacements choisis par `tools/couronnement/hall_placer.py` (4 x 3 libre, aucun passage coupé, près du Centre
+  Pokémon) -> `src/data/couronnement_halls.h` + passage vers `MAP_COURONNEMENT_HALL` dans le map.json de la ville (inerte en classique :
+  la case reste un sol ordinaire). Une seule carte de hall (`data/maps/CouronnementHall`, plan du hall des Tentes de Combat,
+  groupe IndoorSlateport), sortie dynamique vers la ville d'origine (`Tycoon_HallEntree`), hôtesse qui lance le tournoi de cette ville
+  (`Tycoon_HallTournoi`). En Carrière, les hôtesses des Centres Pokémon renvoient au hall. Testé dans mGBA (Mérouville : entrée,
+  hôtesse, sortie). Les tournois des Tentes de Combat et de Nénucrique ne changent pas.
+
 ## Idées d'Adrien à concevoir plus tard
 
 

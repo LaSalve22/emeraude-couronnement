@@ -2,6 +2,8 @@
 #include "pokedex.h"
 #include "constants/items.h"
 #include "tycoon.h"
+#include "constants/couronnement.h"
+#include "fieldmap.h"
 #include "league_club.h"
 #include "event_data.h"
 #include "field_player_avatar.h"
@@ -560,4 +562,74 @@ void Tycoon_RecompenseDexDonnee(void)
 {
     if (TY.magie == TYCOON_MAGIE && TY.paliersDex < ARRAY_COUNT(sRecompensesDex))
         TY.paliersDex++;
+}
+
+// ---------------------------------------------------------------- halls du Couronnement Mondial (v0.56, édition Carrière)
+// Un bâtiment neuf (Centre Pokémon au toit doré, tools/couronnement/hall_gfx.py) dans chaque ville d'Arène, posé par
+// tools/couronnement/hall_placer.py ; une seule carte de hall (MAP_COURONNEMENT_HALL), sortie dynamique vers la ville d'origine.
+struct TycoonHall
+{
+    u8 mapGroup, mapNum, x, y, tournoi;
+};
+
+static const struct TycoonHall sHalls[] =
+{
+#include "data/couronnement_halls.h"
+};
+
+static const u16 sHallMetatiles[3][4] =
+{
+    {0x2A, 0x5C, 0x135, 0x13F},
+    {0x1A2, 0x1B6, 0x1E3, 0xDB},
+    {0xDC, 0x61, 0xDD, 0xDE},
+};
+
+static const struct TycoonHall *HallDeLaCarte(u32 group, u32 num)
+{
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sHalls); i++)
+        if (sHalls[i].mapGroup == group && sHalls[i].mapNum == num)
+            return &sHalls[i];
+    return NULL;
+}
+
+// Au chargement de la carte (src/fieldmap.c) : dessine la façade si la ville a un hall.
+void Tycoon_DessinerHall(void)
+{
+    const struct TycoonHall *hall;
+    u32 i, j;
+    if (!EDITION_TYCOON_SIM)
+        return;
+    hall = HallDeLaCarte(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+    if (hall == NULL)
+        return;
+    for (j = 0; j < 3; j++)
+        for (i = 0; i < 4; i++)
+            MapGridSetMetatileIdAt(hall->x + i + MAP_OFFSET, hall->y + j + MAP_OFFSET, sHallMetatiles[j][i] | MAPGRID_COLLISION_MASK);
+}
+
+// Entrée dans le hall : la sortie ramène devant la porte de la ville d'où l'on vient.
+void Tycoon_HallEntree(void)
+{
+    const struct MapHeader *ville;
+    u32 i;
+    if (HallDeLaCarte(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum) == NULL)
+        return; // retour de combat, sauvegarde rechargée… : on garde la sortie déjà notée
+    ville = Overworld_GetMapHeaderByGroupAndId(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum);
+    for (i = 0; i < ville->events->warpCount; i++)
+    {
+        const struct WarpEvent *w = &ville->events->warps[i];
+        if (w->mapGroup == MAP_GROUP(MAP_COURONNEMENT_HALL) && w->mapNum == MAP_NUM(MAP_COURONNEMENT_HALL))
+        {
+            SetDynamicWarp(0, gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum, i);
+            return;
+        }
+    }
+}
+
+// Hôtesse du hall : VAR_0x8004 = tournoi de la ville d'où l'on vient.
+void Tycoon_HallTournoi(void)
+{
+    const struct TycoonHall *hall = HallDeLaCarte(gSaveBlock1Ptr->dynamicWarp.mapGroup, gSaveBlock1Ptr->dynamicWarp.mapNum);
+    gSpecialVar_0x8004 = hall ? hall->tournoi : sHalls[0].tournoi;
 }

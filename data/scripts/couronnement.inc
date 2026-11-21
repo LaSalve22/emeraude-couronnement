@@ -285,28 +285,44 @@ Couronnement_EventScript_PasAssez::
 	end
 
 @ Un appel par Centre Pokémon de ville d'Arène.
+Couronnement_EventScript_HotesseDemenagee::
+	special Tycoon_EstActif
+	goto_if_eq VAR_RESULT, FALSE, Couronnement_EventScript_HotesseDemenageeFin
+	msgbox Couronnement_Text_HotesseDemenagee, MSGBOX_NPC
+	end
+Couronnement_EventScript_HotesseDemenageeFin::
+	return
+
 Couronnement_EventScript_HotesseMerouville::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_MEROUVILLE
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseMyokara::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_MYOKARA
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseLavandia::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_LAVANDIA
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseVermilava::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_VERMILAVA
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseClementi::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_CLEMENTI
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseCimetronelle::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_CIMETRONELLE
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseAlgatia::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_ALGATIA
 	goto Couronnement_EventScript_Hotesse
 Couronnement_EventScript_HotesseAtalanopolis::
+	call Couronnement_EventScript_HotesseDemenagee @ édition Carrière : le tournoi se joue au hall (v0.56)
 	setvar VAR_0x8004, COURONNEMENT_TOURNOI_ATALANOPOLIS
 	goto Couronnement_EventScript_Hotesse
 @ Salles de Concours (Tentes de Combat et salle de Nénucrique).
@@ -762,7 +778,11 @@ Couronnement_Text_MenuLPasDeTaxi:
 	.string "Le taxi ne peut pas venir ici.\n"
 	.string "Volant : dehors. Surfant : face à l'eau.$"
 Couronnement_Text_MenuLClubs:
+.if EDITION_TYCOON_SIM == TRUE
+	.string "NPHL$"
+.else
 	.string "Ligue des Clubs$"
+.endif
 Couronnement_Text_MenuLBanques:
 	.string "Banques$"
 Couronnement_Text_MenuLCommerces:
@@ -826,3 +846,8 @@ Couronnement_Text_TypeAcier:
 Couronnement_Text_TypeFee:
 	.string "Fée$"
 
+
+Couronnement_Text_HotesseDemenagee:
+	.string "Le tournoi du Couronnement Mondial\n"
+	.string "a déménagé : il se joue au hall\l"
+	.string "au toit doré, ici, en ville.$"

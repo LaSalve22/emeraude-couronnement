@@ -247,7 +247,15 @@ static const u8 sText_ColJ[] = _("J");
 static const u8 sText_ColPts[] = _("Pts");
 static const u8 sText_ColDiff[] = _("Diff");
 static const u8 sText_ColBO[] = _("BO");
-#if EDITION_TYCOON_SIM
+#if CLUB_NPHL
+static const u8 sText_AideClassement[] = _("Les 4 premiers vont en play-offs.");
+static const u8 sText_Nphl[] = _("NPHL, places ");
+static const u8 sText_Places1[] = _("1 à 5");
+static const u8 sText_Places2[] = _("6 à 10");
+static const u8 sText_AideSelectNphl[] = _("SELECT : places ");
+static const u8 sText_Demi[] = _("Demi-finale ");
+static const u8 sText_JourDemis[] = _(" (jour 255)");
+#elif EDITION_TYCOON_SIM
 static const u8 sText_AideClassement[] = _("Le 1er joue la finale du jour 270.");
 #else
 static const u8 sText_AideClassement[] = _("Le 1er joue la finale du jour 30.");
@@ -260,23 +268,29 @@ static void DessinerClassement(u8 fen, u32 poule)
     u32 i, joueur = Club_DuJoueur();
 
     Club_Classement(poule, ordre);
+#if CLUB_NPHL
+    fin = StringCopy(txt, sText_Nphl);
+    StringCopy(fin, (poule & 1) ? sText_Places2 : sText_Places1);
+#else
     fin = StringCopy(txt, sText_Poule);
     *fin++ = poule ? CHAR_B : CHAR_A;
     *fin = EOS;
+#endif
     Texte(fen, sTexteOr, 4, 15, txt);
     TexteDroite(fen, sTexteGris, 150, 15, sText_ColJ);
     TexteDroite(fen, sTexteGris, 178, 15, sText_ColPts);
     TexteDroite(fen, sTexteGris, 208, 15, sText_ColDiff);
     TexteDroite(fen, sTexteGris, 234, 15, sText_ColBO);
     FillWindowPixelRect(fen, COUL_GRILLE, 4, 26, 232, 1);
-    for (i = 0; i < CLUB_PAR_POULE; i++)
+    for (i = 0; i < 5; i++) // 5 lignes par page (NPHL : places 1-5 puis 6-10)
     {
-        u32 c = ordre[i], y = 28 + i * LIGNE;
+        u32 rang = CLUB_NPHL ? (poule & 1) * 5 + i : i;
+        u32 c = ordre[rang], y = 28 + i * LIGNE;
         const u8 *coul = (c == joueur) ? sTexteOr : sTexte;
         if (c == joueur)
             FillWindowPixelRect(fen, COUL_LIGNE, 2, y, 236, LIGNE);
-        Nombre(txt, i + 1, FALSE);
-        Texte(fen, i == 0 ? sTexteOr : sTexteGris, 6, y, txt);
+        Nombre(txt, rang + 1, FALSE);
+        Texte(fen, rang < (CLUB_NPHL ? 4 : 1) ? sTexteOr : sTexteGris, 6, y, txt);
         Blason(fen, 16, y + 1, c, i);
         Texte(fen, coul, 29, y, Club_Nom(c));
         Nombre(txt, Club_MatchsJoues(c), FALSE);
@@ -288,11 +302,16 @@ static void DessinerClassement(u8 fen, u32 poule)
         Nombre(txt, Club_BonusOffensifs(c), FALSE);
         TexteDroite(fen, coul, 234, y, txt);
     }
-    Texte(fen, sTexteGris, 4, 28 + CLUB_PAR_POULE * LIGNE + 1, sText_AideClassement);
+    Texte(fen, sTexteGris, 4, 28 + 5 * LIGNE + 1, sText_AideClassement);
+#if CLUB_NPHL
+    fin = StringCopy(txt, sText_AideSelectNphl);
+    StringCopy(fin, (poule & 1) ? sText_Places1 : sText_Places2);
+#else
     fin = StringCopy(txt, sText_AideSelect);
     *fin++ = poule ? CHAR_A : CHAR_B;
     *fin = EOS;
-    TexteDroite(fen, sTexteGris, 236, 28 + CLUB_PAR_POULE * LIGNE + 1, txt);
+#endif
+    TexteDroite(fen, sTexteGris, 236, 28 + 5 * LIGNE + 1, txt);
 }
 
 // ---------------------------------------------------------------- onglet Feuille de match
@@ -323,12 +342,12 @@ static const u8 sText_AideMatch[] = _("{LEFT_ARROW}{RIGHT_ARROW} jour. {UP_ARROW
 
 static u32 NbMatchsJournee(u32 journee)
 {
-    return journee >= CLUB_NB_JOURNEES ? 1 : CLUB_MATCHS_PAR_JOURNEE;
+    return journee >= CLUB_NB_JOURNEES ? CLUB_NB_PLAYOFFS : CLUB_MATCHS_PAR_JOURNEE;
 }
 
 static u32 IndexMatch(u32 journee, u32 k)
 {
-    return journee >= CLUB_NB_JOURNEES ? CLUB_MATCH_FINALE : journee * CLUB_MATCHS_PAR_JOURNEE + k;
+    return journee >= CLUB_NB_JOURNEES ? CLUB_NB_MATCHS + (k % CLUB_NB_PLAYOFFS) : journee * CLUB_MATCHS_PAR_JOURNEE + k;
 }
 
 static void Centre(u8 fen, const u8 *couleurs, u32 x, u32 y, const u8 *txt)
@@ -343,7 +362,17 @@ static void DessinerMatch(u8 fen, u32 journee, u32 selection)
     u32 k, m = IndexMatch(journee, selection), joueur = Club_DuJoueur(), pd = 0, pe = 0;
     bool32 joue = FALSE;
 
-    if (journee >= CLUB_NB_JOURNEES)
+    if (journee >= CLUB_NB_JOURNEES && m != CLUB_MATCH_FINALE)
+    {
+#if CLUB_NPHL
+        fin = StringCopy(txt, sText_Demi);
+        fin = Nombre(fin, selection + 1, FALSE);
+        fin = StringCopy(fin, sText_JourDemis);
+        if (Club_JourDeSaison() < CLUB_JOUR_DEMIS)
+            StringCopy(fin, sText_Provisoire);
+#endif
+    }
+    else if (journee >= CLUB_NB_JOURNEES)
     {
         fin = StringCopy(txt, sText_Finale);
         if (Club_JourDeSaison() < CLUB_JOUR_FINALE)
@@ -423,9 +452,13 @@ static void DessinerMatch(u8 fen, u32 journee, u32 selection)
     }
 
     // Pied : stade (effet) ou exempts de la journée
-    if (journee >= CLUB_NB_JOURNEES)
+    if (m == CLUB_MATCH_FINALE)
     {
         Texte(fen, sTexteGris, 4, 39 + CLUB_DRESSEURS * LIGNE + 1, sText_TourDeCombat);
+    }
+    else if (CLUB_NPHL) // une seule poule de 10 : personne n'est exempt
+    {
+        Texte(fen, sTexteGris, 4, 39 + CLUB_DRESSEURS * LIGNE + 1, Club_NomEffet(Club_Stade(dom)));
     }
     else
     {
@@ -466,6 +499,7 @@ static const u8 sText_ColBilan[] = _("V-N-D");
 static const u8 sText_Toi[] = _("toi");
 static const u8 sText_AideEffectif[] = _("{UP_ARROW}{DOWN_ARROW} club");
 static const u8 sText_PtsClub[] = _(" pts, ");
+static const u8 sText_NphlCourt[] = _("NPHL");
 static const u8 sText_TitresJoueur[] = _("Tes titres : ");
 
 static void DessinerEffectif(u8 fen, u32 club)
@@ -533,8 +567,13 @@ static void DessinerEffectif(u8 fen, u32 club)
     }
     fin = Nombre(txt, Club_Points(club), FALSE);
     fin = StringCopy(fin, sText_PtsClub);
-    fin = StringCopy(fin, sText_Poule);
-    *fin++ = Club_Poule(club) ? CHAR_B : CHAR_A;
+    if (CLUB_NPHL)
+        fin = StringCopy(fin, sText_NphlCourt);
+    else
+    {
+        fin = StringCopy(fin, sText_Poule);
+        *fin++ = Club_Poule(club) ? CHAR_B : CHAR_A;
+    }
     *fin = EOS;
     Texte(fen, sTexteGris, 4, 49 + CLUB_DRESSEURS * LIGNE, txt);
     if (joueur != CLUB_AUCUN)
@@ -753,13 +792,13 @@ static void PositionDeDepart(s16 *data)
     for (j = 0; j < CLUB_NB_JOURNEES; j++)
         if (Club_JourDeJournee(j) <= jour)
             data[T_JOURNEE] = j;
-    if (jour >= 30)
+    if (jour >= (CLUB_NPHL ? CLUB_JOUR_DEMIS : 30))
         data[T_JOURNEE] = CLUB_NB_JOURNEES;
     data[T_MATCH] = 0;
     if (m != 0xFF)
     {
-        data[T_JOURNEE] = m >= CLUB_MATCH_FINALE ? CLUB_NB_JOURNEES : m / CLUB_MATCHS_PAR_JOURNEE;
-        data[T_MATCH] = m >= CLUB_MATCH_FINALE ? 0 : m % CLUB_MATCHS_PAR_JOURNEE;
+        data[T_JOURNEE] = m >= CLUB_NB_MATCHS ? CLUB_NB_JOURNEES : m / CLUB_MATCHS_PAR_JOURNEE;
+        data[T_MATCH] = m >= CLUB_NB_MATCHS ? m - CLUB_NB_MATCHS : m % CLUB_MATCHS_PAR_JOURNEE;
     }
     data[T_CLUB] = joueur != CLUB_AUCUN ? joueur : 0;
     data[T_POULE] = joueur != CLUB_AUCUN ? Club_Poule(joueur) : 0;

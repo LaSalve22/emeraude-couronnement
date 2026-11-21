@@ -314,7 +314,7 @@ struct AreneSave
 
 // Émeraude Couronnement : Ligue des Clubs (v0.42), src/league_club.c. Constantes dans include/league_club.h.
 #define CLUB_LIGUE_NB_FORME 40   // CLUB_NB x CLUB_DRESSEURS
-#define CLUB_LIGUE_NB_DUELS 41   // 40 matchs de poule + la finale
+#define CLUB_LIGUE_NB_DUELS (EDITION_TYCOON_SIM ? 93 : 41) // classique : 40 matchs de poule + la finale ; NPHL : 90 + 2 demi-finales + la finale
 struct ClubLigueSave
 {
     u16 magie;

@@ -13,6 +13,7 @@
 #include "script.h"
 #include "secret_base.h"
 #include "trainer_hill.h"
+#include "tycoon.h"
 #include "tv.h"
 #include "constants/rgb.h"
 #include "constants/layouts.h"
@@ -136,6 +137,7 @@ void InitMap(void)
 {
     InitMapLayoutData(&gMapHeader);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
+    Tycoon_DessinerHall(); // Couronnement, édition Carrière : façade du hall du Couronnement Mondial
     RunOnLoadMapScript();
 }
 
@@ -145,6 +147,7 @@ void InitMapFromSavedGame(void)
     InitSecretBaseAppearance(FALSE);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     LoadSavedMapView();
+    Tycoon_DessinerHall();
     RunOnLoadMapScript();
     UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
 }

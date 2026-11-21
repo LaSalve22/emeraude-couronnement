@@ -34,6 +34,9 @@ void Tycoon_SortirArene(void);
 #define TYCOON_DEX_PALIER 25                           // récompense du Pokédex toutes les 25 espèces capturées
 u32 Tycoon_PaliersDexAtteints(u32 captures);
 void Tycoon_RecompenseDex(void);                   // special
-void Tycoon_RecompenseDexDonnee(void);             // special                     // special (+ waitstate)
+void Tycoon_RecompenseDexDonnee(void);
+void Tycoon_DessinerHall(void);                   // halls du Couronnement Mondial (v0.56)
+void Tycoon_HallEntree(void);                     // special
+void Tycoon_HallTournoi(void);                    // special             // special                     // special (+ waitstate)
 
 #endif // GUARD_TYCOON_H

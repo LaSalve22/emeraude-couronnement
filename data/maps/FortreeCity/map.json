@@ -194,6 +194,13 @@
       "elevation": 0,
       "dest_map": "MAP_FORTREE_CITY_DECORATION_SHOP",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_COURONNEMENT_HALL",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

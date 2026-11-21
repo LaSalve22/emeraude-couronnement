@@ -283,7 +283,11 @@ Club_Text_RevendreConfirme:
 	.string "récupère 80 % de ton investissement.$"
 
 Club_Text_Bienvenue:
+.if EDITION_TYCOON_SIM == TRUE
+	.string "Guichet de la NPHL !\n"
+.else
 	.string "Guichet de la Ligue des Clubs !\n"
+.endif
 	.string "Matchs, licences et propriété.$"
 
 Club_Text_AllerAuGuichet:
@@ -335,13 +339,16 @@ Club_Text_AdversaireBattu:
 	.string "ton nom.$"
 
 Club_Text_ReglesTexte:
-	.string "10 clubs, 2 poules de 5 tirées au\n"
 .if EDITION_TYCOON_SIM == TRUE
-	.string "sort à chaque saison de 9 mois.\p"
-	.string "Mercato les jours 1 à 18. Dix\n"
-	.string "journées en aller-retour, finale\l"
-	.string "le jour 270 entre les deux premiers.\p"
+	.string "NPHL : 10 clubs dans une seule poule,\n"
+	.string "saison de 9 mois. Mercato jours 1-18.\p"
+	.string "18 journées en aller-retour, une\n"
+	.string "tous les 13 jours (dès le jour 20).\p"
+	.string "Les 4 premiers vont en play-offs :\n"
+	.string "demi-finales jour 255 (1er-4e, 2e-3e,\l"
+	.string "chez le mieux classé), finale jour 265.\p"
 .else
+	.string "10 clubs, 2 poules de 5 tirées au\n"
 	.string "sort à chaque saison de 30 jours.\p"
 	.string "Mercato les jours 1 et 2. Dix\n"
 	.string "journées en aller-retour, finale\l"
