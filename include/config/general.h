@@ -89,6 +89,9 @@
 // TRUE  : édition « Carrière & Business » (joueur adulte, pas d'arènes, clubs dans les anciens bâtiments d'arène,
 //         taxis dès le jour 1, Pokémon de prêt, niveaux adaptés au tier du club). En cours : v0.46 = règles de terrain
 //         (src/tycoon.c) ; l'intro adulte et les sièges des clubs viendront ensuite.
+// Émeraude Couronnement (v0.59) : monde ouvert, on démarre seul chez soi (pas de camion ni de maman). FALSE = intro d'origine.
+#define COURONNEMENT_DEPART_CHEZ_SOI TRUE
+
 #ifndef EDITION_TYCOON_SIM // make EDITION=carriere (tools/couronnement/editions.sh compile les deux ROM)
 #define EDITION_TYCOON_SIM           FALSE
 #endif

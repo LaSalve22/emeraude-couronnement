@@ -147,7 +147,7 @@ static void WarpToTruck(void)
 #endif
     if (IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else if (EDITION_TYCOON_SIM) // Émeraude Couronnement, édition Carrière : réveil seul dans sa chambre (Tycoon_EventScript_Reveil)
+    else if (EDITION_TYCOON_SIM || COURONNEMENT_DEPART_CHEZ_SOI) // Émeraude Couronnement : réveil seul dans sa chambre (Couronnement_EventScript_Reveil)
     {
         VarSet(VAR_LITTLEROOT_INTRO_STATE, 20);
         if (gSaveBlock2Ptr->playerGender == MALE)

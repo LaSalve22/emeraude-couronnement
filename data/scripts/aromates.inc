@@ -3,7 +3,6 @@
 Aromates_EventScript_Herboriste::
 	lock
 	faceplayer
-	call Couronnement_EventScript_DonnerRepousseInfinie
 	goto_if_unset FLAG_BADGE05_GET, Aromates_EventScript_PasEncore
 	message Aromates_Text_Bienvenue
 	waitmessage

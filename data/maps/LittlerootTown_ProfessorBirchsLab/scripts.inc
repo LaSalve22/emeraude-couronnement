@@ -524,7 +524,13 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	setflag FLAG_ADVENTURE_STARTED
 	setvar VAR_OLDALE_TOWN_STATE, 1
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
+.if COURONNEMENT_DEPART_CHEZ_SOI == TRUE
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4 @ pas de maman qui attend devant la porte avec les Chaussures de Course
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
+.else
 	setvar VAR_LITTLEROOT_TOWN_STATE, 3
+.endif
 	releaseall
 	end
 

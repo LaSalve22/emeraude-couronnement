@@ -816,6 +816,21 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - Ajout : les Baies tenues mangées en combat reviennent aussi (`COURONNEMENT_RESTAURER_BAIES` TRUE dans `include/config/battle.h`).
 - Tests : `test/objets_tenus.c` (`TESTS="Objets tenus"`, 2 ; le test des Baies échoue bien si le réglage est à FALSE).
 
+## Fait (v0.59) - monde ouvert, 1re étape : départ seul chez soi (édition classique)
+
+- `COURONNEMENT_DEPART_CHEZ_SOI` (TRUE, `include/config/general.h`) : nouvelle partie dans sa chambre (`WarpToTruck` comme la Carrière,
+  `VAR_LITTLEROOT_INTRO_STATE` = 20, `FieldCB_WarpExitFadeFromBlack` dans `CB2_NewGame`), pas de camion ni de maman.
+  `Couronnement_EventScript_Reveil` (`data/scripts/chez_soi.inc`, appelé par l'ON_FRAME des deux chambres ; en Carrière il renvoie
+  à `Tycoon_EventScript_Reveil`) : mêmes réglages que le camion d'origine selon le sexe, maman / camions / Vigoroth cachés,
+  texte de réveil, difficulté, horloge, puis état 7 (« va voir les voisins »). La suite du scénario ne change pas (mère du rival, rival,
+  Prof. Seko, combat de la Route 103, pass).
+- Pas de maman devant la porte après le Pokédex : le labo passe directement `VAR_LITTLEROOT_TOWN_STATE` à 4 avec
+  `FLAG_RECEIVED_RUNNING_SHOES` / `FLAG_SYS_B_DASH`. Après la Ligue, maman revient à la maison pour la remise du billet du
+  S.S. Marée (`Couronnement_EventScript_VisiteMaman*`, au passage de la porte quand `VAR_LITTLEROOT_HOUSES_STATE_MAY` = 3).
+- Repousse Infinie : l'objet n'est plus donné (ni par le rival, ni par l'herboriste) ; le menu L suffit.
+- Perdu en route (à décider avec Adrien) : le cadeau de maman après le badge de Norman (Pièce Rune) et son numéro dans le PokéNav.
+- Vérifié dans mGBA : réveil, difficulté, horloge, maison vide, sortie, accueil chez la mère du rival.
+
 ## Édition Carrière & Business : EN PAUSE (décision d'Adrien du 22/11)
 
 - On ne travaille plus que l'édition classique. Ne plus toucher au code `EDITION_TYCOON_SIM` sauf demande d'Adrien ;
@@ -825,7 +840,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 ## Vision « monde ouvert » du jeu de base (Adrien, 22/11, à concevoir)
 
 - Le mode Open World (façon GTA / Les Sims) est pour le jeu de base (édition classique), pas seulement pour l'édition Carrière.
-- On démarre seul chez soi (son propre logement), pas chez sa mère.
+- On démarre seul chez soi (son propre logement), pas chez sa mère. Fait en v0.59.
 - Pas besoin de donner l'objet Repousse Infinie : le menu L suffit pour activer / couper les rencontres.
 - Bugs connus à la mise en pause (v0.57.1, arènes du joueur en Carrière, non corrigés) :
   - en sortant vers l'arène, l'ordre / la modification des attaques faite dans le résumé est perdue (copie des Pokémon d'arène

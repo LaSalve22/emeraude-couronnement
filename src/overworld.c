@@ -1942,7 +1942,7 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    if (IS_FRLG || EDITION_TYCOON_SIM) // Couronnement, édition Carrière : réveil dans la chambre, pas de camion
+    if (IS_FRLG || EDITION_TYCOON_SIM || COURONNEMENT_DEPART_CHEZ_SOI) // Couronnement, édition Carrière : réveil dans la chambre, pas de camion
         gFieldCallback = FieldCB_WarpExitFadeFromBlack;
     else
         gFieldCallback = ExecuteTruckSequence;

@@ -32,7 +32,6 @@ Couronnement_EventScript_RivalDonnePass::
 	waitfanfare
 	special Couronnement_DonnerPass
 	msgbox Couronnement_Text_RivalPassExplique, MSGBOX_DEFAULT
-	call Couronnement_EventScript_DonnerRepousseInfinie
 	return
 
 @ Repousse Infinie (objet clé) : donnée avec le pass ; l'herboriste de Clémenti la donne aux sauvegardes plus anciennes.

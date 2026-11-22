@@ -24,6 +24,7 @@ LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
 	return
 
 LittlerootTown_MaysHouse_1F_OnTransition:
+	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, Couronnement_EventScript_VisiteMamanMays @ après la Ligue, maman passe (billet du S.S. Marée)
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV

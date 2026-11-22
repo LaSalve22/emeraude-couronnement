@@ -64,6 +64,7 @@ et sur GitHub.
 - v0.57.1 - Édition Carrière : chaque ville sans Arène a son bâtiment d'Arène (façade officielle) ; tu entres pour parler au responsable. Les Pokémon de l'arène ont leurs attaques (réparé aussi sur les sauvegardes existantes), et « Voir l'équipe » ouvre leur résumé complet
 - Pause (22/11) - L'édition Carrière & Business est mise de côté (bugs des arènes du joueur non corrigés) ; on ne travaille plus que l'édition classique. Idée pour la reprise : un vrai monde ouvert façon GTA / Les Sims
 - v0.58 - Objets tenus récupérés après chaque combat, Baies comprises (le reste était déjà rendu par le moteur) ; vision notée : le jeu de base deviendra un monde ouvert, on démarrera seul chez soi
+- v0.59 - Monde ouvert, 1re étape : nouvelle partie seul chez soi (pas de camion, pas de maman) ; la Repousse Infinie n'est plus donnée, le menu L suffit
 - v0.49 - Édition Carrière : Pokémon de prêt du club si tu as moins de 6 Pokémon pour un duel de ligue (offert en tier C la 1re saison, sinon 500 ¥ chacun)
 - v0.48 - Édition Carrière : les arènes deviennent les sièges des clubs, les champions sont présidents et remettent l'accréditation sans combat ; guichets de ligue à l'entrée des arènes
 - v0.47 - Édition Carrière : intro adulte (réveil seul dans un appartement loué 2 500 ¥/mois, profil Épargnant / Trader / Espoir Sportif, pass et PokéNav tout de suite, Seko donne le Pokédex sans passer par le rival)

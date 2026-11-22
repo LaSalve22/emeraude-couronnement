@@ -1724,6 +1724,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/arenes.inc"
 	.include "data/scripts/ligue_clubs.inc"
 	.include "data/scripts/tycoon_intro.inc"
+	.include "data/scripts/chez_soi.inc"
 	.include "data/scripts/roulette.inc"
 	.include "data/scripts/pokedex_rating.inc"
 	.include "data/text/pokedex_rating.inc"

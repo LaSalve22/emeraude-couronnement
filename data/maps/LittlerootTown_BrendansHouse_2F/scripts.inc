@@ -6,7 +6,7 @@ LittlerootTown_BrendansHouse_2F_MapScripts::
 
 @ Émeraude Couronnement, édition Carrière : réveil dans l'appartement (data/scripts/tycoon_intro.inc).
 LittlerootTown_BrendansHouse_2F_OnFrame:
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 20, Tycoon_EventScript_Reveil
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 20, Couronnement_EventScript_Reveil
 	.2byte 0
 
 LittlerootTown_BrendansHouse_2F_OnTransition:
