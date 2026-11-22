@@ -809,11 +809,24 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - « Voir l'équipe » : liste puis écran de résumé des 6 (`Arene_VoirResume` / `Arene_FinVoirResume` ; renommage et ordre des attaques gardés).
 - Vérifié dans mGBA : bâtiment à Rosyères, entrée, responsable, achat, liste, résumé (attaques), retour. Tests `TESTS="Arenes Carriere"` (3).
 
+## Fait (v0.58) - objets tenus récupérés après chaque combat
+
+- Le moteur rendait déjà, après chaque combat, les objets tenus non-Baies consommés, détruits ou volés (`B_RESTORE_HELD_BATTLE_ITEMS`
+  = Gen 9, `TryRestoreHeldItems` dans `src/battle_util.c`) : Ceinture Force, Ballon, Herbes, Joyaux, Vulné-Assurance, Sabotage, Larcin…
+- Ajout : les Baies tenues mangées en combat reviennent aussi (`COURONNEMENT_RESTAURER_BAIES` TRUE dans `include/config/battle.h`).
+- Tests : `test/objets_tenus.c` (`TESTS="Objets tenus"`, 2 ; le test des Baies échoue bien si le réglage est à FALSE).
+
 ## Édition Carrière & Business : EN PAUSE (décision d'Adrien du 22/11)
 
 - On ne travaille plus que l'édition classique. Ne plus toucher au code `EDITION_TYCOON_SIM` sauf demande d'Adrien ;
   `tools/couronnement/editions.sh` peut continuer à sortir les deux ROM, mais seule la classique compte.
 - Vision à garder pour la reprise : un vrai monde ouvert, façon GTA / Les Sims dans l'univers Pokémon.
+
+## Vision « monde ouvert » du jeu de base (Adrien, 22/11, à concevoir)
+
+- Le mode Open World (façon GTA / Les Sims) est pour le jeu de base (édition classique), pas seulement pour l'édition Carrière.
+- On démarre seul chez soi (son propre logement), pas chez sa mère.
+- Pas besoin de donner l'objet Repousse Infinie : le menu L suffit pour activer / couper les rencontres.
 - Bugs connus à la mise en pause (v0.57.1, arènes du joueur en Carrière, non corrigés) :
   - en sortant vers l'arène, l'ordre / la modification des attaques faite dans le résumé est perdue (copie des Pokémon d'arène
     entre l'équipe et le PC : `Arene_VoirResume` / `Arene_FinVoirResume` / `Arene_RendreEquipe`) ;
@@ -837,7 +850,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
     Adrien : 10 journées au lieu de 9, licence renouvelée d'office, bilan à la clôture de saison, billetterie du Colisée (~11 M¥).
 0. **Cahier v0.42+ : `docs/CAHIER_V0.42.md`** (toutes les demandes du 14 au 16/11, lots 0 à 7).
 0bis. Priorité d'Adrien : finir le contenu du jeu (équipes, scénario, systèmes) ; la traduction (chapitres 3+ et descriptions) se fera à la fin.
-1. Puis : objets tenus récupérés après combat, descriptions des Concours et du Pokédex en français, Blue / Ash / Lucas / Dawn (sprites à fournir).
+1. Puis (objets tenus faits en v0.58) : descriptions des Concours et du Pokédex en français, Blue / Ash / Lucas / Dawn (sprites à fournir).
 
 ## Méthode de travail
 

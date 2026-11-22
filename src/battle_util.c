@@ -9336,7 +9336,7 @@ void TryRestoreHeldItems(void)
             if (originaItem == ITEM_NONE)
                 continue;
 
-            if (GetItemPocket(originaItem) == POCKET_BERRIES)
+            if (GetItemPocket(originaItem) == POCKET_BERRIES && !COURONNEMENT_RESTAURER_BAIES)
                 continue;
 
             SetMonData(&gParties[trainer][partySlot], MON_DATA_HELD_ITEM, &originaItem);
