@@ -809,6 +809,18 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 - « Voir l'équipe » : liste puis écran de résumé des 6 (`Arene_VoirResume` / `Arene_FinVoirResume` ; renommage et ordre des attaques gardés).
 - Vérifié dans mGBA : bâtiment à Rosyères, entrée, responsable, achat, liste, résumé (attaques), retour. Tests `TESTS="Arenes Carriere"` (3).
 
+## Édition Carrière & Business : EN PAUSE (décision d'Adrien du 22/11)
+
+- On ne travaille plus que l'édition classique. Ne plus toucher au code `EDITION_TYCOON_SIM` sauf demande d'Adrien ;
+  `tools/couronnement/editions.sh` peut continuer à sortir les deux ROM, mais seule la classique compte.
+- Vision à garder pour la reprise : un vrai monde ouvert, façon GTA / Les Sims dans l'univers Pokémon.
+- Bugs connus à la mise en pause (v0.57.1, arènes du joueur en Carrière, non corrigés) :
+  - en sortant vers l'arène, l'ordre / la modification des attaques faite dans le résumé est perdue (copie des Pokémon d'arène
+    entre l'équipe et le PC : `Arene_VoirResume` / `Arene_FinVoirResume` / `Arene_RendreEquipe`) ;
+  - en préparant un combat contre un challenger, les Pokémon de l'arène disparaissent et deviennent un « ! » (œuf / Pokémon invalide :
+    `Arene_PreparerSelection` ou `Arene_GarderSelection` avec `gSelectedOrderFromParty`, à tracer dans mGBA) ;
+  - un plantage signalé par Adrien autour de l'arène, non localisé.
+
 ## Idées d'Adrien à concevoir plus tard
 
 
@@ -816,6 +828,7 @@ Réponds toujours en français. Le jeu est traduit en français au fur et à mes
 
 ## Prochaines étapes, dans l'ordre
 
+000. **Édition classique seulement** (l'édition Carrière est en pause, voir plus haut).
 00. **Ligue des Clubs, suite** (spec du 17/11) : phases 1 et 2, guichets, finale à la Tour de Combat, blasons faits (v0.42 à v0.44).
     Reste : consultation depuis le PokéNav ; puis l'édition Carrière & Business (intro adulte, sièges dans les arènes, taxis,
     Pokémon de prêt, niveaux par tier). Réponses d'Adrien (17/11) : sans arènes, on croise quand même Aqua et Magma aux mêmes
